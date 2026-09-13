@@ -1,0 +1,178 @@
+[
+  {
+    "category": "live_concert",
+    "song_id": 543,
+    "artist": "Beyond",
+    "album": "Beyond音樂大全101",
+    "title": "午夜怨曲",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/Beyond/Beyond音樂大全101/s_543.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['live']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 17949,
+    "artist": "五月天",
+    "album": "步步自選作品輯 1999-2013",
+    "title": "孫悟空",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/步步自選作品輯 1999-2013/s_17949.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['live', '現場']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 18050,
+    "artist": "五月天",
+    "album": "知足 just my pride 最真傑作選",
+    "title": "孫悟空",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/知足 just my pride 最真傑作選/s_18050.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['live', '現場']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 27764,
+    "artist": "五月天",
+    "album": "第二人生",
+    "title": "有些事現在不做 一輩子都不會做了",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/第二人生/s_27764.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['現場']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 17972,
+    "artist": "五月天",
+    "album": "第二人生 (明日版)",
+    "title": "有些事現在不做 一輩子都不會做了",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/第二人生 (明日版)/s_17972.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['現場']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 17980,
+    "artist": "五月天",
+    "album": "第二人生 (明日版)",
+    "title": "2012",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/第二人生 (明日版)/s_17980.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['live']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 17983,
+    "artist": "五月天",
+    "album": "第二人生 (明日版)",
+    "title": "明日",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/第二人生 (明日版)/s_17983.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['演唱会']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 26225,
+    "artist": "李荣浩",
+    "album": "耳朵",
+    "title": "年少有为",
+    "r2_key": "music/李荣浩/耳朵/s_26225.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['現場']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 26228,
+    "artist": "李荣浩",
+    "album": "耳朵",
+    "title": "贝贝",
+    "r2_key": "music/李荣浩/耳朵/s_26228.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['现场', '演唱会']"
+    ]
+  },
+  {
+    "category": "duration_mismatch",
+    "song_id": 12041,
+    "artist": "林宥嘉",
+    "album": "Sense Around Live",
+    "title": "Someone Who Loves You (Live)",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/林宥嘉/Sense Around Live/s_12041.mp3",
+    "issues": [
+      "时长偏差 +92.2s (实测:387.6s vs 官方:295.4s)"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 27743,
+    "artist": "王力宏",
+    "album": "你的愛。",
+    "title": "七十億分之一",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王力宏/你的愛。/s_27743.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['live']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 27753,
+    "artist": "王力宏",
+    "album": "你的愛。",
+    "title": "夢境",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王力宏/你的愛。/s_27753.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['现场']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 27759,
+    "artist": "王力宏",
+    "album": "你的愛。",
+    "title": "愛一點",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王力宏/你的愛。/s_27759.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['live', '演唱会']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 27789,
+    "artist": "王力宏",
+    "album": "十八般武藝",
+    "title": "龍騰虎躍",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王力宏/十八般武藝/s_27789.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['live']"
+    ]
+  },
+  {
+    "category": "live_concert",
+    "song_id": 17617,
+    "artist": "王力宏",
+    "album": "王力宏全新創作大碟 心.跳",
+    "title": "Everything",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王力宏/王力宏全新創作大碟 心.跳/s_17617.mp3",
+    "issues": [
+      "命中现场/演唱会特征: ['現場']"
+    ]
+  },
+  {
+    "category": "duration_mismatch",
+    "song_id": 17468,
+    "artist": "王菲",
+    "album": "王菲97",
+    "title": "雲端",
+    "r2_key": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/王菲97/s_17468.mp3",
+    "issues": [
+      "时长偏差 +82.0s (实测:316.1s vs 官方:234.1s)"
+    ]
+  }
+]

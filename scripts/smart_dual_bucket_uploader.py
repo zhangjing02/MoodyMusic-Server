@@ -11,6 +11,9 @@ if sys.platform.startswith('win'):
         sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(BASE_DIR, "scripts"))
+import r2_safety_guard
+
 DB_PATH = os.path.join(BASE_DIR, "database", "catalog_sync.db")
 CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 OPTIMIZED_DIR = os.path.join(BASE_DIR, "downloads_optimized")
@@ -21,6 +24,7 @@ os.makedirs(OPTIMIZED_DIR, exist_ok=True)
 MAX_SAFE_BYTES = int(9.50 * 1024 * 1024 * 1024)
 
 def load_r2_clients():
+    r2_safety_guard.assert_write_allowed()
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         cfg = json.load(f)
     
@@ -32,7 +36,7 @@ def load_r2_clients():
             aws_access_key_id=b_info["access_key_id"],
             aws_secret_access_key=b_info["secret_access_key"],
             region_name="auto",
-            config=Config(s3={"addressing_style": "path"})
+            config=Config(s3={"addressing_style": "path"}, connect_timeout=15, read_timeout=30, retries={'max_attempts': 3})
         )
         clients[key] = {
             "s3": s3,
@@ -65,10 +69,11 @@ def get_bucket_live_size(s3_client, bucket_name: str) -> tuple[int, int]:
     return total_bytes, total_count
 
 def compress_to_160k_cbr(src_path: str, dst_path: str) -> bool:
-    """Use FFmpeg to transcode to 160kbps CBR MP3, 44.1kHz, with Xing header"""
+    """Use FFmpeg to transcode to 160kbps CBR MP3, 44.1kHz, with Xing header and EBU R128 loudness normalization"""
     cmd = [
         "ffmpeg", "-y", "-i", src_path,
         "-vn",
+        "-af", "loudnorm=I=-14:TP=-1.0:LRA=11",
         "-c:a", "libmp3lame",
         "-b:a", "160k",
         "-ar", "44100",
@@ -199,10 +204,18 @@ def process_and_upload_batch(target_bucket_key: str, song_ids: list[int]):
             final_file_path = r2_key
             final_lrc_path = r2_lrc_key
             status_tag = "R2_UPLOADED"
-        else:
+        elif target_bucket_key == "account_02":
             final_file_path = f"{public_domain}/{r2_key}"
             final_lrc_path = f"{public_domain}/{r2_lrc_key}"
             status_tag = "R2_UPLOADED_BUCKET2"
+        elif target_bucket_key == "account_03":
+            final_file_path = f"{public_domain}/{r2_key}"
+            final_lrc_path = f"{public_domain}/{r2_lrc_key}"
+            status_tag = "R2_UPLOADED_BUCKET3"
+        else:
+            final_file_path = f"{public_domain}/{r2_key}"
+            final_lrc_path = f"{public_domain}/{r2_lrc_key}"
+            status_tag = f"R2_UPLOADED_{target_bucket_key.upper()}"
             
         # 4. 上传 R2
         try:

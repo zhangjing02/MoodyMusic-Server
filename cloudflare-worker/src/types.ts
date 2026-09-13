@@ -1,11 +1,14 @@
 export type Bindings = {
   DB: D1Database
   BUCKET: R2Bucket
-  SUPABASE_URL: string
-  SUPABASE_ANON_KEY: string
-  SUPABASE_SERVICE_KEY: string
-  JPUSH_APP_KEY: string
-  JPUSH_MASTER_SECRET: string
+  SUPABASE_URL?: string
+  SUPABASE_ANON_KEY?: string
+  SUPABASE_SERVICE_KEY?: string
+  JPUSH_APP_KEY?: string
+  JPUSH_MASTER_SECRET?: string
+  JWT_SECRET?: string
+  RESEND_API_KEY?: string
+  RESEND_FROM?: string
 }
 
 // ==========================================
@@ -13,6 +16,10 @@ export type Bindings = {
 // ==========================================
 
 export type HomeBlockType =
+  | 'top_recommend_banner'
+  | 'today_recommend_scroll'
+  | 'deep_dive_feature'
+  | 'variety_show_grid'
   | 'hero_banner'
   | 'category_tabs'
   | 'section_title'
@@ -143,7 +150,91 @@ export interface AlbumRowBlock extends BaseHomeBlock {
   items: AlbumRowItem[]
 }
 
+export interface TopRecommendBannerData {
+  id: string
+  title: string
+  subtitle?: string
+  badge?: string
+  coverUrl: string
+  audioUrl?: string
+  artistName?: string
+  actionType: string
+  actionTarget: string
+}
+
+export interface TopRecommendBannerBlock extends BaseHomeBlock {
+  type: 'top_recommend_banner'
+  data: TopRecommendBannerData
+}
+
+export interface TodayRecommendItem {
+  id: string
+  title: string
+  artist: string
+  year?: string
+  subtitle?: string
+  coverUrl: string
+  audioUrl?: string
+  isTheme?: boolean
+  themeId?: string
+}
+
+export interface TodayRecommendScrollData {
+  title: string
+  subtitle?: string
+  items: TodayRecommendItem[]
+}
+
+export interface TodayRecommendScrollBlock extends BaseHomeBlock {
+  type: 'today_recommend_scroll'
+  data: TodayRecommendScrollData
+}
+
+export interface DeepDiveFeatureData {
+  id: string
+  title: string
+  tag?: string
+  summary?: string
+  coverUrl: string
+  audioUrl?: string
+  articleId?: string
+  albumId?: string
+  albumTitle?: string
+  primaryActionText?: string
+  secondaryActionText?: string
+}
+
+export interface DeepDiveFeatureBlock extends BaseHomeBlock {
+  type: 'deep_dive_feature'
+  data: DeepDiveFeatureData
+}
+
+export interface VarietyShowItem {
+  id: string
+  title: string
+  subtitle?: string
+  badge?: string
+  coverUrl: string
+  actionType: string
+  actionTarget: string
+}
+
+export interface VarietyShowGridData {
+  title: string
+  subtitle?: string
+  items: VarietyShowItem[]
+}
+
+export interface VarietyShowGridBlock extends BaseHomeBlock {
+  type: 'variety_show_grid'
+  data: VarietyShowGridData
+}
+
 export type HomeBlock =
+  | TopRecommendBannerBlock
+  | TodayRecommendScrollBlock
+  | DeepDiveFeatureBlock
+  | VarietyShowGridBlock
   | HeroBannerBlock
   | CategoryTabsBlock
   | SectionTitleBlock

@@ -103,6 +103,11 @@ function initAlbumManager() {
     if (coverInput) {
         coverInput.addEventListener('change', async () => {
             if (!currentAlbumId || !coverInput.files || coverInput.files.length === 0) return;
+            if (window.MOODY_SAFETY_VALVE_ACTIVE) {
+                showToast('🚨 存储安全阀已激活：三桶存储已处于只读保护，禁止写入新文件！', 'error');
+                coverInput.value = '';
+                return;
+            }
             const file = coverInput.files[0];
             showToast('正在上传新封面到 Cloudflare R2...');
 

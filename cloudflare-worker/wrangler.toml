@@ -4,6 +4,8 @@ compatibility_date = "2024-03-01"
 
 
 
+account_id = "0bd18c2b8609958f139bed5fdbe6b3f5"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "moody-d1-test"
@@ -14,5 +16,10 @@ binding = "BUCKET"
 bucket_name = "moody-music-asset"
 
 [vars]
+JWT_SECRET = "moody-music-production-jwt-secret-key-songbook-2026"
+RESEND_API_KEY = "your_resend_api_key_here"
+RESEND_FROM = "Moody Music <no-reply@changgepd.ccwu.cc>"
 SUPABASE_URL = "https://tvrnftaciirswmvpsngp.supabase.co"
 SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR2cm5mdGFjaWlyc3dtdnBzbmdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4MTkwODgsImV4cCI6MjA5MTM5NTA4OH0.nKHLdkBXOCwA_e5TQZfSDFVZ8ucHbJb8JuIt4DC4Kuc"
+JPUSH_APP_KEY = "cab5e87b9dd9b0acd6df56c3"
+JPUSH_MASTER_SECRET = "ecab4b7671b57c78bbd72c22"

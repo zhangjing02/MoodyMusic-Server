@@ -1,0 +1,397 @@
+{
+  "summary": {
+    "total_artists": 137,
+    "total_albums": 1570,
+    "total_songs": 18868,
+    "lit_songs": 6059,
+    "empty_path_songs": 12809,
+    "inverted_fields_count": 0,
+    "plain_text_paths_count": 0,
+    "bad_lrc_paths_count": 0,
+    "dup_fps_count": 0,
+    "empty_albums_count": 0,
+    "duplicate_albums_count": 0,
+    "duplicate_songs_in_alb_count": 19
+  },
+  "inverted_fields": [],
+  "plain_text_paths": [],
+  "bad_lrc_paths": [],
+  "dup_fps": {},
+  "empty_albums": [],
+  "duplicate_albums": {},
+  "duplicate_songs_in_alb": [
+    {
+      "artist": "Beyond",
+      "album": "Beyond命運派對 (超越時代紀念版)",
+      "norm_title": "兩顆心",
+      "songs": [
+        {
+          "id": null,
+          "title": "兩顆心",
+          "path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/Beyond/Beyond音樂大全101/s_536.mp3?link=484",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/Beyond/Beyond音樂大全101/s_536.lrc?link=484"
+        },
+        {
+          "id": null,
+          "title": "兩顆心",
+          "path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/Beyond/Beyond音樂大全101/s_536.mp3?link=496",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/Beyond/Beyond音樂大全101/s_536.lrc?link=496"
+        }
+      ]
+    },
+    {
+      "artist": "彭羚",
+      "album": "未完的小說",
+      "norm_title": "让我跟你走",
+      "songs": [
+        {
+          "id": null,
+          "title": "讓我跟你走",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "讓我跟你走",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "房东的猫",
+      "album": "Growing Pain II Original Sound Tracks",
+      "norm_title": "justrightinterludesongoftvseries<growingpainii>",
+      "songs": [
+        {
+          "id": null,
+          "title": "Just Right (Interlude song of TV Series <Growing Pain II>)",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "Just Right (Interlude song of TV Series <Growing Pain II>)",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "李玟",
+      "album": "Exposed",
+      "norm_title": "nodoubt",
+      "songs": [
+        {
+          "id": null,
+          "title": "No Doubt",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "No Doubt",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "王力宏",
+      "album": "唯一",
+      "norm_title": "爱的就是你",
+      "songs": [
+        {
+          "id": null,
+          "title": "愛的就是你",
+          "path": "music/王力宏/唯一/s_17748.mp3",
+          "lrc_path": "music/王力宏/唯一/s_17748.lrc"
+        },
+        {
+          "id": null,
+          "title": "愛的就是你",
+          "path": "music/王力宏/唯一/s_17757.mp3",
+          "lrc_path": "music/王力宏/唯一/s_17757.lrc"
+        }
+      ]
+    },
+    {
+      "artist": "田馥甄",
+      "album": "To Hebe",
+      "norm_title": "love",
+      "songs": [
+        {
+          "id": null,
+          "title": "Love?",
+          "path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15899.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15899.lrc"
+        },
+        {
+          "id": null,
+          "title": "Love!",
+          "path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15909.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15909.lrc"
+        }
+      ]
+    },
+    {
+      "artist": "腾格尔",
+      "album": "Surpass and New Heaven",
+      "norm_title": "themongolian",
+      "songs": [
+        {
+          "id": null,
+          "title": "The Mongolian",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "The Mongolian",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "苏慧伦",
+      "album": "自然喜歡你",
+      "norm_title": "有誰像你爱我",
+      "songs": [
+        {
+          "id": null,
+          "title": "有誰像你愛我",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "有誰像你愛我",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "海鷗飛處",
+      "norm_title": "海鷗飛处",
+      "songs": [
+        {
+          "id": null,
+          "title": "海鷗飛處",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "海鷗飛處",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "海鷗飛處",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "海鷗飛處",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "海鷗飛處",
+      "norm_title": "我希望我希望",
+      "songs": [
+        {
+          "id": null,
+          "title": "我希望我希望",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "我希望我希望",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "海鷗飛處",
+      "norm_title": "溫暖",
+      "songs": [
+        {
+          "id": null,
+          "title": "溫暖",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "溫暖",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "水漣漪",
+      "norm_title": "水漣漪",
+      "songs": [
+        {
+          "id": null,
+          "title": "水漣漪",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "水漣漪",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "一年又一年",
+      "songs": [
+        {
+          "id": null,
+          "title": "一年又一年",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "一年又一年",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "爱的歌聲",
+      "songs": [
+        {
+          "id": null,
+          "title": "愛的歌聲",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "愛的歌聲",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "月桃花",
+      "songs": [
+        {
+          "id": null,
+          "title": "月桃花",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "月桃花",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "莫奔跑",
+      "songs": [
+        {
+          "id": null,
+          "title": "莫奔跑",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "莫奔跑",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "八個娃娃",
+      "songs": [
+        {
+          "id": null,
+          "title": "八個娃娃",
+          "path": null,
+          "lrc_path": null
+        },
+        {
+          "id": null,
+          "title": "八個娃娃",
+          "path": null,
+          "lrc_path": null
+        }
+      ]
+    },
+    {
+      "artist": "金志文",
+      "album": "Growing Pain II Original Sound Tracks",
+      "norm_title": "justrightinterludesongoftvseries<growingpainii>",
+      "songs": [
+        {
+          "id": null,
+          "title": "Just Right (Interlude song of TV Series <Growing Pain II>)",
+          "path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/金志文/Growing Pain II Original Sound Tracks/s_8866.mp3?link=8862",
+          "lrc_path": "music/金志文/Growing Pain II Original Sound Tracks/s_8866.lrc?link=8862"
+        },
+        {
+          "id": null,
+          "title": "Just Right (Interlude song of TV Series <Growing Pain II>)",
+          "path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/金志文/Growing Pain II Original Sound Tracks/s_8866.mp3?link=8863",
+          "lrc_path": "music/金志文/Growing Pain II Original Sound Tracks/s_8866.lrc?link=8863"
+        }
+      ]
+    },
+    {
+      "artist": "飞儿乐团",
+      "album": "末日青春：补完计划",
+      "norm_title": "如果你说爱我",
+      "songs": [
+        {
+          "id": null,
+          "title": "如果你说爱我",
+          "path": null,
+          "lrc_path": "music/"
+        },
+        {
+          "id": null,
+          "title": "如果你说爱我",
+          "path": null,
+          "lrc_path": "music/"
+        }
+      ]
+    }
+  ]
+}

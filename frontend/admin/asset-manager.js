@@ -1178,6 +1178,12 @@
         const file = fileInput.files[0];
         if (!file) return;
 
+        if (window.MOODY_SAFETY_VALVE_ACTIVE) {
+            if (typeof showToast === 'function') showToast('🚨 存储安全阀已激活：三桶存储已处于只读保护，禁止写入新文件！', 'error');
+            fileInput.value = '';
+            return;
+        }
+
         if (typeof showToast === 'function') showToast(`正在上传 ${file.name} 至 Cloudflare R2...`);
 
         try {
@@ -1556,6 +1562,10 @@
     };
 
     async function executeR2Upload() {
+        if (window.MOODY_SAFETY_VALVE_ACTIVE) {
+            if (typeof showToast === 'function') showToast('🚨 存储安全阀已激活：三桶存储已处于只读保护，禁止写入新文件！', 'error');
+            return;
+        }
         const toUpload = pendingR2Files.filter(f => f.status === 'waiting' || f.status === 'error');
         if (toUpload.length === 0) return;
 

@@ -5,6 +5,7 @@ import { registerAuthRoutes, authMiddleware, requireAdmin } from './auth'
 import { registerPushRoutes } from './push'
 import { registerAlbumSocialRoutes } from './album_social'
 import { registerHomeFeedRoutes } from './home_feed'
+import { registerAppVersionRoutes } from './app_version'
 import type { Bindings } from './types'
 import { fail, normalizeLegacyErrorResponse, serverError } from './error'
 
@@ -109,6 +110,7 @@ registerAuthRoutes(app)
 registerPushRoutes(app)
 registerAlbumSocialRoutes(app, authMiddleware)
 registerHomeFeedRoutes(app)
+registerAppVersionRoutes(app)
 
 // ==========================================
 // Admin 路由保护（暂时开放，后续按需开启）
@@ -2034,7 +2036,7 @@ app.get('/api/debug/supabase-test', async (c) => {
       const restStart = Date.now()
       const restResponse = await fetch(`${supabaseUrl}/rest/v1/`, {
         headers: {
-          'apikey': c.env.SUPABASE_ANON_KEY,
+          'apikey': c.env.SUPABASE_ANON_KEY || '',
         },
         signal: AbortSignal.timeout(10000),
       })

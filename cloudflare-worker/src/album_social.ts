@@ -10,7 +10,7 @@ type AppType = { Bindings: Bindings; Variables: { user: any; token: string } }
  */
 export function registerAlbumSocialRoutes(app: Hono<AppType>, authMiddleware: any) {
   
-  const getSupabase = (env: Bindings) => createClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY)
+  const getSupabase = (env: Bindings) => createClient(env.SUPABASE_URL || 'https://placeholder.supabase.co', env.SUPABASE_ANON_KEY || 'anon')
 
   /**
    * 辅助函数：从 D1 获取当前用户的班级 ID

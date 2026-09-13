@@ -13,232 +13,144 @@ type AppType = { Bindings: Bindings; Variables: { user: any; token: string } }
  * 内置高质量默认首页切片流（确保在 D1/R2 未配置或初次启动时，任何情况下请求都不为空）
  */
 export const DEFAULT_HOME_FEED: HomeFeedData = {
-  version: '1.0.0',
-  updatedAt: '2026-08-16T16:00:00.000Z',
+  version: '2.0.0',
+  updatedAt: '2026-09-13T01:50:00.000Z',
   items: [
     {
-      id: 'block_hero_banner_main',
-      type: 'hero_banner',
-      title: '今日焦点',
-      subtitle: '精选专题与唱片故事',
+      id: 'block_top_recommend_banner',
+      type: 'top_recommend_banner',
       sortOrder: 1,
       visible: true,
-      autoPlay: true,
-      intervalMs: 5000,
-      items: [
-        {
-          id: 'hero_1',
-          title: '叶惠美 · 二十周年特别志',
-          subtitle: '古典交响与嘻哈重塑千禧流行黄金时代',
-          badge: '经典重温',
-          coverUrl: '/storage/covers/jay_yehuimei.jpg',
-          actionType: 'album',
-          actionTarget: 'db_1',
-          bgColor: '#1a1c23'
-        },
-        {
-          id: 'hero_2',
-          title: '李宗盛 · 感性与理性作品音乐会',
-          subtitle: '年少不听李宗盛，听懂已是不惑年',
-          badge: '岁月留声',
-          coverUrl: '/storage/covers/jonathan_rational.jpg',
-          actionType: 'artist',
-          actionTarget: 'db_2',
-          bgColor: '#2d1e18'
-        },
-        {
-          id: 'hero_3',
-          title: '黑胶唱片架里的时光印记',
-          subtitle: '收录 80-00 年代华语流行黄金唱片',
-          badge: '专题企划',
-          coverUrl: '/storage/covers/vinyl_collection.jpg',
-          actionType: 'playlist',
-          actionTarget: 'classic_vinyl',
-          bgColor: '#18232c'
-        }
-      ]
+      data: {
+        id: 'snow_cafe_theme',
+        title: '《雪天咖啡館的閱讀鋼琴》',
+        subtitle: '窗邊熱咖啡、一本書，慢慢過今天',
+        badge: 'TOP 推荐',
+        coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/home/snow_cafe_static.jpg',
+        audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/snow_cafe_piano.mp3',
+        artistName: '放鬆鋼琴 · 慢時光',
+        actionType: 'theme',
+        actionTarget: 'snow_cafe_theme'
+      }
     },
     {
-      id: 'block_category_tabs_main',
-      type: 'category_tabs',
-      title: '分类导航',
+      id: 'block_today_recommend_scroll',
+      type: 'today_recommend_scroll',
       sortOrder: 2,
       visible: true,
-      items: [
-        { id: 'tab_all', label: '全部精选', icon: 'sparkles', categoryKey: 'all' },
-        { id: 'tab_mandopop', label: '华语流行', icon: 'music_note', categoryKey: 'mandopop' },
-        { id: 'tab_nostalgia', label: '千禧记忆', icon: 'history', categoryKey: 'nostalgia' },
-        { id: 'tab_folk', label: '城市民谣', icon: 'acoustic', categoryKey: 'folk' },
-        { id: 'tab_rock', label: '摇滚现场', icon: 'electric_bolt', categoryKey: 'rock' },
-        { id: 'tab_soundtrack', label: '时代原声', icon: 'movie', categoryKey: 'soundtrack' },
-        { id: 'tab_instrumental', label: '纯音器乐', icon: 'piano', categoryKey: 'instrumental' }
-      ]
+      data: {
+        title: '今日推荐',
+        subtitle: "TODAY'S VINYL SELECTION",
+        items: [
+          {
+            id: 'bach_cello_theme',
+            title: '巴赫大提琴作品集',
+            artist: 'Lu Dimon & Mu Dimon',
+            year: '1720 / 2026',
+            subtitle: '让巴赫的大提琴安抚浮躁的心',
+            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/albums/bach_cello_cover.jpg',
+            audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/bach_cello_collection.mp3',
+            isTheme: true,
+            themeId: 'bach_cello_theme'
+          },
+          {
+            id: 'jonathan_lee_theme',
+            title: '理性與感性',
+            artist: '李宗盛',
+            year: '2007',
+            subtitle: '30首歲月金曲 · 寫盡人世間的悲歡離合',
+            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/album_jonathan_lee.jpg',
+            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/jonathan_lee_30.m4a',
+            isTheme: true,
+            themeId: 'jonathan_lee_theme'
+          },
+          {
+            id: 'lofi_chill_theme',
+            title: '忘記時間的旋律',
+            artist: 'Lova Radio',
+            year: '2026',
+            subtitle: 'Lo-fi Chill 溫柔旋律陪你慢慢回血',
+            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/albums/lofi_chill_cover.jpg',
+            audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/lofi_chill.mp3',
+            isTheme: true,
+            themeId: 'lofi_chill_theme'
+          },
+          {
+            id: 'pop_piano_theme',
+            title: '華語經典鋼琴曲',
+            artist: 'Love Piano',
+            year: '2026',
+            subtitle: '流行情歌鋼琴改編，只想靜靜聽音樂',
+            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/pop_piano_cover.jpg',
+            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/pop_piano.mp3',
+            isTheme: true,
+            themeId: 'pop_piano_theme'
+          }
+        ]
+      }
     },
     {
-      id: 'block_sec_artists_title',
-      type: 'section_title',
-      title: '时光音乐人',
-      subtitle: '跨越岁月的经典歌者与时代声音',
-      actionText: '查看全部',
-      actionType: 'navigate',
-      actionTarget: '/artists',
+      id: 'block_deep_dive_feature',
+      type: 'deep_dive_feature',
       sortOrder: 3,
-      visible: true
+      visible: true,
+      data: {
+        id: 'butterfly_lovers_deep_dive',
+        title: '《梁祝》小提琴协奏曲：东方交响的化蝶史诗',
+        tag: '深度名作解析 · DEEP DIVE',
+        summary: '以西方交响之弓，引越剧缠绵之韵。何占豪与陈钢笔下的东方绝唱，在草桥结拜、长亭惜别、抗婚哭灵与双双化蝶中，成就半个世纪的传世经典。',
+        coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/hero/butterfly_lovers_hero_clean.jpg',
+        audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/butterfly_lovers_concerto.mp3',
+        articleId: 'butterfly_lovers_deep_dive',
+        albumId: 'butterfly_lovers_album',
+        albumTitle: '《梁祝》小提琴协奏曲',
+        primaryActionText: '阅读深度专题',
+        secondaryActionText: '聆听全曲'
+      }
     },
     {
-      id: 'block_artist_grid_main',
-      type: 'artist_grid',
-      title: '推荐歌手',
+      id: 'block_variety_show_grid',
+      type: 'variety_show_grid',
       sortOrder: 4,
       visible: true,
-      layout: 'grid',
-      items: [
-        {
-          id: 'db_1',
-          name: '周杰伦',
-          avatarUrl: '/src/assets/images/jay/avatar.jpg',
-          countText: '14 张专辑 · 140+ 首曲目',
-          tag: '华语天王',
-          category: '华语'
-        },
-        {
-          id: 'db_2',
-          name: '李宗盛',
-          avatarUrl: '/src/assets/images/avatars/jonathan.jpg',
-          countText: '传奇制作人 · 历年精选',
-          tag: '华语教父',
-          category: '华语'
-        },
-        {
-          id: 'db_3',
-          name: '张学友',
-          avatarUrl: '/src/assets/images/avatars/jacky.jpg',
-          countText: '歌神经典 · 世纪典藏',
-          tag: '歌神',
-          category: '华语'
-        },
-        {
-          id: 'db_4',
-          name: '王菲',
-          avatarUrl: '/src/assets/images/avatars/faye.jpg',
-          countText: '天籁空灵 · 时代传奇',
-          tag: '传奇歌后',
-          category: '华语'
-        }
-      ]
-    },
-    {
-      id: 'block_essay_card_fantasy',
-      type: 'essay_card',
-      title: '唱片故事 · 《范特西》的黄金幻想',
-      subtitle: '从《爱在西元前》到《安静》，一场划时代的音乐冒险',
-      author: 'MOODY 选乐志',
-      publishDate: '2001-09-20',
-      excerpt: '2001年的秋天，《范特西》横空出世，以无与伦比的天马行空重塑了华语流行音乐的黄金轮廓。巴比伦泥板上的誓言，美索不达米亚平原的风，都被谱写进属于千禧年代的青春旋律里...',
-      coverUrl: '/storage/covers/fantasy.jpg',
-      albumId: 'db_1',
-      artistName: '周杰伦',
-      tag: '深度品鉴',
-      actionUrl: '/album/db_1',
-      sortOrder: 5,
-      visible: true
-    },
-    {
-      id: 'block_sec_tracks_title',
-      type: 'section_title',
-      title: '今日私享单曲',
-      subtitle: '岁月留声，一键开启静心聆听',
-      actionText: '全部曲库',
-      actionType: 'navigate',
-      actionTarget: '/songs',
-      sortOrder: 6,
-      visible: true
-    },
-    {
-      id: 'block_track_list_main',
-      type: 'track_list',
-      title: '精选单曲推荐',
-      sortOrder: 7,
-      visible: true,
-      items: [
-        {
-          id: 1,
-          title: '晴天',
-          artistName: '周杰伦',
-          albumTitle: '叶惠美',
-          coverUrl: '/storage/covers/jay_yehuimei.jpg',
-          filePath: 'music/周杰伦/叶惠美/晴天.mp3',
-          duration: 269,
-          badge: '精选'
-        },
-        {
-          id: 2,
-          title: '山丘',
-          artistName: '李宗盛',
-          albumTitle: '山丘',
-          coverUrl: '/storage/covers/shantiq.jpg',
-          filePath: 'music/李宗盛/山丘/山丘.mp3',
-          duration: 405,
-          badge: '经典'
-        },
-        {
-          id: 3,
-          title: '遥远的她',
-          artistName: '张学友',
-          albumTitle: '遥远的她AMOUR',
-          coverUrl: '/storage/covers/yaoyuan.jpg',
-          filePath: 'music/张学友/遥远的她/遥远的她.mp3',
-          duration: 257,
-          badge: '留声'
-        },
-        {
-          id: 4,
-          title: '红豆',
-          artistName: '王菲',
-          albumTitle: '唱游',
-          coverUrl: '/storage/covers/changyou.jpg',
-          filePath: 'music/王菲/唱游/红豆.mp3',
-          duration: 258,
-          badge: '回忆'
-        }
-      ]
-    },
-    {
-      id: 'block_album_row_main',
-      type: 'album_row',
-      title: '经典唱片回顾',
-      subtitle: '不可错过的传世黑胶',
-      sortOrder: 8,
-      visible: true,
-      items: [
-        {
-          id: 'db_1',
-          title: '叶惠美',
-          artistName: '周杰伦',
-          coverUrl: '/storage/covers/jay_yehuimei.jpg',
-          releaseDate: '2003-07-31',
-          songCount: 11,
-          tag: '传世金曲'
-        },
-        {
-          id: 'db_2',
-          title: '范特西',
-          artistName: '周杰伦',
-          coverUrl: '/storage/covers/fantasy.jpg',
-          releaseDate: '2001-09-20',
-          songCount: 10,
-          tag: '时代风暴'
-        },
-        {
-          id: 'db_3',
-          title: '感性与理性作品音乐会',
-          artistName: '李宗盛',
-          coverUrl: '/storage/covers/jonathan_rational.jpg',
-          releaseDate: '2007-03-09',
-          songCount: 28,
-          tag: '现场经典'
-        }
-      ]
+      data: {
+        title: '音乐综艺精选',
+        subtitle: 'POPULAR MUSIC VARIETY',
+        items: [
+          {
+            id: 'variety_voice_of_china',
+            title: '中国好声音',
+            subtitle: '导师盲选 · 为梦想转身',
+            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/voice_of_china.jpg',
+            actionType: 'playlist',
+            actionTarget: 'voice_of_china'
+          },
+          {
+            id: 'variety_i_am_singer',
+            title: '我是歌手',
+            subtitle: '殿堂唱将 · 极致交响Live',
+            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/i_am_singer.jpg',
+            actionType: 'playlist',
+            actionTarget: 'i_am_singer'
+          },
+          {
+            id: 'variety_masked_singer',
+            title: '蒙面唱将猜猜猜',
+            subtitle: '面具之下 · 纯粹原声共鸣',
+            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/masked_singer.jpg',
+            actionType: 'playlist',
+            actionTarget: 'masked_singer'
+          },
+          {
+            id: 'variety_big_band',
+            title: '乐队的夏天',
+            subtitle: '燥热现场 · 独立原创摇滚',
+            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/big_band.jpg',
+            actionType: 'playlist',
+            actionTarget: 'big_band'
+          }
+        ]
+      }
     }
   ]
 }
@@ -272,6 +184,39 @@ export function normalizeHomeFeedUrls(feedData: HomeFeedData, baseUrl: string): 
     const block = { ...rawBlock } as HomeBlock
 
     switch (block.type) {
+      case 'top_recommend_banner':
+        if (block.data) {
+          if (block.data.coverUrl) block.data.coverUrl = normalizeResourceUrl(block.data.coverUrl, baseUrl, 'cover')
+          if (block.data.audioUrl) block.data.audioUrl = normalizeResourceUrl(block.data.audioUrl, baseUrl, 'mp3')
+        }
+        break
+
+      case 'today_recommend_scroll':
+        if (block.data && Array.isArray(block.data.items)) {
+          block.data.items = block.data.items.map((item: any) => ({
+            ...item,
+            coverUrl: normalizeResourceUrl(item.coverUrl, baseUrl, 'cover'),
+            audioUrl: item.audioUrl ? normalizeResourceUrl(item.audioUrl, baseUrl, 'mp3') : undefined
+          }))
+        }
+        break
+
+      case 'deep_dive_feature':
+        if (block.data) {
+          if (block.data.coverUrl) block.data.coverUrl = normalizeResourceUrl(block.data.coverUrl, baseUrl, 'cover')
+          if (block.data.audioUrl) block.data.audioUrl = normalizeResourceUrl(block.data.audioUrl, baseUrl, 'mp3')
+        }
+        break
+
+      case 'variety_show_grid':
+        if (block.data && Array.isArray(block.data.items)) {
+          block.data.items = block.data.items.map((item: any) => ({
+            ...item,
+            coverUrl: normalizeResourceUrl(item.coverUrl, baseUrl, 'cover')
+          }))
+        }
+        break
+
       case 'hero_banner':
         if (Array.isArray(block.items)) {
           block.items = block.items.map((item) => ({

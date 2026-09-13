@@ -26,6 +26,7 @@
     object-position: right top; /* 关键：靠右上锚定，确保任意屏幕宽高比下右上角的黑胶唱片与摆臂都 100% 完整显示，绝不被裁剪 */
     opacity: 0.92;
     filter: brightness(0.95) contrast(1.05);
+    z-index: 2;
 }
 
 .ambient-vignette {
@@ -34,6 +35,7 @@
     /* 极其通透微暗角，完全不遮盖视频画质，中心 100% 透明 */
     background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.25) 80%, rgba(0, 0, 0, 0.5) 100%);
     pointer-events: none;
+    z-index: 3;
 }
 
 .ambient-image {
@@ -47,6 +49,7 @@
     opacity: 0.95;
     filter: brightness(0.96) contrast(1.03);
     transition: opacity 0.5s ease;
+    z-index: 1;
 }
 
 .ambient-dust-particles {
@@ -791,4 +794,163 @@ body.zen-active .zen-overlay {
         height: 70px;
         bottom: 95px;
     }
+}
+
+/* --- 8. 沉浸屏保载入优雅过渡页 (Zen Transition Overlay - 彻底消除黑屏等待) --- */
+.zen-transition-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+    background: radial-gradient(circle at 50% 45%, rgba(18, 20, 28, 0.86) 0%, rgba(8, 9, 12, 0.96) 100%);
+    backdrop-filter: blur(28px) saturate(140%);
+    -webkit-backdrop-filter: blur(28px) saturate(140%);
+}
+
+.zen-transition-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.zen-transition-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 38px 44px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(212, 175, 55, 0.08);
+    max-width: 400px;
+    width: 88%;
+    transform: scale(0.95) translateY(10px);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+
+.zen-transition-overlay.active .zen-transition-card {
+    transform: scale(1) translateY(0);
+}
+
+.zen-transition-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.16) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(25px);
+}
+
+.zen-transition-avatar-wrap {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+.zen-transition-icon {
+    font-size: 36px;
+    line-height: 1;
+    filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.4));
+    animation: zenIconFloat 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes zenIconFloat {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-4px) scale(1.06); }
+}
+
+.zen-transition-spinner {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--accent, #d4af37);
+    border-right-color: rgba(212, 175, 55, 0.3);
+    animation: zenSpin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+}
+
+@keyframes zenSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.zen-transition-title {
+    position: relative;
+    z-index: 1;
+    font-size: 19px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin: 22px 0 6px 0;
+}
+
+.zen-transition-desc {
+    position: relative;
+    z-index: 1;
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.52);
+    line-height: 1.5;
+    margin: 0 0 22px 0;
+}
+
+.zen-transition-loader {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.zen-transition-bar {
+    width: 150px;
+    height: 2.5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.zen-transition-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    background: linear-gradient(90deg, transparent, var(--accent, #d4af37), transparent);
+    border-radius: 999px;
+    animation: zenBarSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes zenBarSlide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(250%); }
+}
+
+.zen-transition-tip {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.6px;
 }

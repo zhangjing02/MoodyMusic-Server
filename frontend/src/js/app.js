@@ -965,12 +965,13 @@ async function initApp() {
             const skeletonResponse = await fetch(`${API_BASE}/api/skeleton?light=true`);
             if (skeletonResponse.ok) {
                 const res = await skeletonResponse.json();
-                allArtistsData = (res.data && res.data.artists) ? res.data.artists : (res.data || []);
+                const rawArtists = (res.data && res.data.artists) ? res.data.artists : (res.data || []);
+                allArtistsData = rawArtists.filter(a => (a.albumCount || 0) > 0);
 
                 if (allArtistsData.length > 0) {
                     // 存入 sessionStorage 供后续刷新复用
                     try { sessionStorage.setItem('moody_skeleton_cache', JSON.stringify(allArtistsData)); } catch (e) {}
-                    console.log(`[MOODY] 已快速载入 ${allArtistsData.length} 位艺人骨架`);
+                    console.log(`[MOODY] 已快速载入 ${allArtistsData.length} 位有效艺人骨架 (已过滤空壳)`);
                 } else {
                     console.warn('[MOODY] 数据库骨架为空。请确保已执行过初始扫描。');
                     dom.vMeta.innerHTML = '<span style="color:var(--accent)">无名录数据</span> - 请执行治理接口';
@@ -1821,8 +1822,18 @@ async function selectArtist(target) {
                     const json = await res.json();
                     const detailData = json.data && json.data.length > 0 ? json.data[0] : null;
                     if (detailData && detailData.albums && detailData.albums.length > 0) {
-                        artist.albums = detailData.albums;
-                        console.log(`✓ 真实后台实时名录已同步 [${artist.name}]: 共 ${artist.albums.length} 张专辑`);
+                        // 过滤掉 0 歌曲空专辑，并按专辑名称防重
+                        const validAlbs = detailData.albums.filter(alb => alb.songs && alb.songs.length > 0);
+                        const seenAlbTitles = new Set();
+                        artist.albums = [];
+                        for (const alb of validAlbs) {
+                            const normTitle = (alb.title || '').trim().toLowerCase();
+                            if (!seenAlbTitles.has(normTitle)) {
+                                seenAlbTitles.add(normTitle);
+                                artist.albums.push(alb);
+                            }
+                        }
+                        console.log(`✓ 真实后台实时名录已同步 [${artist.name}]: 共 ${artist.albums.length} 张专辑 (已过滤空壳与重名)`);
                     } else {
                         console.log(`[MOODY] ${artist.name}: 后台返回空专辑列表 (该艺人可能暂无专辑数据)`);
                     }

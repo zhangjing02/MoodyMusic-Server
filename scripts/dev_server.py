@@ -32,7 +32,7 @@ class MoodyLiveRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         # 拦截 R2 状态接口，0 延迟实时动态核算
         clean_path = self.path.split('?')[0]
-        if clean_path in ['/admin/r2_stats.json', '/r2_stats.json']:
+        if clean_path.endswith('r2_stats.json'):
             try:
                 stats = check_storage()
                 content = json.dumps(stats, ensure_ascii=False, indent=2).encode('utf-8')

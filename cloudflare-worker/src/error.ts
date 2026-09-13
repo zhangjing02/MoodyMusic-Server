@@ -26,6 +26,13 @@ export const ERROR_DEFINITIONS = {
   REFRESH_TOKEN_INVALID: { code: 1202, httpStatus: 401, message: '刷新失败，请重新登录' },
   USER_NOT_FOUND: { code: 1203, httpStatus: 404, message: '用户不存在' },
   EMAIL_INVALID: { code: 1204, httpStatus: 400, message: '邮箱格式不正确' },
+  SEND_CODE_FAILED: { code: 1212, httpStatus: 400, message: '验证码发送失败，请稍后重试' },
+  VERIFY_CODE_FAILED: { code: 1213, httpStatus: 400, message: '验证码无效或已过期' },
+  RATE_LIMITED: { code: 1214, httpStatus: 429, message: '请求过于频繁，请稍后再试' },
+  EMAIL_ALREADY_REGISTERED: { code: 1215, httpStatus: 409, message: '该邮箱已被注册' },
+  INVALID_USERNAME: { code: 1216, httpStatus: 400, message: '用户名需在 2-20 位字符，支持中文汉字、英文字母、数字与下划线' },
+  USERNAME_ALREADY_EXISTS: { code: 1217, httpStatus: 409, message: '该用户名已被占用，请换一个用户名' },
+  DEFAULT_USERNAME_TAKEN: { code: 1218, httpStatus: 409, message: '默认用户名已被占用，请手动输入专属用户名' },
   RESET_EMAIL_NOT_BOUND: { code: 1205, httpStatus: 403, message: '该账号未绑定邮箱，请联系班长（管理员）重置密码' },
   RESET_REQUEST_NOT_FOUND: { code: 1206, httpStatus: 401, message: '未找到有效的重置请求，请重新申请' },
   RESET_CODE_EXPIRED: { code: 1207, httpStatus: 410, message: '验证码已过期，请重新申请' },
@@ -70,8 +77,12 @@ type ErrorOptions = {
   httpStatus?: number
 }
 
-export function errorBody(key: ErrorKey, options: ErrorOptions = {}) {
-  const definition = ERROR_DEFINITIONS[key]
+export function errorBody(key: ErrorKey | string, options: ErrorOptions = {}) {
+  const definition = (ERROR_DEFINITIONS as any)[key] || {
+    code: 1003,
+    httpStatus: 400,
+    message: options.message || '操作失败'
+  }
   return {
     code: definition.code,
     error_key: key,
@@ -80,8 +91,12 @@ export function errorBody(key: ErrorKey, options: ErrorOptions = {}) {
   }
 }
 
-export function fail(c: Context<any>, key: ErrorKey, options: ErrorOptions = {}) {
-  const definition = ERROR_DEFINITIONS[key]
+export function fail(c: Context<any>, key: ErrorKey | string, options: ErrorOptions = {}) {
+  const definition = (ERROR_DEFINITIONS as any)[key] || {
+    code: 1003,
+    httpStatus: 400,
+    message: options.message || '操作失败'
+  }
   return c.json(
     errorBody(key, options),
     (options.httpStatus || definition.httpStatus) as any

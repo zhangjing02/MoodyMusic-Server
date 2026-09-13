@@ -1,0 +1,242 @@
+{
+  "total_artists": 137,
+  "total_albums": 1572,
+  "total_songs": 18888,
+  "lit_songs": 6079,
+  "lrc_songs": 6191,
+  "zero_album_artists": [
+    [
+      "db_132",
+      "汪晨蕊"
+    ]
+  ],
+  "empty_albums": [],
+  "dup_albums_per_artist": [],
+  "dup_songs_in_album": [
+    {
+      "artist": "Beyond",
+      "album": "Beyond命運派對 (超越時代紀念版)",
+      "norm_title": "兩顆心",
+      "count": 2,
+      "titles": [
+        "兩顆心",
+        "兩顆心"
+      ]
+    },
+    {
+      "artist": "彭羚",
+      "album": "未完的小說",
+      "norm_title": "让我跟你走",
+      "count": 2,
+      "titles": [
+        "讓我跟你走",
+        "讓我跟你走"
+      ]
+    },
+    {
+      "artist": "房东的猫",
+      "album": "Growing Pain II Original Sound Tracks",
+      "norm_title": "justrightinterludesongoftvseries<growingpainii>",
+      "count": 2,
+      "titles": [
+        "Just Right (Interlude song of TV Series <Growing Pain II>)",
+        "Just Right (Interlude song of TV Series <Growing Pain II>)"
+      ]
+    },
+    {
+      "artist": "李玟",
+      "album": "Exposed",
+      "norm_title": "nodoubt",
+      "count": 2,
+      "titles": [
+        "No Doubt",
+        "No Doubt"
+      ]
+    },
+    {
+      "artist": "王力宏",
+      "album": "唯一",
+      "norm_title": "爱的就是你",
+      "count": 2,
+      "titles": [
+        "愛的就是你",
+        "愛的就是你"
+      ]
+    },
+    {
+      "artist": "田馥甄",
+      "album": "To Hebe",
+      "norm_title": "love",
+      "count": 2,
+      "titles": [
+        "Love?",
+        "Love!"
+      ]
+    },
+    {
+      "artist": "腾格尔",
+      "album": "Surpass and New Heaven",
+      "norm_title": "themongolian",
+      "count": 2,
+      "titles": [
+        "The Mongolian",
+        "The Mongolian"
+      ]
+    },
+    {
+      "artist": "苏慧伦",
+      "album": "自然喜歡你",
+      "norm_title": "有誰像你爱我",
+      "count": 2,
+      "titles": [
+        "有誰像你愛我",
+        "有誰像你愛我"
+      ]
+    },
+    {
+      "artist": "苏打绿",
+      "album": "Spring · Daylight (sodagreen Version)",
+      "norm_title": "",
+      "count": 2,
+      "titles": [
+        ".",
+        ". ."
+      ]
+    },
+    {
+      "artist": "苏打绿",
+      "album": "Autumn: Stories (sodagreen Version)",
+      "norm_title": "",
+      "count": 4,
+      "titles": [
+        ":",
+        ": :",
+        ": : :",
+        ": : : :"
+      ]
+    },
+    {
+      "artist": "苏打绿",
+      "album": "Winter Endless (sodagreen Version)",
+      "norm_title": "",
+      "count": 2,
+      "titles": [
+        ":",
+        "."
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "海鷗飛處",
+      "norm_title": "海鷗飛处",
+      "count": 4,
+      "titles": [
+        "海鷗飛處",
+        "海鷗飛處",
+        "海鷗飛處",
+        "海鷗飛處"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "海鷗飛處",
+      "norm_title": "我希望我希望",
+      "count": 2,
+      "titles": [
+        "我希望我希望",
+        "我希望我希望"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "海鷗飛處",
+      "norm_title": "溫暖",
+      "count": 2,
+      "titles": [
+        "溫暖",
+        "溫暖"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "水漣漪",
+      "norm_title": "水漣漪",
+      "count": 2,
+      "titles": [
+        "水漣漪",
+        "水漣漪"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "一年又一年",
+      "count": 2,
+      "titles": [
+        "一年又一年",
+        "一年又一年"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "爱的歌聲",
+      "count": 2,
+      "titles": [
+        "愛的歌聲",
+        "愛的歌聲"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "月桃花",
+      "count": 2,
+      "titles": [
+        "月桃花",
+        "月桃花"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "莫奔跑",
+      "count": 2,
+      "titles": [
+        "莫奔跑",
+        "莫奔跑"
+      ]
+    },
+    {
+      "artist": "邓丽君",
+      "album": "鄧麗君演唱姚莉名曲選",
+      "norm_title": "八個娃娃",
+      "count": 2,
+      "titles": [
+        "八個娃娃",
+        "八個娃娃"
+      ]
+    },
+    {
+      "artist": "金志文",
+      "album": "Growing Pain II Original Sound Tracks",
+      "norm_title": "justrightinterludesongoftvseries<growingpainii>",
+      "count": 2,
+      "titles": [
+        "Just Right (Interlude song of TV Series <Growing Pain II>)",
+        "Just Right (Interlude song of TV Series <Growing Pain II>)"
+      ]
+    },
+    {
+      "artist": "飞儿乐团",
+      "album": "末日青春：补完计划",
+      "norm_title": "如果你说爱我",
+      "count": 2,
+      "titles": [
+        "如果你说爱我",
+        "如果你说爱我"
+      ]
+    }
+  ],
+  "dup_fps": {}
+}

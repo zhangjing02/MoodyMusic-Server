@@ -9,6 +9,7 @@ storage/db/moody.db
 .env.*
 
 # 2. 媒体资源与备份 (仅同步代码与关键元数据)
+*.mp3
 storage/music/*
 storage/covers/*
 storage/lyrics/*

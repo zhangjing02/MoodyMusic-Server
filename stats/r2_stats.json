@@ -1,0 +1,34 @@
+{
+  "cluster_mode": "tri_bucket",
+  "total_capacity_gb": 30.0,
+  "total_used_gb": 16.381,
+  "total_remaining_safe_gb": 12.619,
+  "total_lit": 3289,
+  "active_write_bucket": "moody-music-asset-02 (扩展桶)",
+  "last_updated": "2026-09-07 00:22:25",
+  "bucket_01": {
+    "name": "moody-music-asset",
+    "tracks": 1588,
+    "used_gb": 8.33,
+    "limit_gb": 10.0,
+    "status": "FROZEN_READONLY"
+  },
+  "bucket_02": {
+    "name": "moody-music-asset-02",
+    "tracks": 1730,
+    "used_gb": 8.051,
+    "limit_gb": 10.0,
+    "circuit_breaker_gb": 9.5,
+    "remaining_safe_gb": 1.449,
+    "status": "ACTIVE"
+  },
+  "bucket_03": {
+    "name": "moody-music-asset-03",
+    "tracks": 0,
+    "used_gb": 0.0,
+    "limit_gb": 10.0,
+    "circuit_breaker_gb": 9.5,
+    "remaining_safe_gb": 9.5,
+    "status": "STANDBY"
+  }
+}

@@ -265,9 +265,9 @@ def find_candidate_urls(artist: str, album: str, song: str):
                 vid, vtitle, vdur, vchannel = parts[0], parts[1], parts[2], parts[3]
                 norm_vtitle = zhconv.convert(re.sub(r'[\s\-_]', '', vtitle), 'zh-hans').lower()
                 
-                # 时长过滤：排除超过 7 分钟的整专合集或少于 1 分 15 秒的片段
+                # 时长过滤：排除超过 7 分钟的整专合集或少于 15 秒的过短片段 (保留前奏/序曲)
                 sec = parse_duration_sec(vdur)
-                if sec > 420 or (sec > 0 and sec < 75):
+                if sec > 480 or (sec > 0 and sec < 15):
                     continue
                 
                 if norm_song in norm_vtitle:

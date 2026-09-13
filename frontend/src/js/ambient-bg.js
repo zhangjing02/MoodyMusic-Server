@@ -25,80 +25,80 @@
             name: '夜市暖灯吉他',
             desc: '暖光灯串、木吉他独奏与闭目沉浸的听歌少女',
             icon: '🎸',
-            file: VIDEO_BASE + 'karen_street_acoustic.mp4',
+            file: VIDEO_BASE + 'karen_street_acoustic.mp4?v=5.1',
             localFile: 'src/assets/video/karen_street_acoustic.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_street_acoustic.webm',
-            imageFallback: 'src/assets/images/karen_street_acoustic.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_street_acoustic.webm?v=5.1',
+            imageFallback: 'src/assets/images/karen_street_acoustic.jpg?v=5.1'
         },
         karen_midnight_cafe: {
             id: 'karen_midnight_cafe',
             name: '深夜电台录音室',
             desc: '温馨复古录音室、暖色台灯、经典黑胶与咖啡',
             icon: '🎙️',
-            file: VIDEO_BASE + 'karen_midnight_cafe.mp4',
+            file: VIDEO_BASE + 'karen_midnight_cafe.mp4?v=5.0',
             localFile: 'src/assets/video/karen_midnight_cafe.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_midnight_cafe.webm',
-            imageFallback: 'src/assets/images/karen_midnight_cafe.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_midnight_cafe.webm?v=5.0',
+            imageFallback: 'src/assets/images/karen_midnight_cafe.jpg?v=5.0'
         },
         karen_candle_devotion: {
             id: 'karen_candle_devotion',
             name: '烛光静修小室',
             desc: '暖意烛光、复古台灯与静谧书斋',
             icon: '🕯️',
-            file: VIDEO_BASE + 'karen_candle_devotion.mp4',
+            file: VIDEO_BASE + 'karen_candle_devotion.mp4?v=5.0',
             localFile: 'src/assets/video/karen_candle_devotion.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_candle_devotion.webm',
-            imageFallback: 'src/assets/images/karen_candle_devotion.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_candle_devotion.webm?v=5.0',
+            imageFallback: 'src/assets/images/karen_candle_devotion.jpg?v=5.0'
         },
         karen_rainy_night: {
             id: 'karen_rainy_night',
             name: '雨夜微光静息',
             desc: '窗外沥沥小雨，室内温柔爵士与安息时光',
             icon: '🌧️',
-            file: VIDEO_BASE + 'karen_rainy_night.mp4',
+            file: VIDEO_BASE + 'karen_rainy_night.mp4?v=5.0',
             localFile: 'src/assets/video/karen_rainy_night.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_rainy_night.webm',
-            imageFallback: 'src/assets/images/karen_rainy_night.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_rainy_night.webm?v=5.0',
+            imageFallback: 'src/assets/images/karen_rainy_night.jpg?v=5.0'
         },
         karen_mountain_chapel: {
             id: 'karen_mountain_chapel',
             name: '远山圣殿晨曦',
             desc: '远山微风、圣殿晨光与静心时刻',
             icon: '⛪',
-            file: VIDEO_BASE + 'karen_mountain_chapel.mp4',
+            file: VIDEO_BASE + 'karen_mountain_chapel.mp4?v=5.0',
             localFile: 'src/assets/video/karen_mountain_chapel.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_mountain_chapel.webm',
-            imageFallback: 'src/assets/images/karen_mountain_chapel.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_mountain_chapel.webm?v=5.0',
+            imageFallback: 'src/assets/images/karen_mountain_chapel.jpg?v=5.0'
         },
         karen_morning_grace: {
             id: 'karen_morning_grace',
             name: '晨光初醒赞美',
             desc: '清晨的第一缕温暖日光与醇香咖啡',
             icon: '☕',
-            file: VIDEO_BASE + 'karen_morning_grace.mp4',
+            file: VIDEO_BASE + 'karen_morning_grace.mp4?v=5.1',
             localFile: 'src/assets/video/karen_morning_grace.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_morning_grace.webm',
-            imageFallback: 'src/assets/images/karen_morning_grace.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_morning_grace.webm?v=5.1',
+            imageFallback: 'src/assets/images/karen_morning_grace.jpg?v=5.1'
         },
         karen_peaceful_rest: {
             id: 'karen_peaceful_rest',
             name: '安息静水边',
             desc: '微风拂过绿野，轻柔抚慰疲惫心灵',
             icon: '🕊️',
-            file: VIDEO_BASE + 'karen_peaceful_rest.mp4',
+            file: VIDEO_BASE + 'karen_peaceful_rest.mp4?v=5.0',
             localFile: 'src/assets/video/karen_peaceful_rest.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_peaceful_rest.webm',
-            imageFallback: 'src/assets/images/karen_peaceful_rest.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_peaceful_rest.webm?v=5.0',
+            imageFallback: 'src/assets/images/karen_peaceful_rest.jpg?v=5.0'
         },
         karen_worship_jazz: {
             id: 'karen_worship_jazz',
             name: '晚安祷告爵士',
             desc: '温馨窗台、夜间微光与治愈陪伴',
             icon: '🌙',
-            file: VIDEO_BASE + 'karen_worship_jazz.mp4',
+            file: VIDEO_BASE + 'karen_worship_jazz.mp4?v=5.0',
             localFile: 'src/assets/video/karen_worship_jazz.mp4',
-            fallbackFile: VIDEO_BASE + 'karen_worship_jazz.webm',
-            imageFallback: 'src/assets/images/karen_worship_jazz.jpg'
+            fallbackFile: VIDEO_BASE + 'karen_worship_jazz.webm?v=5.0',
+            imageFallback: 'src/assets/images/karen_worship_jazz.jpg?v=5.0'
         },
         ocean: {
             id: 'ocean',
@@ -303,6 +303,13 @@
         dom.zenPauseIcon = document.getElementById('zenPauseIcon');
         dom.zenNextBtn = document.getElementById('zenNextBtn');
 
+        // 沉浸屏保载入过渡页 DOM 缓存
+        dom.zenTransitionOverlay = document.getElementById('zenTransitionOverlay');
+        dom.zenTransitionIcon = document.getElementById('zenTransitionIcon');
+        dom.zenTransitionTitle = document.getElementById('zenTransitionTitle');
+        dom.zenTransitionDesc = document.getElementById('zenTransitionDesc');
+        dom.zenTransitionTip = document.getElementById('zenTransitionTip');
+
         // 实景图片与动态音频频谱 DOM 缓存
         dom.image = document.getElementById('ambientImage');
         dom.dustParticles = document.getElementById('ambientDustParticles');
@@ -316,6 +323,11 @@
                     const localFallback = 'src/assets/images/sunset.jpg';
                     console.warn(`[Ambient] 远端日落素材加载受阻，平滑降级至本地资源: ${localFallback}`);
                     dom.image.src = localFallback;
+                }
+            });
+            dom.image.addEventListener('load', function () {
+                if (isZenMode && isTransitionActive) {
+                    hideZenTransition();
                 }
             });
         }
@@ -333,6 +345,18 @@
                     if (isZenMode) {
                         dom.video.play().catch(() => {});
                     }
+                }
+            });
+
+            // 当视频首帧实际开始渲染并流畅播放时，平滑揭开过渡页，告别黑屏等待
+            dom.video.addEventListener('playing', function () {
+                if (isZenMode && isTransitionActive) {
+                    hideZenTransition();
+                }
+            });
+            dom.video.addEventListener('timeupdate', function () {
+                if (isZenMode && isTransitionActive && dom.video.currentTime > 0.05) {
+                    hideZenTransition();
                 }
             });
         }
@@ -415,8 +439,14 @@
                 dom.dustParticles.style.display = (scene.id === 'sunset') ? 'block' : 'none';
             }
         } else if (scene.file) {
+            // 核心体验保障：如果有海报图，先在底层常驻显示海报，杜绝视频解码等待时的黑屏底衬
             if (dom.image) {
-                dom.image.style.display = 'none';
+                if (scene.imageFallback) {
+                    dom.image.src = scene.imageFallback;
+                    dom.image.style.display = 'block';
+                } else {
+                    dom.image.style.display = 'none';
+                }
             }
             if (dom.dustParticles) {
                 dom.dustParticles.style.display = 'none';
@@ -449,6 +479,11 @@
             if (dom.dustParticles) {
                 dom.dustParticles.style.display = 'none';
             }
+        }
+
+        // 若在屏保激活状态下切换场景，同步呈现优雅过渡页
+        if (isZenMode && scene && scene.id !== 'none') {
+            showZenTransition(scene, '正在切换视听画卷...');
         }
 
         // 更新侧边栏底部 Dock 的名称和图标
@@ -685,6 +720,50 @@
     }
 
 
+    let zenTransitionTimer = null;
+    let isTransitionActive = false;
+
+    /**
+     * 呈现沉浸屏保载入优雅过渡页（彻底消除黑屏等待）
+     */
+    function showZenTransition(scene, customTip) {
+        if (!dom.zenTransitionOverlay || !scene) return;
+        isTransitionActive = true;
+        clearTimeout(zenTransitionTimer);
+
+        if (dom.zenTransitionIcon) dom.zenTransitionIcon.textContent = scene.icon || '🌙';
+        if (dom.zenTransitionTitle) dom.zenTransitionTitle.textContent = scene.name || '沉浸视听';
+        if (dom.zenTransitionDesc) dom.zenTransitionDesc.textContent = scene.desc || '';
+        if (dom.zenTransitionTip) dom.zenTransitionTip.textContent = customTip || '沉浸视听画卷载入中...';
+
+        dom.zenTransitionOverlay.classList.add('active');
+
+        // 安全兜底计时器：防止弱网或极端情况下视频加载超时卡住过渡页 (最长显示 2.5 秒后平滑揭开)
+        zenTransitionTimer = setTimeout(() => {
+            hideZenTransition();
+        }, 2500);
+    }
+
+    /**
+     * 隐去沉浸屏保载入过渡页
+     */
+    function hideZenTransition(immediate = false) {
+        if (!dom.zenTransitionOverlay) return;
+        isTransitionActive = false;
+        clearTimeout(zenTransitionTimer);
+
+        if (immediate) {
+            dom.zenTransitionOverlay.classList.remove('active');
+        } else {
+            // 稍作微延迟平滑渐隐，保证视觉柔顺度
+            setTimeout(() => {
+                if (!isTransitionActive && dom.zenTransitionOverlay) {
+                    dom.zenTransitionOverlay.classList.remove('active');
+                }
+            }, 80);
+        }
+    }
+
     /**
      * 进入 Zen Mode (黑胶沉浸屏保)
      */
@@ -693,6 +772,16 @@
         isZenMode = true;
         document.body.classList.add('zen-active');
         closeSwitchMenu();
+
+        const scene = AMBIENT_SCENES[currentSceneId];
+
+        // 核心体验优化：在黑屏加载微动背景前，先唤出优雅过渡页，杜绝生硬黑屏
+        if (scene && scene.id !== 'none') {
+            const isVideoReady = dom.video && !dom.video.paused && dom.video.currentTime > 0.1 && dom.video.readyState >= 3;
+            if (!isVideoReady) {
+                showZenTransition(scene, '正在呈现沉浸画卷 · 步入禅意微光...');
+            }
+        }
 
         // 默认先浮现一次 HUD，4秒后隐去
         showZenHud(4000);
@@ -719,6 +808,9 @@
         document.body.classList.remove('zen-active');
         clearTimeout(zenHudTimer);
         if (dom.zenOverlay) dom.zenOverlay.classList.remove('zen-show-hud');
+
+        // 立即隐去载入过渡页
+        hideZenTransition(true);
 
         // 退出屏保后，立即暂停微动画视频，释放 GPU/CPU
         if (dom.video) {

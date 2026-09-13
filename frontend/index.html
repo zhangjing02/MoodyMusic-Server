@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="src/css/style.css?v=20260904_1148">
     <link rel="stylesheet" href="src/css/user_system.css?v=12.52">
     <link rel="stylesheet" href="src/css/notion_compact.css?v=1.0">
-    <link rel="stylesheet" href="src/css/ambient_zen.css?v=20260906_1355">
+    <link rel="stylesheet" href="src/css/ambient_zen.css?v=20260909_2030">
 </head>
 
 <body>
@@ -267,6 +267,25 @@
         <audio id="audioPlayer" preload="auto" crossorigin="anonymous"></audio>
     </div>
 
+    <!-- 沉浸屏保载入优雅过渡页 (Zen Transition Overlay - 彻底告别生硬黑屏) -->
+    <div id="zenTransitionOverlay" class="zen-transition-overlay" aria-hidden="true">
+        <div class="zen-transition-card">
+            <div class="zen-transition-glow"></div>
+            <div class="zen-transition-avatar-wrap">
+                <span class="zen-transition-icon" id="zenTransitionIcon">🌙</span>
+                <div class="zen-transition-spinner"></div>
+            </div>
+            <h3 class="zen-transition-title" id="zenTransitionTitle">晚安祷告爵士</h3>
+            <p class="zen-transition-desc" id="zenTransitionDesc">温馨窗台、夜间微光与治愈陪伴</p>
+            <div class="zen-transition-loader">
+                <div class="zen-transition-bar">
+                    <div class="zen-transition-bar-inner"></div>
+                </div>
+                <span class="zen-transition-tip" id="zenTransitionTip">沉浸视听画卷载入中...</span>
+            </div>
+        </div>
+    </div>
+
     <!-- 黑胶沉浸屏保 / 禅意视听层 (Zen Screensaver) -->
     <div id="zenOverlay" class="zen-overlay">
         <!-- 顶部极简控制栏 -->
@@ -353,7 +372,7 @@
     <!-- 微动画环境氛围与双态屏保模块 -->
     <!-- audioMotion-analyzer v4.5.4 专业频谱库（必须在 ambient-bg.js 之前加载） -->
     <script src="src/js/audiomotion-analyzer.js?v=20260906_1355"></script>
-    <script src="src/js/ambient-bg.js?v=20260907_0130"></script>
+    <script src="src/js/ambient-bg.js?v=20260909_2030"></script>
     <!-- 引入雪花特效 (最后加载) -->
     <script src="src/js/snow.js"></script>
     <script>

@@ -152,10 +152,10 @@
             animation: spin 0.8s linear infinite;
         }
 
-        /* Dual Bucket Grid */
+        /* Multi Bucket Grid (Tri-Bucket Cluster) */
         .dual-bucket-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 16px;
             margin-top: 18px;
         }
@@ -163,7 +163,7 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 10px;
-            padding: 18px 20px;
+            padding: 16px 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -177,35 +177,15 @@
         .bucket-card-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            padding-bottom: 12px;
+            align-items: center;
+            padding-bottom: 10px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         .bucket-tag-title {
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 600;
             color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .bucket-code-pill {
-            font-size: 11px;
-            padding: 2px 7px;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.06);
-            color: #a1a1aa;
-            font-family: monospace;
-        }
-        .bucket-code-pill.highlight-gold {
-            background: rgba(212, 175, 55, 0.15);
-            color: #f0c950;
-            border: 1px solid rgba(212, 175, 55, 0.25);
-        }
-        .bucket-sub-meta {
-            font-size: 11px;
-            color: #8a8a93;
-            margin-top: 4px;
+            letter-spacing: 0.3px;
         }
         .bucket-badge {
             font-size: 11px;
@@ -229,15 +209,24 @@
             border: 1px solid rgba(244, 63, 94, 0.35);
             color: #f43f5e;
         }
+        .bucket-badge.badge-locked {
+            background: rgba(239, 68, 68, 0.22);
+            border: 1px solid rgba(239, 68, 68, 0.65);
+            color: #f87171;
+            font-weight: 600;
+        }
+        .gauge-progress.stroke-locked {
+            stroke: #ef4444;
+        }
         .bucket-card-body {
             display: flex;
             align-items: center;
-            gap: 18px;
-            margin: 14px 0 10px 0;
+            gap: 14px;
+            margin: 12px 0 6px 0;
         }
         .bucket-dial-wrap {
-            width: 96px;
-            height: 96px;
+            width: 82px;
+            height: 82px;
             position: relative;
             flex-shrink: 0;
         }
@@ -277,44 +266,49 @@
             text-align: center;
         }
         .bucket-dial-pct {
-            font-size: 19px;
+            font-size: 17px;
             font-weight: 700;
             color: #ffffff;
             line-height: 1;
             font-variant-numeric: tabular-nums;
         }
         .bucket-dial-sub {
-            font-size: 10px;
+            font-size: 9.5px;
             color: #8a8a93;
             margin-top: 3px;
             font-variant-numeric: tabular-nums;
         }
         .bucket-simple-info {
             flex: 1;
+            min-width: 0;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
         }
         .simple-stat-row {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            font-size: 13px;
+            font-size: 12.5px;
         }
         .simple-stat-row .stat-label {
             color: #8a8a93;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-right: 6px;
         }
         .simple-stat-row .stat-val {
             color: #a1a1aa;
+            white-space: nowrap;
             font-variant-numeric: tabular-nums;
         }
         .simple-stat-row .stat-val strong {
             color: #ffffff;
-            font-size: 14.5px;
+            font-size: 13.5px;
             font-weight: 600;
         }
-        @media (max-width: 860px) {
+        @media (max-width: 1080px) {
             .dual-bucket-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -388,7 +382,10 @@
                             <div>
                                 <div class="hub-title-main">Cloudflare R2 存储</div>
                                 <div class="hub-meta-line">
-                                    <span>双桶总用量: <strong id="cluster-total-summary">8.55 GB / 20 GB</strong></span>
+                                    <span>三桶集群总用量: <strong id="cluster-total-summary">-- GB / 30 GB</strong></span>
+                                    <span id="cluster-safety-pill" style="display:none; align-items:center; gap:4px; margin-left:12px; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; background:rgba(239, 68, 68, 0.2); border:1px solid rgba(239, 68, 68, 0.6); color:#f87171;">
+                                        🔒 安全阀锁死 (全局只读保护)
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -406,37 +403,34 @@
                         </div>
                     </div>
 
-                    <!-- 双桶极简并列卡片 -->
+                    <!-- 三桶极简并列卡片 (Tri-Bucket Cluster) -->
                     <div class="dual-bucket-grid">
                         <!-- Bucket 01 (主桶) -->
                         <div class="bucket-card" id="bucket1-card">
                             <div class="bucket-card-header">
-                                <div class="bucket-tag-title">
-                                    <span>Bucket 01</span>
-                                    <span class="bucket-code-pill" id="b1-name-pill">moody-music-asset</span>
-                                </div>
-                                <span class="bucket-badge badge-warning" id="b1-status-badge">83.3% 预警</span>
+                                <div class="bucket-tag-title">Bucket 01</div>
+                                <span class="bucket-badge badge-warning" id="b1-status-badge">81.0% 预警</span>
                             </div>
 
                             <div class="bucket-card-body">
                                 <div class="bucket-dial-wrap">
                                     <svg class="bucket-svg" viewBox="0 0 100 100">
                                         <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
-                                        <circle class="gauge-progress stroke-warning" id="b1-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="41.97" />
+                                        <circle class="gauge-progress stroke-warning" id="b1-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="47.75" />
                                     </svg>
                                     <div class="bucket-dial-center">
-                                        <span class="bucket-dial-pct" id="b1-gauge-pct">83.3%</span>
-                                        <span class="bucket-dial-sub" id="b1-gauge-val">8.33 GB</span>
+                                        <span class="bucket-dial-pct" id="b1-gauge-pct">81.0%</span>
+                                        <span class="bucket-dial-sub" id="b1-gauge-val">8.10 GB</span>
                                     </div>
                                 </div>
                                 <div class="bucket-simple-info">
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已用容量</span>
-                                        <span class="stat-val"><strong id="b1-stat-size">8.33 GB</strong> / 10 GB</span>
+                                        <span class="stat-val"><strong id="b1-stat-size">8.10 GB</strong> / 10 GB</span>
                                     </div>
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已存曲目</span>
-                                        <span class="stat-val"><strong id="b1-stat-songs">1,571</strong> 首</span>
+                                        <span class="stat-val"><strong id="b1-stat-songs">1,559</strong> 首</span>
                                     </div>
                                 </div>
                             </div>
@@ -445,32 +439,60 @@
                         <!-- Bucket 02 (扩展桶) -->
                         <div class="bucket-card" id="bucket2-card">
                             <div class="bucket-card-header">
-                                <div class="bucket-tag-title">
-                                    <span>Bucket 02</span>
-                                    <span class="bucket-code-pill highlight-gold" id="b2-name-pill">moody-music-asset-02</span>
-                                </div>
-                                <span class="bucket-badge badge-healthy" id="b2-status-badge">正常写入</span>
+                                <div class="bucket-tag-title">Bucket 02</div>
+                                <span class="bucket-badge badge-healthy" id="b2-status-badge">主力写入</span>
                             </div>
 
                             <div class="bucket-card-body">
                                 <div class="bucket-dial-wrap">
                                     <svg class="bucket-svg" viewBox="0 0 100 100">
                                         <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
-                                        <circle class="gauge-progress stroke-healthy" id="b2-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="245.80" />
+                                        <circle class="gauge-progress stroke-healthy" id="b2-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="80.93" />
                                     </svg>
                                     <div class="bucket-dial-center">
-                                        <span class="bucket-dial-pct" id="b2-gauge-pct">2.2%</span>
-                                        <span class="bucket-dial-sub" id="b2-gauge-val">0.22 GB</span>
+                                        <span class="bucket-dial-pct" id="b2-gauge-pct">67.8%</span>
+                                        <span class="bucket-dial-sub" id="b2-gauge-val">6.78 GB</span>
                                     </div>
                                 </div>
                                 <div class="bucket-simple-info">
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已用容量</span>
-                                        <span class="stat-val"><strong id="b2-stat-size">220.9 MB</strong> / 10 GB</span>
+                                        <span class="stat-val"><strong id="b2-stat-size">6.78 GB</strong> / 10 GB</span>
                                     </div>
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已存曲目</span>
-                                        <span class="stat-val"><strong id="b2-stat-songs">48</strong> 首</span>
+                                        <span class="stat-val"><strong id="b2-stat-songs">1,466</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bucket 03 (第三桶 - 就绪待命) -->
+                        <div class="bucket-card" id="bucket3-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket 03</div>
+                                <span class="bucket-badge badge-healthy" id="b3-status-badge">就绪待命</span>
+                            </div>
+
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b3-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b3-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b3-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b3-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b3-stat-songs">0</strong> 首</span>
                                     </div>
                                 </div>
                             </div>
@@ -862,7 +884,7 @@ Smile Again 玛莉亚,11"></textarea>
 
     <!-- 全局环境配置 (Single Source of Truth) -->
     <script src="config.js?v=1.0"></script>
-    <script src="admin.js?v=20260905_1245"></script>
+    <script src="admin.js?v=20260906_2145"></script>
     <script src="album-manager.js?v=20260816_1615"></script>
     <script src="asset-manager.js?v=20260816_1700"></script>
 </body>

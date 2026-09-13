@@ -1,0 +1,138 @@
+[
+  {
+    "sid": 543,
+    "artist": "Beyond",
+    "title": "午夜怨曲",
+    "album": "Beyond音樂大全101",
+    "action": "REPLACED_STUDIO",
+    "source": "Beyond 官方频道 CD 原声 (273s)"
+  },
+  {
+    "sid": 17949,
+    "artist": "五月天",
+    "title": "孫悟空",
+    "album": "步步自選作品輯 1999-2013",
+    "action": "REPLACED_STUDIO",
+    "source": "滾石唱片官方 CD 母带 (255s)"
+  },
+  {
+    "sid": 18050,
+    "artist": "五月天",
+    "title": "孫悟空",
+    "album": "知足 just my pride 最真傑作選",
+    "action": "REPLACED_STUDIO",
+    "source": "滾石唱片官方 CD 母带 (255s)"
+  },
+  {
+    "sid": 27764,
+    "artist": "五月天",
+    "title": "有些事現在不做 一輩子都不會做了",
+    "album": "第二人生",
+    "action": "REPLACED_STUDIO",
+    "source": "Mayday - Topic 官方音轨 (228s)"
+  },
+  {
+    "sid": 17972,
+    "artist": "五月天",
+    "title": "有些事現在不做 一輩子都不會做了",
+    "album": "第二人生 (明日版)",
+    "action": "REPLACED_STUDIO",
+    "source": "Mayday - Topic 官方音轨 (228s)"
+  },
+  {
+    "sid": 17980,
+    "artist": "五月天",
+    "title": "2012",
+    "album": "第二人生 (明日版)",
+    "action": "REPLACED_STUDIO",
+    "source": "Mayday - Topic 官方音轨 (260s)"
+  },
+  {
+    "sid": 17983,
+    "artist": "五月天",
+    "title": "明日",
+    "album": "第二人生 (明日版)",
+    "action": "REPLACED_STUDIO",
+    "source": "Mayday - Topic 官方音轨 (38s)"
+  },
+  {
+    "sid": 26225,
+    "artist": "李荣浩",
+    "title": "年少有为",
+    "album": "耳朵",
+    "action": "REPLACED_STUDIO",
+    "source": "李榮浩官方频道 CD 母带 (280s)"
+  },
+  {
+    "sid": 26228,
+    "artist": "李荣浩",
+    "title": "贝贝",
+    "album": "耳朵",
+    "action": "REPLACED_STUDIO",
+    "source": "李榮浩官方 4秒母带人声 (4s)"
+  },
+  {
+    "sid": 27759,
+    "artist": "王力宏",
+    "title": "愛一點",
+    "album": "你的愛。",
+    "action": "REPLACED_STUDIO",
+    "source": "Golden Dynamic 官方 CD 母带 (307s)"
+  },
+  {
+    "sid": 17617,
+    "artist": "王力宏",
+    "title": "Everything",
+    "album": "王力宏全新創作大碟 心.跳",
+    "action": "REPLACED_STUDIO",
+    "source": "StreetVoice 宏聲音樂官方 CD 母带 (300s)"
+  },
+  {
+    "sid": 17468,
+    "artist": "王菲",
+    "title": "雲端",
+    "album": "王菲97",
+    "action": "REPLACED_STUDIO",
+    "source": "FayeWongVEVO 环球官方母带 (237s)"
+  },
+  {
+    "sid": 12041,
+    "artist": "林宥嘉",
+    "title": "Someone Who Loves You (Live)",
+    "album": "Sense Around Live",
+    "action": "LEAVE_BLANK",
+    "reason": "现场专辑曲目，按录音室标准熄灭留白"
+  },
+  {
+    "sid": 25476,
+    "artist": "陈奕迅",
+    "title": "且聽下回分解",
+    "album": "不想放手",
+    "action": "LEAVE_BLANK",
+    "reason": "公网仅有113s试听剪辑版，无完整官方CD母带，严格留白"
+  },
+  {
+    "sid": 27789,
+    "artist": "王力宏",
+    "title": "龍騰虎躍",
+    "album": "十八般武藝",
+    "action": "LEAVE_BLANK",
+    "reason": "未检索到纯净官方录音室母带，严格留白"
+  },
+  {
+    "sid": 27753,
+    "artist": "王力宏",
+    "title": "夢境",
+    "album": "你的愛。",
+    "action": "LEAVE_BLANK",
+    "reason": "未检索到纯净官方录音室母带，严格留白"
+  },
+  {
+    "sid": 27743,
+    "artist": "王力宏",
+    "title": "七十億分之一",
+    "album": "你的愛。",
+    "action": "LEAVE_BLANK",
+    "reason": "仅存翻唱与现场版，无确凿CD纯音频，严格留白"
+  }
+]

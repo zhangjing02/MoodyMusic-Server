@@ -1,0 +1,1779 @@
+{
+  "zero_album_artists": [
+    [
+      132,
+      "汪晨蕊"
+    ]
+  ],
+  "duplicate_album_groups_total": 76,
+  "duplicate_album_groups_lit": 27,
+  "dup_album_details": [
+    {
+      "artist_id": 3,
+      "artist_name": "阿牛",
+      "norm_title": "阿牛的wowwow情歌",
+      "albums": [
+        {
+          "album_id": 20,
+          "title": "阿牛的WOW WOW情歌",
+          "total_songs": 11,
+          "lit_songs": 10
+        },
+        {
+          "album_id": 21,
+          "title": "阿牛的WOW WOW情歌",
+          "total_songs": 11,
+          "lit_songs": 11
+        }
+      ]
+    },
+    {
+      "artist_id": 3,
+      "artist_name": "阿牛",
+      "norm_title": "城市蓝天",
+      "albums": [
+        {
+          "album_id": 28,
+          "title": "城市蓝天",
+          "total_songs": 13,
+          "lit_songs": 11
+        },
+        {
+          "album_id": 29,
+          "title": "城市蓝天",
+          "total_songs": 11,
+          "lit_songs": 10
+        }
+      ]
+    },
+    {
+      "artist_id": 6,
+      "artist_name": "陈奕迅",
+      "norm_title": "u87",
+      "albums": [
+        {
+          "album_id": 87,
+          "title": "U87",
+          "total_songs": 12,
+          "lit_songs": 12
+        },
+        {
+          "album_id": 92,
+          "title": "U 87",
+          "total_songs": 12,
+          "lit_songs": 8
+        }
+      ]
+    },
+    {
+      "artist_id": 6,
+      "artist_name": "陈奕迅",
+      "norm_title": "我的快樂时代",
+      "albums": [
+        {
+          "album_id": 90,
+          "title": "我的快樂时代",
+          "total_songs": 11,
+          "lit_songs": 11
+        },
+        {
+          "album_id": 1853,
+          "title": "我的快樂時代",
+          "total_songs": 11,
+          "lit_songs": 11
+        }
+      ]
+    },
+    {
+      "artist_id": 9,
+      "artist_name": "蔡健雅",
+      "norm_title": "depart",
+      "albums": [
+        {
+          "album_id": 144,
+          "title": "DEPART",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 146,
+          "title": "DEPART",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 9,
+      "artist_name": "蔡健雅",
+      "norm_title": "失语者",
+      "albums": [
+        {
+          "album_id": 147,
+          "title": "失語者",
+          "total_songs": 10,
+          "lit_songs": 10
+        },
+        {
+          "album_id": 1844,
+          "title": "失语者",
+          "total_songs": 10,
+          "lit_songs": 10
+        }
+      ]
+    },
+    {
+      "artist_id": 15,
+      "artist_name": "邓丽君",
+      "norm_title": "小城经典",
+      "albums": [
+        {
+          "album_id": 240,
+          "title": "小城經典",
+          "total_songs": 34,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 241,
+          "title": "小城經典",
+          "total_songs": 34,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 15,
+      "artist_name": "邓丽君",
+      "norm_title": "巨星珍藏系列1鄧麗君电影金曲",
+      "albums": [
+        {
+          "album_id": 250,
+          "title": "巨星珍藏系列1: 鄧麗君電影金曲",
+          "total_songs": 26,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 253,
+          "title": "巨星珍藏系列1: 鄧麗君電影金曲",
+          "total_songs": 26,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 15,
+      "artist_name": "邓丽君",
+      "norm_title": "復黑王小村之戀",
+      "albums": [
+        {
+          "album_id": 292,
+          "title": "復黑王: 小村之戀",
+          "total_songs": 12,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 294,
+          "title": "復黑王: 小村之戀",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 15,
+      "artist_name": "邓丽君",
+      "norm_title": "水漣漪",
+      "albums": [
+        {
+          "album_id": 300,
+          "title": "水漣漪",
+          "total_songs": 12,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 301,
+          "title": "水漣漪",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 15,
+      "artist_name": "邓丽君",
+      "norm_title": "鄧麗君之歌",
+      "albums": [
+        {
+          "album_id": 307,
+          "title": "鄧麗君之歌",
+          "total_songs": 16,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 312,
+          "title": "鄧麗君之歌",
+          "total_songs": 12,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 15,
+      "artist_name": "邓丽君",
+      "norm_title": "快樂的恰恰姑娘",
+      "albums": [
+        {
+          "album_id": 311,
+          "title": "快樂的恰恰姑娘",
+          "total_songs": 12,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 313,
+          "title": "快樂的恰恰姑娘",
+          "total_songs": 12,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 20,
+      "artist_name": "费玉清",
+      "norm_title": "长髮的女郎",
+      "albums": [
+        {
+          "album_id": 388,
+          "title": "長髮的女郎",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 400,
+          "title": "長髮的女郎",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 20,
+      "artist_name": "费玉清",
+      "norm_title": "凝望",
+      "albums": [
+        {
+          "album_id": 411,
+          "title": "凝望",
+          "total_songs": 12,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 414,
+          "title": "凝望",
+          "total_songs": 13,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 20,
+      "artist_name": "费玉清",
+      "norm_title": "日落北京城",
+      "albums": [
+        {
+          "album_id": 417,
+          "title": "日落北京城",
+          "total_songs": 12,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 418,
+          "title": "日落北京城",
+          "total_songs": 13,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "月亮之上",
+      "albums": [
+        {
+          "album_id": 447,
+          "title": "月亮之上",
+          "total_songs": 10,
+          "lit_songs": 1
+        },
+        {
+          "album_id": 479,
+          "title": "月亮之上",
+          "total_songs": 10,
+          "lit_songs": 1
+        },
+        {
+          "album_id": 480,
+          "title": "月亮之上",
+          "total_songs": 10,
+          "lit_songs": 1
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "听见中国听见你",
+      "albums": [
+        {
+          "album_id": 449,
+          "title": "听见中国听见你",
+          "total_songs": 10,
+          "lit_songs": 1
+        },
+        {
+          "album_id": 452,
+          "title": "听见中国听见你",
+          "total_songs": 10,
+          "lit_songs": 1
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "最炫民族风",
+      "albums": [
+        {
+          "album_id": 450,
+          "title": "最炫民族風",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 469,
+          "title": "最炫民族风",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 470,
+          "title": "最炫民族风",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 471,
+          "title": "最炫民族风",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "最好的时代",
+      "albums": [
+        {
+          "album_id": 451,
+          "title": "最好的時代",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 459,
+          "title": "最好的时代",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 460,
+          "title": "最好的时代",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "吉祥如意",
+      "albums": [
+        {
+          "album_id": 453,
+          "title": "吉祥如意",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 475,
+          "title": "吉祥如意",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 477,
+          "title": "吉祥如意",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "远方的远方还是远方",
+      "albums": [
+        {
+          "album_id": 457,
+          "title": "远方的远方还是远方",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 458,
+          "title": "远方的远方还是远方",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "拜新年",
+      "albums": [
+        {
+          "album_id": 461,
+          "title": "拜新年",
+          "total_songs": 14,
+          "lit_songs": 1
+        },
+        {
+          "album_id": 462,
+          "title": "拜新年",
+          "total_songs": 14,
+          "lit_songs": 1
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "胡杨新娘",
+      "albums": [
+        {
+          "album_id": 463,
+          "title": "胡杨新娘",
+          "total_songs": 13,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 464,
+          "title": "胡杨新娘",
+          "total_songs": 13,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "大声唱",
+      "albums": [
+        {
+          "album_id": 465,
+          "title": "大声唱",
+          "total_songs": 9,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 466,
+          "title": "大声唱",
+          "total_songs": 9,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "我从草原来",
+      "albums": [
+        {
+          "album_id": 467,
+          "title": "我从草原来",
+          "total_songs": 12,
+          "lit_songs": 1
+        },
+        {
+          "album_id": 468,
+          "title": "我从草原来",
+          "total_songs": 12,
+          "lit_songs": 1
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "姑娘的温柔",
+      "albums": [
+        {
+          "album_id": 472,
+          "title": "姑娘的温柔",
+          "total_songs": 10,
+          "lit_songs": 1
+        },
+        {
+          "album_id": 473,
+          "title": "姑娘的温柔",
+          "total_songs": 10,
+          "lit_songs": 1
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "快乐情歌2007",
+      "albums": [
+        {
+          "album_id": 474,
+          "title": "快乐情歌2007",
+          "total_songs": 7,
+          "lit_songs": 2
+        },
+        {
+          "album_id": 476,
+          "title": "快乐情歌2007",
+          "total_songs": 7,
+          "lit_songs": 2
+        }
+      ]
+    },
+    {
+      "artist_id": 31,
+      "artist_name": "华晨宇",
+      "norm_title": "希忘hope",
+      "albums": [
+        {
+          "album_id": 556,
+          "title": "希忘Hope",
+          "total_songs": 11,
+          "lit_songs": 11
+        },
+        {
+          "album_id": 557,
+          "title": "希忘Hope",
+          "total_songs": 7,
+          "lit_songs": 7
+        }
+      ]
+    },
+    {
+      "artist_id": 35,
+      "artist_name": "黄龄",
+      "norm_title": "来日方长",
+      "albums": [
+        {
+          "album_id": 596,
+          "title": "来日方长",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 597,
+          "title": "来日方长",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 37,
+      "artist_name": "黄品源",
+      "norm_title": "海浪",
+      "albums": [
+        {
+          "album_id": 609,
+          "title": "海浪",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 610,
+          "title": "海浪",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 37,
+      "artist_name": "黄品源",
+      "norm_title": "爱情香",
+      "albums": [
+        {
+          "album_id": 613,
+          "title": "愛情香",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 614,
+          "title": "愛情香",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 37,
+      "artist_name": "黄品源",
+      "norm_title": "新年快樂",
+      "albums": [
+        {
+          "album_id": 615,
+          "title": "新年快樂",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 618,
+          "title": "新年快樂",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 37,
+      "artist_name": "黄品源",
+      "norm_title": "孤鳥",
+      "albums": [
+        {
+          "album_id": 616,
+          "title": "孤鳥",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 617,
+          "title": "孤鳥",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 40,
+      "artist_name": "金志文",
+      "norm_title": "金志文",
+      "albums": [
+        {
+          "album_id": 650,
+          "title": "金志文",
+          "total_songs": 9,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 651,
+          "title": "金志文",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 40,
+      "artist_name": "金志文",
+      "norm_title": "爱比不爱更寂寞",
+      "albums": [
+        {
+          "album_id": 652,
+          "title": "爱比不爱更寂寞",
+          "total_songs": 8,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 653,
+          "title": "爱比不爱更寂寞",
+          "total_songs": 8,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 40,
+      "artist_name": "金志文",
+      "norm_title": "兄弟小文",
+      "albums": [
+        {
+          "album_id": 654,
+          "title": "兄弟小文",
+          "total_songs": 9,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 655,
+          "title": "兄弟小文",
+          "total_songs": 9,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 42,
+      "artist_name": "游鸿明",
+      "norm_title": "与爱情无关",
+      "albums": [
+        {
+          "album_id": 662,
+          "title": "与爱情无关",
+          "total_songs": 9,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 663,
+          "title": "与爱情无关",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 42,
+      "artist_name": "游鸿明",
+      "norm_title": "受困思念",
+      "albums": [
+        {
+          "album_id": 677,
+          "title": "受困思念",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 678,
+          "title": "受困思念",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 43,
+      "artist_name": "庾澄庆",
+      "norm_title": "靠近",
+      "albums": [
+        {
+          "album_id": 696,
+          "title": "靠近",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 698,
+          "title": "靠近",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 44,
+      "artist_name": "袁惟仁",
+      "norm_title": "你不知道的我",
+      "albums": [
+        {
+          "album_id": 707,
+          "title": "你不知道的我",
+          "total_songs": 9,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 708,
+          "title": "你不知道的我",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 45,
+      "artist_name": "林俊杰",
+      "norm_title": "因你而在",
+      "albums": [
+        {
+          "album_id": 715,
+          "title": "因你 而在",
+          "total_songs": 12,
+          "lit_songs": 1
+        },
+        {
+          "album_id": 1890,
+          "title": "因你而在",
+          "total_songs": 11,
+          "lit_songs": 11
+        }
+      ]
+    },
+    {
+      "artist_id": 47,
+      "artist_name": "罗大佑",
+      "norm_title": "羅大佑自选輯",
+      "albums": [
+        {
+          "album_id": 751,
+          "title": "羅大佑自選輯",
+          "total_songs": 34,
+          "lit_songs": 14
+        },
+        {
+          "album_id": 752,
+          "title": "羅大佑自選輯",
+          "total_songs": 35,
+          "lit_songs": 14
+        }
+      ]
+    },
+    {
+      "artist_id": 47,
+      "artist_name": "罗大佑",
+      "norm_title": "爱人同志",
+      "albums": [
+        {
+          "album_id": 759,
+          "title": "愛人同志",
+          "total_songs": 10,
+          "lit_songs": 10
+        },
+        {
+          "album_id": 1897,
+          "title": "爱人同志",
+          "total_songs": 11,
+          "lit_songs": 7
+        }
+      ]
+    },
+    {
+      "artist_id": 47,
+      "artist_name": "罗大佑",
+      "norm_title": "未来的主人翁",
+      "albums": [
+        {
+          "album_id": 763,
+          "title": "未來的主人翁",
+          "total_songs": 10,
+          "lit_songs": 10
+        },
+        {
+          "album_id": 1767,
+          "title": "未来的主人翁",
+          "total_songs": 10,
+          "lit_songs": 10
+        }
+      ]
+    },
+    {
+      "artist_id": 48,
+      "artist_name": "刘德华",
+      "norm_title": "劉德華",
+      "albums": [
+        {
+          "album_id": 771,
+          "title": "劉德華",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 778,
+          "title": "劉德華",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 51,
+      "artist_name": "李玟",
+      "norm_title": "要定你",
+      "albums": [
+        {
+          "album_id": 835,
+          "title": "要定你",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 836,
+          "title": "要定你",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 59,
+      "artist_name": "莫文蔚",
+      "norm_title": "somewhereibelong",
+      "albums": [
+        {
+          "album_id": 909,
+          "title": "Somewhere I Belong",
+          "total_songs": 12,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 910,
+          "title": "Somewhere I Belong",
+          "total_songs": 12,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 59,
+      "artist_name": "莫文蔚",
+      "norm_title": "i",
+      "albums": [
+        {
+          "album_id": 921,
+          "title": "I",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 922,
+          "title": "[i]",
+          "total_songs": 13,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 65,
+      "artist_name": "朴树",
+      "norm_title": "猎户星座",
+      "albums": [
+        {
+          "album_id": 956,
+          "title": "猎户星座",
+          "total_songs": 12,
+          "lit_songs": 9
+        },
+        {
+          "album_id": 1910,
+          "title": "猎户星座",
+          "total_songs": 11,
+          "lit_songs": 8
+        }
+      ]
+    },
+    {
+      "artist_id": 65,
+      "artist_name": "朴树",
+      "norm_title": "生如夏花",
+      "albums": [
+        {
+          "album_id": 957,
+          "title": "生如夏花",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1909,
+          "title": "生如夏花",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 65,
+      "artist_name": "朴树",
+      "norm_title": "我去2000年",
+      "albums": [
+        {
+          "album_id": 958,
+          "title": "我去2000年",
+          "total_songs": 11,
+          "lit_songs": 11
+        },
+        {
+          "album_id": 1908,
+          "title": "我去2000年",
+          "total_songs": 10,
+          "lit_songs": 10
+        }
+      ]
+    },
+    {
+      "artist_id": 72,
+      "artist_name": "任贤齐",
+      "norm_title": "为爱走天涯",
+      "albums": [
+        {
+          "album_id": 1033,
+          "title": "為愛走天涯",
+          "total_songs": 12,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1034,
+          "title": "為愛走天涯",
+          "total_songs": 14,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 74,
+      "artist_name": "孙燕姿",
+      "norm_title": "是时候",
+      "albums": [
+        {
+          "album_id": 1093,
+          "title": "是時候",
+          "total_songs": 10,
+          "lit_songs": 6
+        },
+        {
+          "album_id": 1807,
+          "title": "是时候",
+          "total_songs": 10,
+          "lit_songs": 10
+        }
+      ]
+    },
+    {
+      "artist_id": 75,
+      "artist_name": "苏打绿",
+      "norm_title": "无与倫比的美麗",
+      "albums": [
+        {
+          "album_id": 1107,
+          "title": "無與倫比的美麗",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1108,
+          "title": "無與倫比的美麗",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 75,
+      "artist_name": "苏打绿",
+      "norm_title": "蘇打綠同名專輯",
+      "albums": [
+        {
+          "album_id": 1110,
+          "title": "蘇打綠同名專輯",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1111,
+          "title": "蘇打綠同名專輯",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 77,
+      "artist_name": "萨顶顶",
+      "norm_title": "天地合",
+      "albums": [
+        {
+          "album_id": 1128,
+          "title": "天地合",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1129,
+          "title": "天地合",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 82,
+      "artist_name": "谭咏麟",
+      "norm_title": "霧之戀",
+      "albums": [
+        {
+          "album_id": 1246,
+          "title": "霧之戀",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1248,
+          "title": "霧之戀",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 83,
+      "artist_name": "腾格尔",
+      "norm_title": "蒙古人",
+      "albums": [
+        {
+          "album_id": 1252,
+          "title": "蒙古人",
+          "total_songs": 15,
+          "lit_songs": 11
+        },
+        {
+          "album_id": 1260,
+          "title": "蒙古人",
+          "total_songs": 13,
+          "lit_songs": 12
+        }
+      ]
+    },
+    {
+      "artist_id": 83,
+      "artist_name": "腾格尔",
+      "norm_title": "梦",
+      "albums": [
+        {
+          "album_id": 1253,
+          "title": "梦",
+          "total_songs": 10,
+          "lit_songs": 8
+        },
+        {
+          "album_id": 1254,
+          "title": "梦",
+          "total_songs": 12,
+          "lit_songs": 9
+        }
+      ]
+    },
+    {
+      "artist_id": 87,
+      "artist_name": "王力宏",
+      "norm_title": "心中的日月",
+      "albums": [
+        {
+          "album_id": 1299,
+          "title": "心中的日月",
+          "total_songs": 11,
+          "lit_songs": 11
+        },
+        {
+          "album_id": 1300,
+          "title": "心中的日月",
+          "total_songs": 11,
+          "lit_songs": 2
+        }
+      ]
+    },
+    {
+      "artist_id": 88,
+      "artist_name": "五月天",
+      "norm_title": "自传",
+      "albums": [
+        {
+          "album_id": 1316,
+          "title": "自傳",
+          "total_songs": 15,
+          "lit_songs": 15
+        },
+        {
+          "album_id": 1829,
+          "title": "自传",
+          "total_songs": 12,
+          "lit_songs": 12
+        }
+      ]
+    },
+    {
+      "artist_id": 95,
+      "artist_name": "许巍",
+      "norm_title": "无尽光芒",
+      "albums": [
+        {
+          "album_id": 1388,
+          "title": "无尽光芒",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1389,
+          "title": "无尽光芒",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 99,
+      "artist_name": "徐佳瑩",
+      "norm_title": "理想人生",
+      "albums": [
+        {
+          "album_id": 1431,
+          "title": "理想人生",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1432,
+          "title": "理想人生",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 106,
+      "artist_name": "羽·泉",
+      "norm_title": "最美",
+      "albums": [
+        {
+          "album_id": 1495,
+          "title": "最美",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1503,
+          "title": "最美",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 108,
+      "artist_name": "Yang Kun",
+      "norm_title": "爱河尽处",
+      "albums": [
+        {
+          "album_id": 1509,
+          "title": "爱河尽处",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1510,
+          "title": "爱河尽处",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 108,
+      "artist_name": "Yang Kun",
+      "norm_title": "美好故事",
+      "albums": [
+        {
+          "album_id": 1511,
+          "title": "美好故事",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1512,
+          "title": "美好故事",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 108,
+      "artist_name": "Yang Kun",
+      "norm_title": "孤独颂",
+      "albums": [
+        {
+          "album_id": 1513,
+          "title": "孤独颂",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1514,
+          "title": "孤独颂",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 108,
+      "artist_name": "Yang Kun",
+      "norm_title": "今夜二十岁",
+      "albums": [
+        {
+          "album_id": 1515,
+          "title": "今夜二十岁",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1516,
+          "title": "今夜二十岁",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 108,
+      "artist_name": "Yang Kun",
+      "norm_title": "真的很在乎",
+      "albums": [
+        {
+          "album_id": 1518,
+          "title": "真的很在乎",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1519,
+          "title": "真的很在乎",
+          "total_songs": 11,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 109,
+      "artist_name": "张学友",
+      "norm_title": "在你身边",
+      "albums": [
+        {
+          "album_id": 1531,
+          "title": "在你身邊",
+          "total_songs": 9,
+          "lit_songs": 9
+        },
+        {
+          "album_id": 1747,
+          "title": "在你身边",
+          "total_songs": 10,
+          "lit_songs": 8
+        }
+      ]
+    },
+    {
+      "artist_id": 109,
+      "artist_name": "张学友",
+      "norm_title": "想和你去吹吹风",
+      "albums": [
+        {
+          "album_id": 1537,
+          "title": "想和你去吹吹風",
+          "total_songs": 10,
+          "lit_songs": 9
+        },
+        {
+          "album_id": 1749,
+          "title": "想和你去吹吹风",
+          "total_songs": 11,
+          "lit_songs": 9
+        }
+      ]
+    },
+    {
+      "artist_id": 109,
+      "artist_name": "张学友",
+      "norm_title": "在我心深处",
+      "albums": [
+        {
+          "album_id": 1556,
+          "title": "在我心深處",
+          "total_songs": 13,
+          "lit_songs": 13
+        },
+        {
+          "album_id": 1558,
+          "title": "在我心深處",
+          "total_songs": 10,
+          "lit_songs": 10
+        }
+      ]
+    },
+    {
+      "artist_id": 109,
+      "artist_name": "张学友",
+      "norm_title": "情无四歸",
+      "albums": [
+        {
+          "album_id": 1560,
+          "title": "情無四歸",
+          "total_songs": 8,
+          "lit_songs": 8
+        },
+        {
+          "album_id": 1561,
+          "title": "情無四歸",
+          "total_songs": 10,
+          "lit_songs": 9
+        }
+      ]
+    },
+    {
+      "artist_id": 116,
+      "artist_name": "张靓颖",
+      "norm_title": "pastprogressive",
+      "albums": [
+        {
+          "album_id": 1691,
+          "title": "Past Progressive",
+          "total_songs": 16,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1692,
+          "title": "Past Progressive",
+          "total_songs": 16,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 116,
+      "artist_name": "张靓颖",
+      "norm_title": "第七感",
+      "albums": [
+        {
+          "album_id": 1694,
+          "title": "第七感",
+          "total_songs": 16,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1695,
+          "title": "第七感",
+          "total_songs": 16,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 119,
+      "artist_name": "周深",
+      "norm_title": "深的深",
+      "albums": [
+        {
+          "album_id": 1722,
+          "title": "深的深",
+          "total_songs": 10,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 1723,
+          "title": "深的深",
+          "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    }
+  ],
+  "empty_albums": [
+    [
+      0,
+      137,
+      "宋冬野",
+      "再想想"
+    ],
+    [
+      1166,
+      80,
+      "陶喆",
+      "太美丽 Beautiful"
+    ],
+    [
+      1167,
+      80,
+      "陶喆",
+      "69乐章 Opus 69"
+    ],
+    [
+      1168,
+      80,
+      "陶喆",
+      "再见你好吗 Hello Goodbye"
+    ],
+    [
+      1739,
+      4,
+      "Beyond",
+      "乐与怒"
+    ],
+    [
+      1740,
+      4,
+      "Beyond",
+      "命运派对"
+    ],
+    [
+      1741,
+      4,
+      "Beyond",
+      "犹豫"
+    ],
+    [
+      1742,
+      4,
+      "Beyond",
+      "真的爱你"
+    ],
+    [
+      1743,
+      4,
+      "Beyond",
+      "秘密警察"
+    ],
+    [
+      1744,
+      4,
+      "Beyond",
+      "继续革命"
+    ],
+    [
+      1745,
+      120,
+      "周杰伦",
+      "最伟大的作品"
+    ],
+    [
+      1803,
+      69,
+      "齐秦",
+      "穿乐"
+    ]
+  ],
+  "dup_songs_in_album_count": 31,
+  "dup_songs_in_album": [
+    [
+      35,
+      "兩顆心",
+      2,
+      "484,496"
+    ],
+    [
+      55,
+      "Paradise",
+      2,
+      "812,823"
+    ],
+    [
+      194,
+      "一年又一年",
+      2,
+      "2694,2714"
+    ],
+    [
+      194,
+      "八個娃娃",
+      2,
+      "2703,2726"
+    ],
+    [
+      194,
+      "愛的歌聲",
+      2,
+      "2697,2709"
+    ],
+    [
+      194,
+      "月桃花",
+      2,
+      "2699,2724"
+    ],
+    [
+      194,
+      "莫奔跑",
+      2,
+      "2702,2725"
+    ],
+    [
+      300,
+      "水漣漪",
+      2,
+      "4576,4581"
+    ],
+    [
+      305,
+      "我希望我希望",
+      2,
+      "4644,4650"
+    ],
+    [
+      305,
+      "海鷗飛處",
+      4,
+      "4642,4646,4647,4651"
+    ],
+    [
+      305,
+      "溫暖",
+      2,
+      "4645,4648"
+    ],
+    [
+      418,
+      "日落北京城",
+      3,
+      "6101,6107,6113"
+    ],
+    [
+      482,
+      "Just Right (Interlude song of TV Series <Growing Pain II>)",
+      2,
+      "6852,6853"
+    ],
+    [
+      500,
+      "如果你说爱我",
+      2,
+      "25934,25941"
+    ],
+    [
+      647,
+      "Just Right (Interlude song of TV Series <Growing Pain II>)",
+      2,
+      "8862,8863"
+    ],
+    [
+      837,
+      "No Doubt",
+      2,
+      "11479,11489"
+    ],
+    [
+      976,
+      "讓我跟你走",
+      2,
+      "13208,13219"
+    ],
+    [
+      1150,
+      "有誰像你愛我",
+      2,
+      "15617,15625"
+    ],
+    [
+      1259,
+      "The Mongolian",
+      2,
+      "17088,17096"
+    ],
+    [
+      1302,
+      "愛的就是你",
+      2,
+      "17748,17757"
+    ],
+    [
+      1773,
+      "Nothing Ever Happened",
+      2,
+      "25195,25331"
+    ],
+    [
+      1773,
+      "你為什麼哭了呢",
+      2,
+      "25196,25332"
+    ],
+    [
+      1773,
+      "在你身邊",
+      2,
+      "25191,25327"
+    ],
+    [
+      1773,
+      "多少",
+      2,
+      "25194,25330"
+    ],
+    [
+      1773,
+      "床頭燈",
+      2,
+      "25200,25336"
+    ],
+    [
+      1773,
+      "心的距離",
+      2,
+      "25199,25335"
+    ],
+    [
+      1773,
+      "我也知道",
+      2,
+      "25197,25333"
+    ],
+    [
+      1773,
+      "我甲你",
+      2,
+      "25198,25334"
+    ],
+    [
+      1773,
+      "給你",
+      2,
+      "25201,25337"
+    ],
+    [
+      1773,
+      "給我一個吻",
+      2,
+      "25192,25328"
+    ],
+    [
+      1773,
+      "這樣的一個麻煩",
+      2,
+      "25193,25329"
+    ]
+  ],
+  "dup_file_paths": [
+    [
+      "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/自傳/s_17915.mp3",
+      2,
+      "17915,24201"
+    ],
+    [
+      "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/天使与魔鬼的对话/s_24783.mp3",
+      2,
+      "2140,24783"
+    ],
+    [
+      "music/五月天/自傳/s_17919.mp3",
+      2,
+      "17919,24210"
+    ],
+    [
+      "music/五月天/自傳/s_17920.mp3",
+      2,
+      "17920,24205"
+    ],
+    [
+      "music/五月天/自傳/s_17923.mp3",
+      2,
+      "17923,24208"
+    ]
+  ],
+  "total_songs": 19927,
+  "lit_songs": 5836,
+  "lrc_songs": 4870
+}

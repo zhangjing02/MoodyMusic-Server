@@ -32,6 +32,8 @@ os.makedirs(RECOVERED_DIR, exist_ok=True)
 
 sys.path.insert(0, os.path.dirname(__file__))
 from compress_engine import transcode_to_160k
+import r2_safety_guard
+r2_safety_guard.assert_write_allowed()
 
 API_UPLOAD_URL = "https://m-api.changgepd.ccwu.cc/api/admin/assets/upload"
 PROXIES = {
