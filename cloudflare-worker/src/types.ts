@@ -9,6 +9,8 @@ export type Bindings = {
   JWT_SECRET?: string
   RESEND_API_KEY?: string
   RESEND_FROM?: string
+  PGYER_API_KEY?: string
+  PGYER_APP_KEY?: string
 }
 
 // ==========================================
