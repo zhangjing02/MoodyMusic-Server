@@ -23,7 +23,15 @@ FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
 PORT = 8080
 
 sys.path.insert(0, os.path.dirname(__file__))
-from check_r2_storage import check_storage
+import importlib
+import check_r2_storage
+
+def run_check():
+    try:
+        importlib.reload(check_r2_storage)
+    except Exception:
+        pass
+    return check_r2_storage.check_storage()
 
 class MoodyLiveRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -34,7 +42,7 @@ class MoodyLiveRequestHandler(http.server.SimpleHTTPRequestHandler):
         clean_path = self.path.split('?')[0]
         if clean_path.endswith('r2_stats.json'):
             try:
-                stats = check_storage()
+                stats = run_check()
                 content = json.dumps(stats, ensure_ascii=False, indent=2).encode('utf-8')
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -70,7 +78,7 @@ def background_pulse():
     while True:
         time.sleep(15)
         try:
-            check_storage()
+            run_check()
         except Exception:
             pass
 

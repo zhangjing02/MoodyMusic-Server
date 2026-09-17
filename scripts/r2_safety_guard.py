@@ -49,6 +49,25 @@ def is_safety_valve_active() -> tuple[bool, str]:
     except Exception as e:
         return True, f"读取安全阀配置异常: {e}，默认拦截保护"
 
+def is_bucket_write_allowed(bucket_name: str) -> tuple[bool, str]:
+    if not os.path.exists(CONFIG_PATH):
+        return False, "r2_config.json 不存在，默认开启安全阀保护"
+    try:
+        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+        valve = cfg.get("global_safety_valve", {})
+        if valve.get("active", False):
+            return False, valve.get("reason", "全局安全阀已激活")
+        
+        for acc_k, b_info in cfg.get("buckets", {}).items():
+            if b_info.get("name") == bucket_name or acc_k == bucket_name:
+                if not b_info.get("allow_writes", False) or b_info.get("status") == "frozen_readonly":
+                    return False, f"存储桶 {bucket_name} ({acc_k}) 已永久封箱锁定只读 (frozen_readonly)，严禁写入！"
+                return True, "允许写入"
+        return True, "未受限桶"
+    except Exception as e:
+        return False, f"读取配置异常: {e}"
+
 def assert_write_allowed(bucket_name: str = None):
     """
     在任何写入、上传、同步逻辑开始前必须调用的硬性守卫。
@@ -58,6 +77,13 @@ def assert_write_allowed(bucket_name: str = None):
         msg = f"\n{'=' * 80}\n🚨【全局存储安全阀已激活 - 写入已被硬阻断】\n原因: {reason}\n当前所有存储桶已切换为只读保护模式 (READ-ONLY)。\n严禁向 R2 写入任何新音频或资产文件，防止超出 10GB 免费限额！\n{'=' * 80}\n"
         print(msg, file=sys.stderr, flush=True)
         raise StorageSafetyValveActiveError(msg)
+    
+    if bucket_name:
+        allowed, b_reason = is_bucket_write_allowed(bucket_name)
+        if not allowed:
+            msg = f"\n{'=' * 80}\n🚨【目标存储桶已被封箱保护 - 写入已被阻断】\n原因: {b_reason}\n{'=' * 80}\n"
+            print(msg, file=sys.stderr, flush=True)
+            raise StorageSafetyValveActiveError(msg)
 
 def install_boto3_safety_guard():
     """
@@ -83,6 +109,14 @@ def install_boto3_safety_guard():
                     raise StorageSafetyValveActiveError(
                         f"🚨 [R2 Safety Guard] 尝试向 R2 执行 {operation_name} (Bucket={bucket}, Key={key}) 被安全阀硬阻断！\n原因: {reason}"
                     )
+                bucket = api_params.get('Bucket', 'Unknown')
+                if bucket != 'Unknown':
+                    allowed, b_reason = is_bucket_write_allowed(bucket)
+                    if not allowed:
+                        key = api_params.get('Key', 'Unknown')
+                        raise StorageSafetyValveActiveError(
+                            f"🚨 [R2 Safety Guard] 尝试向已封箱桶写入 {operation_name} (Bucket={bucket}, Key={key}) 被阻断！\n原因: {b_reason}"
+                        )
             return orig_call(self, operation_name, api_params)
 
         BaseClient._make_api_call = guarded_api_call
