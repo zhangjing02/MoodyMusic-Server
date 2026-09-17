@@ -103,8 +103,14 @@ export function fail(c: Context<any>, key: ErrorKey | string, options: ErrorOpti
   )
 }
 
-export function serverError(c: Context<any>, error: unknown, key: ErrorKey = 'INTERNAL_ERROR') {
-  const message = error instanceof Error ? error.message : String(error)
+export function serverError(c: Context<any>, arg1: unknown, arg2?: any) {
+  if (typeof arg1 === 'string') {
+    const key = arg1 as ErrorKey
+    const message = arg2?.error || arg2?.message || (typeof arg2 === 'string' ? arg2 : undefined)
+    return fail(c, key, { message })
+  }
+  const message = arg1 instanceof Error ? arg1.message : String(arg1)
+  const key = (arg2 as ErrorKey) || 'INTERNAL_ERROR'
   return fail(c, key, { message })
 }
 

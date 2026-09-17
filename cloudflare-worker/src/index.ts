@@ -6,6 +6,8 @@ import { registerPushRoutes } from './push'
 import { registerAlbumSocialRoutes } from './album_social'
 import { registerHomeFeedRoutes } from './home_feed'
 import { registerAppVersionRoutes } from './app_version'
+import { registerCommunityRoutes } from './community'
+import { registerPlaylistRoutes } from './playlists'
 import type { Bindings } from './types'
 import { fail, normalizeLegacyErrorResponse, serverError } from './error'
 
@@ -111,6 +113,8 @@ registerPushRoutes(app)
 registerAlbumSocialRoutes(app, authMiddleware)
 registerHomeFeedRoutes(app)
 registerAppVersionRoutes(app)
+registerCommunityRoutes(app, authMiddleware)
+registerPlaylistRoutes(app, authMiddleware)
 
 // ==========================================
 // Admin 路由保护（暂时开放，后续按需开启）

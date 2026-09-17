@@ -152,10 +152,10 @@
             animation: spin 0.8s linear infinite;
         }
 
-        /* Multi Bucket Grid (Tri-Bucket Cluster) */
+        /* Multi Bucket Grid (Quad-Bucket Cluster: 2x2 Grid) */
         .dual-bucket-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
             margin-top: 18px;
         }
@@ -311,6 +311,97 @@
         @media (max-width: 1080px) {
             .dual-bucket-grid { grid-template-columns: 1fr; }
         }
+
+        /* ============================================================
+           Notice Manager Immersive Canvas Editor (全尺寸大画布编辑器)
+           ============================================================ */
+        #notice-manager.panel {
+            max-width: 1040px;
+        }
+        .nm-editor-card {
+            background: linear-gradient(180deg, rgba(28, 28, 33, 0.95) 0%, rgba(20, 20, 24, 0.98) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+            margin-bottom: 28px;
+        }
+        .nm-editor-canvas {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(10, 10, 12, 0.6);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .nm-editor-canvas:focus-within {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3), 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+        .nm-title-wrap {
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .nm-title-input {
+            width: 100%;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 18px 22px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            outline: none;
+            box-sizing: border-box;
+            letter-spacing: 0.3px;
+        }
+        .nm-title-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+        }
+        .nm-editor-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 12px;
+            user-select: none;
+        }
+        .nm-tool-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cfcfd4;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .nm-tool-btn:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.4);
+            color: var(--accent);
+        }
+        .nm-content-textarea {
+            width: 100%;
+            min-height: 480px;
+            height: 520px;
+            padding: 22px;
+            border: none;
+            background: transparent;
+            color: #e4e4e7;
+            font-size: 15.5px;
+            line-height: 1.85;
+            resize: vertical;
+            outline: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            box-sizing: border-box;
+        }
+        .nm-content-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+            line-height: 1.8;
+        }
     </style>
 </head>
 
@@ -337,6 +428,12 @@
                 </a>
                 <a href="#asset-manager" class="nav-item" data-target="asset-manager">
                     <span class="icon">🎨</span> 切片排版工坊
+                </a>
+                <a href="#notice-manager" class="nav-item" data-target="notice-manager">
+                    <span class="icon">📢</span> 公告管理
+                </a>
+                <a href="#community-manager" class="nav-item" data-target="community-manager">
+                    <span class="icon">📋</span> 留言与资源对齐
                 </a>
             </nav>
             <div class="sidebar-footer">
@@ -382,7 +479,7 @@
                             <div>
                                 <div class="hub-title-main">Cloudflare R2 存储</div>
                                 <div class="hub-meta-line">
-                                    <span>三桶集群总用量: <strong id="cluster-total-summary">-- GB / 30 GB</strong></span>
+                                    <span>六桶集群总用量: <strong id="cluster-total-summary">-- GB / 60 GB</strong></span>
                                     <span id="cluster-safety-pill" style="display:none; align-items:center; gap:4px; margin-left:12px; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; background:rgba(239, 68, 68, 0.2); border:1px solid rgba(239, 68, 68, 0.6); color:#f87171;">
                                         🔒 安全阀锁死 (全局只读保护)
                                     </span>
@@ -403,7 +500,7 @@
                         </div>
                     </div>
 
-                    <!-- 三桶极简并列卡片 (Tri-Bucket Cluster) -->
+                    <!-- 六桶极简并列卡片 (Hexa-Bucket Cluster: 3x2 Grid) -->
                     <div class="dual-bucket-grid">
                         <!-- Bucket 01 (主桶) -->
                         <div class="bucket-card" id="bucket1-card">
@@ -467,11 +564,11 @@
                             </div>
                         </div>
 
-                        <!-- Bucket 03 (第三桶 - 就绪待命) -->
+                        <!-- Bucket 03 (第三桶) -->
                         <div class="bucket-card" id="bucket3-card">
                             <div class="bucket-card-header">
                                 <div class="bucket-tag-title">Bucket 03</div>
-                                <span class="bucket-badge badge-healthy" id="b3-status-badge">就绪待命</span>
+                                <span class="bucket-badge badge-healthy" id="b3-status-badge">只读归档</span>
                             </div>
 
                             <div class="bucket-card-body">
@@ -493,6 +590,99 @@
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已存曲目</span>
                                         <span class="stat-val"><strong id="b3-stat-songs">0</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bucket 04 (第四桶 - 主力写入) -->
+                        <div class="bucket-card" id="bucket4-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket 04</div>
+                                <span class="bucket-badge badge-healthy" id="b4-status-badge">主力写入</span>
+                            </div>
+
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b4-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b4-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b4-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b4-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b4-stat-songs">0</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bucket 05 (第五桶 - 就绪待命) -->
+                        <div class="bucket-card" id="bucket5-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket 05</div>
+                                <span class="bucket-badge badge-healthy" id="b5-status-badge">就绪待命</span>
+                            </div>
+
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b5-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b5-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b5-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b5-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b5-stat-songs">0</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bucket 06 (第六桶 - 就绪待命) -->
+                        <div class="bucket-card" id="bucket6-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket 06</div>
+                                <span class="bucket-badge badge-healthy" id="b6-status-badge">就绪待命</span>
+                            </div>
+
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b6-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b6-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b6-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b6-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b6-stat-songs">0</strong> 首</span>
                                     </div>
                                 </div>
                             </div>
@@ -876,6 +1066,140 @@ Smile Again 玛莉亚,11"></textarea>
                     </div>
                 </div>
             </section>
+
+            <!-- 系统公告管理板块 (Notice Manager) -->
+            <section id="notice-manager" class="panel hidden">
+                <header>
+                    <h2>公告管理 <small>Notice Manager</small></h2>
+                    <p class="subtitle">在线发布与维护《音信》官方系统公告，一键同步至 Android 客户端，支持置顶、修改与删除。</p>
+                </header>
+
+                <!-- 发布与编辑表单卡片 (全尺寸大画布沉浸式编辑器) -->
+                <div class="nm-editor-card" id="nm-form-card">
+                    <!-- 顶部元信息与操作栏 -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 20px;">📝</span>
+                            <span id="nm-form-title" style="font-weight: 700; font-size: 16px; color: #fff;">撰写系统公告</span>
+                            <span id="nm-form-mode" class="badge" style="background: var(--accent); color: #000; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">新增模式</span>
+                        </div>
+
+                        <!-- 紧凑工具项：署名 + 置顶 + 操作按钮 -->
+                        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+                            <!-- 署名 -->
+                            <div style="display: flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.04); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                                <span style="font-size: 12px; color: var(--text-muted);">👤 署名:</span>
+                                <input type="text" id="nm-author" value="音信官方" placeholder="音信官方" style="width: 100px; padding: 4px 6px; font-size: 12.5px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 4px; background: rgba(0, 0, 0, 0.3); color: #fff;">
+                            </div>
+
+                            <!-- 置顶开关 -->
+                            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--accent-hover); font-size: 13px; user-select: none; background: rgba(212, 175, 55, 0.08); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(212, 175, 55, 0.25);">
+                                <input type="checkbox" id="nm-pinned" style="accent-color: var(--accent); width: 15px; height: 15px;">
+                                <span>📌 置顶公告</span>
+                            </label>
+
+                            <!-- 操作按钮 -->
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-secondary" id="btn-nm-reset" style="font-size: 12.5px; padding: 7px 14px;">🔄 重置</button>
+                                <button class="btn btn-primary" id="btn-nm-submit" style="font-weight: 600; font-size: 13px; padding: 7px 22px; box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);">🚀 立即发布到 App</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="nm-notice-id">
+
+                    <!-- 编辑器主体：Title 紧贴最上层，整个 Title 下方全是全幅大面积输入区 -->
+                    <div class="nm-editor-canvas">
+                        <!-- 公告标题 (Title) -->
+                        <div class="nm-title-wrap">
+                            <input type="text" id="nm-title" class="nm-title-input" placeholder="输入公告标题（例如：《音信》2.0 全新版本功能特性解读）...">
+                        </div>
+
+                        <!-- 快捷排版工具条 + 字数实时统计 -->
+                        <div class="nm-editor-toolbar">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888;">快捷排版:</span>
+                                <button type="button" class="nm-tool-btn" data-insert="## 小标题&#10;">📌 标题</button>
+                                <button type="button" class="nm-tool-btn" data-insert="**加粗重点**">𝗕 加粗</button>
+                                <button type="button" class="nm-tool-btn" data-insert="• ">• 列表</button>
+                                <button type="button" class="nm-tool-btn" data-insert="> ">❝ 引用</button>
+                                <button type="button" class="nm-tool-btn" data-insert="&#10;---&#10;">― 分割线</button>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; color: var(--text-muted);">
+                                <span>实时字数: <strong id="nm-char-count" style="color: var(--accent); font-variant-numeric: tabular-nums;">0</strong> 字</span>
+                            </div>
+                        </div>
+
+                        <!-- 整个 Title 下面的全尺寸大面积正文输入框 -->
+                        <textarea id="nm-content" class="nm-content-textarea" 
+                            placeholder="在此输入公告正文内容，支持段落、换行、链接与 Markdown 排版格式。&#10;&#10;发布后手机端「音信公告」将以现代颂歌艺术排版实时呈现，无需重启应用即可查阅..."></textarea>
+                    </div>
+
+                    <!-- 底部辅助说明与二次提交快捷栏 -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 12.5px; color: var(--text-muted); flex-wrap: wrap; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            <span>💡</span>
+                            <span>编辑好的公告点击右上角或右下角发布，手机端进入公告栏即可立即查阅；支持随时二次编辑或置顶。</span>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-secondary" id="btn-nm-reset-bottom" style="font-size: 12.5px; padding: 7px 14px;">🔄 重置</button>
+                            <button class="btn btn-primary" id="btn-nm-submit-bottom" style="font-weight: 600; font-size: 13px; padding: 7px 22px; box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);">🚀 立即发布到 App</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 线上公告实时列表卡片 -->
+                <div class="form-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+                        <h3 style="font-size: 16px;">📋 线上生效中的公告 (<span id="nm-count">0</span> 条)</h3>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-danger" id="btn-nm-clear-all" style="font-size: 12px; padding: 6px 14px;">🗑️ 一键清空所有数据</button>
+                            <button class="btn btn-secondary" id="btn-nm-refresh" style="font-size: 12px; padding: 6px 14px;">🔄 刷新列表</button>
+                        </div>
+                    </div>
+
+                    <div id="nm-list">
+                        <!-- 由 notice-manager.js 动态填充 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 留言与资源对齐看板 -->
+            <section id="community-manager" class="panel hidden">
+                <header>
+                    <h2>留言与资源对齐看板 <small>Resource Alignment & Community</small></h2>
+                </header>
+
+                <!-- 统计与筛选工具栏 -->
+                <div class="form-card" style="margin-bottom: 20px;">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                            <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">板块分类:</span>
+                            <button class="btn btn-secondary cm-filter-btn active" data-category="all" style="font-size: 12px; padding: 6px 12px;">全部 (<span id="cm-count-all">0</span>)</button>
+                            <button class="btn btn-secondary cm-filter-btn" data-category="resource" style="font-size: 12px; padding: 6px 12px; border-color: var(--accent); color: var(--accent);">💿 专辑补齐申请 (<span id="cm-count-resource">0</span>)</button>
+                            <button class="btn btn-secondary cm-filter-btn" data-category="bug" style="font-size: 12px; padding: 6px 12px;">🐛 Bug提示 (<span id="cm-count-bug">0</span>)</button>
+                            <button class="btn btn-secondary cm-filter-btn" data-category="ui" style="font-size: 12px; padding: 6px 12px;">🎨 页面优化 (<span id="cm-count-ui">0</span>)</button>
+                            <button class="btn btn-secondary cm-filter-btn" data-category="feature" style="font-size: 12px; padding: 6px 12px;">💡 功能缺失 (<span id="cm-count-feature">0</span>)</button>
+                            <button class="btn btn-secondary cm-filter-btn" data-category="chat" style="font-size: 12px; padding: 6px 12px;">💬 吐槽闲聊 (<span id="cm-count-chat">0</span>)</button>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-secondary" id="btn-cm-refresh" style="font-size: 12px; padding: 6px 14px;">🔄 刷新清单</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 资源补齐与留言主列表容器 -->
+                <div class="form-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3 style="font-size: 16px;">📋 读者提报清单与待办状态 (<span id="cm-current-count">0</span> 条)</h3>
+                        <span style="font-size: 12px; color: var(--text-muted);">提示：可点击状态胶囊一键流转（待处理 ➔ 进行中 ➔ 已完成），并在手机端同步打钩！</span>
+                    </div>
+
+                    <div id="cm-list-container">
+                        <!-- 由 community-manager.js 动态填充 -->
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 
@@ -887,6 +1211,8 @@ Smile Again 玛莉亚,11"></textarea>
     <script src="admin.js?v=20260906_2145"></script>
     <script src="album-manager.js?v=20260816_1615"></script>
     <script src="asset-manager.js?v=20260816_1700"></script>
+    <script src="notice-manager.js?v=20260917_0001"></script>
+    <script src="community-manager.js?v=20260916_0100"></script>
 </body>
 
 </html>

@@ -598,7 +598,7 @@ export const authMiddleware = async (c: Context<AppType>, next: any) => {
         return fail(c, 'TOKEN_EXPIRED_OR_INVALID', {
           message: '您的账号已在其他设备登录，当前会话已失效，请重新登录',
           error_key: 'SESSION_KICKED_OUT'
-        })
+        } as any)
       }
     }
 
@@ -2538,7 +2538,7 @@ export function registerAuthRoutes(app: Hono<AppType>) {
                 COALESCE(a.cover_url, '') as cover, 
                 COALESCE(CAST(a.artist_id AS TEXT), '') as artist_id
          FROM user_favorite_albums ufa
-         LEFT JOIN albums a ON CAST(a.id AS TEXT) = CAST(ufa.album_id AS TEXT)
+         LEFT JOIN albums a ON CAST(a.id AS TEXT) = REPLACE(REPLACE(CAST(ufa.album_id AS TEXT), 'db_', ''), 'album_', '')
          WHERE ufa.user_id = ?
          ORDER BY ufa.created_at DESC`
       ).bind(user.id).all() as { results: any[] }
@@ -2548,7 +2548,7 @@ export function registerAuthRoutes(app: Hono<AppType>) {
                 COALESCE(ar.name, ufa.artist_id) as name, 
                 COALESCE(ar.photo_url, '') as avatar
          FROM user_followed_artists ufa
-         LEFT JOIN artists ar ON CAST(ar.id AS TEXT) = CAST(ufa.artist_id AS TEXT)
+         LEFT JOIN artists ar ON CAST(ar.id AS TEXT) = REPLACE(REPLACE(CAST(ufa.artist_id AS TEXT), 'db_', ''), 'artist_', '')
          WHERE ufa.user_id = ?
          ORDER BY ufa.created_at DESC`
       ).bind(user.id).all() as { results: any[] }
