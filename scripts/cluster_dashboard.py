@@ -56,12 +56,21 @@ def print_dashboard():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         cfg = json.load(f)
         
-    print("\n📦【Cloudflare R2 三桶集群容量与负载】")
+    print("\n📦【Cloudflare R2 八桶集群容量与负载】")
     print("-" * 95)
     print(f"{'存储桶':<24} | {'账号标识':<12} | {'对象总数':<8} | {'当前用量':<10} | {'安全额度':<10} | {'剩余安全空间':<12}")
     print("-" * 95)
     
-    cluster_buckets = [("moody-music-asset-04", "account_04"), ("moody-music-asset-05", "account_05"), ("moody-music-asset-06", "account_06")]
+    cluster_buckets = [
+        ("moody-music-asset", "account_01"),
+        ("moody-music-asset-02", "account_02"),
+        ("moody-music-asset-03", "account_03"),
+        ("moody-music-asset-04", "account_04"),
+        ("moody-music-asset-05", "account_05"),
+        ("moody-music-asset-06", "account_06"),
+        ("moody-music-asset-07", "account_07"),
+        ("moody-music-asset-08", "account_08")
+    ]
     for bname, akey in cluster_buckets:
         stats = get_bucket_stats(cfg, akey)
         print(f"{bname:<24} | {akey:<12} | {stats['count']:<8} | {stats['gb']:>6.3f} GB   | 9.500 GB   | {stats['avail_gb']:>6.3f} GB")

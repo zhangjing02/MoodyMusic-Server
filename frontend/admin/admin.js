@@ -131,10 +131,10 @@ async function loadR2Stats() {
         } catch (_) {}
     }
 
-    // 若仍无本地体检文件，基于 D1 点亮数进行六桶集群智能推算
+    // 若仍无本地体检文件，基于 D1 点亮数进行八桶集群智能推算
     if (!r2Data) {
         const safeLit = litCount || 11479;
-        const perBucketSongs = Math.floor(safeLit / 6);
+        const perBucketSongs = Math.floor(safeLit / 8);
         const perBucketBytes = Math.floor(perBucketSongs * 4.67 * 1024 * 1024);
         const makeBucketFallback = (id, name, label, url) => {
             const usedGb = +(perBucketBytes / (1024**3)).toFixed(2);
@@ -153,16 +153,16 @@ async function loadR2Stats() {
             };
         };
 
-        const totalUsedGb = +((perBucketBytes * 6) / (1024**3)).toFixed(2);
-        const totalRatio = +((totalUsedGb / 60.0) * 100).toFixed(1);
+        const totalUsedGb = +((perBucketBytes * 8) / (1024**3)).toFixed(2);
+        const totalRatio = +((totalUsedGb / 80.0) * 100).toFixed(1);
 
         r2Data = {
             updated_at: new Date().toLocaleTimeString(),
-            cluster_mode: 'hexa_bucket',
-            total_free_capacity_gb: 60.0,
+            cluster_mode: 'octa_bucket',
+            total_free_capacity_gb: 80.0,
             total_used_gb: totalUsedGb,
             total_used_ratio: totalRatio,
-            total_remaining_gb: +(60.0 - totalUsedGb).toFixed(2),
+            total_remaining_gb: +(80.0 - totalUsedGb).toFixed(2),
             total_songs_count: safeLit,
             cluster_status: totalRatio >= 95 ? 'critical' : (totalRatio >= 80 ? 'warning' : 'healthy'),
             bucket1: makeBucketFallback(1, 'moody-music-asset', '主存储桶 (Bucket 01)', 'r2.changgepd.ccwu.cc'),
@@ -170,7 +170,9 @@ async function loadR2Stats() {
             bucket3: makeBucketFallback(3, 'moody-music-asset-03', '第三存储桶 (Bucket 03)', 'pub-383b876c0bb840f6b852946604275232.r2.dev'),
             bucket4: makeBucketFallback(4, 'moody-music-asset-04', '第四存储桶 (Bucket 04)', 'pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev'),
             bucket5: makeBucketFallback(5, 'moody-music-asset-05', '第五存储桶 (Bucket 05)', 'pub-e7d069eb11954440aeb32012e8e3c670.r2.dev'),
-            bucket6: makeBucketFallback(6, 'moody-music-asset-06', '第六存储桶 (Bucket 06)', 'pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev')
+            bucket6: makeBucketFallback(6, 'moody-music-asset-06', '第六存储桶 (Bucket 06)', 'pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev'),
+            bucket7: makeBucketFallback(7, 'moody-music-asset-07', '第七存储桶 (Bucket 07)', 'pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev'),
+            bucket8: makeBucketFallback(8, 'moody-music-asset-08', '第八存储桶 (Bucket 08)', 'pub-dd32e05660c74c3dba04d231391eb82b.r2.dev')
         };
     }
 
@@ -182,7 +184,7 @@ function renderR2Dashboard(data, litCount) {
 
     window.MOODY_SAFETY_VALVE_ACTIVE = !!(data.safety_valve_active || data.cluster_status === 'locked');
 
-    // 适配单桶/双桶/三桶集群数据结构
+    // 适配单桶/双桶/多桶集群数据结构
     const b1 = data.bucket1 || {
         name: 'moody-music-asset',
         used_gb: data.r2_used_gb || 0,
@@ -236,9 +238,27 @@ function renderR2Dashboard(data, litCount) {
         songs_count: 0,
         status_level: 'healthy'
     };
+    const b7 = data.bucket7 || {
+        name: 'moody-music-asset-07',
+        used_gb: 0,
+        used_mb: 0,
+        used_ratio: 0,
+        remaining_gb: 10.0,
+        songs_count: 0,
+        status_level: 'healthy'
+    };
+    const b8 = data.bucket8 || {
+        name: 'moody-music-asset-08',
+        used_gb: 0,
+        used_mb: 0,
+        used_ratio: 0,
+        remaining_gb: 10.0,
+        songs_count: 0,
+        status_level: 'healthy'
+    };
 
-    const clusterCapGb = data.total_free_capacity_gb || 60.0;
-    const clusterUsedGb = data.total_used_gb || +(b1.used_gb + b2.used_gb + (b3.used_gb || 0) + (b4.used_gb || 0) + (b5.used_gb || 0) + (b6.used_gb || 0)).toFixed(2);
+    const clusterCapGb = data.total_free_capacity_gb || 80.0;
+    const clusterUsedGb = data.total_used_gb || +(b1.used_gb + b2.used_gb + (b3.used_gb || 0) + (b4.used_gb || 0) + (b5.used_gb || 0) + (b6.used_gb || 0) + (b7.used_gb || 0) + (b8.used_gb || 0)).toFixed(2);
 
     // 1. 头部总用量概览与安全阀状态
     const totalSummary = document.getElementById('cluster-total-summary');
@@ -452,6 +472,84 @@ function renderR2Dashboard(data, litCount) {
             b6StatSize.textContent = `${b6.used_mb.toFixed(1)} MB`;
         } else {
             b6StatSize.textContent = '0.0 MB';
+        }
+    }
+
+    // 8. Bucket 07 环形仪表盘与指标
+    const b7GaugeProgress = document.getElementById('b7-gauge-progress');
+    const b7GaugePct = document.getElementById('b7-gauge-pct');
+    const b7GaugeVal = document.getElementById('b7-gauge-val');
+    const b7StatusBadge = document.getElementById('b7-status-badge');
+    const b7StatSongs = document.getElementById('b7-stat-songs');
+    const b7StatSize = document.getElementById('b7-stat-size');
+
+    if (b7GaugeProgress) {
+        const offset7 = c * (1 - Math.min(100, Math.max(0, b7.used_ratio)) / 100);
+        b7GaugeProgress.style.strokeDasharray = `${c}`;
+        b7GaugeProgress.style.strokeDashoffset = `${offset7.toFixed(2)}`;
+        b7GaugeProgress.setAttribute('class', `gauge-progress stroke-${b7.status_level || 'healthy'}`);
+    }
+    if (b7GaugePct) b7GaugePct.textContent = `${b7.used_ratio}%`;
+    if (b7GaugeVal) {
+        if (b7.used_gb > 0) {
+            b7GaugeVal.textContent = `${b7.used_gb} GB`;
+        } else if (b7.used_mb > 0) {
+            b7GaugeVal.textContent = `${b7.used_mb.toFixed(0)} MB`;
+        } else {
+            b7GaugeVal.textContent = '0 B';
+        }
+    }
+    if (b7StatusBadge) {
+        b7StatusBadge.className = `bucket-badge badge-${b7.status_level || 'healthy'}`;
+        b7StatusBadge.textContent = b7.status_level === 'locked' ? '安全阀锁死' : (b7.status_level === 'warning' ? `${b7.used_ratio}% 预警` : (b7.status_level === 'critical' ? '熔断' : (b7.songs_count > 0 ? '主力写入' : '就绪待命')));
+    }
+    if (b7StatSongs) b7StatSongs.textContent = (b7.songs_count || 0).toLocaleString();
+    if (b7StatSize) {
+        if (b7.used_gb > 0) {
+            b7StatSize.textContent = `${b7.used_gb} GB`;
+        } else if (b7.used_mb > 0) {
+            b7StatSize.textContent = `${b7.used_mb.toFixed(1)} MB`;
+        } else {
+            b7StatSize.textContent = '0.0 MB';
+        }
+    }
+
+    // 9. Bucket 08 环形仪表盘与指标
+    const b8GaugeProgress = document.getElementById('b8-gauge-progress');
+    const b8GaugePct = document.getElementById('b8-gauge-pct');
+    const b8GaugeVal = document.getElementById('b8-gauge-val');
+    const b8StatusBadge = document.getElementById('b8-status-badge');
+    const b8StatSongs = document.getElementById('b8-stat-songs');
+    const b8StatSize = document.getElementById('b8-stat-size');
+
+    if (b8GaugeProgress) {
+        const offset8 = c * (1 - Math.min(100, Math.max(0, b8.used_ratio)) / 100);
+        b8GaugeProgress.style.strokeDasharray = `${c}`;
+        b8GaugeProgress.style.strokeDashoffset = `${offset8.toFixed(2)}`;
+        b8GaugeProgress.setAttribute('class', `gauge-progress stroke-${b8.status_level || 'healthy'}`);
+    }
+    if (b8GaugePct) b8GaugePct.textContent = `${b8.used_ratio}%`;
+    if (b8GaugeVal) {
+        if (b8.used_gb > 0) {
+            b8GaugeVal.textContent = `${b8.used_gb} GB`;
+        } else if (b8.used_mb > 0) {
+            b8GaugeVal.textContent = `${b8.used_mb.toFixed(0)} MB`;
+        } else {
+            b8GaugeVal.textContent = '0 B';
+        }
+    }
+    if (b8StatusBadge) {
+        b8StatusBadge.className = `bucket-badge badge-${b8.status_level || 'healthy'}`;
+        b8StatusBadge.textContent = b8.status_level === 'locked' ? '安全阀锁死' : (b8.status_level === 'warning' ? `${b8.used_ratio}% 预警` : (b8.status_level === 'critical' ? '熔断' : (b8.songs_count > 0 ? '主力写入' : '就绪待命')));
+    }
+    if (b8StatSongs) b8StatSongs.textContent = (b8.songs_count || 0).toLocaleString();
+    if (b8StatSize) {
+        if (b8.used_gb > 0) {
+            b8StatSize.textContent = `${b8.used_gb} GB`;
+        } else if (b8.used_mb > 0) {
+            b8StatSize.textContent = `${b8.used_mb.toFixed(1)} MB`;
+        } else {
+            b8StatSize.textContent = '0.0 MB';
         }
     }
 }

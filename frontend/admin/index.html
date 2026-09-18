@@ -479,10 +479,8 @@
                             <div>
                                 <div class="hub-title-main">Cloudflare R2 存储</div>
                                 <div class="hub-meta-line">
-                                    <span>六桶集群总用量: <strong id="cluster-total-summary">-- GB / 60 GB</strong></span>
-                                    <span id="cluster-safety-pill" style="display:none; align-items:center; gap:4px; margin-left:12px; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; background:rgba(239, 68, 68, 0.2); border:1px solid rgba(239, 68, 68, 0.6); color:#f87171;">
-                                        🔒 安全阀锁死 (全局只读保护)
-                                    </span>
+                                    <span>八桶集群总用量: <strong id="cluster-total-summary">-- GB / 80 GB</strong></span>
+                                    <span class="hub-pill-safety" id="cluster-safety-pill" style="display: none;">🛡️ 安全阀已锁死 (只读保护)</span>
                                 </div>
                             </div>
                         </div>
@@ -500,7 +498,7 @@
                         </div>
                     </div>
 
-                    <!-- 六桶极简并列卡片 (Hexa-Bucket Cluster: 3x2 Grid) -->
+                    <!-- 八桶极简并列卡片 (Octa-Bucket Cluster: 4x2 Grid) -->
                     <div class="dual-bucket-grid">
                         <!-- Bucket 01 (主桶) -->
                         <div class="bucket-card" id="bucket1-card">
@@ -683,6 +681,68 @@
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已存曲目</span>
                                         <span class="stat-val"><strong id="b6-stat-songs">0</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bucket 07 (第七桶 - 就绪待命) -->
+                        <div class="bucket-card" id="bucket7-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket 07</div>
+                                <span class="bucket-badge badge-healthy" id="b7-status-badge">就绪待命</span>
+                            </div>
+
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b7-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b7-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b7-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b7-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b7-stat-songs">0</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bucket 08 (第八桶 - 就绪待命) -->
+                        <div class="bucket-card" id="bucket8-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket 08</div>
+                                <span class="bucket-badge badge-healthy" id="b8-status-badge">就绪待命</span>
+                            </div>
+
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b8-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b8-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b8-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b8-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b8-stat-songs">0</strong> 首</span>
                                     </div>
                                 </div>
                             </div>
