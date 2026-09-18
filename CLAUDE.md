@@ -9,46 +9,44 @@
 **MOODY 音乐库 V2** 是一个现代化的音乐存储与流媒体系统，采用**纯 Worker 架构**：
 
 - **边缘计算**：Cloudflare Worker (TypeScript/Hono) - 所有 API 和数据存储
-- **前端界面**：极简播放器 + 管理后台（纯静态 HTML/CSS/JS）
-- **存储系统**：Cloudflare R2（对象存储）+ D1 数据库
-- **部署方式**：Docker (Nginx) 托管前端 + Cloudflare Worker 提供 API
+- **边缘计算**：Cloudflare Worker (TypeScript/Hono) - 所有 API 和数据存储
+- **前端界面**：极简播放器 + 管理后台（纯静态 HTML/CSS/JS），托管于 Vercel
+- **存储系统**：Cloudflare R2（对象存储，八桶集群 80GB）+ D1 数据库
+- **部署方式**：Vercel (Git 联动自动秒级上线) + Cloudflare Worker (wrangler deploy)
 
 ### 技术栈
 - **边缘计算**：Cloudflare Workers + Hono + D1 数据库
-- **存储**：Cloudflare R2（兼容 S3 API）
-- **前端**：纯静态 HTML/CSS/JavaScript（无框架）
-- **部署**：Docker + Nginx
+- **存储**：Cloudflare R2（八桶物理隔离集群，兼容 S3 API）
+- **前端**：纯静态 HTML/CSS/JavaScript（无框架，托管于 Vercel）
+- **部署**：Vercel 自动化部署
 
 ---
 
 ## 🌐 生产环境配置
 
-### 域名和端口
+### 域名和端点
 ```
-前端播放器：https://ddjokbqwfbce.ap-southeast-1.clawcloudrun.com
-管理后台：  https://qbxnkwidzabx.ap-southeast-1.clawcloudrun.com
-Worker API： https://moody-worker.changgepd.workers.dev
+前端播放器：https://moody-music-archiv-vercel.vercel.app/
+管理后台：  https://moody-music-archiv-vercel.vercel.app/admin/
+Worker API： https://m-api.changgepd.ccwu.cc
 ```
 
-### ⚠️ 重要架构理解（v13.0 纯 Worker 架构）
+### ⚠️ 重要架构理解（纯 Worker + Vercel 极速架构）
 
-**为什么采用纯 Worker 架构？**
-- Cloudflare Worker 与 R2 同地域，上传速度提升 10x+
-- Worker 直接绑定 D1 和 R2，无需网络调用
+**为什么采用纯 Worker + Vercel 架构？**
+- Cloudflare Worker 与 R2 同地域，上传与解析速度极快
+- Worker 直接绑定 D1 和 R2，无需复杂服务器维护
 - 全球 CDN 加速，边缘计算低延迟
-- 无需维护后端服务器，降低运维成本
+- 前端代码推送到 GitHub `MoodyMusic-Web` 后，Vercel 自动秒级构建生效，零运维压力
 
 **数据流向**：
 ```
-用户请求 → Cloudflare Worker（边缘计算 + D1 数据库）
+用户请求 → Vercel 前端 (播放器 / CMS 后台)
+           ↓ HTTPS
+    Cloudflare Worker (m-api.changgepd.ccwu.cc + D1 数据库)
            ↓
-       R2 对象存储（音乐文件）
+    Cloudflare R2 (八桶对象存储)
 ```
-
-**Docker 容器角色**：
-- 只托管前端静态文件（HTML/CSS/JS）
-- Nginx 提供 HTTP 服务
-- 不处理后端逻辑（全部由 Worker 接管）
 
 ---
 
@@ -225,38 +223,27 @@ users, playlists, playlist_songs
 
 ## 🚀 部署流程
 
-### CI/CD 流程
-1. 推送代码到 `main` 分支
-2. GitHub Actions 自动构建 Docker 镜像（~2 分钟）
-3. 镜像推送到 Docker Hub (`changgepd/moodymusic:latest`)
-4. **手动在 ClawCloud 点击 Update**
+### 前端与 CMS 管理后台（Vercel 自动化）
+1. 代码提交至独立 GitHub 仓库 **`MoodyMusic-Web`** 的 `main` 分支。
+2. Vercel 自动触发秒级 CI/CD 构建并全球即刻上线：
+   - 线上主站：https://moody-music-archiv-vercel.vercel.app/
+   - 管理后台：https://moody-music-archiv-vercel.vercel.app/admin/
 
-### ⚠️ ClawCloud 部署（关键步骤）
-
-**重要**：代码推送后，容器不会自动更新！必须手动操作：
-
-1. 登录 ClawCloud 管理控制台
-2. 找到 `moodymusic` 实例
-3. 点击 **"Update"** 按钮（不是 "Restart"）
-4. 等待容器拉取最新镜像并重启
-
-**如果 Update 无效**：
-1. 停止容器（Stop）
-2. 删除容器（Delete）
-3. 重新创建，使用最新镜像：`changgepd/moodymusic:v13.0-pure-worker`
-
-**原因**：
-- "Restart" 仅重启当前容器，不会拉取新代码
-- "Update" 会检查 Docker Hub 的版本更新并拉取
+### 后端 Worker API（Cloudflare）
+1. 进入 `cloudflare-worker/` 目录。
+2. 执行部署：
+   ```bash
+   npx wrangler deploy
+   ```
+3. 生产域名：`https://m-api.changgepd.ccwu.cc`
 
 ### 健康检查
-
 ```bash
-# 检查前端
-curl https://ddjokbqwfbce.ap-southeast-1.clawcloudrun.com
+# 检查前端管理后台
+curl -I https://moody-music-archiv-vercel.vercel.app/admin/
 
 # 检查 Worker API
-curl https://moody-worker.changgepd.workers.dev/api/admin/stats
+curl https://m-api.changgepd.ccwu.cc/api/admin/stats
 ```
 
 ---
@@ -266,7 +253,7 @@ curl https://moody-worker.changgepd.workers.dev/api/admin/stats
 ### 添加新音乐
 
 使用管理后台：
-1. 访问 https://qbxnkwidzabx.ap-southeast-1.clawcloudrun.com
+1. 访问 https://moody-music-archiv-vercel.vercel.app/admin/
 2. 点击"☁️ 超级上传"
 3. 拖拽音乐文件到上传区域
 4. 点击"🚀 执行入库"
@@ -302,27 +289,19 @@ response = requests.post(
 
 ### 前端页面没有更新
 
-1. **硬刷新浏览器**：`Ctrl + Shift + R`（Windows）或 `Cmd + Shift + R`（Mac）
-2. **检查 Docker 镜像版本**：
-   ```bash
-   curl -I https://ddjokbqwfbce.ap-southeast-1.clawcloudrun.com
-   ```
-3. **在 ClawCloud 重新部署**：Stop → Delete → 重新创建
+1. **硬刷新浏览器**：`Ctrl + Shift + R` 或 `Ctrl + F5`（Windows）/ `Cmd + Shift + R`（Mac）
+2. **检查 GitHub 与 Vercel 状态**：
+   - 检查 `MoodyMusic-Web` 仓库的最后提交是否成功
+   - 访问 Vercel 控制台查看最新 Deployment 部署日志
 
 ### API 请求失败
 
-1. **检查 Worker 状态**：访问 https://moody-worker.changgepd.workers.dev/api/admin/stats
+1. **检查 Worker 状态**：访问 https://m-api.changgepd.ccwu.cc/api/admin/stats
 2. **重新部署 Worker**：
    ```bash
    cd cloudflare-worker
    npx wrangler deploy
    ```
-
-### 数据未更新
-
-1. **确认在 ClawCloud 点击了 "Update"**（不是 Restart）
-2. **检查 Worker 是否需要重新部署**
-3. **验证 Cloudflare D1 数据库状态**
 
 ---
 
@@ -338,32 +317,32 @@ response = requests.post(
 
 ### 域名速查
 ```
-生产前端：https://ddjokbqwfbce.ap-southeast-1.clawcloudrun.com
-生产管理：https://qbxnkwidzabx.ap-southeast-1.clawcloudrun.com
-Worker API：https://moody-worker.changgepd.workers.dev
+生产前端：https://moody-music-archiv-vercel.vercel.app/
+生产管理：https://moody-music-archiv-vercel.vercel.app/admin/
+Worker API：https://m-api.changgepd.ccwu.cc
 ```
 
 ### 常用 API
 ```bash
 # 获取艺人列表
-curl https://moody-worker.changgepd.workers.dev/api/skeleton
+curl https://m-api.changgepd.ccwu.cc/api/skeleton
 
 # 获取完整数据
-curl https://moody-worker.changgepd.workers.dev/api/songs
+curl https://m-api.changgepd.ccwu.cc/api/songs
 
 # 系统统计
-curl https://moody-worker.changgepd.workers.dev/api/admin/stats
+curl https://m-api.changgepd.ccwu.cc/api/admin/stats
 ```
 
 ---
 
 ## 💡 最佳实践
 
-1. **Worker 优先**：所有业务逻辑在 Worker 中实现
+1. **Worker 优先**：所有业务逻辑在 Cloudflare Worker 中实现
 2. **UTF-8 优先**：所有文本数据使用 UTF-8 编码
 3. **批量操作**：使用 Worker 的 batch API 提高性能
 4. **测试先行**：先在测试环境验证，再应用到生产环境
-5. **手动部署**：ClawCloud 需要手动点击 Update
+5. **Vercel 自动化**：前端与 CMS 提交即部署，免去容器运维烦恼
 
 ---
 

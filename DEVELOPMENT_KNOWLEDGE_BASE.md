@@ -3,26 +3,25 @@
 ## 🏗️ 基础设施核心快照 (Infrastructure Snapshot)
 
 ### 1. 运行环境 (Runtime)
-- **平台**: ClawCloud Run (ap-southeast-1)
-- **镜像**: `昌哥/moodymusic:v12.58`
-- **控制台 Env**: [Notion 详细列表](https://www.notion.so/MOODY-ClawCloud-R2-324840be9e1a81668c88cd42c70c33a7#🛠️-完整环境变量)
+- **Web 前端 & CMS 后台**: Vercel (`https://moody-music-archiv-vercel.vercel.app/` 与 `/admin/`)
+- **API 中台**: Cloudflare Workers (`https://m-api.changgepd.ccwu.cc`)
+- **源码仓库**: GitHub (`zhangjing02/MoodyMusic-Web` 与 `zhangjing02/MoodyMusic-Server`)
 
 ### 2. 存储与数据库 (Storage & DB)
-- **R2 桶**: `moody-music-asset`
-- **R2 端点**: `https://ae40b1192ed8367788d0341995e103e03463c471ace560c81a21b66b07c5.r2.cloudflarestorage.com/moody-music-asset`
-- **D1 数据库 ID**: `a9591a5a-1c83-4c27-ad19-70a3aa4f11fc`
-- **本地存储**: `e:\Html-work`
+- **R2 八桶集群**: `moody-music-asset` (01 ~ 08) 80GB 独立隔离池
+- **D1 数据库**: 核心元数据（歌曲、专辑、名册）
+- **Supabase**: 身份验证与社交评论
 
 ### 3. 网络与域名 (Networking)
-- **生产 API**: `https://api-r2.changgepd.top`
-- **资产直链**: `https://r2.changgepd.top`
-- **Worker 转发层**: `https://moody-worker.changgepd.workers.dev`
+- **生产 API**: `https://m-api.changgepd.ccwu.cc`
+- **资产直链**: `https://r2.changgepd.ccwu.cc` 等多桶 CDN
+- **Web 端点**: `https://moody-music-archiv-vercel.vercel.app`
 
 ---
 
 ## 🎲 自动化与代码 (Automation & Assets)
-- **GitHub**: `https://github.com/zhangjing02/MOODY-Music-Archiv-V2`
-- **Docker Hub**: `changgepd/moodymusic`
+- **GitHub Server**: `https://github.com/zhangjing02/MoodyMusic-Server`
+- **GitHub Web**: `https://github.com/zhangjing02/MoodyMusic-Web` (联动 Vercel)
 - **Hugging Face**: `hf_iox...` (用于备份同步)
 
 ---
@@ -33,7 +32,7 @@
 **定义**：连续 3 次尝试失败且未锁定本质原因时，必须立即停止“盲试”，向用户发起“物理配置对齐请求”（核实截图/Token）。
 
 ### 2. 配置即资产原则 (Config-as-an-Asset)
-**定义**：任何环境变更（如 ClawCloud 控制台修改、Token 重写）必须第一时间同步至 [Notion 项目配置中心](https://www.notion.so/MOODY-ClawCloud-R2-324840be9e1a81668c88cd42c70c33a7)。
+**定义**：任何环境变更（如 Vercel 域名变更、Token 重写）必须第一时间同步至项目配置中心。
 
 ---
 *注：⚠️ 故障排查红线规则已根据用户要求移至文档最下方。*

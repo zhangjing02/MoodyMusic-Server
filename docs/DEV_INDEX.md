@@ -70,47 +70,39 @@ docker run -p 8080:8080 -p 8082:8082 moodymusic:latest
 
 ## 6. Production Endpoint
 
-- Player: `https://ddjokbqwfbce.ap-southeast-1.clawcloudrun.com`
-- Admin: `https://qbxnkwidzabx.ap-southeast-1.clawcloudrun.com`
-- Worker API: `https://moody-worker.changgepd.workers.dev`
-- Preferred API domain: `https://m-api.changgepd.top`
+- Player: `https://moody-music-archiv-vercel.vercel.app/`
+- Admin: `https://moody-music-archiv-vercel.vercel.app/admin/`
+- Worker API: `https://m-api.changgepd.ccwu.cc`
 
 ## 7. Health Check
 
 ```powershell
-curl https://ddjokbqwfbce.ap-southeast-1.clawcloudrun.com
-curl https://qbxnkwidzabx.ap-southeast-1.clawcloudrun.com
-curl https://moody-worker.changgepd.workers.dev/api/admin/stats
-curl https://m-api.changgepd.top/api/admin/stats
+curl -I https://moody-music-archiv-vercel.vercel.app/
+curl -I https://moody-music-archiv-vercel.vercel.app/admin/
+curl https://m-api.changgepd.ccwu.cc/api/admin/stats
 ```
 
 ## 8. Deployment Runbook（当前流程）
 
-1. Push code to `main`.
-2. GitHub Actions builds/pushes Docker image.
-3. In ClawCloud, click `Update` on `moodymusic` instance.
-4. Do not rely on `Restart` for code updates.
-5. If update fails: Stop -> Delete -> recreate with latest image tag.
+1. **Web 前端与 CMS 管理后台**：
+   - 代码同步推送至 GitHub `zhangjing02/MoodyMusic-Web` 仓库 `main` 分支。
+   - Vercel 自动触发秒级流水线，免除一切容器与 Docker 依赖。
+2. **Worker 业务中台**：
+   - 进入 `cloudflare-worker/` 运行 `npx wrangler deploy`。
 
 ## 9. 常见故障排查快捷项
 
 Frontend 未更新：
 
-- Hard refresh browser (`Ctrl+Shift+R`)
-- Verify container is updated in ClawCloud
-- Check response headers with `curl -I <frontend-url>`
+- 强制刷新浏览器缓存 (`Ctrl+F5` 或 `Ctrl+Shift+R`)
+- 检查 GitHub `MoodyMusic-Web` 仓库最后 commit 状态
+- 访问 Vercel 控制台查看最新 Deployment 详情
 
 API 请求失败：
 
-- Test worker health endpoint (`/api/admin/stats`)
+- Test worker health endpoint (`https://m-api.changgepd.ccwu.cc/api/admin/stats`)
 - Redeploy Worker with `npx wrangler deploy`
 - Verify `wrangler.toml` bindings (`DB`, `BUCKET`, Supabase vars)
-
-数据未更新：
-
-- Confirm ClawCloud used `Update` (not `Restart`)
-- Confirm Worker deployment time and active route
-- Validate D1 data in admin/debug endpoints
 
 ## 10. 常用索引/扫描命令
 
