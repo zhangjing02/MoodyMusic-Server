@@ -42,16 +42,28 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
         title: '今日推荐',
         subtitle: "TODAY'S VINYL SELECTION",
         items: [
+          // 【原资源备用保留：巴赫大提琴作品集，音频与封面均在 Account 02 完整保留未删除，随时可切回】
+          // {
+          //   id: 'bach_cello_theme',
+          //   title: '巴赫大提琴作品集',
+          //   artist: 'Lu Dimon & Mu Dimon',
+          //   year: '1720 / 2026',
+          //   subtitle: '让巴赫的大提琴安抚浮躁的心',
+          //   coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/albums/bach_cello_cover.jpg',
+          //   audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/bach_cello_collection.mp3',
+          //   isTheme: true,
+          //   themeId: 'bach_cello_theme'
+          // },
           {
-            id: 'bach_cello_theme',
-            title: '巴赫大提琴作品集',
-            artist: 'Lu Dimon & Mu Dimon',
-            year: '1720 / 2026',
-            subtitle: '让巴赫的大提琴安抚浮躁的心',
-            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/albums/bach_cello_cover.jpg',
-            audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/bach_cello_collection.mp3',
+            id: 'white_snake_flute_theme',
+            title: '青城山下白素贞',
+            artist: '书领了吗 · 竹笛',
+            year: '2026',
+            subtitle: '一曲竹笛清响，梦回青城烟雨',
+            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/white_snake_flute_cover.jpg',
+            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/white_snake_flute.mp3',
             isTheme: true,
-            themeId: 'bach_cello_theme'
+            themeId: 'white_snake_flute_theme'
           },
           {
             id: 'jonathan_lee_theme',

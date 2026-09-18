@@ -5,6 +5,7 @@ import { registerAuthRoutes, authMiddleware, requireAdmin } from './auth'
 import { registerPushRoutes } from './push'
 import { registerAlbumSocialRoutes } from './album_social'
 import { registerHomeFeedRoutes } from './home_feed'
+import { registerThemeStoryRoutes } from './theme_stories'
 import { registerAppVersionRoutes } from './app_version'
 import { registerCommunityRoutes } from './community'
 import { registerPlaylistRoutes } from './playlists'
@@ -112,6 +113,7 @@ registerAuthRoutes(app)
 registerPushRoutes(app)
 registerAlbumSocialRoutes(app, authMiddleware)
 registerHomeFeedRoutes(app)
+registerThemeStoryRoutes(app)
 registerAppVersionRoutes(app)
 registerCommunityRoutes(app, authMiddleware)
 registerPlaylistRoutes(app, authMiddleware)
