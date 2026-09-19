@@ -22,13 +22,13 @@
             this.config = {
                 fontFamily: '"SimHei", "Microsoft YaHei", "PingFang SC", sans-serif',
                 fontSize: 16,             // 基础单线字模高度 (px)
-                dotRadius: 1.35,          // 灯珠半径
-                dotStep: 3.8,             // 点阵网格步长
+                dotRadius: 1.0,           // 灯珠半径（缩小以适应歌词列表行高）
+                dotStep: 2.8,             // 点阵网格步长（缩小至 2.8 px，字高约 16×2.8≈45px）
                 activeColor: '#ffffff',   // 点亮灯珠颜色（纯正冷白）
                 unlitColor: 'rgba(255, 255, 255, 0.20)', // 激活行未唱灯珠颜色
                 inactiveLineColor: 'rgba(255, 255, 255, 0.28)', // 邻近/未播放行灯珠颜色
                 glowColor: 'rgba(255, 255, 255, 0.85)',  // 辉光颜色
-                glowBlur: 4.5,            // 辉光模糊半径
+                glowBlur: 3.0,            // 辉光模糊半径（缩小配合小 step）
                 minAlphaThreshold: 85     // 像素提取阈值 (0-255)
             };
 
@@ -187,8 +187,27 @@
             const step = this.config.dotStep;
             const r = this.config.dotRadius;
 
-            const cssW = matrix.width * step;
+            // 计算 canvas 原始 CSS 尺寸
+            let cssW = matrix.width * step;
             const cssH = matrix.height * step;
+
+            // 自适应：如果文字渲染宽度超出父容器可用宽度，缩放 canvas 以适应
+            const parentEl = canvas.parentElement;
+            if (parentEl) {
+                const availW = parentEl.clientWidth || parentEl.offsetWidth;
+                if (availW > 20 && cssW > availW) {
+                    const scale = availW / cssW;
+                    cssW = availW;
+                    canvas.style.width = `${cssW}px`;
+                    canvas.style.height = `${cssH * scale}px`;
+                } else {
+                    canvas.style.width = `${cssW}px`;
+                    canvas.style.height = `${cssH}px`;
+                }
+            } else {
+                canvas.style.width = `${cssW}px`;
+                canvas.style.height = `${cssH}px`;
+            }
 
             // 保持高清屏点对点清晰度
             const targetW = Math.round(cssW * dpr);
@@ -197,8 +216,6 @@
             if (canvas.width !== targetW || canvas.height !== targetH) {
                 canvas.width = targetW;
                 canvas.height = targetH;
-                canvas.style.width = `${cssW}px`;
-                canvas.style.height = `${cssH}px`;
             }
 
             ctx.save();
@@ -295,7 +312,7 @@
                 return;
             }
 
-            const items = container.querySelectorAll('.ms-lyrics-item, .lyrics-line');
+            const items = container.querySelectorAll('.ms-lyrics-item, .lyrics-line, .zen-lyric-line');
             if (items.length === 0) return;
 
             const isIndexChanged = (this.lastActiveIndex !== currentIndex);
