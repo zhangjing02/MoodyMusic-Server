@@ -109,6 +109,7 @@ const playerState = {
     duration: 0,
     volume: 0.7,
     playMode: 'sequence',
+    isRoaming: false,  // 随心漫游模式标记
     currentSong: null,
     currentArtist: null,
     currentAlbum: null,
@@ -209,11 +210,20 @@ function finishLoading() {
 let _playGeneration = 0;
 let _autoSkipTimer = null;
 let _retryTimer = null;
+let _mediaLoadingWatchdogTimer = null;
 let _activeResourceAbortController = null;
 let _activeLyricsAbortController = null;
 
+function clearMediaLoadingWatchdog() {
+    if (_mediaLoadingWatchdogTimer) {
+        clearTimeout(_mediaLoadingWatchdogTimer);
+        _mediaLoadingWatchdogTimer = null;
+    }
+}
+
 function nextPlayGeneration() {
     _playGeneration++;
+    clearMediaLoadingWatchdog();
 
     // 1. 物理掐断上一次未完成的资源预检网络请求
     if (_activeResourceAbortController) {
@@ -378,6 +388,7 @@ const player = {
  */
 function bindDOMElements() {
     player.audio = document.getElementById('audioPlayer');
+    player.roamBtn = document.getElementById('roamBtn');
     player.playPauseBtn = document.getElementById('playPauseBtn');
     player.prevBtn = document.getElementById('prevBtn');
     player.nextBtn = document.getElementById('nextBtn');
@@ -526,6 +537,7 @@ async function initPlayer() {
 
 function bindPlayerEvents() {
     player.audio.addEventListener('error', (e) => {
+        clearMediaLoadingWatchdog();
         console.error('播放出错:', e);
         const errorCode = player.audio.error ? player.audio.error.code : 0;
         let errorMsg = '播放出错';
@@ -543,6 +555,16 @@ function bindPlayerEvents() {
         }
         playerState.isPlaying = false;
         updatePlayPauseButton();
+
+        // 漫游模式防卡死：遇到音频异常直接切下一首漫游（永不停止）
+        if (window.RoamingManager && window.RoamingManager.isActive) {
+            setTimeout(() => {
+                if (window.RoamingManager && window.RoamingManager.isActive) {
+                    window.RoamingManager.playNext();
+                }
+            }, 300);
+            return;
+        }
 
         // 自动跳过到下一首（带防死循环保护）
         if (playerState._skipCount < playerState.playlist.length) {
@@ -569,7 +591,15 @@ function bindPlayerEvents() {
     });
 
 
+    player.audio.addEventListener('playing', () => {
+        clearMediaLoadingWatchdog();
+        setLoadingState(false);
+    });
+
     player.audio.addEventListener('timeupdate', () => {
+        if (player.audio.currentTime > 0) {
+            clearMediaLoadingWatchdog();
+        }
         playerState.currentTime = player.audio.currentTime;
         updateProgressBar();
         updateTimeDisplay();
@@ -585,6 +615,7 @@ function bindPlayerEvents() {
     });
 
     player.audio.addEventListener('ended', () => {
+        clearMediaLoadingWatchdog();
         handleSongEnded();
     });
 
@@ -596,6 +627,7 @@ function bindPlayerEvents() {
 
     player.audio.addEventListener('pause', () => {
         console.log('[Event] Audio pause');
+        clearMediaLoadingWatchdog();
         playerState.isPlaying = false;
         updatePlayPauseButton();
     });
@@ -674,6 +706,14 @@ function bindPlayerEvents() {
     }
 
     // 控制按钮
+    if (player.roamBtn) {
+        player.roamBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (window.RoamingManager) {
+                window.RoamingManager.toggle();
+            }
+        });
+    }
     if (player.playPauseBtn) player.playPauseBtn.addEventListener('click', togglePlayPause);
     if (player.prevBtn) player.prevBtn.addEventListener('click', playPrevious);
     if (player.nextBtn) player.nextBtn.addEventListener('click', playNext);
@@ -768,6 +808,34 @@ function bindPlayerEvents() {
 
     // 快捷键支持 (全局但限弹窗激活)
     document.addEventListener('keydown', handleEditorShortcuts);
+
+    // 监听页面休眠/切出唤醒与网络重连，实现漫游模式生命周期保活
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            console.log('[Lifecycle] 页面恢复前台可见');
+            if (window.RoamingManager && window.RoamingManager.isActive) {
+                // 1. 恢复前台时立即补充在后台消耗的漫游预缓冲
+                window.RoamingManager.fillQueue();
+                // 2. 检查播放器是否在后台播放完毕但未推进切歌
+                if (player && player.audio) {
+                    if (player.audio.ended || (playerState.isPlaying && player.audio.paused)) {
+                        console.log('[Lifecycle] 唤醒检测：音频已结束或处于停滞，推进下一首');
+                        window.RoamingManager.playNext();
+                    }
+                }
+            }
+        }
+    });
+
+    window.addEventListener('online', () => {
+        console.log('[Network] 网络已重新连接');
+        if (window.RoamingManager && window.RoamingManager.isActive) {
+            window.RoamingManager.fillQueue();
+            if (player && player.audio && player.audio.paused && playerState.isPlaying) {
+                window.RoamingManager.playNext();
+            }
+        }
+    });
 }
 
 // ==================== 歌词拖拽调整 ====================
@@ -1569,6 +1637,10 @@ function updatePlayPauseButton() {
 // 手动插值动画已改为 CSS 过渡，此处移除原有函数
 
 function playPrevious() {
+    if (window.RoamingManager && (window.RoamingManager.isActive || playerState.isRoaming)) {
+        window.RoamingManager.playPrevious();
+        return;
+    }
     if (playerState.playlist.length === 0) return;
     const currentIndex = getCurrentPlaylistIndex();
     let prevIndex = currentIndex > 0 ? currentIndex - 1 : playerState.playlist.length - 1;
@@ -1579,7 +1651,19 @@ function playPrevious() {
 }
 
 function playNext() {
+    if (window.RoamingManager && (window.RoamingManager.isActive || playerState.isRoaming)) {
+        window.RoamingManager.playNext();
+        return;
+    }
     if (playerState.playlist.length === 0) return;
+
+    // 防御性保护：如果播放列表仅有 1 首歌且漫游管理器存在，绝不陷入单曲死循环，转交漫游引擎拉取新歌
+    if (playerState.playlist.length === 1 && window.RoamingManager) {
+        console.warn('[Player] 列表仅1首且触发 playNext，转交漫游引擎拉取新歌');
+        window.RoamingManager.playNext();
+        return;
+    }
+
     const currentIndex = getCurrentPlaylistIndex();
     let nextIndex;
 
@@ -1600,6 +1684,11 @@ function playNext() {
 }
 
 function handleSongEnded() {
+    if (window.RoamingManager && (window.RoamingManager.isActive || playerState.isRoaming)) {
+        // 漫游模式下歌曲播放完毕，永不停止，自动切到下一首漫游随机歌曲
+        window.RoamingManager.playNext();
+        return;
+    }
     if (playerState.playMode === 'single') {
         // 单曲循环：重新播放当前歌曲
         player.audio.currentTime = 0;
@@ -1638,6 +1727,18 @@ async function playSongAtIndex(index, expectedGen = null) {
             return false;
         }
         console.warn(`[AutoSkip] ${reason}: "${item.song}"`);
+
+        // 漫游模式防卡死：单曲资源不可用时，永不停止，自动切下一首漫游
+        if (window.RoamingManager && window.RoamingManager.isActive) {
+            if (_autoSkipTimer) clearTimeout(_autoSkipTimer);
+            _autoSkipTimer = setTimeout(() => {
+                if (window.RoamingManager && window.RoamingManager.isActive) {
+                    window.RoamingManager.playNext();
+                }
+            }, 300);
+            return false;
+        }
+
         if (playerState._skipCount < playerState.playlist.length) {
             playerState._skipCount++;
             // 计算下一首的索引（与 playNext 逻辑一致）
@@ -1686,13 +1787,17 @@ async function playSongAtIndex(index, expectedGen = null) {
         finalAudioUrl = `${window.API_BASE}${finalAudioUrl.startsWith('/') ? '' : '/'}${finalAudioUrl}`;
     }
 
-    let isAvailable = await checkResourceAvailability(finalAudioUrl);
+    // [Defense 5] 漫游模式下已通过严格 playableFilter 过滤，跳过 HEAD 网络预检，实现秒级无缝切歌并防止后台 Autoplay 权限超时
+    let isAvailable = true;
+    if (!playerState.isRoaming) {
+        isAvailable = await checkResourceAvailability(finalAudioUrl);
 
-    // [Race Guard] 异步等待后检查代次，用户可能已点击新歌曲
-    if (myGeneration !== _playGeneration) {
-        setLoadingState(false);
-        console.log(`[Race Guard] Generation mismatch after HEAD check, aborting "${item.song}"`);
-        return false;
+        // [Race Guard] 异步等待后检查代次，用户可能已点击新歌曲
+        if (myGeneration !== _playGeneration) {
+            setLoadingState(false);
+            console.log(`[Race Guard] Generation mismatch after HEAD check, aborting "${item.song}"`);
+            return false;
+        }
     }
 
     // [Retry] 首次预检失败时，清除该 URL 的缓存并重试一次
@@ -1736,6 +1841,25 @@ async function playSongAtIndex(index, expectedGen = null) {
     playerState.currentArtist = item.artist;
     playerState.currentAlbum = item.album;
     playerState.currentLrcPath = item.lrcPath; // 关键修复：确保路径被全局缓存
+
+    // [Watchdog] 启动 8 秒媒体流加载超时保护，防止弱网/跨域阻断导致的假死
+    clearMediaLoadingWatchdog();
+    const watchdogGen = myGeneration;
+    _mediaLoadingWatchdogTimer = setTimeout(() => {
+        if (watchdogGen === _playGeneration && (player.audio.currentTime === 0 || player.audio.readyState < 2)) {
+            console.warn(`[Watchdog] 媒体流加载超时(8s): "${item.song}", 自动切歌`);
+            showNotification(`⚠️ 音频加载超时，正在跳过...`);
+            clearMediaLoadingWatchdog();
+            try {
+                player.audio.pause();
+                player.audio.removeAttribute('src');
+                player.audio.load();
+            } catch (err) {}
+            setLoadingState(false);
+            _clearStaleHighlight();
+            autoSkipToNext('媒体流加载超时(8s)');
+        }
+    }, 8000);
 
     // [Modified] 必须等待播放结果，否则函数会立即返回 true
     try {
@@ -1832,6 +1956,7 @@ async function playSongAtIndex(index, expectedGen = null) {
         // 这样比"回滚到上一首"更符合直觉：播放失败就是没有高亮，autoSkipToNext 会高亮下一首
         _clearStaleHighlight();
 
+        clearMediaLoadingWatchdog();
         setLoadingState(false);
         playerState.isPlaying = false;
         updatePlayPauseButton();
@@ -2009,6 +2134,10 @@ function updateVolumeIcon(percent) {
 
 // ==================== 播放模式 ====================
 function cyclePlayMode() {
+    if (playerState.isRoaming) {
+        showNotification('当前处于随心漫游模式，已自动随机切歌');
+        return;
+    }
     const modes = ['sequence', 'loop', 'single', 'shuffle'];
     const currentIndex = modes.indexOf(playerState.playMode);
     playerState.playMode = modes[(currentIndex + 1) % modes.length];
@@ -2784,6 +2913,11 @@ function updateTapSyncUI() {
 console.log('✅ 播放器增强增强支撑函数已加载');
 // ==================== 下一首预加载 ====================
 function prefetchNextSong() {
+    if (window.RoamingManager && (window.RoamingManager.isActive || playerState.isRoaming)) {
+        // 漫游模式下接近尾声时（剩余 < 15秒），确保后台缓冲队列充满
+        window.RoamingManager.fillQueue();
+        return;
+    }
     if (playerState.playlist.length <= 1) return;
     if (playerState.playMode === 'single') return; // 单曲循环不需要预加载
 
@@ -2818,14 +2952,392 @@ function prefetchNextSong() {
     console.log(`[Prefetch] 🚀 预加载下一首: "${nextItem.song}" (${nextItem.audioUrl.split('/').pop()})`);
 }
 
+// ==================== 随心漫游引擎 (RoamingManager) ====================
+const RoamingManager = {
+    get isActive() {
+        return !!playerState.isRoaming;
+    },
+    queue: [],
+    history: [],
+    recentSignatures: new Set(),
+    isFilling: false,
+    _abortGen: 0,
+
+    /**
+     * 启动随心漫游模式
+     */
+    start: async function () {
+        console.log('[Roaming] 启动全库随心漫游...');
+        const myGen = ++this._abortGen;
+        playerState.isRoaming = true;
+
+        // 更新按钮外观状态
+        this.updateBtnUI();
+
+        // 互斥保护：清除专辑高亮
+        if (window.clearAlbumViewActiveState) {
+            window.clearAlbumViewActiveState();
+        }
+
+        const btn = document.getElementById('roamBtn');
+        if (btn) btn.classList.add('loading');
+        setLoadingState(true);
+
+        try {
+            // 等待艺人名录就绪（若初次启动尚未载入完成）
+            if (!window.allArtistsData || window.allArtistsData.length === 0) {
+                console.log('[Roaming] 等待名录数据载入...');
+                for (let i = 0; i < 15; i++) {
+                    if (window.allArtistsData && window.allArtistsData.length > 0) break;
+                    await new Promise(r => setTimeout(r, 200));
+                }
+            }
+
+            let track = null;
+            if (this.queue.length > 0) {
+                track = this.queue.shift();
+            } else {
+                track = await this.pickRandomSong();
+            }
+
+            if (myGen !== this._abortGen || !playerState.isRoaming) {
+                console.log('[Roaming] 启动操作已被后续动作覆盖');
+                return;
+            }
+
+            if (track) {
+                await this.playRoamingTrack(track, /* recordHistory= */ true);
+                // 启动后台预加载队列，维持储备
+                this.fillQueue();
+            } else {
+                console.warn('[Roaming] 首次未获取到有效漫游歌曲，2秒后自动重试');
+                showNotification('正在全库寻找音源，请稍候...');
+                setTimeout(() => {
+                    if (playerState.isRoaming) this.playNext();
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('[Roaming] 漫游启动异常:', err);
+            showNotification('网络繁忙，正在重试漫游抽歌...');
+            setTimeout(() => {
+                if (playerState.isRoaming) this.playNext();
+            }, 2000);
+        } finally {
+            if (btn) btn.classList.remove('loading');
+            setLoadingState(false);
+        }
+    },
+
+    /**
+     * 停止随心漫游模式
+     * @param {boolean} silent 为 true 时不暂停音频（用于由专辑点击直接接管）
+     */
+    stop: function (silent = false) {
+        if (!playerState.isRoaming) {
+            this.updateBtnUI();
+            return;
+        }
+        console.log(`[Roaming] 退出随心漫游模式 (silent: ${silent})`);
+        this._abortGen++;
+        playerState.isRoaming = false;
+        this.queue = [];
+
+        this.updateBtnUI();
+
+        if (!silent) {
+            if (player && player.audio && !player.audio.paused) {
+                player.audio.pause();
+                playerState.isPlaying = false;
+                updatePlayPauseButton();
+            }
+        }
+    },
+
+    /**
+     * 切换漫游状态开关
+     */
+    toggle: async function () {
+        if (this.isActive) {
+            this.stop(false);
+            showNotification('已退出随心漫游');
+        } else {
+            await this.start();
+            showNotification('✨ 已开启随心漫游 · 全局无尽随机');
+        }
+    },
+
+    /**
+     * 更新侧边栏漫游按钮样式
+     */
+    updateBtnUI: function () {
+        const btn = document.getElementById('roamBtn');
+        if (!btn) return;
+        if (playerState.isRoaming) {
+            btn.classList.add('active');
+            btn.setAttribute('title', '随心漫游中 · 点击退出');
+        } else {
+            btn.classList.remove('active', 'loading');
+            btn.setAttribute('title', '随心漫游 · 全局无尽随机播放');
+        }
+    },
+
+    /**
+     * 播放下一首漫游歌曲（无缝循环、永不停止）
+     */
+    playNext: async function () {
+        if (!playerState.isRoaming) return;
+        console.log('[Roaming] 切往下一首漫游歌曲...');
+
+        let nextTrack = null;
+        if (this.queue.length > 0) {
+            nextTrack = this.queue.shift();
+        } else {
+            nextTrack = await this.pickRandomSong();
+        }
+
+        if (nextTrack && playerState.isRoaming) {
+            await this.playRoamingTrack(nextTrack, /* recordHistory= */ true);
+            this.fillQueue();
+        } else if (playerState.isRoaming) {
+            console.warn('[Roaming] 缓冲耗尽且快速抽选未命中，1.5秒后重试');
+            setTimeout(() => {
+                if (playerState.isRoaming) this.playNext();
+            }, 1500);
+        }
+    },
+
+    /**
+     * 播放上一首漫游歌曲（从历史栈回退）
+     */
+    playPrevious: async function () {
+        if (!playerState.isRoaming) return;
+        if (this.history.length > 0) {
+            const prevTrack = this.history.pop();
+            console.log(`[Roaming] 回退上一首漫游歌曲: ${prevTrack.song}`);
+            await this.playRoamingTrack(prevTrack, /* recordHistory= */ false);
+        } else {
+            if (player && player.audio) {
+                player.audio.currentTime = 0;
+                player.audio.play();
+            }
+        }
+    },
+
+    /**
+     * 执行播放漫游曲目
+     */
+    playRoamingTrack: async function (track, recordHistory = true) {
+        if (!track || !track.audioUrl) return false;
+
+        // 记录历史（最多保留 50 首）
+        if (recordHistory && playerState.currentSong) {
+            this.history.push({
+                song: playerState.currentSong,
+                artist: playerState.currentArtist,
+                album: playerState.currentAlbum,
+                audioUrl: player.audio ? player.audio.src : '',
+                lyrics: '',
+                lrcPath: playerState.currentLrcPath,
+                artworkUrl: player.pThumb ? player.pThumb.src : ''
+            });
+            if (this.history.length > 50) this.history.shift();
+        }
+
+        const myGen = nextPlayGeneration();
+        // 播放列表同步包含当前歌曲与储备队列，彻底消除 playlist.length === 1 的单曲死循环陷阱
+        playerState.playlist = [track, ...this.queue];
+        updatePlaylistUI();
+
+        console.log(`[Roaming] 正在播放: "${track.song}" - ${track.artist} (Gen: ${myGen})`);
+        return playSongAtIndex(0, myGen);
+    },
+
+    /**
+     * 全库真随机抽选歌曲核心算法
+     */
+    pickRandomSong: async function () {
+        const artists = window.allArtistsData || [];
+        if (!artists || artists.length === 0) {
+            console.warn('[Roaming] allArtistsData 尚不可用');
+            return null;
+        }
+
+        // 当前正在播放的曲目签名与队列内待播签名，用于绝对防重复
+        const currentSig = playerState.currentSong ? `${playerState.currentSong} - ${playerState.currentArtist}` : '';
+        const queuedSigs = new Set(this.queue.map(q => `${q.song} - ${q.artist}`));
+
+        // 最多尝试 20 次跨艺人随机寻找有效歌曲
+        for (let attempt = 0; attempt < 20; attempt++) {
+            const randomArtist = artists[Math.floor(Math.random() * artists.length)];
+            if (!randomArtist) continue;
+
+            // 1. 确保艺人专辑数据已拉取
+            let albums = randomArtist.albums;
+            if (!albums || albums.length === 0) {
+                try {
+                    const artistIdRaw = (randomArtist.id || "").toString().replace(/\D/g, '');
+                    // 设置 4 秒超时控制器，防止后台上传卡死接口导致 fetch 无限挂起
+                    const controller = new AbortController();
+                    const fetchTimeout = setTimeout(() => controller.abort(), 4000);
+                    const res = await fetch(`${window.API_BASE || ''}/api/songs?artistId=${artistIdRaw}&artist=${encodeURIComponent(randomArtist.name)}`, {
+                        signal: controller.signal
+                    });
+                    clearTimeout(fetchTimeout);
+
+                    if (res.ok) {
+                        const json = await res.json();
+                        const detail = json.data && json.data.length > 0 ? json.data[0] : null;
+                        if (detail && detail.albums && detail.albums.length > 0) {
+                            albums = detail.albums.filter(a => a.songs && a.songs.length > 0);
+                            randomArtist.albums = albums; // 写入内存缓存，提升后续命中率
+                        }
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+
+            if (!albums || albums.length === 0) continue;
+
+            // 2. 严格筛选包含已点亮有效音源的专辑（过滤掉全专辑歌曲均暂缺的空壳）
+            const playableFilter = (s) => {
+                const sName = typeof s === 'string' ? s : s.title;
+                const sPath = typeof s === 'string' ? null : s.path;
+                const exactKey = `${sName} - ${randomArtist.name}`;
+                const bulkKey = `${sName} - 本地音乐`;
+                const hasLocal = (window.localSongsMap && (window.localSongsMap.has(exactKey) || window.localSongsMap.has(bulkKey))) ||
+                                 (playerState.uploadedFiles && playerState.uploadedFiles.has(sName));
+                return hasLocal || (typeof sPath === 'string' && sPath.trim().length > 0);
+            };
+
+            const validAlbums = albums.filter(a => a.songs && a.songs.some(playableFilter));
+            if (validAlbums.length === 0) continue;
+            const randomAlbum = validAlbums[Math.floor(Math.random() * validAlbums.length)];
+
+            // 3. 仅从已点亮的有效音源歌曲中抽选（100% 杜绝抽选到『暂缺』/未点亮歌曲）
+            const playableSongs = randomAlbum.songs.filter(playableFilter);
+            if (playableSongs.length === 0) continue;
+            const randomSong = playableSongs[Math.floor(Math.random() * playableSongs.length)];
+            const songName = typeof randomSong === 'string' ? randomSong : randomSong.title;
+            const songPath = typeof randomSong === 'string' ? null : randomSong.path;
+            const songLrcPath = typeof randomSong === 'string' ? null : (randomSong.lrcPath || randomSong.lrc_path || null);
+
+            const sig = `${songName} - ${randomArtist.name}`;
+
+            // 4. 【核心防重复保护】
+            // (1) 绝对禁止抽选中当前正在播放的同一首歌！
+            if (currentSig && sig === currentSig) {
+                continue;
+            }
+            // (2) 绝对禁止抽选中已经在待播队列里的歌曲！
+            if (queuedSigs.has(sig)) {
+                continue;
+            }
+            // (3) 前 15 次尝试严格杜绝历史已播歌曲（500 首去重窗口）
+            if (this.recentSignatures.has(sig) && attempt < 15) {
+                continue;
+            }
+
+            // 5. 构造音频地址
+            let audioUrl = '';
+            const exactKey = `${songName} - ${randomArtist.name}`;
+            const bulkKey = `${songName} - 本地音乐`;
+
+            if (window.localSongsMap && window.localSongsMap.has(exactKey)) {
+                audioUrl = window.localSongsMap.get(exactKey).audioUrl;
+            } else if (window.localSongsMap && window.localSongsMap.has(bulkKey)) {
+                audioUrl = window.localSongsMap.get(bulkKey).audioUrl;
+            } else if (playerState.uploadedFiles && playerState.uploadedFiles.has(songName)) {
+                audioUrl = playerState.uploadedFiles.get(songName);
+            } else if (songPath) {
+                if (songPath.startsWith('http')) {
+                    audioUrl = songPath;
+                } else {
+                    const encodedPath = songPath.split(/[\\/]/).map(segment => encodeURIComponent(segment)).join('/');
+                    audioUrl = `${window.API_BASE || ''}/storage/${encodedPath}?t=${Date.now()}`;
+                }
+            }
+
+            if (!audioUrl) continue;
+
+            // 6. 构造封面地址
+            let albumCoverUrl = randomAlbum.cover || '';
+            if (albumCoverUrl && !albumCoverUrl.startsWith('http') && !albumCoverUrl.startsWith('/src/') && window.API_BASE) {
+                albumCoverUrl = `${window.API_BASE}${albumCoverUrl.startsWith('/') ? '' : '/'}${albumCoverUrl}`;
+            }
+
+            // 记录已播集合（去重容量扩充至 500 首，确保会话内绝不重复）
+            this.recentSignatures.add(sig);
+            if (this.recentSignatures.size > 500) {
+                const firstSig = this.recentSignatures.values().next().value;
+                this.recentSignatures.delete(firstSig);
+            }
+
+            return {
+                song: songName,
+                artist: randomArtist.name,
+                album: randomAlbum.title,
+                audioUrl: audioUrl,
+                lyrics: '',
+                lrcPath: songLrcPath,
+                artworkUrl: albumCoverUrl
+            };
+        }
+
+        console.warn('[Roaming] 多次抽选未命中可用音源');
+        return null;
+    },
+
+    /**
+     * 后台维持储备缓冲队列 (保持 4 首储备，确保后台/网络波动下持续流畅播放)
+     */
+    fillQueue: async function () {
+        const QUEUE_TARGET = 4;
+        if (this.isFilling || !playerState.isRoaming || this.queue.length >= QUEUE_TARGET) return;
+        this.isFilling = true;
+
+        try {
+            while (playerState.isRoaming && this.queue.length < QUEUE_TARGET) {
+                const track = await this.pickRandomSong();
+                if (track && playerState.isRoaming) {
+                    this.queue.push(track);
+                    console.log(`[Roaming Queue] 预缓冲歌曲就绪: "${track.song}" - ${track.artist} (余量: ${this.queue.length})`);
+                    // 同步到播放列表 UI（当前歌 + 预缓冲队列）
+                    if (playerState.playlist && playerState.playlist.length > 0) {
+                        playerState.playlist = [playerState.playlist[0], ...this.queue];
+                        updatePlaylistUI();
+                    }
+                } else {
+                    break;
+                }
+            }
+        } catch (e) {
+            console.warn('[Roaming Queue] 缓冲填充异常:', e);
+        } finally {
+            this.isFilling = false;
+        }
+    }
+};
+
+window.RoamingManager = RoamingManager;
+
 window.audioPlayer = {
     play: async (song, artist, album, audioUrl, lyrics) => {
+        // 互斥保护：任何直接单曲播放（例如本地音乐或手动指定单曲），自动退出漫游模式
+        if (window.RoamingManager && window.RoamingManager.isActive) {
+            window.RoamingManager.stop(true);
+        }
         const index = await addToPlaylist(song, artist, album, audioUrl, lyrics);
         return playSongAtIndex(index); // [Modified] 返回播放结果
     },
     // 播放整张专辑 (纯同步构建播放列表 + 单一入口播放，彻底消除异步竞态窗口)
     playAlbum: async (songs, artist, albumInfo, startSongIndex, targetGen = null) => {
         console.log(`[Player] ========== playAlbum Start ==========`);
+
+        // 互斥保护：任何进入专辑播放的动作，自动退出漫游模式
+        if (window.RoamingManager && window.RoamingManager.isActive) {
+            window.RoamingManager.stop(true);
+        }
 
         // 如果调用方已分配代次（例如 app.js 乐观点击），直接沿用；否则生成新代次
         const myGen = targetGen !== null ? targetGen : nextPlayGeneration();
