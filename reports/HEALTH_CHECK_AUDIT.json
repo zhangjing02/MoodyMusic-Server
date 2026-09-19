@@ -1,12 +1,7 @@
 {
-  "zero_album_artists": [
-    [
-      132,
-      "汪晨蕊"
-    ]
-  ],
-  "duplicate_album_groups_total": 76,
-  "duplicate_album_groups_lit": 27,
+  "zero_album_artists": [],
+  "duplicate_album_groups_total": 65,
+  "duplicate_album_groups_lit": 19,
   "dup_album_details": [
     {
       "artist_id": 3,
@@ -100,25 +95,6 @@
           "title": "DEPART",
           "total_songs": 10,
           "lit_songs": 0
-        }
-      ]
-    },
-    {
-      "artist_id": 9,
-      "artist_name": "蔡健雅",
-      "norm_title": "失语者",
-      "albums": [
-        {
-          "album_id": 147,
-          "title": "失語者",
-          "total_songs": 10,
-          "lit_songs": 10
-        },
-        {
-          "album_id": 1844,
-          "title": "失语者",
-          "total_songs": 10,
-          "lit_songs": 10
         }
       ]
     },
@@ -340,62 +316,6 @@
     {
       "artist_id": 23,
       "artist_name": "凤凰传奇",
-      "norm_title": "最炫民族风",
-      "albums": [
-        {
-          "album_id": 450,
-          "title": "最炫民族風",
-          "total_songs": 11,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 469,
-          "title": "最炫民族风",
-          "total_songs": 11,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 470,
-          "title": "最炫民族风",
-          "total_songs": 11,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 471,
-          "title": "最炫民族风",
-          "total_songs": 11,
-          "lit_songs": 0
-        }
-      ]
-    },
-    {
-      "artist_id": 23,
-      "artist_name": "凤凰传奇",
-      "norm_title": "最好的时代",
-      "albums": [
-        {
-          "album_id": 451,
-          "title": "最好的時代",
-          "total_songs": 11,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 459,
-          "title": "最好的时代",
-          "total_songs": 11,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 460,
-          "title": "最好的时代",
-          "total_songs": 11,
-          "lit_songs": 0
-        }
-      ]
-    },
-    {
-      "artist_id": 23,
-      "artist_name": "凤凰传奇",
       "norm_title": "吉祥如意",
       "albums": [
         {
@@ -433,6 +353,25 @@
           "album_id": 458,
           "title": "远方的远方还是远方",
           "total_songs": 10,
+          "lit_songs": 0
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "最好的时代",
+      "albums": [
+        {
+          "album_id": 459,
+          "title": "最好的时代",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 460,
+          "title": "最好的时代",
+          "total_songs": 11,
           "lit_songs": 0
         }
       ]
@@ -510,6 +449,31 @@
           "title": "我从草原来",
           "total_songs": 12,
           "lit_songs": 1
+        }
+      ]
+    },
+    {
+      "artist_id": 23,
+      "artist_name": "凤凰传奇",
+      "norm_title": "最炫民族风",
+      "albums": [
+        {
+          "album_id": 469,
+          "title": "最炫民族风",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 470,
+          "title": "最炫民族风",
+          "total_songs": 11,
+          "lit_songs": 0
+        },
+        {
+          "album_id": 471,
+          "title": "最炫民族风",
+          "total_songs": 11,
+          "lit_songs": 0
         }
       ]
     },
@@ -837,44 +801,6 @@
       ]
     },
     {
-      "artist_id": 47,
-      "artist_name": "罗大佑",
-      "norm_title": "爱人同志",
-      "albums": [
-        {
-          "album_id": 759,
-          "title": "愛人同志",
-          "total_songs": 10,
-          "lit_songs": 10
-        },
-        {
-          "album_id": 1897,
-          "title": "爱人同志",
-          "total_songs": 11,
-          "lit_songs": 7
-        }
-      ]
-    },
-    {
-      "artist_id": 47,
-      "artist_name": "罗大佑",
-      "norm_title": "未来的主人翁",
-      "albums": [
-        {
-          "album_id": 763,
-          "title": "未來的主人翁",
-          "total_songs": 10,
-          "lit_songs": 10
-        },
-        {
-          "album_id": 1767,
-          "title": "未来的主人翁",
-          "total_songs": 10,
-          "lit_songs": 10
-        }
-      ]
-    },
-    {
       "artist_id": 48,
       "artist_name": "刘德华",
       "norm_title": "劉德華",
@@ -928,82 +854,6 @@
           "title": "Somewhere I Belong",
           "total_songs": 12,
           "lit_songs": 0
-        }
-      ]
-    },
-    {
-      "artist_id": 59,
-      "artist_name": "莫文蔚",
-      "norm_title": "i",
-      "albums": [
-        {
-          "album_id": 921,
-          "title": "I",
-          "total_songs": 11,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 922,
-          "title": "[i]",
-          "total_songs": 13,
-          "lit_songs": 0
-        }
-      ]
-    },
-    {
-      "artist_id": 65,
-      "artist_name": "朴树",
-      "norm_title": "猎户星座",
-      "albums": [
-        {
-          "album_id": 956,
-          "title": "猎户星座",
-          "total_songs": 12,
-          "lit_songs": 9
-        },
-        {
-          "album_id": 1910,
-          "title": "猎户星座",
-          "total_songs": 11,
-          "lit_songs": 8
-        }
-      ]
-    },
-    {
-      "artist_id": 65,
-      "artist_name": "朴树",
-      "norm_title": "生如夏花",
-      "albums": [
-        {
-          "album_id": 957,
-          "title": "生如夏花",
-          "total_songs": 11,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 1909,
-          "title": "生如夏花",
-          "total_songs": 11,
-          "lit_songs": 0
-        }
-      ]
-    },
-    {
-      "artist_id": 65,
-      "artist_name": "朴树",
-      "norm_title": "我去2000年",
-      "albums": [
-        {
-          "album_id": 958,
-          "title": "我去2000年",
-          "total_songs": 11,
-          "lit_songs": 11
-        },
-        {
-          "album_id": 1908,
-          "title": "我去2000年",
-          "total_songs": 10,
-          "lit_songs": 10
         }
       ]
     },
@@ -1179,25 +1029,6 @@
       ]
     },
     {
-      "artist_id": 88,
-      "artist_name": "五月天",
-      "norm_title": "自传",
-      "albums": [
-        {
-          "album_id": 1316,
-          "title": "自傳",
-          "total_songs": 15,
-          "lit_songs": 15
-        },
-        {
-          "album_id": 1829,
-          "title": "自传",
-          "total_songs": 12,
-          "lit_songs": 12
-        }
-      ]
-    },
-    {
       "artist_id": 95,
       "artist_name": "许巍",
       "norm_title": "无尽光芒",
@@ -1352,44 +1183,6 @@
     {
       "artist_id": 109,
       "artist_name": "张学友",
-      "norm_title": "在你身边",
-      "albums": [
-        {
-          "album_id": 1531,
-          "title": "在你身邊",
-          "total_songs": 9,
-          "lit_songs": 9
-        },
-        {
-          "album_id": 1747,
-          "title": "在你身边",
-          "total_songs": 10,
-          "lit_songs": 8
-        }
-      ]
-    },
-    {
-      "artist_id": 109,
-      "artist_name": "张学友",
-      "norm_title": "想和你去吹吹风",
-      "albums": [
-        {
-          "album_id": 1537,
-          "title": "想和你去吹吹風",
-          "total_songs": 10,
-          "lit_songs": 9
-        },
-        {
-          "album_id": 1749,
-          "title": "想和你去吹吹风",
-          "total_songs": 11,
-          "lit_songs": 9
-        }
-      ]
-    },
-    {
-      "artist_id": 109,
-      "artist_name": "张学友",
       "norm_title": "在我心深处",
       "albums": [
         {
@@ -1462,101 +1255,9 @@
           "lit_songs": 0
         }
       ]
-    },
-    {
-      "artist_id": 119,
-      "artist_name": "周深",
-      "norm_title": "深的深",
-      "albums": [
-        {
-          "album_id": 1722,
-          "title": "深的深",
-          "total_songs": 10,
-          "lit_songs": 0
-        },
-        {
-          "album_id": 1723,
-          "title": "深的深",
-          "total_songs": 10,
-          "lit_songs": 0
-        }
-      ]
     }
   ],
-  "empty_albums": [
-    [
-      0,
-      137,
-      "宋冬野",
-      "再想想"
-    ],
-    [
-      1166,
-      80,
-      "陶喆",
-      "太美丽 Beautiful"
-    ],
-    [
-      1167,
-      80,
-      "陶喆",
-      "69乐章 Opus 69"
-    ],
-    [
-      1168,
-      80,
-      "陶喆",
-      "再见你好吗 Hello Goodbye"
-    ],
-    [
-      1739,
-      4,
-      "Beyond",
-      "乐与怒"
-    ],
-    [
-      1740,
-      4,
-      "Beyond",
-      "命运派对"
-    ],
-    [
-      1741,
-      4,
-      "Beyond",
-      "犹豫"
-    ],
-    [
-      1742,
-      4,
-      "Beyond",
-      "真的爱你"
-    ],
-    [
-      1743,
-      4,
-      "Beyond",
-      "秘密警察"
-    ],
-    [
-      1744,
-      4,
-      "Beyond",
-      "继续革命"
-    ],
-    [
-      1745,
-      120,
-      "周杰伦",
-      "最伟大的作品"
-    ],
-    [
-      1803,
-      69,
-      "齐秦",
-      "穿乐"
-    ]
-  ],
+  "empty_albums": [],
   "dup_songs_in_album_count": 31,
   "dup_songs_in_album": [
     [
@@ -1746,34 +1447,8 @@
       "25193,25329"
     ]
   ],
-  "dup_file_paths": [
-    [
-      "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/五月天/自傳/s_17915.mp3",
-      2,
-      "17915,24201"
-    ],
-    [
-      "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/天使与魔鬼的对话/s_24783.mp3",
-      2,
-      "2140,24783"
-    ],
-    [
-      "music/五月天/自傳/s_17919.mp3",
-      2,
-      "17919,24210"
-    ],
-    [
-      "music/五月天/自傳/s_17920.mp3",
-      2,
-      "17920,24205"
-    ],
-    [
-      "music/五月天/自傳/s_17923.mp3",
-      2,
-      "17923,24208"
-    ]
-  ],
-  "total_songs": 19927,
-  "lit_songs": 5836,
-  "lrc_songs": 4870
+  "dup_file_paths": [],
+  "total_songs": 19766,
+  "lit_songs": 6165,
+  "lrc_songs": 5115
 }

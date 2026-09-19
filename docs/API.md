@@ -1631,9 +1631,9 @@ Body (PUT):
 
 ## 🔗 相关链接
 
-- **Worker API**: `https://m-api.changgepd.top`
-- **管理后台**: `https://qbxnkwidzabx.ap-southeast-1.clawcloudrun.com`
-- **前端播放器**: `https://ddjokbqwfbce.ap-southeast-1.clawcloudrun.com`
+- **Worker API**: `https://m-api.changgepd.ccwu.cc`
+- **管理后台**: `https://moody-music-archiv-vercel.vercel.app/admin/`
+- **前端播放器**: `https://moody-music-archiv-vercel.vercel.app/`
 
 ---
 

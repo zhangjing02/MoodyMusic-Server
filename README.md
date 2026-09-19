@@ -209,20 +209,20 @@ Cloudflare Worker (m-api.changgepd.ccwu.cc)
    └── JPush Gateway  ── 实时信号下发（Social Sync）
 
 前端播放器 & CMS 管理后台
-   └── 静态网页 (已支持单一数据源 config.js)
-```
+   └── 托管于 Vercel (https://moody-music-archiv-vercel.vercel.app/)
 
 ### 核心技术栈
 
 | 层 | 技术 | 说明 |
 |----|------|------|
-| 边缘 API | Cloudflare Workers + Hono | 全球分布式，p99 < 50ms |
+| 边缘 API | Cloudflare Workers + Hono | 全球分布式，p99 < 50ms (`m-api.changgepd.ccwu.cc`) |
 | 关系数据库 | Cloudflare D1 (SQLite) | 歌曲/专辑/用户名册元数据 |
-| 对象存储 | Cloudflare R2 | 音频(.mp3) / 封面 / 歌词(.lrc) |
+| 对象存储 | Cloudflare R2 | 音频(.mp3) / 封面 / 歌词(.lrc) 八桶集群 |
 | 身份认证 | Supabase Auth | JWT 颁发、Token 刷新、邮件重置 |
 | 消息推送 | 极光推送 (JPush) | **Social Sync 核心**：基于 Tag 的实时信号分发 |
-| 前端托管 | Claw Cloud Run (Docker) | Nginx 托管静态播放器 |
-| CI/CD | GitHub Actions | 构建推送 + Supabase 保活 |
+| Web 前端 & CMS | **Vercel** | 播放器与管理后台托管 (`moody-music-archiv-vercel.vercel.app`) |
+| 移动端 | Android (Kotlin Compose) | 现代颂歌架构，蒲公英分发发布 |
+| CI/CD | GitHub Actions / Vercel | Vercel 秒级自动上线 + Supabase 每日保活 |
 
 ---
 
@@ -242,9 +242,8 @@ Music-Archiv-V2/
 │   │   └── 002_create_roster_system.sql
 │   ├── api_auth_v2.md          # 📖 移动端接入文档
 │   └── wrangler.toml           # Cloudflare Worker 配置
-├── frontend/                   # 浏览器播放器
+├── frontend/                   # 浏览器播放器与管理后台 (与 MoodyMusic-Web 同步)
 ├── .github/workflows/
-│   ├── docker-build.yml        # 自动构建 Docker 镜像
 │   └── keep-supabase-alive.yml # Supabase 每日保活
 └── docs/                       # 技术文档
 ```
@@ -419,11 +418,14 @@ suspend fun login(username: String, password: String): LoginResponse {
      -d '{"answers": ["班主任名字", "数学老师名字", "楼层"]}'
    ```
 
-### 前端更新（浏览器播放器）
+### 前端与管理后台部署（Vercel 自动化）
+ 
+本项目网页端（动态黑胶播放器）与 CMS 管理后台完全托管在 **Vercel** 平台，由独立 GitHub 仓库 **[`MoodyMusic-Web`](https://github.com/zhangjing02/MoodyMusic-Web)** 承载：
+- **线上播放器**：[https://moody-music-archiv-vercel.vercel.app/](https://moody-music-archiv-vercel.vercel.app/)
+- **管理后台 (CMS)**：[https://moody-music-archiv-vercel.vercel.app/admin/](https://moody-music-archiv-vercel.vercel.app/admin/)
 
-推送代码到 `main` 分支后，GitHub Actions 自动构建 Docker 镜像。
-
-> ⚠️ Claw Cloud 不会自动拉取新镜像：登录控制台 → 找到 `moodymusic` 实例 → 点击 **`Update`**（不是 Restart）。
+**CI/CD 全自动流水线**：
+推送代码至 `MoodyMusic-Web` 仓库的 `main` 分支后，Vercel 将自动触发极速增量构建与发布，全网边缘节点秒级生效，实现纯 Serverless 零服务器与零容器运维。
 
 ---
 
