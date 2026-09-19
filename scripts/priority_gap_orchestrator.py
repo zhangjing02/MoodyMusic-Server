@@ -332,12 +332,14 @@ def batch_light_d1(updates: list[dict]) -> bool:
 
 def main():
     parser = argparse.ArgumentParser(description="MOODY Priority Missing Songs Orchestrator")
-    parser.add_argument("--artist", type=str, help="针对指定歌手执行 (如 '飞儿乐团' / '那英' / '古巨基')")
+    parser.add_argument("--targets-file", type=str, default=TARGETS_FILE, help="自定义 targets JSON 路径")
+    parser.add_argument("--artist", type=str, help="针对指定歌手执行 (如 '张雨生' / '动力火车' / '张靓颖')")
     parser.add_argument("--workers", type=int, default=4, help="并发线程数 (默认 4)")
     parser.add_argument("--limit", type=int, default=0, help="限制处理歌曲数 (0 为不限制)")
     args = parser.parse_args()
 
-    with open(TARGETS_FILE, "r", encoding="utf-8") as f:
+    targets_file_path = args.targets_file
+    with open(targets_file_path, "r", encoding="utf-8") as f:
         targets = json.load(f)
 
     if args.artist:

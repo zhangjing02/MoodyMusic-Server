@@ -1,0 +1,682 @@
+[
+  {
+    "song_id": 4195,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "漫步人生路"
+  },
+  {
+    "song_id": 4196,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "東山飄雨西山晴"
+  },
+  {
+    "song_id": 4197,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "怎麼開始"
+  },
+  {
+    "song_id": 4198,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "有誰知我此時情"
+  },
+  {
+    "song_id": 4199,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "雨中追憶"
+  },
+  {
+    "song_id": 4200,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "遇見舊情人"
+  },
+  {
+    "song_id": 4201,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "從今日起"
+  },
+  {
+    "song_id": 4202,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "遇見你"
+  },
+  {
+    "song_id": 4203,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "可否多見一眼"
+  },
+  {
+    "song_id": 4204,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "誰在改變"
+  },
+  {
+    "song_id": 4205,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "情話"
+  },
+  {
+    "song_id": 4206,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 269,
+    "album_title": "漫步人生路",
+    "title": "我要你"
+  },
+  {
+    "song_id": 4264,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "勢不兩立"
+  },
+  {
+    "song_id": 4265,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "愛像一首歌"
+  },
+  {
+    "song_id": 4266,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "悄悄地告訴你"
+  },
+  {
+    "song_id": 4267,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "幾時再見"
+  },
+  {
+    "song_id": 4268,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "風兒雨兒"
+  },
+  {
+    "song_id": 4269,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "愛情"
+  },
+  {
+    "song_id": 4270,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "遙遠的路 (香港電台播劇《遙遠的路》主題曲)"
+  },
+  {
+    "song_id": 4271,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "風中的早晨"
+  },
+  {
+    "song_id": 4272,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "想把情人留"
+  },
+  {
+    "song_id": 4273,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "雨中的點點滴滴"
+  },
+  {
+    "song_id": 4274,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "海風"
+  },
+  {
+    "song_id": 4275,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 275,
+    "album_title": "愛像一首歌",
+    "title": "恩愛夫妻"
+  },
+  {
+    "song_id": 3435,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "初次嚐到寂寞"
+  },
+  {
+    "song_id": 3436,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "別把眉兒皺"
+  },
+  {
+    "song_id": 3437,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "小媳婦回娘家"
+  },
+  {
+    "song_id": 3438,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "姑娘的祈禱"
+  },
+  {
+    "song_id": 3439,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "你是否知道"
+  },
+  {
+    "song_id": 3440,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "我飛向前方"
+  },
+  {
+    "song_id": 3441,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "如果我有勇氣"
+  },
+  {
+    "song_id": 3442,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "說說笑笑"
+  },
+  {
+    "song_id": 3443,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "追夢"
+  },
+  {
+    "song_id": 3444,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "唱歌的人"
+  },
+  {
+    "song_id": 3445,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "無語問蒼天"
+  },
+  {
+    "song_id": 3446,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 233,
+    "album_title": "初次嚐到寂寞",
+    "title": "花開在心頭"
+  },
+  {
+    "song_id": 4493,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "絲絲小雨"
+  },
+  {
+    "song_id": 4494,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "多情的玫瑰"
+  },
+  {
+    "song_id": 4495,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "是否"
+  },
+  {
+    "song_id": 4496,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "問自己"
+  },
+  {
+    "song_id": 4497,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "凝望"
+  },
+  {
+    "song_id": 4498,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "良夜"
+  },
+  {
+    "song_id": 4499,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "你在我心中"
+  },
+  {
+    "song_id": 4500,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "偶然的相遇"
+  },
+  {
+    "song_id": 4501,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "總有一天"
+  },
+  {
+    "song_id": 4502,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "雲深情也深"
+  },
+  {
+    "song_id": 4503,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "愛慕"
+  },
+  {
+    "song_id": 4504,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "秋光"
+  },
+  {
+    "song_id": 4505,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 293,
+    "album_title": "復黑王: 島國之情歌 第三集 - 絲絲小雨",
+    "title": "昨天 今天"
+  },
+  {
+    "song_id": 4516,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "小村之戀"
+  },
+  {
+    "song_id": 4517,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "雨不停心不定"
+  },
+  {
+    "song_id": 4518,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "月亮代表我的心"
+  },
+  {
+    "song_id": 4519,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "你我相伴左右"
+  },
+  {
+    "song_id": 4520,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "謝謝你常記得我"
+  },
+  {
+    "song_id": 4521,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "讓花兒為你開"
+  },
+  {
+    "song_id": 4522,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "香港之夜"
+  },
+  {
+    "song_id": 4523,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "我瞭解你"
+  },
+  {
+    "song_id": 4524,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "又見雪花"
+  },
+  {
+    "song_id": 4525,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "那句諾言"
+  },
+  {
+    "song_id": 4526,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "夕陽問你在那裡"
+  },
+  {
+    "song_id": 4527,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 295,
+    "album_title": "復黑王: 島國之情歌 第四集 - 香港之戀",
+    "title": "前生有緣"
+  },
+  {
+    "song_id": 4457,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "你裝做不知道"
+  },
+  {
+    "song_id": 4458,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "相見在明天"
+  },
+  {
+    "song_id": 4459,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "我不再迷惘"
+  },
+  {
+    "song_id": 4460,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "多少黎明多少黃昏"
+  },
+  {
+    "song_id": 4461,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "願你來看我"
+  },
+  {
+    "song_id": 4462,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "儂情萬縷"
+  },
+  {
+    "song_id": 4463,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "又見炊煙"
+  },
+  {
+    "song_id": 4464,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "使愛情更美麗"
+  },
+  {
+    "song_id": 4465,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "我心深處"
+  },
+  {
+    "song_id": 4466,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "青色的回憶"
+  },
+  {
+    "song_id": 4467,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "情飄飄"
+  },
+  {
+    "song_id": 4468,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 290,
+    "album_title": "復黑王: 島國之情歌 第五集- 愛情更美麗",
+    "title": "夜的投影"
+  },
+  {
+    "song_id": 4229,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "假如夢兒是真的"
+  },
+  {
+    "song_id": 4230,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "情湖"
+  },
+  {
+    "song_id": 4231,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "輕風"
+  },
+  {
+    "song_id": 4232,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "你為何不說"
+  },
+  {
+    "song_id": 4233,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "山茶花"
+  },
+  {
+    "song_id": 4234,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "我與秋風"
+  },
+  {
+    "song_id": 4235,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "假如我是真的"
+  },
+  {
+    "song_id": 4236,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "別離"
+  },
+  {
+    "song_id": 4237,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "要去遙遠的地方"
+  },
+  {
+    "song_id": 4238,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "愛雨"
+  },
+  {
+    "song_id": 4239,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "彩霞回來吧"
+  },
+  {
+    "song_id": 4240,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 272,
+    "album_title": "復黑王: 島國之情歌 第七集 - 假如我是真的",
+    "title": "夢"
+  }
+]
