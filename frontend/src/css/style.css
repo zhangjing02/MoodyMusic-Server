@@ -601,66 +601,6 @@ body::-webkit-scrollbar {
     filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
 }
 
-/* ==================== LED 点阵歌词模式 ==================== */
-.lyric-style-toggle-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-    padding: 2px 7px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Inter', -apple-system, monospace;
-    user-select: none;
-    line-height: 1.2;
-}
-
-.lyric-style-toggle-btn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.18);
-    border-color: rgba(255, 255, 255, 0.35);
-    transform: translateY(-1px);
-}
-
-.lyric-style-toggle-btn.active {
-    color: #0c0b0e;
-    background: #ffffff;
-    border-color: #ffffff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 2px #ffffff;
-}
-
-.led-lyrics-canvas {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    vertical-align: middle;
-    pointer-events: none;
-    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.35));
-    transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.ms-lyrics-item.current .led-lyrics-canvas,
-.lyrics-line.active .led-lyrics-canvas {
-    transform: scale(1.04);
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.75));
-}
-
-.lyrics-scroll.led-lyrics-active .ms-lyrics-item,
-.lyrics-content.led-lyrics-active .lyrics-line {
-    padding: 6px 12px;
-}
-
-.lyrics-scroll.led-lyrics-active .ms-lyrics-item.current,
-.lyrics-content.led-lyrics-active .lyrics-line.active {
-    padding: 10px 12px;
-}
-
 .lyrics-scroll {
     height: 100%;
     overflow-y: auto;

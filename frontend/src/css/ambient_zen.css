@@ -596,19 +596,6 @@ body.zen-active .zen-overlay {
     margin: 4px 0;
 }
 
-.zen-lyrics-container.led-lyrics-active .zen-lyric-line .led-lyrics-canvas {
-    display: block;
-    margin: 2px 0;
-    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.4));
-    transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.zen-lyrics-container.led-lyrics-active .zen-lyric-line.active .led-lyrics-canvas {
-    transform: scale(1.05);
-    transform-origin: left center;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
-}
-
 /* --- 5.5. 实时音频频谱可视化 Canvas (所有屏保场景统一共鸣) --- */
 .zen-visualizer-container {
     position: fixed;
