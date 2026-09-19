@@ -25,7 +25,7 @@ sz = os.path.getsize(p_clip)
 print(f"Clip created: {sz} bytes")
 
 import json
-GROQ_API_KEY = "GROQ_KEY_REMOVED"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 cmd = [
     'curl', '-s', '-x', 'http://127.0.0.1:7890',
     'https://api.groq.com/openai/v1/audio/transcriptions',

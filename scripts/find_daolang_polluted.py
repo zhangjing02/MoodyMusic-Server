@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 import requests
 
-GROQ_API_KEY = "GROQ_KEY_REMOVED"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1/audio/transcriptions"
 PROXIES = {"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}
 

@@ -6,7 +6,7 @@ import requests
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-GROQ_API_KEY = "GROQ_KEY_REMOVED"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 PROXIES = {"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}
 
 r = requests.get('https://m-api.changgepd.ccwu.cc/api/songs?artist=刀郎', timeout=20)

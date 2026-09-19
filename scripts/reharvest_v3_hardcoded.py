@@ -14,7 +14,7 @@ from pathlib import Path
 # ── 配置 ──────────────────────────────────────────────
 API_BASE = "https://m-api.changgepd.ccwu.cc"
 PROXY = "http://127.0.0.1:7890"
-GROQ_KEY = "GROQ_KEY_REMOVED"
+GROQ_KEY = os.environ.get("GROQ_API_KEY")
 R2_CFG = json.load(open("/Users/apple/Desktop/moodyimusic/MoodyMusic-Server/r2_config.json"))
 BUCKET_CFG = R2_CFG["buckets"]["account_07"]
 PUBLIC_PREFIX = BUCKET_CFG["public_url"]

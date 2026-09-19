@@ -8,7 +8,7 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 PROXIES = {'http': 'http://127.0.0.1:7890', 'https': 'http://127.0.0.1:7890'}
-GROQ_API_KEY = "GROQ_KEY_REMOVED"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 INPUT_JSON = '/tmp/mayday_all_songs.json'
 OUTPUT_REPORT = '/tmp/mayday_audit_report.json'

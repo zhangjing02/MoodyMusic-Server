@@ -4,7 +4,7 @@ import tempfile
 import os
 import requests
 
-GROQ_API_KEY = "GROQ_KEY_REMOVED"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 with open('/tmp/mayday_all_songs.json', 'r', encoding='utf-8') as f:
     all_songs = json.load(f)

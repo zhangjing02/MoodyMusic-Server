@@ -8,7 +8,7 @@ from botocore.config import Config
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 PROXIES = {'http': 'http://127.0.0.1:7890', 'https': 'http://127.0.0.1:7890'}
-GROQ_API_KEY = "GROQ_KEY_REMOVED"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 with open("MoodyMusic-Server/r2_config.json", "r", encoding="utf-8") as f:
     r2_cfg = json.load(f)["buckets"]["account_07"]

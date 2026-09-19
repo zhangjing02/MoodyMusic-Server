@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 
 PROXIES = {'http': 'http://127.0.0.1:7890', 'https': 'http://127.0.0.1:7890'}
-GROQ_API_KEY = "GROQ_KEY_REMOVED"
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 with open('/tmp/mayday_audit_report.json', 'r', encoding='utf-8') as f:
     report = json.load(f)
