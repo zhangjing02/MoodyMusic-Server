@@ -123,18 +123,23 @@
                     </div>
                 </div>
                 <div class="ah-lyrics" style="position: relative; height: 260px !important;">
-                    <!-- 歌词调整触发器 (强制右下角，无背景) -->
-                    <button id="lyricAdjBtn" class="lyric-adj-trigger" title="调整歌词偏移/内容"
-                        style="display: none; position: absolute; bottom: 10px !important; right: 10px !important; top: auto !important; background: none !important; border: none !important; box-shadow: none !important; cursor: pointer;"
-                        onmouseover="const s=this.querySelector('svg'); s.style.stroke='#d4af37'; s.style.opacity='1'; s.style.transform='scale(1.1)';"
-                        onmouseout="const s=this.querySelector('svg'); s.style.stroke='#888'; s.style.opacity='0.4'; s.style.transform='scale(1)';">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"
-                            style="opacity: 0.4; transition: all 0.2s ease;">
-                            <path d="M12 20h9"></path>
-                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                        </svg>
-                    </button>
+                    <!-- 歌词工具操作区 (右下角) -->
+                    <div class="lyrics-toolbar" style="position: absolute; bottom: 10px !important; right: 10px !important; z-index: 100; display: flex; align-items: center; gap: 6px;">
+                        <button id="lyricStyleToggle" class="lyric-style-toggle-btn" title="切换歌词显示风格 (常规 / LED点阵)">
+                            LED
+                        </button>
+                        <button id="lyricAdjBtn" class="lyric-adj-trigger" title="调整歌词偏移/内容"
+                            style="display: none; position: static !important; background: none !important; border: none !important; box-shadow: none !important; cursor: pointer;"
+                            onmouseover="const s=this.querySelector('svg'); s.style.stroke='#d4af37'; s.style.opacity='1'; s.style.transform='scale(1.1)';"
+                            onmouseout="const s=this.querySelector('svg'); s.style.stroke='#888'; s.style.opacity='0.4'; s.style.transform='scale(1)';">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                style="opacity: 0.4; transition: all 0.2s ease;">
+                                <path d="M12 20h9"></path>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="lyrics-container" style="height: 260px !important;">
                         <div class="lyrics-scroll" id="albumLyrics">
                             <!-- 初始状态保持空白 -->
@@ -163,7 +168,10 @@
             <div class="lyrics-panel collapsed" id="lyricsPanel" style="display: none;">
                 <div class="lyrics-header">
                     <h3>歌词</h3>
-                    <button class="lyrics-toggle" id="lyricsToggle">▼</button>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <button id="panelLyricStyleToggle" class="lyric-style-toggle-btn" title="切换歌词显示风格 (常规 / LED点阵)">LED</button>
+                        <button class="lyrics-toggle" id="lyricsToggle">▼</button>
+                    </div>
                 </div>
                 <div class="lyrics-content" id="lyricsContent">
                     <!-- 初始状态保持空白 -->
@@ -368,6 +376,7 @@
     <script src="src/js/storage.js?v=12.58"></script>
     <script src="src/js/user_system.js?v=12.58"></script>
     <script src="src/js/app.js?v=20260904_1340"></script>
+    <script src="src/js/led-lyrics-renderer.js?v=1.0"></script>
     <script src="src/js/player.js?v=20260906_0001"></script>
     <!-- 微动画环境氛围与双态屏保模块 -->
     <!-- audioMotion-analyzer v4.5.4 专业频谱库（必须在 ambient-bg.js 之前加载） -->
@@ -384,6 +393,11 @@
             if (typeof initApp === 'function') {
                 await initApp();
                 console.log('app.js 初始化完成');
+            }
+
+            // 初始化动态 LED 点阵歌词引擎
+            if (window.LedLyricsRenderer && typeof window.LedLyricsRenderer.init === 'function') {
+                window.LedLyricsRenderer.init();
             }
 
             // 再初始化播放器（也是异步的）

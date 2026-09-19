@@ -2472,13 +2472,15 @@ async function loadLyrics(item) {
 function renderParsedLyrics(lines) {
     console.log('渲染 LRC 歌词，共', lines.length, '行');
 
+    const escapeAttr = str => String(str || '').replace(/"/g, '&quot;');
+
     // 底部面板歌词（每个字独立包装）
     if (player.lyricsContent) {
         player.lyricsContent.innerHTML = lines.map((line, index) => {
             const chars = line.text.split('').map((char, charIndex) =>
                 `<span class="lyric-char" data-char-index="${charIndex}">${char}</span>`
             ).join('');
-            return `<div class="lyrics-line" data-time="${line.time}" data-index="${index}">${chars}</div>`;
+            return `<div class="lyrics-line" data-time="${line.time}" data-index="${index}" data-text="${escapeAttr(line.text)}">${chars}</div>`;
         }).join('');
     }
 
@@ -2488,8 +2490,13 @@ function renderParsedLyrics(lines) {
             const chars = line.text.split('').map((char, charIndex) =>
                 `<span class="lyric-char" data-char-index="${charIndex}">${char}</span>`
             ).join('');
-            return `<div class="ms-lyrics-item" data-time="${line.time}" data-index="${index}">${chars}</div>`;
+            return `<div class="ms-lyrics-item" data-time="${line.time}" data-index="${index}" data-text="${escapeAttr(line.text)}">${chars}</div>`;
         }).join('');
+    }
+
+    // 同步 LED 模式容器状态
+    if (window.LedLyricsRenderer) {
+        window.LedLyricsRenderer.updateContainersClass();
     }
 }
 
@@ -2498,19 +2505,24 @@ function renderParsedLyrics(lines) {
  */
 function renderPlainLyrics(lyrics) {
     const lines = lyrics.split('\n').filter(line => line.trim());
+    const escapeAttr = str => String(str || '').replace(/"/g, '&quot;');
 
     // 底部面板歌词
     if (player.lyricsContent) {
         player.lyricsContent.innerHTML = lines.map((line, index) => {
-            return `<div class="lyrics-line" data-index="${index}">${line}</div>`;
+            return `<div class="lyrics-line" data-index="${index}" data-text="${escapeAttr(line)}">${line}</div>`;
         }).join('');
     }
 
     // 专辑页歌词
     if (player.albumLyrics) {
         player.albumLyrics.innerHTML = lines.map((line, index) => {
-            return `<div class="ms-lyrics-item" data-index="${index}">${line}</div>`;
+            return `<div class="ms-lyrics-item" data-index="${index}" data-text="${escapeAttr(line)}">${line}</div>`;
         }).join('');
+    }
+
+    if (window.LedLyricsRenderer) {
+        window.LedLyricsRenderer.updateContainersClass();
     }
 }
 
@@ -2535,6 +2547,16 @@ function highlightLyricLine(index, progress = 1) {
     const currentLine = LyricsSync.currentLyrics?.[index];
     const totalChars = currentLine?.text?.length || 0;
     const activeCharIndex = Math.floor(progress * totalChars);
+
+    // LED 点阵歌词引擎同步调度
+    if (window.LedLyricsRenderer && window.LedLyricsRenderer.isEnabled()) {
+        if (player.lyricsContent) {
+            window.LedLyricsRenderer.syncContainer(player.lyricsContent, index, progress);
+        }
+        if (player.albumLyrics) {
+            window.LedLyricsRenderer.syncContainer(player.albumLyrics, index, progress);
+        }
+    }
 
     // 底部面板高亮
     if (player.lyricsContent) {

@@ -945,11 +945,17 @@
         }
         if (dom.zenLyricsWrapper) dom.zenLyricsWrapper.style.display = 'block';
 
+        const escapeAttr = str => String(str || '').replace(/"/g, '&quot;');
         dom.zenLyricsContainer.innerHTML = lyricsSync.currentLyrics.map((line, idx) => `
-            <div class="zen-lyric-line" data-index="${idx}" data-time="${line.time}">
+            <div class="zen-lyric-line" data-index="${idx}" data-time="${line.time}" data-text="${escapeAttr(line.text)}">
                 ${line.text}
             </div>
         `).join('');
+
+        // 刷新 LED 容器类
+        if (window.LedLyricsRenderer) {
+            window.LedLyricsRenderer.updateContainersClass();
+        }
 
         // 点击歌词跳转
         dom.zenLyricsContainer.querySelectorAll('.zen-lyric-line').forEach(lineEl => {
@@ -975,6 +981,11 @@
         const activeIndex = lyricsSync.currentIndex;
         const lines = dom.zenLyricsContainer.querySelectorAll('.zen-lyric-line');
         if (lines.length === 0) return;
+
+        // 同步 LED 点阵渲染
+        if (window.LedLyricsRenderer && window.LedLyricsRenderer.isEnabled()) {
+            window.LedLyricsRenderer.syncContainer(dom.zenLyricsContainer, activeIndex, 1.0);
+        }
 
         let activeLine = null;
         lines.forEach((line, i) => {
