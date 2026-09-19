@@ -184,37 +184,34 @@
 
             const ctx = canvas.getContext('2d');
             const dpr = window.devicePixelRatio || 1;
-            const step = this.config.dotStep;
-            const r = this.config.dotRadius;
 
-            // 计算 canvas 原始 CSS 尺寸
-            let cssW = matrix.width * step;
-            const cssH = matrix.height * step;
+            // --- 自适应 step：根据父容器可用宽度缩小 step，确保文字不被截断 ---
+            let step = this.config.dotStep;
+            const rawCssW = matrix.width * step;
 
-            // 自适应：如果文字渲染宽度超出父容器可用宽度，缩放 canvas 以适应
             const parentEl = canvas.parentElement;
             if (parentEl) {
                 const availW = parentEl.clientWidth || parentEl.offsetWidth;
-                if (availW > 20 && cssW > availW) {
-                    const scale = availW / cssW;
-                    cssW = availW;
-                    canvas.style.width = `${cssW}px`;
-                    canvas.style.height = `${cssH * scale}px`;
-                } else {
-                    canvas.style.width = `${cssW}px`;
-                    canvas.style.height = `${cssH}px`;
+                if (availW > 20 && rawCssW > availW) {
+                    // 按比例缩小 step，使整行文字恰好放进容器
+                    step = step * (availW / rawCssW);
                 }
-            } else {
-                canvas.style.width = `${cssW}px`;
-                canvas.style.height = `${cssH}px`;
             }
+
+            // 用自适应 step 重新计算最终 CSS 尺寸
+            const cssW = matrix.width * step;
+            const cssH = matrix.height * step;
+            // 灯珠半径也随 step 等比缩小（保持灯珠间隙感）
+            const r = Math.min(this.config.dotRadius, step * 0.38);
+
+            canvas.style.width  = `${cssW}px`;
+            canvas.style.height = `${cssH}px`;
 
             // 保持高清屏点对点清晰度
             const targetW = Math.round(cssW * dpr);
             const targetH = Math.round(cssH * dpr);
-
             if (canvas.width !== targetW || canvas.height !== targetH) {
-                canvas.width = targetW;
+                canvas.width  = targetW;
                 canvas.height = targetH;
             }
 
@@ -222,9 +219,9 @@
             ctx.scale(dpr, dpr);
             ctx.clearRect(0, 0, cssW, cssH);
 
-            const activeThresholdX = (matrix.width * Math.max(0, Math.min(1, progress)));
+            const activeThresholdX = matrix.width * Math.max(0, Math.min(1, progress));
 
-            // 批量绘制点阵灯珠
+            // 批量绘制点阵灯珠（使用自适应 step 计算坐标）
             for (let i = 0; i < matrix.dots.length; i++) {
                 const dot = matrix.dots[i];
                 const cx = dot.x * step + step / 2;
@@ -239,15 +236,14 @@
                     // 当前行点亮状态 (带 LED 漫反射辉光)
                     if (this.config.glowBlur > 0) {
                         ctx.shadowColor = this.config.glowColor;
-                        ctx.shadowBlur = this.config.glowBlur;
+                        ctx.shadowBlur  = this.config.glowBlur;
                     }
                     ctx.fillStyle = this.config.activeColor;
                     ctx.fill();
                 } else {
-                    // 未点亮或非当前行
                     ctx.shadowColor = 'transparent';
-                    ctx.shadowBlur = 0;
-                    ctx.fillStyle = isCurrent ? this.config.unlitColor : this.config.inactiveLineColor;
+                    ctx.shadowBlur  = 0;
+                    ctx.fillStyle   = isCurrent ? this.config.unlitColor : this.config.inactiveLineColor;
                     ctx.fill();
                 }
             }
