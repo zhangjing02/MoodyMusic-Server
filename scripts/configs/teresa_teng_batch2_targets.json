@@ -1,0 +1,714 @@
+[
+  {
+    "song_id": 4054,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "酒醉的探戈"
+  },
+  {
+    "song_id": 4055,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "像故事般溫柔"
+  },
+  {
+    "song_id": 4056,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "命運之川"
+  },
+  {
+    "song_id": 4057,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "愛人"
+  },
+  {
+    "song_id": 4058,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "午夜微風"
+  },
+  {
+    "song_id": 4059,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "夏日聖誕"
+  },
+  {
+    "song_id": 4060,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "非龍非魑"
+  },
+  {
+    "song_id": 4061,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "不著痕跡"
+  },
+  {
+    "song_id": 4062,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "心路過黃昏"
+  },
+  {
+    "song_id": 4063,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 258,
+    "album_title": "復黑王: 我只在乎你",
+    "title": "我只在乎你"
+  },
+  {
+    "song_id": 4111,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "愛人 (日文)"
+  },
+  {
+    "song_id": 4112,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "淋雨 (日文)"
+  },
+  {
+    "song_id": 4113,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "不著痕跡 (日文)"
+  },
+  {
+    "song_id": 4114,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "驛站 (日文)"
+  },
+  {
+    "song_id": 4115,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "I Love You (日文)"
+  },
+  {
+    "song_id": 4116,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "被迷亂著 (日文)"
+  },
+  {
+    "song_id": 4117,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "午夜安魂曲 (日文)"
+  },
+  {
+    "song_id": 4118,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "愛如流砂 (日文)"
+  },
+  {
+    "song_id": 4119,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "傍晚海上風平浪靜 (日文)"
+  },
+  {
+    "song_id": 4120,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 263,
+    "album_title": "復黑王: 愛人",
+    "title": "天外天上天無涯 (日文)"
+  },
+  {
+    "song_id": 4156,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "償還 (日文)"
+  },
+  {
+    "song_id": 4157,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "晚秋 (日文)"
+  },
+  {
+    "song_id": 4158,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "等待 (日文)"
+  },
+  {
+    "song_id": 4159,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "雪化妝 (日文)"
+  },
+  {
+    "song_id": 4160,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "東京嫉妒 (日文)"
+  },
+  {
+    "song_id": 4161,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "上海悲歌 (日文)"
+  },
+  {
+    "song_id": 4162,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "空港 (日文)"
+  },
+  {
+    "song_id": 4163,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "娘心 (日文)"
+  },
+  {
+    "song_id": 4164,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "再見了,親愛的 (日文)"
+  },
+  {
+    "song_id": 4165,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "夢芝居 (日文)"
+  },
+  {
+    "song_id": 4166,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "笑著乾杯 (日文)"
+  },
+  {
+    "song_id": 4167,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 266,
+    "album_title": "復黑王: 償還",
+    "title": "北國之春 (日文)"
+  },
+  {
+    "song_id": 4044,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "酒醉的探戈"
+  },
+  {
+    "song_id": 4045,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "像故事般溫柔"
+  },
+  {
+    "song_id": 4046,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "愛人"
+  },
+  {
+    "song_id": 4047,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "午夜微風"
+  },
+  {
+    "song_id": 4048,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "天外天上天無涯"
+  },
+  {
+    "song_id": 4049,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "夏日聖誕"
+  },
+  {
+    "song_id": 4050,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "非龍非彲"
+  },
+  {
+    "song_id": 4051,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "不著痕跡"
+  },
+  {
+    "song_id": 4052,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "心路過黃昏"
+  },
+  {
+    "song_id": 4053,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 257,
+    "album_title": "復黑王: 酒醉的探戈",
+    "title": "我只在乎你"
+  },
+  {
+    "song_id": 4415,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "裝作不知道"
+  },
+  {
+    "song_id": 4416,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "相見在明天"
+  },
+  {
+    "song_id": 4417,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "我不再迷惘"
+  },
+  {
+    "song_id": 4418,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "多少黎明多少黃昏裡"
+  },
+  {
+    "song_id": 4419,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "願你來看我"
+  },
+  {
+    "song_id": 4420,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "儂情萬縷"
+  },
+  {
+    "song_id": 4421,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "又見炊煙"
+  },
+  {
+    "song_id": 4422,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "使愛情更美麗"
+  },
+  {
+    "song_id": 4423,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "我心深處"
+  },
+  {
+    "song_id": 4424,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "青色的回憶"
+  },
+  {
+    "song_id": 4425,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "情飄飄"
+  },
+  {
+    "song_id": 4426,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 287,
+    "album_title": "復黑王: 又見炊煙",
+    "title": "夜的投影"
+  },
+  {
+    "song_id": 4403,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "一封情書"
+  },
+  {
+    "song_id": 4404,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "我是你的知音"
+  },
+  {
+    "song_id": 4405,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "何日君再來"
+  },
+  {
+    "song_id": 4406,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "夜色"
+  },
+  {
+    "song_id": 4407,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "心裡夢裡"
+  },
+  {
+    "song_id": 4408,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "愛我像愛花一樣"
+  },
+  {
+    "song_id": 4409,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "無情荒地有情天"
+  },
+  {
+    "song_id": 4410,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "今天歡樂明天夢"
+  },
+  {
+    "song_id": 4411,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "雲河"
+  },
+  {
+    "song_id": 4412,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "魂牽夢也繫"
+  },
+  {
+    "song_id": 4413,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "往事常牽掛"
+  },
+  {
+    "song_id": 4414,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 286,
+    "album_title": "復黑王: 一封情書",
+    "title": "夜來香"
+  },
+  {
+    "song_id": 4292,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "心裡多輕鬆"
+  },
+  {
+    "song_id": 4293,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "惜別"
+  },
+  {
+    "song_id": 4294,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "望著天空的女孩"
+  },
+  {
+    "song_id": 4295,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "情迷"
+  },
+  {
+    "song_id": 4296,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "伴你走天涯"
+  },
+  {
+    "song_id": 4297,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "一個小心願"
+  },
+  {
+    "song_id": 4298,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "雪中蓮"
+  },
+  {
+    "song_id": 4299,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "微風細雨"
+  },
+  {
+    "song_id": 4300,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "寂寞的花季"
+  },
+  {
+    "song_id": 4301,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "忘不了"
+  },
+  {
+    "song_id": 4302,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "問彩霞"
+  },
+  {
+    "song_id": 4303,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 277,
+    "album_title": "復黑王: 一個小心願",
+    "title": "春的懷抱"
+  },
+  {
+    "song_id": 4340,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "原鄉情濃"
+  },
+  {
+    "song_id": 4341,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "白沙灘"
+  },
+  {
+    "song_id": 4342,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "望一望"
+  },
+  {
+    "song_id": 4343,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "梅花"
+  },
+  {
+    "song_id": 4344,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "勝利的歌聲"
+  },
+  {
+    "song_id": 4345,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "晚風,花香"
+  },
+  {
+    "song_id": 4346,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "原鄉人"
+  },
+  {
+    "song_id": 4347,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "心湖裡起漣漪"
+  },
+  {
+    "song_id": 4348,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "迎著風跟著雲"
+  },
+  {
+    "song_id": 4349,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "君心我心"
+  },
+  {
+    "song_id": 4350,
+    "artist_id": 15,
+    "artist_name": "邓丽君",
+    "album_id": 281,
+    "album_title": "復黑王: 原鄉情濃",
+    "title": "江水要比河水長"
+  }
+]

@@ -25,6 +25,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from syncedlyrics import search as search_lrc
 
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(line_buffering=True)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TARGETS_FILE = os.path.join(BASE_DIR, "scripts", "configs", "priority_missing_targets.json")
 R2_CONFIG_FILE = os.path.join(BASE_DIR, "r2_config.json")
@@ -111,13 +114,45 @@ def check_d1_already_lit(album_id: int, song_id: int) -> bool:
         pass
     return False
 
+ARTIST_ALIASES = {
+    "邓丽君": ["邓丽君", "鄧麗君", "Teresa Teng", "テレサ・テン"],
+    "飞儿乐团": ["飞儿乐团", "F.I.R.", "飛兒樂團"],
+    "那英": ["那英", "Na Ying"],
+    "古巨基": ["古巨基", "Leo Ku"],
+    "张雨生": ["张雨生", "張雨生", "Tom Chang"],
+    "动力火车": ["动力火车", "動力火車", "Power Station"],
+    "张靓颖": ["张靓颖", "張靚穎", "Jane Zhang"],
+    "戴佩妮": ["戴佩妮", "Penny Tai"],
+    "汪峰": ["汪峰", "Wang Feng"],
+    "陈粒": ["陈粒", "Chen Li"],
+    "李圣杰": ["李圣杰", "李聖傑", "Sam Lee"],
+    "周华健": ["周华健", "周華健", "Wakin Chau", "Emil Chau"],
+    "苏打绿": ["苏打绿", "蘇打綠", "Sodagreen", "鱼丁糸", "魚丁糸"],
+    "Beyond": ["Beyond", "黄家驹", "黃家駒"],
+    "张信哲": ["张信哲", "張信哲", "Jeff Chang"],
+    "张惠妹": ["张惠妹", "張惠妹", "A-Mei", "阿妹", "AMIT"],
+    "梁静茹": ["梁静茹", "梁靜茹", "Fish Leong"],
+}
+
+def clean_song_title(title: str) -> str:
+    cleaned = re.sub(r'[\(（].*?[\)）]', '', title).strip()
+    return cleaned if cleaned else title
+
 def search_and_download_audio(artist: str, album: str, title: str, out_path: str) -> bool:
-    queries = [
-        f"{artist} - Topic {title}",
-        f"{artist} {title} Topic",
-        f"{artist} {title} 官方",
-        f"{artist} {title}"
-    ]
+    aliases = ARTIST_ALIASES.get(artist, [artist])
+    cleaned_title = clean_song_title(title)
+    
+    queries = []
+    # 1. 优先别名 + Topic 组合
+    for a_name in aliases[:2]:
+        queries.append(f"{a_name} - Topic {cleaned_title}")
+        queries.append(f"{a_name} {cleaned_title} Topic")
+    # 2. 官方频道或通用检索
+    queries.append(f"{aliases[0]} {cleaned_title}")
+    if cleaned_title != title:
+        queries.append(f"{aliases[0]} {title}")
+    if len(aliases) > 1:
+        queries.append(f"{aliases[1]} {cleaned_title}")
     
     for q in queries:
         cmd_search = [
@@ -131,7 +166,7 @@ def search_and_download_audio(artist: str, album: str, title: str, out_path: str
             lines = [l.strip() for l in res.stdout.split("\n") if l.strip()]
             best_id = None
             
-            # 第一优先级: Topic 官方频道
+            # 第一优先级: Topic 官方母带频道
             for l in lines:
                 parts = l.split(" | ")
                 if len(parts) >= 3:
@@ -142,7 +177,7 @@ def search_and_download_audio(artist: str, album: str, title: str, out_path: str
                         best_id = vid
                         break
             
-            # 第二优先级: 歌手/官方唱片频道
+            # 第二优先级: 歌手认证/官方唱片频道 (简繁及外文别名匹配)
             if not best_id:
                 for l in lines:
                     parts = l.split(" | ")
@@ -150,7 +185,8 @@ def search_and_download_audio(artist: str, album: str, title: str, out_path: str
                         vid, channel, vtitle = parts[0], parts[1], parts[2]
                         if any(kw in vtitle.lower() for kw in BLACK_KEYWORDS):
                             continue
-                        if artist.lower() in channel.lower() or "warner" in channel.lower() or "universal" in channel.lower() or "eeg" in channel.lower():
+                        ch_lower = channel.lower()
+                        if any(alias.lower() in ch_lower for alias in aliases) or any(rec in ch_lower for rec in ["warner", "universal", "polydor", "rock records", "滾石", "環球", "华纳", "宝丽金", "eeg"]):
                             best_id = vid
                             break
                             
@@ -221,30 +257,36 @@ def search_and_download_audio(artist: str, album: str, title: str, out_path: str
     return False
 
 def fetch_lrc_content(artist: str, title: str) -> str | None:
-    # 策略 1: syncedlyrics
-    try:
-        lrc_text = search_lrc(f"{artist} {title}", allow_plain_format=False)
-        if lrc_text and "[" in lrc_text and "]" in lrc_text:
-            return lrc_text
-    except Exception:
-        pass
-        
-    # 策略 2: 网易云 API
-    try:
-        search_url = f"https://music.163.com/api/search/get/web?s={artist}+{title}&type=1&offset=0&total=true&limit=1"
-        r = requests.get(search_url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=5)
-        if r.ok:
-            songs = r.json().get("result", {}).get("songs", [])
-            if songs:
-                song_id = songs[0]["id"]
-                lrc_url = f"https://music.163.com/api/song/lyric?os=pc&id={song_id}&lv=-1&kv=-1&tv=-1"
-                lr = requests.get(lrc_url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=5)
-                if lr.ok:
-                    lrc = lr.json().get("lrc", {}).get("lyric", "")
-                    if lrc and "[" in lrc:
-                        return lrc
-    except Exception:
-        pass
+    cleaned = clean_song_title(title)
+    search_titles = [title] if cleaned == title else [title, cleaned]
+    aliases = ARTIST_ALIASES.get(artist, [artist])
+
+    for st in search_titles:
+        for an in aliases[:2]:
+            # 策略 1: syncedlyrics
+            try:
+                lrc_text = search_lrc(f"{an} {st}", allow_plain_format=False)
+                if lrc_text and "[" in lrc_text and "]" in lrc_text:
+                    return lrc_text
+            except Exception:
+                pass
+                
+            # 策略 2: 网易云 API
+            try:
+                search_url = f"https://music.163.com/api/search/get/web?s={an}+{st}&type=1&offset=0&total=true&limit=1"
+                r = requests.get(search_url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=5)
+                if r.ok:
+                    songs = r.json().get("result", {}).get("songs", [])
+                    if songs:
+                        song_id = songs[0]["id"]
+                        lrc_url = f"https://music.163.com/api/song/lyric?os=pc&id={song_id}&lv=-1&kv=-1&tv=-1"
+                        lr = requests.get(lrc_url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=5)
+                        if lr.ok:
+                            lrc = lr.json().get("lrc", {}).get("lyric", "")
+                            if lrc and "[" in lrc:
+                                return lrc
+            except Exception:
+                pass
         
     return None
 
