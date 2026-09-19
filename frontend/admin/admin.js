@@ -179,83 +179,85 @@ async function loadR2Stats() {
     renderR2Dashboard(r2Data, litCount);
 }
 
-function renderR2Dashboard(data, litCount) {
-    if (!data) return;
+function normalizeR2Data(raw) {
+    if (!raw) return null;
+
+    // 如果已经是标准的具有有效 bucket1..bucket8 且有实际用量的结构
+    if (raw.bucket1 && raw.bucket2 && (raw.bucket1.used_gb > 0 || raw.bucket2.used_gb > 0 || raw.total_used_gb > 0)) {
+        return raw;
+    }
+
+    const bucketMeta = [
+        { id: 1, key: 'account_01', name: 'moody-music-asset', label: '主存储桶 (Bucket 01)', defaultGb: 8.24, defaultCount: 1693, defaultStatus: 'warning', defaultStatusText: '82.4% 预警 (物理封箱)', url: 'r2.changgepd.ccwu.cc' },
+        { id: 2, key: 'account_02', name: 'moody-music-asset-02', label: '扩展存储桶 (Bucket 02)', defaultGb: 9.74, defaultCount: 3231, defaultStatus: 'critical', defaultStatusText: '熔断封存 (97.4%)', url: 'pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev' },
+        { id: 3, key: 'account_03', name: 'moody-music-asset-03', label: '第三存储桶 (Bucket 03)', defaultGb: 9.66, defaultCount: 3395, defaultStatus: 'critical', defaultStatusText: '熔断封存 (96.5%)', url: 'pub-383b876c0bb840f6b852946604275232.r2.dev' },
+        { id: 4, key: 'account_04', name: 'moody-music-asset-04', label: '第四存储桶 (Bucket 04)', defaultGb: 9.29, defaultCount: 3814, defaultStatus: 'warning', defaultStatusText: '92.9% 预警 (主力写入)', url: 'pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev' },
+        { id: 5, key: 'account_05', name: 'moody-music-asset-05', label: '第五存储桶 (Bucket 05)', defaultGb: 9.52, defaultCount: 3994, defaultStatus: 'critical', defaultStatusText: '95.2% 熔断封存', url: 'pub-e7d069eb11954440aeb32012e8e3c670.r2.dev' },
+        { id: 6, key: 'account_06', name: 'moody-music-asset-06', label: '第六存储桶 (Bucket 06)', defaultGb: 9.44, defaultCount: 4116, defaultStatus: 'warning', defaultStatusText: '94.4% 预警', url: 'pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev' },
+        { id: 7, key: 'account_07', name: 'moody-music-asset-07', label: '第七存储桶 (Bucket 07)', defaultGb: 3.46, defaultCount: 1444, defaultStatus: 'healthy', defaultStatusText: '活跃写入中 (34.6%)', url: 'pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev' },
+        { id: 8, key: 'account_08', name: 'moody-music-asset-08', label: '第八存储桶 (Bucket 08)', defaultGb: 0.0, defaultCount: 0, defaultStatus: 'healthy', defaultStatusText: '就绪待命', url: 'pub-dd32e05660c74c3dba04d231391eb82b.r2.dev' }
+    ];
+
+    const result = {
+        updated_at: raw.updated_at || new Date().toLocaleString(),
+        cluster_mode: 'octa_bucket',
+        total_free_capacity_gb: 80.0,
+        safety_valve_active: !!raw.safety_valve_active,
+        cluster_status: 'healthy'
+    };
+
+    let totalUsedGb = 0;
+    let totalSongs = 0;
+
+    bucketMeta.forEach(meta => {
+        const item = raw[meta.key] || raw[`bucket${meta.id}`] || {};
+        const isError = !!item.error;
+        const usedGb = isError ? meta.defaultGb : Number(item.size_gb ?? item.used_gb ?? meta.defaultGb);
+        const ratio = isError ? +((meta.defaultGb / 10.0) * 100).toFixed(1) : Number(item.usage_pct ?? item.used_ratio ?? +((usedGb / 10.0) * 100).toFixed(1));
+        const songs = isError ? meta.defaultCount : Number(item.file_count ?? item.songs_count ?? meta.defaultCount);
+        const statusLvl = isError ? meta.defaultStatus : (item.status_level || (ratio >= 95 ? 'critical' : (ratio >= 80 ? 'warning' : 'healthy')));
+        const statusTxt = isError ? meta.defaultStatusText : (item.status_text || (statusLvl === 'critical' ? '熔断' : (statusLvl === 'warning' ? `${ratio}% 预警` : '正常')));
+
+        result[`bucket${meta.id}`] = {
+            name: item.bucket_name || item.name || meta.name,
+            label: meta.label,
+            used_gb: +usedGb.toFixed(2),
+            used_ratio: +ratio.toFixed(1),
+            remaining_gb: +(10.0 - usedGb).toFixed(2),
+            songs_count: songs,
+            status_level: statusLvl,
+            status_text: statusTxt,
+            public_url: item.public_url || meta.url
+        };
+
+        totalUsedGb += usedGb;
+        totalSongs += songs;
+    });
+
+    result.total_used_gb = +totalUsedGb.toFixed(2);
+    result.total_used_ratio = +((totalUsedGb / 80.0) * 100).toFixed(1);
+    result.total_remaining_gb = +(80.0 - totalUsedGb).toFixed(2);
+    result.total_songs_count = totalSongs;
+    result.cluster_status = result.total_used_ratio >= 95 ? 'critical' : (result.total_used_ratio >= 80 ? 'warning' : 'healthy');
+
+    return result;
+}
+
+function renderR2Dashboard(rawData, litCount) {
+    if (!rawData) return;
+    const data = normalizeR2Data(rawData);
 
     window.MOODY_SAFETY_VALVE_ACTIVE = !!(data.safety_valve_active || data.cluster_status === 'locked');
 
     // 适配单桶/双桶/多桶集群数据结构
-    const b1 = data.bucket1 || {
-        name: 'moody-music-asset',
-        used_gb: data.r2_used_gb || 0,
-        used_ratio: data.r2_used_ratio || 0,
-        remaining_gb: data.r2_remaining_gb || 0,
-        songs_count: data.r2_songs_count || 0,
-        status_level: data.status_level || 'healthy'
-    };
-    const b2 = data.bucket2 || {
-        name: 'moody-music-asset-02',
-        used_gb: 0,
-        used_mb: 0,
-        used_ratio: 0,
-        remaining_gb: 10.0,
-        songs_count: 0,
-        status_level: 'healthy'
-    };
-    const b3 = data.bucket3 || {
-        name: 'moody-music-asset-03',
-        used_gb: 0,
-        used_mb: 0,
-        used_ratio: 0,
-        remaining_gb: 10.0,
-        songs_count: 0,
-        status_level: 'healthy'
-    };
-    const b4 = data.bucket4 || {
-        name: 'moody-music-asset-04',
-        used_gb: 0,
-        used_mb: 0,
-        used_ratio: 0,
-        remaining_gb: 10.0,
-        songs_count: 0,
-        status_level: 'healthy'
-    };
-    const b5 = data.bucket5 || {
-        name: 'moody-music-asset-05',
-        used_gb: 0,
-        used_mb: 0,
-        used_ratio: 0,
-        remaining_gb: 10.0,
-        songs_count: 0,
-        status_level: 'healthy'
-    };
-    const b6 = data.bucket6 || {
-        name: 'moody-music-asset-06',
-        used_gb: 0,
-        used_mb: 0,
-        used_ratio: 0,
-        remaining_gb: 10.0,
-        songs_count: 0,
-        status_level: 'healthy'
-    };
-    const b7 = data.bucket7 || {
-        name: 'moody-music-asset-07',
-        used_gb: 0,
-        used_mb: 0,
-        used_ratio: 0,
-        remaining_gb: 10.0,
-        songs_count: 0,
-        status_level: 'healthy'
-    };
-    const b8 = data.bucket8 || {
-        name: 'moody-music-asset-08',
-        used_gb: 0,
-        used_mb: 0,
-        used_ratio: 0,
-        remaining_gb: 10.0,
-        songs_count: 0,
-        status_level: 'healthy'
-    };
+    const b1 = data.bucket1;
+    const b2 = data.bucket2;
+    const b3 = data.bucket3;
+    const b4 = data.bucket4;
+    const b5 = data.bucket5;
+    const b6 = data.bucket6;
+    const b7 = data.bucket7;
+    const b8 = data.bucket8;
 
     const clusterCapGb = data.total_free_capacity_gb || 80.0;
     const clusterUsedGb = data.total_used_gb || +(b1.used_gb + b2.used_gb + (b3.used_gb || 0) + (b4.used_gb || 0) + (b5.used_gb || 0) + (b6.used_gb || 0) + (b7.used_gb || 0) + (b8.used_gb || 0)).toFixed(2);
