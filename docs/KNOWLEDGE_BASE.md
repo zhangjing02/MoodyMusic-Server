@@ -28,6 +28,8 @@
 | 2026-09-16 | 沙箱内读取外部目录报 `Operation not permitted` | 默认沙箱权限仅隔离在 workspace 目录内 | 对需要操作全局配置 `~/.gemini/config/` 或外部项目目录的操作，需显式请求并利用系统授权机制执行，避免无意义重试。 |
 | 2026-09-18 | GitHub Push 被 GH013 Secret Scanning 拦截拒绝 | 配置文件（如 `wrangler.toml`）中包含真实 Resend API Token | 源码仓库只保留占位符或环境变量，敏感凭证统一通过 wrangler secret 或 CI/CD 环境变量注入，严禁提交到 git 历史。 |
 | 2026-09-18 | Gradle 构建与依赖拉取阻塞挂起或报代理端口连接失败 | 项目级 `gradle.properties` 硬编码了局域网代理 `127.0.0.1:10090` | 严禁在项目级 `gradle.properties` 提交硬编码代理，个人开发代理必须配置在用户级 `~/.gradle/gradle.properties` 中。 |
+| 2026-09-19 | yt-dlp 采录报假失败 (yt-dlp failed) | YouTube 对纯音频流开启 SABR 实验回退选择 360p mp4 封装。脚本仅检测 m4a/webm 等音频扩展名，缺失 mp4/mkv，导致实物下载完成却被判定失败。 | 音源探测扩展名列表必须涵盖 `mp4, m4a, webm, opus, mp3, ogg, mkv`。检查实物文件是否存在与体积达标（>50KB）。 |
+| 2026-09-19 | yt-dlp 带 `--max-downloads 1` 导致脚本崩溃 | yt-dlp 达到 `--max-downloads` 限额时会主动以 exit code 101 退出，若在 `subprocess.run` 中设置 `check=True` 会抛异常阻断。 | 禁用 `check=True`，改用实物文件探测和体积验证作为下载成功的真实判定依据。 |
 
 ---
 
@@ -57,3 +59,9 @@
 - **骨架元数据与正式发行译名差异处理 (Tracklist Mapping)**：
   - 早期建库抓轨时，部分曲目使用了 Demo 暂定名或纯英文直译（如毛不易《失落成群》骨架登记为《荒原》(Forsaken Dreams)、周华健《情蒸發》登记为 `Vaporized Love`、任贤齐《爱过才心痛》登记为 `Love Won't Hurt Until Loved`）。
   - 在全自动化补齐采录时，必须比对官方发行标准曲目表或英文副标题，建立两端精确映射字典，杜绝因歌名不符导致的漏采或错采。
+- **早期曲库爬虫幽灵曲目与混入音轨治理 (Phantom Tracks & Cross-Artist Contamination)**：
+  - **故障表现**：个别早期由爬虫抓取的曲目骨架中混入了网络文学台词（如 S.H.E《青春株式會社》中的“他是心理醫生嗎”）或邻近热门音轨（如杜德伟《重愛輕友》、动力火车《給你幸福》），导致自动化采录匹配到错误歌曲或无法搜寻。
+  - **治理方法**：
+    1. 交叉比对台湾官方实体唱片发行 Tracklist（如 Apple Music、KKBOX）定位真实缺失曲目（如《Belief》、《給我多一點》、《記得要忘記》）。
+    2. 使用 Cloudflare Worker 后台路由 `POST /api/admin/ops/songs/batch-update`，批量对曲名进行热更正，无需破坏既有歌曲 ID 关联。
+    3. 重新采录正确音源并通过 `POST /api/admin/songs/batch-light` 覆盖音频与 LRC 歌词，彻底消除错配。
