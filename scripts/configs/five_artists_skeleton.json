@@ -1,0 +1,798 @@
+[
+  {
+    "artist_name": "迪克牛仔",
+    "avatar_url": "https://p2.music.126.net/EVRNHbTelaeRpaD2PFGnYw==/109951168896254251.jpg",
+    "albums": [
+      {
+        "title": "咆哮",
+        "year": "1998",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ahUO42eNcjB.jpg",
+        "songs": [
+          "爱如潮水",
+          "酒干倘卖无",
+          "哭不出来",
+          "梦醒时分",
+          "吻别",
+          "无力去爱谁",
+          "想说",
+          "一言难尽",
+          "原来你什么都不要",
+          "值得"
+        ]
+      },
+      {
+        "title": "忘记我还是忘记他",
+        "year": "1999",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000QlTAP3PS89l.jpg",
+        "songs": [
+          "三万英尺",
+          "忘记我还是忘记他",
+          "水手",
+          "男人真命苦",
+          "街角的GUITAR MAN",
+          "最后一首歌",
+          "不归路",
+          "我睡不着",
+          "狗",
+          "爱你的宿命"
+        ]
+      },
+      {
+        "title": "我这个你不爱的人",
+        "year": "2000",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000038tvNz3a1H3a.jpg",
+        "songs": [
+          "我这个你不爱的人",
+          "麻辣男人",
+          "第一号伤心人",
+          "出卖心碎",
+          "无名小卒",
+          "我敬你",
+          "如果你是爱上我的沧桑",
+          "弃爱保歌",
+          "爱无罪",
+          "管他谁爱谁"
+        ]
+      },
+      {
+        "title": "咆哮2002",
+        "year": "2002",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000uIwyW2bEXQC.jpg",
+        "songs": [
+          "爱我的人和我爱的人",
+          "心痛",
+          "至少还有你",
+          "靠近我",
+          "他不爱我",
+          "心动",
+          "勇气",
+          "我可以抱你吗",
+          "很爱很爱你",
+          "我的未来不是梦",
+          "有多少爱可以重来"
+        ]
+      },
+      {
+        "title": "本色",
+        "year": "2004",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M00000223pb524255B.jpg",
+        "songs": [
+          "死心塌地",
+          "你是你我是我",
+          "到底我要等到什么时候",
+          "莎郎嘿",
+          "机场",
+          "不忍",
+          "爱盲",
+          "心痛的感觉",
+          "英雄",
+          "男儿当自强"
+        ]
+      },
+      {
+        "title": "风飞沙",
+        "year": "2007",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000vYUZ00cAwgj.jpg",
+        "songs": [
+          "可以不流泪",
+          "风飞沙",
+          "影子",
+          "老爹",
+          "迷途",
+          "放手去爱",
+          "为爱向前跑",
+          "光辉岁月",
+          "把爱还给我",
+          "极速青春"
+        ]
+      },
+      {
+        "title": "禁区",
+        "year": "2010",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000016Jeg94IuUjD.jpg",
+        "songs": [
+          "非常都市",
+          "禁区",
+          "明天你爱谁",
+          "迷路的男人",
+          "等待爱",
+          "老爹的回乡路",
+          "天空总是那么黑",
+          "末日传说",
+          "I Want To Be Me",
+          "我曾有梦",
+          "傻子的约定"
+        ]
+      }
+    ]
+  },
+  {
+    "artist_name": "零点乐队",
+    "avatar_url": "https://p1.music.126.net/eThPF4q4OLTUscClSZ46wg==/6620159510950494.jpg",
+    "albums": [
+      {
+        "title": "别误会",
+        "year": "1995",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000gpnxM4TSpzC.jpg",
+        "songs": [
+          "站起来",
+          "承受",
+          "别误会",
+          "晕了醒了",
+          "爱的谎言",
+          "Don't Cry",
+          "挥挥手",
+          "一座桥梁",
+          "送亲歌"
+        ]
+      },
+      {
+        "title": "永恒的起点",
+        "year": "1997",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001d3Ced3tPHk6.jpg",
+        "songs": [
+          "放弃",
+          "别让我离开你",
+          "爱不爱我",
+          "面具",
+          "永恒的起点",
+          "共同的家",
+          "一切都会好",
+          "I am sorry 别误会",
+          "过去"
+        ]
+      },
+      {
+        "title": "每一夜 每一天",
+        "year": "1998",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M00000336xdo13tkAE.jpg",
+        "songs": [
+          "粉墨人生",
+          "回心转意",
+          "该让我如何爱你",
+          "别和他一样",
+          "放开我",
+          "离开",
+          "每一夜 每一天",
+          "燃烧",
+          "睁开你的双眼"
+        ]
+      },
+      {
+        "title": "零点零分零秒",
+        "year": "1999",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003VChVR2p0K7U.jpg",
+        "songs": [
+          "无依无靠",
+          "等你把梦做完",
+          "爱太难",
+          "回到从前",
+          "记忆中的天空",
+          "Bar Street",
+          "往日",
+          "永远不说再见",
+          "梦"
+        ]
+      },
+      {
+        "title": "没有什么不可以",
+        "year": "2002",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002q2Anx0wlKrL.jpg",
+        "songs": [
+          "Don't Runaway",
+          "没有什么不可以",
+          "飘",
+          "冒险家",
+          "相信自己",
+          "梦游",
+          "我要",
+          "好好过吧",
+          "战胜自己"
+        ]
+      },
+      {
+        "title": "越来越",
+        "year": "2003",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000vMAaf4VSztt.jpg",
+        "songs": [
+          "从零开始",
+          "越来越",
+          "你的爱给了谁",
+          "无处可逃",
+          "玩够了没有",
+          "祝福",
+          "分手一周年",
+          "说声谢谢",
+          "怎么过",
+          "跟我跳起来"
+        ]
+      },
+      {
+        "title": "风雷动",
+        "year": "2005",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002F8tO20AzTW4.jpg",
+        "songs": [
+          "打虎上山",
+          "让我们荡起双桨",
+          "襟裳岬",
+          "天上掉下林妹妹",
+          "多谢了",
+          "谁说女子不如男",
+          "牧歌",
+          "希望的田野",
+          "跟着感觉走",
+          "过了今天会永远"
+        ]
+      }
+    ]
+  },
+  {
+    "artist_name": "曾轶可",
+    "avatar_url": "https://p1.music.126.net/1xwRC_IGYeO1_bq7raowLw==/109951163369773617.jpg",
+    "albums": [
+      {
+        "title": "Forever Road",
+        "year": "2009",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001cVAtd1mcAHs.jpg",
+        "songs": [
+          "最天使",
+          "Forever Road",
+          "电车计划",
+          "白色秋天",
+          "新的家",
+          "还能孩子多久 (童话故事版)",
+          "Good Night",
+          "视觉系",
+          "狮子座",
+          "你是我最好的朋友",
+          "勇敢一点",
+          "还能孩子多久 (温柔坚强版)"
+        ]
+      },
+      {
+        "title": "一只猫的旅行",
+        "year": "2011",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001h4umo0pbCbX.jpg",
+        "songs": [
+          "Forever 21",
+          "因为",
+          "卸妆",
+          "Baby Sister",
+          "告诉他",
+          "分一半的爱给高跟鞋",
+          "每个路人熄灭一盏灯",
+          "我怕我会掉眼泪",
+          "给你满分的我",
+          "我是你的,你是我的",
+          "夜车",
+          "这个人",
+          "风景",
+          "羽绒服"
+        ]
+      },
+      {
+        "title": "会飞的贼",
+        "year": "2013",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001g2AGf2XgxmT.jpg",
+        "songs": [
+          "荒唐的羊",
+          "我们不是只有现在吗",
+          "会飞的贼",
+          "恋曲2012",
+          "女人的秘密",
+          "辣糖",
+          "有可能的夜晚",
+          "你幸福 我幸福",
+          "骑摩托的人",
+          "夜晚屋顶会飞的贼"
+        ]
+      },
+      {
+        "title": "25岁的晴和雨",
+        "year": "2015",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001bzYAn0IAhn7.jpg",
+        "songs": [
+          "Can I Kiss You",
+          "星星月亮",
+          "胆小鬼",
+          "破车",
+          "黑天鹅",
+          "黎明",
+          "诗人的眼泪",
+          "乞讨者",
+          "我不能爱你",
+          "别祝我生日快乐"
+        ]
+      },
+      {
+        "title": "Anti ! Yico",
+        "year": "2018",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000OojoN2517uS.jpg",
+        "songs": [
+          "Need A Friend",
+          "同类",
+          "私奔",
+          "Give You All",
+          "三的颜色",
+          "黑色的路",
+          "守望星",
+          "I Need Love",
+          "爱是一切",
+          "午夜旅馆",
+          "不如我们重新来过"
+        ]
+      },
+      {
+        "title": "情绪禁区",
+        "year": "2020",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001KpwgV3wqV6q.jpg",
+        "songs": [
+          "彩虹",
+          "雌雄同体",
+          "水的记忆",
+          "害羞",
+          "Truly",
+          "初吻",
+          "昔日圣诞",
+          "越界",
+          "蝴蝶",
+          "戏"
+        ]
+      },
+      {
+        "title": "2022",
+        "year": "2022",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002KXnUO11D3tv.jpg",
+        "songs": [
+          "辣糖",
+          "最天使",
+          "女人的秘密",
+          "夜车",
+          "星星月亮",
+          "白色秋天",
+          "狮子座",
+          "三的颜色",
+          "勇敢一点",
+          "还能孩子多久",
+          "多余的流星",
+          "新的家",
+          "有可能的夜晚",
+          "私奔",
+          "我们不是只有现在吗"
+        ]
+      }
+    ]
+  },
+  {
+    "artist_name": "郑智化",
+    "avatar_url": "https://p2.music.126.net/MuzcJ5yrO4spE-Vvnagcrw==/109951168978179970.jpg",
+    "albums": [
+      {
+        "title": "老幺的故事",
+        "year": "1988",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004abwPn3y18FX.jpg",
+        "songs": [
+          "Secret Box",
+          "一封信",
+          "不要说黎明",
+          "给开心女孩",
+          "老幺的故事",
+          "表情",
+          "达奇达奇嘟",
+          "远离这个城市",
+          "驿站"
+        ]
+      },
+      {
+        "title": "单身逃亡",
+        "year": "1990",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000Inmqv1Cst7a.jpg",
+        "songs": [
+          "把情感收藏起来",
+          "单身逃亡",
+          "别哭，我最爱的人",
+          "卸了妆的女人",
+          "陷阱",
+          "猫",
+          "悔过书",
+          "单身逃亡 (Inst.)",
+          "画中梦",
+          "淡呀淡的光"
+        ]
+      },
+      {
+        "title": "堕落天使",
+        "year": "1990",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004dn16403er6F.jpg",
+        "songs": [
+          "堕落天使",
+          "用我一辈子去忘记",
+          "青春启示录",
+          "你的灵魂",
+          "幻灭的女神",
+          "青春祭坛",
+          "蕾丝花边",
+          "入侵",
+          "成熟二分之一",
+          "摆渡"
+        ]
+      },
+      {
+        "title": "年轻时代",
+        "year": "1991",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001viJGK2uLTl1.jpg",
+        "songs": [
+          "让风吹",
+          "年轻时代",
+          "你的生日",
+          "我亲爱的宝贝",
+          "让我拥抱妳入梦",
+          "找路的人",
+          "告诉我",
+          "挥别妳的眼泪",
+          "我这样的男人",
+          "裁缝"
+        ]
+      },
+      {
+        "title": "私房歌",
+        "year": "1992",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002uGyPT1oYzxV.jpg",
+        "songs": [
+          "水手",
+          "中产阶级",
+          "等待一世人",
+          "大同世界",
+          "一封信",
+          "伙伊去",
+          "未婚爸爸",
+          "淡水河边的烟火",
+          "三十三块",
+          "就这样流浪"
+        ]
+      },
+      {
+        "title": "星星点灯",
+        "year": "1992",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000jgw9C2ubt5U.jpg",
+        "songs": [
+          "星星点灯",
+          "麻花辫子",
+          "补习街",
+          "蜗牛的家",
+          "冬季",
+          "朋友  天堂好吗",
+          "雨",
+          "南台湾",
+          "烟花江畔",
+          "不能告诉你"
+        ]
+      },
+      {
+        "title": "落泪的戏子",
+        "year": "1993",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000014XHak1b80nT.jpg",
+        "songs": [
+          "落泪的戏子",
+          "露水",
+          "沉默的羔羊",
+          "我的明天",
+          "风在唱着一首歌",
+          "此生为了美",
+          "有关于承诺",
+          "避风港",
+          "凤凰花"
+        ]
+      },
+      {
+        "title": "游戏人间",
+        "year": "1995",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000045VZM04aAW74.jpg",
+        "songs": [
+          "游戏人间",
+          "阿飞和他的那个女人",
+          "面子问题",
+          "我愿意",
+          "上海滩",
+          "小草",
+          "我是风筝",
+          "新绿岛小夜曲",
+          "原来的样子",
+          "斗室 (Inst.)"
+        ]
+      },
+      {
+        "title": "夜未眠",
+        "year": "1998",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002lnPFN1W4PAR.jpg",
+        "songs": [
+          "夜未眠",
+          "颜色",
+          "尘埃",
+          "罪恶感",
+          "我好累",
+          "宠物",
+          "Say Goodbye",
+          "爱",
+          "我的",
+          "离开吧"
+        ]
+      }
+    ]
+  },
+  {
+    "artist_name": "萧煌奇",
+    "avatar_url": "https://p1.music.126.net/XJGZ2cg1k4Jfb4wT3sv_yg==/109951172006783363.jpg",
+    "albums": [
+      {
+        "title": "你是我的眼",
+        "year": "2002",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000038vJhh1K1V8g.jpg",
+        "songs": [
+          "你是我的眼",
+          "逆风 (2004版)",
+          "偶然的那一天",
+          "天使蝴蝶",
+          "摔出一个梦",
+          "是我不要你的爱",
+          "万岁爷",
+          "提灯笼的那一天",
+          "为什么我哪会爱着你",
+          "小丫头"
+        ]
+      },
+      {
+        "title": "黑色吉他",
+        "year": "2004",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004b7nIx2I63QX.jpg",
+        "songs": [
+          "天若光",
+          "黑色吉他",
+          "心情像风筝",
+          "梦中的白雪公主",
+          "一定要成功",
+          "情乱舞",
+          "爱情雨",
+          "阿嬷的话",
+          "阮家那两个囝仔",
+          "阿美仔",
+          "走自己的路"
+        ]
+      },
+      {
+        "title": "真·情·歌",
+        "year": "2007",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003HEE0b09LSV7.jpg",
+        "songs": [
+          "爱这首歌",
+          "甲我跳舞好否",
+          "唱歌乎恁听",
+          "国民学校",
+          "好啦好啦",
+          "你置叨位",
+          "袂做憨人",
+          "小姐免歹势",
+          "返来恁身边",
+          "板桥纯情曲",
+          "爱你一世人",
+          "阿嬷的话"
+        ]
+      },
+      {
+        "title": "我是萧煌奇",
+        "year": "2008",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003LUmZL0r4Cpl.jpg",
+        "songs": [
+          "点点点",
+          "左边右边",
+          "我是你的消防局",
+          "春花梦露",
+          "共鸣",
+          "其实我也不知道",
+          "眷恋",
+          "秋天的思念",
+          "美丽天堂",
+          "幸福快乐到永远",
+          "木樨花在等待",
+          "幸福的气味"
+        ]
+      },
+      {
+        "title": "爱作梦的人",
+        "year": "2009",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000032OjcS05oQli.jpg",
+        "songs": [
+          "爱作梦的人",
+          "黑色比基尼",
+          "心里有针",
+          "台湾味",
+          "拖",
+          "囝仔伴",
+          "爱情卒仔",
+          "阿母的情歌",
+          "断线的吉他",
+          "围炉"
+        ]
+      },
+      {
+        "title": "孤独的和弦",
+        "year": "2011",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000RXf3E3zPk2t.jpg",
+        "songs": [
+          "另眼相看",
+          "好运的男人",
+          "只能勇敢",
+          "大富翁",
+          "不伤人",
+          "嗨早安 用早餐",
+          "Somebody",
+          "孤独的和弦",
+          "末班车",
+          "旅途愉快"
+        ]
+      },
+      {
+        "title": "思念会惊",
+        "year": "2011",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003vsQ2n31BWYt.jpg",
+        "songs": [
+          "爱你的人",
+          "美丽的情歌",
+          "思念会惊",
+          "相思海岸",
+          "出运啦",
+          "你置佗",
+          "阿爸的虱目魚",
+          "情路无尾巷",
+          "幸福在叫我",
+          "疼惜"
+        ]
+      },
+      {
+        "title": "好好先生",
+        "year": "2013",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001iPnra4UvCM2.jpg",
+        "songs": [
+          "过我的生活",
+          "好好先生",
+          "不唱骊歌",
+          "谁说你可以",
+          "无边际的爱你",
+          "莲子心",
+          "慢慢走",
+          "渐行渐远",
+          "男人有泪",
+          "简单的快乐"
+        ]
+      },
+      {
+        "title": "上水的花",
+        "year": "2014",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003igheE36tijU.jpg",
+        "songs": [
+          "感谢你爱我",
+          "上水的花",
+          "月光海岸",
+          "阿公的旧皮衫",
+          "银角仔",
+          "感情无地换",
+          "无人熟识的彼个人",
+          "想要爱的人",
+          "爱的新舞步",
+          "命运点歌",
+          "饮水思源"
+        ]
+      },
+      {
+        "title": "神秘世界",
+        "year": "2016",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000xeDc04TWB6K.jpg",
+        "songs": [
+          "神秘河流",
+          "想太多",
+          "停了的钟",
+          "死心了没有",
+          "偷走",
+          "新世界",
+          "你准备要活两次",
+          "你的海洋",
+          "家门口",
+          "下个街角",
+          "让"
+        ]
+      },
+      {
+        "title": "人生我敬你一杯",
+        "year": "2017",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002Pozbf2b8X6d.jpg",
+        "songs": [
+          "有你陪伴",
+          "无声的约束",
+          "心爱冤仇人",
+          "咱结婚好吗? (feat. 安心亚)",
+          "最美的路",
+          "爱就不免惊",
+          "红叶",
+          "我是香蕉",
+          "人生我敬你一杯",
+          "卡大声咧",
+          "爸仔囝"
+        ]
+      },
+      {
+        "title": "候鸟",
+        "year": "2019",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000fp4UJ40iC3e.jpg",
+        "songs": [
+          "英雄小说",
+          "迷宫",
+          "对爱入座",
+          "迷路在云端",
+          "活该寂寞",
+          "城市的光",
+          "给亲爱的你",
+          "天亮就分手",
+          "候鸟",
+          "暂停时光",
+          "一笔勾销",
+          "晚安"
+        ]
+      },
+      {
+        "title": "舞台",
+        "year": "2021",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000041kDnS0i55qO.jpg",
+        "songs": [
+          "舞台",
+          "倔强的孤单",
+          "我爱的就是你",
+          "为爱做戆人",
+          "写一条歌，写你我尔尔",
+          "Darling 来跳舞",
+          "虚华",
+          "朋友你现在好无",
+          "可爱的人心爱的人",
+          "送予你的歌",
+          "搅扰"
+        ]
+      },
+      {
+        "title": "没事的",
+        "year": "2024",
+        "cover_url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000046pUGy0D6P1m.jpg",
+        "songs": [
+          "Good Show",
+          "没事的",
+          "寂寞而已",
+          "缝补伤的人",
+          "爱我超派",
+          "回忆引力",
+          "旅伴",
+          "我还期待",
+          "一直被爱着",
+          "手心的蝴蝶"
+        ]
+      }
+    ]
+  }
+]
