@@ -45,6 +45,46 @@ This baseline remains valid and should not be disrupted in one shot.
 
 ---
 
+## 🚨【系统最高铁律】音频与歌词存储路径规范：严禁写入相对路径！
+
+> **⚠️ 严重警告（CRITICAL ARCHITECTURE REQUIREMENT - 2026-09-19 全体开发与 AI 必读）**：
+> **自 2026-09-19 起，所有采录下载、清洗补全与点亮脚本向 Cloudflare D1 数据库写入的 `file_path` 与 `lrc_path` 必须 100% 存储为带域名的【绝对 CDN 直链】（例如 `https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/...`），绝对严禁写入 `music/...` 或 `lyrics/...` 这种相对路径！**
+
+### 1. 为什么绝对不能存相对路径？（客户端架构致命原理剖析）
+客户端（Android ExoPlayer 与 Web 前端）底层对音频 URL 的解析逻辑如下：
+1. **绝对直链判定**：客户端仅当检测到路径以 `http://` 或 `https://` 开头时，才直接连接 Cloudflare R2 公网 CDN 边缘节点极速起播。
+2. **相对路径解析陷阱**：若数据库下发的是相对路径（如 `music/零点乐队/别误会/s_28720.mp3`），客户端会依据默认策略拼接为 Worker 网关地址：
+   `https://m-api.changgepd.ccwu.cc/storage/music/零点乐队/别误会/s_28720.mp3`
+3. **致命 404 与无限卡死**：
+   - Cloudflare Worker 内部的 `/storage/*` 代理**仅绑定了最早的第 1 存储桶（moody-music-asset，55GB 只读）**；
+   - 第 2~8 号存储桶根本没有挂载到 Worker 代理中，因此向 Worker 请求第 7 桶或第 8 桶的文件直接报 **HTTP 404 Not Found**！
+   - 随后客户端触发硬编码的容灾逻辑，将域名替换为第 2 桶（`pub-9ea7ff16...`），再次报 **404 Not Found**！
+   - ExoPlayer 连续收到 404 后陷入无限重试与 Buffering 缓冲挂起，**导致前端 App 界面表现为“一直在转圈加载、永远无法播放”**！
+
+### 2. 标准规范写入公式（所有后续开发与公司 AI 必须严格遵守）
+在调用 `/api/admin/songs/batch-light` 提交更新前，必须动态获取目标存储桶的公网直链域名 `public_domain`，并拼接成完整 URL：
+```python
+# 1. 获取目标桶的公网直链域名 (去除末尾斜杠)
+cdn_domain = target_bucket_cfg.get("public_domain", "").rstrip('/')
+
+# 2. 绝对直链标准化格式
+abs_mp3_url = f"{cdn_domain}/{r2_audio_key}"
+abs_lrc_url = f"{cdn_domain}/{r2_lrc_key}" if has_lrc else None
+
+# 3. 向 D1 提交点亮 (必须确保传入的是完整的 https:// 链接)
+payload = {
+    "updates": [
+        {
+            "id": song_id,
+            "file_path": abs_mp3_url, # 必须是 https://pub-xxxx.r2.dev/music/...
+            "lrc_path": abs_lrc_url   # 必须是 https://pub-xxxx.r2.dev/lyrics/... (或 None)
+        }
+    ]
+}
+```
+
+---
+
 ## 🗄️ 多存储桶分布式架构与资源分配策略 (Multi-Bucket Architecture)
 
 > **设计原则：100% 零成本（Zero Cost）与零账单风险（Zero Financial Risk）**
