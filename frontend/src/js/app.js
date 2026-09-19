@@ -888,6 +888,22 @@ function getAutoLetter(name) {
     const firstChar = name.charAt(0).toUpperCase();
     if (/^[A-Z]/.test(firstChar)) return firstChar;
 
+    // 常见多音字姓氏直接特殊映射（例如：曾轶可 -> Z）
+    const surnameMap = {
+        '曾': 'Z',
+        '单': 'S',
+        '仇': 'Q',
+        '区': 'O',
+        '解': 'X',
+        '查': 'Z',
+        '朴': 'P',
+        '乐': 'Y',
+        '洗': 'X'
+    };
+    if (surnameMap[name.charAt(0)]) {
+        return surnameMap[name.charAt(0)];
+    }
+
     // 拼音区间对应表 (常用简体/繁体兼容首字符)
     const charMap = [
         ['啊', 'A'], ['八', 'B'], ['擦', 'C'], ['搭', 'D'], ['蛾', 'E'],
