@@ -333,14 +333,19 @@ def process_single_song(item: dict) -> dict:
         try: os.remove(local_lrc)
         except: pass
 
+    b_cfg = buckets_cfg[target_bucket_id]
+    cdn_domain = b_cfg.get("public_url", b_cfg.get("public_domain", "")).rstrip('/')
+    abs_audio_url = f"{cdn_domain}/{r2_audio_key}"
+    abs_lrc_url = f"{cdn_domain}/{r2_lrc_key}" if has_lrc and r2_lrc_key else None
+
     return {
         "status": "SUCCESS",
         "id": song_id,
         "artist": artist,
         "album": album,
         "title": title,
-        "file_path": r2_audio_key,
-        "lrc_path": r2_lrc_key if has_lrc else None,
+        "file_path": abs_audio_url,
+        "lrc_path": abs_lrc_url,
         "bucket": target_bucket_id
     }
 

@@ -1,0 +1,1298 @@
+[
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "爱如潮水",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28648.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28648.lrc",
+    "current_duration": 304.509388,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 304,
+      "rid": "76613"
+    },
+    "tags": {},
+    "whisper_heard": "不问你为何流眼泪不在乎你心里还有谁且让我给你安慰不能结局是喜",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "酒干倘卖无",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28649.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28649.lrc",
+    "current_duration": 306.677551,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "别港",
+      "duration": 293,
+      "rid": "59303"
+    },
+    "tags": {},
+    "whisper_heard": "酒干汤味不酒干汤味不酒干汤味不酒干汤味不多么熟悉的声音嘿",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "哭不出来",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28650.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28650.lrc",
+    "current_duration": 280.868571,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 280,
+      "rid": "644850"
+    },
+    "tags": {},
+    "whisper_heard": "才知道那都是真的爱是真实存在晴的天 雨的夜平常的语言怎么我宁愿不要懂你温暖的关系",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "梦醒时分",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28651.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28651.lrc",
+    "current_duration": 264.124082,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 265,
+      "rid": "76617"
+    },
+    "tags": {},
+    "whisper_heard": "Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "吻别",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28652.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28652.lrc",
+    "current_duration": 332.69551,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 332,
+      "rid": "245512"
+    },
+    "tags": {},
+    "whisper_heard": "就连说过了再见也看不见你有些哀怨给我的一切你不过是在敷衍你笑得越无邪我就会爱你爱得更狂野总在上那天有一些了解说过的花布",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "无力去爱谁",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28653.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28653.lrc",
+    "current_duration": 246.151837,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 246,
+      "rid": "644852"
+    },
+    "tags": {},
+    "whisper_heard": "不要问我曾经爱过谁我的心太刚刚吃了血请放过我吧别让我的后悔再犯罪不要问我曾经爱过谁我的心因为爱吃了血请离开我",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "想说",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28654.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28654.lrc",
+    "current_duration": 258.925714,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 258,
+      "rid": "644853"
+    },
+    "tags": {},
+    "whisper_heard": "你温柔的眼光 阻挡着忧伤好想能停泊 在你的海港让船儿一直停放 永不再出航我在每一个期望中",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "一言难尽",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28655.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28655.lrc",
+    "current_duration": 350.537143,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 350,
+      "rid": "76612"
+    },
+    "tags": {},
+    "whisper_heard": "你给我一场戏你看着我入迷被你从心里剥落的感情痛得不知怎么逝去不要这场戏不要问我结局Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: 你给我一场戏你看着我入迷被你从心里剥落的感情痛得不知怎么逝去不要这场戏不要问我结局Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "原来你什么都不要",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28656.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28656.lrc",
+    "current_duration": 284.891429,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "传奇",
+      "duration": 281,
+      "rid": "76628"
+    },
+    "tags": {},
+    "whisper_heard": "Zither Harp我不要你的承诺不要你的勇敢",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: Zither Harp我不要你的承诺不要你的勇敢)"
+  },
+  {
+    "id": null,
+    "album": "咆哮",
+    "title": "值得",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮/s_28657.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮/s_28657.lrc",
+    "current_duration": 293.381224,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮",
+      "duration": 292,
+      "rid": "51575877"
+    },
+    "tags": {},
+    "whisper_heard": "关于你好的坏的都已经听说愿意深陷的是我没有确定的依靠没有谁逐步我反而想要勇敢接受爱到哪里都会有人",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "三万英尺",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28658.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28658.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "Chinese&nbsp;Songs&nbsp;2026",
+      "duration": 280,
+      "rid": "549231692"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "忘记我还是忘记他",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28659.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28659.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 292,
+      "rid": "51417033"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "水手",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28660.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28660.lrc",
+    "current_duration": 254.040816,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 259,
+      "rid": "51417034"
+    },
+    "tags": {},
+    "whisper_heard": "Zither Harp晴空万里的阳光之下感受到冒险的气息大家",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: Zither Harp晴空万里的阳光之下感受到冒险的气息大家)"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "男人真命苦",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28661.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28661.lrc",
+    "current_duration": 226.037551,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 225,
+      "rid": "57635"
+    },
+    "tags": {},
+    "whisper_heard": "但是最好来些雨水看不出什么伤悲天要我抗击焦泪但机会和我作对歌唱到心碎我也是无怨无悔做男人真命苦要列就在足够",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "街角的GUITAR MAN",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28662.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28662.lrc",
+    "current_duration": 276.558367,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 276,
+      "rid": "57639"
+    },
+    "tags": {},
+    "whisper_heard": "能走到哪里还不是一滴疲惫的脚印唱唱到没力气",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "最后一首歌",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28663.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28663.lrc",
+    "current_duration": 274.364082,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 280,
+      "rid": "57634"
+    },
+    "tags": {},
+    "whisper_heard": "Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "不归路",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28664.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28664.lrc",
+    "current_duration": 288.417959,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 283,
+      "rid": "57633"
+    },
+    "tags": {},
+    "whisper_heard": "作词 李宗盛作曲 李宗盛灿烂的阳光下面花儿渐渐枯萎",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "我睡不着",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28665.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28665.lrc",
+    "current_duration": 170.161633,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 167,
+      "rid": "217202"
+    },
+    "tags": {},
+    "whisper_heard": "爱人不见了要去哪里找感觉不对了要去哪里找盼来不及盼来不及连梦都想要逃什么样的拥抱让你我好像在坐牢我不要自寻伴侣该催着你被你踹掉明天不要了我快要疯掉至今不灭",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "狗",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28666.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28666.lrc",
+    "current_duration": 273.214694,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 273,
+      "rid": "57629"
+    },
+    "tags": {},
+    "whisper_heard": "见你的容颜永远不罢休你就像是一个豆吞噬男人的眉毛看过你的人啊心都被掏空站在欲望的街头我们都是",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "忘记我还是忘记他",
+    "title": "爱你的宿命",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/忘记我还是忘记他/s_28667.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/忘记我还是忘记他/s_28667.lrc",
+    "current_duration": 326.008163,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "忘记我还是忘记他",
+      "duration": 325,
+      "rid": "57631"
+    },
+    "tags": {},
+    "whisper_heard": "都掉眼灰都掉眼灰像爱情花成灰吐的烟比双眼又落泪戒不掉爱你的影我陪伤憔悴慢慢我",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "我这个你不爱的人",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28668.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28668.lrc",
+    "current_duration": 270.106122,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 270,
+      "rid": "217203"
+    },
+    "tags": {},
+    "whisper_heard": "没有谁的我才像是你也许他伤了你的心也许你怀疑他的情这曾导致我们分离太多爱剧情在一世激情",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "麻辣男人",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28669.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28669.lrc",
+    "current_duration": 266.631837,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 266,
+      "rid": "217207"
+    },
+    "tags": {},
+    "whisper_heard": "快来一杯朋友尽管我们最潇洒既然决定订好嘎管他生命的就多么辣当酒精发作我们开始唱歌天塌下来都不怕忘掉了理想by bwd6",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "第一号伤心人",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28670.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28670.lrc",
+    "current_duration": 279.875918,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 279,
+      "rid": "217206"
+    },
+    "tags": {},
+    "whisper_heard": "有点冷你说让你回去你好困山顶下的大城市有点冷相爱是一种气温冷热没有谁可以保证你用那种眼神宣告我是爱的亡魂怎么",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "出卖心碎",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28671.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28671.lrc",
+    "current_duration": 293.276735,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 293,
+      "rid": "57626"
+    },
+    "tags": {},
+    "whisper_heard": "我努力排着队画面却上演着出轨是不是谁先离开谁不对那本手怎么定位我不归",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "无名小卒",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28672.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28672.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 219,
+      "rid": "217204"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "我敬你",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28673.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28673.lrc",
+    "current_duration": 238.132245,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 238,
+      "rid": "217201"
+    },
+    "tags": {},
+    "whisper_heard": "未来没来现在还在举风举光真心无处可买有人靠近有人走开这人生啊 鸡与虾",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "如果你是爱上我的沧桑",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28674.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28674.lrc",
+    "current_duration": 225.645714,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 225,
+      "rid": "217199"
+    },
+    "tags": {},
+    "whisper_heard": "就是这个模样那种男人的忧伤超出你的想象那种痛对最好的朋友都不会讲他会活得很健忘笑得很狂如果你是爱上我的滩桑你要想",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "弃爱保歌",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28675.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28675.lrc",
+    "current_duration": 257.17551,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "三万英尺&nbsp;柔情精选",
+      "duration": 257,
+      "rid": "28495425"
+    },
+    "tags": {},
+    "whisper_heard": "优优独播剧场——YoYo Television Series Exclusive",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "爱无罪",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28676.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28676.lrc",
+    "current_duration": 123.428571,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 275,
+      "rid": "217205"
+    },
+    "tags": {},
+    "whisper_heard": "一楼有我的双肩轻声说抱歉我抬起头看你的脸还是深深的疲倦这一次你依然没有掉眼泪这一次也好像显得特别黑正在了结",
+    "status": "SUSPECT_DURATION",
+    "reason": "时长与官方不符: 当前 123.4s vs 官方 275s"
+  },
+  {
+    "id": null,
+    "album": "我这个你不爱的人",
+    "title": "管他谁爱谁",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/我这个你不爱的人/s_28677.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/我这个你不爱的人/s_28677.lrc",
+    "current_duration": 295.235918,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "我这个你不爱的人",
+      "duration": 295,
+      "rid": "57624"
+    },
+    "tags": {},
+    "whisper_heard": "Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "爱我的人和我爱的人",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28678.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28678.lrc",
+    "current_duration": 273.81551,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 279,
+      "rid": "51573072"
+    },
+    "tags": {},
+    "whisper_heard": "盼不到我爱的人我知道我愿意再等疼不了爱我的人片刻柔情怕骗不了人我不是无情的人却将你伤得最深我不忍我不能别再认真忘了我的人嗯",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "心痛",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28679.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28679.lrc",
+    "current_duration": 260.702041,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 260,
+      "rid": "144085"
+    },
+    "tags": {},
+    "whisper_heard": "你总是这样说我像一颗不容易融化的糖果待我见你的朋友又很得意的埋怨我沉默",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "至少还有你",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28680.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28680.lrc",
+    "current_duration": 296.515918,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 301,
+      "rid": "51573071"
+    },
+    "tags": {},
+    "whisper_heard": "我怕来不及我要抱着你直到感觉你的发现有了岁月的痕迹直到是烟瘪的模糊直到失去年纪为了你",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "靠近我",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28681.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28681.lrc",
+    "current_duration": 292.858776,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 284,
+      "rid": "144083"
+    },
+    "tags": {},
+    "whisper_heard": "你静静的抚摸我的头发眼瞳中流泻出对爱无力的匮乏我的心",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "他不爱我",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28682.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28682.lrc",
+    "current_duration": 229.067755,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 229,
+      "rid": "51573073"
+    },
+    "tags": {},
+    "whisper_heard": "不靠近他不爱我说话的时候不认真沉默的时候又太用心我知道他不爱我他的眼神说出他的心Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: 不靠近他不爱我说话的时候不认真沉默的时候又太用心我知道他不爱我他的眼神说出他的心Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "心动",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28683.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28683.lrc",
+    "current_duration": 297.586939,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 297,
+      "rid": "144078"
+    },
+    "tags": {},
+    "whisper_heard": "Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "勇气",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28684.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28684.lrc",
+    "current_duration": 259.500408,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 259,
+      "rid": "144079"
+    },
+    "tags": {},
+    "whisper_heard": "终于做了这个决定别人怎么说我不理只要你也一样的肯定我愿意天涯海角都随你去我知道一切不容易我的心一直温习谁不自己最怕你忽然说要放弃",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "我可以抱你吗",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28685.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28685.lrc",
+    "current_duration": 265.456327,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 274,
+      "rid": "144081"
+    },
+    "tags": {},
+    "whisper_heard": "爱你那么久其实算算不容易就要分东西明天不再有关系留在家里的衣服有空再来拿回去不去上来都结了过Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: 爱你那么久其实算算不容易就要分东西明天不再有关系留在家里的衣服有空再来拿回去不去上来都结了过Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "很爱很爱你",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28686.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28686.lrc",
+    "current_duration": 264.85551,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 264,
+      "rid": "144087"
+    },
+    "tags": {},
+    "whisper_heard": "埋下我的名字求时间撑着你不注意的时候悄悄地把这宗旨酿成过失我想她的确是更适合你的男子你太不够温柔",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "我的未来不是梦",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28687.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28687.lrc",
+    "current_duration": 363.598367,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "咆哮2002",
+      "duration": 363,
+      "rid": "144080"
+    },
+    "tags": {},
+    "whisper_heard": "作词 李宗盛",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "咆哮2002",
+    "title": "有多少爱可以重来",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/咆哮2002/s_28688.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/咆哮2002/s_28688.lrc",
+    "current_duration": 284.969796,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "别港",
+      "duration": 293,
+      "rid": "59303"
+    },
+    "tags": {},
+    "whisper_heard": "常常责怪自己当初不应该常常后悔没有把你留下来为什么明明相爱到最后还是要分开是否我们总是徘徊在心门之外",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "死心塌地",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28689.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28689.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 337,
+      "rid": "90228"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "你是你我是我",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28690.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28690.lrc",
+    "current_duration": 251.036735,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 250,
+      "rid": "90220"
+    },
+    "tags": {},
+    "whisper_heard": "在梦的边缘发香淡淡仿佛你在我的身边满怀希望追逐你的呼吸记忆中的缠绵又在哪里睁开眼无尽的黑夜心在隐隐作痛叫我无法露面嗨",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "到底我要等到什么时候",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28691.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28691.lrc",
+    "current_duration": 261.146122,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 261,
+      "rid": "90221"
+    },
+    "tags": {},
+    "whisper_heard": "到底我要等到什么时候你会将心里的话告诉我也许你早已忘记要如何表达隐藏在内心的伤痛到底我要等到什么时候才能看到你脸上的笑容哦",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "莎郎嘿",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28692.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28692.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 233,
+      "rid": "4825484"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "机场",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28693.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28693.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 232,
+      "rid": "90223"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "不忍",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28694.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28694.lrc",
+    "current_duration": 296.568163,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 299,
+      "rid": "90224"
+    },
+    "tags": {},
+    "whisper_heard": "遇上了你才会把爱当真总自问是否有可能那一刻那一刻",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "爱盲",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28695.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28695.lrc",
+    "current_duration": 263.053061,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 265,
+      "rid": "4825485"
+    },
+    "tags": {},
+    "whisper_heard": "请不要说你爱上了爱无声的风偷偷在无奈她的心始终打不开所以必须要离开别再说该不该Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: 请不要说你爱上了爱无声的风偷偷在无奈她的心始终打不开所以必须要离开别再说该不该Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "心痛的感觉",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28696.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28696.lrc",
+    "current_duration": 262.60898,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 275,
+      "rid": "90226"
+    },
+    "tags": {},
+    "whisper_heard": "是什么流出了我的眼泪是天生的星星还是霓虹的有一次要和爱情说再见养鸡头不流泪",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "英雄",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28697.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28697.lrc",
+    "current_duration": 296.045714,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 296,
+      "rid": "90227"
+    },
+    "tags": {},
+    "whisper_heard": "疲倦的時候 找個地方停泊縱然是 最暗的角落多少風雨吹過飄蕩到最後到底誰來探索对错究竟是如何",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "本色",
+    "title": "男儿当自强",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/本色/s_28698.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/本色/s_28698.lrc",
+    "current_duration": 188.029388,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "本色",
+      "duration": 188,
+      "rid": "90219"
+    },
+    "tags": {},
+    "whisper_heard": "热血向那红日光胆死铁打不如金刚胸襟白天长眼光万一长我奔发图强若浩瀚啊",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "可以不流泪",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28699.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28699.lrc",
+    "current_duration": 229.067755,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 325,
+      "rid": "242303"
+    },
+    "tags": {},
+    "whisper_heard": "不靠近他不爱我说话的时候不认真沉默的时候又太用心我知道他不爱我他的眼神说出他的心Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: 不靠近他不爱我说话的时候不认真沉默的时候又太用心我知道他不爱我他的眼神说出他的心Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "风飞沙",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28700.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28700.lrc",
+    "current_duration": 256.574694,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 260,
+      "rid": "255912"
+    },
+    "tags": {},
+    "whisper_heard": "i know you",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "影子",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28701.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28701.lrc",
+    "current_duration": 250.540408,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 249,
+      "rid": "255905"
+    },
+    "tags": {},
+    "whisper_heard": "Zither Harp",
+    "status": "INSTRUMENTAL_ONLY",
+    "reason": "检出纯器乐伴奏无主唱 (听音: Zither Harp)"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "老爹",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28702.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28702.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "别港",
+      "duration": 293,
+      "rid": "59303"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "迷途",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28703.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28703.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 241,
+      "rid": "255918"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "放手去爱",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28704.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28704.lrc",
+    "current_duration": 244.950204,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 241,
+      "rid": "255898"
+    },
+    "tags": {},
+    "whisper_heard": "脸上的伤痕微笑你哭着对我微笑这画面像一把刀我背着上天祈祷给我勇气面对一切好不好我却懦弱的让你转身走掉错过你",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "为爱向前跑",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28705.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28705.lrc",
+    "current_duration": 204.982857,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 206,
+      "rid": "255894"
+    },
+    "tags": {},
+    "whisper_heard": "音色失去色彩直到唤醒勇气唤醒期待唤醒属于自己的节拍睁开眼睛细地过去新的挑战已经来临忘掉曾经恐惧悲伤的回忆向梦想靠近绝不放弃向前冒险",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "光辉岁月",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28706.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28706.lrc",
+    "current_duration": 281.573878,
+    "official_info": {
+      "artist": "迪克牛仔\\\\u0026杨培安",
+      "album": "风飞沙",
+      "duration": 281,
+      "rid": "545661"
+    },
+    "tags": {},
+    "whisper_heard": "一生要做多远的路程撑过多少年才能走到终点梦想需要多久的时间多少血和泪才能慢慢实现天地间",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "把爱还给我",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28707.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28707.lrc",
+    "current_duration": 251.559184,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 251,
+      "rid": "255889"
+    },
+    "tags": {},
+    "whisper_heard": "为幸福而奔走就算遇见流星划过闭上眼底都许愿也没有最后你问我是否在多说些什么你的",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "风飞沙",
+    "title": "极速青春",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/风飞沙/s_28708.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/风飞沙/s_28708.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "风飞沙",
+      "duration": 220,
+      "rid": "255916"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "非常都市",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28709.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28709.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 220,
+      "rid": "28668134"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "禁区",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28710.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28710.lrc",
+    "current_duration": 242.938776,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 242,
+      "rid": "865426"
+    },
+    "tags": {},
+    "whisper_heard": "字幕志愿者 杨茜茜",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "明天你爱谁",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28711.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28711.lrc",
+    "current_duration": 151.588571,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 260,
+      "rid": "865429"
+    },
+    "tags": {},
+    "whisper_heard": "古色滋味 慢慢交瘁風吹 散落一地的心扉滋味 空氣裡流餘味爱",
+    "status": "SUSPECT_DURATION",
+    "reason": "时长与官方不符: 当前 151.6s vs 官方 260s"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "迷路的男人",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28712.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28712.lrc",
+    "current_duration": 283.402449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 270,
+      "rid": "51498889"
+    },
+    "tags": {},
+    "whisper_heard": "我们 我心烦明明是爱为何过不又怕我们 不一样你坚守城堡我却半思承担人生漫长痛感困难想要取暖by bwd6",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "等待爱",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28713.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28713.lrc",
+    "current_duration": 279.536327,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 281,
+      "rid": "865425"
+    },
+    "tags": {},
+    "whisper_heard": "我爱你",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "老爹的回乡路",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28714.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28714.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 313,
+      "rid": "865427"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "天空总是那么黑",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28715.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28715.lrc",
+    "current_duration": 272.248163,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 272,
+      "rid": "865432"
+    },
+    "tags": {},
+    "whisper_heard": "你不敢牵我的手 是因為沒把握還是你不肯定是我該做的都已做 該說的都說難道我付出還不夠到我付出还不够",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "末日传说",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28716.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28716.lrc",
+    "current_duration": 251.036735,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 253,
+      "rid": "865430"
+    },
+    "tags": {},
+    "whisper_heard": "在梦的边缘发香淡淡仿佛你在我的身边满怀希望追逐你的呼吸记忆中的缠绵又在哪里睁开眼无尽的黑夜心在隐隐作痛叫我无法露面嗨",
+    "status": "PASS",
+    "reason": "正常"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "I Want To Be Me",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28717.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28717.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 246,
+      "rid": "865424"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "我曾有梦",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28718.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28718.lrc",
+    "current_duration": 280.842449,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 196,
+      "rid": "865433"
+    },
+    "tags": {},
+    "whisper_heard": "模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离",
+    "status": "MISMATCH_SERIOUS",
+    "reason": "严重串歌: 实唱为《三万英尺》 (听音: '模糊的城市慢慢的飞出我的视线呼吸提醒我活着的证明飞机正在抵抗地球我正在抵抗你原地地面快接近三万英尺的距离')"
+  },
+  {
+    "id": null,
+    "album": "禁区",
+    "title": "傻子的约定",
+    "path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/迪克牛仔/禁区/s_28719.mp3",
+    "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/lyrics/迪克牛仔/禁区/s_28719.lrc",
+    "current_duration": 283.480816,
+    "official_info": {
+      "artist": "迪克牛仔",
+      "album": "禁区",
+      "duration": 283,
+      "rid": "865431"
+    },
+    "tags": {},
+    "whisper_heard": "我还怀念的夏天星空下你依偎在我身边微风轻拂的海面汽笛响起才知你要几号留不住心灰憔悴",
+    "status": "PASS",
+    "reason": "正常"
+  }
+]

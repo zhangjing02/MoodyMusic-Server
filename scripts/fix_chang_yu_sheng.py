@@ -104,10 +104,11 @@ for t in tasks:
     if has_lrc:
         s3.upload_file(lrc, cfg["name"], r2_lrc_key, ExtraArgs={"ContentType": "text/plain; charset=utf-8"})
         
+    cdn_domain = cfg.get("public_domain", "").rstrip('/')
     updates.append({
         "id": sid,
-        "file_path": r2_audio_key,
-        "lrc_path": r2_lrc_key if has_lrc else None
+        "file_path": f"{cdn_domain}/{r2_audio_key}",
+        "lrc_path": f"{cdn_domain}/{r2_lrc_key}" if has_lrc else None
     })
     
     for fpath in [raw, mp3, lrc]:
