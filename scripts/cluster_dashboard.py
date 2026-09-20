@@ -18,8 +18,7 @@ from datetime import datetime
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-WORKSPACE = r'e:\Workspace\AI-Project\MoodyMusic-Workspace'
-BASE_DIR = os.path.join(WORKSPACE, "backend")
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DB_PATH = os.path.join(BASE_DIR, "database", "catalog_sync.db")
 CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 
@@ -56,7 +55,7 @@ def print_dashboard():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         cfg = json.load(f)
         
-    print("\n📦【Cloudflare R2 八桶集群容量与负载】")
+    print("\n📦【Cloudflare R2 九桶集群容量与负载】")
     print("-" * 95)
     print(f"{'存储桶':<24} | {'账号标识':<12} | {'对象总数':<8} | {'当前用量':<10} | {'安全额度':<10} | {'剩余安全空间':<12}")
     print("-" * 95)
@@ -69,23 +68,27 @@ def print_dashboard():
         ("moody-music-asset-05", "account_05"),
         ("moody-music-asset-06", "account_06"),
         ("moody-music-asset-07", "account_07"),
-        ("moody-music-asset-08", "account_08")
+        ("moody-music-asset-08", "account_08"),
+        ("moody-music-asset-09", "account_09")
     ]
     for bname, akey in cluster_buckets:
         stats = get_bucket_stats(cfg, akey)
         print(f"{bname:<24} | {akey:<12} | {stats['count']:<8} | {stats['gb']:>6.3f} GB   | 9.500 GB   | {stats['avail_gb']:>6.3f} GB")
     print("-" * 95)
     
-    conn = sqlite3.connect(DB_PATH, timeout=30.0)
-    cur = conn.cursor()
-    
-    cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE status = 'D1_LIT'")
-    total_lit = cur.fetchone()[0]
-    cur.execute("SELECT COUNT(*) FROM tracks_sync_state")
-    total_tracks = cur.fetchone()[0]
-    lit_pct = (total_lit / total_tracks * 100) if total_tracks else 0
-    
-    print(f"\n🌟 全库总体点亮率: {total_lit} / {total_tracks} 首 ({lit_pct:.2f}% 已完成上线)")
+    if os.path.exists(DB_PATH):
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
+        cur = conn.cursor()
+        
+        cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE status = 'D1_LIT'")
+        total_lit = cur.fetchone()[0]
+        cur.execute("SELECT COUNT(*) FROM tracks_sync_state")
+        total_tracks = cur.fetchone()[0]
+        lit_pct = (total_lit / total_tracks * 100) if total_tracks else 0
+        
+        print(f"\n🌟 全库总体点亮率: {total_lit} / {total_tracks} 首 ({lit_pct:.2f}% 已完成上线)")
+    else:
+        print(f"\n🌟 本地 catalog_sync.db 未挂载，跳过点亮率统计")
     
     # 统计三大 Worker 分组及归档
     GROUPS = [
@@ -98,34 +101,35 @@ def print_dashboard():
         ])
     ]
     
-    print("\n" + "=" * 95)
-    print("🚀【三大 Worker 分组采录点亮实时明细】")
-    print("=" * 95)
-    
-    for gname, artists in GROUPS:
-        print(f"\n📌 {gname}")
-        print(f"{'歌手':<12} | {'总曲目':<8} | {'已点亮 (D1)':<12} | {'留白跳过':<10} | {'待采录队列':<10} | {'点亮完成率':<10}")
-        print("-" * 80)
-        g_tot = g_lit = g_skip = g_pend = 0
-        for a in artists:
-            cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE artist_name = ?", (a,))
-            tot = cur.fetchone()[0]
-            cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE artist_name = ? AND status = 'D1_LIT'", (a,))
-            lit = cur.fetchone()[0]
-            cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE artist_name = ? AND status = 'UNLIT_SKIPPED'", (a,))
-            skip = cur.fetchone()[0]
-            pend = tot - lit - skip
-            pct = (lit / tot * 100) if tot else 0
-            print(f"{a:<12} | {tot:<8} | {lit:<12} | {skip:<10} | {pend:<10} | {pct:>6.1f}%")
-            g_tot += tot
-            g_lit += lit
-            g_skip += skip
-            g_pend += pend
-        g_pct = (g_lit / g_tot * 100) if g_tot else 0
-        print("-" * 80)
-        print(f"{'【小计】':<12} | {g_tot:<8} | {g_lit:<12} | {g_skip:<10} | {g_pend:<10} | {g_pct:>6.1f}%\n")
+    if os.path.exists(DB_PATH):
+        print("=" * 95)
+        print("🚀【三大 Worker 分组采录点亮实时明细】")
+        print("=" * 95)
         
-    conn.close()
+        for gname, artists in GROUPS:
+            print(f"\n📌 {gname}")
+            print(f"{'歌手':<12} | {'总曲目':<8} | {'已点亮 (D1)':<12} | {'留白跳过':<10} | {'待采录队列':<10} | {'点亮完成率':<10}")
+            print("-" * 80)
+            g_tot = g_lit = g_skip = g_pend = 0
+            for a in artists:
+                cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE artist_name = ?", (a,))
+                tot = cur.fetchone()[0]
+                cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE artist_name = ? AND status = 'D1_LIT'", (a,))
+                lit = cur.fetchone()[0]
+                cur.execute("SELECT COUNT(*) FROM tracks_sync_state WHERE artist_name = ? AND status = 'UNLIT_SKIPPED'", (a,))
+                skip = cur.fetchone()[0]
+                pend = tot - lit - skip
+                pct = (lit / tot * 100) if tot else 0
+                print(f"{a:<12} | {tot:<8} | {lit:<12} | {skip:<10} | {pend:<10} | {pct:>6.1f}%")
+                g_tot += tot
+                g_lit += lit
+                g_skip += skip
+                g_pend += pend
+            g_pct = (g_lit / g_tot * 100) if g_tot else 0
+            print("-" * 80)
+            print(f"{'【小计】':<12} | {g_tot:<8} | {g_lit:<12} | {g_skip:<10} | {g_pend:<10} | {g_pct:>6.1f}%\n")
+            
+        conn.close()
     print("=" * 95 + "\n")
 
 if __name__ == "__main__":
