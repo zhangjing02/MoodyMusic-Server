@@ -1,0 +1,6624 @@
+{
+  "sparse_albums": [
+    {
+      "artist": "Beyond",
+      "album": "真的見証",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "歲月無聲"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "信念",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "最想念你",
+        "問自己"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "海闊天空",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Hold On To My Dream",
+        "Pop and Mom",
+        "It's Hard To Express Love",
+        "Cannot Help",
+        "For Love Reason",
+        "The Lover",
+        "Am I Just.A Fool",
+        "A Dream Far Away"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "THIS IS LOVE I",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "遥かなるゆめに～Far away",
+        "も-まん たい!",
+        "リゾ.ラバ～international～"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "二樓後座",
+      "total": 11,
+      "lit": 4,
+      "unlit": 7,
+      "pct": 36.4,
+      "unlit_titles": [
+        "Super Weapons",
+        "There Is Always Love",
+        "Wake Up",
+        "To Save You",
+        "Hold My Own Future",
+        "Loveing you, So Wrong",
+        "Wishing You Happiness"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "愛與生活",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Absent-Minded Persons",
+        "The Only",
+        "The Last Answer",
+        "Wonderful Life",
+        "Absurd World"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "驚喜",
+      "total": 10,
+      "lit": 4,
+      "unlit": 6,
+      "pct": 40.0,
+      "unlit_titles": [
+        "Deep",
+        "Alright Alright",
+        "Piss Off",
+        "Tsing Ma Bridge",
+        "Latency",
+        "An Immortal Tale"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "Good Time",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "By Chance",
+        "101 Times",
+        "Washing Powder",
+        "Ridiculous"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "不見不散",
+      "total": 12,
+      "lit": 5,
+      "unlit": 7,
+      "pct": 41.7,
+      "unlit_titles": [
+        "Sunday",
+        "Sacrifice",
+        "Mosouito",
+        "Last Day",
+        "Too Perfect",
+        "Worship",
+        "Free of Gravity"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "超級Band Band Band",
+      "total": 7,
+      "lit": 3,
+      "unlit": 4,
+      "pct": 42.9,
+      "unlit_titles": [
+        "Peter & Mary",
+        "Open the Black Box",
+        "The Winter of Seventeen",
+        "Motor Rock"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "Deliberate You Yu",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "係要聽ROCK N' ROLL",
+        "谁来主宰",
+        "完全的拥有"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "Beyond真的見証 (超越時代紀念版)",
+      "total": 28,
+      "lit": 26,
+      "unlit": 2,
+      "pct": 92.9,
+      "unlit_titles": [
+        "又見理想 (Silent Years Demo)",
+        "Europe (Venture Out In the New World Demo)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "Beyond Deliberate You Yu ( Chao Yue Shi Dai Ji Nian Ban )",
+      "total": 27,
+      "lit": 19,
+      "unlit": 8,
+      "pct": 70.4,
+      "unlit_titles": [
+        "不再犹豫",
+        "係要聽ROCK N' ROLL",
+        "谁来主宰",
+        "完全的拥有",
+        "大地 (国语) (Live)",
+        "午夜怨曲 (国语) (Live)",
+        "撒旦的咒语",
+        "怀念你，忘记你"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "Beyond IV (超越時代紀念版)",
+      "total": 30,
+      "lit": 27,
+      "unlit": 3,
+      "pct": 90.0,
+      "unlit_titles": [
+        "中環捉賊",
+        "粉碎",
+        "掃毒"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "亞拉伯跳舞女郎(超越時代紀念版)",
+      "total": 34,
+      "lit": 33,
+      "unlit": 1,
+      "pct": 97.1,
+      "unlit_titles": [
+        "亞拉伯開場音樂 (Live In Hong Kong)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "Beyond",
+      "album": "Beyond命運派對 (超越時代紀念版)",
+      "total": 21,
+      "lit": 20,
+      "unlit": 1,
+      "pct": 95.2,
+      "unlit_titles": [
+        "九十年代的憂傷"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "Lucky Number",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Bridge Over The Trouble Water",
+        "如果不想要",
+        "只有一個你",
+        "由我"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "舞孃",
+      "total": 11,
+      "lit": 1,
+      "unlit": 10,
+      "pct": 9.1,
+      "unlit_titles": [
+        "Dancing Diva",
+        "A Wonderful in Madrid",
+        "Pretending",
+        "Attraction of Sexy Lips",
+        "Love in the Shape of a Heart",
+        "Heart-Breaking Day",
+        "Mr. Q",
+        "Nice Guy",
+        "The Finale",
+        "The Prologue"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "特務J",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "Ideal State",
+        "Tacit Violence",
+        "Priceless"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "愛的練習語",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Physical",
+        "Lady Marmalade",
+        "Love Fool",
+        "The Blower's Daughter"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "花蝴蝶",
+      "total": 10,
+      "lit": 3,
+      "unlit": 7,
+      "pct": 30.0,
+      "unlit_titles": [
+        "Butterfly",
+        "Love Attraction",
+        "The Shadow Dancer",
+        "Parachute",
+        "Slow Life",
+        "You Hurt My Feelings",
+        "Hot Winter"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "Jolin - Myself",
+      "total": 15,
+      "lit": 12,
+      "unlit": 3,
+      "pct": 80.0,
+      "unlit_titles": [
+        "Secret Talk (Interlude)",
+        "Let's Start the Dance (Interlude)",
+        "Black-Haired Beautiful Girl"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "呸",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Medusa",
+        "I Love, I Embrace",
+        "Miss Trouble",
+        "Phony Queen (Theme Song for \"We Dancing Online DX\")"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "Ugly Beauty",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "Womxnly",
+        "Karma",
+        "Lady in Red",
+        "Shadow Self"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "album": "Pleasure",
+      "total": 13,
+      "lit": 10,
+      "unlit": 3,
+      "pct": 76.9,
+      "unlit_titles": [
+        "Pleasure",
+        "⁠Inside Out",
+        "DIY"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "五月天",
+      "album": "候鳥 五月天電影音樂作品",
+      "total": 6,
+      "lit": 3,
+      "unlit": 3,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Like the Firework",
+        "Left Key (ICQ of a Boy and a Girl)",
+        "Full Bloom"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "任贤齐",
+      "album": "再問一次",
+      "total": 9,
+      "lit": 7,
+      "unlit": 2,
+      "pct": 77.8,
+      "unlit_titles": [
+        "抓住生命的節奏",
+        "你的心我知道"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "任贤齐",
+      "album": "飛向自己的天空",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "飛向自己的天空",
+        "LOVE YOU DAY AND NIGHT(日日夜夜愛你)",
+        "GOOD BYE MY LOVE(再見我的愛)",
+        "流浪者之歌"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "凤凰传奇",
+      "album": "快乐情歌2007",
+      "total": 7,
+      "lit": 2,
+      "unlit": 5,
+      "pct": 28.6,
+      "unlit_titles": [
+        "有情人终成眷属",
+        "水果情歌",
+        "初恋女生",
+        "真的我想知道",
+        "每天抱我一分钟"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "凤凰传奇",
+      "album": "最好的时代",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "最好的时代",
+        "快乐无极限"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "凤凰传奇",
+      "album": "远方的远方还是远方",
+      "total": 10,
+      "lit": 3,
+      "unlit": 7,
+      "pct": 30.0,
+      "unlit_titles": [
+        "远方的远方还是远方",
+        "花开繁华",
+        "乡关何处是",
+        "红颜先生",
+        "花烛夜",
+        "让世界听我的",
+        "陪你一辈子"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "刘德华",
+      "album": "相思成災",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "若我是他我一定娶你",
+        "每次醒來"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "刘德华",
+      "album": "演‧唱",
+      "total": 17,
+      "lit": 10,
+      "unlit": 7,
+      "pct": 58.8,
+      "unlit_titles": [
+        "繼續美麗",
+        "兄弟不懷疑 (《掃毒2天地對決》主題曲)",
+        "MY LOVE",
+        "慢慢習慣 (電影《拆彈專家》主題曲)",
+        "解開",
+        "獅子山下 (電影《熱血合唱團》插曲)",
+        "兄弟不懷疑 (國)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "卢广仲",
+      "album": "七天",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "OH YEAH!!!",
+        "愛情習作",
+        "A"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "卢广仲",
+      "album": "What a Folk!!!!!! (第五張創作專輯)",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "Song of Summer",
+        "Moonlight Note",
+        "June & July"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "卢广仲",
+      "album": "What a Folk !!!!!! (日文版)",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "Song of Summer",
+        "Moonlight Note",
+        "June & July"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "卢广仲",
+      "album": "What a Folk!!!!!! (春季走跳版)",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "Song of Summer",
+        "Moonlight Note",
+        "June & July"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "卢广仲",
+      "album": "勵志論",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "C'MON",
+        "There You Are",
+        "MySoulMemory",
+        "ASK Yin Yang"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "卢广仲",
+      "album": "HeartBreakFast 傷心早餐店",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "Love Lost"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "我付出我的真愛",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "I Truly Give My Love",
+        "Lonely Eyes",
+        "Never Miss the Target"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "有弦相聚",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "Heart From the Past",
+        "Beloved Baby Forever",
+        "Forsaken You, Please Stay"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "我願意去等",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "Drunkeness",
+        "How Many Will You Like",
+        "Actually I Don't Want Give Up",
+        "The Widow Village"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "小天堂",
+      "total": 14,
+      "lit": 12,
+      "unlit": 2,
+      "pct": 85.7,
+      "unlit_titles": [
+        "The Flowery Heart",
+        "How Are You Getting Along"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "生‧生活",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "Happiness",
+        "Momentary Love",
+        "A Hard Scripture To Read"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "弦弦全全",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "Blame It on Myself",
+        "Silent Night, Holy Night"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "愛的光",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "Chessmen",
+        "Sword of Love",
+        "Laughter and Cry"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "光陰似健1987-1997",
+      "total": 17,
+      "lit": 10,
+      "unlit": 7,
+      "pct": 58.8,
+      "unlit_titles": [
+        "Lonely Eyes",
+        "I Truly Give My Love To You",
+        "The Widow Village",
+        "Lonely Sleepless Night",
+        "The Flower Heart",
+        "Love Follows Us",
+        "後序"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "有故事的人",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "A Man With Stories",
+        "Feel Troubled",
+        "Who's Coming To Dinner"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "至愛吾愛",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "Show Your Smile",
+        "Separate Lives"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "現在",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "Walk You Home",
+        "If Now",
+        "If Now (Acid Version)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "一起吃苦的幸福",
+      "total": 11,
+      "lit": 6,
+      "unlit": 5,
+      "pct": 54.5,
+      "unlit_titles": [
+        "Tide",
+        "The Borrowed Comfort",
+        "Unexpected Traveler",
+        "So Happy I Like to Cry (Demo)",
+        "Don't Be Foolish"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "周而復始",
+      "total": 40,
+      "lit": 29,
+      "unlit": 11,
+      "pct": 72.5,
+      "unlit_titles": [
+        "I Truly Gave My Love to You",
+        "Lonely Eyes",
+        "The Widow Village",
+        "How Are You Getting Along",
+        "The Flowery Heart",
+        "How Many Will You Like",
+        "Love Follows Us",
+        "A Man With Stories",
+        "Day Lilies",
+        "Any Songs Remind You of Me?",
+        "Separate Lives"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "男人三十",
+      "total": 30,
+      "lit": 27,
+      "unlit": 3,
+      "pct": 90.0,
+      "unlit_titles": [
+        "凡人歌",
+        "寂寞難耐",
+        "希望"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "雨人",
+      "total": 13,
+      "lit": 10,
+      "unlit": 3,
+      "pct": 76.9,
+      "unlit_titles": [
+        "We Don't Cry",
+        "So Happy I Want to Cry",
+        "Too Early to Tell"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "水滸三部曲 (原創音樂選輯)",
+      "total": 25,
+      "lit": 22,
+      "unlit": 3,
+      "pct": 88.0,
+      "unlit_titles": [
+        "林秀偉談上梁山",
+        "九天玄女1",
+        "九天玄女2"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "悟空",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "君是山",
+        "有时"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "album": "少年",
+      "total": 15,
+      "lit": 10,
+      "unlit": 5,
+      "pct": 66.7,
+      "unlit_titles": [
+        "The Younger Me",
+        "Sigmund Freud's Sake",
+        "Tribute to a Dear Friend",
+        "A Song for You",
+        "Unwavering"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "周深",
+      "album": "幕后玩家",
+      "total": 26,
+      "lit": 22,
+      "unlit": 4,
+      "pct": 84.6,
+      "unlit_titles": [
+        "A or B",
+        "Do you wanna play",
+        "不吃香菜和最好的十年",
+        "你们俩都得死"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "周深",
+      "album": "反深代词",
+      "total": 14,
+      "lit": 12,
+      "unlit": 2,
+      "pct": 85.7,
+      "unlit_titles": [
+        "Fix You",
+        "Brave Heart"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "姜育恒",
+      "album": "愛的痕跡",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "You Are My Left Atrium",
+        "What On the Earth I Forgot",
+        "Taste Love Couldn't Get"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "姜育恒",
+      "album": "我和我的朋友",
+      "total": 12,
+      "lit": 6,
+      "unlit": 6,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Shape of Soul",
+        "Samanlisa",
+        "0:00",
+        "It's Fate",
+        "Hate to Be Apart",
+        "It's Happiest to Have Hope"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "姜育恒",
+      "album": "好歌重现 回憶无限 VOL 1",
+      "total": 16,
+      "lit": 13,
+      "unlit": 3,
+      "pct": 81.2,
+      "unlit_titles": [
+        "我不在乎",
+        "依然不忘记",
+        "不要这么轻易說爱我"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "姜育恒",
+      "album": "好歌重现 回憶无限 VOL 3",
+      "total": 16,
+      "lit": 14,
+      "unlit": 2,
+      "pct": 87.5,
+      "unlit_titles": [
+        "烟雨濛濛",
+        "离开你"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "宋冬野",
+      "album": "单曲与精选",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "西斯廷教堂"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "容祖儿",
+      "album": "Bi-Heart",
+      "total": 14,
+      "lit": 12,
+      "unlit": 2,
+      "pct": 85.7,
+      "unlit_titles": [
+        "SMS@5:30 Am (Interlude)",
+        "好事多為"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "庾澄庆",
+      "album": "原音重現",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "Fix All My Faults For You (Live)",
+        "The Distance Of A Heartbeat (Live)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "庾澄庆",
+      "album": "關不掉的月光",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "Calvin Klein Never Compromising"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "庾澄庆",
+      "album": "西哈遊記: 庾澄慶的音樂奇幻之旅",
+      "total": 17,
+      "lit": 8,
+      "unlit": 9,
+      "pct": 47.1,
+      "unlit_titles": [
+        "End of Journey To the West (with Momo Wu & 李瑞軒)",
+        "Too Ugly For My Sight",
+        "Mama Feels Ashamed",
+        "Devil Wannabes (with 趙小熙 & 譚軒轅)",
+        "You Think You're All That (with 李瑞軒)",
+        "Offended by Darkness",
+        "Stop Controllimg Me",
+        "You Asked For It (with 吳世康)",
+        "Era Without Heroes (with 譚軒轅)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张信哲",
+      "album": "寬容",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "寬容",
+        "愛會看見",
+        "假裝有你",
+        "真愛一生"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "The Color of the Night",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Good Night Girl",
+        "One More Try",
+        "Missing",
+        "Too Much Heaven (feat. Pauline Lan)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "夢想",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "愛情對我來說",
+        "男人也好女人也好"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "摯愛",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Good Love",
+        "放手",
+        "改變",
+        "等你"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "直覺",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "愛的證據",
+        "絕不再失去你",
+        "男人說法",
+        "兩個小孩子"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "到處留情",
+      "total": 12,
+      "lit": 7,
+      "unlit": 5,
+      "pct": 58.3,
+      "unlit_titles": [
+        "多心",
+        "一週運程",
+        "別祝我愉快",
+        "夜是",
+        "下雪邊界"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "選哲",
+      "total": 14,
+      "lit": 11,
+      "unlit": 3,
+      "pct": 78.6,
+      "unlit_titles": [
+        "真愛一生",
+        "Missing",
+        "背叛"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "回來",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "回來",
+        "絕情"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "我好想",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "等風的旗",
+        "Goodbye Yesterday",
+        "某某某",
+        "如果你願意",
+        "有個人想我就好"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "做你的男人",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "曾經",
+        "不由自主",
+        "遠方"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "歌 時代",
+      "total": 9,
+      "lit": 3,
+      "unlit": 6,
+      "pct": 33.3,
+      "unlit_titles": [
+        "蒼蒼",
+        "親愛的小孩",
+        "為你我受冷風吹",
+        "滾滾紅塵",
+        "迴",
+        "流淚手心"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "擁恆",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "永恆的印記 (feat. 張艾嘉)",
+        "遷徙",
+        "時間都去哪兒了"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "就懂了",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "The One Who Stays",
+        "A Little More Than Touched (feat. 任素汐)",
+        "Lorelei",
+        "Never Parted (Opening Song from \"Heaven Official's Blessing\")",
+        "Fresh Wind Ruffles the Water"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张信哲",
+      "album": "屬於",
+      "total": 12,
+      "lit": 8,
+      "unlit": 4,
+      "pct": 66.7,
+      "unlit_titles": [
+        "Accomplice",
+        "Perhaps, My Sole Witness",
+        "Abide with You",
+        "Autography of Age"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张国荣",
+      "album": "Back To Black Series - Leslie",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Yau Ling Kai Shi",
+        "Lie Huo Deng Yi",
+        "Ce Mian",
+        "Pian Xin",
+        "Xu Yao Nai",
+        "Fang Dang",
+        "Qing Gan De Ci",
+        "Di Kang Ye Han"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张国荣",
+      "album": "摯愛",
+      "total": 32,
+      "lit": 30,
+      "unlit": 2,
+      "pct": 93.8,
+      "unlit_titles": [
+        "風繼續吹 (Live)",
+        "TWIST&SHOUT"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张国荣",
+      "album": "I Am What I Am",
+      "total": 36,
+      "lit": 33,
+      "unlit": 3,
+      "pct": 91.7,
+      "unlit_titles": [
+        "夜有所夢",
+        "American Pie (Live)",
+        "至少還有你 (國) [Live]"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张学友",
+      "album": "Back To Black Series - Ai Nai Duo Yi Xie \"Jing Xuan\"",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "Wang Qing Leng Yu Ye",
+        "Zi Yuen Yi Sheng Ai Yi Ren",
+        "Zai Ai Shang Ni"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张学友",
+      "album": "Wake Up Dreaming",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "Tears of Time",
+        "The Accused",
+        "Not Bad"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "歌聲妹影",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "卡門",
+        "天才白癡夢"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "歌聲妹影 (2019 Remastering)",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "Mamma Mia (2019 Remastering)",
+        "天才白癡夢 (2019 Remastering)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "旅程",
+      "total": 18,
+      "lit": 12,
+      "unlit": 6,
+      "pct": 66.7,
+      "unlit_titles": [
+        "愛已蔓延",
+        "愛或不愛",
+        "Come Together",
+        "Addicted To Love",
+        "Blue Bayou",
+        "Bizarre Love Triangle"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "STAR",
+      "total": 12,
+      "lit": 6,
+      "unlit": 6,
+      "pct": 50.0,
+      "unlit_titles": [
+        "你是愛我的",
+        "薇多莉亞的秘密",
+        "知己",
+        "Big City",
+        "如果你也聽說",
+        "Don't Sail Away"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "阿密特意識專輯 (感官升級版)",
+      "total": 12,
+      "lit": 8,
+      "unlit": 4,
+      "pct": 66.7,
+      "unlit_titles": [
+        "分生",
+        "相愛後動物感傷",
+        "好膽你就來",
+        "阿密特:給親人 + 來唱歌吧 + 等待豐收的父親"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "阿密特意識專輯",
+      "total": 11,
+      "lit": 10,
+      "unlit": 1,
+      "pct": 90.9,
+      "unlit_titles": [
+        "阿密特:給親人 + 來唱歌吧 + 等待豐收的父親"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "你在看我嗎",
+      "total": 13,
+      "lit": 7,
+      "unlit": 6,
+      "pct": 53.8,
+      "unlit_titles": [
+        "一個人對話",
+        "還有眼淚就好",
+        "他們",
+        "渴了",
+        "High咖",
+        "渴了 (Electro Remix)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "偏執面",
+      "total": 10,
+      "lit": 1,
+      "unlit": 9,
+      "pct": 10.0,
+      "unlit_titles": [
+        "Right as Wrong",
+        "Do You Still Want to Love Me",
+        "March",
+        "Autosadism",
+        "Faces of Paranoia (feat. Soft Lipa)",
+        "Jump In",
+        "Dog",
+        "Fly High",
+        "Heading Utopia"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "album": "AMIT2",
+      "total": 10,
+      "lit": 3,
+      "unlit": 7,
+      "pct": 30.0,
+      "unlit_titles": [
+        "衝突得很",
+        "放了那個作品",
+        "不睡",
+        "牙買加的檳榔",
+        "難搞",
+        "血腥愛情故事",
+        "你想幹什麼"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张雨生",
+      "album": "雨後星空",
+      "total": 27,
+      "lit": 26,
+      "unlit": 1,
+      "pct": 96.3,
+      "unlit_titles": [
+        "創作的絮語1 (口白)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张雨生",
+      "album": "Yu Hou Xing Kong",
+      "total": 27,
+      "lit": 23,
+      "unlit": 4,
+      "pct": 85.2,
+      "unlit_titles": [
+        "Guan Yu Chang Ge De Qing Gan Yu Ji Qiao (Kou Bai)",
+        "Chuang Zuo De Xu Yu1 (Kou Bai)",
+        "Chuang Zuo De Xu Yu2 (Kou Bai)",
+        "Gong Zuo Gan Ku Tan (Kou Bai)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "张震岳",
+      "album": "花開了沒有",
+      "total": 11,
+      "lit": 4,
+      "unlit": 7,
+      "pct": 36.4,
+      "unlit_titles": [
+        "Does the Flower Bloom?",
+        "Fragile",
+        "Animal Family",
+        "Growing Up Is a Trouble",
+        "Sudden Encounter",
+        "How Are You?",
+        "Seaside"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张震岳",
+      "album": "這個下午很無聊",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "Breaking Up",
+        "Love's First Taste",
+        "Will You Wait For Me",
+        "Secret"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张震岳",
+      "album": "有問題",
+      "total": 14,
+      "lit": 5,
+      "unlit": 9,
+      "pct": 35.7,
+      "unlit_titles": [
+        "Bull Shit",
+        "Think Too Much",
+        "Intro (Trouble)",
+        "Dreaming",
+        "0204 I",
+        "Intro (Leaving)",
+        "Leaving",
+        "We Are the World",
+        "All the Way"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张震岳",
+      "album": "等我有一天",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "Concede",
+        "A Real Man",
+        "Wait Until One Day"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张震岳",
+      "album": "阿嶽正傳",
+      "total": 24,
+      "lit": 15,
+      "unlit": 9,
+      "pct": 62.5,
+      "unlit_titles": [
+        "I'll Miss You",
+        "Heaven",
+        "Unwilling to Let Go",
+        "Secret",
+        "The First Taste of Love",
+        "Break It Up",
+        "0204",
+        "Concede",
+        "Fart"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张震岳",
+      "album": "我想要的感覺",
+      "total": 9,
+      "lit": 7,
+      "unlit": 2,
+      "pct": 77.8,
+      "unlit_titles": [
+        "Getaway",
+        "Club Unloved"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张震岳",
+      "album": "我是海雅谷慕",
+      "total": 12,
+      "lit": 8,
+      "unlit": 4,
+      "pct": 66.7,
+      "unlit_titles": [
+        "Used Guitar",
+        "Ai Yo Wei Ya",
+        "Welcome To Hua-Lian",
+        "‬Not a Star‭ ‬"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "张震岳",
+      "album": "跟著感覺走",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "Surfer's Love Story",
+        "Errand Boy"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "徐佳瑩",
+      "album": "LaLa首張創作專輯",
+      "total": 11,
+      "lit": 5,
+      "unlit": 6,
+      "pct": 45.5,
+      "unlit_titles": [
+        "喔伊細",
+        "圓舞曲",
+        "白旗",
+        "明知故犯",
+        "出口",
+        "哼情歌"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "徐佳瑩",
+      "album": "極限",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "極限",
+        "懼高症",
+        "香水",
+        "綠洲",
+        "迪斯可"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "徐佳瑩",
+      "album": "心裡學",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "When You Leave",
+        "We People"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "徐佳瑩",
+      "album": "心裏學",
+      "total": 11,
+      "lit": 1,
+      "unlit": 10,
+      "pct": 9.1,
+      "unlit_titles": [
+        "心裏學",
+        "人啊",
+        "言不由衷",
+        "隔壁的耳朵",
+        "兒歌",
+        "記得帶走",
+        "病人",
+        "雖然很高興",
+        "大頭仔",
+        "一整天"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "album": "Soulboy",
+      "total": 14,
+      "lit": 8,
+      "unlit": 6,
+      "pct": 57.1,
+      "unlit_titles": [
+        "叫我怎麼說",
+        "我們能不能",
+        "總結",
+        "趕場",
+        "等著你回來",
+        "認識你"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "album": "未來",
+      "total": 11,
+      "lit": 5,
+      "unlit": 6,
+      "pct": 45.5,
+      "unlit_titles": [
+        "How It Feels",
+        "Warm",
+        "Park",
+        "Sweety Pie",
+        "Countdown",
+        "Beautiful"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "album": "橙月",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "Singalongsong",
+        "為妳寫的歌"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "album": "15",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "張永成 (feat. Ghost Style)",
+        "二人遊"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "album": "危險世界",
+      "total": 15,
+      "lit": 9,
+      "unlit": 6,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Welcome",
+        "Soundcheck",
+        "Weather Report",
+        "楓葉做的風鈴",
+        "Boarding",
+        "Lights Up"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "album": "JTW西遊記",
+      "total": 21,
+      "lit": 13,
+      "unlit": 8,
+      "pct": 61.9,
+      "unlit_titles": [
+        "聽",
+        "笑開",
+        "夢蝴蝶",
+        "Love You So Much",
+        "悟空 2003 Demo (Bonus Track)",
+        "煩",
+        "Once",
+        "黑夜"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "album": "The Dreamer",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Twenty Three",
+        "Not A Farmer",
+        "Oasis",
+        "Revisited",
+        "Nothing To Say"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "曹格",
+      "album": "Superman",
+      "total": 10,
+      "lit": 1,
+      "unlit": 9,
+      "pct": 10.0,
+      "unlit_titles": [
+        "Superman",
+        "Two Lovers",
+        "Girl Friend",
+        "Betrayal",
+        "You Are My Baby",
+        "Protecting You",
+        "Love You to the End",
+        "My Sweetness",
+        "The Life Even Angels Are Jealous"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "曹格",
+      "album": "曹之在我",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "丑角",
+        "悲歌王"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "曹格",
+      "album": "荷里活的動物園",
+      "total": 12,
+      "lit": 7,
+      "unlit": 5,
+      "pct": 58.3,
+      "unlit_titles": [
+        "The Zoo of Hollywood",
+        "荷里活",
+        "我會醬子嗎",
+        "無聊男孩",
+        "The End of the Hollywood Zoo"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "曹格",
+      "album": "Gary Chaw Project Sensation 1 Jazz",
+      "total": 14,
+      "lit": 8,
+      "unlit": 6,
+      "pct": 57.1,
+      "unlit_titles": [
+        "So What (Band)",
+        "So What (Bass Solo)",
+        "So What (Drums Solo)",
+        "Love You",
+        "Sunday Afternoon",
+        "So What (Drums and Bass)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "曹格",
+      "album": "我們是朋友",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "彩虹ABC (feat. 曹三豐 & 曹華恩)",
+        "你願不願意"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "曹格",
+      "album": "曹小格",
+      "total": 11,
+      "lit": 3,
+      "unlit": 8,
+      "pct": 27.3,
+      "unlit_titles": [
+        "Lonely Lonely No Good",
+        "I Give You Loving",
+        "Love Is Wonderful Thing",
+        "Summer Holiday (feat. Joe Chaw & Luke Tsui)",
+        "Don't Wake Me Up",
+        "Byebye",
+        "Brother Song",
+        "Birthday Song (feat. Lv Cheng Cheng)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李健",
+      "album": "拾光",
+      "total": 15,
+      "lit": 12,
+      "unlit": 3,
+      "pct": 80.0,
+      "unlit_titles": [
+        "丽江 (2013版)",
+        "当有天老去 (2013版)",
+        "一往情深的恋人 (2013版)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "李玟",
+      "album": "Promise Me",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "Wo Yiran Shi Ni De Qingren (Unplugged)",
+        "Bian Xin",
+        "Fei",
+        "Rang Shi Jie Geng Meili (Merry Christmas)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "Woman In Love",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Wo Ai De Shi Ni",
+        "Ni Zai Wo Xin Shang",
+        "Wang Le Ba",
+        "Shi Ruo Wu Du",
+        "Bei Ai De Nu Ren"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "CoCo Lee",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "In My Mind",
+        "If I Rely On You"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "每一次想你",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "貓",
+        "路上"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "From Today Till Forever",
+      "total": 13,
+      "lit": 11,
+      "unlit": 2,
+      "pct": 84.6,
+      "unlit_titles": [
+        "The Best Of Love",
+        "Wo Men Shuo Hao"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "要定你",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "諜對諜",
+        "愛不停"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "Illuminate",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "Stuck On U",
+        "Could it be"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "CoCo 李玟 You & I 經典全紀錄",
+      "total": 25,
+      "lit": 22,
+      "unlit": 3,
+      "pct": 88.0,
+      "unlit_titles": [
+        "Every Moments of Love",
+        "The Answer",
+        "I'm Still Your Lover"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "李玟",
+      "album": "Always On My Mind: CoCo's 30th Anniversary Album",
+      "total": 8,
+      "lit": 6,
+      "unlit": 2,
+      "pct": 75.0,
+      "unlit_titles": [
+        "How Could U let Me be in Sorrows",
+        "I am Truly Hurt"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "杨千嬅",
+      "album": "Miriam",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "熱血青年",
+        "照相本子",
+        "紫色"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "杨千嬅",
+      "album": "Make Up",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "娃娃夫人",
+        "魂斷威尼斯",
+        "滿場飛"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "杨千嬅",
+      "album": "Miriam's Music Box (Special Edition)",
+      "total": 12,
+      "lit": 8,
+      "unlit": 4,
+      "pct": 66.7,
+      "unlit_titles": [
+        "Music Box I",
+        "家有幾米",
+        "聖誕禮物",
+        "Music Box II"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "杨千嬅",
+      "album": "Meridian",
+      "total": 14,
+      "lit": 12,
+      "unlit": 2,
+      "pct": 85.7,
+      "unlit_titles": [
+        "Meridian (Interlude)",
+        "傑出青年"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "杨千嬅",
+      "album": "Wonder Miriam",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "大慈善家",
+        "捉伊人"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "杨千嬅",
+      "album": "原來過得很快樂",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "你幸福嗎",
+        "麥芽糖",
+        "對木偶唱歌",
+        "孖公仔"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "杨千嬅",
+      "album": "One On One",
+      "total": 18,
+      "lit": 13,
+      "unlit": 5,
+      "pct": 72.2,
+      "unlit_titles": [
+        "一二三, 三二一",
+        "狼來了",
+        "再見二丁目",
+        "我係我 (Remix)",
+        "新世紀福音戰士"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "林俊杰",
+      "album": "Never Learn",
+      "total": 12,
+      "lit": 3,
+      "unlit": 9,
+      "pct": 25.0,
+      "unlit_titles": [
+        "Prologue",
+        "Never Learn",
+        "Romantic Mystery",
+        "Those Were the Days",
+        "Aries",
+        "Variation 25: Clash of the Souls",
+        "Streets Old Shanghai",
+        "Dear Friend",
+        "Nonexistent"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "林俊杰",
+      "album": "Like You Do",
+      "total": 8,
+      "lit": 4,
+      "unlit": 4,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Like You Do",
+        "All In Your Mind",
+        "Head On",
+        "Steady My Love"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "林俊杰",
+      "album": "JJ's Bloom n' Tunes, Vol. 1",
+      "total": 9,
+      "lit": 1,
+      "unlit": 8,
+      "pct": 11.1,
+      "unlit_titles": [
+        "Intro",
+        "Left Behind",
+        "Miss You 3000",
+        "恨幸福來過",
+        "You Are The Reason",
+        "Coffee+No Turning Back",
+        "Sanctuary",
+        "The Beacon"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "梁静茹",
+      "album": "美麗人生",
+      "total": 11,
+      "lit": 1,
+      "unlit": 10,
+      "pct": 9.1,
+      "unlit_titles": [
+        "For My Own Good",
+        "The Intruder",
+        "Beautiful Life",
+        "I Am Not Afraid",
+        "Are You Still There",
+        "Vicious Cycle",
+        "The Happiest Year",
+        "Turn Left, Turn Right",
+        "Map of the Tear",
+        "The Journey"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "梁静茹",
+      "album": "恋爱的力量",
+      "total": 20,
+      "lit": 14,
+      "unlit": 6,
+      "pct": 70.0,
+      "unlit_titles": [
+        "Fly Away",
+        "听不到",
+        "Tiffany",
+        "爱是...",
+        "不想睡",
+        "我也想他"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "梁静茹",
+      "album": "絲路",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "因為還是會"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "游鸿明",
+      "album": "恋上一个人",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "情难求",
+        "你已当我是个过路人",
+        "你说你比较习惯一个人",
+        "怎么能把爱放走",
+        "晚安纳桑嘛谷"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "受困思念",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "愛不必猜",
+        "謊言",
+        "真愛無罪",
+        "照顧"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "一天一万年",
+      "total": 10,
+      "lit": 4,
+      "unlit": 6,
+      "pct": 40.0,
+      "unlit_titles": [
+        "恋上一个人",
+        "你连笑起来都不快乐",
+        "若是我回头来牵你的手",
+        "我的爱情被你烧成灰",
+        "爱一回伤一回",
+        "一天一万年"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "五月的雪",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "自尊",
+        "誰不寂寞",
+        "去愛",
+        "愛可以瘋"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "Sanding",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "荒蕪心田",
+        "四個冬季"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "2003心情歌創作 台北寂寞部屋",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "台北 寂寞部屋",
+        "危樓",
+        "Gloria",
+        "孤單是會傳染的",
+        "純屬虛構"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "倦鸟余花",
+      "total": 8,
+      "lit": 5,
+      "unlit": 3,
+      "pct": 62.5,
+      "unlit_titles": [
+        "倦鸟余花",
+        "夫妻脸 (feat. 彭佳慧)",
+        "是的我爱她"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "倦鳥餘花-2007游鴻明創作集",
+      "total": 10,
+      "lit": 4,
+      "unlit": 6,
+      "pct": 40.0,
+      "unlit_titles": [
+        "倦鳥餘花",
+        "夫妻臉",
+        "讓我取暖",
+        "無字的情批",
+        "擁抱我",
+        "別問"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "album": "最近的 游鸿明",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "敌不过想念",
+        "最远的身边"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "王力宏",
+      "album": "不可思議",
+      "total": 13,
+      "lit": 8,
+      "unlit": 5,
+      "pct": 61.5,
+      "unlit_titles": [
+        "You're Not Here",
+        "Girlfriend",
+        "Who Are You Thinking of Now",
+        "What Was I Thinking?",
+        "Love Is All Around"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王力宏",
+      "album": "改變自己",
+      "total": 12,
+      "lit": 6,
+      "unlit": 6,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Intro",
+        "Change Me",
+        "Falling Leaf Returns to Root",
+        "Opening Remarks",
+        "Cockney Girl",
+        "The Quiet Depths of a Saturday Night"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王力宏",
+      "album": "心跳",
+      "total": 10,
+      "lit": 4,
+      "unlit": 6,
+      "pct": 40.0,
+      "unlit_titles": [
+        "Dirty or Deti?",
+        "Heart Beat",
+        "The Sun After Washed by Spring Rain",
+        "Another Heaven (feat. Jane Zhang)",
+        "Puppet",
+        "Screenplay"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王力宏",
+      "album": "十八般武藝",
+      "total": 11,
+      "lit": 6,
+      "unlit": 5,
+      "pct": 54.5,
+      "unlit_titles": [
+        "Dragon Dance",
+        "Du U ❤️ Me",
+        "Boya Breaks His Strings",
+        "Need Some Company",
+        "The Ends of the Earth"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王力宏",
+      "album": "你的愛。",
+      "total": 13,
+      "lit": 9,
+      "unlit": 4,
+      "pct": 69.2,
+      "unlit_titles": [
+        "Intro",
+        "Cracked Heart",
+        "Lose Myself (feat. Avicii)",
+        "Lose Myself (Ballad Version)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王力宏",
+      "album": "A.I. 愛",
+      "total": 11,
+      "lit": 4,
+      "unlit": 7,
+      "pct": 36.4,
+      "unlit_titles": [
+        "World Without Tears",
+        "A.I. Love",
+        "Thousands Of Generations",
+        "Silent Dancer",
+        "Why Don't You Just Love Me",
+        "Great Wall (feat. Tan Wei Wei)",
+        "Clash Of Kings"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王心凌",
+      "album": "愛·心凌",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "披星戴月的想你"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "王菲",
+      "album": "王靖雯",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "未出現的愛",
+        "飛機上"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王菲",
+      "album": "Everything",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "Yesterday"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王菲",
+      "album": "You're the Only One",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "美麗的印記",
+        "從明日開始"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "王菲",
+      "album": "迷",
+      "total": 20,
+      "lit": 19,
+      "unlit": 1,
+      "pct": 95.0,
+      "unlit_titles": [
+        "夜半狂飆"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "田震",
+      "album": "真的田震",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "The Last Moment",
+        "Take One's Ease",
+        "A Woman Who Is Afraid of the Dark"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "田震",
+      "album": "38.5 Degrees",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "Defrosting"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "田馥甄",
+      "album": "My Love",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Still in Happiness",
+        "Angel Devil",
+        "Make Trouble out of Nothing",
+        "Flower"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "痛仰乐队",
+      "album": "This Is a Problem",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "Like a Bitch",
+        "Pretense"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "痛仰乐队",
+      "album": "不要停止我的音樂",
+      "total": 10,
+      "lit": 1,
+      "unlit": 9,
+      "pct": 10.0,
+      "unlit_titles": [
+        "Goodbye Jack",
+        "The Road Song",
+        "Low Altitude",
+        "Roleplay",
+        "Anyang",
+        "The Empty City",
+        "Home Lost",
+        "The for You Song",
+        "The Music Won't Be Stopped"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "痛仰乐队",
+      "album": "願愛無憂",
+      "total": 12,
+      "lit": 3,
+      "unlit": 9,
+      "pct": 25.0,
+      "unlit_titles": [
+        "Summer",
+        "Tashi-Delek",
+        "A Boat Floating in the Ocean",
+        "Starless Night",
+        "Holidays for Two",
+        "Ditty of Xinjiang Memories",
+        "Hallelujah",
+        "Dancing in Chains",
+        "The Sun Always Rises"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "窦唯",
+      "album": "幻听",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "序·玉楼春·雨·临江仙"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "窦唯",
+      "album": "雨吁",
+      "total": 12,
+      "lit": 6,
+      "unlit": 6,
+      "pct": 50.0,
+      "unlit_titles": [
+        "静安",
+        "禧晤",
+        "乱战国",
+        "语虚何以言知",
+        "山秀谷",
+        "乂安"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "窦唯",
+      "album": "快雪堂樂記",
+      "total": 7,
+      "lit": 4,
+      "unlit": 3,
+      "pct": 57.1,
+      "unlit_titles": [
+        "秋十月",
+        "憶昔時",
+        "快雪古今"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "窦唯",
+      "album": "贤文冬至乐会",
+      "total": 14,
+      "lit": 10,
+      "unlit": 4,
+      "pct": 71.4,
+      "unlit_titles": [
+        "登泰山记",
+        "听琴",
+        "小园赋",
+        "悲愤诗"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "窦唯",
+      "album": "贤文乐集之夏",
+      "total": 7,
+      "lit": 4,
+      "unlit": 3,
+      "pct": 57.1,
+      "unlit_titles": [
+        "喜雨亭记",
+        "桃花源记",
+        "小园赋"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "羽·泉",
+      "album": "三十",
+      "total": 12,
+      "lit": 5,
+      "unlit": 7,
+      "pct": 41.7,
+      "unlit_titles": [
+        "辛弃疾",
+        "人间 (Original版)",
+        "尘埃",
+        "求爱歌",
+        "冬眠城市",
+        "人间 (Melody版)",
+        "Has It"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "羽·泉",
+      "album": "再生",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "回家鄉",
+        "唉!"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "胡彦斌",
+      "album": "男人歌",
+      "total": 13,
+      "lit": 11,
+      "unlit": 2,
+      "pct": 84.6,
+      "unlit_titles": [
+        "到了没",
+        "江湖"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "在銀色的月光下",
+      "total": 13,
+      "lit": 5,
+      "unlit": 8,
+      "pct": 38.5,
+      "unlit_titles": [
+        "Under the Silver Moonlight",
+        "Wild Swans",
+        "The Crescent Shining Across the Land",
+        "Hill That Looks Like a Golden Vessel",
+        "The Yellow River Has Dried Up",
+        "The Great Swans",
+        "It's Hard to Sing",
+        "The Night on the Prairie"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "鹰之恋",
+      "total": 14,
+      "lit": 12,
+      "unlit": 2,
+      "pct": 85.7,
+      "unlit_titles": [
+        "鹰之恋",
+        "蒙古人"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "Surpass and New Heaven",
+      "total": 14,
+      "lit": 6,
+      "unlit": 8,
+      "pct": 42.9,
+      "unlit_titles": [
+        "Keep You In My Mind",
+        "In the Silver Moonlight",
+        "The Mongolian",
+        "The Night On the Prairie",
+        "Wild Swans",
+        "Goodbye My Love",
+        "The Mongolian",
+        "Surpass"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "蒙古歌王(苍狼大地)",
+      "total": 17,
+      "lit": 13,
+      "unlit": 4,
+      "pct": 76.5,
+      "unlit_titles": [
+        "天堂",
+        "蒙古人",
+        "独白",
+        "黄河的水干了"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "雙情騰格爾",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "SanBaiNo",
+        "不願等待就走你的"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "梦",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "蒙古人",
+        "天堂"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "夢",
+      "total": 12,
+      "lit": 7,
+      "unlit": 5,
+      "pct": 58.3,
+      "unlit_titles": [
+        "Father's Grassland and Mother's River",
+        "Sen Ji De Ma",
+        "Blue Hometown",
+        "Hometown",
+        "Mongolian"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "album": "蒙古人",
+      "total": 15,
+      "lit": 11,
+      "unlit": 4,
+      "pct": 73.3,
+      "unlit_titles": [
+        "天堂",
+        "蒙古人",
+        "鷹之戀",
+        "小河摸魚"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "苏慧伦",
+      "album": "六月的茉莉夢",
+      "total": 10,
+      "lit": 9,
+      "unlit": 1,
+      "pct": 90.0,
+      "unlit_titles": [
+        "Tender Foolishness"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "苏慧伦",
+      "album": "愛上飛鳥的女孩",
+      "total": 12,
+      "lit": 11,
+      "unlit": 1,
+      "pct": 91.7,
+      "unlit_titles": [
+        "The Tenderest Bondage"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "苏慧伦",
+      "album": "懶人日記",
+      "total": 12,
+      "lit": 11,
+      "unlit": 1,
+      "pct": 91.7,
+      "unlit_titles": [
+        "My Tears Are Shaking"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "苏打绿",
+      "album": "夏 / 狂熱",
+      "total": 14,
+      "lit": 11,
+      "unlit": 3,
+      "pct": 78.6,
+      "unlit_titles": [
+        "口白 - 英文詩 1",
+        "口白 - 英文詩 2",
+        "口白 - 英文詩 3"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "苏打绿",
+      "album": "冬 未了",
+      "total": 19,
+      "lit": 12,
+      "unlit": 7,
+      "pct": 63.2,
+      "unlit_titles": [
+        "第一樂章/適度的快板(取材自〈地平線〉) (feat. Budapest Art Orchestra)",
+        "第二樂章/慢板(取材自〈回車諾比的夢〉與〈下雨的夜晚〉) (feat. Budapest Art Orchestra)",
+        "第三樂章/活潑的快板(取材自〈他舉起右手點名〉) (feat. Budapest Art Orchestra)",
+        "第四樂章/有精神的快板—莊嚴的快板(取材自〈痛快的哀艷〉) (feat. Budapest Art Orchestra)",
+        "Cold Star (feat. Budapest Art Orchestra)",
+        "Weird Cat (feat. Budapest Art Orchestra)",
+        "Four Season (feat. Budapest Art Orchestra)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "苏打绿",
+      "album": "Spring · Daylight (sodagreen Version)",
+      "total": 21,
+      "lit": 10,
+      "unlit": 11,
+      "pct": 47.6,
+      "unlit_titles": [
+        ".",
+        ". .",
+        "Ocean (Live in summer)",
+        "Moon Messenger (Live in summer)",
+        "Forgive (Live in summer)",
+        "Mindful (Live in summer)",
+        "September (Live in summer)",
+        "A Beautiful Mistake (Live in summer)",
+        "Ha Ha Li Li (Live in summer)",
+        "The Rose (Live in summer)",
+        "Love Is Everything (Live in summer)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "苏打绿",
+      "album": "Autumn: Stories (sodagreen Version)",
+      "total": 24,
+      "lit": 12,
+      "unlit": 12,
+      "pct": 50.0,
+      "unlit_titles": [
+        ":",
+        ": :",
+        ": : :",
+        ": : : :",
+        "Quietness is Boiling (Live in summer)",
+        "Where Have All The Cowboys Gone? (Live in summer)",
+        "Be Be Your Love (Live in summer)",
+        "Snow Flower (Live in summer)",
+        "One Hundred Years of Solitude (Live in summer)",
+        "Shadow (Live in summer)",
+        "The Night is too dark (Live in summer)",
+        "Love Song 1990 (Live in summer)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "苏打绿",
+      "album": "Summer / Fever (sodagreen Version)",
+      "total": 23,
+      "lit": 12,
+      "unlit": 11,
+      "pct": 52.2,
+      "unlit_titles": [
+        "/",
+        "/ /",
+        "/ / /",
+        "The Last Blossom (Live in summer)",
+        "War (Live in summer)",
+        "From Europe (Live in summer)",
+        "The Blower's Daughter (Live in summer)",
+        "Smells Like Teen Spirit (Live in summer)",
+        "Don't Break My Heart (Live in summer)",
+        "Greenhouse Girl (Live in summer)",
+        "Big Dream (Live in summer)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "苏打绿",
+      "album": "Winter Endless (sodagreen Version)",
+      "total": 32,
+      "lit": 21,
+      "unlit": 11,
+      "pct": 65.6,
+      "unlit_titles": [
+        ":",
+        "/",
+        ".",
+        "Ode to Winter: I. Allegro moderato",
+        "Ode to Winter: II. Adagio",
+        "Ode to Winter: III. Allegro vivace",
+        "Ode to Winter: IV. Allegro con brio-Allegro maestoso",
+        "Singing Light Years: I. Time Travel",
+        "Singing Light Years: II. Light Years",
+        "Singing Light Years: III. Dreamland",
+        "Singing Light Years: IV. Between Us"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "苏打绿",
+      "album": "20 Special Moments",
+      "total": 20,
+      "lit": 8,
+      "unlit": 12,
+      "pct": 40.0,
+      "unlit_titles": [
+        "Halo of Night (Live)",
+        "Dream (Live)",
+        "Bleached (Live)",
+        "To You (Live)",
+        "Promise (Live)",
+        "Hunger Regeneration (Live)",
+        "The Traveler (Live)",
+        "Late Night Insanity (Live)",
+        "Strings Puppet (Live)",
+        "Let's Dream About Love (feat. GermanPops Orchestra) [Live]",
+        "Symphony of Life (feat. Yoshiaki Sato) [Live]",
+        "Only If (Live)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "范晓萱",
+      "album": "聖誕快樂",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "Medley: Silent Night / Santa Claus Is Coming To Town / Jingle Bells",
+        "Medley: We Wish You a Merry Christmas / Joy To the World / Deck the Halls",
+        "賀歲報喜歡樂組曲 (Remix)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "范晓萱",
+      "album": "細說從頭范曉萱出道全記錄",
+      "total": 23,
+      "lit": 8,
+      "unlit": 15,
+      "pct": 34.8,
+      "unlit_titles": [
+        "Digital Love",
+        "Stars",
+        "Blue Cheongsam",
+        "Wind",
+        "Disappearing",
+        "Deep Breaths",
+        "Snowman",
+        "Think of You",
+        "Expired",
+        "Do You Really Love Me",
+        "Ilike This Kind of Quietness",
+        "Tears",
+        "I Want To Fall In Love",
+        "Talk To Myself",
+        "Together With You"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "范晓萱",
+      "album": "給孩童的音樂幻想小故事",
+      "total": 20,
+      "lit": 11,
+      "unlit": 9,
+      "pct": 55.0,
+      "unlit_titles": [
+        "Ants",
+        "Cat",
+        "Mosquito",
+        "Jellyfish",
+        "Fox",
+        "Wolf",
+        "Roseate Spoonbill",
+        "Sea Otter",
+        "Turkey"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "莫文蔚",
+      "album": "全身莫文蔚",
+      "total": 15,
+      "lit": 13,
+      "unlit": 2,
+      "pct": 86.7,
+      "unlit_titles": [
+        "色情男女 (Karen獨唱版)",
+        "我不需要憐憫"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "莫文蔚",
+      "album": "你可以",
+      "total": 15,
+      "lit": 11,
+      "unlit": 4,
+      "pct": 73.3,
+      "unlit_titles": [
+        "Extinguish",
+        "Diamond",
+        "Live Show",
+        "I Can't Lose My Faith. Love Is Not Possession"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "莫文蔚",
+      "album": "一朵金花",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Astigmatism",
+        "Fan Dance",
+        "Princess of Mong Kok",
+        "Nescience",
+        "Golden Flower"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "莫文蔚",
+      "album": "回蔚",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "风从哪里来",
+        "半个月亮爬上来",
+        "红"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "莫文蔚",
+      "album": "宝贝 (2nd Edition)",
+      "total": 13,
+      "lit": 6,
+      "unlit": 7,
+      "pct": 46.2,
+      "unlit_titles": [
+        "艾美丽 爱美丽",
+        "洗澡时唱的歌",
+        "独一/无二",
+        "没有围墙的世界",
+        "饮食男女",
+        "执子之手",
+        "淘宝(粤)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "莫文蔚",
+      "album": "不散,不見",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "看看",
+        "亲爱的"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "莫文蔚",
+      "album": "我们在中场相遇",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "飞",
+        "中场没有休息",
+        "绝"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "萧亚轩",
+      "album": "1087",
+      "total": 12,
+      "lit": 11,
+      "unlit": 1,
+      "pct": 91.7,
+      "unlit_titles": [
+        "后来的我们"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "萧亚轩",
+      "album": "不解釋親吻",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "對誰都好",
+        "天雷地火"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "萧亚轩",
+      "album": "Naked Truth赤裸真相",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Celebrate Everyday",
+        "Naked Truth",
+        "So Good",
+        "Say the Words"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "萧敬腾",
+      "album": "Xiao Jing Teng Tong Ming Shi Jie Xun Hui Yan Chang Hui Xiang Gang Hong Kan Zhan - You Yi Zhong Jing Shen Jiao Xiao Jing Teng",
+      "total": 25,
+      "lit": 18,
+      "unlit": 7,
+      "pct": 72.0,
+      "unlit_titles": [
+        "Ya Che (Live)",
+        "Hai Kuo Tian Kong (Live)",
+        "Mei Tian Ai Ni Duo Yi Xie (Live)",
+        "Zhui (Live)",
+        "Wang Qing Sen Ba Wu (Live)",
+        "Yi Zhi Du Xiu (Live)",
+        "Zu Qu: Zhong Ai Qing You/Mei Fei Se Wu (Live)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "萧敬腾",
+      "album": "The Song",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "Ling Ling (feat. 范瑋琪)",
+        "Shuo",
+        "Wo Zai Fei"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "萧敬腾",
+      "album": "REMINISCENCE",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "Qian Yan Wan Yu",
+        "Jin Chi",
+        "Zhang San De Ge",
+        "Cheng Li De Yue Guang"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "薛之谦",
+      "album": "来日方长",
+      "total": 11,
+      "lit": 1,
+      "unlit": 10,
+      "pct": 9.1,
+      "unlit_titles": [
+        "天涯歌女 (前奏)",
+        "天涯歌女",
+        "凤凰于飞",
+        "漂白",
+        "我们都不应该孤单",
+        "在一起就不孤独?",
+        "南屏晚钟",
+        "月圆花好",
+        "永远的微笑",
+        "封存"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "袁娅维",
+      "album": "在与生俱来的不平衡里",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "GOOD MORNING",
+        "MEET ME SOMEWHERE"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "袁娅维",
+      "album": "NEW DAY",
+      "total": 12,
+      "lit": 8,
+      "unlit": 4,
+      "pct": 66.7,
+      "unlit_titles": [
+        "HEART SHAPED HOLE",
+        "PRESSURE",
+        "FLOWING LOTUS",
+        "BORED"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "谭咏麟",
+      "album": "愛的根源",
+      "total": 10,
+      "lit": 1,
+      "unlit": 9,
+      "pct": 10.0,
+      "unlit_titles": [
+        "愛的根源",
+        "都市戀歌",
+        "愛在深秋",
+        "我愛雀斑",
+        "誰可改變",
+        "捕風的漢子",
+        "酒紅色的心",
+        "欠了你",
+        "觸電舞"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "谭咏麟",
+      "album": "最佳12",
+      "total": 8,
+      "lit": 4,
+      "unlit": 4,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Maggie (Maggie Mix)",
+        "千年埋藏 (Ancient Mix)",
+        "剌客 (Assassination Mix)",
+        "愛情陷阱 (Special Club Mix)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "谭咏麟",
+      "album": "Alan聽",
+      "total": 50,
+      "lit": 42,
+      "unlit": 8,
+      "pct": 84.0,
+      "unlit_titles": [
+        "我心只有你",
+        "被窩",
+        "情若家一線差",
+        "喜愛",
+        "單身一族",
+        "唱一首好歌",
+        "是你是你",
+        "狂小子"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "谭咏麟",
+      "album": "復黑王:  浪漫經典",
+      "total": 13,
+      "lit": 1,
+      "unlit": 12,
+      "pct": 7.7,
+      "unlit_titles": [
+        "幻影",
+        "霧之戀",
+        "傲骨",
+        "朋友",
+        "無言感激",
+        "愛的根源",
+        "愛在深秋",
+        "愛情陷阱",
+        "雨夜的浪漫",
+        "情不變",
+        "知心當玩偶",
+        "半夢半醒"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "谭咏麟",
+      "album": "愛的根源2008",
+      "total": 10,
+      "lit": 1,
+      "unlit": 9,
+      "pct": 10.0,
+      "unlit_titles": [
+        "愛的根源",
+        "都市戀歌",
+        "愛在深秋",
+        "我愛雀斑",
+        "誰可改變",
+        "捕風的漢子",
+        "酒紅色的心",
+        "欠了你",
+        "觸電舞"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "谭咏麟",
+      "album": "708090後",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Interesting Life",
+        "Almighty Princess",
+        "Between Heaven and Earth",
+        "A Touch of Heaven",
+        "Happy Paradise",
+        "Generations 708090s (Medley)",
+        "Generations 708090s (Medley A)",
+        "Generations 708090s (Medley B)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓丽君",
+      "album": "巨星珍藏系列1: 鄧麗君電影金曲",
+      "total": 26,
+      "lit": 21,
+      "unlit": 5,
+      "pct": 80.8,
+      "unlit_titles": [
+        "為什麼你會有煩惱 (電影《彩雲飛》)",
+        "記得你記得你我 (電影《海韻》)",
+        "鬼馬俏醫生 (電影《鬼馬俏醫生》)",
+        "愛你永遠不恨你 (電影《當我已經知道愛》)",
+        "愛的寂寞 (電影《彩雲飛》)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓丽君",
+      "album": "名曲珍藏1: 鄧麗君不朽巨星",
+      "total": 46,
+      "lit": 39,
+      "unlit": 7,
+      "pct": 84.8,
+      "unlit_titles": [
+        "沒有愛怎樣活",
+        "愛的播種",
+        "不敢告訴你",
+        "月光戀曲",
+        "愛的季節",
+        "愛你友失去你",
+        "你愛那一朵"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓丽君",
+      "album": "不朽巨星名曲珍藏2: 鄧麗君",
+      "total": 46,
+      "lit": 42,
+      "unlit": 4,
+      "pct": 91.3,
+      "unlit_titles": [
+        "噢琳達",
+        "心中喜歡就說爱",
+        "像輕煙的爱惰",
+        "心爱的馬車"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓丽君",
+      "album": "天國的情人 - 鄧麗君逝世十周年紀念聲影存集  (10th Anniversary)",
+      "total": 47,
+      "lit": 45,
+      "unlit": 2,
+      "pct": 95.7,
+      "unlit_titles": [
+        "再見! 我的愛人 (Live)",
+        "任時光自身畔流逝 (日語)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓丽君",
+      "album": "永遠的懷念",
+      "total": 48,
+      "lit": 45,
+      "unlit": 3,
+      "pct": 93.8,
+      "unlit_titles": [
+        "愛你永遠不恨你",
+        "春雷",
+        "噢! 琳達"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓丽君",
+      "album": "星光燦爛: 天王巨星 - 鄧麗君",
+      "total": 50,
+      "lit": 45,
+      "unlit": 5,
+      "pct": 90.0,
+      "unlit_titles": [
+        "為甚麼你會有煩惱 (電影《彩雲飛》插曲)",
+        "唯一的心願 (電影《近水樓台》插曲)",
+        "愛情與同情",
+        "盼望有一份愛",
+        "告訴他我愛他"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓紫棋",
+      "album": "Revelación",
+      "total": 14,
+      "lit": 3,
+      "unlit": 11,
+      "pct": 21.4,
+      "unlit_titles": [
+        "El Joven y El Mar",
+        "Me & You",
+        "El Hombre que Ríe",
+        "One More Night",
+        "La Edad de Hielo",
+        "Pasión",
+        "El Viejo y El Mar",
+        "Fuerza Centrífuga",
+        "Un Momento",
+        "Yo Soy Eterno",
+        "Mira Hacia El Cielo"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "邓紫棋",
+      "album": "I AM GLORIA",
+      "total": 12,
+      "lit": 1,
+      "unlit": 11,
+      "pct": 8.3,
+      "unlit_titles": [
+        "My Secret (G.E.M. Version)",
+        "Where Did U Go (G.E.M. Version)",
+        "Bubble (G.E.M. Version)",
+        "Sandglass (G.E.M. Version)",
+        "Red and White (G.E.M. Version)",
+        "Hua (G.E.M. Version)",
+        "Light Years Away (G.E.M. Version)",
+        "Sleeping Beauty (G.E.M. Version)",
+        "The Sky (Cantonese Version)",
+        "The Continent (G.E.M. Version)",
+        "Xi Huan Ni (G.E.M. Version)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "郁可唯",
+      "album": "百乐门",
+      "total": 15,
+      "lit": 1,
+      "unlit": 14,
+      "pct": 6.7,
+      "unlit_titles": [
+        "多少柔情多少泪",
+        "午夜香吻",
+        "月光小夜曲",
+        "绵绵细雨的夜晚",
+        "爱你一万年",
+        "爱你在心口难开",
+        "娜奴娃情歌",
+        "绿岛小夜曲",
+        "今宵多珍重",
+        "爱情的债",
+        "谁能禁止我的爱",
+        "路边的野花不要采",
+        "难忘的初恋情人",
+        "跟着感觉走"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郁可唯",
+      "album": "失戀事小",
+      "total": 10,
+      "lit": 1,
+      "unlit": 9,
+      "pct": 10.0,
+      "unlit_titles": [
+        "Flower",
+        "Bad Habit",
+        "No Match",
+        "Can't Forgot",
+        "Skirt",
+        "Lost Love",
+        "Always",
+        "Love Back",
+        "Sun Shine"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郁可唯",
+      "album": "溫水",
+      "total": 11,
+      "lit": 8,
+      "unlit": 3,
+      "pct": 72.7,
+      "unlit_titles": [
+        "溫水",
+        "唯",
+        "呆著"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郁可唯",
+      "album": "00:00",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Revert",
+        "Solitude Again",
+        "First Snow",
+        "We Loved",
+        "No Time for Being Alone",
+        "21 Days",
+        "Amber",
+        "My Style"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郁可唯",
+      "album": "路過人間",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Walking by the world",
+        "As You Know",
+        "Hate",
+        "One Decade As One Day",
+        "Who",
+        "Godless",
+        "Missed Call",
+        "Still Early"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郁可唯",
+      "album": "郁音绕梁",
+      "total": 11,
+      "lit": 6,
+      "unlit": 5,
+      "pct": 54.5,
+      "unlit_titles": [
+        "爱很简单",
+        "爱似烟火",
+        "爱我别走",
+        "突然的自我",
+        "月半弯"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郁可唯",
+      "album": "Dear Life",
+      "total": 13,
+      "lit": 1,
+      "unlit": 12,
+      "pct": 7.7,
+      "unlit_titles": [
+        "Seek For",
+        "Let You Go",
+        "Romance",
+        "Living My Way Loving You",
+        "Painful Delight",
+        "Life Is Like a Firework",
+        "What If Flowers...",
+        "Eager to Love",
+        "A Seat",
+        "Bookmark",
+        "Midnight Wanderer",
+        "Reverie"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "对你爱不完",
+      "total": 10,
+      "lit": 6,
+      "unlit": 4,
+      "pct": 60.0,
+      "unlit_titles": [
+        "是雨还是眼泪",
+        "伤心的话留到明天再说",
+        "亲爱宝贝",
+        "蓝色眼睛的爱情"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "我是不是该安静的走开",
+      "total": 9,
+      "lit": 6,
+      "unlit": 3,
+      "pct": 66.7,
+      "unlit_titles": [
+        "你是我最宝贝的宝贝",
+        "到底什么时候你才知道",
+        "我喜欢这样想你"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "到底有谁能够告诉我",
+      "total": 10,
+      "lit": 7,
+      "unlit": 3,
+      "pct": 70.0,
+      "unlit_titles": [
+        "我不认输",
+        "到底有谁能够告诉我",
+        "很难过还是要告诉你"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "把所有的愛都留給你",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Devote All My Love for You",
+        "Have No Choice but Leave You",
+        "Hard to Let You Go",
+        "Give Me Your True Heart",
+        "Love Till the End",
+        "One Encounter Becomes Forever",
+        "Love Arrives",
+        "Flattered"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "夢難留",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Wild at Heart",
+        "My Wild Heart",
+        "My Heart Is Still Beating Now",
+        "I Fall in Love with You",
+        "I Am the One Who Love You the Most for This Life",
+        "Is It Enough to Love You for All My Life ?",
+        "Too Much Love Will Hurt You",
+        "It Turns Out You Are the Best"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "狂野之城",
+      "total": 11,
+      "lit": 6,
+      "unlit": 5,
+      "pct": 54.5,
+      "unlit_titles": [
+        "个个赞你乖",
+        "冰山梦美人",
+        "对春天信任",
+        "没法再见你一面",
+        "是个真我"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "铁幕诱惑",
+      "total": 11,
+      "lit": 6,
+      "unlit": 5,
+      "pct": 54.5,
+      "unlit_titles": [
+        "想你每分钟",
+        "名仕阁",
+        "活在乐与怒",
+        "临行",
+        "半生缘份"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "备忘录",
+      "total": 11,
+      "lit": 4,
+      "unlit": 7,
+      "pct": 36.4,
+      "unlit_titles": [
+        "失忆(谅解)备忘录",
+        "失忆(谅解)备忘录 (Remix)",
+        "如果一世得不到",
+        "化装舞会",
+        "声音",
+        "用一首歌的时间怀念你",
+        "失忆(谅解)备忘录 (国语版)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "唱这歌",
+      "total": 10,
+      "lit": 2,
+      "unlit": 8,
+      "pct": 20.0,
+      "unlit_titles": [
+        "战场上的快乐圣诞",
+        "唱这歌",
+        "神经",
+        "好一对",
+        "最深爱的人是你",
+        "响应",
+        "多得你",
+        "爱的发热网"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "郭富城",
+      "album": "永远爱不完",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "脉搏",
+        "拥有",
+        "忘了怎么",
+        "风云义",
+        "舞林正传"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "阿杜",
+      "album": "我不該躲",
+      "total": 11,
+      "lit": 4,
+      "unlit": 7,
+      "pct": 36.4,
+      "unlit_titles": [
+        "被忘路",
+        "T恤好漢",
+        "壞朋友",
+        "門後",
+        "一諾千年",
+        "自作自受",
+        "爛好人"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "阿牛",
+      "album": "城市蓝天",
+      "total": 13,
+      "lit": 11,
+      "unlit": 2,
+      "pct": 84.6,
+      "unlit_titles": [
+        "Sungai Puyu 的风",
+        "阿牛和阿花的故事 (LIVE 版)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "阿牛",
+      "album": "阿牛陳慶祥個人第一張創作專輯",
+      "total": 15,
+      "lit": 3,
+      "unlit": 12,
+      "pct": 20.0,
+      "unlit_titles": [
+        "Sing a Song to You",
+        "Look Over Here, Girl",
+        "My Four Sisters and me",
+        "Flower Words",
+        "The Old Man Who Sells Vegetables",
+        "Beer Belly",
+        "Story of Ah-Niou and Ah-Hwa",
+        "A Song for Hometown",
+        "City, Blue Sky",
+        "Look Over Here, Girl (Live)",
+        "City, Blue Sky (Live)",
+        "Sing a Song to You (Unplugged Version)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "阿牛",
+      "album": "愛我久久",
+      "total": 13,
+      "lit": 8,
+      "unlit": 5,
+      "pct": 61.5,
+      "unlit_titles": [
+        "How Is Everything",
+        "Where Is Your Home",
+        "Flower Skirt",
+        "Swinging Skirt",
+        "The Time You Owed Me"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "阿牛",
+      "album": "我们一家都是人",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "阿明的心事",
+        "冇钱冇镭"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "阿牛",
+      "album": "桃花朵朵開",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "Ms. Cool",
+        "You Don't Want Me Anymore",
+        "I Foolishly In Love With You",
+        "Goodbye",
+        "Appointment"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "阿牛",
+      "album": "富豪岛",
+      "total": 11,
+      "lit": 7,
+      "unlit": 4,
+      "pct": 63.6,
+      "unlit_titles": [
+        "成功人士 (Remaster)",
+        "爽 (Remaster)",
+        "古惑仔 (Remaster)",
+        "富贵险中求 (Remaster)"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "黄品源",
+      "album": "男配角心聲",
+      "total": 9,
+      "lit": 6,
+      "unlit": 3,
+      "pct": 66.7,
+      "unlit_titles": [
+        "没有人能",
+        "别回头",
+        "如果能飞到未来"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黄品源",
+      "album": "感謝 情人",
+      "total": 11,
+      "lit": 10,
+      "unlit": 1,
+      "pct": 90.9,
+      "unlit_titles": [
+        "感谢"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "今夜妳會不會來",
+      "total": 11,
+      "lit": 9,
+      "unlit": 2,
+      "pct": 81.8,
+      "unlit_titles": [
+        "讓我陪妳一段",
+        "又忘了該說愛妳"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "我的真心獻給你",
+      "total": 10,
+      "lit": 8,
+      "unlit": 2,
+      "pct": 80.0,
+      "unlit_titles": [
+        "歸還",
+        "舞在你的笑容裡"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "如果可以再見你",
+      "total": 20,
+      "lit": 15,
+      "unlit": 5,
+      "pct": 75.0,
+      "unlit_titles": [
+        "Love Theme 1 (Interlude)",
+        "Love Theme 2 (Interlude)",
+        "Police Station Rap: Black vs. Yellow (Interlude)",
+        "神經質男主角 (Interlude)",
+        "我沒有騙你"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "非我莫屬",
+      "total": 16,
+      "lit": 13,
+      "unlit": 3,
+      "pct": 81.2,
+      "unlit_titles": [
+        "我不是誰",
+        "我把自己交給你",
+        "不會讓你哭"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "The Red Shoes",
+      "total": 12,
+      "lit": 9,
+      "unlit": 3,
+      "pct": 75.0,
+      "unlit_titles": [
+        "不說不愛",
+        "Don't Know What to Say",
+        "愛要去那裡"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "喜",
+      "total": 13,
+      "lit": 9,
+      "unlit": 4,
+      "pct": 69.2,
+      "unlit_titles": [
+        "不規則",
+        "趁高興",
+        "你都不愛我",
+        "別框我"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "Leon Dawn Leon",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "愛妳變",
+        "水深火熱"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "Leon Dawn",
+      "total": 12,
+      "lit": 10,
+      "unlit": 2,
+      "pct": 83.3,
+      "unlit_titles": [
+        "愛妳變",
+        "慢動作"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "傳奇 - Perhaps...",
+      "total": 15,
+      "lit": 13,
+      "unlit": 2,
+      "pct": 86.7,
+      "unlit_titles": [
+        "色情男女",
+        "口不對心 (國)"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "黎明",
+      "album": "More Than Classic",
+      "total": 48,
+      "lit": 43,
+      "unlit": 5,
+      "pct": 89.6,
+      "unlit_titles": [
+        "對不起, 我愛你",
+        "開放",
+        "及時擁抱",
+        "愛你/不愛你",
+        "喜"
+      ],
+      "is_core": true
+    },
+    {
+      "artist": "齐豫",
+      "album": "回聲",
+      "total": 11,
+      "lit": 1,
+      "unlit": 10,
+      "pct": 9.1,
+      "unlit_titles": [
+        "Outside the Track",
+        "Riddle",
+        "Seven O'Clock",
+        "Fly Away",
+        "Morning Dream of Butterfly",
+        "Desert",
+        "This Time, This World",
+        "Widow",
+        "Tell It to Myself",
+        "Far Away Place"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "齐豫",
+      "album": "中國經典名著電影音樂2: 怨女",
+      "total": 5,
+      "lit": 1,
+      "unlit": 4,
+      "pct": 20.0,
+      "unlit_titles": [
+        "少女的銀娣",
+        "深宅的銀娣",
+        "三爺的銀娣",
+        "永遠的銀娣"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "齐豫",
+      "album": "衣錦還鄉",
+      "total": 10,
+      "lit": 5,
+      "unlit": 5,
+      "pct": 50.0,
+      "unlit_titles": [
+        "葬犬",
+        "輪迴",
+        "旅程",
+        "轉",
+        "出嫁"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "齐豫",
+      "album": "英文個人聲音自傳:敢夢",
+      "total": 12,
+      "lit": 8,
+      "unlit": 4,
+      "pct": 66.7,
+      "unlit_titles": [
+        "Danny's Song",
+        "Angel, Roses And Rain",
+        "Vincent",
+        "Wind Beneath My Wings"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "齐豫",
+      "album": "中文個人聲音自傳: 敢愛",
+      "total": 6,
+      "lit": 1,
+      "unlit": 5,
+      "pct": 16.7,
+      "unlit_titles": [
+        "Story of Spring",
+        "The Olive Tree",
+        "Your Smiling Face",
+        "Walking In the Rain",
+        "Seven O'Clock"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "齐豫",
+      "album": "駱駝‧飛鳥‧魚",
+      "total": 12,
+      "lit": 1,
+      "unlit": 11,
+      "pct": 8.3,
+      "unlit_titles": [
+        "Fish & Bird",
+        "To Jueh With Love",
+        "To Have & Have Not",
+        "Since You Ask",
+        "Woman & the Child Ι",
+        "Lover's Silence",
+        "Bliss",
+        "Lazy Love",
+        "Forty Lone Years",
+        "Bottle of Sighs",
+        "Woman & the Child II"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "齐豫",
+      "album": "齊豫4896系列演選",
+      "total": 33,
+      "lit": 29,
+      "unlit": 4,
+      "pct": 87.9,
+      "unlit_titles": [
+        "女人與小孩I",
+        "Whoever Find This, I Love You",
+        "Diamond And Rust",
+        "Vincent"
+      ],
+      "is_core": false
+    },
+    {
+      "artist": "齐豫",
+      "album": "地藏讚",
+      "total": 7,
+      "lit": 4,
+      "unlit": 3,
+      "pct": 57.1,
+      "unlit_titles": [
+        "佛子行三十七誦(一)",
+        "佛子行三十七誦(二)",
+        "暮鐘偈"
+      ],
+      "is_core": false
+    }
+  ],
+  "core_zero_albums": [
+    {
+      "artist": "周深",
+      "album": "深的深",
+      "total": 10,
+      "titles": [
+        "玫瑰與小鹿",
+        "淺淺",
+        "哥哥",
+        "迎刃",
+        "藍色降落傘",
+        "風景",
+        "妳",
+        "白牆",
+        "大魚",
+        "一縷執念"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "Over The Rainbow",
+      "total": 10,
+      "titles": [
+        "Over The Rainbow",
+        "寓言",
+        "都只因為你",
+        "我的最愛",
+        "天邊",
+        "聽見月光",
+        "吶喊",
+        "雨後",
+        "明天過後",
+        "遺失的美好"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "歐若拉",
+      "total": 11,
+      "titles": [
+        "Mama Mama",
+        "歐若拉",
+        "手心的太陽",
+        "浮雲",
+        "直線",
+        "起點",
+        "復活節",
+        "可以愛很久",
+        "猜不透",
+        "靜不下來",
+        "快樂崇拜"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "潘朵拉",
+      "total": 11,
+      "titles": [
+        "隱形的翅膀",
+        "潘朵拉",
+        "香水百合",
+        "真的",
+        "最近好嗎",
+        "驚天動地",
+        "保護色",
+        "口袋的溫度",
+        "愛情旅程",
+        "喜歡你沒道理",
+        "永晝"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "夢裡花",
+      "total": 11,
+      "titles": [
+        "夢裡花",
+        "不痛",
+        "其實很愛你",
+        "絕不",
+        "淚光",
+        "愛上愛的味道",
+        "樣子",
+        "幻想愛",
+        "給你給我",
+        "交換",
+        "尋寶"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "Ang 5.0",
+      "total": 10,
+      "titles": [
+        "我戀愛了",
+        "不想懂得",
+        "親愛的那不是愛情",
+        "麻雀銜竹枝",
+        "頭號甜心",
+        "重來",
+        "能不能勇敢說愛",
+        "失憶",
+        "樂園",
+        "誰的香水"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "第5季",
+      "total": 10,
+      "titles": [
+        "第5季",
+        "白白的",
+        "看得最遠的地方",
+        "幸運之吻",
+        "搖擺頭",
+        "偶爾",
+        "我要你的",
+        "尋找愛蜜莉",
+        "再快樂一點",
+        "I Started A Joke"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "全面淪陷",
+      "total": 10,
+      "titles": [
+        "不害怕",
+        "第一頁",
+        "全面淪陷",
+        "把我靈魂借給你",
+        "相互關注",
+        "滿天星",
+        "終於",
+        "飲鴆止渴",
+        "擠不進的愛",
+        "還記得嗎"
+      ]
+    },
+    {
+      "artist": "张韶涵",
+      "album": "？",
+      "total": 10,
+      "titles": [
+        "引路的風箏",
+        "因我而起",
+        "恐懼症",
+        "尋找",
+        "假面",
+        "無畏",
+        "逆光",
+        "變質",
+        "問",
+        "孤單旅行"
+      ]
+    },
+    {
+      "artist": "梁静茹",
+      "album": "閃亮的星",
+      "total": 11,
+      "titles": [
+        "Unconditionally for You",
+        "The Shining Star",
+        "The World Desired Best to Travel",
+        "Smiles of Tomorrow",
+        "Get Out On a Sunny Day",
+        "A Plan to Visit the Sea",
+        "I Do Love You",
+        "This Day (We Are Healthy and Young)",
+        "I'm Not Happy",
+        "Are You True to Yourself",
+        "Smile for You"
+      ]
+    },
+    {
+      "artist": "梁静茹",
+      "album": "敗犬女王之情歌無雙",
+      "total": 17,
+      "titles": [
+        "敗犬女王",
+        "耶誕節的情侶餐",
+        "犬樣的人生",
+        "一個人的人生",
+        "獨立敗犬",
+        "一個人淋雨",
+        "完美單無雙",
+        "戀愛最後一名",
+        "不精明女王",
+        "等我跌倒",
+        "不能哭",
+        "花錢找男人",
+        "只想單純在一起",
+        "要條件要感覺",
+        "敗犬標籤",
+        "面對一個人的感覺",
+        "只要我們在一起"
+      ]
+    },
+    {
+      "artist": "蔡健雅",
+      "album": "Just Say So",
+      "total": 9,
+      "titles": [
+        "Love You Anyhow",
+        "Just Say So",
+        "Carousel",
+        "Stay",
+        "Speak Low",
+        "Game With No Rules",
+        "Back Into My Life",
+        "The More You Care",
+        "Make It Last"
+      ]
+    },
+    {
+      "artist": "蔡健雅",
+      "album": "DEPART",
+      "total": 10,
+      "titles": [
+        "Bluebirds",
+        "Breakdown",
+        "Into The Wild (feat. 阿云嘎)",
+        "出走",
+        "那些小事情",
+        "旧情歌",
+        "全部的所有",
+        "Photographs (feat. Carla Bruni)",
+        "让浪漫作主",
+        "Om Tara"
+      ]
+    },
+    {
+      "artist": "蔡健雅",
+      "album": "《不夠善良的我們 : 戲劇音樂設計專輯》",
+      "total": 15,
+      "titles": [
+        "Bloom Again",
+        "Hey Hey You",
+        "Rebecca",
+        "Dear Entanglement",
+        "Reconciliation",
+        "Finland",
+        "Imaginary Enemy",
+        "Equatorial",
+        "Day After Day",
+        "Love You for You",
+        "Finland's Embrace",
+        "Desire",
+        "Let Me Tell You Something…",
+        "Learn to Live Again",
+        "Hey Hey You (Demo Ver.)"
+      ]
+    },
+    {
+      "artist": "郁可唯",
+      "album": "茴香小酒馆",
+      "total": 13,
+      "titles": [
+        "念念不忘的情人",
+        "想你的时候",
+        "耶利亚女郎",
+        "蝶儿蝶儿满天飞",
+        "牵手",
+        "再见我的爱人",
+        "海韵",
+        "红花雨",
+        "无声的雨",
+        "原乡情浓",
+        "青青河边草",
+        "漫步人生路",
+        "夜太黑"
+      ]
+    },
+    {
+      "artist": "郁可唯",
+      "album": "心与心",
+      "total": 10,
+      "titles": [
+        "你觉得我配她吗?",
+        "心与心",
+        "告白",
+        "Baby I Love You",
+        "普通话",
+        "恋爱那些事儿",
+        "Mango",
+        "每一天",
+        "第一道光",
+        "摇曳"
+      ]
+    },
+    {
+      "artist": "郁可唯",
+      "album": "How Weird of Me",
+      "total": 11,
+      "titles": [
+        "How Weird of Me",
+        "Utopia of Love",
+        "My Inner Me",
+        "The Way I Live",
+        "Undying Days",
+        "Narcissus",
+        "Back to Dream",
+        "Gone with time",
+        "Best Wishes",
+        "Think of Us",
+        "Lullaby"
+      ]
+    },
+    {
+      "artist": "郭富城",
+      "album": "愛你",
+      "total": 10,
+      "titles": [
+        "Loving You",
+        "Don't Let You Know",
+        "I Will Remember Forever",
+        "Never Let Go Your Hand",
+        "It Turns out You Are Here",
+        "Everyone Knows",
+        "If I Hear This Song",
+        "Go with Me If You Love Me",
+        "I Truly Love You",
+        "Listen to What He Says If You Love Him"
+      ]
+    },
+    {
+      "artist": "陈绮贞",
+      "album": "讓我想一想",
+      "total": 10,
+      "titles": [
+        "Think Twice",
+        "September",
+        "Will You",
+        "Love Song",
+        "With You",
+        "Jealous",
+        "Island",
+        "Miss Children",
+        "Devil",
+        "Long Lonely Night"
+      ]
+    },
+    {
+      "artist": "陈绮贞",
+      "album": "還是會寂寞",
+      "total": 11,
+      "titles": [
+        "After Calling You",
+        "Selfish",
+        "Lonely without You",
+        "3 PM",
+        "Dying In Your Love",
+        "Lunch Date",
+        "Waiting for You",
+        "Explain",
+        "Tell Me",
+        "Slow #1",
+        "Gift"
+      ]
+    },
+    {
+      "artist": "陈绮贞",
+      "album": "吉他手",
+      "total": 13,
+      "titles": [
+        "Miss Paranoid",
+        "Too Smart",
+        "A Little Step",
+        "1234567",
+        "Say Something",
+        "In My Closet (Guitar Version)",
+        "A Practice",
+        "Groupies",
+        "Black Eyes",
+        "Enemy",
+        "Metaphor",
+        "Unavailable",
+        "In My Closet (Piano Version)"
+      ]
+    },
+    {
+      "artist": "陈绮贞",
+      "album": "華麗的冒險",
+      "total": 11,
+      "titles": [
+        "旅行的意義",
+        "腐朽",
+        "Sentimental Kills",
+        "華麗的冒險",
+        "太多",
+        "花的姿態",
+        "Self",
+        "80%完美的日子",
+        "表面的和平",
+        "靜靜的生活",
+        "最初的起點"
+      ]
+    },
+    {
+      "artist": "陈绮贞",
+      "album": "太陽",
+      "total": 11,
+      "titles": [
+        "手的預言",
+        "狂戀",
+        "太陽",
+        "魚",
+        "距離",
+        "倔強愛情的勝利",
+        "失敗者的飛翔",
+        "下個星期去英國",
+        "另一種平靜",
+        "煙火",
+        "一首歌, 讓你帶回去"
+      ]
+    },
+    {
+      "artist": "陈绮贞",
+      "album": "時間的歌",
+      "total": 12,
+      "titles": [
+        "Song of Transience",
+        "Ripple",
+        "Prototype",
+        "Peace & Revolution",
+        "A Box Full of Rain",
+        "Autumn Montage",
+        "Gypsy in Memory",
+        "Count Down",
+        "View with a Grain of Sand",
+        "Proustification",
+        "Walk Home",
+        "Home"
+      ]
+    },
+    {
+      "artist": "陈绮贞",
+      "album": "沙發海",
+      "total": 10,
+      "titles": [
+        "Hurt",
+        "Impressionism",
+        "Imperfect Rainbow",
+        "Somewhere, Taipei",
+        "Sofa Sea",
+        "Loser",
+        "She Says",
+        "Bromance",
+        "Chameleon",
+        "Observer"
+      ]
+    }
+  ],
+  "artist_summaries": [
+    {
+      "artist": "A-Sun",
+      "total_songs": 21,
+      "lit_songs": 0,
+      "unlit_songs": 21,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "Beyond",
+      "total_songs": 378,
+      "lit_songs": 313,
+      "unlit_songs": 65,
+      "pct": 82.8,
+      "total_albums": 26,
+      "full_albums": 10,
+      "sparse_albums": 16,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "JOLIN蔡依林",
+      "total_songs": 164,
+      "lit_songs": 122,
+      "unlit_songs": 42,
+      "pct": 74.4,
+      "total_albums": 15,
+      "full_albums": 6,
+      "sparse_albums": 9,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "Jackie Chan",
+      "total_songs": 63,
+      "lit_songs": 0,
+      "unlit_songs": 63,
+      "pct": 0.0,
+      "total_albums": 5,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 5,
+      "is_core": false
+    },
+    {
+      "artist": "NINEONE赵馨玥",
+      "total_songs": 23,
+      "lit_songs": 0,
+      "unlit_songs": 23,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "S.H.E",
+      "total_songs": 111,
+      "lit_songs": 111,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 11,
+      "full_albums": 11,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "Twins",
+      "total_songs": 73,
+      "lit_songs": 0,
+      "unlit_songs": 73,
+      "pct": 0.0,
+      "total_albums": 8,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 8,
+      "is_core": false
+    },
+    {
+      "artist": "Yang Kun",
+      "total_songs": 104,
+      "lit_songs": 0,
+      "unlit_songs": 104,
+      "pct": 0.0,
+      "total_albums": 10,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 10,
+      "is_core": false
+    },
+    {
+      "artist": "万晓利",
+      "total_songs": 30,
+      "lit_songs": 0,
+      "unlit_songs": 30,
+      "pct": 0.0,
+      "total_albums": 3,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 3,
+      "is_core": false
+    },
+    {
+      "artist": "万能青年旅店",
+      "total_songs": 17,
+      "lit_songs": 0,
+      "unlit_songs": 17,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "万芳",
+      "total_songs": 191,
+      "lit_songs": 191,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 18,
+      "full_albums": 18,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "中国好声音",
+      "total_songs": 33,
+      "lit_songs": 0,
+      "unlit_songs": 33,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "二手玫瑰",
+      "total_songs": 40,
+      "lit_songs": 0,
+      "unlit_songs": 40,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "五月天",
+      "total_songs": 233,
+      "lit_songs": 230,
+      "unlit_songs": 3,
+      "pct": 98.7,
+      "total_albums": 16,
+      "full_albums": 15,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "任贤齐",
+      "total_songs": 214,
+      "lit_songs": 208,
+      "unlit_songs": 6,
+      "pct": 97.2,
+      "total_albums": 18,
+      "full_albums": 16,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "伍佰",
+      "total_songs": 51,
+      "lit_songs": 51,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 4,
+      "full_albums": 4,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "信乐团",
+      "total_songs": 71,
+      "lit_songs": 71,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 5,
+      "full_albums": 5,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "凤凰传奇",
+      "total_songs": 168,
+      "lit_songs": 154,
+      "unlit_songs": 14,
+      "pct": 91.7,
+      "total_albums": 17,
+      "full_albums": 14,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "刀郎",
+      "total_songs": 171,
+      "lit_songs": 171,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 16,
+      "full_albums": 16,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "刘德华",
+      "total_songs": 168,
+      "lit_songs": 159,
+      "unlit_songs": 9,
+      "pct": 94.6,
+      "total_albums": 14,
+      "full_albums": 12,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "刘惜君",
+      "total_songs": 27,
+      "lit_songs": 27,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 5,
+      "full_albums": 5,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "动力火车",
+      "total_songs": 102,
+      "lit_songs": 102,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 10,
+      "full_albums": 10,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "华晨宇",
+      "total_songs": 58,
+      "lit_songs": 58,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 6,
+      "full_albums": 6,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "单依纯",
+      "total_songs": 8,
+      "lit_songs": 0,
+      "unlit_songs": 8,
+      "pct": 0.0,
+      "total_albums": 1,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 1,
+      "is_core": false
+    },
+    {
+      "artist": "南拳妈妈",
+      "total_songs": 81,
+      "lit_songs": 0,
+      "unlit_songs": 81,
+      "pct": 0.0,
+      "total_albums": 6,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 6,
+      "is_core": false
+    },
+    {
+      "artist": "卢广仲",
+      "total_songs": 104,
+      "lit_songs": 87,
+      "unlit_songs": 17,
+      "pct": 83.7,
+      "total_albums": 9,
+      "full_albums": 3,
+      "sparse_albums": 6,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "古巨基",
+      "total_songs": 207,
+      "lit_songs": 207,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 18,
+      "full_albums": 18,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "吉克隽逸",
+      "total_songs": 9,
+      "lit_songs": 9,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 2,
+      "full_albums": 2,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "吴莫愁",
+      "total_songs": 7,
+      "lit_songs": 7,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 2,
+      "full_albums": 2,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "告五人",
+      "total_songs": 34,
+      "lit_songs": 0,
+      "unlit_songs": 34,
+      "pct": 0.0,
+      "total_albums": 3,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 3,
+      "is_core": false
+    },
+    {
+      "artist": "周华健",
+      "total_songs": 441,
+      "lit_songs": 374,
+      "unlit_songs": 67,
+      "pct": 84.8,
+      "total_albums": 36,
+      "full_albums": 18,
+      "sparse_albums": 18,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "周杰伦",
+      "total_songs": 149,
+      "lit_songs": 149,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 14,
+      "full_albums": 14,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "周深",
+      "total_songs": 65,
+      "lit_songs": 49,
+      "unlit_songs": 16,
+      "pct": 75.4,
+      "total_albums": 5,
+      "full_albums": 2,
+      "sparse_albums": 2,
+      "zero_albums": 1,
+      "is_core": true
+    },
+    {
+      "artist": "周笔畅",
+      "total_songs": 33,
+      "lit_songs": 33,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 5,
+      "full_albums": 5,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "品冠",
+      "total_songs": 183,
+      "lit_songs": 80,
+      "unlit_songs": 103,
+      "pct": 43.7,
+      "total_albums": 16,
+      "full_albums": 8,
+      "sparse_albums": 0,
+      "zero_albums": 8,
+      "is_core": false
+    },
+    {
+      "artist": "回春丹",
+      "total_songs": 13,
+      "lit_songs": 0,
+      "unlit_songs": 13,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "姜育恒",
+      "total_songs": 164,
+      "lit_songs": 150,
+      "unlit_songs": 14,
+      "pct": 91.5,
+      "total_albums": 13,
+      "full_albums": 9,
+      "sparse_albums": 4,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "孙燕姿",
+      "total_songs": 130,
+      "lit_songs": 130,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 12,
+      "full_albums": 12,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "孟庭苇",
+      "total_songs": 75,
+      "lit_songs": 0,
+      "unlit_songs": 75,
+      "pct": 0.0,
+      "total_albums": 7,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 7,
+      "is_core": false
+    },
+    {
+      "artist": "宋冬野",
+      "total_songs": 33,
+      "lit_songs": 32,
+      "unlit_songs": 1,
+      "pct": 97.0,
+      "total_albums": 3,
+      "full_albums": 2,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "容祖儿",
+      "total_songs": 429,
+      "lit_songs": 427,
+      "unlit_songs": 2,
+      "pct": 99.5,
+      "total_albums": 33,
+      "full_albums": 32,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "尚雯婕",
+      "total_songs": 141,
+      "lit_songs": 141,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 13,
+      "full_albums": 13,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "崔健",
+      "total_songs": 46,
+      "lit_songs": 46,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 5,
+      "full_albums": 5,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "庾澄庆",
+      "total_songs": 275,
+      "lit_songs": 263,
+      "unlit_songs": 12,
+      "pct": 95.6,
+      "total_albums": 21,
+      "full_albums": 18,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "张信哲",
+      "total_songs": 247,
+      "lit_songs": 193,
+      "unlit_songs": 54,
+      "pct": 78.1,
+      "total_albums": 23,
+      "full_albums": 9,
+      "sparse_albums": 14,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "张国荣",
+      "total_songs": 305,
+      "lit_songs": 292,
+      "unlit_songs": 13,
+      "pct": 95.7,
+      "total_albums": 22,
+      "full_albums": 19,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "张学友",
+      "total_songs": 394,
+      "lit_songs": 388,
+      "unlit_songs": 6,
+      "pct": 98.5,
+      "total_albums": 39,
+      "full_albums": 37,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "张惠妹",
+      "total_songs": 168,
+      "lit_songs": 125,
+      "unlit_songs": 43,
+      "pct": 74.4,
+      "total_albums": 15,
+      "full_albums": 6,
+      "sparse_albums": 9,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "张杰",
+      "total_songs": 99,
+      "lit_songs": 99,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 10,
+      "full_albums": 10,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "张碧晨",
+      "total_songs": 14,
+      "lit_songs": 14,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 2,
+      "full_albums": 2,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "张磊",
+      "total_songs": 6,
+      "lit_songs": 0,
+      "unlit_songs": 6,
+      "pct": 0.0,
+      "total_albums": 1,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 1,
+      "is_core": false
+    },
+    {
+      "artist": "张雨生",
+      "total_songs": 105,
+      "lit_songs": 100,
+      "unlit_songs": 5,
+      "pct": 95.2,
+      "total_albums": 7,
+      "full_albums": 5,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "张震岳",
+      "total_songs": 151,
+      "lit_songs": 111,
+      "unlit_songs": 40,
+      "pct": 73.5,
+      "total_albums": 13,
+      "full_albums": 5,
+      "sparse_albums": 8,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "张靓颖",
+      "total_songs": 106,
+      "lit_songs": 106,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 8,
+      "full_albums": 8,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "张韶涵",
+      "total_songs": 83,
+      "lit_songs": 0,
+      "unlit_songs": 83,
+      "pct": 0.0,
+      "total_albums": 8,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 8,
+      "is_core": true
+    },
+    {
+      "artist": "彭羚",
+      "total_songs": 72,
+      "lit_songs": 0,
+      "unlit_songs": 72,
+      "pct": 0.0,
+      "total_albums": 6,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 6,
+      "is_core": false
+    },
+    {
+      "artist": "徐佳瑩",
+      "total_songs": 74,
+      "lit_songs": 20,
+      "unlit_songs": 54,
+      "pct": 27.0,
+      "total_albums": 7,
+      "full_albums": 0,
+      "sparse_albums": 4,
+      "zero_albums": 3,
+      "is_core": false
+    },
+    {
+      "artist": "我是歌手",
+      "total_songs": 29,
+      "lit_songs": 0,
+      "unlit_songs": 29,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "戴佩妮",
+      "total_songs": 83,
+      "lit_songs": 83,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 7,
+      "full_albums": 7,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "房东的猫",
+      "total_songs": 41,
+      "lit_songs": 0,
+      "unlit_songs": 41,
+      "pct": 0.0,
+      "total_albums": 5,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 5,
+      "is_core": false
+    },
+    {
+      "artist": "新裤子",
+      "total_songs": 50,
+      "lit_songs": 0,
+      "unlit_songs": 50,
+      "pct": 0.0,
+      "total_albums": 5,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 5,
+      "is_core": false
+    },
+    {
+      "artist": "方大同",
+      "total_songs": 118,
+      "lit_songs": 83,
+      "unlit_songs": 35,
+      "pct": 70.3,
+      "total_albums": 9,
+      "full_albums": 2,
+      "sparse_albums": 7,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "曲婉婷",
+      "total_songs": 38,
+      "lit_songs": 38,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 3,
+      "full_albums": 3,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "曹格",
+      "total_songs": 101,
+      "lit_songs": 69,
+      "unlit_songs": 32,
+      "pct": 68.3,
+      "total_albums": 9,
+      "full_albums": 3,
+      "sparse_albums": 6,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "曾轶可",
+      "total_songs": 82,
+      "lit_songs": 82,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 7,
+      "full_albums": 7,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "朴树",
+      "total_songs": 34,
+      "lit_songs": 34,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 3,
+      "full_albums": 3,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "李健",
+      "total_songs": 90,
+      "lit_songs": 87,
+      "unlit_songs": 3,
+      "pct": 96.7,
+      "total_albums": 8,
+      "full_albums": 7,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "李圣杰",
+      "total_songs": 75,
+      "lit_songs": 75,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 7,
+      "full_albums": 7,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "李宗盛",
+      "total_songs": 47,
+      "lit_songs": 47,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 5,
+      "full_albums": 5,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "李玟",
+      "total_songs": 221,
+      "lit_songs": 197,
+      "unlit_songs": 24,
+      "pct": 89.1,
+      "total_albums": 19,
+      "full_albums": 10,
+      "sparse_albums": 9,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "李琦",
+      "total_songs": 5,
+      "lit_songs": 5,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 1,
+      "full_albums": 1,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "李荣浩",
+      "total_songs": 79,
+      "lit_songs": 79,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 8,
+      "full_albums": 8,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "杨丞琳",
+      "total_songs": 157,
+      "lit_songs": 157,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 14,
+      "full_albums": 14,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "杨千嬅",
+      "total_songs": 116,
+      "lit_songs": 93,
+      "unlit_songs": 23,
+      "pct": 80.2,
+      "total_albums": 9,
+      "full_albums": 2,
+      "sparse_albums": 7,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "杨宗纬",
+      "total_songs": 32,
+      "lit_songs": 32,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 3,
+      "full_albums": 3,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "林俊杰",
+      "total_songs": 213,
+      "lit_songs": 192,
+      "unlit_songs": 21,
+      "pct": 90.1,
+      "total_albums": 18,
+      "full_albums": 15,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "林宥嘉",
+      "total_songs": 136,
+      "lit_songs": 136,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 10,
+      "full_albums": 10,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "林忆莲",
+      "total_songs": 90,
+      "lit_songs": 0,
+      "unlit_songs": 90,
+      "pct": 0.0,
+      "total_albums": 9,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 9,
+      "is_core": false
+    },
+    {
+      "artist": "梁博",
+      "total_songs": 11,
+      "lit_songs": 11,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 2,
+      "full_albums": 2,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "梁静茹",
+      "total_songs": 235,
+      "lit_songs": 190,
+      "unlit_songs": 45,
+      "pct": 80.9,
+      "total_albums": 20,
+      "full_albums": 15,
+      "sparse_albums": 3,
+      "zero_albums": 2,
+      "is_core": true
+    },
+    {
+      "artist": "梅艳芳",
+      "total_songs": 42,
+      "lit_songs": 0,
+      "unlit_songs": 42,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "毛不易",
+      "total_songs": 46,
+      "lit_songs": 46,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 4,
+      "full_albums": 4,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "汪峰",
+      "total_songs": 109,
+      "lit_songs": 109,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 7,
+      "full_albums": 7,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "汪苏泷",
+      "total_songs": 80,
+      "lit_songs": 0,
+      "unlit_songs": 80,
+      "pct": 0.0,
+      "total_albums": 8,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 8,
+      "is_core": false
+    },
+    {
+      "artist": "游鸿明",
+      "total_songs": 157,
+      "lit_songs": 110,
+      "unlit_songs": 47,
+      "pct": 70.1,
+      "total_albums": 16,
+      "full_albums": 6,
+      "sparse_albums": 9,
+      "zero_albums": 1,
+      "is_core": false
+    },
+    {
+      "artist": "潘玮柏",
+      "total_songs": 108,
+      "lit_songs": 108,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 10,
+      "full_albums": 10,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "王力宏",
+      "total_songs": 185,
+      "lit_songs": 152,
+      "unlit_songs": 33,
+      "pct": 82.2,
+      "total_albums": 17,
+      "full_albums": 11,
+      "sparse_albums": 6,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "王心凌",
+      "total_songs": 100,
+      "lit_songs": 99,
+      "unlit_songs": 1,
+      "pct": 99.0,
+      "total_albums": 10,
+      "full_albums": 9,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "王菲",
+      "total_songs": 417,
+      "lit_songs": 411,
+      "unlit_songs": 6,
+      "pct": 98.6,
+      "total_albums": 25,
+      "full_albums": 21,
+      "sparse_albums": 4,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "田震",
+      "total_songs": 40,
+      "lit_songs": 36,
+      "unlit_songs": 4,
+      "pct": 90.0,
+      "total_albums": 4,
+      "full_albums": 2,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "田馥甄",
+      "total_songs": 52,
+      "lit_songs": 48,
+      "unlit_songs": 4,
+      "pct": 92.3,
+      "total_albums": 5,
+      "full_albums": 4,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "痛仰乐队",
+      "total_songs": 43,
+      "lit_songs": 23,
+      "unlit_songs": 20,
+      "pct": 53.5,
+      "total_albums": 4,
+      "full_albums": 1,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "白安",
+      "total_songs": 40,
+      "lit_songs": 0,
+      "unlit_songs": 40,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "窦唯",
+      "total_songs": 125,
+      "lit_songs": 108,
+      "unlit_songs": 17,
+      "pct": 86.4,
+      "total_albums": 13,
+      "full_albums": 8,
+      "sparse_albums": 5,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "罗大佑",
+      "total_songs": 260,
+      "lit_songs": 260,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 21,
+      "full_albums": 21,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "羽·泉",
+      "total_songs": 134,
+      "lit_songs": 107,
+      "unlit_songs": 27,
+      "pct": 79.9,
+      "total_albums": 12,
+      "full_albums": 8,
+      "sparse_albums": 2,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "胡彦斌",
+      "total_songs": 116,
+      "lit_songs": 114,
+      "unlit_songs": 2,
+      "pct": 98.3,
+      "total_albums": 11,
+      "full_albums": 10,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "腾格尔",
+      "total_songs": 119,
+      "lit_songs": 84,
+      "unlit_songs": 35,
+      "pct": 70.6,
+      "total_albums": 10,
+      "full_albums": 2,
+      "sparse_albums": 8,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "苏妙玲",
+      "total_songs": 10,
+      "lit_songs": 10,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 2,
+      "full_albums": 2,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "苏慧伦",
+      "total_songs": 235,
+      "lit_songs": 232,
+      "unlit_songs": 3,
+      "pct": 98.7,
+      "total_albums": 22,
+      "full_albums": 19,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "苏打绿",
+      "total_songs": 226,
+      "lit_songs": 159,
+      "unlit_songs": 67,
+      "pct": 70.4,
+      "total_albums": 13,
+      "full_albums": 6,
+      "sparse_albums": 7,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "范晓萱",
+      "total_songs": 180,
+      "lit_songs": 153,
+      "unlit_songs": 27,
+      "pct": 85.0,
+      "total_albums": 15,
+      "full_albums": 12,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "范玮琪",
+      "total_songs": 167,
+      "lit_songs": 167,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 13,
+      "full_albums": 13,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "草东没有派对",
+      "total_songs": 23,
+      "lit_songs": 0,
+      "unlit_songs": 23,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "莫文蔚",
+      "total_songs": 273,
+      "lit_songs": 247,
+      "unlit_songs": 26,
+      "pct": 90.5,
+      "total_albums": 22,
+      "full_albums": 15,
+      "sparse_albums": 7,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "萧亚轩",
+      "total_songs": 33,
+      "lit_songs": 26,
+      "unlit_songs": 7,
+      "pct": 78.8,
+      "total_albums": 3,
+      "full_albums": 0,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "萧敬腾",
+      "total_songs": 119,
+      "lit_songs": 105,
+      "unlit_songs": 14,
+      "pct": 88.2,
+      "total_albums": 9,
+      "full_albums": 6,
+      "sparse_albums": 3,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "萧煌奇",
+      "total_songs": 151,
+      "lit_songs": 151,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 14,
+      "full_albums": 14,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "萨顶顶",
+      "total_songs": 33,
+      "lit_songs": 0,
+      "unlit_songs": 33,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "落日飞车",
+      "total_songs": 32,
+      "lit_songs": 0,
+      "unlit_songs": 32,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "葛东琪",
+      "total_songs": 42,
+      "lit_songs": 0,
+      "unlit_songs": 42,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "蒙面唱将猜猜猜",
+      "total_songs": 10,
+      "lit_songs": 0,
+      "unlit_songs": 10,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "蔡健雅",
+      "total_songs": 127,
+      "lit_songs": 93,
+      "unlit_songs": 34,
+      "pct": 73.2,
+      "total_albums": 12,
+      "full_albums": 9,
+      "sparse_albums": 0,
+      "zero_albums": 3,
+      "is_core": true
+    },
+    {
+      "artist": "薛之谦",
+      "total_songs": 140,
+      "lit_songs": 130,
+      "unlit_songs": 10,
+      "pct": 92.9,
+      "total_albums": 14,
+      "full_albums": 13,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "袁娅维",
+      "total_songs": 23,
+      "lit_songs": 17,
+      "unlit_songs": 6,
+      "pct": 73.9,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "袁惟仁",
+      "total_songs": 19,
+      "lit_songs": 0,
+      "unlit_songs": 19,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "许嵩",
+      "total_songs": 75,
+      "lit_songs": 75,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 8,
+      "full_albums": 8,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "许巍",
+      "total_songs": 40,
+      "lit_songs": 40,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 4,
+      "full_albums": 4,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "许志安",
+      "total_songs": 161,
+      "lit_songs": 161,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 8,
+      "full_albums": 8,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "谢霆锋",
+      "total_songs": 90,
+      "lit_songs": 90,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 9,
+      "full_albums": 9,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "谭咏麟",
+      "total_songs": 795,
+      "lit_songs": 57,
+      "unlit_songs": 738,
+      "pct": 7.2,
+      "total_albums": 64,
+      "full_albums": 1,
+      "sparse_albums": 6,
+      "zero_albums": 57,
+      "is_core": false
+    },
+    {
+      "artist": "费玉清",
+      "total_songs": 459,
+      "lit_songs": 459,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 35,
+      "full_albums": 35,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "赵雷",
+      "total_songs": 41,
+      "lit_songs": 41,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 4,
+      "full_albums": 4,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "迪克牛仔",
+      "total_songs": 72,
+      "lit_songs": 72,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 7,
+      "full_albums": 7,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "逃跑计划",
+      "total_songs": 20,
+      "lit_songs": 0,
+      "unlit_songs": 20,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "邓丽君",
+      "total_songs": 1996,
+      "lit_songs": 457,
+      "unlit_songs": 1539,
+      "pct": 22.9,
+      "total_albums": 114,
+      "full_albums": 17,
+      "sparse_albums": 6,
+      "zero_albums": 91,
+      "is_core": false
+    },
+    {
+      "artist": "邓紫棋",
+      "total_songs": 102,
+      "lit_songs": 80,
+      "unlit_songs": 22,
+      "pct": 78.4,
+      "total_albums": 9,
+      "full_albums": 7,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "那英",
+      "total_songs": 80,
+      "lit_songs": 80,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 8,
+      "full_albums": 8,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "郁可唯",
+      "total_songs": 136,
+      "lit_songs": 43,
+      "unlit_songs": 93,
+      "pct": 31.6,
+      "total_albums": 12,
+      "full_albums": 2,
+      "sparse_albums": 7,
+      "zero_albums": 3,
+      "is_core": true
+    },
+    {
+      "artist": "郑智化",
+      "total_songs": 88,
+      "lit_songs": 88,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 9,
+      "full_albums": 9,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "郑钧",
+      "total_songs": 50,
+      "lit_songs": 0,
+      "unlit_songs": 50,
+      "pct": 0.0,
+      "total_albums": 5,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 5,
+      "is_core": false
+    },
+    {
+      "artist": "郭富城",
+      "total_songs": 122,
+      "lit_songs": 56,
+      "unlit_songs": 66,
+      "pct": 45.9,
+      "total_albums": 12,
+      "full_albums": 1,
+      "sparse_albums": 10,
+      "zero_albums": 1,
+      "is_core": true
+    },
+    {
+      "artist": "金志文",
+      "total_songs": 51,
+      "lit_songs": 0,
+      "unlit_songs": 51,
+      "pct": 0.0,
+      "total_albums": 6,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 6,
+      "is_core": false
+    },
+    {
+      "artist": "金池",
+      "total_songs": 8,
+      "lit_songs": 8,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 2,
+      "full_albums": 2,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "阿杜",
+      "total_songs": 81,
+      "lit_songs": 74,
+      "unlit_songs": 7,
+      "pct": 91.4,
+      "total_albums": 8,
+      "full_albums": 7,
+      "sparse_albums": 1,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "阿牛",
+      "total_songs": 162,
+      "lit_songs": 132,
+      "unlit_songs": 30,
+      "pct": 81.5,
+      "total_albums": 14,
+      "full_albums": 8,
+      "sparse_albums": 6,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "陈奕迅",
+      "total_songs": 257,
+      "lit_songs": 257,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 26,
+      "full_albums": 26,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "陈小春",
+      "total_songs": 23,
+      "lit_songs": 23,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 6,
+      "full_albums": 6,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "陈粒",
+      "total_songs": 83,
+      "lit_songs": 83,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 7,
+      "full_albums": 7,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "陈绮贞",
+      "total_songs": 78,
+      "lit_songs": 0,
+      "unlit_songs": 78,
+      "pct": 0.0,
+      "total_albums": 7,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 7,
+      "is_core": true
+    },
+    {
+      "artist": "陶喆",
+      "total_songs": 106,
+      "lit_songs": 106,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 8,
+      "full_albums": 8,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "零点乐队",
+      "total_songs": 65,
+      "lit_songs": 65,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 7,
+      "full_albums": 7,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "霍尊",
+      "total_songs": 10,
+      "lit_songs": 0,
+      "unlit_songs": 10,
+      "pct": 0.0,
+      "total_albums": 1,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 1,
+      "is_core": false
+    },
+    {
+      "artist": "韦礼安",
+      "total_songs": 83,
+      "lit_songs": 0,
+      "unlit_songs": 83,
+      "pct": 0.0,
+      "total_albums": 7,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 7,
+      "is_core": false
+    },
+    {
+      "artist": "韩红",
+      "total_songs": 44,
+      "lit_songs": 0,
+      "unlit_songs": 44,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "顺子",
+      "total_songs": 72,
+      "lit_songs": 0,
+      "unlit_songs": 72,
+      "pct": 0.0,
+      "total_albums": 6,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 6,
+      "is_core": false
+    },
+    {
+      "artist": "飞儿乐团",
+      "total_songs": 101,
+      "lit_songs": 101,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 9,
+      "full_albums": 9,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "高胜美",
+      "total_songs": 205,
+      "lit_songs": 205,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 16,
+      "full_albums": 16,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "魏如萱",
+      "total_songs": 97,
+      "lit_songs": 0,
+      "unlit_songs": 97,
+      "pct": 0.0,
+      "total_albums": 9,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 9,
+      "is_core": false
+    },
+    {
+      "artist": "鹿晗",
+      "total_songs": 18,
+      "lit_songs": 0,
+      "unlit_songs": 18,
+      "pct": 0.0,
+      "total_albums": 2,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 2,
+      "is_core": false
+    },
+    {
+      "artist": "黄义达",
+      "total_songs": 44,
+      "lit_songs": 0,
+      "unlit_songs": 44,
+      "pct": 0.0,
+      "total_albums": 4,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 4,
+      "is_core": false
+    },
+    {
+      "artist": "黄品源",
+      "total_songs": 194,
+      "lit_songs": 190,
+      "unlit_songs": 4,
+      "pct": 97.9,
+      "total_albums": 17,
+      "full_albums": 15,
+      "sparse_albums": 2,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "黄小琥",
+      "total_songs": 221,
+      "lit_songs": 221,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 21,
+      "full_albums": 21,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": false
+    },
+    {
+      "artist": "黄龄",
+      "total_songs": 33,
+      "lit_songs": 0,
+      "unlit_songs": 33,
+      "pct": 0.0,
+      "total_albums": 3,
+      "full_albums": 0,
+      "sparse_albums": 0,
+      "zero_albums": 3,
+      "is_core": false
+    },
+    {
+      "artist": "黎明",
+      "total_songs": 349,
+      "lit_songs": 319,
+      "unlit_songs": 30,
+      "pct": 91.4,
+      "total_albums": 26,
+      "full_albums": 16,
+      "sparse_albums": 10,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "齐秦",
+      "total_songs": 269,
+      "lit_songs": 269,
+      "unlit_songs": 0,
+      "pct": 100.0,
+      "total_albums": 25,
+      "full_albums": 25,
+      "sparse_albums": 0,
+      "zero_albums": 0,
+      "is_core": true
+    },
+    {
+      "artist": "齐豫",
+      "total_songs": 191,
+      "lit_songs": 145,
+      "unlit_songs": 46,
+      "pct": 75.9,
+      "total_albums": 17,
+      "full_albums": 9,
+      "sparse_albums": 8,
+      "zero_albums": 0,
+      "is_core": false
+    }
+  ]
+}
