@@ -103,13 +103,46 @@ export function fail(c: Context<any>, key: ErrorKey | string, options: ErrorOpti
   )
 }
 
+export function sanitizeErrorMessage(message?: string): string {
+  if (!message) return '服务器异常，请稍后重试'
+  const lower = message.toLowerCase()
+  if (
+    lower.includes('d1_error') ||
+    lower.includes('row read limit') ||
+    lower.includes('exceeded d1') ||
+    lower.includes('sqlite') ||
+    lower.includes('sql') ||
+    lower.includes('database is locked') ||
+    lower.includes('no such table') ||
+    lower.includes('no such column') ||
+    lower.includes('syntax error') ||
+    lower.includes('constraint failed') ||
+    lower.includes('internal server error') ||
+    lower.includes('cloudflare') ||
+    lower.includes('worker') ||
+    lower.includes('fetch failed') ||
+    lower.includes('network error')
+  ) {
+    return '服务器异常，请稍后重试'
+  }
+  return message
+}
+
 export function serverError(c: Context<any>, arg1: unknown, arg2?: any) {
+  if (arg1 instanceof Error) {
+    console.error('[ServerError]', arg1)
+  } else {
+    console.error('[ServerError]', arg1, arg2)
+  }
+
   if (typeof arg1 === 'string') {
     const key = arg1 as ErrorKey
-    const message = arg2?.error || arg2?.message || (typeof arg2 === 'string' ? arg2 : undefined)
+    const rawMessage = arg2?.error || arg2?.message || (typeof arg2 === 'string' ? arg2 : undefined)
+    const message = sanitizeErrorMessage(rawMessage)
     return fail(c, key, { message })
   }
-  const message = arg1 instanceof Error ? arg1.message : String(arg1)
+  const rawMessage = arg1 instanceof Error ? arg1.message : String(arg1)
+  const message = sanitizeErrorMessage(rawMessage)
   const key = (arg2 as ErrorKey) || 'INTERNAL_ERROR'
   return fail(c, key, { message })
 }
@@ -132,7 +165,8 @@ export async function normalizeLegacyErrorResponse(response: Response): Promise<
     return response
   }
 
-  const message = String(payload?.message || payload?.error || ERROR_DEFINITIONS.INTERNAL_ERROR.message)
+  const rawMessage = String(payload?.message || payload?.error || ERROR_DEFINITIONS.INTERNAL_ERROR.message)
+  const message = sanitizeErrorMessage(rawMessage)
   const key = inferErrorKey(response.status, message)
   const nextBody = errorBody(key, { message })
   const headers = new Headers(response.headers)

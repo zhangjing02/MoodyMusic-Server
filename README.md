@@ -85,6 +85,31 @@ payload = {
 
 ---
 
+## 🚨【系统最高铁律二】Cloudflare D1 数据库配额安全防线：严禁全库扫表（Row Reads 防熔断准则）
+
+> **⚠️ 严重警告（CRITICAL DATABASE SAFETY REQUIREMENT - 2026-09-20 全体开发与 AI 必读）**：
+> **自 2026-09-20 起，所有后端接口、自动化脚本、数据清洗与采录维护程序，严禁执行任何形式的“无条件全表扫描”（如 `SELECT ... FROM songs WHERE 1=1` 无针对性过滤），严禁在生产和测试环境中保留无参全量曲库接口！**
+
+### 1. 血泪教训复盘（2026-09-20 D1 全库硬熔断瘫痪事件）
+- **官方配额硬约束**：Cloudflare 自 2026 年 9 月 1 日起，对 D1 免费版（Free Tier）实行日度硬熔断策略——**每日读取行数上限（Row Read Limit）为 5,000,000 行（5M Rows/day）**，每日 UTC 00:00（北京时间 08:00）统一重置。
+- **全表扫描引发熔断**：当前曲库共收录 15,238+ 首歌曲，若执行一次无条件的 3 表连接（`artists` + `albums` + `songs`），单次即产生 **15,000+ 行读取**！
+- **雪崩式连锁反应**：若自动化采录脚本、测试页面刷新或前端轮询不慎调用无参全量接口，**仅仅调用 300 余次就会瞬间耗尽整整 5,000,000 行读取配额**！
+- **全站业务瘫痪后果**：一旦配额耗尽，Cloudflare 将对该 D1 数据库实施全库拒绝服务，任何正常的业务查询（包含用户免密登录、密码验证、资料获取）都会立即抛出底层异常：
+  `D1_ERROR: Your account has exceeded D1's free tier daily row read limit. Please upgrade to Workers Paid to increase your limits.`
+  直接导致前端 App 无法登录、全站服务中断！
+
+### 2. 全库查表五大绝对禁令（The 5 Inviolable Rules）
+
+| 禁令编号 | 核心规范 | 技术约束与实施方案 |
+| :--- | :--- | :--- |
+| **禁令 1** | **严禁无过滤条件的曲库接口** | `/api/songs` 等查询接口**必须强制指定索引过滤参数**（`artistId` 或 `album`），无参数请求直接在 Worker 网关拦截返回 HTTP 400，绝不进入数据库查询逻辑；同时所有歌曲查询末尾强制追加 `LIMIT 300` 物理硬防护墙。 |
+| **禁令 2** | **严禁采录/清洗脚本全量扫表** | 所有资产补全、曲目点亮（如王力宏/陶喆专项）、校验比对脚本，**必须按精确主键 ID（`WHERE id = ?`）或批量 ID（`WHERE id IN (...)`）查询**，绝对严禁循环拉取全量 15,000+ 行曲库在本地内存比对。 |
+| **禁令 3** | **高频业务列必须强制建立并命中索引** | 用户认证表 `user_profiles` 必须建立 `idx_user_profiles_username`、`idx_user_profiles_email`、`idx_user_profiles_supabase_uid` 索引；歌曲表必须建立 `idx_songs_album_id`、`idx_albums_artist_id` 索引，杜绝无索引全表逐行扫库。 |
+| **禁令 4** | **生产环境彻底清除调试扫表接口** | 严禁在生产环境保留如 `/api/debug/audit`、`/api/debug/album-query` 等无分页、无安全截断的遗留调试接口，必须全部下线。 |
+| **禁令 5** | **底层基础设施报错绝对脱敏** | 服务端（`error.ts`）与客户端（`ToastUtils`、`BaseViewModel`）均已部署 `sanitizeErrorMessage` 守门机制，遇到 D1 超限、SQL 锁表、网络断连等基础设施异常，**一律对外返回友好中文「服务器异常，请稍后重试」**，严禁向客户端透传长串英文技术堆栈造成用户恐慌。 |
+
+---
+
 ## 🗄️ 多存储桶分布式架构与资源分配策略 (Multi-Bucket Architecture)
 
 > **设计原则：100% 零成本（Zero Cost）与零账单风险（Zero Financial Risk）**

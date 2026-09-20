@@ -316,6 +316,15 @@ app.get('/api/songs', async (c) => {
     const queryArtistName = c.req.query('artist')
     const queryAlbum = c.req.query('album')
 
+    // 彻底切断无参数全量扫描曲库（杜绝全表扫描耗尽 D1 每日读取配额）
+    if (!queryArtistId && !queryArtistName && !queryAlbum) {
+      return c.json({
+        code: 400,
+        message: '全量曲库查询接口已永久下线。请指定 artistId 或 album 参数按需获取。',
+        data: []
+      }, 400)
+    }
+
     // Building a base flat query
     let sql = `
       SELECT 
@@ -343,7 +352,7 @@ app.get('/api/songs', async (c) => {
       params.push(`%${queryAlbum}%`)
     }
 
-    sql += ` ORDER BY a.name ASC, al.release_date ASC, s.track_index ASC`
+    sql += ` ORDER BY a.name ASC, al.release_date ASC, s.track_index ASC LIMIT 300`
 
     const { results } = await c.env.DB.prepare(sql).bind(...params).all()
 
@@ -536,60 +545,7 @@ app.get('/api/debug/r2', async (c) => {
 // ==========================================
 // 7. Debug: List D1 Paths
 // ==========================================
-// ==========================================
-// 8. Debug: Full Audit (D1 vs R2)
-// ==========================================
-app.get('/api/debug/audit', async (c) => {
-  try {
-    // 1. Get all MP3 keys from R2
-    let allR2Keys = new Set<string>()
-    let truncated = true
-    let cursor: string | undefined = undefined
-    
-    for (let i = 0; i < 10 && truncated; i++) {
-        const list = await c.env.BUCKET.list({ limit: 1000, cursor })
-        list.objects.forEach(obj => {
-          if (obj.key.toLowerCase().endsWith('.mp3')) {
-            allR2Keys.add(obj.key)
-          }
-        })
-        truncated = list.truncated
-        cursor = list.truncated ? list.cursor : undefined
-    }
-
-    // 2. Get all file_paths from D1
-    const { results: songs } = await c.env.DB.prepare('SELECT id, title, file_path FROM songs WHERE file_path IS NOT NULL AND file_path != ""').all()
-    
-    // 3. Compare
-    const audit = (songs as any[]).map(song => {
-      const path = song.file_path
-      // We know R2 has "music/" prefix
-      const expectedKey = path.startsWith('music/') ? path : `music/${path}`
-      const exists = allR2Keys.has(expectedKey)
-      
-      return {
-        id: song.id,
-        title: song.title,
-        db_path: path,
-        expected_r2_key: expectedKey,
-        found_in_r2: exists
-      }
-    })
-
-    const summary = {
-      total_db_songs_with_path: songs.length,
-      total_r2_mp3s: allR2Keys.size,
-      matched: audit.filter(a => a.found_in_r2).length,
-      missing_in_r2: audit.filter(a => !a.found_in_r2).length,
-      sample_matched: audit.filter(a => a.found_in_r2).slice(0, 10),
-      sample_missing: audit.filter(a => !a.found_in_r2).slice(0, 20)
-    }
-
-    return c.json(summary)
-  } catch (error: any) {
-    return c.json({ error: error.message }, 500)
-  }
-})
+// 8. Debug: Full Audit (D1 vs R2) - 已废弃移除，防止全表扫描超限
 
 // ==========================================
 // 9. Admin: Stats
@@ -1861,57 +1817,6 @@ app.post('/api/admin/ops/songs/batch-insert', async (c) => {
 })
 
 // ==========================================
-// 21. Debug: Test Album Query
-// 调试：测试专辑查询
-// ==========================================
-app.get('/api/debug/album-query', async (c) => {
-  try {
-    const artist = c.req.query('artist')
-    const album = c.req.query('album')
-
-    if (!artist || !album) {
-      return c.json({ code: 400, message: 'Missing artist or album parameter' }, 400)
-    }
-
-    // 执行 SQL 查询
-    let sql = `
-      SELECT
-        a.id AS artist_id, a.name AS artist_name, a.region, a.photo_url,
-        al.id AS album_id, al.title AS album_title, al.release_date, al.cover_url,
-        s.title AS song_title, s.file_path, s.lrc_path, s.track_index
-      FROM artists a
-      LEFT JOIN albums al ON a.id = al.artist_id
-      LEFT JOIN songs s ON al.id = s.album_id
-      WHERE a.name LIKE ?
-      ORDER BY al.release_date ASC, s.track_index ASC
-    `
-
-    const { results } = await c.env.DB.prepare(sql).bind(`%${artist}%`).all()
-
-    // 繁简体过滤
-    const normalizedQuery = normalizeTitle(album)
-    const filteredResults = (results as any[]).filter((row: any) => {
-      if (!row.album_title) return false
-      const normalizedTitle = normalizeTitle(row.album_title)
-      return normalizedTitle === normalizedQuery ||
-             normalizedTitle.includes(normalizedQuery) ||
-             normalizedQuery.includes(normalizedTitle)
-    })
-
-    return c.json({
-      code: 200,
-      message: 'success',
-      data: {
-        query: { artist, album, normalizedQuery },
-        total_results: results.length,
-        filtered_results: filteredResults.length,
-        sample_results: filteredResults.slice(0, 5)
-      }
-    })
-  } catch (error: any) {
-    return c.json({ code: 500, message: error.message }, 500)
-  }
-})
 
 // ==========================================
 // 22. Admin: Cleanup Duplicate Songs in Album

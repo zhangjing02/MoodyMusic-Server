@@ -497,7 +497,8 @@ function parseGeneratedUsername(username: string): { year_code: string; seat_cod
 async function sendKickOutPush(
   env: Bindings,
   oldJPushRegId: string,
-  ctx?: ExecutionContext
+  ctx?: ExecutionContext,
+  targetDeviceId?: string
 ): Promise<void> {
   if (!env.JPUSH_APP_KEY || !env.JPUSH_MASTER_SECRET || !oldJPushRegId) {
     console.warn('[JPush] sendKickOutPush skipped: missing credentials or oldJPushRegId', { oldJPushRegId })
@@ -508,7 +509,12 @@ async function sendKickOutPush(
     audience: { registration_id: [oldJPushRegId] },
     message: {
       msg_content: '您的账号已在另一台设备登录，当前设备已下线。',
-      extras: { action: 'KICK_OUT', reason: 'new_login' }
+      extras: {
+        action: 'KICK_OUT',
+        reason: 'new_login',
+        kick_timestamp: Date.now(),
+        target_device_id: targetDeviceId || ''
+      }
     }
   }
   try {
@@ -1439,11 +1445,14 @@ export function registerAuthRoutes(app: Hono<AppType>) {
       if (clientType === 'android') {
         const oldJPushRegId = profile.jpush_registration_id || ''
 
+        // 互踢保护原则：
+        // 1. 只有当旧设备极光 ID 存在且与当前新设备不同（oldJPushRegId !== newJPushRegId）时，才能向旧设备推 KICK_OUT！
+        // 2. 严禁向正在登录的新设备推互踢（即使本地 UUID 重置，只要 RegistrationId 相同绝不推自己）
         const isDeviceChanged = (newJPushRegId && oldJPushRegId && oldJPushRegId !== newJPushRegId) ||
-          (oldJPushRegId && deviceId && profile.last_android_device_id && profile.last_android_device_id !== deviceId)
+          (!newJPushRegId && oldJPushRegId && deviceId && profile.last_android_device_id && profile.last_android_device_id !== deviceId)
 
-        if (isDeviceChanged && oldJPushRegId) {
-          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx)
+        if (isDeviceChanged && oldJPushRegId && oldJPushRegId !== newJPushRegId) {
+          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx, profile.last_android_device_id)
         }
 
         const finalJPushId = newJPushRegId || profile.jpush_registration_id || null
@@ -1706,10 +1715,10 @@ export function registerAuthRoutes(app: Hono<AppType>) {
         const oldJPushRegId = profile.jpush_registration_id || ''
 
         const isDeviceChanged = (newJPushRegId && oldJPushRegId && oldJPushRegId !== newJPushRegId) ||
-          (oldJPushRegId && deviceId && profile.last_android_device_id && profile.last_android_device_id !== deviceId)
+          (!newJPushRegId && oldJPushRegId && deviceId && profile.last_android_device_id && profile.last_android_device_id !== deviceId)
 
-        if (isDeviceChanged && oldJPushRegId) {
-          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx)
+        if (isDeviceChanged && oldJPushRegId && oldJPushRegId !== newJPushRegId) {
+          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx, profile.last_android_device_id)
         }
 
         const finalJPushId = newJPushRegId || profile.jpush_registration_id || null
@@ -1803,10 +1812,10 @@ export function registerAuthRoutes(app: Hono<AppType>) {
         const oldJPushRegId = profile.jpush_registration_id || ''
 
         const isDeviceChanged = (newJPushRegId && oldJPushRegId && oldJPushRegId !== newJPushRegId) ||
-          (oldJPushRegId && deviceId && profile.last_android_device_id && profile.last_android_device_id !== deviceId)
+          (!newJPushRegId && oldJPushRegId && deviceId && profile.last_android_device_id && profile.last_android_device_id !== deviceId)
 
-        if (isDeviceChanged && oldJPushRegId) {
-          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx)
+        if (isDeviceChanged && oldJPushRegId && oldJPushRegId !== newJPushRegId) {
+          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx, profile.last_android_device_id)
         }
 
         const finalJPushId = newJPushRegId || profile.jpush_registration_id || null
@@ -2335,7 +2344,7 @@ export function registerAuthRoutes(app: Hono<AppType>) {
         const oldJPushRegId = (profile as any)?.jpush_registration_id || ''
 
         if (oldJPushRegId && oldJPushRegId !== newJPushRegId) {
-          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx)
+          await sendKickOutPush(c.env, oldJPushRegId, c.executionCtx, (profile as any)?.last_android_device_id)
         }
 
         // Update DB with new device info and session time
