@@ -1,0 +1,1384 @@
+[
+  {
+    "name": "Beyond",
+    "total_songs": 378,
+    "total_lit": 233,
+    "total_unlit": 145,
+    "lit_pct": 61.6,
+    "full_albs_count": 2,
+    "empty_albs_count": 3,
+    "sparse_albs": [
+      {
+        "album": "信念",
+        "total": 12,
+        "lit": 10,
+        "unlit": 2,
+        "unlit_names": [
+          "最想念你",
+          "問自己"
+        ]
+      },
+      {
+        "album": "THIS IS LOVE I",
+        "total": 10,
+        "lit": 7,
+        "unlit": 3,
+        "unlit_names": [
+          "遥かなるゆめに～Far away",
+          "も-まん たい!",
+          "リゾ.ラバ～international～"
+        ]
+      },
+      {
+        "album": "愛與生活",
+        "total": 10,
+        "lit": 5,
+        "unlit": 5,
+        "unlit_names": [
+          "Absent-Minded Persons",
+          "The Only",
+          "The Last Answer",
+          "Wonderful Life",
+          "Absurd World"
+        ]
+      },
+      {
+        "album": "Good Time",
+        "total": 11,
+        "lit": 7,
+        "unlit": 4,
+        "unlit_names": [
+          "By Chance",
+          "101 Times",
+          "Washing Powder",
+          "Ridiculous"
+        ]
+      },
+      {
+        "album": "超級Band Band Band",
+        "total": 7,
+        "lit": 3,
+        "unlit": 4,
+        "unlit_names": [
+          "Peter & Mary",
+          "Open the Black Box",
+          "The Winter of Seventeen",
+          "Motor Rock"
+        ]
+      },
+      {
+        "album": "Deliberate You Yu",
+        "total": 10,
+        "lit": 7,
+        "unlit": 3,
+        "unlit_names": [
+          "係要聽ROCK N' ROLL",
+          "谁来主宰",
+          "完全的拥有"
+        ]
+      },
+      {
+        "album": "Beyond真的見証 (超越時代紀念版)",
+        "total": 28,
+        "lit": 26,
+        "unlit": 2,
+        "unlit_names": [
+          "又見理想 (Silent Years Demo)",
+          "Europe (Venture Out In the New World Demo)"
+        ]
+      },
+      {
+        "album": "Beyond IV (超越時代紀念版)",
+        "total": 30,
+        "lit": 27,
+        "unlit": 3,
+        "unlit_names": [
+          "中環捉賊",
+          "粉碎",
+          "掃毒"
+        ]
+      },
+      {
+        "album": "亞拉伯跳舞女郎(超越時代紀念版)",
+        "total": 34,
+        "lit": 33,
+        "unlit": 1,
+        "unlit_names": [
+          "亞拉伯開場音樂 (Live In Hong Kong)"
+        ]
+      },
+      {
+        "album": "Beyond命運派對 (超越時代紀念版)",
+        "total": 21,
+        "lit": 20,
+        "unlit": 1,
+        "unlit_names": [
+          "九十年代的憂傷"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "杨千嬅",
+    "total_songs": 116,
+    "total_lit": 93,
+    "total_unlit": 23,
+    "lit_pct": 80.2,
+    "full_albs_count": 2,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "Miriam",
+        "total": 11,
+        "lit": 8,
+        "unlit": 3,
+        "unlit_names": [
+          "熱血青年",
+          "照相本子",
+          "紫色"
+        ]
+      },
+      {
+        "album": "Make Up",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "娃娃夫人",
+          "魂斷威尼斯",
+          "滿場飛"
+        ]
+      },
+      {
+        "album": "Miriam's Music Box (Special Edition)",
+        "total": 12,
+        "lit": 8,
+        "unlit": 4,
+        "unlit_names": [
+          "Music Box I",
+          "家有幾米",
+          "聖誕禮物",
+          "Music Box II"
+        ]
+      },
+      {
+        "album": "Meridian",
+        "total": 14,
+        "lit": 12,
+        "unlit": 2,
+        "unlit_names": [
+          "Meridian (Interlude)",
+          "傑出青年"
+        ]
+      },
+      {
+        "album": "Wonder Miriam",
+        "total": 11,
+        "lit": 9,
+        "unlit": 2,
+        "unlit_names": [
+          "大慈善家",
+          "捉伊人"
+        ]
+      },
+      {
+        "album": "原來過得很快樂",
+        "total": 11,
+        "lit": 7,
+        "unlit": 4,
+        "unlit_names": [
+          "你幸福嗎",
+          "麥芽糖",
+          "對木偶唱歌",
+          "孖公仔"
+        ]
+      },
+      {
+        "album": "One On One",
+        "total": 18,
+        "lit": 13,
+        "unlit": 5,
+        "unlit_names": [
+          "一二三, 三二一",
+          "狼來了",
+          "再見二丁目",
+          "我係我 (Remix)",
+          "新世紀福音戰士"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "莫文蔚",
+    "total_songs": 273,
+    "total_lit": 246,
+    "total_unlit": 27,
+    "lit_pct": 90.1,
+    "full_albs_count": 14,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "全身莫文蔚",
+        "total": 15,
+        "lit": 13,
+        "unlit": 2,
+        "unlit_names": [
+          "色情男女 (Karen獨唱版)",
+          "我不需要憐憫"
+        ]
+      },
+      {
+        "album": "你可以",
+        "total": 15,
+        "lit": 11,
+        "unlit": 4,
+        "unlit_names": [
+          "Extinguish",
+          "Diamond",
+          "Live Show",
+          "I Can't Lose My Faith. Love Is Not Possession"
+        ]
+      },
+      {
+        "album": "一朵金花",
+        "total": 10,
+        "lit": 5,
+        "unlit": 5,
+        "unlit_names": [
+          "Astigmatism",
+          "Fan Dance",
+          "Princess of Mong Kok",
+          "Nescience",
+          "Golden Flower"
+        ]
+      },
+      {
+        "album": "I",
+        "total": 11,
+        "lit": 10,
+        "unlit": 1,
+        "unlit_names": [
+          "我的自由式 (Alive!)"
+        ]
+      },
+      {
+        "album": "回蔚",
+        "total": 11,
+        "lit": 8,
+        "unlit": 3,
+        "unlit_names": [
+          "风从哪里来",
+          "半个月亮爬上来",
+          "红"
+        ]
+      },
+      {
+        "album": "不散,不見",
+        "total": 11,
+        "lit": 9,
+        "unlit": 2,
+        "unlit_names": [
+          "看看",
+          "亲爱的"
+        ]
+      },
+      {
+        "album": "我们在中场相遇",
+        "total": 11,
+        "lit": 8,
+        "unlit": 3,
+        "unlit_names": [
+          "飞",
+          "中场没有休息",
+          "绝"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "卢广仲",
+    "total_songs": 104,
+    "total_lit": 87,
+    "total_unlit": 17,
+    "lit_pct": 83.7,
+    "full_albs_count": 3,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "七天",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "OH YEAH!!!",
+          "愛情習作",
+          "A"
+        ]
+      },
+      {
+        "album": "What a Folk!!!!!! (第五張創作專輯)",
+        "total": 11,
+        "lit": 8,
+        "unlit": 3,
+        "unlit_names": [
+          "Song of Summer",
+          "Moonlight Note",
+          "June & July"
+        ]
+      },
+      {
+        "album": "What a Folk !!!!!! (日文版)",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "Song of Summer",
+          "Moonlight Note",
+          "June & July"
+        ]
+      },
+      {
+        "album": "What a Folk!!!!!! (春季走跳版)",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "Song of Summer",
+          "Moonlight Note",
+          "June & July"
+        ]
+      },
+      {
+        "album": "勵志論",
+        "total": 11,
+        "lit": 7,
+        "unlit": 4,
+        "unlit_names": [
+          "C'MON",
+          "There You Are",
+          "MySoulMemory",
+          "ASK Yin Yang"
+        ]
+      },
+      {
+        "album": "HeartBreakFast 傷心早餐店",
+        "total": 10,
+        "lit": 9,
+        "unlit": 1,
+        "unlit_names": [
+          "Love Lost"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "张惠妹",
+    "total_songs": 168,
+    "total_lit": 117,
+    "total_unlit": 51,
+    "lit_pct": 69.6,
+    "full_albs_count": 4,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "牽手",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "夢見鐵達尼",
+          "Open Your Eyes"
+        ]
+      },
+      {
+        "album": "我可以抱你嗎?愛人",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "當我開始偷偷地想你",
+          "愛 什麼稀罕",
+          "Goodnight, Goodbye"
+        ]
+      },
+      {
+        "album": "歌聲妹影",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "卡門",
+          "天才白癡夢"
+        ]
+      },
+      {
+        "album": "歌聲妹影 (2019 Remastering)",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "Mamma Mia (2019 Remastering)",
+          "天才白癡夢 (2019 Remastering)"
+        ]
+      },
+      {
+        "album": "阿密特意識專輯 (感官升級版)",
+        "total": 12,
+        "lit": 8,
+        "unlit": 4,
+        "unlit_names": [
+          "分生",
+          "相愛後動物感傷",
+          "好膽你就來",
+          "阿密特:給親人 + 來唱歌吧 + 等待豐收的父親"
+        ]
+      },
+      {
+        "album": "阿密特意識專輯",
+        "total": 11,
+        "lit": 7,
+        "unlit": 4,
+        "unlit_names": [
+          "分生",
+          "相愛後動物感傷",
+          "好膽你就來",
+          "阿密特:給親人 + 來唱歌吧 + 等待豐收的父親"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "张震岳",
+    "total_songs": 151,
+    "total_lit": 111,
+    "total_unlit": 40,
+    "lit_pct": 73.5,
+    "full_albs_count": 5,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "這個下午很無聊",
+        "total": 11,
+        "lit": 7,
+        "unlit": 4,
+        "unlit_names": [
+          "Breaking Up",
+          "Love's First Taste",
+          "Will You Wait For Me",
+          "Secret"
+        ]
+      },
+      {
+        "album": "等我有一天",
+        "total": 10,
+        "lit": 7,
+        "unlit": 3,
+        "unlit_names": [
+          "Concede",
+          "A Real Man",
+          "Wait Until One Day"
+        ]
+      },
+      {
+        "album": "我想要的感覺",
+        "total": 9,
+        "lit": 7,
+        "unlit": 2,
+        "unlit_names": [
+          "Getaway",
+          "Club Unloved"
+        ]
+      },
+      {
+        "album": "我是海雅谷慕",
+        "total": 12,
+        "lit": 8,
+        "unlit": 4,
+        "unlit_names": [
+          "Used Guitar",
+          "Ai Yo Wei Ya",
+          "Welcome To Hua-Lian",
+          "‬Not a Star‭ ‬"
+        ]
+      },
+      {
+        "album": "跟著感覺走",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "Surfer's Love Story",
+          "Errand Boy"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "苏慧伦",
+    "total_songs": 235,
+    "total_lit": 229,
+    "total_unlit": 6,
+    "lit_pct": 97.4,
+    "full_albs_count": 17,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "六月的茉莉夢",
+        "total": 10,
+        "lit": 9,
+        "unlit": 1,
+        "unlit_names": [
+          "Tender Foolishness"
+        ]
+      },
+      {
+        "album": "愛上飛鳥的女孩",
+        "total": 12,
+        "lit": 11,
+        "unlit": 1,
+        "unlit_names": [
+          "The Tenderest Bondage"
+        ]
+      },
+      {
+        "album": "鴨子",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "Subconscious",
+          "My Figure At the Age of Seven"
+        ]
+      },
+      {
+        "album": "Lemon Tree",
+        "total": 10,
+        "lit": 9,
+        "unlit": 1,
+        "unlit_names": [
+          "At a Deadlock"
+        ]
+      },
+      {
+        "album": "懶人日記",
+        "total": 12,
+        "lit": 11,
+        "unlit": 1,
+        "unlit_names": [
+          "My Tears Are Shaking"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "任贤齐",
+    "total_songs": 214,
+    "total_lit": 204,
+    "total_unlit": 10,
+    "lit_pct": 95.3,
+    "full_albs_count": 14,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "再問一次",
+        "total": 9,
+        "lit": 7,
+        "unlit": 2,
+        "unlit_names": [
+          "抓住生命的節奏",
+          "你的心我知道"
+        ]
+      },
+      {
+        "album": "飛向自己的天空",
+        "total": 10,
+        "lit": 6,
+        "unlit": 4,
+        "unlit_names": [
+          "飛向自己的天空",
+          "LOVE YOU DAY AND NIGHT(日日夜夜愛你)",
+          "GOOD BYE MY LOVE(再見我的愛)",
+          "流浪者之歌"
+        ]
+      },
+      {
+        "album": "愛像太平洋",
+        "total": 13,
+        "lit": 11,
+        "unlit": 2,
+        "unlit_names": [
+          "Don't Cry (My Love)",
+          "I Am Free"
+        ]
+      },
+      {
+        "album": "情義",
+        "total": 29,
+        "lit": 27,
+        "unlit": 2,
+        "unlit_names": [
+          "Forever",
+          "Far Away Place"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "张学友",
+    "total_songs": 394,
+    "total_lit": 384,
+    "total_unlit": 10,
+    "lit_pct": 97.5,
+    "full_albs_count": 35,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "走过1999",
+        "total": 8,
+        "lit": 5,
+        "unlit": 3,
+        "unlit_names": [
+          "坏x5 (坏坏坏坏坏)",
+          "她来听我的演唱会",
+          "认错"
+        ]
+      },
+      {
+        "album": "他在那里",
+        "total": 9,
+        "lit": 8,
+        "unlit": 1,
+        "unlit_names": [
+          "慈悲"
+        ]
+      },
+      {
+        "album": "Back To Black Series - Ai Nai Duo Yi Xie \"Jing Xuan\"",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "Wang Qing Leng Yu Ye",
+          "Zi Yuen Yi Sheng Ai Yi Ren",
+          "Zai Ai Shang Ni"
+        ]
+      },
+      {
+        "album": "Wake Up Dreaming",
+        "total": 10,
+        "lit": 7,
+        "unlit": 3,
+        "unlit_names": [
+          "Tears of Time",
+          "The Accused",
+          "Not Bad"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "王菲",
+    "total_songs": 417,
+    "total_lit": 407,
+    "total_unlit": 10,
+    "lit_pct": 97.6,
+    "full_albs_count": 21,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "王靖雯",
+        "total": 10,
+        "lit": 7,
+        "unlit": 3,
+        "unlit_names": [
+          "未出現的愛",
+          "飛機上",
+          "害怕"
+        ]
+      },
+      {
+        "album": "Everything",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "Yesterday",
+          "無理取鬧"
+        ]
+      },
+      {
+        "album": "You're the Only One",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "美麗的印記",
+          "從明日開始"
+        ]
+      },
+      {
+        "album": "迷",
+        "total": 20,
+        "lit": 17,
+        "unlit": 3,
+        "unlit_names": [
+          "夜半狂飆",
+          "從下世紀欣賞我",
+          "從明日開始"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "王力宏",
+    "total_songs": 185,
+    "total_lit": 152,
+    "total_unlit": 33,
+    "lit_pct": 82.2,
+    "full_albs_count": 11,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "不可思議",
+        "total": 13,
+        "lit": 8,
+        "unlit": 5,
+        "unlit_names": [
+          "You're Not Here",
+          "Girlfriend",
+          "Who Are You Thinking of Now",
+          "What Was I Thinking?",
+          "Love Is All Around"
+        ]
+      },
+      {
+        "album": "十八般武藝",
+        "total": 11,
+        "lit": 6,
+        "unlit": 5,
+        "unlit_names": [
+          "Dragon Dance",
+          "Du U ❤️ Me",
+          "Boya Breaks His Strings",
+          "Need Some Company",
+          "The Ends of the Earth"
+        ]
+      },
+      {
+        "album": "你的愛。",
+        "total": 13,
+        "lit": 9,
+        "unlit": 4,
+        "unlit_names": [
+          "Intro",
+          "Cracked Heart",
+          "Lose Myself (feat. Avicii)",
+          "Lose Myself (Ballad Version)"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "田馥甄",
+    "total_songs": 52,
+    "total_lit": 43,
+    "total_unlit": 9,
+    "lit_pct": 82.7,
+    "full_albs_count": 2,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "To Hebe",
+        "total": 11,
+        "lit": 8,
+        "unlit": 3,
+        "unlit_names": [
+          "Going Nowhere",
+          "I Didn't Think I'm in Love with You",
+          "Missing You"
+        ]
+      },
+      {
+        "album": "My Love",
+        "total": 10,
+        "lit": 6,
+        "unlit": 4,
+        "unlit_names": [
+          "Still in Happiness",
+          "Angel Devil",
+          "Make Trouble out of Nothing",
+          "Flower"
+        ]
+      },
+      {
+        "album": "渺小",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "The Most Important Thing in Life",
+          "Learning From Drunk"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "五月天",
+    "total_songs": 233,
+    "total_lit": 124,
+    "total_unlit": 109,
+    "lit_pct": 53.2,
+    "full_albs_count": 4,
+    "empty_albs_count": 2,
+    "sparse_albs": [
+      {
+        "album": "候鳥 五月天電影音樂作品",
+        "total": 6,
+        "lit": 3,
+        "unlit": 3,
+        "unlit_names": [
+          "Like the Firework",
+          "Left Key (ICQ of a Boy and a Girl)",
+          "Full Bloom"
+        ]
+      },
+      {
+        "album": "步步自選作品輯 1999-2013",
+        "total": 30,
+        "lit": 26,
+        "unlit": 4,
+        "unlit_names": [
+          "乾杯",
+          "我不願讓你一個人",
+          "三個傻瓜",
+          "諾亞方舟"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "崔健",
+    "total_songs": 46,
+    "total_lit": 44,
+    "total_unlit": 2,
+    "lit_pct": 95.7,
+    "full_albs_count": 3,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "新长征路上的摇滚",
+        "total": 9,
+        "lit": 8,
+        "unlit": 1,
+        "unlit_names": [
+          "假行僧"
+        ]
+      },
+      {
+        "album": "红旗下的蛋",
+        "total": 8,
+        "lit": 7,
+        "unlit": 1,
+        "unlit_names": [
+          "北京故事"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "张国荣",
+    "total_songs": 305,
+    "total_lit": 292,
+    "total_unlit": 13,
+    "lit_pct": 95.7,
+    "full_albs_count": 19,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "摯愛",
+        "total": 32,
+        "lit": 30,
+        "unlit": 2,
+        "unlit_names": [
+          "風繼續吹 (Live)",
+          "TWIST&SHOUT"
+        ]
+      },
+      {
+        "album": "I Am What I Am",
+        "total": 36,
+        "lit": 33,
+        "unlit": 3,
+        "unlit_names": [
+          "夜有所夢",
+          "American Pie (Live)",
+          "至少還有你 (國) [Live]"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "张雨生",
+    "total_songs": 105,
+    "total_lit": 100,
+    "total_unlit": 5,
+    "lit_pct": 95.2,
+    "full_albs_count": 5,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "雨後星空",
+        "total": 27,
+        "lit": 26,
+        "unlit": 1,
+        "unlit_names": [
+          "創作的絮語1 (口白)"
+        ]
+      },
+      {
+        "album": "Yu Hou Xing Kong",
+        "total": 27,
+        "lit": 23,
+        "unlit": 4,
+        "unlit_names": [
+          "Guan Yu Chang Ge De Qing Gan Yu Ji Qiao (Kou Bai)",
+          "Chuang Zuo De Xu Yu1 (Kou Bai)",
+          "Chuang Zuo De Xu Yu2 (Kou Bai)",
+          "Gong Zuo Gan Ku Tan (Kou Bai)"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "梁静茹",
+    "total_songs": 235,
+    "total_lit": 184,
+    "total_unlit": 51,
+    "lit_pct": 78.3,
+    "full_albs_count": 14,
+    "empty_albs_count": 2,
+    "sparse_albs": [
+      {
+        "album": "絲路",
+        "total": 10,
+        "lit": 6,
+        "unlit": 4,
+        "unlit_names": [
+          "絲路",
+          "我還記得",
+          "下一秒鐘",
+          "因為還是會"
+        ]
+      },
+      {
+        "album": "親親",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "親親",
+          "飛魚",
+          "憨過頭"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "郁可唯",
+    "total_songs": 136,
+    "total_lit": 43,
+    "total_unlit": 93,
+    "lit_pct": 31.6,
+    "full_albs_count": 2,
+    "empty_albs_count": 3,
+    "sparse_albs": [
+      {
+        "album": "溫水",
+        "total": 11,
+        "lit": 8,
+        "unlit": 3,
+        "unlit_names": [
+          "溫水",
+          "唯",
+          "呆著"
+        ]
+      },
+      {
+        "album": "郁音绕梁",
+        "total": 11,
+        "lit": 6,
+        "unlit": 5,
+        "unlit_names": [
+          "爱很简单",
+          "爱似烟火",
+          "爱我别走",
+          "突然的自我",
+          "月半弯"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "刘德华",
+    "total_songs": 168,
+    "total_lit": 159,
+    "total_unlit": 9,
+    "lit_pct": 94.6,
+    "full_albs_count": 12,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "相思成災",
+        "total": 12,
+        "lit": 10,
+        "unlit": 2,
+        "unlit_names": [
+          "若我是他我一定娶你",
+          "每次醒來"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "容祖儿",
+    "total_songs": 429,
+    "total_lit": 427,
+    "total_unlit": 2,
+    "lit_pct": 99.5,
+    "full_albs_count": 32,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "Bi-Heart",
+        "total": 14,
+        "lit": 12,
+        "unlit": 2,
+        "unlit_names": [
+          "SMS@5:30 Am (Interlude)",
+          "好事多為"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "朴树",
+    "total_songs": 34,
+    "total_lit": 31,
+    "total_unlit": 3,
+    "lit_pct": 91.2,
+    "full_albs_count": 2,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "猎户星座",
+        "total": 12,
+        "lit": 9,
+        "unlit": 3,
+        "unlit_names": [
+          "平凡之路",
+          "清白之年",
+          "猎户星座"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "李健",
+    "total_songs": 90,
+    "total_lit": 87,
+    "total_unlit": 3,
+    "lit_pct": 96.7,
+    "full_albs_count": 7,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "拾光",
+        "total": 15,
+        "lit": 12,
+        "unlit": 3,
+        "unlit_names": [
+          "丽江 (2013版)",
+          "当有天老去 (2013版)",
+          "一往情深的恋人 (2013版)"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "林俊杰",
+    "total_songs": 213,
+    "total_lit": 192,
+    "total_unlit": 21,
+    "lit_pct": 90.1,
+    "full_albs_count": 15,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "Like You Do",
+        "total": 8,
+        "lit": 4,
+        "unlit": 4,
+        "unlit_names": [
+          "Like You Do",
+          "All In Your Mind",
+          "Head On",
+          "Steady My Love"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "苏打绿",
+    "total_songs": 226,
+    "total_lit": 159,
+    "total_unlit": 67,
+    "lit_pct": 70.4,
+    "full_albs_count": 6,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "夏 / 狂熱",
+        "total": 14,
+        "lit": 11,
+        "unlit": 3,
+        "unlit_names": [
+          "口白 - 英文詩 1",
+          "口白 - 英文詩 2",
+          "口白 - 英文詩 3"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "薛之谦",
+    "total_songs": 140,
+    "total_lit": 128,
+    "total_unlit": 12,
+    "lit_pct": 91.4,
+    "full_albs_count": 12,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "渡 The Crossing",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "别",
+          "背过手"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "许嵩",
+    "total_songs": 75,
+    "total_lit": 74,
+    "total_unlit": 1,
+    "lit_pct": 98.7,
+    "full_albs_count": 7,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "尋霧啟示",
+        "total": 9,
+        "lit": 8,
+        "unlit": 1,
+        "unlit_names": [
+          "嘆服"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "陈奕迅",
+    "total_songs": 257,
+    "total_lit": 255,
+    "total_unlit": 2,
+    "lit_pct": 99.2,
+    "full_albs_count": 25,
+    "empty_albs_count": 0,
+    "sparse_albs": [
+      {
+        "album": "一滴眼淚",
+        "total": 10,
+        "lit": 8,
+        "unlit": 2,
+        "unlit_names": [
+          "学会爱",
+          "二个人的夜晚"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "S.H.E",
+    "total_songs": 111,
+    "total_lit": 111,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 11,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "Twins",
+    "total_songs": 73,
+    "total_lit": 0,
+    "total_unlit": 73,
+    "lit_pct": 0.0,
+    "full_albs_count": 0,
+    "empty_albs_count": 8,
+    "sparse_albs": []
+  },
+  {
+    "name": "伍佰",
+    "total_songs": 51,
+    "total_lit": 51,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 4,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "南拳妈妈",
+    "total_songs": 81,
+    "total_lit": 0,
+    "total_unlit": 81,
+    "lit_pct": 0.0,
+    "full_albs_count": 0,
+    "empty_albs_count": 6,
+    "sparse_albs": []
+  },
+  {
+    "name": "周杰伦",
+    "total_songs": 149,
+    "total_lit": 26,
+    "total_unlit": 123,
+    "lit_pct": 17.4,
+    "full_albs_count": 2,
+    "empty_albs_count": 10,
+    "sparse_albs": []
+  },
+  {
+    "name": "孙燕姿",
+    "total_songs": 130,
+    "total_lit": 130,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 12,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "张韶涵",
+    "total_songs": 83,
+    "total_lit": 0,
+    "total_unlit": 83,
+    "lit_pct": 0.0,
+    "full_albs_count": 0,
+    "empty_albs_count": 8,
+    "sparse_albs": []
+  },
+  {
+    "name": "李荣浩",
+    "total_songs": 79,
+    "total_lit": 79,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 8,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "毛不易",
+    "total_songs": 46,
+    "total_lit": 46,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 4,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "汪峰",
+    "total_songs": 109,
+    "total_lit": 109,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 7,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "汪苏泷",
+    "total_songs": 80,
+    "total_lit": 0,
+    "total_unlit": 80,
+    "lit_pct": 0.0,
+    "full_albs_count": 0,
+    "empty_albs_count": 8,
+    "sparse_albs": []
+  },
+  {
+    "name": "许巍",
+    "total_songs": 40,
+    "total_lit": 40,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 4,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "邓紫棋",
+    "total_songs": 102,
+    "total_lit": 80,
+    "total_unlit": 22,
+    "lit_pct": 78.4,
+    "full_albs_count": 7,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "陶喆",
+    "total_songs": 106,
+    "total_lit": 106,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 8,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  },
+  {
+    "name": "韦礼安",
+    "total_songs": 83,
+    "total_lit": 0,
+    "total_unlit": 83,
+    "lit_pct": 0.0,
+    "full_albs_count": 0,
+    "empty_albs_count": 7,
+    "sparse_albs": []
+  },
+  {
+    "name": "魏如萱",
+    "total_songs": 97,
+    "total_lit": 0,
+    "total_unlit": 97,
+    "lit_pct": 0.0,
+    "full_albs_count": 0,
+    "empty_albs_count": 9,
+    "sparse_albs": []
+  },
+  {
+    "name": "齐秦",
+    "total_songs": 269,
+    "total_lit": 269,
+    "total_unlit": 0,
+    "lit_pct": 100.0,
+    "full_albs_count": 25,
+    "empty_albs_count": 0,
+    "sparse_albs": []
+  }
+]

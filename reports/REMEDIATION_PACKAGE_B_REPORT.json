@@ -1,0 +1,194 @@
+[
+  {
+    "id": 14031,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 14031,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/任贤齐/愛像太平洋/s_14031.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/任贤齐/愛像太平洋/s_14031.lrc",
+      "duration": 241,
+      "is_lit": 1
+    },
+    "artist": "任贤齐",
+    "album": "愛像太平洋",
+    "title": "Don't Cry (My Love)",
+    "duration": 241,
+    "heard": "哭 我想爱的你 我们不需要说 爱你 爱我 只说那不会有什么问题 那就是爱必须认清那湖上聚暖的山景多少重量度"
+  },
+  {
+    "id": 14033,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 14033,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/任贤齐/愛像太平洋/s_14033.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/任贤齐/愛像太平洋/s_14033.lrc",
+      "duration": 268,
+      "is_lit": 1
+    },
+    "artist": "任贤齐",
+    "album": "愛像太平洋",
+    "title": "I Am Free",
+    "duration": 268,
+    "heard": "像爱深深甜都看不到恩怨实实在在心头上有爱有心不能活到老教我怎么忘记你的好让我飞也好让我回也好存藏甜蜜都不明了好"
+  },
+  {
+    "id": 13838,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 13838,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/任贤齐/情義/s_13838.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/任贤齐/情義/s_13838.lrc",
+      "duration": 258,
+      "is_lit": 1
+    },
+    "artist": "任贤齐",
+    "album": "情義",
+    "title": "Forever",
+    "duration": 258,
+    "heard": "你心里还爱谁时间越走越远却回不去你的温柔这爱的寂寞这爱的伤痛深深刻刻印在我心头对的的承诺好"
+  },
+  {
+    "id": 13854,
+    "status": "REJECTED_AUDIT",
+    "heard": "地狱忍不住的流星躺不上没能藏一颗死心苦苦的醉醺茫茫然失去可爱的可恨的多可惜梦中的梦中梦中人的梦中梦不到被吹散往事如风空空的天空动不下笑容伤身的伤人的太伤心何必想何必我可知",
+    "title": "Far Away Place",
+    "search_title": "在那遥远的地方",
+    "reason": "Whisper text did not match lyrics/title"
+  },
+  {
+    "id": 24534,
+    "status": "REJECTED_AUDIT",
+    "heard": "我不知道被谁陷害被柔人欺欢的倒霉被我失守起报剩下一个念头不让他再说怪坏坏坏坏坏我已经失联了一个礼拜拜拜拜拜拜拜得到一瓶酸的牛奶坏坏坏坏坏谢谢",
+    "title": "坏x5 (坏坏坏坏坏)",
+    "search_title": "坏x5",
+    "reason": "Whisper text did not match lyrics/title"
+  },
+  {
+    "id": 24535,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 24535,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/张学友/走过1999/s_24535.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/张学友/走过1999/s_24535.lrc",
+      "duration": 278,
+      "is_lit": 1
+    },
+    "artist": "张学友",
+    "album": "走过1999",
+    "title": "她来听我的演唱会",
+    "duration": 278,
+    "heard": "半年的积蓄,买了门票一堆。我唱的大心碎,我唱的大心碎,三年的感情,一封信就要收回。打击的月太凄厉生生在催拨我的隔壁这人们"
+  },
+  {
+    "id": 24538,
+    "status": "REJECTED_AUDIT",
+    "heard": "我知道绝望比冬天还寒冷你很自己是个怕孤独的人偏偏有爱上自由自私的灵魂你带着她为你写过的情诗想证明当初爱的并不糊涂他曾为了你的他离退非常远",
+    "title": "认错",
+    "search_title": "认错",
+    "reason": "Whisper text did not match lyrics/title"
+  },
+  {
+    "id": 24403,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 24403,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/张学友/他在那里/s_24403.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/张学友/他在那里/s_24403.lrc",
+      "duration": 256,
+      "is_lit": 1
+    },
+    "artist": "张学友",
+    "album": "他在那里",
+    "title": "慈悲",
+    "duration": 256,
+    "heard": "其实我早应该告别你的温柔和你的慈悲但是我还深深的沉醉在快乐痛苦的边缘你温柔的慈悲让我不知道该如何面对它也不能给我任何安慰那耶稣当不了"
+  },
+  {
+    "id": 11279,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 11279,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/梁静茹/絲路/s_11279.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/梁静茹/絲路/s_11279.lrc",
+      "duration": 301,
+      "is_lit": 1
+    },
+    "artist": "梁静茹",
+    "album": "絲路",
+    "title": "絲路",
+    "duration": 301,
+    "heard": "优优独播剧场——YoYo Television Series Exclusive"
+  },
+  {
+    "id": 11280,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 11280,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/梁静茹/絲路/s_11280.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/梁静茹/絲路/s_11280.lrc",
+      "duration": 277,
+      "is_lit": 1
+    },
+    "artist": "梁静茹",
+    "album": "絲路",
+    "title": "我還記得",
+    "duration": 277,
+    "heard": "你好吗一句问候 天满青春别人的话都听不见岁月凝结在你的视线我还记得那年轻吞淡雨狼狈奔跑穿越几条街握紧的双手为爱的不顾一切"
+  },
+  {
+    "id": 11285,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 11285,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/梁静茹/絲路/s_11285.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/梁静茹/絲路/s_11285.lrc",
+      "duration": 295,
+      "is_lit": 1
+    },
+    "artist": "梁静茹",
+    "album": "絲路",
+    "title": "下一秒鐘",
+    "duration": 295,
+    "heard": "不晓得因为我们都是流浪者也舍不得被爱情给牢牢绑着谁敢说孤单是可怜的谁敢说明天就好了谁敢说"
+  },
+  {
+    "id": 11271,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 11271,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/梁静茹/親親/s_11271.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/梁静茹/親親/s_11271.lrc",
+      "duration": 246,
+      "is_lit": 1
+    },
+    "artist": "梁静茹",
+    "album": "親親",
+    "title": "親親",
+    "duration": 246,
+    "heard": "八岁的我迷失一滴滴隐形的眼泪风一吹就干了只能这样啊什么同时甜蜜与心碎是你的幽默还是温柔是瞬间烟火还是不甘寂寞彼此你抱紧我"
+  },
+  {
+    "id": 11274,
+    "status": "SUCCESS",
+    "d1_item": {
+      "id": 11274,
+      "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/梁静茹/親親/s_11274.mp3",
+      "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/梁静茹/親親/s_11274.lrc",
+      "duration": 249,
+      "is_lit": 1
+    },
+    "artist": "梁静茹",
+    "album": "親親",
+    "title": "飛魚",
+    "duration": 249,
+    "heard": "遇到雨要飞到海外胸口向来用入味的心脏才是自由哎呀呀哎呀呀我守住你守住的口雨要飞到天上口有个旧"
+  },
+  {
+    "id": 11277,
+    "status": "REJECTED_AUDIT",
+    "heard": "我心底的闺蜜不知道如何收拾等到你离开了我困的心意不理会怕这才爱你我说我说说过一遍嗯",
+    "title": "憨過頭",
+    "search_title": "憨过头",
+    "reason": "Whisper text did not match lyrics/title"
+  }
+]
