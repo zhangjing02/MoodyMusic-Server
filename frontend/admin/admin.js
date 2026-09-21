@@ -138,10 +138,10 @@ async function loadR2Stats() {
         } catch (_) {}
     }
 
-    // 若仍无本地体检文件，基于 D1 点亮数进行八桶集群智能推算
+    // 若仍无本地体检文件，基于 D1 点亮数进行十桶集群智能推算
     if (!r2Data) {
         const safeLit = litCount || 20352;
-        const perBucketSongs = Math.floor(safeLit / 9);
+        const perBucketSongs = Math.floor(safeLit / 10);
         const perBucketBytes = Math.floor(perBucketSongs * 4.67 * 1000 * 1000);
         const makeBucketFallback = (id, name, label, url) => {
             const usedGb = +(perBucketBytes / (1000**3)).toFixed(2);
@@ -160,16 +160,16 @@ async function loadR2Stats() {
             };
         };
 
-        const totalUsedGb = +((perBucketBytes * 9) / (1000**3)).toFixed(2);
-        const totalRatio = +((totalUsedGb / 90.0) * 100).toFixed(1);
+        const totalUsedGb = +((perBucketBytes * 10) / (1000**3)).toFixed(2);
+        const totalRatio = +((totalUsedGb / 100.0) * 100).toFixed(1);
 
         r2Data = {
             updated_at: new Date().toLocaleTimeString(),
-            cluster_mode: 'nona_bucket',
-            total_free_capacity_gb: 90.0,
+            cluster_mode: 'deca_bucket',
+            total_free_capacity_gb: 100.0,
             total_used_gb: totalUsedGb,
             total_used_ratio: totalRatio,
-            total_remaining_gb: +(90.0 - totalUsedGb).toFixed(2),
+            total_remaining_gb: +(100.0 - totalUsedGb).toFixed(2),
             total_songs_count: safeLit,
             cluster_status: totalRatio >= 95 ? 'critical' : (totalRatio >= 90 ? 'warning' : 'healthy'),
             bucket1: makeBucketFallback(1, 'moody-music-asset', '主存储桶 (Bucket 01)', 'r2.changgepd.ccwu.cc'),
@@ -180,7 +180,8 @@ async function loadR2Stats() {
             bucket6: makeBucketFallback(6, 'moody-music-asset-06', '第六存储桶 (Bucket 06)', 'pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev'),
             bucket7: makeBucketFallback(7, 'moody-music-asset-07', '第七存储桶 (Bucket 07)', 'pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev'),
             bucket8: makeBucketFallback(8, 'moody-music-asset-08', '第八存储桶 (Bucket 08)', 'pub-dd32e05660c74c3dba04d231391eb82b.r2.dev'),
-            bucket9: makeBucketFallback(9, 'moody-music-asset-09', '第九存储桶 (Bucket 09)', 'pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev')
+            bucket9: makeBucketFallback(9, 'moody-music-asset-09', '第九存储桶 (Bucket 09)', 'pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev'),
+            bucket10: makeBucketFallback(10, 'moody-music-asset-10', '第十存储桶 (Bucket 10)', 'pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev')
         };
     }
 
@@ -190,7 +191,7 @@ async function loadR2Stats() {
 function normalizeR2Data(raw) {
     if (!raw) return null;
 
-    // 如果已经是标准的具有有效 bucket1..bucket9 且有实际用量的结构
+    // 如果已经是标准的具有有效 bucket1..bucket10 且有实际用量的结构
     if (raw.bucket1 && raw.bucket2 && (raw.bucket1.used_gb > 0 || raw.bucket2.used_gb > 0 || raw.total_used_gb > 0)) {
         return raw;
     }
@@ -204,13 +205,14 @@ function normalizeR2Data(raw) {
         { id: 6, key: 'account_06', name: 'moody-music-asset-06', label: '第六存储桶 (Bucket 06)', defaultGb: 10.54, defaultCount: 4276, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.54 GB)', url: 'pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev' },
         { id: 7, key: 'account_07', name: 'moody-music-asset-07', label: '第七存储桶 (Bucket 07)', defaultGb: 9.84, defaultCount: 3519, defaultStatus: 'critical', defaultStatusText: '98.4% 熔断封箱', url: 'pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev' },
         { id: 8, key: 'account_08', name: 'moody-music-asset-08', label: '第八存储桶 (Bucket 08)', defaultGb: 9.30, defaultCount: 3042, defaultStatus: 'warning', defaultStatusText: '93.0% 预警', url: 'pub-dd32e05660c74c3dba04d231391eb82b.r2.dev' },
-        { id: 9, key: 'account_09', name: 'moody-music-asset-09', label: '第九存储桶 (Bucket 09)', defaultGb: 0.45, defaultCount: 181, defaultStatus: 'healthy', defaultStatusText: '主力写入中', url: 'pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev' }
+        { id: 9, key: 'account_09', name: 'moody-music-asset-09', label: '第九存储桶 (Bucket 09)', defaultGb: 8.89, defaultCount: 3081, defaultStatus: 'healthy', defaultStatusText: '只读降温中', url: 'pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev' },
+        { id: 10, key: 'account_10', name: 'moody-music-asset-10', label: '第十存储桶 (Bucket 10)', defaultGb: 0.00, defaultCount: 0, defaultStatus: 'healthy', defaultStatusText: '主力写入中', url: 'pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev' }
     ];
 
     const result = {
         updated_at: raw.updated_at || new Date().toLocaleString(),
-        cluster_mode: 'nona_bucket',
-        total_free_capacity_gb: 90.0,
+        cluster_mode: 'deca_bucket',
+        total_free_capacity_gb: 100.0,
         safety_valve_active: !!raw.safety_valve_active,
         cluster_status: 'healthy'
     };
@@ -244,8 +246,8 @@ function normalizeR2Data(raw) {
     });
 
     result.total_used_gb = +totalUsedGb.toFixed(2);
-    result.total_used_ratio = +((totalUsedGb / 90.0) * 100).toFixed(1);
-    result.total_remaining_gb = +(90.0 - totalUsedGb).toFixed(2);
+    result.total_used_ratio = +((totalUsedGb / 100.0) * 100).toFixed(1);
+    result.total_remaining_gb = +(100.0 - totalUsedGb).toFixed(2);
     result.total_songs_count = totalSongs;
     result.cluster_status = result.total_used_ratio >= 95 ? 'critical' : (result.total_used_ratio >= 90 ? 'warning' : 'healthy');
 
@@ -268,9 +270,10 @@ function renderR2Dashboard(rawData, litCount) {
     const b7 = data.bucket7;
     const b8 = data.bucket8;
     const b9 = data.bucket9 || { used_gb: 0, used_ratio: 0, used_mb: 0, songs_count: 0, status_level: 'healthy' };
+    const b10 = data.bucket10 || { used_gb: 0, used_ratio: 0, used_mb: 0, songs_count: 0, status_level: 'healthy' };
 
-    const clusterCapGb = data.total_free_capacity_gb || 90.0;
-    const clusterUsedGb = data.total_used_gb || +(b1.used_gb + b2.used_gb + (b3.used_gb || 0) + (b4.used_gb || 0) + (b5.used_gb || 0) + (b6.used_gb || 0) + (b7.used_gb || 0) + (b8.used_gb || 0) + (b9.used_gb || 0)).toFixed(2);
+    const clusterCapGb = data.total_free_capacity_gb || 100.0;
+    const clusterUsedGb = data.total_used_gb || +(b1.used_gb + b2.used_gb + (b3.used_gb || 0) + (b4.used_gb || 0) + (b5.used_gb || 0) + (b6.used_gb || 0) + (b7.used_gb || 0) + (b8.used_gb || 0) + (b9.used_gb || 0) + (b10.used_gb || 0)).toFixed(2);
 
     // 1. 头部总用量概览与安全阀状态
     const totalSummary = document.getElementById('cluster-total-summary');
@@ -601,6 +604,45 @@ function renderR2Dashboard(rawData, litCount) {
             b9StatSize.textContent = `${b9.used_mb.toFixed(1)} MB`;
         } else {
             b9StatSize.textContent = '0.0 MB';
+        }
+    }
+
+    // 11. Bucket 10 环形仪表盘与指标
+    const b10GaugeProgress = document.getElementById('b10-gauge-progress');
+    const b10GaugePct = document.getElementById('b10-gauge-pct');
+    const b10GaugeVal = document.getElementById('b10-gauge-val');
+    const b10StatusBadge = document.getElementById('b10-status-badge');
+    const b10StatSongs = document.getElementById('b10-stat-songs');
+    const b10StatSize = document.getElementById('b10-stat-size');
+
+    if (b10GaugeProgress) {
+        const offset10 = c * (1 - Math.min(100, Math.max(0, b10.used_ratio || 0)) / 100);
+        b10GaugeProgress.style.strokeDasharray = `${c}`;
+        b10GaugeProgress.style.strokeDashoffset = `${offset10.toFixed(2)}`;
+        b10GaugeProgress.setAttribute('class', `gauge-progress stroke-${b10.status_level || 'healthy'}`);
+    }
+    if (b10GaugePct) b10GaugePct.textContent = `${(b10.used_ratio || 0.0).toFixed(1)}%`;
+    if (b10GaugeVal) {
+        if (b10.used_gb > 0) {
+            b10GaugeVal.textContent = `${b10.used_gb} GB`;
+        } else if (b10.used_mb > 0) {
+            b10GaugeVal.textContent = `${b10.used_mb.toFixed(0)} MB`;
+        } else {
+            b10GaugeVal.textContent = '0 B';
+        }
+    }
+    if (b10StatusBadge) {
+        b10StatusBadge.className = `bucket-badge badge-${b10.status_level || 'healthy'}`;
+        b10StatusBadge.textContent = b10.status_level === 'locked' ? '安全阀锁死' : (b10.status_level === 'warning' ? `${b10.used_ratio}% 预警` : (b10.status_level === 'critical' ? '熔断' : '主力写入'));
+    }
+    if (b10StatSongs) b10StatSongs.textContent = (b10.songs_count || 0).toLocaleString();
+    if (b10StatSize) {
+        if (b10.used_gb > 0) {
+            b10StatSize.textContent = `${b10.used_gb} GB`;
+        } else if (b10.used_mb > 0) {
+            b10StatSize.textContent = `${b10.used_mb.toFixed(1)} MB`;
+        } else {
+            b10StatSize.textContent = '0.0 MB';
         }
     }
 }

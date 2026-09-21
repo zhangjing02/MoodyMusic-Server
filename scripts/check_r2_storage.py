@@ -45,7 +45,7 @@ CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 R2_FREE_CAPACITY_BYTES = 10 * 1000 * 1000 * 1000  # 10.00 GB
 WARN_THRESHOLD_PERCENT = 90.0                      # 9.00 GB 预警线
 CRITICAL_THRESHOLD_PERCENT = 95.0                  # 9.50 GB 熔断封箱线
-TOTAL_BUCKETS_COUNT = 9
+TOTAL_BUCKETS_COUNT = 10
 
 def format_bytes(bytes_val):
     for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
@@ -155,7 +155,7 @@ def check_storage(verbose=False):
     now = time.time()
     if now - _PHYSICAL_CACHE['time'] > 20:
         for b_idx in range(1, TOTAL_BUCKETS_COUNT + 1):
-            b_key = f"account_0{b_idx}"
+            b_key = f"account_{b_idx:02d}"
             b_cfg = r2_all.get(b_key)
             if not b_cfg:
                 continue
@@ -170,15 +170,16 @@ def check_storage(verbose=False):
     total_r2_count = 0
 
     bucket_metas = [
-        (1, "account_01", "moody-music-asset", "主存储桶 (Bucket 01)", "r2.changgepd.ccwu.cc"),
-        (2, "account_02", "moody-music-asset-02", "扩展存储桶 (Bucket 02)", "pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev"),
-        (3, "account_03", "moody-music-asset-03", "第三存储桶 (Bucket 03)", "pub-383b876c0bb840f6b852946604275232.r2.dev"),
-        (4, "account_04", "moody-music-asset-04", "第四存储桶 (Bucket 04)", "pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev"),
-        (5, "account_05", "moody-music-asset-05", "第五存储桶 (Bucket 05)", "pub-e7d069eb11954440aeb32012e8e3c670.r2.dev"),
-        (6, "account_06", "moody-music-asset-06", "第六存储桶 (Bucket 06)", "pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev"),
-        (7, "account_07", "moody-music-asset-07", "第七存储桶 (Bucket 07)", "pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev"),
-        (8, "account_08", "moody-music-asset-08", "第八存储桶 (Bucket 08)", "pub-dd32e05660c74c3dba04d231391eb82b.r2.dev"),
-        (9, "account_09", "moody-music-asset-09", "第九存储桶 (Bucket 09)", "pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev"),
+        (1,  "account_01", "moody-music-asset",    "主存储桶 (Bucket 01)",  "r2.changgepd.ccwu.cc"),
+        (2,  "account_02", "moody-music-asset-02", "扩展存储桶 (Bucket 02)", "pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev"),
+        (3,  "account_03", "moody-music-asset-03", "第三存储桶 (Bucket 03)", "pub-383b876c0bb840f6b852946604275232.r2.dev"),
+        (4,  "account_04", "moody-music-asset-04", "第四存储桶 (Bucket 04)", "pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev"),
+        (5,  "account_05", "moody-music-asset-05", "第五存储桶 (Bucket 05)", "pub-e7d069eb11954440aeb32012e8e3c670.r2.dev"),
+        (6,  "account_06", "moody-music-asset-06", "第六存储桶 (Bucket 06)", "pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev"),
+        (7,  "account_07", "moody-music-asset-07", "第七存储桶 (Bucket 07)", "pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev"),
+        (8,  "account_08", "moody-music-asset-08", "第八存储桶 (Bucket 08)", "pub-dd32e05660c74c3dba04d231391eb82b.r2.dev"),
+        (9,  "account_09", "moody-music-asset-09", "第九存储桶 (Bucket 09)", "pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev"),
+        (10, "account_10", "moody-music-asset-10", "第十存储桶 (Bucket 10)", "pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev"),
     ]
 
     for b_id, b_key, b_name, b_label, b_url in bucket_metas:
@@ -244,7 +245,7 @@ def check_storage(verbose=False):
         total_r2_bytes += used_bytes
         total_r2_count += mp3_count
 
-    # 3. 九桶集群全景汇总 (90.00 GB 总配额)
+    # 3. 十桶集群全景汇总 (100.00 GB 总配额)
     total_capacity_bytes = R2_FREE_CAPACITY_BYTES * TOTAL_BUCKETS_COUNT
     cluster_ratio = round((total_r2_bytes / total_capacity_bytes) * 100.0, 1)
     cluster_remaining_bytes = max(0, total_capacity_bytes - total_r2_bytes)
@@ -261,8 +262,8 @@ def check_storage(verbose=False):
 
     stats_data = {
         'updated_at': time.strftime('%Y-%m-%d %H:%M:%S'),
-        'cluster_mode': 'nona_bucket',
-        'total_free_capacity_gb': 90.0,
+        'cluster_mode': 'deca_bucket',
+        'total_free_capacity_gb': float(TOTAL_BUCKETS_COUNT * 10.0),
         'total_used_gb': round(total_r2_bytes / (1000 ** 3), 2),
         'total_used_ratio': cluster_ratio,
         'total_remaining_gb': round(cluster_remaining_bytes / (1000 ** 3), 2),
@@ -271,9 +272,9 @@ def check_storage(verbose=False):
         'cluster_status': cluster_status,
         'safety_valve_active': safety_active,
         'safety_valve_reason': safety_reason if safety_active else '',
-        'active_write_bucket': 'moody-music-asset-09 (第九桶主力写入)',
-        'standby_bucket': '前八桶已安全封箱归档 (防止扣费)',
-        'compression_policy': '160 kbps CBR (九桶集群十进制计量已启用)',
+        'active_write_bucket': 'moody-music-asset-10 (第十桶主力写入)',
+        'standby_bucket': '前九桶已安全封箱/降温归档 (防止扣费)',
+        'compression_policy': '160 kbps CBR (十桶集群十进制计量已启用)',
 
         # 各存储桶
         **bucket_stats,
@@ -288,7 +289,7 @@ def check_storage(verbose=False):
         'r2_songs_count': total_r2_count,
         'compressed_songs_count': 5738,
         'status_level': cluster_status,
-        'status_text': f'九桶集群十进制计量已校准 (总用量 {cluster_ratio:.1f}%)',
+        'status_text': f'十桶集群十进制计量已校准 (总用量 {cluster_ratio:.1f}%)',
         'local_pending_songs': 0,
         'local_pending_mb': 0.0,
         'local_disk_mp3_count': 0,
@@ -328,7 +329,7 @@ def check_storage(verbose=False):
     # 5. 打印专业控制台体检报告
     if verbose or __name__ == "__main__":
         print("\n" + "=" * 90)
-        print("📊 MOODY - Cloudflare R2 九存储桶集群商业计费实时监控报告 (Nona-Bucket Hub)")
+        print("📊 MOODY - Cloudflare R2 十存储桶集群商业计费实时监控报告 (Deca-Bucket Hub)")
         print(f"⏰ 采样校准时间: {time.strftime('%Y-%m-%d %H:%M:%S')} (标准十进制 GB: 1 GB = 1,000,000,000 字节)")
         print("=" * 90)
         print(f"{'存储桶':<22} | {'对象总数':<8} | {'真实用量 (GB)':<14} | {'额度占比':<10} | {'当前状态'}")
@@ -337,7 +338,7 @@ def check_storage(verbose=False):
             bs = stats_data[f"bucket{b_id}"]
             print(f"{bs['name']:<22} | {bs['total_objects']:<8} | {bs['used_gb']:>6.2f} / 10.00 GB | {bs['used_ratio']:>6.1f}%    | {bs['status_text']}")
         print("-" * 90)
-        print(f"🌐 集群全网总用量: {stats_data['total_used_gb']} GB / 90.00 GB ({stats_data['total_used_ratio']}%) | 剩余安全空间: {stats_data['total_remaining_gb']} GB")
+        print(f"🌐 集群全网总用量: {stats_data['total_used_gb']} GB / {stats_data['total_free_capacity_gb']:.2f} GB ({stats_data['total_used_ratio']}%) | 剩余安全空间: {stats_data['total_remaining_gb']} GB")
         print("=" * 90 + "\n")
 
     return stats_data
