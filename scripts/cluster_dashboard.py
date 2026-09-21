@@ -22,9 +22,32 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DB_PATH = os.path.join(BASE_DIR, "database", "catalog_sync.db")
 CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 
+import requests
+
 def get_bucket_stats(cfg, acc_key):
     acc = cfg["buckets"][acc_key]
     bucket_name = acc["name"]
+    cf_token = acc.get("cf_token") or os.environ.get("CF_TOKEN")
+    acc_id = acc.get("account_id", "")
+
+    # 优先尝试 Cloudflare 官方 REST API (特别针对 account_01)
+    if acc_key == "account_01" and cf_token and acc_id:
+        try:
+            r = requests.get(
+                f"https://api.cloudflare.com/client/v4/accounts/{acc_id}/r2/buckets/{bucket_name}/usage",
+                headers={"Authorization": f"Bearer {cf_token}", "Content-Type": "application/json"},
+                timeout=8
+            )
+            data = r.json()
+            if data.get('success'):
+                res = data['result']
+                payload_bytes = int(res['payloadSize'])
+                obj_count = int(res['objectCount'])
+                gb = payload_bytes / (1000 ** 3)
+                return {"name": bucket_name, "count": obj_count, "gb": gb, "avail_gb": max(0.0, 9.5 - gb)}
+        except Exception:
+            pass
+
     try:
         s3 = boto3.client(
             "s3",
@@ -41,7 +64,7 @@ def get_bucket_stats(cfg, acc_key):
                 for obj in page['Contents']:
                     total_size += obj['Size']
                     total_count += 1
-        gb = total_size / (1024 ** 3)
+        gb = total_size / (1000 ** 3)
         return {"name": bucket_name, "count": total_count, "gb": gb, "avail_gb": max(0.0, 9.5 - gb)}
     except Exception as e:
         return {"name": bucket_name, "count": -1, "gb": 0.0, "avail_gb": 0.0, "error": str(e)}

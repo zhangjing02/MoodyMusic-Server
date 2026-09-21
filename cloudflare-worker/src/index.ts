@@ -499,46 +499,208 @@ app.get('/api/search', async (c) => {
 // ==========================================
 app.get('/api/debug/r2', async (c) => {
   try {
-    let allMp3s: string[] = []
+    const qPrefix = c.req.query('prefix')
+    if (qPrefix) {
+      let allObjs: Array<{ key: string; size: number }> = []
+      let truncated = true
+      let cursor: string | undefined = undefined
+      for (let i = 0; i < 10 && truncated; i++) {
+        const list = await c.env.BUCKET.list({ limit: 1000, prefix: qPrefix, cursor })
+        allObjs = allObjs.concat(list.objects.map(o => ({ key: o.key, size: o.size })))
+        truncated = list.truncated
+        cursor = list.truncated ? list.cursor : undefined
+      }
+      return c.json({
+        code: 200,
+        prefix: qPrefix,
+        count: allObjs.length,
+        keys: allObjs
+      })
+    }
+
     let truncated = true
     let cursor: string | undefined = undefined
     let totalObjects = 0
+    let totalBytes = 0
 
-    // Scan up to 5000 objects to get a better picture
-    for (let i = 0; i < 5 && truncated; i++) {
-        const list = await c.env.BUCKET.list({ limit: 1000, cursor })
-        totalObjects += list.objects.length
-        
-        const mp3s = list.objects
-          .filter(obj => obj.key.toLowerCase().endsWith('.mp3'))
-          .map(obj => obj.key)
-        
-        allMp3s = allMp3s.concat(mp3s)
-        truncated = list.truncated
-        cursor = list.truncated ? list.cursor : undefined
+    const extensions: Record<string, { count: number; bytes: number }> = {}
+    const prefixes: Record<string, { count: number; bytes: number }> = {}
+    const musicArtists: Record<string, { count: number; bytes: number }> = {}
+    const homeCardAssets: Record<string, { count: number; bytes: number }> = {}
+
+    // 最多循环 15 次，支持扫描 15,000 个对象
+    for (let i = 0; i < 15 && truncated; i++) {
+      const list = await c.env.BUCKET.list({ limit: 1000, cursor })
+      totalObjects += list.objects.length
+
+      for (const obj of list.objects) {
+        const size = obj.size || 0
+        totalBytes += size
+
+        // 1. 扩展名统计
+        const dotIdx = obj.key.lastIndexOf('.')
+        const ext = dotIdx !== -1 ? obj.key.slice(dotIdx).toLowerCase() : '(none)'
+        if (!extensions[ext]) extensions[ext] = { count: 0, bytes: 0 }
+        extensions[ext].count += 1
+        extensions[ext].bytes += size
+
+        // 2. 顶级前缀统计
+        const slashIdx = obj.key.indexOf('/')
+        const topPrefix = slashIdx !== -1 ? obj.key.slice(0, slashIdx + 1) : '(root)'
+        if (!prefixes[topPrefix]) prefixes[topPrefix] = { count: 0, bytes: 0 }
+        prefixes[topPrefix].count += 1
+        prefixes[topPrefix].bytes += size
+
+        // 3. 首页特定资源统计
+        if (
+          obj.key.startsWith('themes/') ||
+          obj.key.startsWith('covers/home/') ||
+          obj.key.startsWith('covers/variety/') ||
+          obj.key.startsWith('covers/hero/') ||
+          obj.key.startsWith('music/theme/') ||
+          obj.key === 'config/home_feed.json'
+        ) {
+          const cat = obj.key.split('/')[0]
+          if (!homeCardAssets[cat]) homeCardAssets[cat] = { count: 0, bytes: 0 }
+          homeCardAssets[cat].count += 1
+          homeCardAssets[cat].bytes += size
+        }
+
+        // 4. music/ 下歌手聚合统计
+        if (obj.key.startsWith('music/')) {
+          const parts = obj.key.split('/')
+          const artistName = parts.length > 1 ? parts[1] : '(music_root)'
+          if (!musicArtists[artistName]) musicArtists[artistName] = { count: 0, bytes: 0 }
+          musicArtists[artistName].count += 1
+          musicArtists[artistName].bytes += size
+        }
+      }
+
+      truncated = list.truncated
+      cursor = list.truncated ? list.cursor : undefined
     }
 
-    // Get prefix statistics
-    const prefixes = new Map<string, number>()
-    allMp3s.forEach(key => {
-        const parts = key.split('/')
-        if (parts.length > 1) {
-            const prefix = parts[0]
-            prefixes.set(prefix, (prefixes.get(prefix) || 0) + 1)
-        } else {
-            prefixes.set('(root)', (prefixes.get('(root)') || 0) + 1)
+    // 将字节转换为标准十进制 MB/GB
+    const formatStats = (map: Record<string, { count: number; bytes: number }>) => {
+      const res: Record<string, { count: number; bytes: number; mb: number; gb: number }> = {}
+      for (const [k, v] of Object.entries(map)) {
+        res[k] = {
+          count: v.count,
+          bytes: v.bytes,
+          mb: +(v.bytes / 1000000).toFixed(2),
+          gb: +(v.bytes / 1000000000).toFixed(3)
         }
-    })
+      }
+      return res
+    }
+
+    // 找出占用空间前 25 大的歌手
+    const sortedArtists = Object.entries(musicArtists)
+      .map(([name, v]) => ({
+        artist: name,
+        count: v.count,
+        bytes: v.bytes,
+        mb: +(v.bytes / 1000000).toFixed(2),
+        gb: +(v.bytes / 1000000000).toFixed(3)
+      }))
+      .sort((a, b) => b.bytes - a.bytes)
+      .slice(0, 25)
 
     return c.json({
-      scanned_objects: totalObjects,
-      total_mp3_found: allMp3s.length,
-      is_truncated: truncated,
-      prefixes: Object.fromEntries(prefixes),
-      keys: allMp3s
+      code: 200,
+      bucket_name: 'moody-music-asset (Bucket 01)',
+      total_objects: totalObjects,
+      total_bytes: totalBytes,
+      total_gb: +(totalBytes / 1000000000).toFixed(3),
+      extensions: formatStats(extensions),
+      prefixes: formatStats(prefixes),
+      home_card_assets: formatStats(homeCardAssets),
+      top_artists: sortedArtists
     })
   } catch (error: any) {
     return c.json({ error: error.message }, 500)
+  }
+})
+
+// ==========================================
+// 6.1 Admin: 安全清理 Bucket 01 指定类型的非音频冗余文件 (.keep 占位符 / 遗留屏保视频)
+// ==========================================
+app.post('/api/admin/debug/clean-bucket01-junk', async (c) => {
+  try {
+    const { target } = await c.req.json() as { target?: 'keep_files' | 'ambient_videos' }
+    if (!target) return c.json({ code: 400, message: 'Missing target' }, 400)
+
+    let deletedCount = 0
+    let deletedBytes = 0
+
+    if (target === 'keep_files') {
+      let truncated = true
+      let cursor: string | undefined = undefined
+      for (let i = 0; i < 15 && truncated; i++) {
+        const list = await c.env.BUCKET.list({ limit: 1000, cursor })
+        const keepKeys = list.objects.filter(o => o.key.endsWith('.keep')).map(o => o.key)
+        if (keepKeys.length > 0) {
+          await c.env.BUCKET.delete(keepKeys)
+          deletedCount += keepKeys.length
+        }
+        truncated = list.truncated
+        cursor = list.truncated ? list.cursor : undefined
+      }
+      return c.json({ code: 200, message: `Successfully deleted ${deletedCount} .keep placeholder files`, deleted_count: deletedCount })
+    }
+
+    if (target === 'ambient_videos') {
+      const list = await c.env.BUCKET.list({ limit: 100, prefix: 'ambient/' })
+      const videoKeys: string[] = []
+      for (const obj of list.objects) {
+        if (obj.key.endsWith('.mp4') || obj.key.endsWith('.webm')) {
+          videoKeys.push(obj.key)
+          deletedBytes += (obj.size || 0)
+        }
+      }
+      if (videoKeys.length > 0) {
+        await c.env.BUCKET.delete(videoKeys)
+        deletedCount = videoKeys.length
+      }
+      return c.json({
+        code: 200,
+        message: `Successfully deleted ${deletedCount} ambient video files`,
+        deleted_count: deletedCount,
+        freed_bytes: deletedBytes,
+        freed_mb: +(deletedBytes / 1000000).toFixed(2)
+      })
+    }
+
+    return c.json({ code: 400, message: 'Unknown target' }, 400)
+  } catch (error: any) {
+    return c.json({ code: 500, message: error.message }, 500)
+  }
+})
+
+// ==========================================
+// 6.2 Admin: 安全删除 Bucket 01 中已迁移完毕并核验通过的特定 Keys
+// ==========================================
+app.post('/api/admin/debug/delete-bucket01-keys', async (c) => {
+  try {
+    const { keys } = await c.req.json() as { keys?: string[] }
+    if (!keys || !keys.length) {
+      return c.json({ code: 400, message: 'Missing keys array' }, 400)
+    }
+
+    let deletedCount = 0
+    for (let i = 0; i < keys.length; i += 500) {
+      const chunk = keys.slice(i, i + 500)
+      await c.env.BUCKET.delete(chunk)
+      deletedCount += chunk.length
+    }
+
+    return c.json({
+      code: 200,
+      message: `Successfully deleted ${deletedCount} keys from Bucket 01`,
+      deleted_count: deletedCount
+    })
+  } catch (error: any) {
+    return c.json({ code: 500, message: error.message }, 500)
   }
 })
 
@@ -566,6 +728,85 @@ app.get('/api/admin/stats', async (c) => {
         albums: (resAlbums.results?.[0] as any)?.count || 0,
         tracks: (resSongs.results?.[0] as any)?.count || 0
       }
+    })
+  } catch (error: any) {
+    return c.json({ code: 500, message: error.message }, 500)
+  }
+})
+
+// ==========================================
+// 9.1 Admin: R2 Dynamic Storage Stats (D1 app_settings 单行主键存取，零全表扫描)
+// ==========================================
+app.get('/api/admin/r2/stats', async (c) => {
+  try {
+    await c.env.DB.prepare(`
+      CREATE TABLE IF NOT EXISTS app_settings (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `).run()
+
+    const row = await c.env.DB.prepare(
+      "SELECT value, updated_at FROM app_settings WHERE key = 'r2_stats'"
+    ).first<{ value: string; updated_at: string }>()
+
+    if (!row || !row.value) {
+      return c.json({
+        code: 404,
+        message: 'No R2 stats record found',
+        data: null
+      })
+    }
+
+    let parsedData = null
+    try {
+      parsedData = JSON.parse(row.value)
+    } catch {
+      parsedData = row.value
+    }
+
+    return c.json({
+      code: 200,
+      message: 'success',
+      data: parsedData,
+      updated_at: row.updated_at
+    })
+  } catch (error: any) {
+    return c.json({ code: 500, message: error.message }, 500)
+  }
+})
+
+app.post('/api/admin/r2/stats', async (c) => {
+  try {
+    const body = await c.req.json() as { stats?: any }
+    const statsData = body.stats || body
+
+    if (!statsData || Object.keys(statsData).length === 0) {
+      return c.json({ code: 400, message: 'Missing stats payload' }, 400)
+    }
+
+    await c.env.DB.prepare(`
+      CREATE TABLE IF NOT EXISTS app_settings (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `).run()
+
+    const jsonStr = JSON.stringify(statsData)
+
+    await c.env.DB.prepare(`
+      INSERT INTO app_settings (key, value, updated_at)
+      VALUES ('r2_stats', ?, datetime('now'))
+      ON CONFLICT(key) DO UPDATE SET
+        value = excluded.value,
+        updated_at = datetime('now')
+    `).bind(jsonStr).run()
+
+    return c.json({
+      code: 200,
+      message: 'R2 stats updated successfully in D1 app_settings'
     })
   } catch (error: any) {
     return c.json({ code: 500, message: error.message }, 500)
@@ -1153,10 +1394,9 @@ app.get('/api/admin/albums/search', async (c) => {
     let query = `
       SELECT a.id, a.title, a.artist_id, a.release_date, a.cover_url,
              ar.name as artist_name,
-             COUNT(s.id) as song_count
+             (SELECT COUNT(*) FROM songs s WHERE s.album_id = a.id) as song_count
       FROM albums a
       LEFT JOIN artists ar ON a.artist_id = ar.id
-      LEFT JOIN songs s ON a.id = s.album_id
       WHERE 1=1
     `
     const params: any[] = []
@@ -1171,7 +1411,7 @@ app.get('/api/admin/albums/search', async (c) => {
       params.push(artist_id)
     }
 
-    query += ` GROUP BY a.id ORDER BY ar.name, a.title LIMIT ?`
+    query += ` ORDER BY a.id DESC LIMIT ?`
     params.push(parseInt(limit))
 
     const albums = await c.env.DB.prepare(query).bind(...params).all()

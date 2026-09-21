@@ -101,11 +101,12 @@ async function loadR2Stats() {
     let r2Data = null;
     let litCount = null;
 
-    // 1. 并发获取 D1 线上点亮统计与 R2 本地/云端体检数据
+    // 1. 并发获取 D1 线上点亮统计与 Worker 动态 R2 物理体检数据
     const promises = [
-        // 获取 R2 物理存储体检 JSON
-        fetch(`r2_stats.json?t=${Date.now()}`)
+        // 优先：从 Cloudflare Worker 动态接口获取毫秒级最新九桶物理指标 (D1 app_settings 单行主键存取)
+        fetch(`${API_BASE}/api/admin/r2/stats?t=${Date.now()}`)
             .then(res => res.ok ? res.json() : null)
+            .then(json => (json && json.code === 200 && json.data) ? json.data : null)
             .catch(() => null),
         // 获取 D1 数据库线上点亮曲目数
         fetch(`${API_BASE}/api/admin/upload/status`)
@@ -114,16 +115,22 @@ async function loadR2Stats() {
     ];
 
     try {
-        const [statsResult, statusResult] = await Promise.all(promises);
-        r2Data = statsResult;
+        const [dynamicStats, statusResult] = await Promise.all(promises);
+        r2Data = dynamicStats;
         if (statusResult && statusResult.data?.total_songs !== undefined) {
             litCount = statusResult.data.total_songs;
         }
     } catch (e) {
-        console.warn('获取 R2/D1 数据异常:', e);
+        console.warn('获取动态 R2/D1 数据异常:', e);
     }
 
-    // 备用路径回退
+    // 2. 二级备用回退：若 Worker 动态接口无数据或异常，平滑降级读取同域静态 r2_stats.json 快照
+    if (!r2Data) {
+        try {
+            const localRes = await fetch(`r2_stats.json?t=${Date.now()}`);
+            if (localRes.ok) r2Data = await localRes.json();
+        } catch (_) {}
+    }
     if (!r2Data) {
         try {
             const fallbackRes = await fetch(`/admin/r2_stats.json?t=${Date.now()}`);
@@ -133,11 +140,11 @@ async function loadR2Stats() {
 
     // 若仍无本地体检文件，基于 D1 点亮数进行八桶集群智能推算
     if (!r2Data) {
-        const safeLit = litCount || 11479;
-        const perBucketSongs = Math.floor(safeLit / 8);
-        const perBucketBytes = Math.floor(perBucketSongs * 4.67 * 1024 * 1024);
+        const safeLit = litCount || 20352;
+        const perBucketSongs = Math.floor(safeLit / 9);
+        const perBucketBytes = Math.floor(perBucketSongs * 4.67 * 1000 * 1000);
         const makeBucketFallback = (id, name, label, url) => {
-            const usedGb = +(perBucketBytes / (1024**3)).toFixed(2);
+            const usedGb = +(perBucketBytes / (1000**3)).toFixed(2);
             const ratio = +((usedGb / 10.0) * 100).toFixed(1);
             return {
                 name,
@@ -148,23 +155,23 @@ async function loadR2Stats() {
                 used_ratio: ratio,
                 remaining_gb: +(10.0 - usedGb).toFixed(2),
                 songs_count: perBucketSongs,
-                status_level: ratio >= 95 ? 'critical' : (ratio >= 80 ? 'warning' : 'healthy'),
+                status_level: ratio >= 95 ? 'critical' : (ratio >= 90 ? 'warning' : 'healthy'),
                 public_url: url
             };
         };
 
-        const totalUsedGb = +((perBucketBytes * 8) / (1024**3)).toFixed(2);
-        const totalRatio = +((totalUsedGb / 80.0) * 100).toFixed(1);
+        const totalUsedGb = +((perBucketBytes * 9) / (1000**3)).toFixed(2);
+        const totalRatio = +((totalUsedGb / 90.0) * 100).toFixed(1);
 
         r2Data = {
             updated_at: new Date().toLocaleTimeString(),
-            cluster_mode: 'octa_bucket',
-            total_free_capacity_gb: 80.0,
+            cluster_mode: 'nona_bucket',
+            total_free_capacity_gb: 90.0,
             total_used_gb: totalUsedGb,
             total_used_ratio: totalRatio,
-            total_remaining_gb: +(80.0 - totalUsedGb).toFixed(2),
+            total_remaining_gb: +(90.0 - totalUsedGb).toFixed(2),
             total_songs_count: safeLit,
-            cluster_status: totalRatio >= 95 ? 'critical' : (totalRatio >= 80 ? 'warning' : 'healthy'),
+            cluster_status: totalRatio >= 95 ? 'critical' : (totalRatio >= 90 ? 'warning' : 'healthy'),
             bucket1: makeBucketFallback(1, 'moody-music-asset', '主存储桶 (Bucket 01)', 'r2.changgepd.ccwu.cc'),
             bucket2: makeBucketFallback(2, 'moody-music-asset-02', '扩展存储桶 (Bucket 02)', 'pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev'),
             bucket3: makeBucketFallback(3, 'moody-music-asset-03', '第三存储桶 (Bucket 03)', 'pub-383b876c0bb840f6b852946604275232.r2.dev'),
@@ -189,15 +196,15 @@ function normalizeR2Data(raw) {
     }
 
     const bucketMeta = [
-        { id: 1, key: 'account_01', name: 'moody-music-asset', label: '主存储桶 (Bucket 01)', defaultGb: 8.24, defaultCount: 1693, defaultStatus: 'warning', defaultStatusText: '82.4% 预警 (物理封箱)', url: 'r2.changgepd.ccwu.cc' },
-        { id: 2, key: 'account_02', name: 'moody-music-asset-02', label: '扩展存储桶 (Bucket 02)', defaultGb: 9.74, defaultCount: 3231, defaultStatus: 'critical', defaultStatusText: '熔断封存 (97.4%)', url: 'pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev' },
-        { id: 3, key: 'account_03', name: 'moody-music-asset-03', label: '第三存储桶 (Bucket 03)', defaultGb: 9.66, defaultCount: 3395, defaultStatus: 'critical', defaultStatusText: '熔断封存 (96.5%)', url: 'pub-383b876c0bb840f6b852946604275232.r2.dev' },
-        { id: 4, key: 'account_04', name: 'moody-music-asset-04', label: '第四存储桶 (Bucket 04)', defaultGb: 9.29, defaultCount: 3814, defaultStatus: 'warning', defaultStatusText: '92.9% 预警 (主力写入)', url: 'pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev' },
-        { id: 5, key: 'account_05', name: 'moody-music-asset-05', label: '第五存储桶 (Bucket 05)', defaultGb: 9.52, defaultCount: 3994, defaultStatus: 'critical', defaultStatusText: '95.2% 熔断封存', url: 'pub-e7d069eb11954440aeb32012e8e3c670.r2.dev' },
-        { id: 6, key: 'account_06', name: 'moody-music-asset-06', label: '第六存储桶 (Bucket 06)', defaultGb: 9.44, defaultCount: 4116, defaultStatus: 'warning', defaultStatusText: '94.4% 预警', url: 'pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev' },
-        { id: 7, key: 'account_07', name: 'moody-music-asset-07', label: '第七存储桶 (Bucket 07)', defaultGb: 3.46, defaultCount: 1444, defaultStatus: 'healthy', defaultStatusText: '活跃写入中 (34.6%)', url: 'pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev' },
-        { id: 8, key: 'account_08', name: 'moody-music-asset-08', label: '第八存储桶 (Bucket 08)', defaultGb: 0.0, defaultCount: 0, defaultStatus: 'healthy', defaultStatusText: '就绪待命', url: 'pub-dd32e05660c74c3dba04d231391eb82b.r2.dev' },
-        { id: 9, key: 'account_09', name: 'moody-music-asset-09', label: '第九存储桶 (Bucket 09)', defaultGb: 0.0, defaultCount: 0, defaultStatus: 'healthy', defaultStatusText: '主力就绪', url: 'pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev' }
+        { id: 1, key: 'account_01', name: 'moody-music-asset', label: '主存储桶 (Bucket 01)', defaultGb: 10.43, defaultCount: 8028, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.43 GB)', url: 'r2.changgepd.ccwu.cc' },
+        { id: 2, key: 'account_02', name: 'moody-music-asset-02', label: '扩展存储桶 (Bucket 02)', defaultGb: 9.17, defaultCount: 2911, defaultStatus: 'warning', defaultStatusText: '91.7% 预警', url: 'pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev' },
+        { id: 3, key: 'account_03', name: 'moody-music-asset-03', label: '第三存储桶 (Bucket 03)', defaultGb: 10.37, defaultCount: 3395, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.37 GB)', url: 'pub-383b876c0bb840f6b852946604275232.r2.dev' },
+        { id: 4, key: 'account_04', name: 'moody-music-asset-04', label: '第四存储桶 (Bucket 04)', defaultGb: 10.47, defaultCount: 4025, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.47 GB)', url: 'pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev' },
+        { id: 5, key: 'account_05', name: 'moody-music-asset-05', label: '第五存储桶 (Bucket 05)', defaultGb: 10.35, defaultCount: 4045, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.35 GB)', url: 'pub-e7d069eb11954440aeb32012e8e3c670.r2.dev' },
+        { id: 6, key: 'account_06', name: 'moody-music-asset-06', label: '第六存储桶 (Bucket 06)', defaultGb: 10.54, defaultCount: 4276, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.54 GB)', url: 'pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev' },
+        { id: 7, key: 'account_07', name: 'moody-music-asset-07', label: '第七存储桶 (Bucket 07)', defaultGb: 9.84, defaultCount: 3519, defaultStatus: 'critical', defaultStatusText: '98.4% 熔断封箱', url: 'pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev' },
+        { id: 8, key: 'account_08', name: 'moody-music-asset-08', label: '第八存储桶 (Bucket 08)', defaultGb: 9.30, defaultCount: 3042, defaultStatus: 'warning', defaultStatusText: '93.0% 预警', url: 'pub-dd32e05660c74c3dba04d231391eb82b.r2.dev' },
+        { id: 9, key: 'account_09', name: 'moody-music-asset-09', label: '第九存储桶 (Bucket 09)', defaultGb: 0.45, defaultCount: 181, defaultStatus: 'healthy', defaultStatusText: '主力写入中', url: 'pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev' }
     ];
 
     const result = {
@@ -216,9 +223,9 @@ function normalizeR2Data(raw) {
         const isError = !!item.error;
         const usedGb = isError ? meta.defaultGb : Number(item.size_gb ?? item.used_gb ?? meta.defaultGb);
         const ratio = isError ? +((meta.defaultGb / 10.0) * 100).toFixed(1) : Number(item.usage_pct ?? item.used_ratio ?? +((usedGb / 10.0) * 100).toFixed(1));
-        const songs = isError ? meta.defaultCount : Number(item.file_count ?? item.songs_count ?? meta.defaultCount);
-        const statusLvl = isError ? meta.defaultStatus : (item.status_level || (ratio >= 95 ? 'critical' : (ratio >= 80 ? 'warning' : 'healthy')));
-        const statusTxt = isError ? meta.defaultStatusText : (item.status_text || (statusLvl === 'critical' ? '熔断' : (statusLvl === 'warning' ? `${ratio}% 预警` : '正常')));
+        const songs = isError ? meta.defaultCount : Number(item.file_count ?? item.songs_count ?? item.total_objects ?? meta.defaultCount);
+        const statusLvl = isError ? meta.defaultStatus : (item.status_level || (ratio >= 95 ? 'critical' : (ratio >= 90 ? 'warning' : 'healthy')));
+        const statusTxt = isError ? meta.defaultStatusText : (item.status_text || (ratio >= 100 ? `已超额 (${usedGb} GB)` : (ratio >= 95 ? '熔断' : (ratio >= 90 ? `${ratio}% 预警` : '正常'))));
 
         result[`bucket${meta.id}`] = {
             name: item.bucket_name || item.name || meta.name,
@@ -237,10 +244,10 @@ function normalizeR2Data(raw) {
     });
 
     result.total_used_gb = +totalUsedGb.toFixed(2);
-    result.total_used_ratio = +((totalUsedGb / 80.0) * 100).toFixed(1);
-    result.total_remaining_gb = +(80.0 - totalUsedGb).toFixed(2);
+    result.total_used_ratio = +((totalUsedGb / 90.0) * 100).toFixed(1);
+    result.total_remaining_gb = +(90.0 - totalUsedGb).toFixed(2);
     result.total_songs_count = totalSongs;
-    result.cluster_status = result.total_used_ratio >= 95 ? 'critical' : (result.total_used_ratio >= 80 ? 'warning' : 'healthy');
+    result.cluster_status = result.total_used_ratio >= 95 ? 'critical' : (result.total_used_ratio >= 90 ? 'warning' : 'healthy');
 
     return result;
 }
