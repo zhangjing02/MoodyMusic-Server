@@ -291,7 +291,11 @@ async function checkResourceAvailability(url) {
     // console.log(`[Resource Check] Checking: ${url}`); // Muted for cleaner console
     const controller = new AbortController();
     _activeResourceAbortController = controller;
-    const timeoutId = setTimeout(() => controller.abort('HEAD timeout (3s)'), 3000); // 3秒超时
+    let isHeadTimeout = false;
+    const timeoutId = setTimeout(() => {
+        isHeadTimeout = true;
+        controller.abort('HEAD timeout (3s)');
+    }, 3000); // 3秒超时
 
     try {
         // 使用 HEAD 请求只检查头信息，支持主动物理取消
@@ -306,13 +310,19 @@ async function checkResourceAvailability(url) {
             _activeResourceAbortController = null;
         }
 
-        // 404 或其他错误都算不可用
-        const available = response.ok;
+        // 仅明确返回 404 Not Found 时断定资源不存在；其他状态码（如 403/405/500/502 等）对于公网音频不应粗暴断定不存在
+        let available = response.ok;
+        if (!available && url.startsWith('http') && response.status !== 404) {
+            console.warn(`[Resource Check] HEAD returned HTTP ${response.status}, allowing audio element pass-through:`, url);
+            available = true;
+        }
 
-        window.resourceAvailabilityCache.set(url, {
-            available: available,
-            timestamp: Date.now()
-        });
+        if (window.resourceAvailabilityCache) {
+            window.resourceAvailabilityCache.set(url, {
+                available: available,
+                timestamp: Date.now()
+            });
+        }
 
         // console.log(`[Resource Check] Result: ${available}`); // Muted
         return available;
@@ -322,24 +332,27 @@ async function checkResourceAvailability(url) {
             _activeResourceAbortController = null;
         }
 
-        // [Physical Cancellation] 若请求被主动中断（用户切换了新歌曲），静默退出
-        if (e.name === 'AbortError') {
-            console.log(`[Resource Check] 🛑 HEAD request physically aborted for: ${url}`);
+        // [Physical Cancellation] 仅当用户主动切换新歌曲触发的中断（非 HEAD 超时），才静默退出
+        if (e.name === 'AbortError' && !isHeadTimeout) {
+            console.log(`[Resource Check] 🛑 HEAD request physically aborted by user navigation for: ${url}`);
             return false;
         }
 
-        // [CORS Handling] 网络 URL 如果报错且 URL 是 http 开头，可能是 CORS 引起的
-        // 在这种情况下，我们不能断定资源不可用，应该让浏览器 audio 标签去尝试加载
+        // [CORS & Network Timeout Fall-through] 
+        // 网络 URL (http/https) 若因 HEAD 超时、CORS 响应或网络波动报错，绝不能武断判定资源不存在！
+        // 必须放行让原生 audio 标签尝试流式缓冲加载，由底层 8s Watchdog 和 error 事件兜底
         if (url.startsWith('http')) {
-            // console.warn('[Resource Check] Network resource failed HEAD check, allowing pass:', url);
+            console.warn('[Resource Check] Network resource HEAD failed/timed out, allowing audio element pass-through:', url);
             return true;
         }
 
         // 本地资源网络错误或超时标记为不可用
-        window.resourceAvailabilityCache.set(url, {
-            available: false,
-            timestamp: Date.now()
-        });
+        if (window.resourceAvailabilityCache) {
+            window.resourceAvailabilityCache.set(url, {
+                available: false,
+                timestamp: Date.now()
+            });
+        }
         return false;
     }
 }
@@ -1830,6 +1843,16 @@ async function playSongAtIndex(index, expectedGen = null) {
     }
 
     if (!isAvailable) {
+        // [Dual-Channel Fallback] 若直连自定义域名受阻，自动无缝降级回退至 Worker 代理通道
+        if (finalAudioUrl.includes('r2.changgepd.ccwu.cc/music/') && window.API_BASE) {
+            const fallbackUrl = finalAudioUrl.replace('https://r2.changgepd.ccwu.cc/music/', `${window.API_BASE}/storage/music/`);
+            console.warn(`[Dual-Channel] 直连预检未通，自动降级为 Worker 代理通道: ${fallbackUrl}`);
+            finalAudioUrl = fallbackUrl;
+            isAvailable = true;
+        }
+    }
+
+    if (!isAvailable) {
         setLoadingState(false);
         // 清除乐观高亮（不恢复旧歌曲），autoSkipToNext 会高亮下一首
         _clearStaleHighlight();
@@ -1941,6 +1964,28 @@ async function playSongAtIndex(index, expectedGen = null) {
         }
 
         console.error('播放失败 (Play Promise Reject):', err);
+
+        // [Dual-Channel Retry on Play Reject]
+        if (err.name !== 'NotAllowedError' && finalAudioUrl.includes('r2.changgepd.ccwu.cc/music/') && window.API_BASE && !item._fallbackTried) {
+            item._fallbackTried = true;
+            const fallbackUrl = finalAudioUrl.replace('https://r2.changgepd.ccwu.cc/music/', `${window.API_BASE}/storage/music/`);
+            console.warn(`[Dual-Channel] 直连起播异常 (${err.message})，无缝降级重试 Worker 通道: ${fallbackUrl}`);
+            player.audio.src = fallbackUrl;
+            try {
+                await player.audio.play();
+                if (myGeneration === _playGeneration) {
+                    setLoadingState(false);
+                    playerState.isPlaying = true;
+                    updatePlayPauseButton();
+                    updatePlaylistActive(index);
+                    loadLyrics(item);
+                    updateAlbumViewActiveState(item.song, item.artist);
+                    return true;
+                }
+            } catch (fallbackErr) {
+                console.error('[Dual-Channel] Worker 代理降级重试亦失败:', fallbackErr);
+            }
+        }
 
         if (err.name === 'NotAllowedError') {
             showNotification('浏览器限制自动播放，请手动点击播放按钮');

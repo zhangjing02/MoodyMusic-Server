@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-22 00:21:49",
+  "updated_at": "2026-09-22 08:54:25",
   "cluster_mode": "hendeca_bucket",
   "total_free_capacity_gb": 110.0,
-  "total_used_gb": 81.71,
+  "total_used_gb": 81.69,
   "total_used_ratio": 74.3,
-  "total_remaining_gb": 28.29,
+  "total_remaining_gb": 28.31,
   "total_songs_count": 15934,
-  "estimated_songs_remaining": 8841,
+  "estimated_songs_remaining": 8847,
   "cluster_status": "healthy",
   "safety_valve_active": false,
   "safety_valve_reason": "",
@@ -19,16 +19,16 @@
     "label": "主存储桶 (Bucket 01)",
     "account_id": "0bd18c2b8609...",
     "free_capacity_gb": 10.0,
-    "used_bytes": 8331441559,
-    "used_gb": 8.33,
-    "used_mb": 8331.4,
-    "used_ratio": 83.3,
-    "remaining_gb": 1.67,
-    "remaining_mb": 1668.6,
+    "used_bytes": 8309726340,
+    "used_gb": 8.31,
+    "used_mb": 8309.7,
+    "used_ratio": 83.1,
+    "remaining_gb": 1.69,
+    "remaining_mb": 1690.3,
     "songs_count": 1549,
-    "total_objects": 4899,
+    "total_objects": 4911,
     "status_level": "warning",
-    "status_text": "🔒 只读归档 (83.3%)",
+    "status_text": "🔒 只读归档 (83.1%)",
     "public_url": "r2.changgepd.ccwu.cc",
     "allow_writes": false
   },
@@ -125,7 +125,7 @@
     "status_level": "warning",
     "status_text": "⚠️ 容量预警 (91.9%)",
     "public_url": "pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev",
-    "allow_writes": true
+    "allow_writes": false
   },
   "bucket7": {
     "id": 7,
@@ -144,7 +144,7 @@
     "status_level": "warning",
     "status_text": "⚠️ 容量预警 (91.9%)",
     "public_url": "pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev",
-    "allow_writes": true
+    "allow_writes": false
   },
   "bucket8": {
     "id": 8,
@@ -179,10 +179,10 @@
     "remaining_mb": 1058.9,
     "songs_count": 1818,
     "total_objects": 6447,
-    "status_level": "healthy",
-    "status_text": "就绪待命",
+    "status_level": "warning",
+    "status_text": "🔒 只读归档 (89.4%)",
     "public_url": "pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev",
-    "allow_writes": true
+    "allow_writes": false
   },
   "bucket10": {
     "id": 10,
@@ -199,9 +199,9 @@
     "songs_count": 0,
     "total_objects": 0,
     "status_level": "healthy",
-    "status_text": "就绪待命",
+    "status_text": "🔒 只读归档 (0.0%)",
     "public_url": "pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev",
-    "allow_writes": true
+    "allow_writes": false
   },
   "bucket11": {
     "id": 11,
@@ -223,11 +223,11 @@
     "allow_writes": true
   },
   "r2_free_capacity_gb": 10.0,
-  "r2_used_bytes": 8331441559,
-  "r2_used_gb": 8.33,
-  "r2_used_ratio": 83.3,
-  "r2_remaining_gb": 1.67,
-  "r2_remaining_mb": 1668.6,
+  "r2_used_bytes": 8309726340,
+  "r2_used_gb": 8.31,
+  "r2_used_ratio": 83.1,
+  "r2_remaining_gb": 1.69,
+  "r2_remaining_mb": 1690.3,
   "r2_songs_count": 15934,
   "compressed_songs_count": 5738,
   "status_level": "healthy",
