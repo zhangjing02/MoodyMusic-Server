@@ -1794,10 +1794,15 @@ async function playSongAtIndex(index, expectedGen = null) {
     setLoadingState(true);
 
     // 2. 资源可用性预检 (Web Audio API / Data URL 除外)
-    // [V14.2] 本地开发环境音频代理修正
+    // [V14.2] 本地开发环境与第一存储桶 Worker 原生代理映射
     let finalAudioUrl = item.audioUrl;
-    if (finalAudioUrl && !finalAudioUrl.startsWith('http') && window.API_BASE) {
-        finalAudioUrl = `${window.API_BASE}${finalAudioUrl.startsWith('/') ? '' : '/'}${finalAudioUrl}`;
+    const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
+    if (finalAudioUrl && finalAudioUrl.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
+        // 关键核心映射：第一存储桶原生绑定在 Worker /storage/ 路由，通过 Worker 代理分发 100% 具备标准 CORS 且彻底杜绝 CDN 脏缓存
+        const relPath = finalAudioUrl.split('r2.changgepd.ccwu.cc/')[1];
+        finalAudioUrl = `${apiBase}/storage/${relPath}`;
+    } else if (finalAudioUrl && !finalAudioUrl.startsWith('http') && apiBase) {
+        finalAudioUrl = `${apiBase}${finalAudioUrl.startsWith('/') ? '' : '/'}${finalAudioUrl}`;
     }
 
     // [Defense 5] 漫游模式下已通过严格 playableFilter 过滤，跳过 HEAD 网络预检，实现秒级无缝切歌并防止后台 Autoplay 权限超时
@@ -2394,12 +2399,14 @@ async function loadLyrics(item) {
     // 1. 优先尝试从后端返回的静默路径加载
     if (item.lrcPath) {
         let fetchUrl = item.lrcPath;
-        // 兼容云端路径：确保所有相对路径都被正确路由到 /storage/lyrics/
-        if (!fetchUrl.startsWith('http') && !fetchUrl.startsWith('/storage/')) {
-            // 后端存的可能是相对路径，也可能是带 lyrics 前缀的，统一拼接
-            fetchUrl = `${window.API_BASE || ''}/storage/${fetchUrl}`;
+        const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
+        if (fetchUrl.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
+            const relPath = fetchUrl.split('r2.changgepd.ccwu.cc/')[1];
+            fetchUrl = `${apiBase}/storage/${relPath}`;
+        } else if (!fetchUrl.startsWith('http') && !fetchUrl.startsWith('/storage/')) {
+            fetchUrl = `${apiBase}/storage/${fetchUrl}`;
         } else if (fetchUrl.startsWith('/storage/')) {
-            fetchUrl = `${window.API_BASE || ''}${fetchUrl}`;
+            fetchUrl = `${apiBase}${fetchUrl}`;
         }
 
         // 核心修复：增加时间戳防止浏览器强效缓存旧歌词
@@ -3372,7 +3379,13 @@ window.audioPlayer = {
         if (window.RoamingManager && window.RoamingManager.isActive) {
             window.RoamingManager.stop(true);
         }
-        const index = await addToPlaylist(song, artist, album, audioUrl, lyrics);
+        let finalUrl = audioUrl;
+        const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
+        if (finalUrl && finalUrl.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
+            const relPath = finalUrl.split('r2.changgepd.ccwu.cc/')[1];
+            finalUrl = `${apiBase}/storage/${relPath}`;
+        }
+        const index = await addToPlaylist(song, artist, album, finalUrl, lyrics);
         return playSongAtIndex(index); // [Modified] 返回播放结果
     },
     // 播放整张专辑 (纯同步构建播放列表 + 单一入口播放，彻底消除异步竞态窗口)
@@ -3414,11 +3427,18 @@ window.audioPlayer = {
             } else if (playerState.uploadedFiles.has(songName)) {
                 audioUrl = playerState.uploadedFiles.get(songName);
             } else if (songPath) {
+                const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
                 if (songPath.startsWith('http')) {
-                    audioUrl = songPath;
+                    if (songPath.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
+                        const relPath = songPath.split('r2.changgepd.ccwu.cc/')[1];
+                        audioUrl = `${apiBase}/storage/${relPath}`;
+                    } else {
+                        const separator = songPath.includes('?') ? '&' : '?';
+                        audioUrl = `${songPath}${separator}t=${Date.now()}`;
+                    }
                 } else {
                     const encodedPath = songPath.split(/[\\/]/).map(segment => encodeURIComponent(segment)).join('/');
-                    audioUrl = `${window.API_BASE || ''}/storage/${encodedPath}?t=${Date.now()}`;
+                    audioUrl = `${apiBase}/storage/${encodedPath}?t=${Date.now()}`;
                 }
             }
 
