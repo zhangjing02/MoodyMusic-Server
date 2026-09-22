@@ -172,7 +172,7 @@ async function loadR2Stats() {
             total_remaining_gb: +(110.0 - totalUsedGb).toFixed(2),
             total_songs_count: safeLit,
             cluster_status: totalRatio >= 95 ? 'critical' : (totalRatio >= 90 ? 'warning' : 'healthy'),
-            bucket1: makeBucketFallback(1, 'moody-music-asset', '主存储桶 (Bucket 01)', 'r2.changgepd.ccwu.cc'),
+            bucket1: makeBucketFallback(1, 'moody-music-asset', '主存储桶 (Bucket 01)', 'pub-ade3407baf1041b49b5949a2539067f7.r2.dev'),
             bucket2: makeBucketFallback(2, 'moody-music-asset-02', '扩展存储桶 (Bucket 02)', 'pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev'),
             bucket3: makeBucketFallback(3, 'moody-music-asset-03', '第三存储桶 (Bucket 03)', 'pub-383b876c0bb840f6b852946604275232.r2.dev'),
             bucket4: makeBucketFallback(4, 'moody-music-asset-04', '第四存储桶 (Bucket 04)', 'pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev'),
@@ -198,7 +198,7 @@ function normalizeR2Data(raw) {
     }
 
     const bucketMeta = [
-        { id: 1, key: 'account_01', name: 'moody-music-asset', label: '主存储桶 (Bucket 01)', defaultGb: 10.43, defaultCount: 8028, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.43 GB)', url: 'r2.changgepd.ccwu.cc' },
+        { id: 1, key: 'account_01', name: 'moody-music-asset', label: '主存储桶 (Bucket 01)', defaultGb: 10.43, defaultCount: 8028, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.43 GB)', url: 'pub-ade3407baf1041b49b5949a2539067f7.r2.dev' },
         { id: 2, key: 'account_02', name: 'moody-music-asset-02', label: '扩展存储桶 (Bucket 02)', defaultGb: 9.17, defaultCount: 2911, defaultStatus: 'warning', defaultStatusText: '91.7% 预警', url: 'pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev' },
         { id: 3, key: 'account_03', name: 'moody-music-asset-03', label: '第三存储桶 (Bucket 03)', defaultGb: 10.37, defaultCount: 3395, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.37 GB)', url: 'pub-383b876c0bb840f6b852946604275232.r2.dev' },
         { id: 4, key: 'account_04', name: 'moody-music-asset-04', label: '第四存储桶 (Bucket 04)', defaultGb: 10.47, defaultCount: 4025, defaultStatus: 'critical', defaultStatusText: '已超额扣费 (10.47 GB)', url: 'pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev' },

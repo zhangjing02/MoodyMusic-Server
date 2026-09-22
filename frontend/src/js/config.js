@@ -10,7 +10,7 @@
 
     window.MOODY_CONFIG = {
         API_BASE: isExplicitLocal ? 'http://127.0.0.1:8787' : 'https://m-api.changgepd.ccwu.cc',
-        R2_BASE: 'https://r2.changgepd.ccwu.cc'
+        R2_BASE: 'https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev'
     };
     window.API_BASE = window.MOODY_CONFIG.API_BASE;
 })();

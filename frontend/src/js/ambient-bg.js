@@ -15,7 +15,7 @@
     const isLocalHost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const R2_AMBIENT_BASE = (typeof window !== 'undefined' && window.MOODY_CONFIG && window.MOODY_CONFIG.R2_BASE)
         ? `${window.MOODY_CONFIG.R2_BASE}/ambient/`
-        : 'https://r2.changgepd.ccwu.cc/ambient/';
+        : 'https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev/ambient/';
     // 本地开发模式下优先直读本地 assets/video，生产部署直连已剔除频谱的 R2 干净视频
     const VIDEO_BASE = isLocalHost ? 'src/assets/video/' : ((typeof window !== 'undefined' && window.AMBIENT_VIDEO_BASE_URL) || R2_AMBIENT_BASE);
 
@@ -319,7 +319,7 @@
         if (dom.image) {
             dom.image.addEventListener('error', function () {
                 const currentSrc = dom.image.src || '';
-                if (currentSrc.includes('r2.changgepd.ccwu.cc') || currentSrc.includes('ambient')) {
+                if (currentSrc.includes('r2.changgepd.ccwu.cc') || currentSrc.includes('pub-ade3407baf1041b49b5949a2539067f7.r2.dev') || currentSrc.includes('ambient')) {
                     const localFallback = 'src/assets/images/sunset.jpg';
                     console.warn(`[Ambient] 远端日落素材加载受阻，平滑降级至本地资源: ${localFallback}`);
                     dom.image.src = localFallback;
@@ -336,7 +336,7 @@
         if (dom.video) {
             dom.video.addEventListener('error', function () {
                 const currentSrc = dom.video.src || '';
-                if (currentSrc.includes('r2.changgepd.ccwu.cc') || currentSrc.includes('storage/ambient')) {
+                if (currentSrc.includes('r2.changgepd.ccwu.cc') || currentSrc.includes('pub-ade3407baf1041b49b5949a2539067f7.r2.dev') || currentSrc.includes('storage/ambient')) {
                     const filename = currentSrc.split('/').pop().split('?')[0];
                     const localFallback = `src/assets/video/${filename}`;
                     console.warn(`[Ambient] 远端微动素材加载受阻，平滑回退至本地资源: ${localFallback}`);

@@ -1794,15 +1794,19 @@ async function playSongAtIndex(index, expectedGen = null) {
     setLoadingState(true);
 
     // 2. 资源可用性预检 (Web Audio API / Data URL 除外)
-    // [V14.2] 本地开发环境与第一存储桶 Worker 原生代理映射
+    // [V14.2] 本地开发环境相对路径统一代理修正与集群域名规范化
     let finalAudioUrl = item.audioUrl;
+    if (finalAudioUrl && finalAudioUrl.includes('r2.changgepd.ccwu.cc')) {
+        finalAudioUrl = finalAudioUrl.replace('https://r2.changgepd.ccwu.cc', 'https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev');
+    }
     const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
-    if (finalAudioUrl && finalAudioUrl.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
-        // 关键核心映射：第一存储桶原生绑定在 Worker /storage/ 路由，通过 Worker 代理分发 100% 具备标准 CORS 且彻底杜绝 CDN 脏缓存
-        const relPath = finalAudioUrl.split('r2.changgepd.ccwu.cc/')[1];
-        finalAudioUrl = `${apiBase}/storage/${relPath}`;
-    } else if (finalAudioUrl && !finalAudioUrl.startsWith('http') && apiBase) {
+    if (finalAudioUrl && !finalAudioUrl.startsWith('http') && apiBase) {
         finalAudioUrl = `${apiBase}${finalAudioUrl.startsWith('/') ? '' : '/'}${finalAudioUrl}`;
+    }
+    // 统一为所有直连音频注入时间戳，强力击穿 CDN 历史跨域头缺失脏缓存
+    if (finalAudioUrl && finalAudioUrl.startsWith('http') && !finalAudioUrl.includes('?t=') && !finalAudioUrl.includes('&t=')) {
+        const separator = finalAudioUrl.includes('?') ? '&' : '?';
+        finalAudioUrl = `${finalAudioUrl}${separator}t=${Date.now()}`;
     }
 
     // [Defense 5] 漫游模式下已通过严格 playableFilter 过滤，跳过 HEAD 网络预检，实现秒级无缝切歌并防止后台 Autoplay 权限超时
@@ -1844,16 +1848,6 @@ async function playSongAtIndex(index, expectedGen = null) {
             setLoadingState(false);
             console.log(`[Race Guard] Generation mismatch after retry, aborting "${item.song}"`);
             return false;
-        }
-    }
-
-    if (!isAvailable) {
-        // [Dual-Channel Fallback] 若直连自定义域名受阻，自动无缝降级回退至 Worker 代理通道
-        if (finalAudioUrl.includes('r2.changgepd.ccwu.cc/music/') && window.API_BASE) {
-            const fallbackUrl = finalAudioUrl.replace('https://r2.changgepd.ccwu.cc/music/', `${window.API_BASE}/storage/music/`);
-            console.warn(`[Dual-Channel] 直连预检未通，自动降级为 Worker 代理通道: ${fallbackUrl}`);
-            finalAudioUrl = fallbackUrl;
-            isAvailable = true;
         }
     }
 
@@ -1969,28 +1963,6 @@ async function playSongAtIndex(index, expectedGen = null) {
         }
 
         console.error('播放失败 (Play Promise Reject):', err);
-
-        // [Dual-Channel Retry on Play Reject]
-        if (err.name !== 'NotAllowedError' && finalAudioUrl.includes('r2.changgepd.ccwu.cc/music/') && window.API_BASE && !item._fallbackTried) {
-            item._fallbackTried = true;
-            const fallbackUrl = finalAudioUrl.replace('https://r2.changgepd.ccwu.cc/music/', `${window.API_BASE}/storage/music/`);
-            console.warn(`[Dual-Channel] 直连起播异常 (${err.message})，无缝降级重试 Worker 通道: ${fallbackUrl}`);
-            player.audio.src = fallbackUrl;
-            try {
-                await player.audio.play();
-                if (myGeneration === _playGeneration) {
-                    setLoadingState(false);
-                    playerState.isPlaying = true;
-                    updatePlayPauseButton();
-                    updatePlaylistActive(index);
-                    loadLyrics(item);
-                    updateAlbumViewActiveState(item.song, item.artist);
-                    return true;
-                }
-            } catch (fallbackErr) {
-                console.error('[Dual-Channel] Worker 代理降级重试亦失败:', fallbackErr);
-            }
-        }
 
         if (err.name === 'NotAllowedError') {
             showNotification('浏览器限制自动播放，请手动点击播放按钮');
@@ -2399,11 +2371,11 @@ async function loadLyrics(item) {
     // 1. 优先尝试从后端返回的静默路径加载
     if (item.lrcPath) {
         let fetchUrl = item.lrcPath;
+        if (fetchUrl.includes('r2.changgepd.ccwu.cc')) {
+            fetchUrl = fetchUrl.replace('https://r2.changgepd.ccwu.cc', 'https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev');
+        }
         const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
-        if (fetchUrl.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
-            const relPath = fetchUrl.split('r2.changgepd.ccwu.cc/')[1];
-            fetchUrl = `${apiBase}/storage/${relPath}`;
-        } else if (!fetchUrl.startsWith('http') && !fetchUrl.startsWith('/storage/')) {
+        if (!fetchUrl.startsWith('http') && !fetchUrl.startsWith('/storage/')) {
             fetchUrl = `${apiBase}/storage/${fetchUrl}`;
         } else if (fetchUrl.startsWith('/storage/')) {
             fetchUrl = `${apiBase}${fetchUrl}`;
@@ -3380,10 +3352,12 @@ window.audioPlayer = {
             window.RoamingManager.stop(true);
         }
         let finalUrl = audioUrl;
-        const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
-        if (finalUrl && finalUrl.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
-            const relPath = finalUrl.split('r2.changgepd.ccwu.cc/')[1];
-            finalUrl = `${apiBase}/storage/${relPath}`;
+        if (finalUrl && finalUrl.includes('r2.changgepd.ccwu.cc')) {
+            finalUrl = finalUrl.replace('https://r2.changgepd.ccwu.cc', 'https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev');
+        }
+        if (finalUrl && finalUrl.startsWith('http') && !finalUrl.includes('?t=') && !finalUrl.includes('&t=')) {
+            const separator = finalUrl.includes('?') ? '&' : '?';
+            finalUrl = `${finalUrl}${separator}t=${Date.now()}`;
         }
         const index = await addToPlaylist(song, artist, album, finalUrl, lyrics);
         return playSongAtIndex(index); // [Modified] 返回播放结果
@@ -3429,13 +3403,12 @@ window.audioPlayer = {
             } else if (songPath) {
                 const apiBase = window.API_BASE || window.MOODY_CONFIG?.API_BASE || '';
                 if (songPath.startsWith('http')) {
-                    if (songPath.includes('r2.changgepd.ccwu.cc/music/') && apiBase) {
-                        const relPath = songPath.split('r2.changgepd.ccwu.cc/')[1];
-                        audioUrl = `${apiBase}/storage/${relPath}`;
-                    } else {
-                        const separator = songPath.includes('?') ? '&' : '?';
-                        audioUrl = `${songPath}${separator}t=${Date.now()}`;
+                    let normalizedPath = songPath;
+                    if (normalizedPath.includes('r2.changgepd.ccwu.cc')) {
+                        normalizedPath = normalizedPath.replace('https://r2.changgepd.ccwu.cc', 'https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev');
                     }
+                    const separator = normalizedPath.includes('?') ? '&' : '?';
+                    audioUrl = `${normalizedPath}${separator}t=${Date.now()}`;
                 } else {
                     const encodedPath = songPath.split(/[\\/]/).map(segment => encodeURIComponent(segment)).join('/');
                     audioUrl = `${apiBase}/storage/${encodedPath}?t=${Date.now()}`;
