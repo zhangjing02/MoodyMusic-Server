@@ -1,0 +1,960 @@
+[
+  {
+    "artist_name": "刘若英",
+    "avatar_url": "http://p2.music.126.net/lkPWuNPoa9ood4pJiXURxA==/109951167974416547.jpg",
+    "albums": [
+      {
+        "title": "少女小渔刘若英的美丽与哀愁",
+        "year": "1995",
+        "cover_url": "http://p1.music.126.net/93EuJJjrzqBQJkXmC-j77g==/18632324046199359.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "游子",
+          "决定",
+          "为爱痴狂",
+          "思念",
+          "决定(电影版)"
+        ]
+      },
+      {
+        "title": "雨季",
+        "year": "1995",
+        "cover_url": "http://p2.music.126.net/PFGNZvjS4WEOAXfVwYiEWA==/109951163076145819.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "打了一把钥匙给你",
+          "雨季",
+          "蒲公英",
+          "骂你",
+          "Monica",
+          "男人的皮衣",
+          "歌词给我",
+          "背影",
+          "单车失窃记",
+          "说话"
+        ]
+      },
+      {
+        "title": "到处乱走",
+        "year": "1996",
+        "cover_url": "http://p1.music.126.net/WsPrkFk0RRPY4zyzdnXCqA==/109951163076134964.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "到处乱走",
+          "爱人说话",
+          "门的声音(伴奏)",
+          "墨镜",
+          "小精灵",
+          "玫瑰天空",
+          "失恋Party",
+          "阁楼",
+          "门",
+          "H.K."
+        ]
+      },
+      {
+        "title": "很爱很爱你",
+        "year": "1998",
+        "cover_url": "http://p2.music.126.net/xWLy-QXDjiHe5gU8w-Ndww==/109951165694162222.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "很爱很爱你",
+          "花季未了",
+          "Flying",
+          "好久好久",
+          "最初的地方",
+          "透明",
+          "你说的对",
+          "梦童",
+          "距离",
+          "多个朋友",
+          "为爱痴狂",
+          "决定",
+          "打了一把钥匙给你"
+        ]
+      },
+      {
+        "title": "我等你",
+        "year": "2000",
+        "cover_url": "http://p2.music.126.net/eBF7bHnJYBUfOFrJ_7SUfw==/109951163351825356.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "我等你",
+          "后来",
+          "Love",
+          "对白",
+          "坦白",
+          "人之初",
+          "不想回家",
+          "比朋友多一点",
+          "左岸",
+          "序曲",
+          "四月天"
+        ]
+      },
+      {
+        "title": "年华",
+        "year": "2001",
+        "cover_url": "http://p2.music.126.net/7O6b7GhKZhjPHkw5J3LF8w==/109951163351828303.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "成全",
+          "遗忘的城市",
+          "我曾爱过一个男孩",
+          "年华",
+          "对面男生的房间",
+          "点亮橘子树",
+          "忘了",
+          "秘密",
+          "傍晚",
+          "勇敢"
+        ]
+      },
+      {
+        "title": "收获 新歌+精选",
+        "year": "2001",
+        "cover_url": "http://p1.music.126.net/nSCOYgdN2yo1e-NdQWa4CQ==/18511377767232313.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "Action(双瞳拍摄现场) (live)",
+          "收获",
+          "Airport(2000Tokyo)",
+          "I Believe",
+          "为爱痴狂",
+          "很爱很爱你",
+          "光良与奶茶对Key(1999滚石)",
+          "我等你",
+          "透明",
+          "Home(2001.5.30自家)",
+          "打了一把钥匙给你",
+          "决定",
+          "Vocal Class(1998纽约)",
+          "成全",
+          "后来",
+          "What Should I Do?(对白)",
+          "玫瑰天空",
+          "Seashore(1997地中海)",
+          "人之初",
+          "Concert(Live)",
+          "说话",
+          "对面男生的房间",
+          "花季未了",
+          "游子"
+        ]
+      },
+      {
+        "title": "Love and the City",
+        "year": "2002",
+        "cover_url": "http://p1.music.126.net/ZaPCRIUN5tnUoBzO8xlTvw==/109951169530667832.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "一辈子的孤单",
+          "当爱在靠近",
+          "说你永远都不离开我",
+          "孤寂",
+          "她的温柔",
+          "说",
+          "滤过性病毒",
+          "明年此时",
+          "如果我有一双翅膀",
+          "一切"
+        ]
+      },
+      {
+        "title": "我的失败与伟大",
+        "year": "2003",
+        "cover_url": "http://p2.music.126.net/sfKGmL7CfFVIExuzeRga7Q==/109951165895407475.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "我的失败与伟大",
+          "分开旅行",
+          "开始的那句话",
+          "原来你也在这里",
+          "换我先吻你",
+          "我的眼前的幸福",
+          "什么时候",
+          "如何让你懂",
+          "似水年华",
+          "下楼谈恋爱",
+          "蝴蝶",
+          "时代的序曲(钢琴独奏)",
+          "等待与追寻(钢琴独奏)",
+          "时代是沉默的(钢琴独奏)",
+          "无涯的荒野(钢琴独奏)",
+          "千万人之中(钢琴独奏)",
+          "你也在这里吗(钢琴独奏)"
+        ]
+      },
+      {
+        "title": "听说？",
+        "year": "2004",
+        "cover_url": "http://p1.music.126.net/KCd4hMMtQlIdRQiri_xAMw==/19041342369973170.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "20??长岛黄昏",
+          "轻？",
+          "幸福的路？",
+          "听！是谁在唱歌？",
+          "听说？",
+          "It Must Be？",
+          "没道理？",
+          "阴谋？",
+          "那天？",
+          "最亮的星光？",
+          "知道不知道？"
+        ]
+      },
+      {
+        "title": "一整夜",
+        "year": "2005",
+        "cover_url": "http://p1.music.126.net/eu1_E_HH2slOKwTZQ_irXA==/109951173218358963.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "序",
+          "黄昏以后 天亮以前",
+          "光",
+          "一次幸福的机会",
+          "学习忘记",
+          "24楼",
+          "只怪我自己",
+          "别人",
+          "一万遍",
+          "越爱越美丽",
+          "不怕死",
+          "飞行中的思念",
+          "待续"
+        ]
+      },
+      {
+        "title": "我很好",
+        "year": "2008",
+        "cover_url": "http://p1.music.126.net/75pjaL13K4T0RkQ_6oM5WA==/109951167901096570.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "我很好",
+          "熊",
+          "落跑新娘",
+          "给你",
+          "还是一样",
+          "栀子花",
+          "静静坐着",
+          "口香糖",
+          "12月3日，北京",
+          "训练",
+          "不能跟情人说的话"
+        ]
+      },
+      {
+        "title": "在一起",
+        "year": "2010",
+        "cover_url": "http://p1.music.126.net/DCDZ3p4e28doEbQJZNmHmA==/109951168165472932.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "继续-给十五岁的自己",
+          "我们没有在一起",
+          "我不想念",
+          "风和日丽",
+          "直接",
+          "好强",
+          "他为你夹菜",
+          "长椅",
+          "你不要送花给我",
+          "同桌的你"
+        ]
+      },
+      {
+        "title": "亲爱的路人",
+        "year": "2013",
+        "cover_url": "http://p2.music.126.net/UHRbpbqGfD8Twxgbm1q97g==/109951168147129350.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "亲爱的路人",
+          "遗忘的都回来了",
+          "幸福就是",
+          "我在想你的时候睡着了",
+          "Can't Stop",
+          "Yes I Do",
+          "我的敌人",
+          "幸福不是情歌",
+          "跳车",
+          "彼得潘",
+          "满满",
+          "不朽"
+        ]
+      },
+      {
+        "title": "各自安好",
+        "year": "2021",
+        "cover_url": "http://p2.music.126.net/mR6IxS-s46t4_3DVUJbErg==/109951167997206312.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "各自安好",
+          "所有相爱的人啊 (祝福版)",
+          "飞行日",
+          "黄金年代",
+          "人",
+          "诚实",
+          "不营业的日常",
+          "所有相爱的人啊 (热情版)",
+          "旁白人生",
+          "依偎",
+          "今天我生日"
+        ]
+      }
+    ]
+  },
+  {
+    "artist_name": "小虎队",
+    "avatar_url": "http://p1.music.126.net/voZEMSHx4W23weBI_fu4cA==/109951170501514593.jpg",
+    "albums": [
+      {
+        "title": "新年快乐",
+        "year": "1989",
+        "cover_url": "http://p1.music.126.net/s_71yG6rMSyxEbhhnrrG8w==/109951172027755684.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "新年快乐",
+          "青苹果乐园",
+          "在雨中走过",
+          "和你走在阳光下",
+          "彩色天空彩色梦",
+          "滴答我的爱",
+          "我要恋爱",
+          "梦中的彼得潘",
+          "你是我幼稚的情人",
+          "偶然"
+        ]
+      },
+      {
+        "title": "逍遥游",
+        "year": "1989",
+        "cover_url": "http://p2.music.126.net/RAjmANMkQyxVznGY_TcHuQ==/109951172036100853.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "逍遥游",
+          "燃烧青春火焰",
+          "你的眼睛下着雨",
+          "爱情变化球",
+          "季节改变",
+          "今天看我",
+          "我的爱正年轻",
+          "探险风筝",
+          "星星宝贝",
+          "今天看我(伴唱曲)"
+        ]
+      },
+      {
+        "title": "男孩不哭",
+        "year": "1989",
+        "cover_url": "http://p1.music.126.net/WB1buaiNtljpjR-tb7XezA==/109951172027754290.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "男孩不哭",
+          "热雷雨",
+          "嘿!你写日记吗？",
+          "做我的新舞伴吧",
+          "我的烦恼",
+          "年轻的英雄",
+          "改变你",
+          "我想先离开",
+          "砂丘魔堡",
+          "男孩不哭(伴唱曲)"
+        ]
+      },
+      {
+        "title": "红蜻蜓",
+        "year": "1990",
+        "cover_url": "http://p2.music.126.net/Fa4DPw_f9ioW68FmSqZbMA==/109951172027760101.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "红蜻蜓",
+          "打开你的门",
+          "最爱你哭泣时的眼睛",
+          "我的舞伴名字叫做风",
+          "让我牵着你的手",
+          "游侠儿",
+          "周末嘉年华",
+          "为了你我会做到",
+          "没有做不到的事",
+          "骊歌",
+          "骊歌(儿童版)"
+        ]
+      },
+      {
+        "title": "星星的约会",
+        "year": "1990",
+        "cover_url": "http://p2.music.126.net/NOQtWNI_qwExPrgHbcU5FQ==/109951172036098488.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "星星的约会",
+          "叫你一声My Love",
+          "最想你的时候",
+          "唱我最爱的歌给你听",
+          "发动我的青春",
+          "爱我就跟我走",
+          "青春期的故事",
+          "你的笑容是我温暖的所有",
+          "让我送你回家",
+          "不要让眼泪流在心里面"
+        ]
+      },
+      {
+        "title": "爱",
+        "year": "1991",
+        "cover_url": "http://p1.music.126.net/JxLzpM6FFUzaK287cnAZGA==/109951172006855343.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "蝴蝶飞呀",
+          "天天想我",
+          "从今天起",
+          "让爱跟着青春走",
+          "是我伤了你的心",
+          "爱",
+          "为梦想找一个家",
+          "我爱你到永远",
+          "青春狂想曲",
+          "属于我属于你",
+          "蝴蝶飞呀演奏"
+        ]
+      },
+      {
+        "title": "再见",
+        "year": "1991",
+        "cover_url": "http://p1.music.126.net/2OVKTai60LQ33E1D6rU0Hw==/109951172024603923.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "再见",
+          "不要难过",
+          "把心给你",
+          "say good bye , my friend",
+          "我要对你说谢谢",
+          "放心去飞",
+          "思念就像一首歌",
+          "冷冷的太阳",
+          "未来的战士",
+          "骊歌 (说好这次不掉眼泪)"
+        ]
+      },
+      {
+        "title": "星光依旧灿烂",
+        "year": "1993",
+        "cover_url": "http://p2.music.126.net/s0m24tVokChg6YAhRoLNyg==/109951172024591125.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "星光依旧灿烂",
+          "最爱是你",
+          "意乱情迷",
+          "我的心你一定看得见",
+          "请不要将眼泪往心里藏",
+          "永远",
+          "天地一沙鸥",
+          "好久没有人爱我",
+          "Loving you",
+          "星光依旧灿烂kala"
+        ]
+      },
+      {
+        "title": "快乐的感觉永远一样",
+        "year": "1994",
+        "cover_url": "http://p1.music.126.net/fsGV2iw8NYl6p0cxh4JHQA==/109951172027769113.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "快乐的感觉永远一样",
+          "CRAZY FOR YOU",
+          "爱我吧",
+          "暖暖我的手",
+          "真我",
+          "天堂海",
+          "好聚好散",
+          "冷咖啡",
+          "觉醒",
+          "快乐的感觉(伴奏)"
+        ]
+      },
+      {
+        "title": "庸人自扰",
+        "year": "1995",
+        "cover_url": "http://p1.music.126.net/xvTrC78eKUgKvNRc3sEZ8A==/109951172036105212.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "庸人自扰",
+          "分一点梦给他们",
+          "深爱着你",
+          "做你的天",
+          "如梦初醒",
+          "难得知心的朋友",
+          "一生梦一生狂",
+          "为了爱东奔西走",
+          "痴心妄想",
+          "庸人自扰(伴奏)"
+        ]
+      }
+    ]
+  },
+  {
+    "artist_name": "谭维维",
+    "avatar_url": "http://p2.music.126.net/CfxqOLswiU8APLIxo0pCPw==/109951165761619079.jpg",
+    "albums": [
+      {
+        "title": "高原之心",
+        "year": "2005",
+        "cover_url": "http://p2.music.126.net/YplZfoM1sWw9sWMgRwS5kA==/109951165623517137.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "高原之心",
+          "康定情歌与溜溜调",
+          "神鹰传说",
+          "走进西藏",
+          "阿娃兹古丽",
+          "海市蜃楼",
+          "永远的那达慕",
+          "牧歌",
+          "乌兰巴托之夜",
+          "康定情歌与溜溜调(采风版)"
+        ]
+      },
+      {
+        "title": "耳界",
+        "year": "2007",
+        "cover_url": "http://p1.music.126.net/iNTmIXma5_cs39LjjnkQDA==/109951173388739093.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "蝶",
+          "钢琴",
+          "做错",
+          "不穿高跟鞋",
+          "视而不见",
+          "爱的光",
+          "达子的春天",
+          "也许也许",
+          "向日葵",
+          "雪落下的声音",
+          "传说"
+        ]
+      },
+      {
+        "title": "传说",
+        "year": "2009",
+        "cover_url": "http://p1.music.126.net/IwdTxxnbgaGfy_Yd7X8SqA==/794946906882299.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "蝴蝶的翅膀",
+          "阿爸(原创)",
+          "传说(原创)",
+          "高原红",
+          "我要和你去飞翔(原创)",
+          "洗衣歌",
+          "梦中的唐古拉",
+          "献歌阿妈的歌",
+          "走进西藏",
+          "天路",
+          "梦中的绿洲",
+          "花的海洋",
+          "四姑娘山下雪了吗"
+        ]
+      },
+      {
+        "title": "谭某某",
+        "year": "2010",
+        "cover_url": "http://p2.music.126.net/V1oiaFl104PH0yuHLCKVuQ==/109951163061827624.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "如果有来生",
+          "如果你",
+          "Fight",
+          "离去之前叫醒我",
+          "悲哀而真实",
+          "石头在歌唱",
+          "匹诺曹",
+          "谭某某",
+          "21克",
+          "离去之前叫醒我(合作版本)"
+        ]
+      },
+      {
+        "title": "3",
+        "year": "2011",
+        "cover_url": "http://p1.music.126.net/bSGkNcNP65LWqxE78Vju0Q==/112150186046536.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "我是怎么了",
+          "想见",
+          "Hold不住",
+          "尘埃",
+          "睡吧 宝贝",
+          "演",
+          "艳阳天",
+          "在那遥远的地方",
+          "我",
+          "开放"
+        ]
+      },
+      {
+        "title": "乌龟的阿基里斯",
+        "year": "2013",
+        "cover_url": "http://p1.music.126.net/YTVQwbTQ2993IhSiu6L8tA==/5740550208727843.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "序+Intro",
+          "拥抱",
+          "玩耍",
+          "恶之花",
+          "树",
+          "我反对",
+          "什么",
+          "墙",
+          "黑则明",
+          "为什么",
+          "当",
+          "Ich Liebe Dich (德语：我爱你)",
+          "天堂口处莲花开",
+          "拥抱 (London Version)"
+        ]
+      },
+      {
+        "title": "3811",
+        "year": "2020",
+        "cover_url": "http://p2.music.126.net/rq6aPsVhut32Y8f2r-dvBg==/109951165531515215.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "章存仙",
+          "鱼玄机",
+          "阿果",
+          "吴春芳",
+          "如花",
+          "钱夫人",
+          "赵桂灵",
+          "卡利",
+          "小娟 ( 化名 )",
+          "ཏཱ་རེ་མ།(Tare Ma)",
+          "谭艳梅"
+        ]
+      },
+      {
+        "title": "姐放3811",
+        "year": "2020",
+        "cover_url": "http://p2.music.126.net/rbxEsmQRvZ5MW_cJ7f-4dQ==/109951165385915718.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "吴春芳",
+          "如花",
+          "钱夫人",
+          "赵桂灵",
+          "卡利"
+        ]
+      }
+    ]
+  },
+  {
+    "artist_name": "林志炫",
+    "avatar_url": "http://p1.music.126.net/V0TLPlWSkpFuZPsbDBJv1w==/109951173481193938.jpg",
+    "albums": [
+      {
+        "title": "一个人的样子",
+        "year": "1995",
+        "cover_url": "http://p2.music.126.net/im2Rh8PMj_KJtA1o5nLqFA==/109951173971426126.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "你的样子",
+          "心痛的感觉",
+          "你是我前世的知己",
+          "我愿意",
+          "哭砂",
+          "爱情终究是一场难圆的梦",
+          "告别忧伤",
+          "关于离别",
+          "飞",
+          "从来不肯对你说",
+          "喜欢你现在的样子",
+          "如果你不小心想起我"
+        ]
+      },
+      {
+        "title": "追寻伦敦星空下",
+        "year": "1996",
+        "cover_url": "http://p1.music.126.net/MVxAcRIXJTA7IaJxem2xgA==/109951165625498902.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "追寻(Edit version)",
+          "认错",
+          "天天天蓝",
+          "玫瑰人生",
+          "一样的月光",
+          "台北的天空",
+          "月琴",
+          "酒后的心声",
+          "其实你不懂我的心",
+          "好久",
+          "味道",
+          "追寻(Searching)"
+        ]
+      },
+      {
+        "title": "散了吧",
+        "year": "1997",
+        "cover_url": "http://p1.music.126.net/gFJJ1KJYCOLKyHkZLPXRvA==/109951165958806477.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "懂事",
+          "现在我这么想",
+          "散了吧",
+          "一个人走",
+          "让爱作主",
+          "一个人一颗心",
+          "失而复得",
+          "暗恋你",
+          "爱我",
+          "后悔的浪",
+          "穷途末路",
+          "妥协",
+          "怎么办 (Live)",
+          "More Than Words (Live)",
+          "Love Will Keep Us Alive (Live)"
+        ]
+      },
+      {
+        "title": "蒙娜丽莎的眼泪",
+        "year": "1998",
+        "cover_url": "http://p1.music.126.net/jBhwYKdwfyZE4a_-8pQm3A==/109951165958883767.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "Coming Home",
+          "蒙娜丽莎的眼泪",
+          "蜘蛛",
+          "我的眼留下你的泪",
+          "这就是爱",
+          "拆穿",
+          "给你一些不给一些",
+          "Miss Mama",
+          "互动",
+          "多一点少一点",
+          "冬",
+          "总有"
+        ]
+      },
+      {
+        "title": "单身情歌 超炫精选",
+        "year": "1999",
+        "cover_url": "http://p2.music.126.net/uUbc7XBIK_GRHWGwxdGtSw==/109951168750937805.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "单身情歌",
+          "散了吧",
+          "每天想你一遍",
+          "相爱的最后一天",
+          "给你一些不给一些",
+          "有些女人不能碰",
+          "蒙娜丽莎的眼泪",
+          "现在我这么想",
+          "放手",
+          "懂事",
+          "认错",
+          "句点",
+          "和未来有约",
+          "和未来有约(伴奏)",
+          "Open Your Eyes",
+          "我也不想这样",
+          "怎么办",
+          "征服",
+          "Miss Mama",
+          "More Than Words",
+          "Love will Keep Us Alive"
+        ]
+      },
+      {
+        "title": "擦声而过",
+        "year": "2001",
+        "cover_url": "http://p2.music.126.net/G8tO19vYa6DdLj6qo7kNBg==/109951165625494109.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "离人",
+          "爱情酿的酒",
+          "花房姑娘",
+          "袖手旁观",
+          "三个人的晚餐",
+          "玫瑰花瓣的信笺",
+          "野百合也有春天",
+          "温柔的拒绝",
+          "不要问",
+          "写一首歌"
+        ]
+      },
+      {
+        "title": "时间的味道",
+        "year": "2002",
+        "cover_url": "http://p2.music.126.net/eI35fpn-vnMcjup4zIRVHw==/109951164591251355.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "时间的味道",
+          "如果不是因为你",
+          "心上",
+          "许愿池",
+          "光荣纪念日",
+          "大人物",
+          "晕眩",
+          "往事借过",
+          "预购自由",
+          "对的爱",
+          "只为你唱"
+        ]
+      },
+      {
+        "title": "至情志炫",
+        "year": "2004",
+        "cover_url": "http://p1.music.126.net/_fp2oc8kfagTbDsyiVnXOw==/109951165625492701.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "蒙娜丽莎的眼泪(Live)",
+          "阳光赶快来(Live)",
+          "快乐老家 (Live)",
+          "离人 (Live)",
+          "秋意浓 (Live)",
+          "Miss Mama (Live)",
+          "Ocean Deep (Live)",
+          "Too Much Heaven (Live)",
+          "大人物 (Live)",
+          "我的眼流下你的泪 (Live)",
+          "漂鸟 (Live)",
+          "Just For You (Live)",
+          "只为你唱 (Live)",
+          "你的样子 (Live)",
+          "如果不是因为你 (Live)",
+          "输了你赢了世界又如何 (Live)",
+          "单身情歌 (Live)",
+          "认错 (Live)",
+          "每天想你一遍 (Live)",
+          "散了吧 (Live)"
+        ]
+      },
+      {
+        "title": "熟情歌",
+        "year": "2005",
+        "cover_url": "http://p1.music.126.net/q8sMUt40nmAJhq0XIpZZwQ==/109951165625496184.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "消失的年代",
+          "说不出的告别",
+          "幸福公路",
+          "熟男情歌",
+          "我们还是朋友吗",
+          "一念之间",
+          "鳄鱼的眼泪",
+          "眼睛不听话",
+          "时光倒流",
+          "凤凰花开的路口",
+          "我希望",
+          "说不出的告别(钢琴版)"
+        ]
+      },
+      {
+        "title": "原声之旅",
+        "year": "2005",
+        "cover_url": "http://p1.music.126.net/QELVqTjUL0gqXsheobpTcQ==/109951168750942680.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "走了",
+          "进退两难",
+          "出嫁",
+          "邂逅",
+          "让爱做主",
+          "你的愁 我的梦",
+          "Fire",
+          "漂鸟",
+          "输了你 赢了世界又如何",
+          "暗恋你",
+          "时机",
+          "进退两难Ⅱ",
+          "别以为我不会走",
+          "我的歌我的心"
+        ]
+      },
+      {
+        "title": "擦声而过 2",
+        "year": "2008",
+        "cover_url": "http://p2.music.126.net/0sQg1Lenm70hbG9Zbvi7QA==/109951164591921310.jpg",
+        "is_hot": true,
+        "genre": "大热流行",
+        "songs": [
+          "She's Gone (中文版)",
+          "你是我所有的回忆",
+          "离人",
+          "落叶归根",
+          "记得",
+          "从开始到现在",
+          "离歌",
+          "没离开过",
+          "Take a Bow",
+          "The Power of Love",
+          "Making Love Out of Nothing at All",
+          "She's Gone",
+          "I Surrender"
+        ]
+      },
+      {
+        "title": "ONEtake 2.0",
+        "year": "2020",
+        "cover_url": "http://p1.music.126.net/YAmRIFc52lLf9hwJDTvbgg==/109951165418617737.jpg",
+        "is_hot": false,
+        "genre": "华语流行",
+        "songs": [
+          "Writing’s On The Wall",
+          "你是我左边的风景",
+          "Feeling Good",
+          "你永远不知道",
+          "I Can Wait Forever",
+          "一夜狂欢",
+          "When October Goes",
+          "香水",
+          "Easy Lover",
+          "谁可改变",
+          "One of These Nights",
+          "瞬间永恒",
+          "Somebody To Love"
+        ]
+      }
+    ]
+  }
+]
