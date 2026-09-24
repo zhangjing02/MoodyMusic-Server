@@ -81,3 +81,8 @@ database/
 r2_all_mp3_keys.json
 r2_historical_pending_found.json
 d1_lit_songs_659.json
+reports/
+sparse_*.json
+twins_*.json
+full_divas_*.json
+data/

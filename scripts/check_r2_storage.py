@@ -45,7 +45,7 @@ CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 R2_FREE_CAPACITY_BYTES = 10 * 1000 * 1000 * 1000  # 10.00 GB
 WARN_THRESHOLD_PERCENT = 90.0                      # 9.00 GB 预警线
 CRITICAL_THRESHOLD_PERCENT = 95.0                  # 9.50 GB 熔断封箱线
-TOTAL_BUCKETS_COUNT = 11
+TOTAL_BUCKETS_COUNT = 12
 
 def format_bytes(bytes_val):
     for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
@@ -170,7 +170,7 @@ def check_storage(verbose=False):
     total_r2_count = 0
 
     bucket_metas = [
-        (1,  "account_01", "moody-music-asset",    "主存储桶 (Bucket 01)",  "r2.changgepd.ccwu.cc"),
+        (1,  "account_01", "moody-music-asset",    "主存储桶 (Bucket 01)",  "pub-ade3407baf1041b49b5949a2539067f7.r2.dev"),
         (2,  "account_02", "moody-music-asset-02", "扩展存储桶 (Bucket 02)", "pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev"),
         (3,  "account_03", "moody-music-asset-03", "第三存储桶 (Bucket 03)", "pub-383b876c0bb840f6b852946604275232.r2.dev"),
         (4,  "account_04", "moody-music-asset-04", "第四存储桶 (Bucket 04)", "pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev"),
@@ -181,6 +181,7 @@ def check_storage(verbose=False):
         (9,  "account_09", "moody-music-asset-09", "第九存储桶 (Bucket 09)", "pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev"),
         (10, "account_10", "moody-music-asset-10", "第十存储桶 (Bucket 10)", "pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev"),
         (11, "account_11", "moody-music-asset-11", "第十一存储桶 (Bucket 11)", "pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev"),
+        (12, "account_12", "moody-music-asset-12", "第十二存储桶 (Bucket 12)", "pub-c570096b51724b82ab294c0381b0f1c3.r2.dev"),
     ]
 
     for b_id, b_key, b_name, b_label, b_url in bucket_metas:
@@ -213,7 +214,7 @@ def check_storage(verbose=False):
         elif used_ratio >= WARN_THRESHOLD_PERCENT:
             status_level = 'warning'
             status_text = f'⚠️ 容量预警 ({used_ratio}%)'
-        elif not allow_writes or status_cfg == 'frozen_readonly':
+        elif status_cfg == 'frozen_readonly':
             status_level = 'warning' if used_ratio >= 80.0 else 'healthy'
             status_text = f'🔒 只读归档 ({used_ratio}%)'
         elif status_cfg == 'active_write':
@@ -263,7 +264,7 @@ def check_storage(verbose=False):
 
     stats_data = {
         'updated_at': time.strftime('%Y-%m-%d %H:%M:%S'),
-        'cluster_mode': 'hendeca_bucket',
+        'cluster_mode': 'dodeca_bucket',
         'total_free_capacity_gb': float(TOTAL_BUCKETS_COUNT * 10.0),
         'total_used_gb': round(total_r2_bytes / (1000 ** 3), 2),
         'total_used_ratio': cluster_ratio,
@@ -274,8 +275,8 @@ def check_storage(verbose=False):
         'safety_valve_active': safety_active,
         'safety_valve_reason': safety_reason if safety_active else '',
         'active_write_bucket': 'moody-music-asset-11 (第十一桶主力写入)',
-        'standby_bucket': '第10桶备用，前九桶已安全封箱/降温归档 (防止扣费)',
-        'compression_policy': '160 kbps CBR (十一桶集群十进制计量已启用)',
+        'standby_bucket': '第10、12桶备用，前九桶已安全封箱/降温归档 (防止扣费)',
+        'compression_policy': '160 kbps CBR (十二桶集群十进制计量已启用)',
 
         # 各存储桶
         **bucket_stats,
@@ -290,7 +291,7 @@ def check_storage(verbose=False):
         'r2_songs_count': total_r2_count,
         'compressed_songs_count': 5738,
         'status_level': cluster_status,
-        'status_text': f'十一桶集群十进制计量已校准 (总用量 {cluster_ratio:.1f}%)',
+        'status_text': f'十二桶集群十进制计量已校准 (总用量 {cluster_ratio:.1f}%)',
         'local_pending_songs': 0,
         'local_pending_mb': 0.0,
         'local_disk_mp3_count': 0,
@@ -322,7 +323,7 @@ def check_storage(verbose=False):
             timeout=8
         )
         if verbose and r_sync.status_code == 200:
-            print("🚀 [D1 云端同步] 十一桶最新物理指标已成功持久化至 D1 app_settings")
+            print("🚀 [D1 云端同步] 十二桶最新物理指标已成功持久化至 D1 app_settings")
     except Exception as e_sync:
         if verbose:
             print(f"⚠️ [D1 云端同步异常] {e_sync}")
@@ -330,7 +331,7 @@ def check_storage(verbose=False):
     # 5. 打印专业控制台体检报告
     if verbose or __name__ == "__main__":
         print("\n" + "=" * 90)
-        print("📊 MOODY - Cloudflare R2 十一存储桶集群商业计费实时监控报告 (Hendeca-Bucket Hub)")
+        print("📊 MOODY - Cloudflare R2 十二存储桶集群商业计费实时监控报告 (Dodeca-Bucket Hub)")
         print(f"⏰ 采样校准时间: {time.strftime('%Y-%m-%d %H:%M:%S')} (标准十进制 GB: 1 GB = 1,000,000,000 字节)")
         print("=" * 90)
         print(f"{'存储桶':<22} | {'对象总数':<8} | {'真实用量 (GB)':<14} | {'额度占比':<10} | {'当前状态'}")

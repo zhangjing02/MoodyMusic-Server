@@ -479,7 +479,7 @@
                             <div>
                                 <div class="hub-title-main">Cloudflare R2 存储</div>
                                 <div class="hub-meta-line">
-                                    <span>十桶集群总用量: <strong id="cluster-total-summary">-- GB / 100 GB</strong></span>
+                                    <span>十二桶集群总用量: <strong id="cluster-total-summary">-- GB / 120 GB</strong></span>
                                     <span class="hub-pill-safety" id="cluster-safety-pill" style="display: none;">🛡️ 安全阀已锁死 (只读保护)</span>
                                 </div>
                             </div>
@@ -831,11 +831,42 @@
                                 <div class="bucket-simple-info">
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已用容量</span>
-                                        <span class="stat-label"><strong id="b11-stat-size">0.0 MB</strong> / 10 GB</span>
+                                        <span class="stat-val"><strong id="b11-stat-size">0.0 MB</strong> / 10 GB</span>
                                     </div>
                                     <div class="simple-stat-row">
                                         <span class="stat-label">已存曲目</span>
                                         <span class="stat-val"><strong id="b11-stat-songs">0</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bucket 12 (第十二桶 - 就绪待命) -->
+                        <div class="bucket-card" id="bucket12-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket 12</div>
+                                <span class="bucket-badge badge-healthy" id="b12-status-badge">就绪待命</span>
+                            </div>
+
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b12-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b12-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b12-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b12-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b12-stat-songs">0</strong> 首</span>
                                     </div>
                                 </div>
                             </div>
