@@ -2163,8 +2163,12 @@ function checkAlbumResources(artistName, album) {
 
             // 3. 构造远程 URL
             if (songPath) {
-                const encodedPath = songPath.split(/[\\/]/).map(segment => encodeURIComponent(segment)).join('/');
-                audioUrl = `${API_BASE}/storage/${encodedPath}`;
+                if (songPath.startsWith('http://') || songPath.startsWith('https://')) {
+                    audioUrl = songPath;
+                } else {
+                    const encodedPath = songPath.split(/[\\/]/).map(segment => encodeURIComponent(segment)).join('/');
+                    audioUrl = `${API_BASE}/storage/${encodedPath}`;
+                }
             }
 
             // 发起检查
