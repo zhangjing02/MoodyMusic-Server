@@ -330,7 +330,8 @@ app.get('/api/songs', async (c) => {
       SELECT 
         a.id AS artist_id, a.name AS artist_name, a.region, a.photo_url,
         al.id AS album_id, al.title AS album_title, al.release_date, al.cover_url,
-        s.title AS song_title, s.file_path, s.lrc_path, s.track_index
+        s.title AS song_title, s.file_path, s.lrc_path, s.track_index,
+        MAX(CASE WHEN s.file_path IS NOT NULL AND s.file_path != '' THEN 1 ELSE 0 END) OVER (PARTITION BY al.id) AS has_lit
       FROM artists a
       LEFT JOIN albums al ON a.id = al.artist_id
       LEFT JOIN songs s ON al.id = s.album_id
@@ -352,7 +353,15 @@ app.get('/api/songs', async (c) => {
       params.push(`%${queryAlbum}%`)
     }
 
-    sql += ` ORDER BY a.name ASC, al.release_date ASC, s.track_index ASC LIMIT 300`
+    // [Playable-First & Quota-Safe]
+    // 1. 优先将拥有已点亮音频的专辑与歌曲置顶，避免高产艺人神专被早年无音频杂辑挤压截断；
+    // 2. 年份已知的专辑按年代正序（ASC）排列，未知年份的古早杂辑排在末尾；
+    // 3. 针对单艺人名录查询放宽行数至 1000 行，确保 100% 容纳已点亮大碟。
+    sql += ` ORDER BY has_lit DESC, 
+             CASE WHEN al.release_date IS NULL OR al.release_date = '' THEN '9999' ELSE al.release_date END ASC, 
+             al.id ASC, 
+             s.track_index ASC 
+             LIMIT 1000`
 
     const { results } = await c.env.DB.prepare(sql).bind(...params).all()
 
@@ -414,11 +423,29 @@ app.get('/api/songs', async (c) => {
       }
     }
 
-    // Convert Maps to Arrays
-    const library = Array.from(artistMap.values()).map(artist => ({
-      ...artist,
-      albums: Array.from(artist.albums.values())
-    }))
+    // Convert Maps to Arrays and ensure lit albums are prioritized and songs are ordered by track_index
+    const library = Array.from(artistMap.values()).map(artist => {
+      const albumsList = Array.from(artist.albums.values()).map((album: any) => {
+        // Sort songs in album by TrackIndex
+        album.songs.sort((a: any, b: any) => (a.TrackIndex || 0) - (b.TrackIndex || 0))
+        return album
+      })
+
+      albumsList.sort((a: any, b: any) => {
+        const aLit = a.songs.some((s: any) => s.path) ? 1 : 0
+        const bLit = b.songs.some((s: any) => s.path) ? 1 : 0
+        if (aLit !== bLit) return bLit - aLit // 已点亮专辑优先置顶
+
+        const aYear = (a.year && a.year !== '未知') ? a.year : '9999'
+        const bYear = (b.year && b.year !== '未知') ? b.year : '9999'
+        return aYear.localeCompare(bYear)
+      })
+
+      return {
+        ...artist,
+        albums: albumsList
+      }
+    })
 
     return c.json({
       code: 200,

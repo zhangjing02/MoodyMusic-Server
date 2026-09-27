@@ -1849,7 +1849,16 @@ async function selectArtist(target) {
                                 artist.albums.push(alb);
                             }
                         }
-                        console.log(`✓ 真实后台实时名录已同步 [${artist.name}]: 共 ${artist.albums.length} 张专辑 (已过滤空壳与重名)`);
+                        // [Playable-First] 优先将包含已点亮音频的专辑置顶，保证用户点击歌手后首屏即刻可播
+                        artist.albums.sort((a, b) => {
+                            const aLit = a.songs && a.songs.some(s => s.path) ? 1 : 0;
+                            const bLit = b.songs && b.songs.some(s => s.path) ? 1 : 0;
+                            if (aLit !== bLit) return bLit - aLit;
+                            const aYear = (a.year && a.year !== '未知') ? a.year : '9999';
+                            const bYear = (b.year && b.year !== '未知') ? b.year : '9999';
+                            return aYear.localeCompare(bYear);
+                        });
+                        console.log(`✓ 真实后台实时名录已同步 [${artist.name}]: 共 ${artist.albums.length} 张专辑 (已过滤空壳与重名，已点亮优先置顶)`);
                     } else {
                         console.log(`[MOODY] ${artist.name}: 后台返回空专辑列表 (该艺人可能暂无专辑数据)`);
                     }
