@@ -1,0 +1,262 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+ingest_teresa_album_1981_jia_ru.py
+邓丽君 (Teresa Teng) 1981 宝丽金传世大碟《島國之情歌 第七集 - 假如我是真的》(12首全量点亮)
+含《假如我是真的》《山茶花》《假如夢兒是真的》《輕風》《情湖》等传世名曲
+"""
+
+import os
+import sys
+import json
+import time
+import boto3
+from botocore.config import Config
+import requests
+import sqlite3
+import urllib.parse
+import urllib.request
+import subprocess
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+BASE_DIR = 'e:/Workspace/AI-Project/MoodyMusic-Workspace'
+CONFIG_PATH = os.path.join(BASE_DIR, 'backend', 'r2_config.json')
+LOCAL_DB_PATH = os.path.join(BASE_DIR, 'backend', 'database', 'catalog_sync.db')
+
+BATCH_LIGHT_URL = "https://m-api.changgepd.ccwu.cc/api/admin/songs/batch-light"
+PATCH_ALBUM_URL = "https://m-api.changgepd.ccwu.cc/api/admin/albums/"
+
+WORK_DIR = os.path.join(BASE_DIR, 'backend', 'tmp', 'teresa_jia_ru_1981')
+os.makedirs(WORK_DIR, exist_ok=True)
+
+with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+    cfg = json.load(f)['buckets']
+
+target_bucket_info = cfg['account_10']
+b10_name = target_bucket_info['name']
+b10_domain = target_bucket_info['public_domain'].rstrip('/')
+
+s3 = boto3.client(
+    's3',
+    endpoint_url=target_bucket_info['endpoint_url'],
+    aws_access_key_id=target_bucket_info['access_key_id'],
+    aws_secret_access_key=target_bucket_info['secret_access_key'],
+    config=Config(signature_version='s3v4')
+)
+
+ALBUM_ID = 272
+ARTIST_ID = 15
+
+TRACKS = [
+    {"index": 1, "song_id": 4229, "title": "假如夢兒是真的", "audio_nid": 229572, "lrc_nid": 229572, "exp_dur": 156},
+    {"index": 2, "song_id": 4230, "title": "情湖", "audio_nid": 229573, "lrc_nid": 229573, "exp_dur": 235},
+    {"index": 3, "song_id": 4231, "title": "輕風", "audio_nid": 229574, "lrc_nid": 229574, "exp_dur": 154},
+    {"index": 4, "song_id": 4232, "title": "你為何不說", "audio_nid": 229576, "lrc_nid": 229576, "exp_dur": 198},
+    {"index": 5, "song_id": 4233, "title": "山茶花", "audio_nid": 227471, "lrc_nid": 229578, "exp_dur": 240},
+    {"index": 6, "song_id": 4234, "title": "我與秋風", "audio_nid": 229580, "lrc_nid": 229580, "exp_dur": 200},
+    {"index": 7, "song_id": 4235, "title": "假如我是真的", "audio_nid": 473288649, "lrc_nid": 229582, "exp_dur": 182},
+    {"index": 8, "song_id": 4236, "title": "別離", "audio_nid": 229584, "lrc_nid": 229584, "exp_dur": 193},
+    {"index": 9, "song_id": 4237, "title": "要去遙遠的地方", "audio_nid": 229586, "lrc_nid": 229586, "exp_dur": 218},
+    {"index": 10, "song_id": 4238, "title": "愛雨", "audio_nid": 229589, "lrc_nid": 229589, "exp_dur": 170},
+    {"index": 11, "song_id": 4239, "title": "彩霞回來吧", "audio_nid": 229591, "lrc_nid": 229591, "exp_dur": 191},
+    {"index": 12, "song_id": 4240, "title": "夢", "audio_nid": 229593, "lrc_nid": 229593, "exp_dur": 197}
+]
+
+COVER_SOURCE_URL = "https://p1.music.126.net/RD07uS2RblcczM2QnW-MEw==/109951169245242445.jpg"
+
+print("=" * 80)
+print("🚀 启动邓丽君 1981 宝丽金传世神专《假如我是真的》(12首) 录音室原版母带点亮流水线...")
+print(f"📦 目标存储桶: {b10_name} ({b10_domain})")
+print(f"💿 目标专辑 ID: {ALBUM_ID}")
+print("=" * 80)
+
+# 0. 封面下载与上传
+cover_local = os.path.join(WORK_DIR, "c_272_jia_ru_wo_shi_zhen_de.jpg")
+if not os.path.exists(cover_local) or os.path.getsize(cover_local) < 5000:
+    r_img = requests.get(COVER_SOURCE_URL, headers={'User-Agent': 'Mozilla/5.0'})
+    with open(cover_local, 'wb') as fp:
+        fp.write(r_img.content)
+    print(f"🖼️ 专辑封面已下载: {os.path.getsize(cover_local)} 字节")
+
+key_cover = "covers/albums/c_272_jia_ru_wo_shi_zhen_de.jpg"
+with open(cover_local, "rb") as fp:
+    s3.put_object(Bucket=b10_name, Key=key_cover, Body=fp.read(), ContentType="image/jpeg")
+cover_cdn = f"{b10_domain}/{key_cover}"
+print(f"🖼️ 专辑封面已上传 R2: {cover_cdn}")
+
+# 1. 音频采录、静音切除、EBU R128 标准化与歌词获取
+processed_tracks = []
+for t in TRACKS:
+    idx = t["index"]
+    sid = t["song_id"]
+    title = t["title"]
+    anid = t["audio_nid"]
+    lnid = t["lrc_nid"]
+    exp_dur = t["exp_dur"]
+    
+    raw_audio = os.path.join(WORK_DIR, f"raw_{idx}.mp3")
+    final_audio = os.path.join(WORK_DIR, f"track_{idx}.mp3")
+    lrc_file = os.path.join(WORK_DIR, f"track_{idx}.lrc")
+    
+    print(f"\n🎵 [{idx:02d}/12] 采录与压制 《{title}》 (Song ID: {sid}, 预计 {exp_dur}s)...")
+    
+    if not os.path.exists(final_audio) or os.path.getsize(final_audio) < 10000:
+        if not os.path.exists(raw_audio) or os.path.getsize(raw_audio) < 10000:
+            dl_url = f"https://music.163.com/song/media/outer/url?id={anid}.mp3"
+            r_audio = requests.get(dl_url, headers={'User-Agent': 'Mozilla/5.0'}, stream=True)
+            with open(raw_audio, 'wb') as fp:
+                for chunk in r_audio.iter_content(chunk_size=32768):
+                    if chunk:
+                        fp.write(chunk)
+            print(f"   • 源音频下载完成: {os.path.getsize(raw_audio)} 字节")
+            
+        cmd_enc = [
+            "ffmpeg", "-y", "-i", raw_audio,
+            "-af", "silenceremove=start_periods=1:start_duration=0.5:start_threshold=-45dB,loudnorm=I=-14:TP=-1.0:LRA=11",
+            "-ar", "44100", "-ac", "2",
+            "-c:a", "libmp3lame", "-b:a", "160k", "-write_xing", "1",
+            final_audio
+        ]
+        subprocess.run(cmd_enc, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    
+    out_dur = subprocess.check_output([
+        "ffprobe", "-v", "error", "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1", final_audio
+    ]).decode().strip()
+    dur_int = round(float(out_dur))
+    mp3_sz = os.path.getsize(final_audio)
+    
+    # 歌词获取
+    if not os.path.exists(lrc_file) or os.path.getsize(lrc_file) < 50:
+        r_lrc = requests.get(f"https://music.163.com/api/song/lyric?os=pc&id={lnid}&lv=-1&kv=-1&tv=-1", headers={'User-Agent': 'Mozilla/5.0'}).json()
+        lrc_text = r_lrc.get('lrc', {}).get('lyric', '').strip()
+        with open(lrc_file, 'w', encoding='utf-8') as fp:
+            fp.write(lrc_text + '\n')
+            
+    lrc_sz = os.path.getsize(lrc_file)
+    print(f"   ✅ 完成: 实际时长 {dur_int}s | MP3: {mp3_sz} 字节 | LRC: {lrc_sz} 字节")
+    
+    processed_tracks.append({
+        "index": idx,
+        "song_id": sid,
+        "title": title,
+        "duration": dur_int,
+        "mp3_path": final_audio,
+        "lrc_path": lrc_file,
+        "mp3_size": mp3_sz,
+        "lrc_size": lrc_sz
+    })
+
+# 2. 上传 MP3 与 LRC 至 R2 (使用绝对路径标准 s_{id}.mp3 命名)
+print("\n" + "=" * 80)
+print(f"📤 上传 12 首录音室原版母带与歌词至 R2 {b10_name}...")
+print("=" * 80)
+
+updates_payload = []
+for pt in processed_tracks:
+    sid = pt["song_id"]
+    title = pt["title"]
+    key_mp3 = f"music/邓丽君/岛国之情歌第七集-假如我是真的/s_{sid}.mp3"
+    key_lrc = f"lyrics/邓丽君/岛国之情歌第七集-假如我是真的/s_{sid}.lrc"
+    
+    with open(pt["mp3_path"], "rb") as fp:
+        s3.put_object(Bucket=b10_name, Key=key_mp3, Body=fp.read(), ContentType="audio/mpeg")
+    with open(pt["lrc_path"], "rb") as fp:
+        s3.put_object(Bucket=b10_name, Key=key_lrc, Body=fp.read(), ContentType="text/plain; charset=utf-8")
+        
+    head_mp3 = s3.head_object(Bucket=b10_name, Key=key_mp3)
+    head_lrc = s3.head_object(Bucket=b10_name, Key=key_lrc)
+    assert head_mp3["ContentLength"] == pt["mp3_size"]
+    assert head_lrc["ContentLength"] == pt["lrc_size"]
+    
+    cdn_mp3 = f"{b10_domain}/{key_mp3}"
+    cdn_lrc = f"{b10_domain}/{key_lrc}"
+    
+    print(f"  ✅ [S3 HEAD OK] 《{title}》 (Song ID: {sid}) -> {cdn_mp3}")
+    
+    updates_payload.append({
+        "id": sid,
+        "file_path": cdn_mp3,
+        "lrc_path": cdn_lrc,
+        "duration": pt["duration"],
+        "is_lit": 1
+    })
+
+# 3. 调用 D1 batch-light 更新绝对直链与原子点亮
+print("\n" + "=" * 80)
+print("⚡ 调用 D1 batch-light 进行原子点亮与绝对直链切链...")
+print("=" * 80)
+
+for attempt in range(5):
+    try:
+        resp_light = requests.post(
+            BATCH_LIGHT_URL,
+            json={"updates": updates_payload},
+            headers={"Content-Type": "application/json"},
+            proxies={'http': None, 'https': None},
+            timeout=20
+        )
+        print("batch-light 返回:", resp_light.status_code, resp_light.text)
+        assert resp_light.ok
+        break
+    except Exception as e:
+        print(f"  • batch-light 尝试 {attempt} 失败: {e}")
+        time.sleep(2)
+
+# 4. 更新专辑属性（封面、年份 1981）
+print("\n" + "=" * 80)
+print(f"🎨 配置专辑《島國之情歌 第七集 - 假如我是真的》(ID: {ALBUM_ID}) 封面与发行年份 (1981)...")
+print("=" * 80)
+
+for attempt in range(5):
+    try:
+        resp_alb = requests.patch(
+            f"{PATCH_ALBUM_URL}{ALBUM_ID}",
+            json={"release_date": "1981", "cover_url": cover_cdn},
+            proxies={'http': None, 'https': None},
+            timeout=10
+        )
+        print(f"  • 专辑 ID: {ALBUM_ID} 属性更新: {resp_alb.status_code} {resp_alb.text}")
+        break
+    except Exception as e:
+        print(f"  • 专辑属性更新尝试 {attempt} 失败: {e}")
+        time.sleep(2)
+
+# 5. 同步写入本地 catalog_sync.db 数据库
+print("\n" + "=" * 80)
+print("💾 同步写入本地 catalog_sync.db 数据库...")
+print("=" * 80)
+
+conn = sqlite3.connect(LOCAL_DB_PATH)
+cur = conn.cursor()
+
+# 更新 albums 表
+cur.execute("UPDATE albums SET release_date = '1981', cover_url = ? WHERE id = ?", (cover_cdn, ALBUM_ID))
+
+# 更新 songs 表
+for u in updates_payload:
+    sid = u["id"]
+    t_item = next(item for item in processed_tracks if item["song_id"] == sid)
+    cur.execute("""
+        UPDATE songs 
+        SET duration = ?, file_path = ?, lrc_path = ?, track_index = ?
+        WHERE id = ?
+    """, (u["duration"], u["file_path"], u["lrc_path"], t_item["index"], sid))
+
+conn.commit()
+conn.close()
+print("  ✅ 本地数据库同步成功！")
+
+# 6. 公网边缘 CDN HEAD 抽测
+print("\n" + "=" * 80)
+print("🌐 公网 CDN 连通性抽测...")
+print("=" * 80)
+for u in updates_payload:
+    p = urllib.parse.urlsplit(u["file_path"])
+    u_enc = urllib.parse.urlunsplit((p.scheme, p.netloc, urllib.parse.quote(p.path), '', ''))
+    req = urllib.request.Request(u_enc, headers={'User-Agent': 'Mozilla/5.0'})
+    r_chk = urllib.request.urlopen(req, timeout=10)
+    print(f"  • Song ID {u['id']} HEAD [{r_chk.status}] (Content-Length: {r_chk.headers.get('Content-Length')})")
+
+print("\n🎉 邓丽君 1981 宝丽金传世神专《島國之情歌 第七集 - 假如我是真的》(12首) 全盘采录压制、上传、入库并成功点亮！")

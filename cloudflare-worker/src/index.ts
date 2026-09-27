@@ -488,9 +488,10 @@ app.get('/api/search', async (c) => {
       LIMIT 30
     `).bind(likeQuery, `%${normalizedQ}%`)
     const stmtSongs = c.env.DB.prepare(`
-      SELECT id, title, artist_id as ArtistID, album_id as Album_ID, file_path as FilePath 
-      FROM songs 
-      WHERE title LIKE ? OR REPLACE(REPLACE(REPLACE(REPLACE(title, '(', ''), ')', ''), '（', ''), '）', '') LIKE ?
+      SELECT s.id, s.title, COALESCE(s.artist_id, a.artist_id) as ArtistID, s.album_id as Album_ID, s.file_path as FilePath 
+      FROM songs s
+      LEFT JOIN albums a ON s.album_id = a.id
+      WHERE s.title LIKE ? OR REPLACE(REPLACE(REPLACE(REPLACE(s.title, '(', ''), ')', ''), '（', ''), '）', '') LIKE ?
       LIMIT 30
     `).bind(likeQuery, `%${normalizedQ}%`)
 
@@ -1031,7 +1032,7 @@ app.patch('/api/admin/albums/:id', async (c) => {
 app.post('/api/admin/songs/batch-update', async (c) => {
   try {
     const { updates } = await c.req.json() as {
-      updates: Array<{ id: number, title?: string, track_index?: number, album_id?: number }>
+      updates: Array<{ id: number, title?: string, track_index?: number, album_id?: number, artist_id?: number }>
     }
 
     if (!updates || !updates.length) {
@@ -1056,6 +1057,10 @@ app.post('/api/admin/songs/batch-update', async (c) => {
       if (item.album_id !== undefined) {
         setClauses.push('album_id = ?')
         params.push(item.album_id)
+      }
+      if (item.artist_id !== undefined) {
+        setClauses.push('artist_id = ?')
+        params.push(item.artist_id)
       }
 
       if (setClauses.length > 0) {
@@ -1145,10 +1150,11 @@ app.post('/api/admin/songs/create-full', async (c) => {
 
       // 3. 创建歌曲记录
       const songResult = await c.env.DB.prepare(
-        'INSERT INTO songs (title, album_id, file_path, lrc_path, track_index) VALUES (?, ?, ?, ?, ?)'
+        'INSERT INTO songs (title, album_id, artist_id, file_path, lrc_path, track_index) VALUES (?, ?, ?, ?, ?, ?)'
       ).bind(
         song.title,
         albumId,
+        artistId,
         song.file_path,
         song.lrc_path || null,
         song.track_index || null
