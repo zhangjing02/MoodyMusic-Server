@@ -45,7 +45,7 @@ CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 R2_FREE_CAPACITY_BYTES = 10 * 1000 * 1000 * 1000  # 10.00 GB
 WARN_THRESHOLD_PERCENT = 90.0                      # 9.00 GB 预警线
 CRITICAL_THRESHOLD_PERCENT = 95.0                  # 9.50 GB 熔断封箱线
-TOTAL_BUCKETS_COUNT = 12
+TOTAL_BUCKETS_COUNT = 14
 
 def format_bytes(bytes_val):
     for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
@@ -151,17 +151,24 @@ def check_storage(verbose=False):
         cfg = json.load(f)
     r2_all = cfg.get("buckets", {})
 
-    # 1. 物理连接与缓存检查 (20秒低频刷新，保障极致响应速度)
+    # 1. 物理连接与缓存检查 (20秒低频刷新，保障极致响应速度，多线程并发提速)
     now = time.time()
     if now - _PHYSICAL_CACHE['time'] > 20:
-        for b_idx in range(1, TOTAL_BUCKETS_COUNT + 1):
+        from concurrent.futures import ThreadPoolExecutor
+        def _fetch_one(b_idx):
             b_key = f"account_{b_idx:02d}"
             b_cfg = r2_all.get(b_key)
             if not b_cfg:
-                continue
+                return b_key, None
             p_data = fetch_bucket_physical_data(b_key, b_cfg, verbose=verbose)
-            if p_data:
-                _PHYSICAL_CACHE['buckets'][b_key] = p_data
+            return b_key, p_data
+
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            futures = [executor.submit(_fetch_one, b_idx) for b_idx in range(1, TOTAL_BUCKETS_COUNT + 1)]
+            for fut in futures:
+                b_key, p_data = fut.result()
+                if p_data:
+                    _PHYSICAL_CACHE['buckets'][b_key] = p_data
         _PHYSICAL_CACHE['time'] = now
 
     # 2. 汇总各桶数据
@@ -182,6 +189,8 @@ def check_storage(verbose=False):
         (10, "account_10", "moody-music-asset-10", "第十存储桶 (Bucket 10)", "pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev"),
         (11, "account_11", "moody-music-asset-11", "第十一存储桶 (Bucket 11)", "pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev"),
         (12, "account_12", "moody-music-asset-12", "第十二存储桶 (Bucket 12)", "pub-c570096b51724b82ab294c0381b0f1c3.r2.dev"),
+        (13, "account_13", "moody-music-asset-13", "第十三存储桶 (Bucket 13)", "pub-fa9d420026b0462b81c9f89f981270e8.r2.dev"),
+        (14, "account_14", "moody-music-asset-14", "第十四存储桶 (Bucket 14)", "pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev"),
     ]
 
     for b_id, b_key, b_name, b_label, b_url in bucket_metas:
@@ -264,7 +273,7 @@ def check_storage(verbose=False):
 
     stats_data = {
         'updated_at': time.strftime('%Y-%m-%d %H:%M:%S'),
-        'cluster_mode': 'dodeca_bucket',
+        'cluster_mode': 'tetradeca_bucket',
         'total_free_capacity_gb': float(TOTAL_BUCKETS_COUNT * 10.0),
         'total_used_gb': round(total_r2_bytes / (1000 ** 3), 2),
         'total_used_ratio': cluster_ratio,
@@ -275,8 +284,8 @@ def check_storage(verbose=False):
         'safety_valve_active': safety_active,
         'safety_valve_reason': safety_reason if safety_active else '',
         'active_write_bucket': 'moody-music-asset-11 (第十一桶主力写入)',
-        'standby_bucket': '第10、12桶备用，前九桶已安全封箱/降温归档 (防止扣费)',
-        'compression_policy': '160 kbps CBR (十二桶集群十进制计量已启用)',
+        'standby_bucket': '第10、12、13、14桶备用，前九桶已安全封箱/降温归档 (防止扣费)',
+        'compression_policy': '160 kbps CBR (十四桶集群十进制计量已启用)',
 
         # 各存储桶
         **bucket_stats,
@@ -291,7 +300,7 @@ def check_storage(verbose=False):
         'r2_songs_count': total_r2_count,
         'compressed_songs_count': 5738,
         'status_level': cluster_status,
-        'status_text': f'十二桶集群十进制计量已校准 (总用量 {cluster_ratio:.1f}%)',
+        'status_text': f'十四桶集群十进制计量已校准 (总用量 {cluster_ratio:.1f}%)',
         'local_pending_songs': 0,
         'local_pending_mb': 0.0,
         'local_disk_mp3_count': 0,
@@ -323,7 +332,7 @@ def check_storage(verbose=False):
             timeout=8
         )
         if verbose and r_sync.status_code == 200:
-            print("🚀 [D1 云端同步] 十二桶最新物理指标已成功持久化至 D1 app_settings")
+            print("🚀 [D1 云端同步] 十四桶最新物理指标已成功持久化至 D1 app_settings")
     except Exception as e_sync:
         if verbose:
             print(f"⚠️ [D1 云端同步异常] {e_sync}")
@@ -331,7 +340,7 @@ def check_storage(verbose=False):
     # 5. 打印专业控制台体检报告
     if verbose or __name__ == "__main__":
         print("\n" + "=" * 90)
-        print("📊 MOODY - Cloudflare R2 十二存储桶集群商业计费实时监控报告 (Dodeca-Bucket Hub)")
+        print("📊 MOODY - Cloudflare R2 十四存储桶集群商业计费实时监控报告 (Tetradeca-Bucket Hub)")
         print(f"⏰ 采样校准时间: {time.strftime('%Y-%m-%d %H:%M:%S')} (标准十进制 GB: 1 GB = 1,000,000,000 字节)")
         print("=" * 90)
         print(f"{'存储桶':<22} | {'对象总数':<8} | {'真实用量 (GB)':<14} | {'额度占比':<10} | {'当前状态'}")
