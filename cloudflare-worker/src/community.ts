@@ -28,10 +28,20 @@ async function ensureCommunityTables(db: D1Database) {
         title TEXT NOT NULL,
         content TEXT NOT NULL,
         author_name TEXT DEFAULT '音信官方',
+        tag TEXT DEFAULT '官方通知',
         is_pinned INTEGER DEFAULT 0,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
       )
     `).run()
+
+    try {
+      await db.prepare("ALTER TABLE system_notices ADD COLUMN tag TEXT DEFAULT '官方通知'").run()
+    } catch (_) {}
+
+    try {
+      // 自动校准已有网页版公告为「版本信息」且置顶
+      await db.prepare("UPDATE system_notices SET tag = '版本信息', is_pinned = 1 WHERE title LIKE '%网页版%' AND (tag IS NULL OR tag = '官方通知' OR is_pinned = 0)").run()
+    } catch (_) {}
 
     await db.prepare(`
       CREATE TABLE IF NOT EXISTS community_posts (
@@ -126,9 +136,19 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       await ensureCommunityTables(db)
 
       const result = await db.prepare(`
-        SELECT id, title, content, author_name, is_pinned, created_at
+        SELECT id, title, content, author_name, COALESCE(tag, '官方通知') as tag, is_pinned, created_at
         FROM system_notices
-        ORDER BY is_pinned DESC, id DESC
+        ORDER BY 
+          is_pinned DESC,
+          CASE COALESCE(tag, '官方通知')
+            WHEN '置顶' THEN 100
+            WHEN '版本信息' THEN 80
+            WHEN '新资源预告' THEN 60
+            WHEN '系统维护' THEN 40
+            WHEN '官方通知' THEN 20
+            ELSE 10
+          END DESC,
+          id DESC
       `).all()
 
       const notices = (result.results || []).map((row: any) => ({
@@ -136,6 +156,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
         title: row.title,
         content: row.content,
         author_name: row.author_name || '音信官方',
+        tag: row.tag || (row.is_pinned ? '置顶' : '官方通知'),
         is_pinned: Boolean(row.is_pinned),
         created_at: row.created_at
       }))
@@ -164,7 +185,8 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       const body = await c.req.json()
       const title = (body.title || '').trim()
       const content = (body.content || '').trim()
-      const isPinned = body.is_pinned ? 1 : 0
+      const tag = (body.tag || (body.is_pinned ? '置顶' : '官方通知')).trim()
+      const isPinned = body.is_pinned || tag === '置顶' ? 1 : 0
       const authorName = (body.author_name || user.nickname || user.username || '音信官方').trim()
 
       if (!title || !content) {
@@ -175,9 +197,9 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       await ensureCommunityTables(db)
 
       const res = await db.prepare(`
-        INSERT INTO system_notices (title, content, author_name, is_pinned, created_at)
-        VALUES (?, ?, ?, ?, datetime('now', 'localtime'))
-      `).bind(title, content, authorName, isPinned).run()
+        INSERT INTO system_notices (title, content, author_name, tag, is_pinned, created_at)
+        VALUES (?, ?, ?, ?, ?, datetime('now', 'localtime'))
+      `).bind(title, content, authorName, tag, isPinned).run()
 
       const newId = res.meta?.last_row_id || 0
 
@@ -190,6 +212,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
             title,
             content,
             author_name: authorName,
+            tag,
             is_pinned: Boolean(isPinned)
           }])
         }
@@ -205,6 +228,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
           title,
           content,
           author_name: authorName,
+          tag,
           is_pinned: Boolean(isPinned),
           created_at: new Date().toISOString()
         }
@@ -232,7 +256,8 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       const title = (body.title || '').trim()
       const content = (body.content || '').trim()
       const authorName = (body.author_name || '音信官方').trim()
-      const isPinned = body.is_pinned ? 1 : 0
+      const tag = (body.tag || (body.is_pinned ? '置顶' : '官方通知')).trim()
+      const isPinned = body.is_pinned || tag === '置顶' ? 1 : 0
 
       if (!title || !content) {
         return c.json({ code: 400, message: '标题与内容不能为空', data: null }, 400)
@@ -241,9 +266,9 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       const db = c.env.DB
       await db.prepare(`
         UPDATE system_notices
-        SET title = ?, content = ?, author_name = ?, is_pinned = ?
+        SET title = ?, content = ?, author_name = ?, tag = ?, is_pinned = ?
         WHERE id = ?
-      `).bind(title, content, authorName, isPinned, id).run()
+      `).bind(title, content, authorName, tag, isPinned, id).run()
 
       try {
         const supabase = getSupabase(c.env)
@@ -252,6 +277,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
             title,
             content,
             author_name: authorName,
+            tag,
             is_pinned: Boolean(isPinned)
           }).eq('id', id)
         }
@@ -262,7 +288,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       return c.json({
         code: 200,
         message: '公告修改成功',
-        data: { id, title, content, author_name: authorName, is_pinned: Boolean(isPinned) }
+        data: { id, title, content, author_name: authorName, tag, is_pinned: Boolean(isPinned) }
       })
     } catch (e: any) {
       return c.json({ code: 500, message: e.message || '修改公告失败', data: null }, 500)
@@ -315,9 +341,19 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       await ensureCommunityTables(db)
 
       const result = await db.prepare(`
-        SELECT id, title, content, author_name, is_pinned, created_at
+        SELECT id, title, content, author_name, COALESCE(tag, '官方通知') as tag, is_pinned, created_at
         FROM system_notices
-        ORDER BY is_pinned DESC, id DESC
+        ORDER BY 
+          is_pinned DESC,
+          CASE COALESCE(tag, '官方通知')
+            WHEN '置顶' THEN 100
+            WHEN '版本信息' THEN 80
+            WHEN '新资源预告' THEN 60
+            WHEN '系统维护' THEN 40
+            WHEN '官方通知' THEN 20
+            ELSE 10
+          END DESC,
+          id DESC
       `).all()
 
       const notices = (result.results || []).map((row: any) => ({
@@ -325,6 +361,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
         title: row.title,
         content: row.content,
         author_name: row.author_name || '音信官方',
+        tag: row.tag || (row.is_pinned ? '置顶' : '官方通知'),
         is_pinned: Boolean(row.is_pinned),
         created_at: row.created_at
       }))
@@ -345,7 +382,8 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       const title = (body.title || '').trim()
       const content = (body.content || '').trim()
       const authorName = (body.author_name || '音信官方').trim()
-      const isPinned = body.is_pinned ? 1 : 0
+      const tag = (body.tag || (body.is_pinned ? '置顶' : '官方通知')).trim()
+      const isPinned = body.is_pinned || tag === '置顶' ? 1 : 0
 
       if (!title || !content) {
         return c.json({ code: 400, message: '标题与内容不能为空', data: null }, 400)
@@ -355,9 +393,9 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       await ensureCommunityTables(db)
 
       const res = await db.prepare(`
-        INSERT INTO system_notices (title, content, author_name, is_pinned, created_at)
-        VALUES (?, ?, ?, ?, datetime('now', 'localtime'))
-      `).bind(title, content, authorName, isPinned).run()
+        INSERT INTO system_notices (title, content, author_name, tag, is_pinned, created_at)
+        VALUES (?, ?, ?, ?, ?, datetime('now', 'localtime'))
+      `).bind(title, content, authorName, tag, isPinned).run()
 
       const newId = res.meta?.last_row_id || 0
 
@@ -370,6 +408,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
             title,
             content,
             author_name: authorName,
+            tag,
             is_pinned: Boolean(isPinned)
           }])
         }
@@ -385,6 +424,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
           title,
           content,
           author_name: authorName,
+          tag,
           is_pinned: Boolean(isPinned),
           created_at: new Date().toISOString()
         }
@@ -407,7 +447,8 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       const title = (body.title || '').trim()
       const content = (body.content || '').trim()
       const authorName = (body.author_name || '音信官方').trim()
-      const isPinned = body.is_pinned ? 1 : 0
+      const tag = (body.tag || (body.is_pinned ? '置顶' : '官方通知')).trim()
+      const isPinned = body.is_pinned || tag === '置顶' ? 1 : 0
 
       if (!title || !content) {
         return c.json({ code: 400, message: '标题与内容不能为空', data: null }, 400)
@@ -416,9 +457,9 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       const db = c.env.DB
       await db.prepare(`
         UPDATE system_notices
-        SET title = ?, content = ?, author_name = ?, is_pinned = ?
+        SET title = ?, content = ?, author_name = ?, tag = ?, is_pinned = ?
         WHERE id = ?
-      `).bind(title, content, authorName, isPinned, id).run()
+      `).bind(title, content, authorName, tag, isPinned, id).run()
 
       try {
         const supabase = getSupabase(c.env)
@@ -427,6 +468,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
             title,
             content,
             author_name: authorName,
+            tag,
             is_pinned: Boolean(isPinned)
           }).eq('id', id)
         }
@@ -437,7 +479,7 @@ export function registerCommunityRoutes(app: Hono<AppType>, authMiddleware: any)
       return c.json({
         code: 200,
         message: '公告修改已保存',
-        data: { id, title, content, author_name: authorName, is_pinned: Boolean(isPinned) }
+        data: { id, title, content, author_name: authorName, tag, is_pinned: Boolean(isPinned) }
       })
     } catch (e: any) {
       return c.json({ code: 500, message: e.message || '修改公告失败', data: null }, 500)

@@ -61,6 +61,17 @@
             });
         });
 
+        // 标签选择联动置顶
+        const tagSelect = document.getElementById('nm-tag');
+        const pinnedCheck = document.getElementById('nm-pinned');
+        if (tagSelect && pinnedCheck) {
+            tagSelect.addEventListener('change', () => {
+                if (tagSelect.value === '置顶') {
+                    pinnedCheck.checked = true;
+                }
+            });
+        }
+
         if (btnRefresh) {
             btnRefresh.addEventListener('click', async () => {
                 btnRefresh.classList.add('loading');
@@ -166,8 +177,31 @@
                     transition: all 0.2s ease;
                 ">
                     <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; gap:12px; flex-wrap:wrap;">
-                        <div style="display:flex; align-items:center; gap:10px; flex:1; min-width:260px;">
-                            ${isPinned ? '<span style="background:var(--accent); color:#000; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px;">📌 置顶推荐</span>' : '<span style="background:rgba(255,255,255,0.1); color:var(--text-muted); font-size:11px; padding:2px 8px; border-radius:4px;">普通公告</span>'}
+                        <div style="display:flex; align-items:center; gap:8px; flex:1; min-width:260px;">
+                            ${(() => {
+                                const itemTag = item.tag || (isPinned ? '置顶' : '官方通知');
+                                let tagBadgeHtml = '';
+                                switch(itemTag) {
+                                    case '置顶':
+                                        tagBadgeHtml = '<span style="background:var(--accent); color:#000; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px;">📌 置顶</span>';
+                                        break;
+                                    case '版本信息':
+                                        tagBadgeHtml = '<span style="background:rgba(52, 199, 89, 0.2); color:#34c759; border:1px solid rgba(52, 199, 89, 0.4); font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px;">🚀 版本信息</span>';
+                                        break;
+                                    case '新资源预告':
+                                        tagBadgeHtml = '<span style="background:rgba(175, 82, 222, 0.2); color:#af52de; border:1px solid rgba(175, 82, 222, 0.4); font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px;">💿 新资源预告</span>';
+                                        break;
+                                    case '系统维护':
+                                        tagBadgeHtml = '<span style="background:rgba(255, 149, 0, 0.2); color:#ff9500; border:1px solid rgba(255, 149, 0, 0.4); font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px;">🛠️ 系统维护</span>';
+                                        break;
+                                    default:
+                                        tagBadgeHtml = '<span style="background:rgba(255,255,255,0.08); color:var(--text-muted); border:1px solid rgba(255,255,255,0.15); font-size:11px; padding:2px 8px; border-radius:4px;">📢 官方通知</span>';
+                                }
+                                if (isPinned && itemTag !== '置顶') {
+                                    tagBadgeHtml = '<span style="background:var(--accent); color:#000; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px;">⭐ 置顶</span>' + tagBadgeHtml;
+                                }
+                                return tagBadgeHtml;
+                            })()}
                             <h4 style="font-size:16px; font-weight:600; color:var(--text-main); line-height:1.4;">${escapeHtml(item.title)}</h4>
                         </div>
                         <div style="font-size:12px; color:var(--text-muted); display:flex; align-items:center; gap:12px;">
@@ -243,6 +277,11 @@
         document.getElementById('nm-pinned').checked = Boolean(notice.is_pinned);
         document.getElementById('nm-content').value = notice.content;
 
+        const tagSelect = document.getElementById('nm-tag');
+        if (tagSelect) {
+            tagSelect.value = notice.tag || (notice.is_pinned ? '置顶' : '官方通知');
+        }
+
         const modeBadge = document.getElementById('nm-form-mode');
         if (modeBadge) {
             modeBadge.textContent = `编辑中 (#${notice.id})`;
@@ -288,6 +327,11 @@
         document.getElementById('nm-pinned').checked = false;
         document.getElementById('nm-content').value = '';
 
+        const tagSelect = document.getElementById('nm-tag');
+        if (tagSelect) {
+            tagSelect.value = '官方通知';
+        }
+
         const modeBadge = document.getElementById('nm-form-mode');
         if (modeBadge) {
             modeBadge.textContent = '新增模式';
@@ -320,7 +364,8 @@
     async function handleSubmitNotice() {
         const title = (document.getElementById('nm-title')?.value || '').trim();
         const author = (document.getElementById('nm-author')?.value || '').trim() || '音信官方';
-        const isPinned = document.getElementById('nm-pinned')?.checked || false;
+        const tag = (document.getElementById('nm-tag')?.value || '官方通知').trim();
+        const isPinned = (document.getElementById('nm-pinned')?.checked || tag === '置顶');
         const content = (document.getElementById('nm-content')?.value || '').trim();
         const noticeId = document.getElementById('nm-notice-id')?.value;
 
@@ -350,6 +395,7 @@
         const payload = {
             title,
             author_name: author,
+            tag,
             is_pinned: isPinned,
             content
         };
