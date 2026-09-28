@@ -2001,6 +2001,18 @@ function _clearStaleHighlight() {
 window.updateAlbumViewActiveState = function (songName, artistName, optimistic = false) {
     if (!songName) return;
     const rows = document.querySelectorAll('.st-row');
+    if (!rows.length) return;
+
+    // 唯一匹配原则：判断当前展示的专辑是否为正在播放的专辑
+    const vTitleEl = document.getElementById('vTitle');
+    const viewedAlbum = vTitleEl ? vTitleEl.textContent.trim() : null;
+    const currentPlayingAlbum = (typeof playerState !== 'undefined' && playerState.currentAlbum) ? playerState.currentAlbum.trim() : null;
+
+    if (viewedAlbum && currentPlayingAlbum && viewedAlbum !== currentPlayingAlbum) {
+        _clearStaleHighlight();
+        return;
+    }
+
     let matchedCount = 0;
 
     rows.forEach(row => {
