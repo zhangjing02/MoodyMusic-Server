@@ -9,6 +9,7 @@ import { registerThemeStoryRoutes } from './theme_stories'
 import { registerAppVersionRoutes } from './app_version'
 import { registerCommunityRoutes } from './community'
 import { registerPlaylistRoutes } from './playlists'
+import { registerVoiceRoutes } from './voice'
 import type { Bindings } from './types'
 import { fail, normalizeLegacyErrorResponse, serverError } from './error'
 
@@ -2253,8 +2254,9 @@ app.get('/api/debug/supabase-test', async (c) => {
 })
 
 // ==========================================
-// Upload Routes
+// Upload Routes & Voice Dispatch Routes
 // ==========================================
 registerUploadRoutes(app)
+registerVoiceRoutes(app)
 
 export default app

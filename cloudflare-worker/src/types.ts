@@ -11,6 +11,7 @@ export type Bindings = {
   RESEND_FROM?: string
   PGYER_API_KEY?: string
   PGYER_APP_KEY?: string
+  GROQ_API_KEYS?: string
 }
 
 // ==========================================

@@ -55,48 +55,52 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
           //   themeId: 'bach_cello_theme'
           // },
           {
-            id: 'white_snake_flute_theme',
-            title: '青城山下白素贞',
-            artist: '书领了吗 · 竹笛',
-            year: '2026',
-            subtitle: '一曲竹笛清响，梦回青城烟雨',
-            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/white_snake_flute_cover.jpg',
-            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/white_snake_flute.mp3',
+            id: 'rene_liu_live_theme',
+            title: '《後來》現場精選',
+            artist: '劉若英',
+            year: '2002-2024',
+            subtitle: '一口氣聽完7首神級Live',
+            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/rene_liu_live_cover_v1.jpg',
+            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/rene_liu_live_128k.mp3',
             isTheme: true,
-            themeId: 'white_snake_flute_theme'
+            themeId: 'rene_liu_live_theme',
+            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/rene_liu_live_theme_v1.json'
+          },
+          {
+            id: 'wen_4versions_theme',
+            title: '《問》四版現場',
+            artist: '林憶蓮 · 李宗盛',
+            year: '1994-2014',
+            subtitle: '一曲唱盡四種人生 · 經典對比',
+            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/wen_sandy_cover_v2.jpg',
+            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/wen_4versions_128k.mp3',
+            isTheme: true,
+            themeId: 'wen_4versions_theme',
+            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/wen_4versions_theme_v2.json'
           },
           {
             id: 'jonathan_lee_theme',
-            title: '理性與感性',
+            title: '《理性與感性》',
             artist: '李宗盛',
             year: '2007',
-            subtitle: '30首歲月金曲 · 寫盡人世間的悲歡離合',
+            subtitle: '30首歲月金曲 · 寫盡悲歡離合',
             coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/album_jonathan_lee.jpg',
             audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/jonathan_lee_30.m4a',
             isTheme: true,
-            themeId: 'jonathan_lee_theme'
+            themeId: 'jonathan_lee_theme',
+            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/jonathan_lee_theme.json'
           },
           {
-            id: 'lofi_chill_theme',
-            title: '忘記時間的旋律',
-            artist: 'Lova Radio',
+            id: 'guofeng_flute_theme_v3',
+            title: '《江湖入夢》',
+            artist: '書領了嗎 · 竹笛',
             year: '2026',
-            subtitle: 'Lo-fi Chill 溫柔旋律陪你慢慢回血',
-            coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/albums/lofi_chill_cover.jpg',
-            audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/lofi_chill.mp3',
+            subtitle: '竹笛清響，夢回青城煙雨',
+            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/guofeng_flute_collection_cover_v3.jpg',
+            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/guofeng_flute_collection_v2.mp3',
             isTheme: true,
-            themeId: 'lofi_chill_theme'
-          },
-          {
-            id: 'pop_piano_theme',
-            title: '華語經典鋼琴曲',
-            artist: 'Love Piano',
-            year: '2026',
-            subtitle: '流行情歌鋼琴改編，只想靜靜聽音樂',
-            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/pop_piano_cover.jpg',
-            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/pop_piano.mp3',
-            isTheme: true,
-            themeId: 'pop_piano_theme'
+            themeId: 'guofeng_flute_theme_v3',
+            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/guofeng_flute_theme_v3.json'
           }
         ]
       }

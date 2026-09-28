@@ -4,11 +4,13 @@ import type { Bindings } from './types'
 type AppType = { Bindings: Bindings; Variables: { user: any; token: string } }
 
 export interface TimelineSection {
-  timeLabel: string
+  timeLabel?: string
+  time?: string
   title: string
-  sceneStory: string
-  emotion: string
-  technique: string
+  desc?: string
+  sceneStory?: string
+  emotion?: string
+  technique?: string
   performerNote?: string
 }
 
@@ -40,6 +42,61 @@ export interface ThemeStory {
 }
 
 export const DEFAULT_THEME_STORIES: Record<string, ThemeStory> = {
+  "rene_liu_live_theme": {
+    "themeId": "rene_liu_live_theme",
+    "issueTag": "神級現場 · ISSUE #89",
+    "categoryTag": "本 週 專 題 · 經 典 視 聽 特 輯",
+    "headline": "《後來，我們學會了如何去愛：劉若英7大神級現場全集》",
+    "subtitle": "從《當愛在靠近》的悸動到《後來》的淚眼釋懷，一口氣聽完31分鐘青春記憶裡最溫柔的陣痛",
+    "authorDate": "MoodyMusic 樂評編輯部 · 華語傳奇特輯   |   4K現場珍藏",
+    "heroUrl": "https://m-api.changgepd.ccwu.cc/storage/covers/albums/rene_liu_live_cover_v1.jpg",
+    "bodyParagraphs": [
+      "沒有人能笑著聽完劉若英的演唱會。\n\n她的歌聲從不炫耀技巧，甚至帶有一點點微顫的單純與倔強，卻像一記精準的直拳，直抵每個人心底最柔軟、最不敢觸碰的隱秘角落。李宗盛曾說：‘奶茶唱歌，是在跟你說話。’這場長達31分鐘的4K神級現場串聯，將她二十餘年音樂生涯裡最動人心魄的七個瞬間完整收錄，是一場獻給所有愛過、錯過、釋懷過的靈魂的青春長跑。",
+      "【00:00 《當愛在靠近》· 愛的萌芽與心動】\n輕快的木吉他與清脆拍點響起，那是每個人在青春最初遇到心动时的小心翼翼。‘真的想，寂寞的時候有個伴；日子這麼長，找個人來分攤。’她唱得那麼平實，卻把孤獨靈魂渴望擁抱的真實，描摹得分毫不差。",
+      "【03:54 《很愛很愛你》（ft. 伍佰）· 世紀名場面】\n全場沸騰的搖滾版《很愛很愛你》！當伍佰抱著電吉他霸氣登場，帶著特有的粗獷與深情，與奶茶溫柔純真的嗓音撞擊在一起，‘地球上最浪漫的鐵漢柔情’在此刻具象化。",
+      "【07:28 《成全》· 溫柔體面的告別】\n‘一個人的成全，好過三個人的糾結。’陳小霞細膩的旋律，在劉若英的演繹下成了華語情歌裡最體面的放手。成全了你的海闊天空，也成全了我重新開始的可能。",
+      "【12:00 《為愛痴狂》· 一生一次的靈魂自白】\n陳昇為她寫下的這首歌，是她二十出頭時毫無保留的青春誓言。‘想要問問你敢不敢，像你說過那樣的愛我？’聲嘶力竭的叩問，是每個人一生只有一次的勇氣。",
+      "【16:37 《一輩子孤單》· 都市靈魂的自處】\n‘我想我會一直孤單，這一輩子都這麼孤單。’自嘲中帶著堅強，輕快節奏下包裹著深沉的哲思，給了所有人坦然面對獨處的底氣。",
+      "【20:59 《原來你也在這裡》· 張愛玲筆下的宿命】\n取材自張愛玲的小說，中島美雪的傳世旋律。在千百萬人之中遇見你所要遇見的人，在時間無涯的荒野裡，化作一聲輕柔的‘哦，你也在這裡嗎？’",
+      "【25:35 《後來》· 萬人合唱的全場淚奔安可】\n‘後來，我總算學會了如何去愛；可惜你，早已遠去消失在人海。’萬人揮舞熒光棒，大合唱的聲浪淹沒了整個場館。大家唱的早已不是劉若英的歌，而是青春裡那個再也見不到的人。"
+    ],
+    "quoteZh": "“後來 我總算學會了如何去愛\n可惜你 早已遠去 消失在人海\n後來 終於在眼淚中明白\n有些人 一旦錯過就不在”",
+    "quoteEn": "Now that I have finally learned how to love, you have vanished into the vast crowd.\nSome people, once missed, will never be found again.",
+    "scenariosTitle": "🎧 最佳聆聽方式 · How to Listen",
+    "scenarios": [
+      "• 佩戴耳機，一口氣沉浸聽完 31 分鐘 7 首經典神級現場，跟隨音軌重溫青春長跑",
+      "• 深夜獨處時，在《很愛很愛你》與《成全》的釋懷裡梳理心事",
+      "• 伴隨全場萬人大合唱的《後來》，給那個竭盡全力愛過的人一個微笑的道別"
+    ],
+    "benefitsTitle": "💡 為什麼這 7 首歌是不可錯過的經典？",
+    "benefits": [
+      "✔ 《當愛在靠近》（00:00）：純真萌芽，記錄每顆孤單靈魂最初的心動",
+      "✔ 《很愛很愛你》（03:54）：伍佰炸場助陣，華語樂壇最浪漫的世紀名場面",
+      "✔ 《成全》（07:28）：華語流行史上最體面、最具格局的放手經典",
+      "✔ 《為愛痴狂》（12:00）：陳昇經典手筆，一生一次毫不保留的青春吶喊",
+      "✔ 《一輩子孤單》（16:37）：都會單身必聽聖經，學會與孤獨溫柔和解",
+      "✔ 《原來你也在這裡》（20:59）：張愛玲小說意境，千百萬人中宿命般的驀然回首",
+      "✔ 《後來》（25:35）：世紀大合唱淚奔安可，學會去愛卻終究錯過的無盡唏噓"
+    ],
+    "aboutTitle": "👉 關於劉若英｜About Rene Liu",
+    "aboutDesc": "劉若英（Rene Liu），被歌迷親切稱為‘奶茶’。她的聲音溫潤、真摯、直擊心靈，以誠懇訴說的風格成為華語樂壇最具辨識度的女性代言人，作品影響了幾代人的青春與情感世界。",
+    "aboutMotto": "願你在《後來》的淚水裡學會愛，\n更在走過風雨後，依然勇敢奔赴人生的每一場心動。",
+    "footerSign": "劉若英 · 七大神級現場珍藏合輯 · MoodyMusic 經典特輯",
+    "playPillTextActive": "劉若英 7 首神級現場聆聽中",
+    "playPillTextIdle": "播放劉若英神級現場",
+    "isSquareCover": true,
+    "posterAspectRatio": 1.0,
+    "timelineTitle": "⏱️ 七大神級現場曲目時間軸",
+    "timelineSections": [
+      { "timeLabel": "00:00", "title": "《當愛在靠近》", "sceneStory": "愛的萌芽與心動", "emotion": "純真悸動", "technique": "木吉他純淨民謠" },
+      { "timeLabel": "03:54", "title": "《很愛很愛你》ft. 伍佰", "sceneStory": "世紀名場面合唱", "emotion": "震撼熱烈", "technique": "搖滾對撞萬人大合唱" },
+      { "timeLabel": "07:28", "title": "《成全》", "sceneStory": "溫柔體面的告別", "emotion": "釋懷大度", "technique": "細膩弦樂與自白" },
+      { "timeLabel": "12:00", "title": "《為愛痴狂》", "sceneStory": "一生一次的自白", "emotion": "執著倔強", "technique": "真聲高音情緒迸發" },
+      { "timeLabel": "16:37", "title": "《一輩子孤單》", "sceneStory": "都市人的治癒獨處", "emotion": "自嘲坦然", "technique": "輕快律動與獨白" },
+      { "timeLabel": "20:59", "title": "《原來你也在這裡》", "sceneStory": "宿命般的相遇", "emotion": "溫潤如水", "technique": "中島美雪經典慢板" },
+      { "timeLabel": "25:35", "title": "《後來》", "sceneStory": "萬人合唱淚崩安可", "emotion": "終極釋懷", "technique": "全場大合唱最高潮" }
+    ]
+  },
   "pop_piano_theme": {
     "themeId": "pop_piano_theme",
     "issueTag": "精选胶片 · ISSUE #83",
@@ -79,6 +136,69 @@ export const DEFAULT_THEME_STORIES: Record<string, ThemeStory> = {
     "posterAspectRatio": 1.6,
     "timelineTitle": "",
     "timelineSections": []
+  },
+  "wen_4versions_theme": {
+    "themeId": "wen_4versions_theme",
+    "issueTag": "神級現場 · ISSUE #88",
+    "categoryTag": "本 週 專 題 · 經 典 視 聽 對 比",
+    "headline": "《一曲〈問〉，四段人生：梁靜茹、李宗盛、林憶蓮與陳淑樺的神級現場》",
+    "subtitle": "同一首李宗盛詞曲，四位靈魂歌者，唱盡女性在愛情裡從青澀執念到滄桑釋懷的千層心事",
+    "authorDate": "MoodyMusic 樂評編輯部 · 視聽對比特輯   |   神級現場珍藏",
+    "heroUrl": "https://m-api.changgepd.ccwu.cc/storage/covers/albums/wen_4versions_cover.jpg",
+    "bodyParagraphs": [
+      "李宗盛在1992年寫下《問》的時候，大概也未曾料到，這首最初收錄於電影《霸王別姬》滾石原聲帶的歌，會在此後的三十年間，被四位風格迥異的歌者在不同的人生階段反復唱響，成為華語樂壇最具戲劇性與感染力的情感鏡像。\n\n四個版本，不是技巧的較量，而是一場關於愛、青春、痛楚與釋懷的時光對話。",
+      "【00:00 梁靜茹 · 2006：少女初醒的執著與溫柔】\n2006年的李宗盛理性與感性作品音樂會上，二十多歲的梁靜茹一開口，就是純淨與溫潤。她的《問》，是未經滄桑的小女生在深夜裡的喃喃自語——“如果女人總是等到夜深，無悔付出青春，他就会对你真？”那種帶著微微困惑卻依然飛蛾撲火般的深情，甜中帶澀，像初春微涼夜風裡的一杯溫水。",
+      "【03:23 李宗盛 · 2007：閱盡千帆的自省與輕嘆】\n到了李宗盛自己的版本，旋律化作了他標誌性的半念半唱。他坐在台上，雙手合十、眉頭微蹙，不再是替女人發問，而是像一位歷經半生風霜的老友，圍著火爐替你把脈。‘誰又在乎你的夢？誰說你的心思他會懂？’他唱得近乎殘忍地清醒，卻在每一個轉音裡藏滿了對紅塵痴男怨女的慈悲與寬恕。",
+      "【06:52 林憶蓮 ft. 李宗盛 · 2014：痛徹心扉的世紀共鳴】\n這是全曲最令人屏息的段落。2014年台北小巨蛋，大屏幕上是林憶蓮在紅館的優雅與倔強，舞台上是白髮微生的李宗盛隔空對唱。林憶蓮的嗓音如絲綢般柔韌，將女人的隱忍、傲骨、愛恨糾葛演繹得淋漓盡致；而台下的李宗盛未開口先掩面抹淚，那一刻，歌詞已不再是歌詞，而是兩個人真真切切的一生。",
+      "【10:34 陳淑樺 · 1994：哀而不傷的原唱絕響】\n最後壓軸登場的，是1994年滾石大家樂演唱會上的原唱陳淑樺。一身俐落短髮、白色襯衫，陳淑樺的歌聲醇厚、清亮、大氣從容。不同於後輩的幽怨或老李的滄桑，她的《問》有一種90年代都會女性獨有的尊嚴與坦然——即便‘為情所困’，亦能‘瀟灑走一回’。哀而不傷，端莊通透，堪稱無可替代的絕版經典。"
+    ],
+    "quoteZh": "“誰讓你心動，誰讓你心痛？\n只是女人，容易一往情深，總是為情所困，極認真。\n誰又在乎你的夢，誰說你的心思他會懂。”",
+    "quoteEn": "Who made your heart flutter? Who caused you heartache?\nWomen fall so deeply in love, forever entangled, forever earnest.",
+    "scenariosTitle": "🎧 最佳聆聽方式 · How to Listen",
+    "scenarios": [
+      "• 佩戴耳機，一口氣連續聽完 14 分鐘四版現場，細品四種迥異的唱腔與情緒層次",
+      "• 深夜獨處，對比梁靜茹的青澀、林憶蓮的倔強、李宗盛的自白與陳淑樺的灑脫",
+      "• 伴讀與寫作時作為背景長音軌，在經典的李氏旋律中沉澱思緒",
+      "• 與曾經愛過、痛過、釋懷過的自己，在歌聲裡握手言和"
+    ],
+    "benefitsTitle": "💡 為什麼要對比聽這四個版本？",
+    "benefits": [
+      "✔ 梁靜茹（00:00）：初入愛河的執迷，純真與深情的極致傾訴",
+      "✔ 李宗盛（03:23）：詞曲作者的靈魂自白，看透人生的無奈與寬恕",
+      "✔ 林憶蓮（06:52）：天后級的聲線張力與世紀對唱的宿命感傷",
+      "✔ 陳淑樺（10:34）：原汁原味的時代之聲，哀而不傷的都市女性清醒"
+    ],
+    "aboutTitle": "👉 關於《問》｜About The Song",
+    "aboutDesc": "《問》由李宗盛於1992年作詞、作曲，最初收錄於電影《霸王別姬》電影原聲帶中，由陳淑樺首唱。這首歌以直白深刻的問句切中都市男女在情感中的掙扎與軟肋，三十年來歷經梁靜茹、林憶蓮、李宗盛等無數頂尖歌者的現場演繹，已成為華語流行音樂史上最具辨識度的傳奇女性頌歌之一。",
+    "aboutMotto": "願你在愛裡懂得執著，更在歲月裡懂得釋懷。\n\n— 聽懂這首歌，你就聽懂了半生。",
+    "footerSign": "《問》四版神級現場對比特輯 · MoodyMusic 經典珍藏",
+    "playPillTextActive": "四版《問》對比聆聽中",
+    "playPillTextIdle": "播放四版《問》神級現場",
+    "isSquareCover": true,
+    "posterAspectRatio": 1.0,
+    "timelineTitle": "⏱️ 四版現場章節時間軸",
+    "timelineSections": [
+      {
+        "time": "00:00",
+        "title": "梁靜茹 · 2006 理性與感性音樂會",
+        "desc": "少女初醒的溫柔與執念，清亮純淨的深情呢喃"
+      },
+      {
+        "time": "03:23",
+        "title": "李宗盛 · 2007 現場自白",
+        "desc": "詞曲作者的滄桑獨白，像老友圍爐對飲的無奈長嘆"
+      },
+      {
+        "time": "06:52",
+        "title": "林憶蓮 ft. 李宗盛 · 2014 隔空對唱",
+        "desc": "世紀名場面，天后的通透隱忍與教父的掩面哽咽"
+      },
+      {
+        "time": "10:34",
+        "title": "陳淑樺 · 1994 滾石大家樂演唱會",
+        "desc": "原唱典範，哀而不傷、從容大氣的都會女性絕唱"
+      }
+    ]
   },
   "jonathan_lee_theme": {
     "themeId": "jonathan_lee_theme",

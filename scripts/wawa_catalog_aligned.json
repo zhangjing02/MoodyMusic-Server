@@ -1,0 +1,738 @@
+[
+  {
+    "d1_album_id": 2234,
+    "n163_album_id": 29627,
+    "album_name": "绿色的水滴",
+    "year": "1983",
+    "cover_url": null,
+    "songs": [
+      {
+        "d1_song_id": 30615,
+        "d1_title": "绿色的水滴",
+        "track_index": 1,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30616,
+        "d1_title": "飞鸟",
+        "track_index": 2,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30617,
+        "d1_title": "从来都没有",
+        "track_index": 3,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30618,
+        "d1_title": "和你在一起",
+        "track_index": 4,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30619,
+        "d1_title": "该不该说",
+        "track_index": 5,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30620,
+        "d1_title": "表白",
+        "track_index": 6,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30621,
+        "d1_title": "ㄆㄧㄌㄧˋㄨˇHave Some Fun",
+        "track_index": 7,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30622,
+        "d1_title": "苏里、宝贝",
+        "track_index": 8,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30623,
+        "d1_title": "Music Box",
+        "track_index": 9,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      },
+      {
+        "d1_song_id": 30624,
+        "d1_title": "再见",
+        "track_index": 10,
+        "n163_song_id": null,
+        "n163_name": null,
+        "duration_ms": null
+      }
+    ]
+  },
+  {
+    "d1_album_id": 2235,
+    "n163_album_id": 29623,
+    "album_name": "开心女孩",
+    "year": "1987",
+    "cover_url": "https://p2.music.126.net/V7_CL-8TVuFNbuPKEvS8Rg==/109951163401741358.jpg",
+    "songs": [
+      {
+        "d1_song_id": 30625,
+        "d1_title": "千年的神话",
+        "track_index": 1,
+        "n163_song_id": 298584,
+        "n163_name": "千年的神话",
+        "duration_ms": 244688
+      },
+      {
+        "d1_song_id": 30626,
+        "d1_title": "只是啊!只是",
+        "track_index": 2,
+        "n163_song_id": 298586,
+        "n163_name": "只是啊!只是",
+        "duration_ms": 283376
+      },
+      {
+        "d1_song_id": 30627,
+        "d1_title": "PAINT YOUR PICTURE",
+        "track_index": 3,
+        "n163_song_id": 298588,
+        "n163_name": "PAINT YOUR PICTURE",
+        "duration_ms": 274155
+      },
+      {
+        "d1_song_id": 30628,
+        "d1_title": "新桃太郎电影音乐",
+        "track_index": 4,
+        "n163_song_id": 298590,
+        "n163_name": "新桃太郎电影音乐",
+        "duration_ms": 72071
+      },
+      {
+        "d1_song_id": 30629,
+        "d1_title": "为我停留",
+        "track_index": 5,
+        "n163_song_id": 298592,
+        "n163_name": "为我停留",
+        "duration_ms": 255007
+      },
+      {
+        "d1_song_id": 30630,
+        "d1_title": "有谁能夠",
+        "track_index": 6,
+        "n163_song_id": 298594,
+        "n163_name": "有谁能夠",
+        "duration_ms": 246047
+      },
+      {
+        "d1_song_id": 30631,
+        "d1_title": "情不自禁",
+        "track_index": 7,
+        "n163_song_id": 298596,
+        "n163_name": "情不自禁",
+        "duration_ms": 257044
+      },
+      {
+        "d1_song_id": 30632,
+        "d1_title": "距离",
+        "track_index": 8,
+        "n163_song_id": 298598,
+        "n163_name": "距离",
+        "duration_ms": 213315
+      },
+      {
+        "d1_song_id": 30633,
+        "d1_title": "开心女孩",
+        "track_index": 9,
+        "n163_song_id": 298600,
+        "n163_name": "开心女孩",
+        "duration_ms": 176013
+      },
+      {
+        "d1_song_id": 30634,
+        "d1_title": "爱情哲学",
+        "track_index": 10,
+        "n163_song_id": 298602,
+        "n163_name": "爱情哲学",
+        "duration_ms": 227369
+      }
+    ]
+  },
+  {
+    "d1_album_id": 2236,
+    "n163_album_id": 29617,
+    "album_name": "甜蜜梦幻",
+    "year": "1990",
+    "cover_url": "https://p1.music.126.net/wHo08pRjo_CPYZ25Y7e6Jg==/109951163432574367.jpg",
+    "songs": [
+      {
+        "d1_song_id": 30635,
+        "d1_title": "Crying In The Rain",
+        "track_index": 1,
+        "n163_song_id": 298520,
+        "n163_name": "Crying In The Rain",
+        "duration_ms": 254792
+      },
+      {
+        "d1_song_id": 30636,
+        "d1_title": "Sad Movies (Always Make Me Cry)",
+        "track_index": 2,
+        "n163_song_id": 298522,
+        "n163_name": "Sad Movies (Always Make Me Cry)",
+        "duration_ms": 166626
+      },
+      {
+        "d1_song_id": 30637,
+        "d1_title": "Suspicion",
+        "track_index": 3,
+        "n163_song_id": 298524,
+        "n163_name": "Suspicion",
+        "duration_ms": 222377
+      },
+      {
+        "d1_song_id": 30638,
+        "d1_title": "Rhythm Of The Rain",
+        "track_index": 4,
+        "n163_song_id": 298527,
+        "n163_name": "Rhythm Of The Rain",
+        "duration_ms": 224666
+      },
+      {
+        "d1_song_id": 30639,
+        "d1_title": "Which Way You're Goin' Billy",
+        "track_index": 5,
+        "n163_song_id": 298530,
+        "n163_name": "Which Way You're Goin' Billy",
+        "duration_ms": 206866
+      },
+      {
+        "d1_song_id": 30640,
+        "d1_title": "Wonderful Tonight",
+        "track_index": 6,
+        "n163_song_id": 298532,
+        "n163_name": "Wonderful Tonight",
+        "duration_ms": 200093
+      },
+      {
+        "d1_song_id": 30641,
+        "d1_title": "Rain Rain Go Away",
+        "track_index": 7,
+        "n163_song_id": 298534,
+        "n163_name": "Rain Rain Go Away",
+        "duration_ms": 210240
+      },
+      {
+        "d1_song_id": 30642,
+        "d1_title": "Chotto Matte Kudasai",
+        "track_index": 8,
+        "n163_song_id": 298536,
+        "n163_name": "Chotto Matte Kudasai",
+        "duration_ms": 204335
+      },
+      {
+        "d1_song_id": 30643,
+        "d1_title": "Laughter In The Rain",
+        "track_index": 9,
+        "n163_song_id": 298538,
+        "n163_name": "Laughter In The Rain",
+        "duration_ms": 203360
+      },
+      {
+        "d1_song_id": 30644,
+        "d1_title": "On The Radio",
+        "track_index": 10,
+        "n163_song_id": 298541,
+        "n163_name": "On The Radio",
+        "duration_ms": 241533
+      }
+    ]
+  },
+  {
+    "d1_album_id": 2237,
+    "n163_album_id": 29615,
+    "album_name": "大雨",
+    "year": "1991",
+    "cover_url": "https://p2.music.126.net/E7GiEMghRfe83QYHst4FbQ==/109951173924591560.jpg",
+    "songs": [
+      {
+        "d1_song_id": 31040,
+        "d1_title": "漂洋过海来看你",
+        "track_index": 1,
+        "n163_song_id": 298490,
+        "n163_name": "漂洋过海来看你",
+        "duration_ms": 342133
+      },
+      {
+        "d1_song_id": 31041,
+        "d1_title": "想逃",
+        "track_index": 2,
+        "n163_song_id": 298491,
+        "n163_name": "想逃",
+        "duration_ms": 363560
+      },
+      {
+        "d1_song_id": 31042,
+        "d1_title": "大雨",
+        "track_index": 3,
+        "n163_song_id": 298494,
+        "n163_name": "大雨",
+        "duration_ms": 316226
+      },
+      {
+        "d1_song_id": 31043,
+        "d1_title": "梦恋",
+        "track_index": 4,
+        "n163_song_id": 298497,
+        "n163_name": "梦恋",
+        "duration_ms": 226226
+      },
+      {
+        "d1_song_id": 31044,
+        "d1_title": "在这个时间里",
+        "track_index": 5,
+        "n163_song_id": 298500,
+        "n163_name": "在这个时间里",
+        "duration_ms": 255733
+      },
+      {
+        "d1_song_id": 31045,
+        "d1_title": "你不是一个好情人",
+        "track_index": 6,
+        "n163_song_id": 298502,
+        "n163_name": "你不是一个好情人",
+        "duration_ms": 241440
+      },
+      {
+        "d1_song_id": 31046,
+        "d1_title": "GO GO 杰西",
+        "track_index": 7,
+        "n163_song_id": 298504,
+        "n163_name": "GO GO 杰西",
+        "duration_ms": 364893
+      },
+      {
+        "d1_song_id": 31047,
+        "d1_title": "我的朋友, 我的情人",
+        "track_index": 8,
+        "n163_song_id": 298506,
+        "n163_name": "我的朋友, 我的情人",
+        "duration_ms": 289066
+      },
+      {
+        "d1_song_id": 31048,
+        "d1_title": "我怕冷",
+        "track_index": 9,
+        "n163_song_id": 298509,
+        "n163_name": "我怕冷",
+        "duration_ms": 322733
+      },
+      {
+        "d1_song_id": 31049,
+        "d1_title": "旅店",
+        "track_index": 10,
+        "n163_song_id": 298512,
+        "n163_name": "旅店",
+        "duration_ms": 273000
+      }
+    ]
+  },
+  {
+    "d1_album_id": 2238,
+    "n163_album_id": 29612,
+    "album_name": "四季",
+    "year": "1992",
+    "cover_url": "https://p1.music.126.net/IQSl-GlpiNZTKV_3VxmVmg==/109951173924176001.jpg",
+    "songs": [
+      {
+        "d1_song_id": 31050,
+        "d1_title": "我生",
+        "track_index": 1,
+        "n163_song_id": 298451,
+        "n163_name": "我生",
+        "duration_ms": 213226
+      },
+      {
+        "d1_song_id": 31051,
+        "d1_title": "春之祭",
+        "track_index": 2,
+        "n163_song_id": 298454,
+        "n163_name": "春之祭",
+        "duration_ms": 275133
+      },
+      {
+        "d1_song_id": 31052,
+        "d1_title": "如今才是唯一",
+        "track_index": 3,
+        "n163_song_id": 298457,
+        "n163_name": "如今才是唯一",
+        "duration_ms": 330800
+      },
+      {
+        "d1_song_id": 31053,
+        "d1_title": "摇滚夜族",
+        "track_index": 4,
+        "n163_song_id": 298460,
+        "n163_name": "摇滚夜族",
+        "duration_ms": 260306
+      },
+      {
+        "d1_song_id": 31054,
+        "d1_title": "淡夏",
+        "track_index": 5,
+        "n163_song_id": 298463,
+        "n163_name": "淡夏",
+        "duration_ms": 254373
+      },
+      {
+        "d1_song_id": 31055,
+        "d1_title": "蛊恋",
+        "track_index": 6,
+        "n163_song_id": 298466,
+        "n163_name": "蛊恋",
+        "duration_ms": 296600
+      },
+      {
+        "d1_song_id": 31056,
+        "d1_title": "夜行",
+        "track_index": 7,
+        "n163_song_id": 298469,
+        "n163_name": "夜行",
+        "duration_ms": 300733
+      },
+      {
+        "d1_song_id": 31057,
+        "d1_title": "太阳底下无心事",
+        "track_index": 8,
+        "n163_song_id": 298470,
+        "n163_name": "太阳底下无心事",
+        "duration_ms": 254733
+      },
+      {
+        "d1_song_id": 31058,
+        "d1_title": "秋沙",
+        "track_index": 9,
+        "n163_song_id": 298471,
+        "n163_name": "秋沙",
+        "duration_ms": 317266
+      },
+      {
+        "d1_song_id": 31059,
+        "d1_title": "没有季节的爱情",
+        "track_index": 10,
+        "n163_song_id": 298472,
+        "n163_name": "没有季节的爱情",
+        "duration_ms": 426026
+      },
+      {
+        "d1_song_id": 31060,
+        "d1_title": "曾经沧海",
+        "track_index": 11,
+        "n163_song_id": 298473,
+        "n163_name": "曾经沧海",
+        "duration_ms": 232640
+      },
+      {
+        "d1_song_id": 31061,
+        "d1_title": "时光",
+        "track_index": 12,
+        "n163_song_id": 298479,
+        "n163_name": "时光",
+        "duration_ms": 97800
+      }
+    ]
+  },
+  {
+    "d1_album_id": 2239,
+    "n163_album_id": 29610,
+    "album_name": "我对爱情不灰心",
+    "year": "1993",
+    "cover_url": "https://p1.music.126.net/gFN-OavOsDSDYxQmhRhXpA==/109951173924172254.jpg",
+    "songs": [
+      {
+        "d1_song_id": 31062,
+        "d1_title": "后悔",
+        "track_index": 1,
+        "n163_song_id": 298417,
+        "n163_name": "后悔",
+        "duration_ms": 228855
+      },
+      {
+        "d1_song_id": 31063,
+        "d1_title": "晚安曲",
+        "track_index": 2,
+        "n163_song_id": 298441,
+        "n163_name": "晚安曲",
+        "duration_ms": 270651
+      },
+      {
+        "d1_song_id": 31064,
+        "d1_title": "秋凉",
+        "track_index": 3,
+        "n163_song_id": 298420,
+        "n163_name": "秋凉",
+        "duration_ms": 306224
+      },
+      {
+        "d1_song_id": 31065,
+        "d1_title": "你曾为谁伤心",
+        "track_index": 4,
+        "n163_song_id": 298423,
+        "n163_name": "你曾为谁伤心",
+        "duration_ms": 280825
+      },
+      {
+        "d1_song_id": 31066,
+        "d1_title": "我喜欢说我自己的故事",
+        "track_index": 5,
+        "n163_song_id": 298426,
+        "n163_name": "我喜欢说我自己的故事",
+        "duration_ms": 282238
+      },
+      {
+        "d1_song_id": 31067,
+        "d1_title": "为何梦见他",
+        "track_index": 6,
+        "n163_song_id": 298429,
+        "n163_name": "为何梦见他",
+        "duration_ms": 241557
+      },
+      {
+        "d1_song_id": 31068,
+        "d1_title": "找一个像你的人",
+        "track_index": 7,
+        "n163_song_id": 298432,
+        "n163_name": "找一个像你的人",
+        "duration_ms": 300721
+      },
+      {
+        "d1_song_id": 31069,
+        "d1_title": "花开花谢",
+        "track_index": 8,
+        "n163_song_id": 298435,
+        "n163_name": "花开花谢",
+        "duration_ms": 258716
+      },
+      {
+        "d1_song_id": 31070,
+        "d1_title": "渡口",
+        "track_index": 9,
+        "n163_song_id": 298439,
+        "n163_name": "渡口",
+        "duration_ms": 244173
+      }
+    ]
+  },
+  {
+    "d1_album_id": 2240,
+    "n163_album_id": 29606,
+    "album_name": "随风",
+    "year": "1995",
+    "cover_url": "https://p2.music.126.net/2BKr9wVwZVpvbNpNETcXSA==/109951173924176179.jpg",
+    "songs": [
+      {
+        "d1_song_id": 31071,
+        "d1_title": "没有人说话了 PART (I)",
+        "track_index": 1,
+        "n163_song_id": 298384,
+        "n163_name": "没有人说话了 PART (I)",
+        "duration_ms": 124064
+      },
+      {
+        "d1_song_id": 31072,
+        "d1_title": "你爱我多还是我爱你多",
+        "track_index": 2,
+        "n163_song_id": 298387,
+        "n163_name": "你爱我多还是我爱你多",
+        "duration_ms": 277707
+      },
+      {
+        "d1_song_id": 31073,
+        "d1_title": "没有终点的流浪",
+        "track_index": 3,
+        "n163_song_id": 298389,
+        "n163_name": "没有终点的流浪",
+        "duration_ms": 257515
+      },
+      {
+        "d1_song_id": 31074,
+        "d1_title": "烛光晚餐",
+        "track_index": 4,
+        "n163_song_id": 298391,
+        "n163_name": "烛光晚餐",
+        "duration_ms": 233090
+      },
+      {
+        "d1_song_id": 31075,
+        "d1_title": "随风",
+        "track_index": 5,
+        "n163_song_id": 298393,
+        "n163_name": "随风",
+        "duration_ms": 292858
+      },
+      {
+        "d1_song_id": 31076,
+        "d1_title": "跑出来",
+        "track_index": 6,
+        "n163_song_id": 298396,
+        "n163_name": "跑出来",
+        "duration_ms": 241215
+      },
+      {
+        "d1_song_id": 31077,
+        "d1_title": "宿命的冒险",
+        "track_index": 7,
+        "n163_song_id": 298399,
+        "n163_name": "宿命的冒险",
+        "duration_ms": 295200
+      },
+      {
+        "d1_song_id": 31078,
+        "d1_title": "什么都不知道",
+        "track_index": 8,
+        "n163_song_id": 298402,
+        "n163_name": "什么都不知道",
+        "duration_ms": 207333
+      },
+      {
+        "d1_song_id": 31079,
+        "d1_title": "如果你在这里",
+        "track_index": 9,
+        "n163_song_id": 298404,
+        "n163_name": "如果你在这里",
+        "duration_ms": 287582
+      },
+      {
+        "d1_song_id": 31080,
+        "d1_title": "女子宣言",
+        "track_index": 10,
+        "n163_song_id": 298405,
+        "n163_name": "女子宣言",
+        "duration_ms": 194899
+      },
+      {
+        "d1_song_id": 31081,
+        "d1_title": "解脱",
+        "track_index": 11,
+        "n163_song_id": 298406,
+        "n163_name": "解脱",
+        "duration_ms": 246479
+      },
+      {
+        "d1_song_id": 31082,
+        "d1_title": "没有人说话了 PART (II)",
+        "track_index": 12,
+        "n163_song_id": 298408,
+        "n163_name": "没有人说话了 PART (II)",
+        "duration_ms": 108906
+      }
+    ]
+  },
+  {
+    "d1_album_id": 2241,
+    "n163_album_id": 29603,
+    "album_name": "放了爱",
+    "year": "1996",
+    "cover_url": "https://p1.music.126.net/-Qb2oR_wkv4Xok8zXYNbmQ==/109951172081310149.jpg",
+    "songs": [
+      {
+        "d1_song_id": 31083,
+        "d1_title": "放了爱",
+        "track_index": 1,
+        "n163_song_id": 298352,
+        "n163_name": "放了爱",
+        "duration_ms": 286537
+      },
+      {
+        "d1_song_id": 31084,
+        "d1_title": "七情六欲",
+        "track_index": 2,
+        "n163_song_id": 298356,
+        "n163_name": "七情六欲",
+        "duration_ms": 210667
+      },
+      {
+        "d1_song_id": 31085,
+        "d1_title": "我是飞鸟你是天",
+        "track_index": 3,
+        "n163_song_id": 298360,
+        "n163_name": "我是飞鸟你是天",
+        "duration_ms": 268000
+      },
+      {
+        "d1_song_id": 31086,
+        "d1_title": "算了",
+        "track_index": 4,
+        "n163_song_id": 298363,
+        "n163_name": "算了",
+        "duration_ms": 252333
+      },
+      {
+        "d1_song_id": 31087,
+        "d1_title": "呼吸",
+        "track_index": 5,
+        "n163_song_id": 298365,
+        "n163_name": "呼吸",
+        "duration_ms": 322000
+      },
+      {
+        "d1_song_id": 31088,
+        "d1_title": "祈祷",
+        "track_index": 6,
+        "n163_song_id": 298367,
+        "n163_name": "祈祷",
+        "duration_ms": 268667
+      },
+      {
+        "d1_song_id": 31089,
+        "d1_title": "真爱宣言",
+        "track_index": 7,
+        "n163_song_id": 298368,
+        "n163_name": "真爱宣言",
+        "duration_ms": 292000
+      },
+      {
+        "d1_song_id": 31090,
+        "d1_title": "说清楚",
+        "track_index": 8,
+        "n163_song_id": 298370,
+        "n163_name": "说清楚",
+        "duration_ms": 260667
+      },
+      {
+        "d1_song_id": 31091,
+        "d1_title": "嫉妒",
+        "track_index": 9,
+        "n163_song_id": 298372,
+        "n163_name": "嫉妒",
+        "duration_ms": 238506
+      },
+      {
+        "d1_song_id": 31092,
+        "d1_title": "坦白",
+        "track_index": 10,
+        "n163_song_id": 298375,
+        "n163_name": "坦白",
+        "duration_ms": 310333
+      }
+    ]
+  }
+]
