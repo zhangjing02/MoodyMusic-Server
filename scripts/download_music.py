@@ -25,6 +25,12 @@ if sys.platform.startswith('win'):
 DEFAULT_API_BASE = "https://m-api.changgepd.ccwu.cc"
 DEFAULT_DOWNLOAD_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "downloads"))
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+if not GROQ_API_KEY:
+    try:
+        from groq_manager import get_groq_api_key
+        GROQ_API_KEY = get_groq_api_key()
+    except Exception:
+        pass
 NODE_PATH = r"D:\DevelopeTools\Node\node.exe" if os.path.exists(r"D:\DevelopeTools\Node\node.exe") else "node"
 JS_RUNTIME_ARG = f"node:{NODE_PATH}"
 
@@ -163,8 +169,19 @@ def fetch_and_save_lyrics(artist: str, album: str, song: str, output_dir: str = 
     except Exception as e:
         return {"intro": f"歌词获取异常: {e}", "chorus": "", "has_lyrics": False}
 
+try:
+    from groq_manager import verify_with_groq_whisper as pool_verify_with_groq_whisper
+except ImportError:
+    try:
+        from scripts.groq_manager import verify_with_groq_whisper as pool_verify_with_groq_whisper
+    except ImportError:
+        pool_verify_with_groq_whisper = None
+
 def verify_with_groq_whisper(file_path: str, song: str, intro_lyrics: str = "", chorus_lyrics: str = ""):
-    """使用 Groq Whisper-large-v3 模型听音频精华切片，识别实际唱出的歌词做双重比对"""
+    """使用 Groq Whisper-large-v3 多 Token 负载池听音频精华切片，识别实际唱出的歌词做双重比对"""
+    if pool_verify_with_groq_whisper:
+        return pool_verify_with_groq_whisper(file_path, song, intro_lyrics, chorus_lyrics)
+
     if not GROQ_API_KEY:
         return "未配置 Groq API", True
     

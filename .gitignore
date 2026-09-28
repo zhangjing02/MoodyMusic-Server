@@ -76,6 +76,7 @@ tools/downloaded_avatars/
 
 # 10. 密钥配置与本地数据缓存
 r2_config.json
+groq_config.json
 database/
 *.json.bak
 r2_all_mp3_keys.json
