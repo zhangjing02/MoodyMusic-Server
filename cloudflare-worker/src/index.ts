@@ -499,6 +499,46 @@ app.get('/api/search', async (c) => {
     // Run searches concurrently in D1
     const [resArtists, resAlbums, resSongs] = await c.env.DB.batch([stmtArtists, stmtAlbums, stmtSongs])
 
+    let matchedSongs: any[] = resSongs.results || []
+
+    // 模糊召回降级：如果未精确命中，尝试使用 2-gram 切片在 D1 中模糊召回
+    if (matchedSongs.length === 0 && (resArtists.results || []).length === 0 && (resAlbums.results || []).length === 0 && normalizedQ.length >= 2) {
+      const bigrams: string[] = []
+      for (let i = 0; i < normalizedQ.length - 1; i++) {
+        bigrams.push(normalizedQ.substring(i, i + 2))
+      }
+      if (bigrams.length > 0) {
+        const whereSql = bigrams.map(() => `s.title LIKE ?`).join(' OR ')
+        const binds = bigrams.map(b => `%${b}%`)
+        const stmtFuzzy = c.env.DB.prepare(`
+          SELECT s.id, s.title, COALESCE(s.artist_id, a.artist_id) as ArtistID, s.album_id as Album_ID, s.file_path as FilePath 
+          FROM songs s
+          LEFT JOIN albums a ON s.album_id = a.id
+          WHERE ${whereSql}
+          LIMIT 30
+        `).bind(...binds)
+        const fuzzyRes = await stmtFuzzy.all()
+        if (fuzzyRes.results && fuzzyRes.results.length > 0) {
+          const scored = (fuzzyRes.results as any[]).map(song => {
+            const sTitle = song.title || ''
+            const setQ = new Set(normalizedQ.split(''))
+            let common = 0
+            for (const ch of setQ) {
+              if (sTitle.includes(ch)) common++
+            }
+            const sim = common / Math.max(setQ.size, sTitle.length)
+            return { song, sim }
+          }).filter(x => x.sim >= 0.35)
+            .sort((a, b) => b.sim - a.sim)
+            .map(x => x.song)
+
+          if (scored.length > 0) {
+            matchedSongs = scored.slice(0, 30)
+          }
+        }
+      }
+    }
+
     const baseUrl = new URL(c.req.url).origin
     const results = {
       artists: (resArtists.results || []).map((a: any) => ({
@@ -510,7 +550,7 @@ app.get('/api/search', async (c) => {
         ...al,
         CoverURL: normalizeResourceUrl(al.CoverURL, baseUrl, 'cover')
       })),
-      songs: resSongs.results || []
+      songs: matchedSongs
     }
 
     return c.json({

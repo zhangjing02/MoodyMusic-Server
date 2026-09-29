@@ -467,7 +467,7 @@ export function registerVoiceRoutes(app: Hono<AppType>) {
         }
       }
 
-      // 场景 4: 心情漫游或未命中兜底 (随机抽取 10 首已点亮精选曲目)
+      // 场景 4: 心情漫游或未命中兜底 (在 DB 端随机抽取 20 首已点亮精选曲目，避免 JS shuffle 固定命中前段)
       if (playlist.length === 0) {
         playType = 'mood'
         const stmt = c.env.DB.prepare(`
@@ -478,13 +478,13 @@ export function registerVoiceRoutes(app: Hono<AppType>) {
           JOIN albums al ON s.album_id = al.id
           JOIN artists a ON al.artist_id = a.id
           WHERE s.file_path IS NOT NULL AND s.file_path != ''
-          LIMIT 80
+          ORDER BY RANDOM()
+          LIMIT 20
         `)
         const res = await stmt.all()
         const rows = (res.results || []) as any[]
         if (rows.length > 0) {
-          const shuffled = rows.sort(() => 0.5 - Math.random()).slice(0, 10)
-          playlist = shuffled.map(s => ({
+          playlist = rows.map(s => ({
             songTitle: toSimplified(s.song_title),
             artistName: toSimplified(s.artist_name),
             albumTitle: toSimplified(s.album_title),
