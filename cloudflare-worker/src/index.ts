@@ -1068,6 +1068,41 @@ app.patch('/api/admin/albums/:id', async (c) => {
 })
 
 // ==========================================
+// 14.1 Admin: Update Artist Info
+// ==========================================
+app.patch('/api/admin/artists/:id', async (c) => {
+  try {
+    const id = c.req.param('id')
+    const body = await c.req.json()
+    const allowedFields = ['name', 'region', 'photo_url']
+    
+    const updates = Object.keys(body)
+      .filter(k => allowedFields.includes(k))
+      .map(k => `${k} = ?`)
+    
+    if (updates.length === 0) {
+      return c.json({ code: 400, message: 'No valid fields provided' }, 400)
+    }
+
+    const query = `UPDATE artists SET ${updates.join(', ')} WHERE id = ?`
+    const params = Object.keys(body)
+      .filter(k => allowedFields.includes(k))
+      .map(k => body[k])
+    params.push(id)
+
+    const result = await c.env.DB.prepare(query).bind(...params).run()
+
+    return c.json({
+      code: 200,
+      message: `成功更新艺人 ${id}`,
+      meta: result.meta
+    })
+  } catch (error: any) {
+    return c.json({ code: 500, message: error.message }, 500)
+  }
+})
+
+// ==========================================
 // 15. Admin: Batch Update Songs
 // ==========================================
 app.post('/api/admin/songs/batch-update', async (c) => {

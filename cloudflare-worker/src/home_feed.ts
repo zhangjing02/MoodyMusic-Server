@@ -127,7 +127,7 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
     {
       id: 'block_variety_show_grid',
       type: 'variety_show_grid',
-      sortOrder: 4,
+      sortOrder: 99,
       visible: true,
       data: {
         title: '音乐综艺精选',
@@ -138,32 +138,32 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
             title: '中国好声音',
             subtitle: '导师盲选 · 为梦想转身',
             coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/voice_of_china.jpg',
-            actionType: 'playlist',
-            actionTarget: 'voice_of_china'
+            actionType: 'artist',
+            actionTarget: '133'
           },
           {
             id: 'variety_i_am_singer',
             title: '我是歌手',
             subtitle: '殿堂唱将 · 极致交响Live',
             coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/i_am_singer.jpg',
-            actionType: 'playlist',
-            actionTarget: 'i_am_singer'
+            actionType: 'artist',
+            actionTarget: '134'
           },
           {
             id: 'variety_masked_singer',
             title: '蒙面唱将猜猜猜',
             subtitle: '面具之下 · 纯粹原声共鸣',
             coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/masked_singer.jpg',
-            actionType: 'playlist',
-            actionTarget: 'masked_singer'
+            actionType: 'artist',
+            actionTarget: '135'
           },
           {
             id: 'variety_big_band',
             title: '乐队的夏天',
             subtitle: '燥热现场 · 独立原创摇滚',
             coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/big_band.jpg',
-            actionType: 'playlist',
-            actionTarget: 'big_band'
+            actionType: 'artist',
+            actionTarget: '178'
           }
         ]
       }
