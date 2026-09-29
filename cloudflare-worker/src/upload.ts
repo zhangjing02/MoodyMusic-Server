@@ -470,9 +470,11 @@ export function registerUploadRoutes(app: Hono<{ Bindings: Bindings; Variables: 
       const stmts = [];
       for (const u of updates) {
         if (!u.id || !u.file_path) continue;
+        const cleanId = Number(String(u.id).replace(/^s_/, ''));
+        if (isNaN(cleanId) || cleanId <= 0) continue;
         stmts.push(
           c.env.DB.prepare('UPDATE songs SET file_path = ?, lrc_path = ? WHERE id = ?')
-            .bind(u.file_path, u.lrc_path || null, u.id)
+            .bind(u.file_path, u.lrc_path || null, cleanId)
         );
       }
 
@@ -493,15 +495,17 @@ export function registerUploadRoutes(app: Hono<{ Bindings: Bindings; Variables: 
   // 批量熄灭/留白 API (用于下架非录音室版本或问题音频)
   app.post('/api/admin/songs/batch-unlight', async (c) => {
     try {
-      const body = await c.req.json<{ song_ids: number[] }>();
+      const body = await c.req.json<{ song_ids: any[] }>();
       const songIds = body?.song_ids || [];
       if (!songIds || songIds.length === 0) {
         return c.json({ code: 400, message: '请传入 song_ids 数组' }, 400);
       }
 
       const stmts = [];
-      for (const sid of songIds) {
-        if (!sid) continue;
+      for (const rawSid of songIds) {
+        if (!rawSid) continue;
+        const sid = Number(String(rawSid).replace(/^s_/, ''));
+        if (isNaN(sid) || sid <= 0) continue;
         stmts.push(
           c.env.DB.prepare('UPDATE songs SET file_path = NULL, lrc_path = NULL WHERE id = ?')
             .bind(sid)
