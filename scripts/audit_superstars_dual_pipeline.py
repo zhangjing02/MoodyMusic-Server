@@ -73,14 +73,20 @@ def get_audio_duration(url: str, timeout: int = 15) -> float | None:
     except Exception:
         return None
 
-def parse_lrc(lrc_url: str):
-    """解析 LRC 返回 (first_vocal_sec, text_snippet, is_invalid, raw_full_text)"""
+def is_likely_instrumental(title: str, album: str) -> bool:
+    kw_inst = ["伴奏", "demo", "演奏", "instrumental", "bgm", "纯音乐", "配乐", "开场斩人", "第三街", "制毒", "山市街", "捉贼", "打斗", "粉碎", "球场", "包装", "纸船", "扫毒"]
+    t_clean = title.lower()
+    return any(kw in t_clean for kw in kw_inst)
+
+def parse_lrc(lrc_url: str, song_title: str = "", album_title: str = ""):
+    """解析 LRC 返回 (first_vocal_sec, text_snippet, is_invalid, raw_full_text, is_instrumental)"""
+    is_inst = is_likely_instrumental(song_title, album_title)
     if not lrc_url:
-        return 0, "", True, ""
+        return 0, "", not is_inst, "", is_inst
     try:
         r = requests.get(lrc_url, proxies=PROXIES, timeout=10)
         if r.status_code != 200:
-            return 0, "", True, ""
+            return 0, "", not is_inst, "", is_inst
         
         raw_text = r.text
         lines = raw_text.strip().split("\n")
@@ -99,55 +105,80 @@ def parse_lrc(lrc_url: str):
                     vocal_lines.append(txt)
                     
         clean_full = clean_text(" ".join(vocal_lines))
-        has_kana = bool(re.search(r'[\u3040-\u309f\u30a0-\u30ff]', raw_text))
+        has_kana_lyrics = bool(re.search(r'[\u3040-\u309f\u30a0-\u30ff]', raw_text))
+        is_target_japanese = bool(re.search(r'[\u3040-\u309f\u30a0-\u30ff]', song_title + album_title))
         has_hanzi = bool(re.search(r'[\u4e00-\u9fa5]', clean_full))
-        is_invalid = has_kana or (not has_hanzi and len(clean_full) > 50) or len(vocal_lines) < 3
         
-        return first_sec or 15, clean_full[:150], is_invalid, raw_text
+        if is_inst:
+            is_invalid = False
+        elif is_target_japanese:
+            # 目标本身就是日文大碟/歌曲，包含假名即为正版
+            is_invalid = len(vocal_lines) < 2 and not has_kana_lyrics
+        else:
+            is_invalid = (has_kana_lyrics and not is_target_japanese) or (not has_hanzi and len(clean_full) > 50) or len(vocal_lines) < 3
+        
+        return first_sec or 15, clean_full[:150], is_invalid, raw_text, is_inst
     except Exception:
-        return 0, "", True, ""
+        return 0, "", not is_inst, "", is_inst
 
-def get_official_studio_meta(artist: str, title: str) -> dict:
-    """多源融合获取权威录音室大碟的基准时长与正版歌词 (Kugou -> Netease -> Kuwo)"""
+def get_official_studio_meta(artist: str, title: str, album: str = "") -> dict:
+    """多源融合获取权威录音室大碟的基准时长与正版歌词 (Kugou -> Netease -> Kuwo)，支持专辑加权匹配"""
     clean_target = clean_text(title)
+    is_inst = is_likely_instrumental(title, album)
     q = f"{artist} {title}"
+    clean_alb = clean_text(album)
     
-    # 1. 酷狗源 (涵盖周杰伦等华语全量大碟)
+    # 1. 酷狗源 (涵盖全量大碟)
     try:
-        url = f"http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword={requests.utils.quote(q)}&page=1&pagesize=5"
+        url = f"http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword={requests.utils.quote(q)}&page=1&pagesize=8"
         r = requests.get(url, timeout=6).json()
         songs = r.get("data", {}).get("info", [])
+        
+        # 优先专辑精确命中的 candidate
+        best_candidate = None
         for s in songs:
             sname = s.get("songname", "")
             clean_sn = clean_text(sname)
             s_art = s.get("singername", "")
             dur = s.get("duration", 0)
             h = s.get("hash", "")
-            is_live = any(kw in sname.lower() for kw in ["live", "演唱会", "concert", "伴奏", "片段"])
-            if (clean_target in clean_sn or clean_sn in clean_target) and clean_text(artist) in clean_text(s_art) and not is_live and dur > 15:
-                # 获取官方 LRC
-                lrc_text = ""
-                try:
-                    lr_search = f"http://krcs.kugou.com/search?ver=1&man=yes&client=mobi&keyword={requests.utils.quote(q)}&duration={dur*1000}&hash={h}"
-                    cd = requests.get(lr_search, timeout=5).json().get("candidates", [])
-                    if cd:
-                        cid, akey = cd[0].get("id"), cd[0].get("accesskey")
-                        dl = requests.get(f"http://lyrics.kugou.com/download?ver=1&client=pc&id={cid}&accesskey={akey}&fmt=lrc&charset=utf8", timeout=5).json()
-                        if dl.get("content"):
-                            lrc_text = base64.b64decode(dl["content"]).decode("utf-8")
-                except:
-                    pass
-                return {
-                    "source": "kugou",
-                    "duration": float(dur),
-                    "songname": sname,
-                    "artist": s_art,
-                    "lrc": lrc_text
-                }
+            s_alb = clean_text(s.get("album_name", ""))
+            
+            is_live = any(kw in sname.lower() for kw in ["live", "演唱会", "concert", "片段"])
+            if not is_inst and any(kw in sname.lower() for kw in ["伴奏", "instrumental"]):
+                continue
+            if (clean_target in clean_sn or clean_sn in clean_target) and clean_text(artist) in clean_text(s_art) and not is_live and dur > 10:
+                candidate = (s, dur, h, sname, s_art)
+                if clean_alb and (clean_alb in s_alb or s_alb in clean_alb):
+                    best_candidate = candidate
+                    break
+                if not best_candidate:
+                    best_candidate = candidate
+                    
+        if best_candidate:
+            s, dur, h, sname, s_art = best_candidate
+            lrc_text = ""
+            try:
+                lr_search = f"http://krcs.kugou.com/search?ver=1&man=yes&client=mobi&keyword={requests.utils.quote(q)}&duration={dur*1000}&hash={h}"
+                cd = requests.get(lr_search, timeout=5).json().get("candidates", [])
+                if cd:
+                    cid, akey = cd[0].get("id"), cd[0].get("accesskey")
+                    dl = requests.get(f"http://lyrics.kugou.com/download?ver=1&client=pc&id={cid}&accesskey={akey}&fmt=lrc&charset=utf8", timeout=5).json()
+                    if dl.get("content"):
+                        lrc_text = base64.b64decode(dl["content"]).decode("utf-8")
+            except:
+                pass
+            return {
+                "source": "kugou",
+                "duration": float(dur),
+                "songname": sname,
+                "artist": s_art,
+                "lrc": lrc_text
+            }
     except Exception:
         pass
         
-    # 2. 网易云源 (王菲、陈奕迅、孙燕姿等)
+    # 2. 网易云源 (王菲、陈奕迅、Beyond等)
     try:
         r = requests.post(
             "https://music.163.com/api/cloudsearch/pc",
@@ -159,12 +190,11 @@ def get_official_studio_meta(artist: str, title: str) -> dict:
         for s in songs:
             clean_sname = clean_text(s.get("name", ""))
             sartists = [a["name"] for a in s.get("ar", [])]
-            album = s.get("al", {}).get("name", "")
+            al_name = s.get("al", {}).get("name", "")
             dt_s = s.get("dt", 0) / 1000.0
-            is_live = any(kw in album.lower() or kw in s.get("name", "").lower() for kw in ["live", "演唱会", "concert"])
+            is_live = any(kw in al_name.lower() or kw in s.get("name", "").lower() for kw in ["live", "演唱会", "concert"])
             artist_ok = any(clean_text(artist) in clean_text(a) for a in sartists)
-            if (clean_target in clean_sname or clean_sname in clean_target) and artist_ok and not is_live and dt_s > 15:
-                # 获取歌词
+            if (clean_target in clean_sname or clean_sname in clean_target) and artist_ok and not is_live and dt_s > 10:
                 lr = requests.get(
                     f"https://music.163.com/api/song/lyric?os=pc&id={s['id']}&lv=-1&kv=-1&tv=-1",
                     headers={"User-Agent": "Mozilla/5.0"}, proxies=PROXIES, timeout=8
@@ -175,7 +205,7 @@ def get_official_studio_meta(artist: str, title: str) -> dict:
                     "duration": dt_s,
                     "songname": s.get("name"),
                     "artist": artist,
-                    "album": album,
+                    "album": al_name,
                     "lrc": lrc_txt
                 }
     except Exception:
@@ -191,8 +221,8 @@ def get_official_studio_meta(artist: str, title: str) -> dict:
             clean_sn = clean_text(s.get("SONGNAME", ""))
             s_art = s.get("ARTIST", "")
             dur = float(s.get("DURATION", 0))
-            is_live = any(kw in s.get("SONGNAME", "").lower() for kw in ["live", "演唱会", "伴奏"])
-            if (clean_target in clean_sn or clean_sn in clean_target) and clean_text(artist) in clean_text(s_art) and not is_live and dur > 15:
+            is_live = any(kw in s.get("SONGNAME", "").lower() for kw in ["live", "演唱会"])
+            if (clean_target in clean_sn or clean_sn in clean_target) and clean_text(artist) in clean_text(s_art) and not is_live and dur > 10:
                 return {
                     "source": "kuwo",
                     "duration": dur,
@@ -206,7 +236,7 @@ def get_official_studio_meta(artist: str, title: str) -> dict:
 
     return {}
 
-def whisper_audio(url: str, start_sec: int = 15, duration_sec: int = 25) -> str:
+def whisper_audio(url: str, start_sec: int = 15, duration_sec: int = 25, lang: str = "zh") -> str:
     if not url: return ""
     with tempfile.NamedTemporaryFile(suffix='.mp3', delete=False) as f:
         tmp_path = f.name
@@ -231,7 +261,7 @@ def whisper_audio(url: str, start_sec: int = 15, duration_sec: int = 25) -> str:
                     "https://api.groq.com/openai/v1/audio/transcriptions",
                     headers={"Authorization": f"Bearer {token}"},
                     files={"file": ("clip.mp3", af, "audio/mpeg")},
-                    data={"model": "whisper-large-v3", "language": "zh"},
+                    data={"model": "whisper-large-v3", "language": lang},
                     proxies=PROXIES,
                     timeout=20
                 )
@@ -265,7 +295,7 @@ def audit_song_stage1(artist: str, song: dict) -> dict:
         return {"song": song, "issues": issues, "meta": meta, "healthy": False}
         
     # 2. 权威录音室元数据拉取
-    official_meta = get_official_studio_meta(artist, title)
+    official_meta = get_official_studio_meta(artist, title, album)
     meta["official_meta"] = official_meta
     studio_dur = official_meta.get("duration")
     if studio_dur:
@@ -278,36 +308,41 @@ def audit_song_stage1(artist: str, song: dict) -> dict:
             issues.append(f"时长被截断（实际 {actual_dur:.0f}s vs 录音室 {studio_dur:.0f}s）")
             
     # 3. 线上歌词解析
-    first_vocal, lrc_sample, is_invalid_lrc, raw_lrc = parse_lrc(lrc_url)
+    first_vocal, lrc_sample, is_invalid_lrc, raw_lrc, is_inst = parse_lrc(lrc_url, title, album)
     meta["first_vocal_sec"] = first_vocal
     meta["lrc_sample"] = lrc_sample[:100]
     meta["online_lrc_raw"] = raw_lrc
+    meta["is_instrumental"] = is_inst
+    
     if is_invalid_lrc:
         issues.append("线上 LRC 缺失、无效或包含纯外文错配")
         
     # 4. 歌名词根初探 (初筛嫌疑，待 Stage 2 反向证伪)
     clean_target_title = clean_text(title)
-    if raw_lrc and len(clean_target_title) >= 2:
+    if not is_inst and raw_lrc and len(clean_target_title) >= 2:
         clean_raw_lrc = clean_text(raw_lrc)
         if clean_target_title not in clean_raw_lrc and len(clean_raw_lrc) > 100:
             issues.append(f"歌词正文中未找到曲名核心词《{title}》（初筛嫌疑）")
             
-    # 5. Whisper 盲听语义与水印探针
-    whisper_text = whisper_audio(audio_url, start_sec=first_vocal, duration_sec=25)
-    meta["whisper_vocal"] = whisper_text[:120]
-    
-    if whisper_text:
-        watermarks = ["请不吝点赞", "订阅", "字幕志愿者", "独播剧场", "明镜与点点", "杨茜茜", "关注微信", "公众号"]
-        for wm in watermarks:
-            if wm in whisper_text:
-                issues.append(f"音频中含有平台/搬运水印: '{wm}'")
-                
-        if lrc_sample:
-            sim = compute_similarity(whisper_text, lrc_sample)
-            meta["semantic_sim"] = round(sim, 2)
-            if sim < 0.20:
-                issues.append(f"音频声学与歌词初步匹配偏低 (转录: '{whisper_text[:30]}...')")
-                
+    # 5. Whisper 盲听语义与水印探针 (纯音乐/伴奏跳过)
+    if not is_inst:
+        is_target_japanese = bool(re.search(r'[\u3040-\u309f\u30a0-\u30ff]', title + album))
+        w_lang = "ja" if is_target_japanese else "zh"
+        whisper_text = whisper_audio(audio_url, start_sec=first_vocal, duration_sec=25, lang=w_lang)
+        meta["whisper_vocal"] = whisper_text[:120]
+        
+        if whisper_text:
+            watermarks = ["请不吝点赞", "订阅", "字幕志愿者", "独播剧场", "明镜与点点", "杨茜茜", "关注微信", "公众号"]
+            for wm in watermarks:
+                if wm in whisper_text:
+                    issues.append(f"音频中含有平台/搬运水印: '{wm}'")
+                    
+            if lrc_sample:
+                sim = compute_similarity(whisper_text, lrc_sample)
+                meta["semantic_sim"] = round(sim, 2)
+                if sim < 0.20:
+                    issues.append(f"音频声学与歌词初步匹配偏低 (转录: '{whisper_text[:30]}...')")
+                    
     healthy = (len(issues) == 0)
     return {
         "song": song,
@@ -326,8 +361,9 @@ def verify_suspect_stage2(artist: str, item: dict) -> dict:
     actual_dur = meta.get("actual_dur")
     online_lrc_raw = meta.get("online_lrc_raw", "")
     whisper_vocal = meta.get("whisper_vocal", "")
+    is_inst = meta.get("is_instrumental", False)
     
-    official_meta = meta.get("official_meta") or get_official_studio_meta(artist, title)
+    official_meta = meta.get("official_meta") or get_official_studio_meta(artist, title, album)
     studio_dur = official_meta.get("duration")
     official_lrc = official_meta.get("lrc", "")
     
@@ -340,7 +376,7 @@ def verify_suspect_stage2(artist: str, item: dict) -> dict:
         "details": {
             "actual_dur": actual_dur,
             "studio_dur": studio_dur,
-            "source": official_meta.get("source")
+            "source": official_meta.get("source"),
         }
     }
     
@@ -369,12 +405,12 @@ def verify_suspect_stage2(artist: str, item: dict) -> dict:
     
     # === 正交判定逻辑 ===
     # 判定 1: 成功平反假阳性 (杜绝误杀)
-    # 条件：歌词与官方高度一致 (>= 70%)，时长吻合录音室原版，且无水印
-    if lrc_sim >= 0.70 and duration_match and not watermark_issues:
+    # 条件：(歌词与官方高度一致 >= 70% 或 为电影原声纯音乐/伴奏) 且 时长吻合录音室原版，且无水印
+    if (lrc_sim >= 0.70 or is_inst) and duration_match and not watermark_issues:
         cross_result["is_false_positive"] = True
         cross_result["confirmed_issues"] = []
         cross_result["remediation_category"] = "CLEAN_FALSE_POSITIVE"
-        cross_result["details"]["verdict"] = "歌词与官方正版一致且时长吻合，Whisper偏低系伴奏/快歌假阳性，成功平反"
+        cross_result["details"]["verdict"] = "歌词与官方正版一致且时长吻合（或为正版原声纯音乐/伴奏），成功平反"
         return cross_result
         
     # 判定 2: 仅音频问题 (REPLACE_AUDIO_MASTER)
