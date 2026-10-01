@@ -1968,51 +1968,14 @@ async function playSongAtIndex(index, expectedGen = null) {
             finalAudioUrl = `${finalAudioUrl}${separator}t=${Date.now()}`;
         }
 
-        // [Defense 5] 漫游模式下已通过严格 playableFilter 过滤，跳过 HEAD 网络预检
-        let isAvailable = true;
-        if (!playerState.isRoaming) {
-            isAvailable = await checkResourceAvailability(finalAudioUrl);
-
-            // [Race Guard] 异步等待后检查代次，用户可能已点击新歌曲
-            if (myGeneration !== _playGeneration) {
-                setLoadingState(false);
-                console.log(`[Race Guard] Generation mismatch after HEAD check, aborting "${item.song}"`);
-                return false;
-            }
-        }
-
-        // [Retry] 首次预检失败时，清除该 URL 的缓存并重试一次
-        if (!isAvailable) {
-            console.warn(`[Retry] HEAD check failed for "${item.song}", clearing cache and retrying once...`);
-            if (window.resourceAvailabilityCache) {
-                window.resourceAvailabilityCache.delete(finalAudioUrl);
-            }
-            if (_retryTimer) clearTimeout(_retryTimer);
-            await new Promise(resolve => {
-                _retryTimer = setTimeout(resolve, 500);
-            });
-
-            if (myGeneration !== _playGeneration) {
-                setLoadingState(false);
-                console.log(`[Race Guard] Generation mismatch after retry wait, aborting "${item.song}"`);
-                return false;
-            }
-
-            isAvailable = await checkResourceAvailability(finalAudioUrl);
-
-            if (myGeneration !== _playGeneration) {
-                setLoadingState(false);
-                console.log(`[Race Guard] Generation mismatch after retry, aborting "${item.song}"`);
-                return false;
-            }
-        }
-
-        if (!isAvailable) {
-            setLoadingState(false);
-            _clearStaleHighlight();
-            return autoSkipToNext('资源不可用（重试后仍失败）');
-        }
-
+        // [Zero-Lag Playback & User Gesture Guard]
+        // 核心修复: 彻底移除阻塞式的 await checkResourceAvailability(HEAD) 网络预检！
+        // 过去在 play() 前执行 await fetch(HEAD) 会造成数百毫秒的网络等待，
+        // 导致浏览器的用户手势凭据 (User Gesture Transient Activation) 超时过期，
+        // 从而触发浏览器的自动播放安全限制 (NotAllowedError)，导致点击列表歌曲后只能加载、无法自动起播，
+        // 必须等加载出来后再次手动点击底部播放按钮。
+        // 现彻底移除网络阻塞，直接同步设置 src 并立即触发 play()，异常情况完全由原生的 audio error 事件
+        // 以及双保险自适应看门狗 (_startWatchdog) 自动容灾跳过！
         player.audio.src = finalAudioUrl;
     }
 
