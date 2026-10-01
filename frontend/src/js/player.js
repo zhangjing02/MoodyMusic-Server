@@ -301,6 +301,7 @@ function finishLoading() {
 // [Race Condition Guard] 播放代次计数器、定时器与网络请求物理中断控制器
 // 每次发起新的播放请求时递增，并物理取消上一次进行中的 HEAD 检查和歌词请求
 let _playGeneration = 0;
+let _skipHandledGeneration = -1; // 记录已处理过跳歌的代次，防止单曲异常同时被多个 handler 触发导致连跳两首
 let _autoSkipTimer = null;
 let _retryTimer = null;
 let _mediaLoadingWatchdogTimer = null;
@@ -372,6 +373,7 @@ function _startWatchdog(item, audioUrl, generation, autoSkipFn, timeoutMs = 8000
 function nextPlayGeneration() {
     _playGeneration++;
     _watchdogRetryCount = 0; // 切新歌时重置看门狗重试计数
+    _skipHandledGeneration = -1; // 切新歌时重置跳歌互斥锁
     clearMediaLoadingWatchdog();
 
     // 1. 物理掐断上一次未完成的资源预检网络请求
@@ -701,6 +703,14 @@ function bindPlayerEvents() {
     player.audio.addEventListener('error', (e) => {
         clearMediaLoadingWatchdog();
         console.error('播放出错:', e);
+
+        // [Defense Guard] 若当前播放代次已由 autoSkipToNext 处理过切歌，坚决忽略原生事件的重复触发
+        if (_skipHandledGeneration === _playGeneration) {
+            console.log(`[Error Listener Guard] 当前代次 (${_playGeneration}) 已由 autoSkip 处理过跳歌，忽略原生 error 事件的重复切歌`);
+            return;
+        }
+        _skipHandledGeneration = _playGeneration;
+
         const errorCode = player.audio.error ? player.audio.error.code : 0;
         let errorMsg = '播放出错';
 
@@ -1888,6 +1898,12 @@ async function playSongAtIndex(index, expectedGen = null) {
             console.log(`[AutoSkip Guard] Superseded generation, ignoring auto-skip for: "${item.song}"`);
             return false;
         }
+        if (_skipHandledGeneration === myGeneration) {
+            console.log(`[AutoSkip Guard] 代次 ${myGeneration} 已处理过跳歌，防止重复切歌连跳两首，忽略: ${reason}`);
+            return false;
+        }
+        _skipHandledGeneration = myGeneration;
+        clearMediaLoadingWatchdog();
         console.warn(`[AutoSkip] ${reason}: "${item.song}"`);
 
         // 漫游模式防卡死：单曲资源不可用时，永不停止，自动切下一首漫游
@@ -2063,8 +2079,24 @@ async function playSongAtIndex(index, expectedGen = null) {
         console.error('播放失败 (Play Promise Reject):', err);
 
         if (err.name === 'NotAllowedError') {
-            showNotification('浏览器限制自动播放，请手动点击播放按钮');
-        } else if (err.name === 'NotSupportedError') {
+            // 🛑 核心拦截: 浏览器策略限制自动播放时，绝对禁止自动跳下一首！
+            // 音源本身是完好的，跳到下一首更没有用户手势，只会引发连环跳车灾难。
+            console.warn('[Play Autoplay Blocked] 浏览器拦截了未手势激活的自动播放，停留在当前曲目等待用户交互');
+            showNotification('👆 浏览器策略限制，请点击下方播放按钮开始收听');
+            clearMediaLoadingWatchdog();
+            setLoadingState(false);
+            playerState.isPlaying = false;
+            updatePlayPauseButton();
+            return false;
+        }
+
+        if (err.name === 'AbortError') {
+            // 用户快速切歌打断的旧请求，静默退出，不跳歌
+            console.log(`[Play Aborted] play() 被后续操作中断: "${item.song}"`);
+            return false;
+        }
+
+        if (err.name === 'NotSupportedError') {
             const fileName = item.audioUrl.split('/').pop();
             showNotification(`格式不支持或源无效: ${decodeURIComponent(fileName)}`);
             console.error('Failed URL:', item.audioUrl);
@@ -2072,8 +2104,7 @@ async function playSongAtIndex(index, expectedGen = null) {
             showNotification(`播放失败: ${err.message}`);
         }
 
-        // [No Rollback] 失败时清除乐观高亮，但不恢复旧歌曲高亮
-        // 这样比"回滚到上一首"更符合直觉：播放失败就是没有高亮，autoSkipToNext 会高亮下一首
+        // [No Rollback] 确认音频源损坏或网络不可达时才清除高亮并切下一首
         _clearStaleHighlight();
 
         clearMediaLoadingWatchdog();
