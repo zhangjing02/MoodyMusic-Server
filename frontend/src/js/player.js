@@ -1944,17 +1944,19 @@ async function playSongAtIndex(index, expectedGen = null) {
 
     // 2. 检查本地 Blob 预缓存
     // [BlobCache 优先命中] 以原始 URL 为 key 查询 Blob 缓存
-    // 命中时直接使用本地已预下载的 Blob URL，跳过 HEAD 预检与 CDN 网络请求，实现真正意义上的 0 延迟起播！
+    // 命中时直接使用本地已预下载的 Blob URL，跳过 CDN 网络请求与时间戳追加，实现真正意义上的 0 延迟起播！
+    let finalAudioUrl = '';
     const cachedBlobUrl = getBlobCacheUrl(item.audioUrl);
     if (cachedBlobUrl) {
         console.log(`[BlobCache] 🚀 命中预缓存！直接使用本地内存 Blob 播放: "${item.song}"`);
+        finalAudioUrl = cachedBlobUrl;
         player.audio.src = cachedBlobUrl;
         if (window.resourceAvailabilityCache) {
             window.resourceAvailabilityCache.set(item.audioUrl, { available: true, timestamp: Date.now() });
         }
     } else {
-        // 未命中 Blob 缓存，走常规网络 CDN 预检与加载逻辑
-        let finalAudioUrl = item.audioUrl;
+        // 未命中 Blob 缓存，使用规范化后的 CDN 直链
+        finalAudioUrl = item.audioUrl;
         if (finalAudioUrl && finalAudioUrl.includes('r2.changgepd.ccwu.cc')) {
             finalAudioUrl = finalAudioUrl.replace('https://r2.changgepd.ccwu.cc', 'https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev');
         }
@@ -1968,14 +1970,6 @@ async function playSongAtIndex(index, expectedGen = null) {
             finalAudioUrl = `${finalAudioUrl}${separator}t=${Date.now()}`;
         }
 
-        // [Zero-Lag Playback & User Gesture Guard]
-        // 核心修复: 彻底移除阻塞式的 await checkResourceAvailability(HEAD) 网络预检！
-        // 过去在 play() 前执行 await fetch(HEAD) 会造成数百毫秒的网络等待，
-        // 导致浏览器的用户手势凭据 (User Gesture Transient Activation) 超时过期，
-        // 从而触发浏览器的自动播放安全限制 (NotAllowedError)，导致点击列表歌曲后只能加载、无法自动起播，
-        // 必须等加载出来后再次手动点击底部播放按钮。
-        // 现彻底移除网络阻塞，直接同步设置 src 并立即触发 play()，异常情况完全由原生的 audio error 事件
-        // 以及双保险自适应看门狗 (_startWatchdog) 自动容灾跳过！
         player.audio.src = finalAudioUrl;
     }
 
