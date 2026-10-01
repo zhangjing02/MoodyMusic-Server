@@ -276,6 +276,7 @@ const dom = {
 // --- State ---
 let viewState = { sIdx: 0, aIdx: 0, category: '华语', search: '', viewMode: 'artist' }; // viewMode: 'artist' | 'local'
 let allArtistsData = [];
+window.allArtistsData = allArtistsData;
 // [New] 预加载定时器
 let prefetchTimeout = null;
 
@@ -621,6 +622,11 @@ function renderLocalMusicView() {
             // document.querySelectorAll('.st-row').forEach(el => el.classList.remove('active'));
             // tr.classList.add('active');
 
+            // 互斥保护：播放本地音乐时，退出漫游模式
+            if (window.RoamingManager && window.RoamingManager.isActive) {
+                window.RoamingManager.stop(true);
+            }
+
             // 尝试播放本地音乐
             console.log(`尝试播放本地音乐: ${song.songName} - ${song.artistName}`);
             if (window.audioPlayer && window.audioPlayer.play) {
@@ -645,6 +651,11 @@ function playLocalSong(e, songName, artistName) {
     // document.querySelectorAll('.st-row').forEach(el => el.classList.remove('active'));
     // const row = e.currentTarget.closest('.st-row');
     // row.classList.add('active');
+
+    // 互斥保护：播放本地音乐时，退出漫游模式
+    if (window.RoamingManager && window.RoamingManager.isActive) {
+        window.RoamingManager.stop(true);
+    }
 
     const key = `${songName} - ${artistName}`;
     const song = localSongsMap.get(key);
@@ -1049,6 +1060,7 @@ async function initApp() {
         return a.name.localeCompare(b.name, 'zh-CN');
     });
 
+    window.allArtistsData = allArtistsData;
     console.log('[MOODY] 系统初始化完成，载入', allArtistsData.length, '位艺术家');
 
     // 4. 加载本地 IndexedDB 手动上传的内容
@@ -2149,7 +2161,7 @@ function checkAlbumResources(artistName, album) {
     // console.log(`[Prefetch] 启动专辑资源预检: ${album.title}`);
 
     const checkTask = () => {
-        currentSongs.forEach((songData, i) => {
+        album.songs.forEach((songData, i) => {
             const songName = typeof songData === 'string' ? songData : songData.title;
             const songPath = typeof songData === 'string' ? null : songData.path;
 
@@ -2172,12 +2184,8 @@ function checkAlbumResources(artistName, album) {
 
             // 3. 构造远程 URL
             if (songPath) {
-                if (songPath.startsWith('http://') || songPath.startsWith('https://')) {
-                    audioUrl = songPath;
-                } else {
-                    const encodedPath = songPath.split(/[\\/]/).map(segment => encodeURIComponent(segment)).join('/');
-                    audioUrl = `${API_BASE}/storage/${encodedPath}`;
-                }
+                const encodedPath = songPath.split(/[\\/]/).map(segment => encodeURIComponent(segment)).join('/');
+                audioUrl = `${API_BASE}/storage/${encodedPath}`;
             }
 
             // 发起检查
@@ -2198,6 +2206,11 @@ function checkAlbumResources(artistName, album) {
 async function playSong(e, songData, artist) {
     const name = typeof songData === 'string' ? songData : songData.title;
     e.stopPropagation();
+
+    // 互斥保护：点击专辑内歌曲播放时，必须立刻退出全局漫游模式
+    if (window.RoamingManager && window.RoamingManager.isActive) {
+        window.RoamingManager.stop(true);
+    }
 
     // 移除焦点，防止出现光标
     if (document.activeElement) {
@@ -2270,6 +2283,7 @@ window.deleteAudioFromIndexedDB = deleteAudioFromIndexedDB;
 
 // 将本地歌曲映射也导出到全局，方便其他模块访问
 window.localSongsMap = localSongsMap;
+window.allArtistsData = allArtistsData;
 
 // Run App（初始化由 HTML 中的脚本统一管理）
 // renderIndexBar(); // [Fix] Removed premature call

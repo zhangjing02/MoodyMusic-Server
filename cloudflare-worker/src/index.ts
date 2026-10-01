@@ -150,7 +150,13 @@ app.get('/storage/*', async (c) => {
       const offset = parseInt(match[1], 10)
       const endStr = match[2]
       if (endStr) {
-        rangeOpts = { range: { offset, length: parseInt(endStr, 10) - offset + 1 } }
+        // Fix: 防止 endStr 解析为 NaN 时传入错误 length，导致 R2 取错大小的 chunk
+        const end = parseInt(endStr, 10)
+        if (!isNaN(end) && end >= offset) {
+          rangeOpts = { range: { offset, length: end - offset + 1 } }
+        } else {
+          rangeOpts = { range: { offset } }
+        }
       } else {
         rangeOpts = { range: { offset } }
       }
@@ -174,7 +180,9 @@ app.get('/storage/*', async (c) => {
     const fileSize = object.size
     const rangeResult = (object as any).range as { offset?: number; length?: number } | undefined
     const start = rangeResult?.offset ?? 0
-    const length = rangeResult?.length ?? fileSize
+    // Fix: 优先用 R2 实际返回的 length，避免 fallback 到 fileSize 导致 Content-Range 头与实际 body 不匹配
+    const actualLength = rangeResult?.length
+    const length = (actualLength != null && actualLength > 0) ? actualLength : fileSize - start
     const end = start + length - 1
     headers.set('Content-Range', `bytes ${start}-${end}/${fileSize}`)
     headers.set('Content-Length', String(length))
