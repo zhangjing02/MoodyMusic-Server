@@ -339,7 +339,7 @@ app.get('/api/songs', async (c) => {
       SELECT 
         a.id AS artist_id, a.name AS artist_name, a.region, a.photo_url,
         al.id AS album_id, al.title AS album_title, al.release_date, al.cover_url,
-        s.title AS song_title, s.file_path, s.lrc_path, s.track_index,
+        s.title AS song_title, s.file_path, s.lrc_path, s.track_index, s.mood,
         MAX(CASE WHEN s.file_path IS NOT NULL AND s.file_path != '' THEN 1 ELSE 0 END) OVER (PARTITION BY al.id) AS has_lit
       FROM artists a
       LEFT JOIN albums al ON a.id = al.artist_id
@@ -426,7 +426,10 @@ app.get('/api/songs', async (c) => {
             title: row.song_title,
             path: row.file_path,
             lrc_path: row.lrc_path,
-            TrackIndex: row.track_index
+            TrackIndex: row.track_index,
+            disc: (row.track_index >= 100 || row.mood === '导师考核与对决') ? 2 : 1,
+            disc_name: (row.track_index >= 100 || row.mood === '导师考核与对决') ? "导师考核与PK" : "第一轮盲选",
+            mood: row.mood
           })
         }
       }
@@ -1142,9 +1145,17 @@ app.post('/api/admin/songs/batch-update', async (c) => {
         setClauses.push('album_id = ?')
         params.push(item.album_id)
       }
-      if (item.artist_id !== undefined) {
-        setClauses.push('artist_id = ?')
-        params.push(item.artist_id)
+      if (item.file_path !== undefined) {
+        setClauses.push('file_path = ?')
+        params.push(item.file_path)
+      }
+      if (item.lrc_path !== undefined) {
+        setClauses.push('lrc_path = ?')
+        params.push(item.lrc_path)
+      }
+      if (item.mood !== undefined) {
+        setClauses.push('mood = ?')
+        params.push(item.mood)
       }
 
       if (setClauses.length > 0) {
@@ -1464,14 +1475,15 @@ app.post('/api/admin/songs/batch-insert', async (c) => {
 
     for (const song of songs) {
       const stmt = c.env.DB.prepare(
-        'INSERT INTO songs (title, file_path, lrc_path, album_id, storage_id, track_index) VALUES (?, ?, ?, ?, ?, ?)'
+        'INSERT INTO songs (title, file_path, lrc_path, album_id, storage_id, track_index, mood) VALUES (?, ?, ?, ?, ?, ?, ?)'
       ).bind(
         song.title,
         song.file_path || null,
         song.lrc_path || null,
         album_id,
         song.storage_id || 'primary',
-        song.track_index || 0
+        song.track_index || 0,
+        song.mood || null
       )
       stmts.push(stmt)
 
