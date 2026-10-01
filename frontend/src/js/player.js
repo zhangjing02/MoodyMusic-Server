@@ -302,6 +302,7 @@ function finishLoading() {
 // 每次发起新的播放请求时递增，并物理取消上一次进行中的 HEAD 检查和歌词请求
 let _playGeneration = 0;
 let _skipHandledGeneration = -1; // 记录已处理过跳歌的代次，防止单曲异常同时被多个 handler 触发导致连跳两首
+let _isSessionFirstPlay = true;   // 会话首次播放标记（首曲冷启动）：放宽看门狗至 18s 允许充裕建连与首包缓冲
 let _autoSkipTimer = null;
 let _retryTimer = null;
 let _mediaLoadingWatchdogTimer = null;
@@ -318,15 +319,21 @@ function clearMediaLoadingWatchdog() {
 
 /**
  * 启动自适应看门狗（最多重试 2 次后才跳下一首）
- * 每次重试延长超时窗口（8s → 10s → 12s），给弱网更多机会
+ * 【前置优化】首曲冷启动时放宽至 18s 充裕缓冲时间；一旦起播成功，后续切歌恢复 8s 敏捷阈值
  * @param {object} item - 当前播放项
  * @param {string} audioUrl - 最终音频 URL
  * @param {number} generation - 当前播放代次
  * @param {function} autoSkipFn - 跳下一首回调
- * @param {number} timeoutMs - 本次超时毫秒数（默认 8000）
+ * @param {number|null} timeoutMs - 本次超时毫秒数（传 null 时自适应选择 18s 或 8s）
  */
-function _startWatchdog(item, audioUrl, generation, autoSkipFn, timeoutMs = 8000) {
+function _startWatchdog(item, audioUrl, generation, autoSkipFn, timeoutMs = null) {
     clearMediaLoadingWatchdog();
+
+    // 自适应确定超时时间：首曲冷启动给 18000ms（18秒），后续切歌维持 8000ms（8秒）
+    const isColdStart = _isSessionFirstPlay;
+    const actualTimeout = timeoutMs !== null ? timeoutMs : (isColdStart ? 18000 : 8000);
+    const retryIncrement = isColdStart ? 4000 : 2000;
+
     _mediaLoadingWatchdogTimer = setTimeout(() => {
         // 代次保护：若用户已切换新歌，静默退出
         if (generation !== _playGeneration) return;
@@ -335,9 +342,13 @@ function _startWatchdog(item, audioUrl, generation, autoSkipFn, timeoutMs = 8000
 
         if (_watchdogRetryCount < 2) {
             _watchdogRetryCount++;
-            const nextTimeout = timeoutMs + 2000; // 每次重试延长 2s
-            console.warn(`[Watchdog] 超时(${timeoutMs}ms) 第 ${_watchdogRetryCount} 次重试: "${item.song}", 下次超时: ${nextTimeout}ms`);
-            showNotification(`⏳ 网络波动，正在重试第 ${_watchdogRetryCount} 次...`);
+            const nextTimeout = actualTimeout + retryIncrement;
+            console.warn(`[Watchdog] 超时(${actualTimeout}ms) 第 ${_watchdogRetryCount} 次重试: "${item.song}", 下次超时: ${nextTimeout}ms (首曲冷启动: ${isColdStart})`);
+            if (isColdStart) {
+                showNotification(`🎧 首次连接音源节点，正在极速缓冲中，请稍候...`);
+            } else {
+                showNotification(`⏳ 网络波动，正在重试第 ${_watchdogRetryCount} 次...`);
+            }
             // 重置 audio 元素，触发重新请求 CDN
             try {
                 player.audio.pause();
@@ -367,7 +378,7 @@ function _startWatchdog(item, audioUrl, generation, autoSkipFn, timeoutMs = 8000
             _clearStaleHighlight();
             autoSkipFn('媒体流加载超时(已重试2次)');
         }
-    }, timeoutMs);
+    }, actualTimeout);
 }
 
 function nextPlayGeneration() {
@@ -766,11 +777,19 @@ function bindPlayerEvents() {
     player.audio.addEventListener('playing', () => {
         clearMediaLoadingWatchdog();
         setLoadingState(false);
+        if (_isSessionFirstPlay) {
+            _isSessionFirstPlay = false;
+            console.log('[Cold-Start] 🎉 会话首曲起播成功！看门狗已自动恢复 8s 常规敏捷阈值');
+        }
     });
 
     player.audio.addEventListener('timeupdate', () => {
         if (player.audio.currentTime > 0) {
             clearMediaLoadingWatchdog();
+            if (_isSessionFirstPlay) {
+                _isSessionFirstPlay = false;
+                console.log('[Cold-Start] 🎉 会话首曲起播成功！看门狗已自动恢复 8s 常规敏捷阈值');
+            }
         }
         playerState.currentTime = player.audio.currentTime;
         updateProgressBar();
@@ -2009,8 +2028,9 @@ async function playSongAtIndex(index, expectedGen = null) {
             return false;
         }
 
-        // 播放成功，移除加载状态
+        // 播放成功，移除加载状态并复位会话首播标记
         setLoadingState(false);
+        _isSessionFirstPlay = false;
 
         // ========== [Commit Phase] 播放成功后才更新 UI 和状态 ==========
         console.log(`[Player] Play successful, updating UI for: ${item.song}`);
