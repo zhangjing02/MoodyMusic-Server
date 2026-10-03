@@ -235,17 +235,18 @@ export async function checkBucketWriteSafety(env: Bindings, targetBucketId: numb
       .first<{ value: string }>();
     if (row && row.value) {
       const stats = JSON.parse(row.value);
-      if (stats.safety_valve_active || stats.cluster_status === 'locked') {
+      if (stats.safety_valve_active || stats.cluster_status === 'locked' || stats.cluster_status === 'critical') {
         return { allowed: false, reason: '🚨 全网存储集群安全阀已处于锁死状态，全局禁止写入新资产！' };
       }
       const bKey = `bucket${targetBucketId}`;
       const bInfo = stats[bKey];
       if (bInfo) {
         const usedGb = Number(bInfo.used_gb || (bInfo.used_bytes ? bInfo.used_bytes / 1e9 : 0));
-        if (usedGb >= 9.50) {
+        const allowWrites = bInfo.allow_writes !== false;
+        if (!allowWrites || usedGb >= 9.00) {
           return {
             allowed: false,
-            reason: `🚨 存储安全阀物理熔断：目标存储桶 (Bucket ${targetBucketId}) 当前用量已达 ${usedGb.toFixed(2)} GB，触碰 9.50 GB 红色熔断红线！已强制阻断写入！`
+            reason: `🚨 存储安全阀物理熔断：目标存储桶 (Bucket ${targetBucketId}) 当前用量已达 ${usedGb.toFixed(2)} GB (警戒线 9.00 GB) 或已配置为只读封箱！已阻断写入！`
           };
         }
       }
