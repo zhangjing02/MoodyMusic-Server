@@ -897,6 +897,73 @@ function renderR2Dashboard(rawData, litCount) {
             b16StatSize.textContent = '0.0 MB';
         }
     }
+
+    // 18. 动态自适应渲染扩展存储桶 (Bucket 17, 18, ... N 桶无感自动加载)
+    const gridContainer = document.getElementById('r2-buckets-grid');
+    if (gridContainer) {
+        Object.keys(data).forEach(k => {
+            const match = k.match(/^bucket(\d+)$/);
+            if (match) {
+                const bId = parseInt(match[1]);
+                if (bId > 16) {
+                    let card = document.getElementById(`bucket${bId}-card`);
+                    if (!card) {
+                        const cardHtml = `
+                        <div class="bucket-card" id="bucket${bId}-card">
+                            <div class="bucket-card-header">
+                                <div class="bucket-tag-title">Bucket ${bId < 10 ? '0' + bId : bId}</div>
+                                <span class="bucket-badge badge-healthy" id="b${bId}-status-badge">就绪待命</span>
+                            </div>
+                            <div class="bucket-card-body">
+                                <div class="bucket-dial-wrap">
+                                    <svg class="bucket-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-track" cx="50" cy="50" r="40" stroke-width="7" />
+                                        <circle class="gauge-progress stroke-healthy" id="b${bId}-gauge-progress" cx="50" cy="50" r="40" stroke-width="7" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+                                    </svg>
+                                    <div class="bucket-dial-center">
+                                        <span class="bucket-dial-pct" id="b${bId}-gauge-pct">0.0%</span>
+                                        <span class="bucket-dial-sub" id="b${bId}-gauge-val">0 B</span>
+                                    </div>
+                                </div>
+                                <div class="bucket-simple-info">
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已用容量</span>
+                                        <span class="stat-val"><strong id="b${bId}-stat-size">0.0 MB</strong> / 10 GB</span>
+                                    </div>
+                                    <div class="simple-stat-row">
+                                        <span class="stat-label">已存曲目</span>
+                                        <span class="stat-val"><strong id="b${bId}-stat-songs">0</strong> 首</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                        gridContainer.insertAdjacentHTML('beforeend', cardHtml);
+                    }
+                    const bInfo = data[k] || {};
+                    const prog = document.getElementById(`b${bId}-gauge-progress`);
+                    const pct = document.getElementById(`b${bId}-gauge-pct`);
+                    const val = document.getElementById(`b${bId}-gauge-val`);
+                    const badge = document.getElementById(`b${bId}-status-badge`);
+                    const songs = document.getElementById(`b${bId}-stat-songs`);
+                    const size = document.getElementById(`b${bId}-stat-size`);
+                    if (prog) {
+                        const offset = c * (1 - Math.min(100, Math.max(0, bInfo.used_ratio || 0)) / 100);
+                        prog.style.strokeDasharray = `${c}`;
+                        prog.style.strokeDashoffset = `${offset.toFixed(2)}`;
+                        prog.setAttribute('class', `gauge-progress stroke-${bInfo.status_level || 'healthy'}`);
+                    }
+                    if (pct) pct.textContent = `${(bInfo.used_ratio || 0.0).toFixed(1)}%`;
+                    if (val) val.textContent = bInfo.used_gb > 0 ? `${bInfo.used_gb} GB` : (bInfo.used_mb > 0 ? `${bInfo.used_mb.toFixed(0)} MB` : '0 B');
+                    if (badge) {
+                        badge.className = `bucket-badge badge-${bInfo.status_level || 'healthy'}`;
+                        badge.textContent = bInfo.status_level === 'locked' ? '安全阀锁死' : (bInfo.status_level === 'warning' ? `${bInfo.used_ratio}% 预警` : (bInfo.status_level === 'critical' ? '熔断' : (bInfo.allow_writes ? '主力写入' : '只读归档')));
+                    }
+                    if (songs) songs.textContent = (bInfo.songs_count || 0).toLocaleString();
+                    if (size) size.textContent = bInfo.used_gb > 0 ? `${bInfo.used_gb} GB` : (bInfo.used_mb > 0 ? `${bInfo.used_mb.toFixed(1)} MB` : '0.0 MB');
+                }
+            }
+        });
+    }
 }
 
 // === 模块 3：超级上传 ===
