@@ -110,70 +110,132 @@ payload = {
 
 ---
 
-## 🗄️ 多存储桶分布式架构与资源分配策略 (Multi-Bucket Architecture)
+## 🗄️ 多存储桶分布式集群、三层物理熔断与容量自愈管控体系 (Multi-Bucket Architecture & Automated Defense)
 
-> **设计原则：100% 零成本（Zero Cost）与零账单风险（Zero Financial Risk）**
-> 为规避云平台因黑客攻击、恶意爬虫穿透或配额超出导致的信用卡突发扣费风险，系统严格执行「多账号物理隔离 + 10GB 免费限额硬截断」策略。每个存储桶设置 **9.50 GB (95%) 物理停机安全红线**，单桶达到警戒线后即刻进入只读保护状态。
-
-### 1. 十桶集群商业计费实时状态矩阵 (Deca-Bucket Hub Status)
-
-> 采样时间：2026-09-21 | 商业十进制：1 GB = 1,000,000,000 字节 | 集群总资产：15,640+ 首 | 总用量：81.62 GB / 100.00 GB (81.6%) | 剩余安全空间：18.38 GB
-
-| 存储桶 | 物理名称 | 对象数 | 物理容量 | 水位占比 | 当前系统状态 | 重点资产分布与角色 |
-| :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **Bucket 01** | `moody-music-asset` | 4,845 | **8.24 GB** | 82.4% | 🔒 **只读归档 (降载完成)** | 核心大碟基石 (周杰伦/林俊杰/五月天/Beyond/梁静茹) + 全网大碟封面/头像 (1,966 张) |
-| **Bucket 02** | `moody-music-asset-02` | 2,911 | 9.17 GB | 91.7% | ⚠️ 容量预警 (封箱) | 王菲、王力宏、张国荣、五月天等早期大盘曲库 |
-| **Bucket 03** | `moody-music-asset-03` | 3,160 | 9.15 GB | 91.5% | ⚠️ 容量预警 (封箱) | 张学友、刘德华、张惠妹、任贤齐等经典大碟 |
-| **Bucket 04** | `moody-music-asset-04` | 3,568 | 9.31 GB | 93.1% | ⚠️ 容量预警 (封箱) | 华语黄金时代大碟、林忆莲、莫文蔚等 |
-| **Bucket 05** | `moody-music-asset-05` | 3,574 | 9.13 GB | 91.3% | ⚠️ 容量预警 (封箱) | 华语群星、合辑、经典单曲集 |
-| **Bucket 06** | `moody-music-asset-06` | 3,706 | 9.19 GB | 91.9% | ⚠️ 容量预警 (封箱) | 影视原声、现代流行录音室专辑 |
-| **Bucket 07** | `moody-music-asset-07` | 3,412 | **9.19 GB** | 91.9% | ⚠️ **容量预警 (排雷完成)** | 窦唯、费玉清、庾澄庆、王心凌等 (苏慧伦已平移出，解除 98.4% 熔断) |
-| **Bucket 08** | `moody-music-asset-08` | 3,040 | 9.29 GB | 92.9% | ⚠️ 容量预警 (封箱) | 齐秦、许茹芸、毛不易、杨宗纬等新入库大专 |
-| **Bucket 09** | `moody-music-asset-09` | 6,447 | **8.94 GB** | 89.4% | 🔒 **就绪待命 (降温完成)** | 承接降温平移资产 (陈奕迅 1.27GB / 孙燕姿 0.78GB / 苏慧伦 0.64GB) 及 Twins 补全 |
-| **Bucket 10** | `moody-music-asset-10` | 0 | **0.00 GB** | 0.0% | 🚀 **当前主力写入桶** | 全新 10.00 GB 空间就绪，承接后续新曲库采录与资产入库 |
+> **核心原则：100% 零成本（Zero Cost）与零账单风险（Zero Financial Risk）**
+> 为规避云平台因突发超量写入、黑客扫描、历史遗留脚本裸调 S3 导致超出配额产生信用卡突发扣费，系统实施**工业级「多账号物理隔离 + 商业十进制计量 + 三层物理硬熔断与自动故障转移（Failover）」**架构。
 
 ---
 
-### 2. Zero-Loss 工业级跨桶平移与排雷再平衡流水线 (Dynamic Rebalancing SOP)
+### 1. 核心物理铁律与容量红线 (Capacity Rules)
 
-当单桶因新增资产或元数据调整逼近 **9.50 GB 红色熔断线** 时，系统严格按六步流水线平移独立歌手（500MB~1.5GB）至余量桶降载，**严守零丢失与全网零坏链**：
-
-1. **[Step 1: 前置双向拓扑审计]**：
-   - 扫描源桶物理对象（`.mp3` 与 `.lrc`）；
-   - 通过 `/api/admin/albums/detail` 提取关联曲目在 D1 数据库中的精确自增 ID。
-2. **[Step 2: 并发流式安全传输]**：
-   - 采用 S3 API / Worker 原生代理直连流式拷贝至目标桶，设置正确 Content-Type。
-3. **[Step 3: S3 HEAD 字节强核验 (零容错)]**：
-   - 目标桶进行 `head_object` 校验，`ContentLength` 必须 1:1 吻合。只要有 1 个文件失败，立即终止切链与删除。
-4. **[Step 4: D1 数据库原子切链]**：
-   - 调用 `POST /api/admin/songs/batch-light`（入参 `updates` 列表），基于主键秒级将 `file_path` 与 `lrc_path` 切换至目标桶公网 CDN 绝对域名。
-5. **[Step 5: 生产 CDN 播放连通性抽验]**：
-   - 对迁移歌手经典曲目发起 HTTP HEAD，确保全部返回 HTTP 200 且字节长度吻合。
-6. **[Step 6: 安全释放源桶文件与大盘刷新]**：
-   - 调用 S3 `delete_objects` 释放源桶源文件；
-   - 运行 `check_r2_storage.py` 重新核算九桶物理用量，自动将最新指标持久化至 D1 `app_settings`，管理后台秒级同步。
+1. **商业十进制计费标准**：
+   - 严格对齐 Cloudflare 官方计费标准：`1 GB = 1,000,000,000 字节`（非 1024 进制，10GB 额度严格对应 $10 \times 10^9$ 字节）。
+2. **9.00 GB 自动封箱预警线 (90.0%)**：
+   - 任何存储桶一旦物理用量达到或预估写入将达到 **9.00 GB**，系统全自动切为 `sealed_readonly` 只读封箱，禁止任何脚本与接口继续写入新资产。
+3. **9.50 GB 红色绝对物理熔断线 (95.0%)**：
+   - 死守 10.00 GB 免费额度底线，留出 500 MB 绝对安全缓冲区，坚决杜绝任何产生超额账单的可能。
+4. **绝对 CDN 直链铁律 (Zero 404 Lockup)**：
+   - 所有写入 D1 的 `file_path` 与 `lrc_path` 必须是完整的绝对 CDN 域名直链（如 `https://pub-xxxx.r2.dev/music/...`），严禁相对路径，杜绝客户端 ExoPlayer 404 无限缓冲死锁。
 
 ---
 
-### 3. 动态大盘监测与 D1 app_settings 单行广播架构
+### 2. 十六桶集群商业计费实时状态矩阵 (Hexadeca-Bucket Hub Status)
 
-- **告别静态依赖**：彻底移除对静态 `r2_stats.json` 快照的单一依赖，实现管理后台与物理存储的真正动态互通。
-- **单行原子广播**：Cloudflare Worker 暴露 `GET/POST /api/admin/r2/stats`，基于 D1 `app_settings` 表单行主键读写（消耗行数严格为 1，杜绝任何全表扫描）。
-- **三级容灾回退**：前端大盘优先请求 Worker 动态 API，网络故障时自动降级至同域静态快照，确保任何网络环境下均秒级渲染。
+> 采样时间：2026-10-03 | 商业十进制：1 GB = 10^9 字节 | 集群总资产：16 桶集群 (160.00 GB 配额) | 总用量：134.02 GB / 160.00 GB (83.8%) | 剩余安全空间：25.98 GB
 
-### 3. 音频压缩与物理质量保障规范
+| 存储桶 | 物理名称 | 存留对象 | 物理容量 | 水位占比 | 当前系统状态 | 写入状态 | 角色与资产归档 |
+| :--- | :--- | :---: | :---: | :---: | :--- | :---: | :--- |
+| **Bucket 01** | `moody-music-asset` | 4,966 | **8.29 GB** | 82.9% | 🔒 只读归档 | ⛔ 禁写 | 核心大碟基石 (周杰伦/林俊杰/五月天/Beyond/梁静茹) + 全网封面 |
+| **Bucket 02** | `moody-music-asset-02` | 2,895 | **9.04 GB** | 90.4% | 🔒 警戒封箱 | ⛔ 禁写 | 王菲、王力宏、张国荣、五月天等早期大盘曲库 |
+| **Bucket 03** | `moody-music-asset-03` | 3,132 | **8.96 GB** | 89.6% | 🔒 只读归档 | ⛔ 禁写 | 张学友、刘德华、张惠妹、任贤齐等经典大碟 |
+| **Bucket 04** | `moody-music-asset-04` | 3,561 | **9.28 GB** | 92.8% | 🔒 警戒封箱 | ⛔ 禁写 | 华语黄金时代大碟、莫文蔚、林忆莲等 |
+| **Bucket 05** | `moody-music-asset-05` | 3,572 | **9.12 GB** | 91.2% | 🔒 警戒封箱 | ⛔ 禁写 | 华语群星、合辑、经典单曲集 |
+| **Bucket 06** | `moody-music-asset-06` | 3,701 | **9.16 GB** | 91.6% | 🔒 警戒封箱 | ⛔ 禁写 | 影视原声、现代流行录音室专辑 |
+| **Bucket 07** | `moody-music-asset-07` | 3,407 | **9.17 GB** | 91.7% | 🔒 警戒封箱 | ⛔ 禁写 | 窦唯、费玉清、庾澄庆、王心凌等经典 |
+| **Bucket 08** | `moody-music-asset-08` | 3,144 | **9.55 GB** | 95.5% | 🛑 熔断封箱 | ⛔ 禁写 | 齐秦、许茹芸、毛不易、杨宗纬等 |
+| **Bucket 09** | `moody-music-asset-09` | 6,489 | **9.04 GB** | 90.4% | 🔒 警戒封箱 | ⛔ 禁写 | 陈奕迅、孙燕姿、苏慧伦及 Twins 合辑 |
+| **Bucket 10** | `moody-music-asset-10` | 4,039 | **9.68 GB** | 96.8% | 🛑 熔断封箱 | ⛔ 禁写 | 历史大盘资产 (已全面封箱停写) |
+| **Bucket 11** | `moody-music-asset-11` | 3,310 | **8.90 GB** | 89.0% | 🔒 只读归档 | ⛔ 禁写 | 经典采录专辑资产 |
+| **Bucket 12** | `moody-music-asset-12` | 2,544 | **6.84 GB** | 68.4% | 🔒 只读归档 | ⛔ 禁写 | 排雷降温安全区 (资产平移释放完成) |
+| **Bucket 13** | `moody-music-asset-13` | 2,241 | **5.42 GB** | 54.2% | 🚀 主力写入中 | ✅ **允许写入** | 当前核心主力写入桶 (剩余 4.58 GB 充裕安全空间) |
+| **Bucket 14** | `moody-music-asset-14` | 2,162 | **4.81 GB** | 48.1% | 🟢 就绪待命 | ✅ **允许写入** | 当前核心备用写入桶 (剩余 5.19 GB 充裕安全空间) |
+| **Bucket 15** | `moody-music-asset-15` | 2,065 | **8.46 GB** | 84.6% | 🔒 只读归档 | ⛔ 禁写 | 承接大批排雷核心大碟资产 |
+| **Bucket 16** | `moody-music-asset-16` | 2,028 | **8.31 GB** | 83.1% | 🔒 只读归档 | ⛔ 禁写 | 承接大批排雷核心大碟资产 |
 
-* **编码标准**：160 kbps CBR (恒定码率) MP3，LAME 编码器，采样率锁定 **44.1 kHz (CD 标准)**。
-* **标头完整性**：必须注入完整的 Xing / VBR Header，保证网页端及 Android 端无损快进与 seek 零延迟。
-* **单曲体积定律**：在 160k CBR 下，文件体积仅取决于歌曲时长 ($20\text{ KB/s} \times \text{Duration}$)，曲库平均单曲体积稳定为 **5.44 MB**。
-* **自动化质检抽检**：每个下载/转码批次均自动化执行 FFprobe 频谱完整性核验，杜绝高频截断与失真。
+---
 
-### 4. 自动化预警与熔断安全机制 (Circuit Breaker)
+### 3. 三层物理级立体拦截防线架构 (3-Tier Circuit Breaker Architecture)
 
-在上传任何音频文件前，脚本必须执行以下三层防御校验：
-1. **容量预先测算**：实时调用 S3 `list_objects_v2` 获取目标桶物理字节数，加上本次待传批次总大小。
-2. **95% 熔断拦截**：若计算结果 $\ge 9.50\text{ GB}$，上传进程立即物理阻断退出，发出红色告警并暂停，严禁超额写入。
-3. **断点持久化记录**：所有处理状态与异常自动持久化于 `backend/database/catalog_sync.db` 与 `backend/reports/MULTI_BUCKET_EXECUTION_LOG.md`。
+为解决历史遗留“脚本裸调 S3 绕过检查”、“长时间运行脚本单次把空桶写爆（In-flight Overflow）”、“网页端超级上传无容量限制”三大漏洞，系统构建了全自动闭环防线：
+
+```mermaid
+flowchart TD
+    subgraph Tier1["第一道防线：本地脚本与采录环境 (0ms 物理阻断)"]
+        A["Python 脚本发起 S3 写请求 (PutObject/UploadPart)"] --> B["Boto3 底层系统钩子 (moody_r2_physical_guard.py)"]
+        B --> C{"当前已知容量 + 内存累加写入 >= 9.00 GB?"}
+        C -- 是 --> D["🚨 0ms 抛出 PermissionError 强行阻断网络发包!"]
+        D --> E["自动将 r2_config.json 该桶标记为 sealed_readonly"]
+        D --> F["自动故障转移: 晋升下一个剩余空间最大桶为主力写入桶"]
+        C -- 否 --> G["放行请求并累加内存计数器"]
+    end
+
+    subgraph Tier2["第二道防线：自适应巡检与自愈调度层"]
+        H["check_r2_storage.py 动态巡检 (支持 N 桶)"] --> I{"任意桶用量 >= 9.00 GB?"}
+        I -- 是 --> J["自动落盘 r2_config.json 封箱并重新选举主力桶"]
+        J --> K["持久化上报 Cloudflare D1 app_settings 单行广播"]
+        I -- 否 --> K
+        K --> L["管理后台 admin.js 自适应动态生成 SVG 仪表盘卡片"]
+    end
+
+    subgraph Tier3["第三道防线：云端网关与外部 API 防护"]
+        M["Web 前端 / 外部客户端发起音频/图片上传"] --> N["Cloudflare Worker upload.ts (checkBucketWriteSafety)"]
+        N --> O{"D1 大盘指标: 目标桶 >= 9.00 GB 或 allow_writes == false?"}
+        O -- 是 --> P["🚨 线上网关立即返回 HTTP 423 Locked 阻断上传!"]
+        O -- 否 --> Q["允许流式写入 R2"]
+    end
+```
+
+#### ① 第一道防线：全局 Python Boto3 底层网络物理钩子 (`moody_r2_physical_guard.py`)
+- **部署位置**：系统全局 Python `site-packages`（`moody_r2_physical_guard.pth` 驱动启动自动挂钩）。
+- **底层拦截**：在 AWS Boto3 最咽喉网络调用处（`botocore.client.BaseClient._make_api_call`）直接拦截 `PutObject`, `UploadPart`, `CreateMultipartUpload`, `CopyObject`。
+- **单进程写中累加器（In-flight Accumulator）**：
+  实时追踪单进程运行时累计写入的字节数：
+  $$\text{预估写后容量} = \text{桶初始已知用量} + \text{单进程已写入字节} + \text{本次请求包大小}$$
+- **自愈封箱与自动故障转移 (Failover)**：
+  一旦预估容量 $\ge 9.00\text{ GB}$：
+  1. 0 毫秒抛出 `PermissionError` 终止网络发包；
+  2. 自动写回 `backend/r2_config.json` 将该桶置为 `allow_writes: false`, `status: "sealed_readonly"`；
+  3. 自动在候选健康桶中挑选用量最低的备用桶晋升为主力写入桶。
+
+#### ② 第二道防线：自适应巡检与自愈调度器 (`check_r2_storage.py`)
+- **解耦 N 桶限制**：完全支持 16、17、18... 任意多桶动态扫描核算。
+- **自动巡检封箱**：每次运行测算，若发现某桶 $\ge 9.00\text{ GB}$ 且尚未加锁，自动落盘封箱，平滑转移主力写入桶。
+- **D1 单行广播**：秒级持久化至 Cloudflare D1 `app_settings.r2_cluster_stats`，单行读写耗费恒定为 1。
+
+#### ③ 第三道防线：Cloudflare Worker 线上网关熔断 (`upload.ts`)
+- 网页端超级上传入口内置 `checkBucketWriteSafety`，动态拉取 D1 广播大盘。
+- 目标桶容量 $\ge 9.00\text{ GB}$ 或配置为封箱时，直接阻断并返回 `HTTP 423 Locked (STORAGE_WRITE_LOCKED)`。
+
+---
+
+### 4. 新桶极简入网与全生命周期自愈 Skill (`r2-bucket-onboarding`)
+
+未来引入第 17 桶及后续任意扩展桶时，已沉淀为自动化 Agent Skill：[`.agents/skills/r2-bucket-onboarding/SKILL.md`](../.agents/skills/r2-bucket-onboarding/SKILL.md)。
+
+用户只需一句口令（如「接入 17 桶」并贴上凭据）：
+```powershell
+python backend/scripts/add_r2_bucket.py --paste
+```
+系统全自动执行以下闭环：
+1. **S3 物理探针验证**：创建 `_probe.txt` 探针、验证读写删、测算初始物理用量；
+2. **配置注入与自愈看门狗挂载**：写入 `r2_config.json`，自动纳入 Python 底层看门狗动态监听；
+3. **Notion 档案自动归档**：调用 Notion MCP 将账户 ID、Access Key、Secret Key、CDN 域名追加至「MOODY 音乐档案项目」页面；
+4. **D1 全网秒级广播**：运行 `check_r2_storage.py` 更新全网配额与大盘；
+5. **管理后台自适应渲染**：`admin.js` 自动侦测新桶并无感绘制 SVG 环形仪表盘卡片；
+6. **双端 Git 同步**：自动提交并推送到 GitHub 生产仓库。
+
+---
+
+### 5. Zero-Loss 工业级跨桶平移流水线 (Dynamic Rebalancing SOP)
+
+当单桶因新增资产逼近警戒线时，严格遵循六步流水线平移资产至余量桶降载，严守零丢失与全网零坏链：
+1. **[Step 1: 前置双向拓扑审计]**：扫描源桶物理对象（`.mp3` 与 `.lrc`），从 D1 提取待迁曲目自增主键 ID；
+2. **[Step 2: 并发流式安全传输]**：采用 S3 API 直连流式拷贝至目标桶；
+3. **[Step 3: S3 HEAD 字节强核验 (零容错)]**：目标桶进行 `head_object` 校验，`ContentLength` 必须 1:1 吻合，有一首失败立即终止；
+4. **[Step 4: D1 数据库原子切链]**：调用 `POST /api/admin/songs/batch-light` 秒级将直链切换至目标桶公网 CDN 绝对域名；
+5. **[Step 5: 生产 CDN 连通性抽验]**：对迁移歌曲发起 HTTP HEAD 抽验，确保全部 200 且字节吻合；
+6. **[Step 6: 安全释放源桶文件与大盘刷新]**：调用 S3 `delete_objects` 释放源桶，并重新运行 `check_r2_storage.py`。
 
 ---
 
