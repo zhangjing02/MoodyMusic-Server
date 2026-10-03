@@ -224,10 +224,37 @@ async function findSongMatch(
 }
 
 /**
- * 全局存储写入安全阀 (GLOBAL STORAGE WRITE SAFETY VALVE)
- * 当三桶集群用量逼近极限 (28.2 GB / 30 GB, 94.0%) 时硬性生效，杜绝撑爆账单风险
+ * 全局存储写入安全熔断器 (GLOBAL STORAGE WRITE SAFETY VALVE)
+ * 动态读取 D1 app_settings 中的 r2_cluster_stats 大盘指标，
+ * 只要写入目标桶用量 >= 9.50 GB 或集群安全阀锁定，立即物理阻断上传！
  */
-export const GLOBAL_STORAGE_SAFETY_VALVE_ACTIVE = true;
+export async function checkBucketWriteSafety(env: Bindings, targetBucketId: number = 1): Promise<{ allowed: boolean; reason?: string }> {
+  try {
+    const row = await env.DB.prepare('SELECT value FROM app_settings WHERE key = ?')
+      .bind('r2_cluster_stats')
+      .first<{ value: string }>();
+    if (row && row.value) {
+      const stats = JSON.parse(row.value);
+      if (stats.safety_valve_active || stats.cluster_status === 'locked') {
+        return { allowed: false, reason: '🚨 全网存储集群安全阀已处于锁死状态，全局禁止写入新资产！' };
+      }
+      const bKey = `bucket${targetBucketId}`;
+      const bInfo = stats[bKey];
+      if (bInfo) {
+        const usedGb = Number(bInfo.used_gb || (bInfo.used_bytes ? bInfo.used_bytes / 1e9 : 0));
+        if (usedGb >= 9.50) {
+          return {
+            allowed: false,
+            reason: `🚨 存储安全阀物理熔断：目标存储桶 (Bucket ${targetBucketId}) 当前用量已达 ${usedGb.toFixed(2)} GB，触碰 9.50 GB 红色熔断红线！已强制阻断写入！`
+          };
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('⚠️ 检查存储桶安全状态异常:', e);
+  }
+  return { allowed: true };
+}
 
 /**
  * 主上传处理函数
@@ -236,11 +263,12 @@ export async function handleUpload(
   request: Request,
   env: Bindings
 ): Promise<Response> {
-  if (GLOBAL_STORAGE_SAFETY_VALVE_ACTIVE) {
+  const safety = await checkBucketWriteSafety(env, 1);
+  if (!safety.allowed) {
     return Response.json({
       code: 423,
       error_key: 'STORAGE_WRITE_LOCKED',
-      message: '🚨 存储安全阀已激活：三桶存储用量已达 28.2 GB (94.0%) 警戒红线，全局禁止写入新文件！'
+      message: safety.reason
     }, { status: 423 });
   }
 
@@ -496,6 +524,10 @@ export function registerUploadRoutes(app: Hono<{ Bindings: Bindings; Variables: 
   // 视觉与图片资产上传 API (新增：支持海报、专辑封面、歌手写真、随笔插图等)
   app.post('/api/admin/assets/upload', async (c) => {
     try {
+      const safety = await checkBucketWriteSafety(c.env, 1);
+      if (!safety.allowed) {
+        return c.json({ code: 423, message: safety.reason }, 423);
+      }
       const formData = await c.req.formData();
       const rawEntries = formData.getAll('files');
       const files: File[] = [];
