@@ -45,7 +45,7 @@ CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 R2_FREE_CAPACITY_BYTES = 10 * 1000 * 1000 * 1000  # 10.00 GB
 WARN_THRESHOLD_PERCENT = 90.0                      # 9.00 GB 预警线
 CRITICAL_THRESHOLD_PERCENT = 95.0                  # 9.50 GB 熔断封箱线
-TOTAL_BUCKETS_COUNT = 14
+TOTAL_BUCKETS_COUNT = 16
 
 def format_bytes(bytes_val):
     for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
@@ -191,6 +191,8 @@ def check_storage(verbose=False):
         (12, "account_12", "moody-music-asset-12", "第十二存储桶 (Bucket 12)", "pub-c570096b51724b82ab294c0381b0f1c3.r2.dev"),
         (13, "account_13", "moody-music-asset-13", "第十三存储桶 (Bucket 13)", "pub-fa9d420026b0462b81c9f89f981270e8.r2.dev"),
         (14, "account_14", "moody-music-asset-14", "第十四存储桶 (Bucket 14)", "pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev"),
+        (15, "account_15", "moody-music-asset-15", "第十五存储桶 (Bucket 15)", "pub-c842224cc0744ed68a95f9de433ad4c9.r2.dev"),
+        (16, "account_16", "moody-music-asset-16", "第十六存储桶 (Bucket 16)", "pub-86c08a244c454743a09a7f73360cdf6b.r2.dev"),
     ]
 
     for b_id, b_key, b_name, b_label, b_url in bucket_metas:
@@ -332,7 +334,7 @@ def check_storage(verbose=False):
             timeout=8
         )
         if verbose and r_sync.status_code == 200:
-            print("🚀 [D1 云端同步] 十四桶最新物理指标已成功持久化至 D1 app_settings")
+            print("🚀 [D1 云端同步] 十六桶最新物理指标已成功持久化至 D1 app_settings")
     except Exception as e_sync:
         if verbose:
             print(f"⚠️ [D1 云端同步异常] {e_sync}")
@@ -340,7 +342,7 @@ def check_storage(verbose=False):
     # 5. 打印专业控制台体检报告
     if verbose or __name__ == "__main__":
         print("\n" + "=" * 90)
-        print("📊 MOODY - Cloudflare R2 十四存储桶集群商业计费实时监控报告 (Tetradeca-Bucket Hub)")
+        print("📊 MOODY - Cloudflare R2 十六存储桶集群商业计费实时监控报告 (Hexadeca-Bucket Hub)")
         print(f"⏰ 采样校准时间: {time.strftime('%Y-%m-%d %H:%M:%S')} (标准十进制 GB: 1 GB = 1,000,000,000 字节)")
         print("=" * 90)
         print(f"{'存储桶':<22} | {'对象总数':<8} | {'真实用量 (GB)':<14} | {'额度占比':<10} | {'当前状态'}")

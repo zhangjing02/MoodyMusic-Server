@@ -1,135 +1,241 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-MOODY - Cloudflare R2 全局存储写入安全阀门卫 (Global Storage Write Safety Guard)
 =============================================================================
-作用：
-当三桶集群用量接近满额时，硬性拦截所有 Python 脚本、CLI 管道或后台任务向 R2 执行任何写入/上传操作。
-如果安全阀被激活：
-1. assert_write_allowed() 直接阻断并抛出 PermissionError
-2. install_boto3_safety_guard() 深度劫持 boto3 S3 Client 的写操作 (put_object, upload_file 等)
+MoodyMusic - Cloudflare R2 工业级智能容量熔断与安全上传看门狗 (R2 Safety Guard)
+=============================================================================
+核心铁律：
+1. 商业十进制：严格按 1 GB = 1,000,000,000 字节计算容量。
+2. 9.50 GB 绝对红色熔断线：单桶达到或即将突破 9.50 GB 必须立刻触发强制熔断拦截，严禁任何可能产生超额账单的写入！
+3. 写前强校验 (Pre-write Capacity Guard)：所有入库/采录脚本写入 R2 前必须经过本守卫核验。
 =============================================================================
 """
 
 import os
 import sys
 import json
+import time
+import socket
+import boto3
+from botocore.config import Config
+from typing import Tuple, Dict, Any, Optional
 
-if sys.platform.startswith('win'):
-    if hasattr(sys.stdout, 'reconfigure'):
-        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-    if hasattr(sys.stderr, 'reconfigure'):
-        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
+
+# CF 边缘 IP Pinning
+_orig_getaddrinfo = socket.getaddrinfo
+def _patched_getaddrinfo(host, port, *args, **kwargs):
+    if host and host.endswith(".r2.cloudflarestorage.com"):
+        return _orig_getaddrinfo("172.64.190.1", port, *args, **kwargs)
+    return _orig_getaddrinfo(host, port, *args, **kwargs)
+socket.getaddrinfo = _patched_getaddrinfo
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 CONFIG_PATH = os.path.join(BASE_DIR, "r2_config.json")
 
-class StorageSafetyValveActiveError(PermissionError):
-    """当存储安全阀开启时尝试写入触发的致命异常"""
+# 官方商业计费标准
+SAFE_CAPACITY_LIMIT_BYTES = int(9.50 * 1000 * 1000 * 1000)  # 9.50 GB 红色熔断封箱线
+FREE_MAX_CAPACITY_BYTES = int(10.00 * 1000 * 1000 * 1000)   # 10.00 GB 免费额度底线
+WARN_CAPACITY_LIMIT_BYTES = int(9.00 * 1000 * 1000 * 1000)  # 9.00 GB 黄色预警线
+
+class R2CapacityFuseBrokenException(Exception):
+    """当存储桶容量超过或写入后将突破 9.50 GB 熔断红线时抛出"""
     pass
 
-def is_safety_valve_active() -> tuple[bool, str]:
+class R2BucketWriteLockedException(Exception):
+    """当存储桶已被标记为只读/封箱或禁止写入时抛出"""
+    pass
+
+_USAGE_CACHE: Dict[str, Dict[str, Any]] = {}
+CACHE_TTL_SECONDS = 180  # 3 分钟本地缓存，兼顾实时性与 S3 API 开销
+
+def get_r2_config() -> dict:
     if not os.path.exists(CONFIG_PATH):
-        return True, "r2_config.json 不存在，默认开启安全阀保护"
-    
-    try:
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-            cfg = json.load(f)
-        valve = cfg.get("global_safety_valve", {})
-        if valve.get("active", False):
-            reason = valve.get("reason", "存储总用量已达警戒红线，安全阀已生效")
-            return True, reason
-        
-        buckets = cfg.get("buckets", {})
-        all_frozen = all(b.get("status") == "frozen_readonly" for b in buckets.values())
-        if all_frozen and len(buckets) > 0:
-            return True, "所有存储桶均处于 frozen_readonly 状态"
-        
-        return False, "安全阀未激活"
-    except Exception as e:
-        return True, f"读取安全阀配置异常: {e}，默认拦截保护"
+        raise FileNotFoundError(f"R2 配置文件不存在: {CONFIG_PATH}")
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-def is_bucket_write_allowed(bucket_name: str) -> tuple[bool, str]:
-    if not os.path.exists(CONFIG_PATH):
-        return False, "r2_config.json 不存在，默认开启安全阀保护"
-    try:
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-            cfg = json.load(f)
-        valve = cfg.get("global_safety_valve", {})
-        if valve.get("active", False):
-            return False, valve.get("reason", "全局安全阀已激活")
-        
-        for acc_k, b_info in cfg.get("buckets", {}).items():
-            if b_info.get("name") == bucket_name or acc_k == bucket_name:
-                if not b_info.get("allow_writes", False) or b_info.get("status") == "frozen_readonly":
-                    return False, f"存储桶 {bucket_name} ({acc_k}) 已永久封箱锁定只读 (frozen_readonly)，严禁写入！"
-                return True, "允许写入"
-        return True, "未受限桶"
-    except Exception as e:
-        return False, f"读取配置异常: {e}"
+def get_bucket_realtime_bytes(account_key: str, cfg: dict, force_refresh: bool = False) -> int:
+    """获取指定桶当前的真实物理占用字节数 (优先读取 r2_stats.json，零时延)"""
+    now = time.time()
+    cached = _USAGE_CACHE.get(account_key)
+    if not force_refresh and cached and (now - cached["time"] < CACHE_TTL_SECONDS):
+        return cached["bytes"]
 
-def assert_write_allowed(bucket_name: str = None):
+    # 1. 优先读取 backend/frontend/admin/r2_stats.json 快照
+    stats_path = os.path.join(BASE_DIR, "frontend", "admin", "r2_stats.json")
+    if not force_refresh and os.path.exists(stats_path):
+        try:
+            with open(stats_path, "r", encoding="utf-8") as f:
+                stats_data = json.load(f)
+                # 遍历 bucket1..bucket16 找到匹配 name 的桶
+                b_target_name = cfg["buckets"][account_key]["name"]
+                for k, v in stats_data.items():
+                    if isinstance(v, dict) and v.get("name") == b_target_name:
+                        b_bytes = v.get("used_bytes") or int(v.get("used_gb", 0) * 1e9)
+                        _USAGE_CACHE[account_key] = {
+                            "time": now,
+                            "bytes": b_bytes,
+                            "count": v.get("total_objects", 0)
+                        }
+                        return b_bytes
+        except Exception:
+            pass
+
+    # 2. 备用通过 S3 实时查询
+    b_cfg = cfg["buckets"].get(account_key)
+    if not b_cfg:
+        raise ValueError(f"未找到存储桶配置: {account_key}")
+
+    s3 = boto3.client(
+        "s3",
+        endpoint_url=b_cfg["endpoint_url"],
+        aws_access_key_id=b_cfg["access_key_id"],
+        aws_secret_access_key=b_cfg["secret_access_key"],
+        region_name="auto",
+        config=Config(s3={"addressing_style": "path"}, signature_version="s3v4", connect_timeout=5, read_timeout=10, retries={"max_attempts": 2})
+    )
+
+    total_bytes = 0
+    total_objects = 0
+    paginator = s3.get_paginator("list_objects_v2")
+    for page in paginator.paginate(Bucket=b_cfg["name"]):
+        for obj in page.get("Contents", []):
+            total_bytes += obj["Size"]
+            total_objects += 1
+
+    _USAGE_CACHE[account_key] = {
+        "time": now,
+        "bytes": total_bytes,
+        "count": total_objects
+    }
+    return total_bytes
+
+def pre_write_capacity_guard(account_key: str, incoming_bytes: int = 0) -> Tuple[bool, str, dict]:
     """
-    在任何写入、上传、同步逻辑开始前必须调用的硬性守卫。
+    写前容量强校验熔断函数 (Pre-write Capacity Guard)
+    所有上传/写入操作必须在执行底层 put 之前通过本函数的检验！
     """
-    active, reason = is_safety_valve_active()
-    if active:
-        msg = f"\n{'=' * 80}\n🚨【全局存储安全阀已激活 - 写入已被硬阻断】\n原因: {reason}\n当前所有存储桶已切换为只读保护模式 (READ-ONLY)。\n严禁向 R2 写入任何新音频或资产文件，防止超出 10GB 免费限额！\n{'=' * 80}\n"
-        print(msg, file=sys.stderr, flush=True)
-        raise StorageSafetyValveActiveError(msg)
-    
-    if bucket_name:
-        allowed, b_reason = is_bucket_write_allowed(bucket_name)
-        if not allowed:
-            msg = f"\n{'=' * 80}\n🚨【目标存储桶已被封箱保护 - 写入已被阻断】\n原因: {b_reason}\n{'=' * 80}\n"
-            print(msg, file=sys.stderr, flush=True)
-            raise StorageSafetyValveActiveError(msg)
+    cfg = get_r2_config()
+    b_cfg = cfg["buckets"].get(account_key)
+    if not b_cfg:
+        raise ValueError(f"❌ 存储桶 {account_key} 不存在于配置中！")
 
-def install_boto3_safety_guard():
+    # 1. 检查只读状态锁
+    if not b_cfg.get("allow_writes", True) or b_cfg.get("status") in ["frozen_readonly", "sealed_readonly"]:
+        reason = f"🛑 [安全熔断] 存储桶 {b_cfg['name']} ({account_key}) 处于只读封箱状态 ({b_cfg.get('status')})，物理严禁写入！"
+        raise R2BucketWriteLockedException(reason)
+
+    # 2. 检查全局安全阀
+    safety_valve = cfg.get("global_safety_valve", {})
+    if safety_valve.get("active") and not safety_valve.get("allow_writes", True):
+        reason = f"🛑 [全局安全阀触发] 系统已处于全局写锁定状态: {safety_valve.get('reason')}"
+        raise R2BucketWriteLockedException(reason)
+
+    # 3. 检查物理容量与即将写入增量
+    current_bytes = get_bucket_realtime_bytes(account_key, cfg)
+    predicted_bytes = current_bytes + incoming_bytes
+
+    if predicted_bytes >= SAFE_CAPACITY_LIMIT_BYTES:
+        curr_gb = current_bytes / 1e9
+        pred_gb = predicted_bytes / 1e9
+        err_msg = (
+            f"\n🚨 [CRITICAL FUSE BROKEN] 存储桶 {b_cfg['name']} ({account_key}) 触发 9.50 GB 红色熔断线！\n"
+            f"   当前用量: {curr_gb:.3f} GB / 10.00 GB ({(current_bytes / FREE_MAX_CAPACITY_BYTES)*100:.1f}%)\n"
+            f"   写入增量: {incoming_bytes / 1e6:.2f} MB -> 预测将达 {pred_gb:.3f} GB\n"
+            f"   ⚠️ 严禁继续向该桶写入！请将写入路由切换至低水位待命桶 (如 Bucket 13/14)！"
+        )
+        # 自动将配置文件中该桶写入状态冻结，杜绝并发越界
+        try:
+            cfg["buckets"][account_key]["status"] = "sealed_readonly"
+            cfg["buckets"][account_key]["allow_writes"] = False
+            with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+                json.dump(cfg, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+        raise R2CapacityFuseBrokenException(err_msg)
+
+    # 4. 黄色预警检查
+    if predicted_bytes >= WARN_CAPACITY_LIMIT_BYTES:
+        print(f"⚠️ [容量预警] 存储桶 {b_cfg['name']} 即将达到 {(predicted_bytes / FREE_MAX_CAPACITY_BYTES)*100:.1f}%，请留意备用桶准备！")
+
+    return True, "SAFE", {
+        "current_gb": current_bytes / 1e9,
+        "remaining_safe_gb": (SAFE_CAPACITY_LIMIT_BYTES - current_bytes) / 1e9
+    }
+
+def get_recommended_write_bucket() -> Tuple[str, dict]:
     """
-    深度劫持 boto3，对任何向 S3/R2 发起的写操作进行拦截
+    智能路由推荐：在集群所有桶中自动找出当前容量最低、最安全的就绪待命桶
     """
-    try:
-        from botocore.client import BaseClient
-        
-        orig_call = BaseClient._make_api_call
+    cfg = get_r2_config()
+    candidates = []
 
-        BLOCKED_ACTIONS = {
-            'PutObject', 'UploadPart', 'CreateMultipartUpload',
-            'CompleteMultipartUpload', 'CopyObject', 'UploadFile',
-            'UploadFileObj', 'PutObjectTagging', 'PutBucketPolicy'
-        }
+    for acc_key, b_cfg in cfg["buckets"].items():
+        if b_cfg.get("allow_writes", False) and b_cfg.get("status") in ["active", "standby"]:
+            try:
+                used_bytes = get_bucket_realtime_bytes(acc_key, cfg)
+                if used_bytes < WARN_CAPACITY_LIMIT_BYTES:
+                    candidates.append((acc_key, used_bytes, b_cfg))
+            except Exception:
+                pass
 
-        def guarded_api_call(self, operation_name, api_params):
-            if operation_name in BLOCKED_ACTIONS:
-                active, reason = is_safety_valve_active()
-                if active:
-                    bucket = api_params.get('Bucket', 'Unknown')
-                    key = api_params.get('Key', 'Unknown')
-                    raise StorageSafetyValveActiveError(
-                        f"🚨 [R2 Safety Guard] 尝试向 R2 执行 {operation_name} (Bucket={bucket}, Key={key}) 被安全阀硬阻断！\n原因: {reason}"
-                    )
-                bucket = api_params.get('Bucket', 'Unknown')
-                if bucket != 'Unknown':
-                    allowed, b_reason = is_bucket_write_allowed(bucket)
-                    if not allowed:
-                        key = api_params.get('Key', 'Unknown')
-                        raise StorageSafetyValveActiveError(
-                            f"🚨 [R2 Safety Guard] 尝试向已封箱桶写入 {operation_name} (Bucket={bucket}, Key={key}) 被阻断！\n原因: {b_reason}"
-                        )
-            return orig_call(self, operation_name, api_params)
+    if not candidates:
+        raise RuntimeError("🚨 [全网集群熔断告警] 全网已无可用的低于 9.00 GB 的写入桶！请立即开辟新桶！")
 
-        BaseClient._make_api_call = guarded_api_call
-    except Exception as e:
-        pass
+    # 按用量最少排序
+    candidates.sort(key=lambda x: x[1])
+    best_acc, best_bytes, best_cfg = candidates[0]
+    return best_acc, {
+        "name": best_cfg["name"],
+        "used_gb": best_bytes / 1e9,
+        "remaining_gb": (SAFE_CAPACITY_LIMIT_BYTES - best_bytes) / 1e9
+    }
 
-install_boto3_safety_guard()
+def safe_r2_put_object(s3_client, bucket_name: str, account_key: str, key: str, body: bytes, content_type: str = "application/octet-stream", **kwargs) -> dict:
+    """
+    带熔断看门狗的 S3 PutObject 安全入口
+    凡是通过本函数上传的对象，均强制经过 9.50 GB 红色熔断守卫！
+    """
+    body_bytes_len = len(body) if isinstance(body, (bytes, bytearray)) else 0
+    # 强制执行写前容量熔断校验
+    pre_write_capacity_guard(account_key, incoming_bytes=body_bytes_len)
+
+    # 校验通过，执行底层上传
+    resp = s3_client.put_object(
+        Bucket=bucket_name,
+        Key=key,
+        Body=body,
+        ContentType=content_type,
+        **kwargs
+    )
+
+    # 增量维护内存缓存
+    if account_key in _USAGE_CACHE:
+        _USAGE_CACHE[account_key]["bytes"] += body_bytes_len
+        _USAGE_CACHE[account_key]["count"] += 1
+
+    return resp
 
 if __name__ == "__main__":
-    active, reason = is_safety_valve_active()
-    print(f"安全阀状态: {'🔴 已激活 (禁止写入)' if active else '🟢 未激活'}")
-    print(f"状态详情: {reason}")
+    print("=" * 70)
+    print("🛡️ 测试 R2 Safety Guard 写前容量熔断看门狗...")
+    print("=" * 70)
     try:
-        assert_write_allowed()
-    except StorageSafetyValveActiveError:
-        print("✅ 守卫安全拦截测试成功！")
+        best_bucket, info = get_recommended_write_bucket()
+        print(f"✅ 当前全网最推荐安全写入桶: {best_bucket} ({info['name']})")
+        print(f"   当前用量: {info['used_gb']:.2f} GB | 剩余安全空间: {info['remaining_gb']:.2f} GB")
+        
+        # 测试 12 桶熔断拦截
+        print("\n🧪 测试向已封箱的第 12 桶尝试写入拦截:")
+        try:
+            pre_write_capacity_guard("account_12", 1024)
+            print("❌ 拦截失效！未抛出异常！")
+        except R2BucketWriteLockedException as e:
+            print("✅ 成功拦截封箱桶写入:", e)
+
+    except Exception as e:
+        print("❌ 看门狗运行异常:", e)

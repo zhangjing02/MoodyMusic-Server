@@ -53,7 +53,18 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
           //   audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/bach_cello_collection.mp3',
           //   isTheme: true,
           //   themeId: 'bach_cello_theme'
-          // },
+          {
+            id: 'pub_heroes_theme',
+            title: '《PUB英雄會》',
+            artist: '動力火車 · 迪克牛仔',
+            year: '1996',
+            subtitle: '十大名團點唱神作 · 原汁原味',
+            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/pub_heroes_cover_v1.jpg',
+            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/pub_heroes_1996_theme.mp3',
+            isTheme: true,
+            themeId: 'pub_heroes_theme',
+            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/pub_heroes_theme_v1.json'
+          },
           {
             id: 'rene_liu_live_theme',
             title: '《後來》現場精選',

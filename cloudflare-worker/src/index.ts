@@ -422,13 +422,16 @@ app.get('/api/songs', async (c) => {
 
         if (row.song_title) {
           const album = artist.albums.get(row.album_id)
+          // disc/disc_name 暂存原始分组条件，稍后在专辑级别后处理时按需设置
+          const isDiscTwo = row.track_index >= 100 || row.mood === '导师考核与对决'
           album.songs.push({
             title: row.song_title,
             path: row.file_path,
             lrc_path: row.lrc_path,
             TrackIndex: row.track_index,
-            disc: (row.track_index >= 100 || row.mood === '导师考核与对决') ? 2 : 1,
-            disc_name: (row.track_index >= 100 || row.mood === '导师考核与对决') ? "导师考核与PK" : "第一轮盲选",
+            _isDiscTwo: isDiscTwo,  // 临时标记，后处理后移除
+            disc: null,             // 默认 null，仅多分组专辑才设置
+            disc_name: null,        // 默认 null，仅多分组专辑才设置
             mood: row.mood
           })
         }
@@ -440,6 +443,21 @@ app.get('/api/songs', async (c) => {
       const albumsList = Array.from(artist.albums.values()).map((album: any) => {
         // Sort songs in album by TrackIndex
         album.songs.sort((a: any, b: any) => (a.TrackIndex || 0) - (b.TrackIndex || 0))
+
+        // 专辑级别后处理：仅当该专辑确实存在多阶段曲目（导师考核/PK）时，才为所有曲目填充 disc_name
+        // 这样普通专辑的 disc_name 保持 null，避免客户端错误触发 Tab 分组
+        const hasMultiDisc = album.songs.some((s: any) => s._isDiscTwo === true)
+        album.songs = album.songs.map((s: any) => {
+          const { _isDiscTwo: isDiscTwo, ...rest } = s  // 移除临时标记，保存到 isDiscTwo
+          if (hasMultiDisc) {
+            return {
+              ...rest,
+              disc: isDiscTwo ? 2 : 1,
+              disc_name: isDiscTwo ? '导师考核与PK' : '第一轮盲选'
+            }
+          }
+          return rest  // disc=null, disc_name=null
+        })
         return album
       })
 
