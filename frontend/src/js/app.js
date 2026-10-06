@@ -1530,9 +1530,11 @@ function renderSidebar(data) {
             const varietyLogos = {
                 '中国好声音': '/storage/covers/variety/china_voice_logo.png',
                 '我是歌手': '/storage/covers/variety/i_am_singer_logo.png',
-                '蒙面唱将猜猜猜': '/storage/covers/variety/masked_singer_logo.png'
+                '蒙面唱将猜猜猜': '/storage/covers/variety/masked_singer_logo.png',
+                '乐队的夏天': 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/big_band.jpg',
+                '我们的歌': 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/variety/our_songs.jpg'
             };
-            const varietyColors = { '中国好声音': '#d4af37', '我是歌手': '#315efb', '蒙面唱将猜猜猜': '#c01c28' };
+            const varietyColors = { '中国好声音': '#d4af37', '我是歌手': '#315efb', '蒙面唱将猜猜猜': '#c01c28', '乐队的夏天': '#e65100', '我们的歌': '#00897b' };
             const vLogo = varietyLogos[s.name];
             const vColor = varietyColors[s.name] || '#444';
 
