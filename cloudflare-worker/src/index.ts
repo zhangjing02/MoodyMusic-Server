@@ -10,10 +10,11 @@ import { registerAppVersionRoutes } from './app_version'
 import { registerCommunityRoutes } from './community'
 import { registerPlaylistRoutes } from './playlists'
 import { registerVoiceRoutes } from './voice'
+import { registerCryptoRoutes, cryptoMiddleware, generateSignedStreamUrl, DEFAULT_STREAM_SIGN_SECRET } from './crypto'
 import type { Bindings } from './types'
 import { fail, normalizeLegacyErrorResponse, serverError } from './error'
 
-const app = new Hono<{ Bindings: Bindings; Variables: { user: any; token: string } }>()
+const app = new Hono<{ Bindings: Bindings; Variables: { user: any; token: string; aesKey?: any; isCryptoClient?: boolean } }>()
 
 /**
  * NormalizeTitle 归一化标题（用于繁简体模糊匹配）
@@ -97,8 +98,33 @@ function normalizeResourceUrl(path: string | null | undefined, baseUrl: string, 
 app.use('/*', cors({
   origin: '*',
   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowHeaders: ['Content-Type', 'Authorization'],
+  allowHeaders: [
+    'Content-Type',
+    'Authorization',
+    'Range',
+    'x-encrypted-key',
+    'x-encrypted-iv',
+    'x-client-crypto',
+    'x-app-version',
+    'x-app-version-name',
+    'x-app-version-code',
+    'x-app-platform',
+    'x-client-type',
+    'x-device-id',
+    'x-device-brand',
+    'x-device-model',
+    'x-jpush-registration-id'
+  ],
+  exposeHeaders: [
+    'Content-Length',
+    'Content-Range',
+    'Accept-Ranges',
+    'X-Crypto-Response',
+    'ETag'
+  ]
 }))
+
+app.use('/api/*', cryptoMiddleware)
 
 app.use('/api/*', async (c, next) => {
   await next()
@@ -106,6 +132,11 @@ app.use('/api/*', async (c, next) => {
 })
 
 app.get('/', (c) => c.text('MOODY API Edge Worker is running!'))
+
+// ==========================================
+// Crypto & Media Stream Routes (公钥分发与音频流短效防盗链)
+// ==========================================
+registerCryptoRoutes(app)
 
 // ==========================================
 // Auth Routes（用户认证系统）- 注册在 admin 路由之前
@@ -339,7 +370,7 @@ app.get('/api/songs', async (c) => {
       SELECT 
         a.id AS artist_id, a.name AS artist_name, a.region, a.photo_url,
         al.id AS album_id, al.title AS album_title, al.release_date, al.cover_url,
-        s.title AS song_title, s.file_path, s.lrc_path, s.track_index, s.mood,
+        s.id AS song_id, s.title AS song_title, s.file_path, s.lrc_path, s.track_index, s.mood,
         MAX(CASE WHEN s.file_path IS NOT NULL AND s.file_path != '' THEN 1 ELSE 0 END) OVER (PARTITION BY al.id) AS has_lit
       FROM artists a
       LEFT JOIN albums al ON a.id = al.artist_id
@@ -424,9 +455,21 @@ app.get('/api/songs', async (c) => {
           const album = artist.albums.get(row.album_id)
           // disc/disc_name 暂存原始分组条件，稍后在专辑级别后处理时按需设置
           const isDiscTwo = row.track_index >= 100 || row.mood === '导师考核与对决'
+          let fileHash: string | null = null
+          if (row.file_path) {
+            let h = 0
+            for (let i = 0; i < row.file_path.length; i++) {
+              h = ((h << 5) - h) + row.file_path.charCodeAt(i)
+              h |= 0
+            }
+            fileHash = Math.abs(h).toString(16)
+          }
+
           album.songs.push({
+            id: row.song_id || null,
             title: row.song_title,
             path: row.file_path,
+            file_hash: fileHash,
             lrc_path: row.lrc_path,
             TrackIndex: row.track_index,
             _isDiscTwo: isDiscTwo,  // 临时标记，后处理后移除
@@ -477,13 +520,88 @@ app.get('/api/songs', async (c) => {
       }
     })
 
+    let allowDownload = true
+    try {
+      const cfgRow = await c.env.DB.prepare(
+        "SELECT value FROM app_settings WHERE key = 'app_config'"
+      ).first<{ value: string }>()
+      if (cfgRow && cfgRow.value) {
+        const parsedCfg = JSON.parse(cfgRow.value)
+        if (typeof parsedCfg.download_enabled === 'boolean') {
+          allowDownload = parsedCfg.download_enabled
+        }
+      }
+    } catch (_) {}
+
+    const isAndroid = (c.req.header('x-app-platform') || '').toLowerCase() === 'android' ||
+                      (c.req.header('user-agent') || '').toLowerCase().includes('moodymusic-android')
+
+    if (!isAndroid) {
+      // 针对 Web 浏览器访问：将所有歌曲的 path 转换为 4 小时有效期的混淆防盗链网关地址
+      const secret = c.env.STREAM_SIGN_SECRET || DEFAULT_STREAM_SIGN_SECRET
+      for (const artist of library) {
+        for (const album of artist.albums) {
+          for (const song of album.songs) {
+            if (song.path && (song.path.startsWith('http://') || song.path.startsWith('https://'))) {
+              song.path = await generateSignedStreamUrl(song.path, baseUrl, secret, 14400)
+            }
+          }
+        }
+      }
+    }
+
     return c.json({
       code: 200,
       message: 'success',
+      allow_download: allowDownload,
       data: library
     })
   } catch (error: any) {
     return serverError(c, error)
+  }
+})
+
+// 动态应用功能开关管理接口
+app.get('/api/app/config', async (c) => {
+  try {
+    let downloadEnabled = true
+    const cfgRow = await c.env.DB.prepare(
+      "SELECT value FROM app_settings WHERE key = 'app_config'"
+    ).first<{ value: string }>()
+    if (cfgRow && cfgRow.value) {
+      try {
+        const parsed = JSON.parse(cfgRow.value)
+        if (typeof parsed.download_enabled === 'boolean') {
+          downloadEnabled = parsed.download_enabled
+        }
+      } catch (_) {}
+    }
+    return c.json({
+      code: 200,
+      message: 'success',
+      data: {
+        download_enabled: downloadEnabled
+      }
+    })
+  } catch (err: any) {
+    return c.json({ code: 200, data: { download_enabled: true } })
+  }
+})
+
+app.post('/api/admin/app-config', async (c) => {
+  try {
+    const body = await c.req.json()
+    const jsonStr = JSON.stringify(body)
+    await c.env.DB.prepare(`
+      INSERT INTO app_settings (key, value, updated_at)
+      VALUES ('app_config', ?, datetime('now'))
+      ON CONFLICT(key) DO UPDATE SET
+        value = excluded.value,
+        updated_at = datetime('now')
+    `).bind(jsonStr).run()
+    return c.json({ code: 200, message: 'App config updated successfully', data: body })
+  } catch (err: any) {
+    return c.json({ code: 500, message: err.message }, 500)
   }
 })
 
@@ -580,6 +698,18 @@ app.get('/api/search', async (c) => {
         CoverURL: normalizeResourceUrl(al.CoverURL, baseUrl, 'cover')
       })),
       songs: matchedSongs
+    }
+
+    const isAndroid = (c.req.header('x-app-platform') || '').toLowerCase() === 'android' ||
+                      (c.req.header('user-agent') || '').toLowerCase().includes('moodymusic-android')
+
+    if (!isAndroid) {
+      const secret = c.env.STREAM_SIGN_SECRET || DEFAULT_STREAM_SIGN_SECRET
+      for (const song of results.songs) {
+        if (song.FilePath && (song.FilePath.startsWith('http://') || song.FilePath.startsWith('https://'))) {
+          song.FilePath = await generateSignedStreamUrl(song.FilePath, baseUrl, secret, 14400)
+        }
+      }
     }
 
     return c.json({
@@ -1137,7 +1267,7 @@ app.patch('/api/admin/artists/:id', async (c) => {
 app.post('/api/admin/songs/batch-update', async (c) => {
   try {
     const { updates } = await c.req.json() as {
-      updates: Array<{ id: number, title?: string, track_index?: number, album_id?: number, artist_id?: number }>
+      updates: Array<{ id: number, title?: string, track_index?: number, album_id?: number, artist_id?: number, file_path?: string, lrc_path?: string, mood?: string }>
     }
 
     if (!updates || !updates.length) {
@@ -1468,6 +1598,7 @@ app.post('/api/admin/songs/batch-insert', async (c) => {
         lrc_path?: string
         track_index?: number
         storage_id?: string
+        mood?: string
       }>
     }
 
