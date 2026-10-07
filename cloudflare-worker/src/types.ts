@@ -12,6 +12,9 @@ export type Bindings = {
   PGYER_API_KEY?: string
   PGYER_APP_KEY?: string
   GROQ_API_KEYS?: string
+  RSA_PUBLIC_KEY?: string
+  RSA_PRIVATE_KEY?: string
+  STREAM_SIGN_SECRET?: string
 }
 
 // ==========================================

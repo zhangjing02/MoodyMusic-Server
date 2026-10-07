@@ -6,25 +6,15 @@ import { fail, serverError } from './error'
 type AppType = { Bindings: Bindings; Variables: { user: any; token: string } }
 
 /**
- * 专辑社交功能 (基于 Supabase 存储，D1 班级隔离)
+ * 专辑社交功能 (基于 Supabase 存储)
  */
 export function registerAlbumSocialRoutes(app: Hono<AppType>, authMiddleware: any) {
   
   const getSupabase = (env: Bindings) => createClient(env.SUPABASE_URL || 'https://placeholder.supabase.co', env.SUPABASE_ANON_KEY || 'anon')
 
-  /**
-   * 辅助函数：从 D1 获取当前用户的班级 ID
-   */
-  async function getUserClassId(db: D1Database, userId: number): Promise<string | null> {
-    const result = await db.prepare(
-      'SELECT class_id FROM student_roster WHERE profile_id = ?'
-    ).bind(userId).first() as { class_id: string } | null
-    return result?.class_id || null
-  }
-
   // 1. 获取专辑社交聚合内容 (主贴 + 平铺回复)
   // 对应 Android: GET /api/albums/{albumId}/social_content
-  // 强制认证，强制班级隔离
+  // 强制认证
   app.get('/api/albums/:id/social_content', authMiddleware, async (c) => {
     try {
       const albumId = c.req.param('id')
@@ -32,18 +22,10 @@ export function registerAlbumSocialRoutes(app: Hono<AppType>, authMiddleware: an
       const db = c.env.DB
       const supabase = getSupabase(c.env)
 
-      // 1. 获取用户班级
-      const classId = await getUserClassId(db, user.id)
-      if (!classId) {
-        // 游客或未认领座位的用户不能查看社交内容
-        return c.json({
-          code: 403,
-          message: '只有认领了座位的班级成员才能查看讨论',
-          data: null
-        }, 403)
-      }
+      // 1. 所有登录用户共享同一讨论区（班级隔离已移除）
+      const classId = 'default'
 
-      // 2. 从 Supabase 获取该专辑、该班级的所有评论
+      // 2. 从 Supabase 获取该专辑的所有评论
       const { data, error } = await supabase
         .from('album_comments')
         .select(`
@@ -119,8 +101,7 @@ export function registerAlbumSocialRoutes(app: Hono<AppType>, authMiddleware: an
       const { content } = await c.req.json() as { content: string }
       const db = c.env.DB
 
-      const classId = await getUserClassId(db, user.id)
-      if (!classId) return fail(c, 'FORBIDDEN', { message: '请先认领座位加入班级' })
+      const classId = 'default'
 
       if (!content || content.trim().length === 0) {
         return fail(c, 'MISSING_PARAMETER', { message: '内容不能为空' })
@@ -157,8 +138,7 @@ export function registerAlbumSocialRoutes(app: Hono<AppType>, authMiddleware: an
       const { content } = await c.req.json() as { content: string }
       const db = c.env.DB
 
-      const classId = await getUserClassId(db, user.id)
-      if (!classId) return fail(c, 'FORBIDDEN', { message: '请先认领座位加入班级' })
+      const classId = 'default'
 
       // 获取专辑 ID（从 body 或通过查询 postId 获得，这里为了简单要求 Android 在后续逻辑中保证一致性或由后端反查）
       // 在当前的 Android 实现中，LibraryFragment 已经持有 currentAlbumId

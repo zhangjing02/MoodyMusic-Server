@@ -41,20 +41,7 @@ export const ERROR_DEFINITIONS = {
   PASSWORD_UPDATE_FAILED: { code: 1210, httpStatus: 500, message: '密码更新失败，请稍后重试' },
   SESSION_CREATE_FAILED: { code: 1211, httpStatus: 500, message: '登录失败：未获取到会话信息' },
 
-  CLAIM_ROSTER_NOT_FOUND: { code: 1301, httpStatus: 404, message: '名录不存在' },
-  CLAIM_ROSTER_ALREADY_CLAIMED: { code: 1302, httpStatus: 409, message: '该同学已被认领，如有问题请联系班长' },
-  CLAIM_SECURITY_CONFIG_INVALID: { code: 1303, httpStatus: 500, message: '安全问题配置错误，请联系管理员' },
-  CLAIM_SECURITY_ANSWER_MISMATCH: { code: 1304, httpStatus: 422, message: '安全问题答案不正确' },
-  CLAIM_TOKEN_INVALID: { code: 1305, httpStatus: 401, message: 'claim_token 无效' },
-  CLAIM_TOKEN_USED: { code: 1306, httpStatus: 409, message: 'claim_token 已被使用' },
-  CLAIM_TOKEN_EXPIRED: { code: 1307, httpStatus: 410, message: 'claim_token 已过期，请重新验证' },
-  CLAIM_FINALIZE_FAILED: { code: 1308, httpStatus: 500, message: '认领注册失败，请稍后重试' },
-  ROSTER_NOT_CLAIMED: { code: 1309, httpStatus: 409, message: '该名录尚未被认领' },
-  ROSTER_ALREADY_EXISTS: { code: 1310, httpStatus: 409, message: '该名录已存在' },
-  ROSTER_NOT_FOUND_OR_UNCLAIMED: { code: 1311, httpStatus: 404, message: '名录不存在或未认领' },
-
   ROLE_INVALID: { code: 1401, httpStatus: 400, message: 'role 不合法' },
-  QUESTION_ANSWERS_INVALID: { code: 1402, httpStatus: 400, message: '需要提供三道题目的答案数组' },
 
   STORAGE_OBJECT_KEY_MISSING: { code: 1501, httpStatus: 400, message: '缺少对象 key' },
   STORAGE_OBJECT_NOT_FOUND: { code: 1502, httpStatus: 404, message: '对象不存在' },

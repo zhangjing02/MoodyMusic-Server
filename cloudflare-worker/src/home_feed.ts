@@ -30,7 +30,8 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
         audioUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/theme/snow_cafe_piano.mp3',
         artistName: '放鬆鋼琴 · 慢時光',
         actionType: 'theme',
-        actionTarget: 'snow_cafe_theme'
+        actionTarget: 'snow_cafe_theme',
+        storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/snow_cafe_theme.json'
       }
     },
     {
@@ -42,6 +43,18 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
         title: '今日推荐',
         subtitle: "TODAY'S VINYL SELECTION",
         items: [
+          {
+            id: 'eason_chan_get_a_life_theme',
+            title: '《Get A Life》',
+            artist: '陳奕迅',
+            year: '2016',
+            subtitle: '紅館 · 金曲純享',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/albums/eason_chan_get_a_life_cover.jpg',
+            audioUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/theme/eason_chan_get_a_life_2006.m4a',
+            isTheme: true,
+            themeId: 'eason_chan_get_a_life_theme',
+            storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/eason_chan_get_a_life_theme.json'
+          },
           // 【原资源备用保留：巴赫大提琴作品集，音频与封面均在 Account 02 完整保留未删除，随时可切回】
           // {
           //   id: 'bach_cello_theme',
@@ -54,16 +67,28 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
           //   isTheme: true,
           //   themeId: 'bach_cello_theme'
           {
+            id: 'jacky_cheung_classic_tour_theme',
+            title: '《經典之旅》',
+            artist: '張學友',
+            year: '2018',
+            subtitle: '台北站 · 金曲純享',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/albums/jacky_cheung_classic_tour_cover.jpg',
+            audioUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/theme/jacky_cheung_classic_tour_taipei.m4a',
+            isTheme: true,
+            themeId: 'jacky_cheung_classic_tour_theme',
+            storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/jacky_cheung_classic_tour_theme.json'
+          },
+          {
             id: 'pub_heroes_theme',
             title: '《PUB英雄會》',
             artist: '動力火車 · 迪克牛仔',
             year: '1996',
             subtitle: '十大名團點唱神作 · 原汁原味',
-            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/pub_heroes_cover_v1.jpg',
-            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/pub_heroes_1996_theme.mp3',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/albums/pub_heroes_cover_v1.jpg',
+            audioUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/theme/pub_heroes_1996_theme.mp3',
             isTheme: true,
             themeId: 'pub_heroes_theme',
-            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/pub_heroes_theme_v1.json'
+            storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/pub_heroes_theme_v1.json'
           },
           {
             id: 'rene_liu_live_theme',
@@ -71,11 +96,11 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
             artist: '劉若英',
             year: '2002-2024',
             subtitle: '一口氣聽完7首神級Live',
-            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/rene_liu_live_cover_v1.jpg',
-            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/rene_liu_live_128k.mp3',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/albums/rene_liu_live_cover_v1.jpg',
+            audioUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/theme/rene_liu_live_128k.mp3',
             isTheme: true,
             themeId: 'rene_liu_live_theme',
-            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/rene_liu_live_theme_v1.json'
+            storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/rene_liu_live_theme_v1.json'
           },
           {
             id: 'wen_4versions_theme',
@@ -83,23 +108,23 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
             artist: '林憶蓮 · 李宗盛',
             year: '1994-2014',
             subtitle: '一曲唱盡四種人生 · 經典對比',
-            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/wen_sandy_cover_v2.jpg',
-            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/wen_4versions_128k.mp3',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/albums/wen_sandy_cover_v2.jpg',
+            audioUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/theme/wen_4versions_128k.mp3',
             isTheme: true,
             themeId: 'wen_4versions_theme',
-            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/wen_4versions_theme_v2.json'
+            storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/wen_4versions_theme_v2.json'
           },
           {
-            id: 'jonathan_lee_theme',
-            title: '《理性與感性》',
+            id: 'jonathan_lee_youth_theme',
+            title: '《既然青春留不住》',
             artist: '李宗盛',
             year: '2007',
             subtitle: '30首歲月金曲 · 寫盡悲歡離合',
-            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/album_jonathan_lee.jpg',
-            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/jonathan_lee_30.m4a',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/albums/jonathan_lee_youth_cover.jpg',
+            audioUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/theme/jonathan_lee_youth_tour_2016.m4a',
             isTheme: true,
-            themeId: 'jonathan_lee_theme',
-            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/jonathan_lee_theme.json'
+            themeId: 'jonathan_lee_youth_theme',
+            storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/jonathan_lee_youth_theme.json'
           },
           {
             id: 'guofeng_flute_theme_v3',
@@ -107,11 +132,11 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
             artist: '書領了嗎 · 竹笛',
             year: '2026',
             subtitle: '竹笛清響，夢回青城煙雨',
-            coverUrl: 'https://m-api.changgepd.ccwu.cc/storage/covers/albums/guofeng_flute_collection_cover_v3.jpg',
-            audioUrl: 'https://m-api.changgepd.ccwu.cc/storage/music/theme/guofeng_flute_collection_v2.mp3',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/albums/guofeng_flute_collection_cover_v3.jpg',
+            audioUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/theme/guofeng_flute_collection_v2.mp3',
             isTheme: true,
             themeId: 'guofeng_flute_theme_v3',
-            storyUrl: 'https://m-api.changgepd.ccwu.cc/storage/themes/guofeng_flute_theme_v3.json'
+            storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/guofeng_flute_theme_v3.json'
           }
         ]
       }
@@ -132,7 +157,8 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
         albumId: 'butterfly_lovers_album',
         albumTitle: '《梁祝》小提琴协奏曲',
         primaryActionText: '阅读深度专题',
-        secondaryActionText: '聆听全曲'
+        secondaryActionText: '聆听全曲',
+        storyUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/themes/butterfly_lovers_deep_dive.json'
       }
     },
     {
@@ -175,6 +201,14 @@ export const DEFAULT_HOME_FEED: HomeFeedData = {
             coverUrl: 'https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/covers/variety/big_band.jpg',
             actionType: 'artist',
             actionTarget: '178'
+          },
+          {
+            id: 'variety_our_songs',
+            title: '我们的歌',
+            subtitle: '跨代合唱 · 岁月金曲新编',
+            coverUrl: 'https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/covers/variety/our_songs.jpg',
+            actionType: 'artist',
+            actionTarget: '191'
           }
         ]
       }

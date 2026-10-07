@@ -10,7 +10,7 @@ import { registerAppVersionRoutes } from './app_version'
 import { registerCommunityRoutes } from './community'
 import { registerPlaylistRoutes } from './playlists'
 import { registerVoiceRoutes } from './voice'
-import { registerCryptoRoutes, cryptoMiddleware, generateSignedStreamUrl, DEFAULT_STREAM_SIGN_SECRET, encryptWebField } from './crypto'
+import { registerCryptoRoutes, cryptoMiddleware, generateSignedStreamUrl, DEFAULT_STREAM_SIGN_SECRET, encryptWebField, isAndroidClient } from './crypto'
 import type { Bindings } from './types'
 import { fail, normalizeLegacyErrorResponse, serverError } from './error'
 
@@ -533,8 +533,7 @@ app.get('/api/songs', async (c) => {
       }
     } catch (_) {}
 
-    const isAndroid = (c.req.header('x-app-platform') || '').toLowerCase() === 'android' ||
-                      (c.req.header('user-agent') || '').toLowerCase().includes('moodymusic-android')
+    const isAndroid = isAndroidClient(c)
 
     if (!isAndroid) {
       // 针对 Web 浏览器访问：将所有歌曲的 path 转换为 4 小时有效期的混淆防盗链网关地址，并进行专属字段流密码加密
@@ -701,8 +700,7 @@ app.get('/api/search', async (c) => {
       songs: matchedSongs
     }
 
-    const isAndroid = (c.req.header('x-app-platform') || '').toLowerCase() === 'android' ||
-                      (c.req.header('user-agent') || '').toLowerCase().includes('moodymusic-android')
+    const isAndroid = isAndroidClient(c)
 
     if (!isAndroid) {
       const secret = c.env.STREAM_SIGN_SECRET || DEFAULT_STREAM_SIGN_SECRET

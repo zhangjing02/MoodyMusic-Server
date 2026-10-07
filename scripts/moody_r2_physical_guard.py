@@ -165,6 +165,12 @@ def install_guard():
         return  # 防止重复注入
 
     def guarded_make_api_call(self, operation_name, api_params):
+        # 歌词维护模式：临时允许 .lrc 覆盖写入（容量中性，替换已存在对象，不新增用量）
+        if (os.environ.get("MOODY_R2_LYRICS_MAINTENANCE") == "1"
+                and operation_name == "PutObject"
+                and api_params
+                and str(api_params.get("Key", "")).lower().endswith(".lrc")):
+            return orig_api_call(self, operation_name, api_params)
         if operation_name in S3_WRITE_OPERATIONS and api_params:
             raw_bucket = api_params.get('Bucket')
             if raw_bucket:

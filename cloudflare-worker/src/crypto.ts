@@ -248,6 +248,16 @@ export async function verifyStreamSignature(
 }
 
 /**
+ * 判定请求是否来自 Android 客户端
+ */
+export function isAndroidClient(c: Context<any>): boolean {
+  const clientType = (c.req.header('x-client-type') || '').toLowerCase()
+  const platform = (c.req.header('x-app-platform') || '').toLowerCase()
+  const userAgent = (c.req.header('user-agent') || '').toLowerCase()
+  return clientType === 'android' || platform === 'android' || userAgent.includes('moodymusic') || userAgent.includes('exoplayer')
+}
+
+/**
  * 判定客户端是否支持/要求加密通信
  * 满足以下任一条件时自动激活密文通道：
  * 1. 显式上报了 x-encrypted-key
@@ -324,12 +334,9 @@ export const cryptoMiddleware = async (c: Context<{ Bindings: Bindings; Variable
   const clientWantsCrypto = isCryptoClient(c)
   let aesKey: CryptoKey | null = null
 
-  // 1. 如果客户端要求加密但未提供握手密钥，提示错误
-  if (clientWantsCrypto && !encryptedKeyHeader && c.req.header('x-app-version-code') && parseInt(c.req.header('x-app-version-code') || '0', 10) >= 15) {
-    return c.json({
-      code: 400,
-      message: 'Client version v1.0.15+ requires encrypted envelope handshake. Please supply x-encrypted-key header.'
-    }, 400)
+  // 1. 如果客户端要求加密但未提供握手密钥，优雅降级为明文通信（确保零阻断高可用）
+  if (clientWantsCrypto && !encryptedKeyHeader) {
+    console.warn('[CryptoMiddleware] Crypto client requested without x-encrypted-key, falling back to plaintext')
   }
 
   // 2. 如果客户端上报了 RSA 加密的一次性 AES Key，进行解密还原
@@ -453,9 +460,7 @@ export function registerCryptoRoutes(app: Hono<{ Bindings: Bindings; Variables: 
 
     // 检查防盗链与来源合法性（双白名单机制：Web 端必须带合法 Referer，App 端必须带 App 特征）
     const referer = c.req.header('referer') || ''
-    const userAgent = (c.req.header('user-agent') || '').toLowerCase()
-    const platform = (c.req.header('x-app-platform') || '').toLowerCase()
-    const isAndroidApp = platform === 'android' || userAgent.includes('moodymusic-android') || userAgent.includes('exoplayer')
+    const isAndroidApp = isAndroidClient(c)
 
     let isAllowedOrigin = false
     if (referer) {

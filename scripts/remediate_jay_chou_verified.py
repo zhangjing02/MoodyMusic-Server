@@ -71,9 +71,9 @@ TASKS = [
         "artist": "周杰伦",
         "album": "叶惠美",
         "title": "三年二班",
-        "yt_id": "_trE3M24kQY",
+        "yt_id": "WALf2hHYU8E",
         "expected_dur": 280,
-        "start_offset": 179.5 # 剥离前置乒乓球微电影剧情
+        "start_offset": 0 # 采用纯净录音室正版原轨，无需微电影偏置
     },
     {
         "id": 23335,
