@@ -537,3 +537,128 @@ export function registerCryptoRoutes(app: Hono<{ Bindings: Bindings; Variables: 
     }
   })
 }
+
+// ========================================================
+// 方案一/三：Web 专属字段轻量对称加解密 (流密码 + 随机盐)
+// ========================================================
+
+export const MOODY_WEB_FIELD_KEY = 'MoodyMusic-WebGuard-Secret-2026!'
+
+/**
+ * 轻量对称流密码加密（针对 Web 端专属字段如 song.path 混淆）
+ * 每次生成 8 字节随机盐，保证同一 URL 每次加密输出的密文均完全不同
+ */
+export function encryptWebField(plainText: string, keyStr: string = MOODY_WEB_FIELD_KEY): string {
+  if (!plainText) return plainText
+  const salt = new Uint8Array(8)
+  crypto.getRandomValues(salt)
+  
+  // KSA
+  const keyBytes = new TextEncoder().encode(keyStr)
+  const comb = new Uint8Array(keyBytes.length + salt.length)
+  comb.set(keyBytes, 0)
+  comb.set(salt, keyBytes.length)
+
+  const s = new Uint8Array(256)
+  for (let i = 0; i < 256; i++) s[i] = i
+  let j = 0
+  for (let i = 0; i < 256; i++) {
+    j = (j + s[i] + comb[i % comb.length]) & 0xff
+    const tmp = s[i]
+    s[i] = s[j]
+    s[j] = tmp
+  }
+
+  // Drop 512
+  let si = 0, sj = 0
+  for (let d = 0; d < 512; d++) {
+    si = (si + 1) & 0xff
+    sj = (sj + s[si]) & 0xff
+    const tmp = s[si]
+    s[si] = s[sj]
+    s[sj] = tmp
+  }
+
+  const plainBytes = new TextEncoder().encode(plainText)
+  const cipher = new Uint8Array(plainBytes.length)
+  for (let k = 0; k < plainBytes.length; k++) {
+    si = (si + 1) & 0xff
+    sj = (sj + s[si]) & 0xff
+    const tmp = s[si]
+    s[si] = s[sj]
+    s[sj] = tmp
+    cipher[k] = plainBytes[k] ^ s[(s[si] + s[sj]) & 0xff]
+  }
+
+  let saltHex = ''
+  for (let i = 0; i < salt.length; i++) {
+    saltHex += salt[i].toString(16).padStart(2, '0')
+  }
+  let cipherHex = ''
+  for (let i = 0; i < cipher.length; i++) {
+    cipherHex += cipher[i].toString(16).padStart(2, '0')
+  }
+
+  return `moody://enc_v1:${saltHex}${cipherHex}`
+}
+
+/**
+ * 轻量对称流密码解密
+ */
+export function decryptWebField(cipherStr: string, keyStr: string = MOODY_WEB_FIELD_KEY): string {
+  if (!cipherStr || !cipherStr.startsWith('moody://enc_v1:')) return cipherStr
+  const hex = cipherStr.slice('moody://enc_v1:'.length)
+  if (hex.length < 16) return cipherStr
+  const saltHex = hex.slice(0, 16)
+  const bodyHex = hex.slice(16)
+  
+  const salt = new Uint8Array(8)
+  for (let i = 0; i < 8; i++) {
+    salt[i] = parseInt(saltHex.substr(i * 2, 2), 16)
+  }
+
+  const bodyLen = bodyHex.length / 2
+  const body = new Uint8Array(bodyLen)
+  for (let i = 0; i < bodyLen; i++) {
+    body[i] = parseInt(bodyHex.substr(i * 2, 2), 16)
+  }
+
+  // KSA
+  const keyBytes = new TextEncoder().encode(keyStr)
+  const comb = new Uint8Array(keyBytes.length + salt.length)
+  comb.set(keyBytes, 0)
+  comb.set(salt, keyBytes.length)
+
+  const s = new Uint8Array(256)
+  for (let i = 0; i < 256; i++) s[i] = i
+  let j = 0
+  for (let i = 0; i < 256; i++) {
+    j = (j + s[i] + comb[i % comb.length]) & 0xff
+    const tmp = s[i]
+    s[i] = s[j]
+    s[j] = tmp
+  }
+
+  // Drop 512
+  let si = 0, sj = 0
+  for (let d = 0; d < 512; d++) {
+    si = (si + 1) & 0xff
+    sj = (sj + s[si]) & 0xff
+    const tmp = s[si]
+    s[si] = s[sj]
+    s[sj] = tmp
+  }
+
+  const plain = new Uint8Array(bodyLen)
+  for (let k = 0; k < bodyLen; k++) {
+    si = (si + 1) & 0xff
+    sj = (sj + s[si]) & 0xff
+    const tmp = s[si]
+    s[si] = s[sj]
+    s[sj] = tmp
+    plain[k] = body[k] ^ s[(s[si] + s[sj]) & 0xff]
+  }
+
+  return new TextDecoder().decode(plain)
+}
+

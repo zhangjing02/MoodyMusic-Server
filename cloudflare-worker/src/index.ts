@@ -10,7 +10,7 @@ import { registerAppVersionRoutes } from './app_version'
 import { registerCommunityRoutes } from './community'
 import { registerPlaylistRoutes } from './playlists'
 import { registerVoiceRoutes } from './voice'
-import { registerCryptoRoutes, cryptoMiddleware, generateSignedStreamUrl, DEFAULT_STREAM_SIGN_SECRET } from './crypto'
+import { registerCryptoRoutes, cryptoMiddleware, generateSignedStreamUrl, DEFAULT_STREAM_SIGN_SECRET, encryptWebField } from './crypto'
 import type { Bindings } from './types'
 import { fail, normalizeLegacyErrorResponse, serverError } from './error'
 
@@ -537,13 +537,14 @@ app.get('/api/songs', async (c) => {
                       (c.req.header('user-agent') || '').toLowerCase().includes('moodymusic-android')
 
     if (!isAndroid) {
-      // 针对 Web 浏览器访问：将所有歌曲的 path 转换为 4 小时有效期的混淆防盗链网关地址
+      // 针对 Web 浏览器访问：将所有歌曲的 path 转换为 4 小时有效期的混淆防盗链网关地址，并进行专属字段流密码加密
       const secret = c.env.STREAM_SIGN_SECRET || DEFAULT_STREAM_SIGN_SECRET
       for (const artist of library) {
         for (const album of artist.albums) {
           for (const song of album.songs) {
             if (song.path && (song.path.startsWith('http://') || song.path.startsWith('https://'))) {
-              song.path = await generateSignedStreamUrl(song.path, baseUrl, secret, 14400)
+              const streamUrl = await generateSignedStreamUrl(song.path, baseUrl, secret, 14400)
+              song.path = encryptWebField(streamUrl)
             }
           }
         }
@@ -707,7 +708,8 @@ app.get('/api/search', async (c) => {
       const secret = c.env.STREAM_SIGN_SECRET || DEFAULT_STREAM_SIGN_SECRET
       for (const song of results.songs) {
         if (song.FilePath && (song.FilePath.startsWith('http://') || song.FilePath.startsWith('https://'))) {
-          song.FilePath = await generateSignedStreamUrl(song.FilePath, baseUrl, secret, 14400)
+          const streamUrl = await generateSignedStreamUrl(song.FilePath, baseUrl, secret, 14400)
+          song.FilePath = encryptWebField(streamUrl)
         }
       }
     }
