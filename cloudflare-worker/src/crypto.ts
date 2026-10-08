@@ -321,61 +321,57 @@ export const cryptoMiddleware = async (c: Context<{ Bindings: Bindings; Variable
   }
 
   const encryptedKeyHeader = c.req.header('x-encrypted-key')
-  const clientWantsCrypto = isCryptoClient(c)
-  let aesKey: CryptoKey | null = null
 
-  // 1. 如果客户端要求加密但未提供握手密钥，提示错误
-  if (clientWantsCrypto && !encryptedKeyHeader && c.req.header('x-app-version-code') && parseInt(c.req.header('x-app-version-code') || '0', 10) >= 15) {
+  // 1. 全局统一强制要求握手信封秘钥（不依赖版本号或特定客户端，统一加解密）
+  if (!encryptedKeyHeader) {
     return c.json({
       code: 400,
-      message: 'Client version v1.0.15+ requires encrypted envelope handshake. Please supply x-encrypted-key header.'
+      message: 'Enveloped encryption required. Missing x-encrypted-key header.'
     }, 400)
   }
 
-  // 2. 如果客户端上报了 RSA 加密的一次性 AES Key，进行解密还原
-  if (encryptedKeyHeader) {
-    try {
-      aesKey = await decryptRsaKey(encryptedKeyHeader, c.env)
-      c.set('aesKey', aesKey)
-      c.set('isCryptoClient', true)
-    } catch (err: any) {
-      console.error('[CryptoMiddleware] RSA decrypt aes key failed:', err.message)
-      return c.json({ code: 400, message: 'Invalid encrypted key handshake' }, 400)
-    }
+  // 2. 解密 RSA-OAEP 封装的 AES-256 Key
+  let aesKey: CryptoKey
+  try {
+    aesKey = await decryptRsaKey(encryptedKeyHeader, c.env)
+    c.set('aesKey', aesKey)
+    c.set('isCryptoClient', true)
+  } catch (err: any) {
+    console.error('[CryptoMiddleware] RSA decrypt aes key failed:', err.message)
+    return c.json({ code: 400, message: 'Invalid encrypted key handshake' }, 400)
+  }
 
-    // 3. 处理请求体解密（POST / PUT / PATCH）
-    const contentType = c.req.header('content-type') || ''
-    if (contentType.includes('application/json') && (c.req.method === 'POST' || c.req.method === 'PUT' || c.req.method === 'PATCH')) {
-      try {
-        const rawBodyText = await c.req.text()
-        if (rawBodyText) {
-          const bodyJson = JSON.parse(rawBodyText)
-          if (bodyJson && bodyJson.payload) {
-            const iv = c.req.header('x-encrypted-iv') || bodyJson.iv
-            if (!iv) {
-              return c.json({ code: 400, message: 'Missing encrypted IV in header or payload' }, 400)
-            }
-            const decryptedJsonStr = await decryptPayload(bodyJson.payload, iv, aesKey)
-            const decryptedObj = JSON.parse(decryptedJsonStr)
-            
-            // 覆盖 c.req.json 方法
-            c.req.json = async () => decryptedObj
-            ;(c.req as any)._decryptedJson = decryptedObj
+  // 3. 处理请求体解密（POST / PUT / PATCH）
+  const contentType = c.req.header('content-type') || ''
+  if (contentType.includes('application/json') && (c.req.method === 'POST' || c.req.method === 'PUT' || c.req.method === 'PATCH')) {
+    try {
+      const rawBodyText = await c.req.text()
+      if (rawBodyText && rawBodyText.trim().length > 0) {
+        const bodyJson = JSON.parse(rawBodyText)
+        if (bodyJson && bodyJson.payload) {
+          const iv = c.req.header('x-encrypted-iv') || bodyJson.iv
+          if (!iv) {
+            return c.json({ code: 400, message: 'Missing encrypted IV in header or payload' }, 400)
           }
+          const decryptedJsonStr = await decryptPayload(bodyJson.payload, iv, aesKey)
+          const decryptedObj = JSON.parse(decryptedJsonStr)
+          
+          // 覆盖 c.req.json 方法
+          c.req.json = async () => decryptedObj
+          ;(c.req as any)._decryptedJson = decryptedObj
         }
-      } catch (err: any) {
-        console.error('[CryptoMiddleware] Decrypt request body failed:', err.message)
-        return c.json({ code: 400, message: 'Failed to decrypt request body' }, 400)
       }
+    } catch (err: any) {
+      console.error('[CryptoMiddleware] Decrypt request body failed:', err.message)
+      return c.json({ code: 400, message: 'Failed to decrypt request body' }, 400)
     }
   }
 
   // 4. 执行下游业务路由
   await next()
 
-  // 5. 处理响应阶段
-  const activeAesKey = c.get('aesKey') as CryptoKey | undefined
-  if (activeAesKey && c.res) {
+  // 5. 处理响应阶段：全局强制加密回传
+  if (c.res) {
     try {
       const resContentType = c.res.headers.get('content-type') || ''
       if (resContentType.includes('application/json')) {
@@ -388,7 +384,7 @@ export const cryptoMiddleware = async (c: Context<{ Bindings: Bindings; Variable
 
         // 加密响应 JSON 字符串
         const jsonStr = JSON.stringify(maskedData)
-        const encrypted = await encryptPayload(jsonStr, activeAesKey)
+        const encrypted = await encryptPayload(jsonStr, aesKey)
 
         // 构造加密回传响应
         c.res = c.json({
