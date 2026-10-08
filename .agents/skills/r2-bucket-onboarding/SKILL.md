@@ -77,7 +77,7 @@ python backend/scripts/add_r2_bucket.py --name <桶名> --email <邮箱> --accou
 
 ### Step 3: 持久化保存至 Notion 知识库
 使用 `notion-mcp-server` 将新桶凭证规范归档至全局知识库：
-- **目标页面**：`MOODY 音乐档案项目 (ClawCloud + R2)`
+- **目标页面**：`MOODY 音乐档案项目 (Cloudflare Worker + R2)`
 - **页面 ID**：`324840be-9e1a-8166-8c88-cd42c70c33a7`
 - **操作方式**：调用 `call_mcp_tool` -> `API-patch-block-children` 追加 Callout / Table 记录：
   - 格式规范：
@@ -141,7 +141,7 @@ python backend/scripts/check_r2_storage.py
    - 自动防御水线：**9.00 GB 自动封箱 / 9.50 GB 物理熔断**
    - 看门狗状态：全局 Python 钩子与 Worker 网关已全自动挂载守护
 3. **Notion 知识库归档**：
-   - 已同步追加至：[MOODY 音乐档案项目 (ClawCloud + R2)](https://notion.so/324840be9e1a81668c88cd42c70c33a7)
+   - 已同步追加至：[MOODY 音乐档案项目 (Cloudflare Worker + R2)](https://notion.so/324840be9e1a81668c88cd42c70c33a7)
 4. **管理后台大盘监控**：
    - 集群总容量：扩展至 `XX0.00 GB`
    - 管理后台地址：`https://admin.changgepd.ccwu.cc`（卡片已动态挂载）
