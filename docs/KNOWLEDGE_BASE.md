@@ -140,7 +140,7 @@
   1. **凭证隔离与多端中心化沉淀 (Multi-Tier Credential Safety)**：
      - 严禁在脚本或代码中硬编码任何 Token；
      - 物理凭据统一沉淀于 `MoodyMusic-Server/groq_config.json`，且受 `.gitignore` 保护绝不入版本库；
-     - 云端在 Notion 知识主页「MOODY 音乐档案项目 (ClawCloud + R2)」持久化维护 3 个及以上绑定账号的 API Keys 清单与验证状态。
+     - 云端在 Notion 知识主页「MOODY 音乐档案项目 (Cloudflare Worker + R2)」持久化维护 3 个及以上绑定账号的 API Keys 清单与验证状态。
   2. **线程安全多 Token 轮询调度器 (Round-Robin with Lock)**：
      - 封装核心模块 `groq_manager.py`，设计 `GroqTokenPool`；
      - 使用 `threading.Lock()` 保障多线程并发请求时的原子轮转获取，消除多任务撞车；
