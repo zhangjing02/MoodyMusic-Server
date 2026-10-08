@@ -254,7 +254,16 @@ export function isAndroidClient(c: Context<any>): boolean {
   const clientType = (c.req.header('x-client-type') || '').toLowerCase()
   const platform = (c.req.header('x-app-platform') || '').toLowerCase()
   const userAgent = (c.req.header('user-agent') || '').toLowerCase()
-  return clientType === 'android' || platform === 'android' || userAgent.includes('moodymusic') || userAgent.includes('exoplayer')
+  return (
+    clientType === 'android' ||
+    platform === 'android' ||
+    userAgent.includes('moodymusic-android') ||
+    userAgent.includes('moodymusicandroid') ||
+    (userAgent.includes('moodymusic') && userAgent.includes('android')) ||
+    userAgent.includes('exoplayer') ||
+    userAgent.includes('okhttp') ||
+    userAgent.includes('moodymusic')
+  )
 }
 
 /**
@@ -331,29 +340,33 @@ export const cryptoMiddleware = async (c: Context<{ Bindings: Bindings; Variable
   }
 
   const encryptedKeyHeader = c.req.header('x-encrypted-key')
+  let aesKey: CryptoKey | null = null
 
-  // 1. 全局统一强制要求握手信封秘钥（不依赖版本号或特定客户端，统一加解密）
-  if (!encryptedKeyHeader) {
-    return c.json({
-      code: 400,
-      message: 'Enveloped encryption required. Missing x-encrypted-key header.'
-    }, 400)
+  // 1. 握手校验与降级容灾：
+  if (encryptedKeyHeader) {
+    // 客户端携带了 RSA 加密的一次性 AES Key，进行解密还原
+    try {
+      aesKey = await decryptRsaKey(encryptedKeyHeader, c.env)
+      c.set('aesKey', aesKey)
+      c.set('isCryptoClient', true)
+    } catch (err: any) {
+      console.error('[CryptoMiddleware] RSA decrypt aes key failed:', err.message)
+      return c.json({ code: 400, message: 'Invalid encrypted key handshake' }, 400)
+    }
+  } else {
+    // 未携带握手秘钥：若显式声明/要求加密（如 Android v1.0.15+）则拦截提示
+    if (isCryptoClient(c)) {
+      return c.json({
+        code: 400,
+        message: 'Client requires encrypted envelope handshake. Missing x-encrypted-key header.'
+      }, 400)
+    }
+    // Web 网页端、CMS 控制台、未开启加密的老客户端平滑放行明文通信，确保 100% 可用性
   }
 
-  // 2. 解密 RSA-OAEP 封装的 AES-256 Key
-  let aesKey: CryptoKey
-  try {
-    aesKey = await decryptRsaKey(encryptedKeyHeader, c.env)
-    c.set('aesKey', aesKey)
-    c.set('isCryptoClient', true)
-  } catch (err: any) {
-    console.error('[CryptoMiddleware] RSA decrypt aes key failed:', err.message)
-    return c.json({ code: 400, message: 'Invalid encrypted key handshake' }, 400)
-  }
-
-  // 3. 处理请求体解密（POST / PUT / PATCH）
+  // 2. 处理请求体解密（POST / PUT / PATCH）
   const contentType = c.req.header('content-type') || ''
-  if (contentType.includes('application/json') && (c.req.method === 'POST' || c.req.method === 'PUT' || c.req.method === 'PATCH')) {
+  if (aesKey && contentType.includes('application/json') && (c.req.method === 'POST' || c.req.method === 'PUT' || c.req.method === 'PATCH')) {
     try {
       const rawBodyText = await c.req.text()
       if (rawBodyText && rawBodyText.trim().length > 0) {
@@ -377,10 +390,10 @@ export const cryptoMiddleware = async (c: Context<{ Bindings: Bindings; Variable
     }
   }
 
-  // 4. 执行下游业务路由
+  // 3. 执行下游业务路由
   await next()
 
-  // 5. 处理响应阶段：全局强制加密回传
+  // 4. 处理响应阶段
   if (c.res) {
     try {
       const resContentType = c.res.headers.get('content-type') || ''
@@ -392,21 +405,26 @@ export const cryptoMiddleware = async (c: Context<{ Bindings: Bindings; Variable
         // 对响应数据中的所有音视频直链进行动态短效 HMAC 签名保护
         const maskedData = await transformResourceUrlsToSignedStreams(originalJson, baseUrl, secret)
 
-        // 加密响应 JSON 字符串
-        const jsonStr = JSON.stringify(maskedData)
-        const encrypted = await encryptPayload(jsonStr, aesKey)
+        if (aesKey) {
+          // 加密客户端：全量 AES-256-GCM 封装回传
+          const jsonStr = JSON.stringify(maskedData)
+          const encrypted = await encryptPayload(jsonStr, aesKey)
 
-        // 构造加密回传响应
-        c.res = c.json({
-          code: 200,
-          encrypted: true,
-          iv: encrypted.iv,
-          payload: encrypted.payload
-        })
-        c.res.headers.set('X-Crypto-Response', 'AES-256-GCM')
+          // 构造加密回传响应
+          c.res = c.json({
+            code: 200,
+            encrypted: true,
+            iv: encrypted.iv,
+            payload: encrypted.payload
+          })
+          c.res.headers.set('X-Crypto-Response', 'AES-256-GCM')
+        } else {
+          // 非加密客户端（Web / CMS / 老版本）：直接回传已签名脱敏的 JSON 明文
+          c.res = c.json(maskedData)
+        }
       }
     } catch (err: any) {
-      console.error('[CryptoMiddleware] Response encryption error:', err.message)
+      console.error('[CryptoMiddleware] Response processing error:', err.message)
     }
   }
 }
@@ -459,6 +477,7 @@ export function registerCryptoRoutes(app: Hono<{ Bindings: Bindings; Variables: 
 
     // 检查防盗链与来源合法性（双白名单机制：Web 端必须带合法 Referer，App 端必须带 App 特征）
     const referer = c.req.header('referer') || ''
+    const userAgent = (c.req.header('user-agent') || '').toLowerCase()
     const isAndroidApp = isAndroidClient(c)
 
     let isAllowedOrigin = false
