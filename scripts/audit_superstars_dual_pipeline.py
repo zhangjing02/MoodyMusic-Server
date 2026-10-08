@@ -49,13 +49,23 @@ def clean_text(t: str) -> str:
     return t.lower()
 
 def compute_similarity(t1: str, t2: str) -> float:
-    c1 = clean_text(t1)
-    c2 = clean_text(t2)
-    if not c1 or not c2: return 0.0
-    s1, s2 = set(c1), set(c2)
-    inter = len(s1.intersection(s2))
-    union = len(s1.union(s2))
-    return inter / max(union, 1)
+    if not t1 or not t2: return 0.0
+    has_hanzi = bool(re.search(r'[\u4e00-\u9fa5]', t1 + t2))
+    if has_hanzi:
+        c1 = clean_text(t1)
+        c2 = clean_text(t2)
+        if not c1 or not c2: return 0.0
+        s1, s2 = set(c1), set(c2)
+        inter = len(s1.intersection(s2))
+        union = len(s1.union(s2))
+        return inter / max(union, 1)
+    else:
+        w1 = set(re.findall(r'[a-zA-Z]{2,}', t1.lower()))
+        w2 = set(re.findall(r'[a-zA-Z]{2,}', t2.lower()))
+        if not w1 or not w2: return 0.0
+        inter = len(w1.intersection(w2))
+        union = len(w1.union(w2))
+        return inter / max(union, 1)
 
 def get_audio_duration(url: str, timeout: int = 15) -> float | None:
     if not url: return None
@@ -74,19 +84,39 @@ def get_audio_duration(url: str, timeout: int = 15) -> float | None:
         return None
 
 def is_likely_instrumental(title: str, album: str) -> bool:
-    kw_inst = ["伴奏", "demo", "演奏", "instrumental", "bgm", "纯音乐", "配乐", "开场斩人", "第三街", "制毒", "山市街", "捉贼", "打斗", "粉碎", "球场", "包装", "纸船", "扫毒"]
-    t_clean = title.lower()
+    kw_inst = [
+        "伴奏", "demo", "演奏", "instrumental", "bgm", "纯音乐", "配乐", 
+        "开场斩人", "第三街", "制毒", "山市街", "捉贼", "打斗", "粉碎", "球场", 
+        "包装", "纸船", "扫毒", "序曲", "原创音乐", "选辑", "过场", "独白", 
+        "水浒三部曲", "残局", "身段", "点将", "变身", "大典", "梦境", "出征"
+    ]
+    t_clean = (title + " " + album).lower()
     return any(kw in t_clean for kw in kw_inst)
 
+def is_english_track(title: str, album: str, lyrics: str = "") -> bool:
+    """识别纯英文歌曲或英文大碟"""
+    alb_low = album.lower()
+    if any(kw in alb_low for kw in ["songs of birds", "i remember", "blue bird", "my oh my"]):
+        return True
+    
+    clean_t = re.sub(r'[\(\)\[\]【】（）\s\d\-_,.\'\"!?:;]', '', title)
+    has_hanzi_title = bool(re.search(r'[\u4e00-\u9fa5]', clean_t))
+    has_kana_title = bool(re.search(r'[\u3040-\u309f\u30a0-\u30ff]', clean_t))
+    
+    if not has_hanzi_title and not has_kana_title and len(clean_t) >= 2:
+        return True
+    return False
+
 def parse_lrc(lrc_url: str, song_title: str = "", album_title: str = ""):
-    """解析 LRC 返回 (first_vocal_sec, text_snippet, is_invalid, raw_full_text, is_instrumental)"""
+    """解析 LRC 返回 (first_vocal_sec, text_snippet, is_invalid, raw_full_text, is_instrumental, is_english)"""
     is_inst = is_likely_instrumental(song_title, album_title)
+    is_eng = is_english_track(song_title, album_title)
     if not lrc_url:
-        return 0, "", not is_inst, "", is_inst
+        return 0, "", not is_inst, "", is_inst, is_eng
     try:
         r = requests.get(lrc_url, proxies=PROXIES, timeout=10)
         if r.status_code != 200:
-            return 0, "", not is_inst, "", is_inst
+            return 0, "", not is_inst, "", is_inst, is_eng
         
         raw_text = r.text
         lines = raw_text.strip().split("\n")
@@ -114,12 +144,15 @@ def parse_lrc(lrc_url: str, song_title: str = "", album_title: str = ""):
         elif is_target_japanese:
             # 目标本身就是日文大碟/歌曲，包含假名即为正版
             is_invalid = len(vocal_lines) < 2 and not has_kana_lyrics
+        elif is_eng:
+            # 英文大碟/英文歌曲：包含拉丁字母，只要行数正常且不含日文假名即为正版
+            is_invalid = has_kana_lyrics or len(vocal_lines) < 2
         else:
             is_invalid = (has_kana_lyrics and not is_target_japanese) or (not has_hanzi and len(clean_full) > 50) or len(vocal_lines) < 3
         
-        return first_sec or 15, clean_full[:150], is_invalid, raw_text, is_inst
+        return first_sec or 15, clean_full[:150], is_invalid, raw_text, is_inst, is_eng
     except Exception:
-        return 0, "", not is_inst, "", is_inst
+        return 0, "", not is_inst, "", is_inst, is_eng
 
 def get_official_studio_meta(artist: str, title: str, album: str = "") -> dict:
     """多源融合获取权威录音室大碟的基准时长与正版歌词 (Kugou -> Netease -> Kuwo)，支持专辑加权匹配"""
@@ -308,11 +341,12 @@ def audit_song_stage1(artist: str, song: dict) -> dict:
             issues.append(f"时长被截断（实际 {actual_dur:.0f}s vs 录音室 {studio_dur:.0f}s）")
             
     # 3. 线上歌词解析
-    first_vocal, lrc_sample, is_invalid_lrc, raw_lrc, is_inst = parse_lrc(lrc_url, title, album)
+    first_vocal, lrc_sample, is_invalid_lrc, raw_lrc, is_inst, is_eng = parse_lrc(lrc_url, title, album)
     meta["first_vocal_sec"] = first_vocal
     meta["lrc_sample"] = lrc_sample[:100]
     meta["online_lrc_raw"] = raw_lrc
     meta["is_instrumental"] = is_inst
+    meta["is_english"] = is_eng
     
     if is_invalid_lrc:
         issues.append("线上 LRC 缺失、无效或包含纯外文错配")
@@ -327,7 +361,7 @@ def audit_song_stage1(artist: str, song: dict) -> dict:
     # 5. Whisper 盲听语义与水印探针 (纯音乐/伴奏跳过)
     if not is_inst:
         is_target_japanese = bool(re.search(r'[\u3040-\u309f\u30a0-\u30ff]', title + album))
-        w_lang = "ja" if is_target_japanese else "zh"
+        w_lang = "ja" if is_target_japanese else ("en" if is_eng else "zh")
         whisper_text = whisper_audio(audio_url, start_sec=first_vocal, duration_sec=25, lang=w_lang)
         meta["whisper_vocal"] = whisper_text[:120]
         
