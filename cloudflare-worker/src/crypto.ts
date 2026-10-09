@@ -402,8 +402,11 @@ export const cryptoMiddleware = async (c: Context<{ Bindings: Bindings; Variable
         const baseUrl = new URL(c.req.url).origin
         const secret = c.env.STREAM_SIGN_SECRET || DEFAULT_STREAM_SIGN_SECRET
 
-        // 对响应数据中的所有音视频直链进行动态短效 HMAC 签名保护
-        const maskedData = await transformResourceUrlsToSignedStreams(originalJson, baseUrl, secret)
+        // 对响应数据中的所有音视频直链进行动态短效 HMAC 签名保护（仅对 Web 浏览器端启用，Android 客户端直连 CDN/r2-proxy 极速播放）
+        const isAndroid = isAndroidClient(c)
+        const maskedData = !isAndroid
+          ? await transformResourceUrlsToSignedStreams(originalJson, baseUrl, secret)
+          : originalJson
 
         if (aesKey) {
           // 加密客户端：全量 AES-256-GCM 封装回传
@@ -517,9 +520,9 @@ export function registerCryptoRoutes(app: Hono<{ Bindings: Bindings; Variables: 
         const baseUrl = new URL(c.req.url).origin
         safeUrl = `${baseUrl}${safeUrl}`
       }
-      // 防御双重 URL 编码：先 decodeURI 还原，再 safe encodeURI，坚决避免 % 变为 %25 导致 R2 报 404
+      // 防御双重 URL 编码：先 decodeURI 还原，再 safe encodeURI，并修复 %2B 等保留字符被二次转义为 %252B 导致 R2 报 404 的隐患
       try {
-        safeUrl = encodeURI(decodeURI(safeUrl))
+        safeUrl = encodeURI(decodeURI(safeUrl)).replace(/%25([0-9A-Fa-f]{2})/g, (m, g) => '%' + g)
       } catch {
         // 若含有特殊畸形编码则维持 safeUrl 原状
       }
