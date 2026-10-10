@@ -1,8 +1,8 @@
 import { Hono } from 'hono'
 
 export async function sendPushMessage(env: any, payload: any) {
-  const appKey = 'cab5e87b9dd9b0acd6df56c3'
-  const masterSecret = 'ecab4b7671b57c78bbd72c22'
+  const appKey = env?.JPUSH_APP_KEY || '0c279e2a4de3471067c84370'
+  const masterSecret = env?.JPUSH_MASTER_SECRET || '3cf5ad961ce519f14d757f43'
   const auth = btoa(`${appKey}:${masterSecret}`)
 
   const response = await fetch('https://api.jpush.cn/v3/push', {
