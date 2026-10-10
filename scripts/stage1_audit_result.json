@@ -1,0 +1,5726 @@
+{
+  "identical_hash_groups": [
+    {
+      "group_key": [
+        110,
+        "Pleasure",
+        "JOLIN蔡依林",
+        7425088
+      ],
+      "songs": [
+        {
+          "id": 1597,
+          "title": "The Divine Comedy: Purgatorio",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/JOLIN蔡依林/Pleasure/s_1597.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/JOLIN蔡依林/Pleasure/s_1597.lrc",
+          "etag": "846ba7bec529b9f8830138ddd9a959e5",
+          "chunk_hash": "dab9ede3687d026447f3aed45713c493"
+        },
+        {
+          "id": 1598,
+          "title": "SEVEN",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/JOLIN蔡依林/Pleasure/s_1598.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/JOLIN蔡依林/Pleasure/s_1598.lrc",
+          "etag": "846ba7bec529b9f8830138ddd9a959e5",
+          "chunk_hash": "dab9ede3687d026447f3aed45713c493"
+        }
+      ],
+      "hash": "dab9ede3687d026447f3aed45713c493"
+    },
+    {
+      "group_key": [
+        152,
+        "Goodbye & Hello",
+        "蔡健雅",
+        5343129
+      ],
+      "songs": [
+        {
+          "id": 24748,
+          "title": "达尔文",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/Goodbye & Hello/s_24748.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/Goodbye & Hello/s_24748.lrc",
+          "etag": "89a04128cb91bc620ebfa663ef85f698",
+          "chunk_hash": "68a06dd175bf8e5e36ab95f051639f74"
+        },
+        {
+          "id": 24758,
+          "title": "达尔文II进化版",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/Goodbye & Hello/s_24758.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/Goodbye & Hello/s_24758.lrc",
+          "etag": "89a04128cb91bc620ebfa663ef85f698",
+          "chunk_hash": "68a06dd175bf8e5e36ab95f051639f74"
+        }
+      ],
+      "hash": "68a06dd175bf8e5e36ab95f051639f74"
+    },
+    {
+      "group_key": [
+        28,
+        "城市蓝天",
+        "阿牛",
+        4623717
+      ],
+      "songs": [
+        {
+          "id": 318,
+          "title": "二十岁告白 (一)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/阿牛/城市蓝天/s_318.mp3",
+          "lrc_path": null,
+          "etag": "89f3b5838e7684a24254104764f980bf",
+          "chunk_hash": "086e3cb1128a786e310b4bed7f521414"
+        },
+        {
+          "id": 323,
+          "title": "二十岁告白 (二)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/阿牛/城市蓝天/s_323.mp3",
+          "lrc_path": null,
+          "etag": "89f3b5838e7684a24254104764f980bf",
+          "chunk_hash": "086e3cb1128a786e310b4bed7f521414"
+        }
+      ],
+      "hash": "086e3cb1128a786e310b4bed7f521414"
+    },
+    {
+      "group_key": [
+        502,
+        "永远爱不完",
+        "郭富城",
+        4846803
+      ],
+      "songs": [
+        {
+          "id": 25965,
+          "title": "永远爱不完",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/永远爱不完/s_25965.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/永远爱不完/s_25965.lrc",
+          "etag": "868d0ba82e3f65dc3e5b56afabb2aef1",
+          "chunk_hash": "3ec9819472e0ae76431b0c6406df9685"
+        },
+        {
+          "id": 25974,
+          "title": "永远爱不完 (2010 X'mas Mix)",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/永远爱不完/s_25974.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/永远爱不完/s_25974.lrc",
+          "etag": "868d0ba82e3f65dc3e5b56afabb2aef1",
+          "chunk_hash": "3ec9819472e0ae76431b0c6406df9685"
+        }
+      ],
+      "hash": "3ec9819472e0ae76431b0c6406df9685"
+    },
+    {
+      "group_key": [
+        348,
+        "光",
+        "动力火车",
+        5498297
+      ],
+      "songs": [
+        {
+          "id": 25780,
+          "title": "光",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/光/s_25780.mp3",
+          "lrc_path": "music/动力火车/光/s_25780.lrc",
+          "etag": "af12f8c951a041b57bafdd8017e48c3b",
+          "chunk_hash": "5803c77fcbc1d06d71f33fe0692cbd70"
+        },
+        {
+          "id": 25789,
+          "title": "东方的光",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/光/s_25789.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/光/s_25789.lrc",
+          "etag": "af12f8c951a041b57bafdd8017e48c3b",
+          "chunk_hash": "5803c77fcbc1d06d71f33fe0692cbd70"
+        }
+      ],
+      "hash": "5803c77fcbc1d06d71f33fe0692cbd70"
+    },
+    {
+      "group_key": [
+        351,
+        "忠孝东路走九遍",
+        "动力火车",
+        5360893
+      ],
+      "songs": [
+        {
+          "id": 25718,
+          "title": "酒醉的探戈2001",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/忠孝东路走九遍/s_25718.mp3",
+          "lrc_path": "music/动力火车/忠孝东路走九遍/s_25718.lrc",
+          "etag": "969cbcd89b2c8df64a682a23ed7d659d",
+          "chunk_hash": "5763f91ec7b967b7d19405b1bf288b62"
+        },
+        {
+          "id": 25723,
+          "title": "酒醉的探戈",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/忠孝东路走九遍/s_25723.mp3",
+          "lrc_path": "music/动力火车/忠孝东路走九遍/s_25723.lrc",
+          "etag": "969cbcd89b2c8df64a682a23ed7d659d",
+          "chunk_hash": "5763f91ec7b967b7d19405b1bf288b62"
+        }
+      ],
+      "hash": "5763f91ec7b967b7d19405b1bf288b62"
+    },
+    {
+      "group_key": [
+        428,
+        "Darling",
+        "范晓萱",
+        5348876
+      ],
+      "songs": [
+        {
+          "id": 6247,
+          "title": "氧氣 (缺氧版)",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/范晓萱/Darling/s_6247.mp3",
+          "lrc_path": null,
+          "etag": "3e877912afe2389c3c581f25787f83f1",
+          "chunk_hash": "fd4e46eb9c30c870a8495b570a1f25f0"
+        },
+        {
+          "id": 6250,
+          "title": "氧氣 (有氧版)",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/范晓萱/Darling/s_6250.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/范晓萱/Darling/s_6250.lrc",
+          "etag": "3e877912afe2389c3c581f25787f83f1",
+          "chunk_hash": "fd4e46eb9c30c870a8495b570a1f25f0"
+        }
+      ],
+      "hash": "fd4e46eb9c30c870a8495b570a1f25f0"
+    },
+    {
+      "group_key": [
+        29,
+        "城市蓝天",
+        "阿牛",
+        4623717
+      ],
+      "songs": [
+        {
+          "id": 331,
+          "title": "二十岁告白 (一)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/阿牛/城市蓝天/s_331.mp3",
+          "lrc_path": null,
+          "etag": "89f3b5838e7684a24254104764f980bf",
+          "chunk_hash": "086e3cb1128a786e310b4bed7f521414"
+        },
+        {
+          "id": 336,
+          "title": "二十岁告白 (二)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/阿牛/城市蓝天/s_336.mp3",
+          "lrc_path": null,
+          "etag": "89f3b5838e7684a24254104764f980bf",
+          "chunk_hash": "086e3cb1128a786e310b4bed7f521414"
+        }
+      ],
+      "hash": "086e3cb1128a786e310b4bed7f521414"
+    },
+    {
+      "group_key": [
+        574,
+        "午夜的單人床",
+        "黄小琥",
+        6261595
+      ],
+      "songs": [
+        {
+          "id": 7979,
+          "title": "讓愛走開",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/午夜的單人床/s_7979.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/午夜的單人床/s_7979.lrc",
+          "etag": "48cc18d42be5a9658449c496991077ac",
+          "chunk_hash": "fddfcde3e8b191e066f5a8a15ee96991"
+        },
+        {
+          "id": 7981,
+          "title": "換回自由",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/午夜的單人床/s_7981.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/午夜的單人床/s_7981.lrc",
+          "etag": "48cc18d42be5a9658449c496991077ac",
+          "chunk_hash": "fddfcde3e8b191e066f5a8a15ee96991"
+        }
+      ],
+      "hash": "fddfcde3e8b191e066f5a8a15ee96991"
+    },
+    {
+      "group_key": [
+        584,
+        "分不到你的愛",
+        "黄小琥",
+        5369252
+      ],
+      "songs": [
+        {
+          "id": 8089,
+          "title": "二分之一的愛人",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/分不到你的愛/s_8089.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/分不到你的愛/s_8089.lrc",
+          "etag": "ebe086d9f502005d50d8d07075e1571a",
+          "chunk_hash": "e347f3e073b2471d303b62747e05a3fe"
+        },
+        {
+          "id": 8090,
+          "title": "我親愛的你",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/分不到你的愛/s_8090.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/分不到你的愛/s_8090.lrc",
+          "etag": "ebe086d9f502005d50d8d07075e1571a",
+          "chunk_hash": "e347f3e073b2471d303b62747e05a3fe"
+        }
+      ],
+      "hash": "e347f3e073b2471d303b62747e05a3fe"
+    },
+    {
+      "group_key": [
+        345,
+        "都是因为爱",
+        "动力火车",
+        5891178
+      ],
+      "songs": [
+        {
+          "id": 25750,
+          "title": "滚滚红尘",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/都是因为爱/s_25750.mp3",
+          "lrc_path": "music/动力火车/都是因为爱/s_25750.lrc",
+          "etag": "93bd9dea8ddcf7db834ab969223b8a79",
+          "chunk_hash": "1a51539e217c039bc7fa2c5f08e535e4"
+        },
+        {
+          "id": 25751,
+          "title": "这就是爱情应有的样子",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/都是因为爱/s_25751.mp3",
+          "lrc_path": "music/动力火车/都是因为爱/s_25751.lrc",
+          "etag": "93bd9dea8ddcf7db834ab969223b8a79",
+          "chunk_hash": "1a51539e217c039bc7fa2c5f08e535e4"
+        },
+        {
+          "id": 25756,
+          "title": "感谢有你",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/动力火车/都是因为爱/s_25756.mp3",
+          "lrc_path": "music/动力火车/都是因为爱/s_25756.lrc",
+          "etag": "93bd9dea8ddcf7db834ab969223b8a79",
+          "chunk_hash": "1a51539e217c039bc7fa2c5f08e535e4"
+        }
+      ],
+      "hash": "1a51539e217c039bc7fa2c5f08e535e4"
+    },
+    {
+      "group_key": [
+        623,
+        "真心",
+        "黄品源",
+        4978460
+      ],
+      "songs": [
+        {
+          "id": 8558,
+          "title": "Even Though One Day We Separate",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/真心/s_8558.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/真心/s_8558.lrc",
+          "etag": "7d57a7fcda9dcca3716b5b5bd5f168c2",
+          "chunk_hash": "9a177232e7933c6838b02aa1cb8bc046"
+        },
+        {
+          "id": 8561,
+          "title": "The Rainbow",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/黄品源/真心/s_8561.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/黄品源/真心/s_8561.lrc",
+          "etag": "7d57a7fcda9dcca3716b5b5bd5f168c2",
+          "chunk_hash": "9a177232e7933c6838b02aa1cb8bc046"
+        }
+      ],
+      "hash": "9a177232e7933c6838b02aa1cb8bc046"
+    },
+    {
+      "group_key": [
+        748,
+        "寶島鹹酸甜",
+        "罗大佑",
+        4687507
+      ],
+      "songs": [
+        {
+          "id": 10229,
+          "title": "閏月閏愛情",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/寶島鹹酸甜/s_10229.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/寶島鹹酸甜/s_10229.lrc",
+          "etag": "75d1620afdfd03d878e60660e1d2bde0",
+          "chunk_hash": "d55ba1d3a1f84d092c3fdfc7e7afd92c"
+        },
+        {
+          "id": 10238,
+          "title": "閏月閏愛情 (卡拉版)",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/寶島鹹酸甜/s_10238.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/寶島鹹酸甜/s_10238.lrc",
+          "etag": "75d1620afdfd03d878e60660e1d2bde0",
+          "chunk_hash": "d55ba1d3a1f84d092c3fdfc7e7afd92c"
+        }
+      ],
+      "hash": "d55ba1d3a1f84d092c3fdfc7e7afd92c"
+    },
+    {
+      "group_key": [
+        749,
+        "追夢(二) (演奏專輯)",
+        "罗大佑",
+        6244876
+      ],
+      "songs": [
+        {
+          "id": 10243,
+          "title": "水蓮",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/追夢(二) (演奏專輯)/s_10243.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/追夢(二) (演奏專輯)/s_10243.lrc",
+          "etag": "92a44f814134595839d21656040f538b",
+          "chunk_hash": "a573b3a03f4befba1dff1f73acbf95e4"
+        },
+        {
+          "id": 10245,
+          "title": "相逢海上",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/追夢(二) (演奏專輯)/s_10245.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/追夢(二) (演奏專輯)/s_10245.lrc",
+          "etag": "92a44f814134595839d21656040f538b",
+          "chunk_hash": "a573b3a03f4befba1dff1f73acbf95e4"
+        }
+      ],
+      "hash": "a573b3a03f4befba1dff1f73acbf95e4"
+    },
+    {
+      "group_key": [
+        758,
+        "衣錦還鄉",
+        "罗大佑",
+        6781431
+      ],
+      "songs": [
+        {
+          "id": 10386,
+          "title": "輪迴",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/罗大佑/衣錦還鄉/s_10386.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/罗大佑/衣錦還鄉/s_10386.lrc",
+          "etag": "d4b2a38dc132f8a7a345faf4396048c7",
+          "chunk_hash": "0c4c9912f210b931b0f55b6bf64f672f"
+        },
+        {
+          "id": 10391,
+          "title": "出嫁",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/罗大佑/衣錦還鄉/s_10391.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/罗大佑/衣錦還鄉/s_10391.lrc",
+          "etag": "d4b2a38dc132f8a7a345faf4396048c7",
+          "chunk_hash": "0c4c9912f210b931b0f55b6bf64f672f"
+        }
+      ],
+      "hash": "0c4c9912f210b931b0f55b6bf64f672f"
+    },
+    {
+      "group_key": [
+        620,
+        "愛你到永遠",
+        "黄品源",
+        3166607
+      ],
+      "songs": [
+        {
+          "id": 8529,
+          "title": "愛是痛苦",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8529.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8529.lrc",
+          "etag": "a8f71eeb6aebdd442596eb9f8f717192",
+          "chunk_hash": "8224ad746399fa54a02a63cd749341f4"
+        },
+        {
+          "id": 8531,
+          "title": "Clean Up The World",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8531.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8531.lrc",
+          "etag": "a8f71eeb6aebdd442596eb9f8f717192",
+          "chunk_hash": "8224ad746399fa54a02a63cd749341f4"
+        }
+      ],
+      "hash": "8224ad746399fa54a02a63cd749341f4"
+    },
+    {
+      "group_key": [
+        582,
+        "放縱玫瑰",
+        "黄小琥",
+        4657676
+      ],
+      "songs": [
+        {
+          "id": 8062,
+          "title": "The Rose (With Orchestra)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/放縱玫瑰/s_8062.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/放縱玫瑰/s_8062.lrc",
+          "etag": "24d14134be946d4521d0837560c1bc0a",
+          "chunk_hash": "9470d03a33ec20b8edbe5f545729cff7"
+        },
+        {
+          "id": 8072,
+          "title": "The Rose (With Piano)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/放縱玫瑰/s_8072.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/放縱玫瑰/s_8072.lrc",
+          "etag": "24d14134be946d4521d0837560c1bc0a",
+          "chunk_hash": "9470d03a33ec20b8edbe5f545729cff7"
+        }
+      ],
+      "hash": "9470d03a33ec20b8edbe5f545729cff7"
+    },
+    {
+      "group_key": [
+        583,
+        "Fang Zong Mei Gui",
+        "黄小琥",
+        4657676
+      ],
+      "songs": [
+        {
+          "id": 8074,
+          "title": "The Rose (With Orchestra)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/Fang Zong Mei Gui/s_8074.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/Fang Zong Mei Gui/s_8074.lrc",
+          "etag": "24d14134be946d4521d0837560c1bc0a",
+          "chunk_hash": "9470d03a33ec20b8edbe5f545729cff7"
+        },
+        {
+          "id": 8084,
+          "title": "The Rose (With Piano)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/Fang Zong Mei Gui/s_8084.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/Fang Zong Mei Gui/s_8084.lrc",
+          "etag": "24d14134be946d4521d0837560c1bc0a",
+          "chunk_hash": "9470d03a33ec20b8edbe5f545729cff7"
+        }
+      ],
+      "hash": "9470d03a33ec20b8edbe5f545729cff7"
+    },
+    {
+      "group_key": [
+        837,
+        "Exposed",
+        "李玟",
+        4138362
+      ],
+      "songs": [
+        {
+          "id": 11479,
+          "title": "No Doubt",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/Exposed/s_11479.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/Exposed/s_11479.lrc",
+          "etag": "b35bbcb13dfe2de19da85bcd8bb172e1",
+          "chunk_hash": "e5a22dc65e717577cb81627c135c9ac0"
+        },
+        {
+          "id": 11489,
+          "title": "No Doubt",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/Exposed/s_11489.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/Exposed/s_11489.lrc",
+          "etag": "b35bbcb13dfe2de19da85bcd8bb172e1",
+          "chunk_hash": "e5a22dc65e717577cb81627c135c9ac0"
+        }
+      ],
+      "hash": "e5a22dc65e717577cb81627c135c9ac0"
+    },
+    {
+      "group_key": [
+        620,
+        "愛你到永遠",
+        "黄品源",
+        5239162
+      ],
+      "songs": [
+        {
+          "id": 8522,
+          "title": "愛你到永遠",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8522.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8522.lrc",
+          "etag": "5e78c2262074c7bdc2ff2b47d5832650",
+          "chunk_hash": "f6362dfe6021d8e61ea6634dd8acd80a"
+        },
+        {
+          "id": 8530,
+          "title": "愛你到永遠 (慢版)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8530.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/愛你到永遠/s_8530.lrc",
+          "etag": "5e78c2262074c7bdc2ff2b47d5832650",
+          "chunk_hash": "f6362dfe6021d8e61ea6634dd8acd80a"
+        }
+      ],
+      "hash": "f6362dfe6021d8e61ea6634dd8acd80a"
+    },
+    {
+      "group_key": [
+        605,
+        "簡單情歌-小薇",
+        "黄品源",
+        5143554
+      ],
+      "songs": [
+        {
+          "id": 8353,
+          "title": "小薇",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8353.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8353.lrc",
+          "etag": "b458c9e7974098a483a603ef17883c9f",
+          "chunk_hash": "08bf432b955560b2fd55d2e76deef290"
+        },
+        {
+          "id": 8360,
+          "title": "小薇(Remix)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8360.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8360.lrc",
+          "etag": "b458c9e7974098a483a603ef17883c9f",
+          "chunk_hash": "08bf432b955560b2fd55d2e76deef290"
+        }
+      ],
+      "hash": "08bf432b955560b2fd55d2e76deef290"
+    },
+    {
+      "group_key": [
+        602,
+        "淚光閃閃, 源來有你 (16年精裝絕選)",
+        "黄品源",
+        5143554
+      ],
+      "songs": [
+        {
+          "id": 8303,
+          "title": "小薇 (Remix)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/淚光閃閃, 源來有你 (16年精裝絕選)/s_8303.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/淚光閃閃, 源來有你 (16年精裝絕選)/s_8303.lrc",
+          "etag": "b458c9e7974098a483a603ef17883c9f",
+          "chunk_hash": "08bf432b955560b2fd55d2e76deef290"
+        },
+        {
+          "id": 8304,
+          "title": "小薇",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/淚光閃閃, 源來有你 (16年精裝絕選)/s_8304.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/淚光閃閃, 源來有你 (16年精裝絕選)/s_8304.lrc",
+          "etag": "b458c9e7974098a483a603ef17883c9f",
+          "chunk_hash": "08bf432b955560b2fd55d2e76deef290"
+        }
+      ],
+      "hash": "08bf432b955560b2fd55d2e76deef290"
+    },
+    {
+      "group_key": [
+        752,
+        "羅大佑自選輯",
+        "罗大佑",
+        4401196
+      ],
+      "songs": [
+        {
+          "id": 10299,
+          "title": "現象七十二變 (Live)",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10299.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10299.lrc",
+          "etag": "35871ad70c5eae5bd61548fbae0e916c",
+          "chunk_hash": "fe7fef705d506367a9b5d182df2073e8"
+        },
+        {
+          "id": 10302,
+          "title": "我所不能瞭解的事 (Live)",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10302.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10302.lrc",
+          "etag": "35871ad70c5eae5bd61548fbae0e916c",
+          "chunk_hash": "fe7fef705d506367a9b5d182df2073e8"
+        },
+        {
+          "id": 10307,
+          "title": "穿過你的黑髮的我的手 (Live)",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10307.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10307.lrc",
+          "etag": "35871ad70c5eae5bd61548fbae0e916c",
+          "chunk_hash": "fe7fef705d506367a9b5d182df2073e8"
+        },
+        {
+          "id": 10327,
+          "title": "追夢人",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10327.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10327.lrc",
+          "etag": "35871ad70c5eae5bd61548fbae0e916c",
+          "chunk_hash": "fe7fef705d506367a9b5d182df2073e8"
+        }
+      ],
+      "hash": "fe7fef705d506367a9b5d182df2073e8"
+    },
+    {
+      "group_key": [
+        851,
+        "CoCo's Party",
+        "李玟",
+        5763701
+      ],
+      "songs": [
+        {
+          "id": 11674,
+          "title": "Another Sad Love Song",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/CoCo's Party/s_11674.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/CoCo's Party/s_11674.lrc",
+          "etag": "c83aac60764a63fa36491acb2c205f15",
+          "chunk_hash": "c7d79e187c6f47c5415dc79559eda8ba"
+        },
+        {
+          "id": 11677,
+          "title": "Another Sad Love Song (Dancing Version)",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/CoCo's Party/s_11677.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/李玟/CoCo's Party/s_11677.lrc",
+          "etag": "c83aac60764a63fa36491acb2c205f15",
+          "chunk_hash": "c7d79e187c6f47c5415dc79559eda8ba"
+        }
+      ],
+      "hash": "c7d79e187c6f47c5415dc79559eda8ba"
+    },
+    {
+      "group_key": [
+        754,
+        "原乡",
+        "罗大佑",
+        2635814
+      ],
+      "songs": [
+        {
+          "id": 27042,
+          "title": "原乡 (I)",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/原乡/s_27042.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/原乡/s_27042.lrc",
+          "etag": "53374bc44e2224388b19177cc6d3f3d5",
+          "chunk_hash": "db970b521bf2a376ae9f45ad859b5da6"
+        },
+        {
+          "id": 27046,
+          "title": "原乡 (II)",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/原乡/s_27046.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/原乡/s_27046.lrc",
+          "etag": "53374bc44e2224388b19177cc6d3f3d5",
+          "chunk_hash": "db970b521bf2a376ae9f45ad859b5da6"
+        }
+      ],
+      "hash": "db970b521bf2a376ae9f45ad859b5da6"
+    },
+    {
+      "group_key": [
+        605,
+        "簡單情歌-小薇",
+        "黄品源",
+        3166607
+      ],
+      "songs": [
+        {
+          "id": 8356,
+          "title": "我親愛的",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8356.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8356.lrc",
+          "etag": "a8f71eeb6aebdd442596eb9f8f717192",
+          "chunk_hash": "8224ad746399fa54a02a63cd749341f4"
+        },
+        {
+          "id": 8358,
+          "title": "禁忌的愛",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8358.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/簡單情歌-小薇/s_8358.lrc",
+          "etag": "a8f71eeb6aebdd442596eb9f8f717192",
+          "chunk_hash": "8224ad746399fa54a02a63cd749341f4"
+        }
+      ],
+      "hash": "8224ad746399fa54a02a63cd749341f4"
+    },
+    {
+      "group_key": [
+        874,
+        "Apples of Thy Eye",
+        "林宥嘉",
+        5277823
+      ],
+      "songs": [
+        {
+          "id": 11918,
+          "title": "Darn it! I Still Refuse to Curse You",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/林宥嘉/Apples of Thy Eye/s_11918.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/林宥嘉/Apples of Thy Eye/s_11918.lrc",
+          "etag": "2b3cd461b028a8d70fdf77e3ee3ba641",
+          "chunk_hash": "4becc924c79fd504bad2885bf0f9ba12"
+        },
+        {
+          "id": 11936,
+          "title": "The Bridegroom",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/林宥嘉/Apples of Thy Eye/s_11936.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/林宥嘉/Apples of Thy Eye/s_11936.lrc",
+          "etag": "2b3cd461b028a8d70fdf77e3ee3ba641",
+          "chunk_hash": "4becc924c79fd504bad2885bf0f9ba12"
+        }
+      ],
+      "hash": "4becc924c79fd504bad2885bf0f9ba12"
+    },
+    {
+      "group_key": [
+        931,
+        "I SAY",
+        "莫文蔚",
+        6454901
+      ],
+      "songs": [
+        {
+          "id": 12666,
+          "title": "Is It True?",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/莫文蔚/I SAY/s_12666.mp3",
+          "lrc_path": "music/莫文蔚/I SAY/s_12666.lrc",
+          "etag": "6e5681b7ced3e9475cd75cf99a2f26db",
+          "chunk_hash": "fb3d3fba285a65e6c036f75114b616ff"
+        },
+        {
+          "id": 12674,
+          "title": "True or False",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/莫文蔚/I SAY/s_12674.mp3",
+          "lrc_path": "music/莫文蔚/I SAY/s_12674.lrc",
+          "etag": "6e5681b7ced3e9475cd75cf99a2f26db",
+          "chunk_hash": "fb3d3fba285a65e6c036f75114b616ff"
+        }
+      ],
+      "hash": "fb3d3fba285a65e6c036f75114b616ff"
+    },
+    {
+      "group_key": [
+        886,
+        "勵志論",
+        "卢广仲",
+        4387048
+      ],
+      "songs": [
+        {
+          "id": 12076,
+          "title": "雨時多雲偶陣晴 uWEATHER",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/勵志論/s_12076.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/勵志論/s_12076.lrc",
+          "etag": "5bc8115a6bbf45b6473c6e541b4ef7dc",
+          "chunk_hash": "cc8f23e767740907bcee67e0255891a2"
+        },
+        {
+          "id": 12077,
+          "title": "狂迪 Crazy Disco",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/勵志論/s_12077.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/勵志論/s_12077.lrc",
+          "etag": "5bc8115a6bbf45b6473c6e541b4ef7dc",
+          "chunk_hash": "cc8f23e767740907bcee67e0255891a2"
+        }
+      ],
+      "hash": "cc8f23e767740907bcee67e0255891a2"
+    },
+    {
+      "group_key": [
+        888,
+        "What a Folk!!!!!! (春季走跳版)",
+        "卢广仲",
+        5125268
+      ],
+      "songs": [
+        {
+          "id": 12098,
+          "title": "手機仔（一）",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12098.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12098.lrc",
+          "etag": "f81808629893ae428120bcc3d7407695",
+          "chunk_hash": "c272ee592e4f379848f467abc3176b34"
+        },
+        {
+          "id": 12103,
+          "title": "手機仔（二）",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12103.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12103.lrc",
+          "etag": "f81808629893ae428120bcc3d7407695",
+          "chunk_hash": "c272ee592e4f379848f467abc3176b34"
+        }
+      ],
+      "hash": "c272ee592e4f379848f467abc3176b34"
+    },
+    {
+      "group_key": [
+        887,
+        "What a Folk !!!!!! (日文版)",
+        "卢广仲",
+        5125268
+      ],
+      "songs": [
+        {
+          "id": 12086,
+          "title": "手機仔（一）",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12086.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12086.lrc",
+          "etag": "f81808629893ae428120bcc3d7407695",
+          "chunk_hash": "c272ee592e4f379848f467abc3176b34"
+        },
+        {
+          "id": 12091,
+          "title": "手機仔（二）",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12091.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12091.lrc",
+          "etag": "f81808629893ae428120bcc3d7407695",
+          "chunk_hash": "c272ee592e4f379848f467abc3176b34"
+        }
+      ],
+      "hash": "c272ee592e4f379848f467abc3176b34"
+    },
+    {
+      "group_key": [
+        1051,
+        "Me, Re-Do (Deluxe Version)",
+        "容祖儿",
+        4490493
+      ],
+      "songs": [
+        {
+          "id": 14224,
+          "title": "樂觀",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14224.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14224.lrc",
+          "etag": "5b8455de034efe5050c1dfba367f6dc1",
+          "chunk_hash": "b32ca0310f01c7aca3bbf871e85eace6"
+        },
+        {
+          "id": 14228,
+          "title": "樂觀 (KTV 版)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14228.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14228.lrc",
+          "etag": "5b8455de034efe5050c1dfba367f6dc1",
+          "chunk_hash": "b32ca0310f01c7aca3bbf871e85eace6"
+        }
+      ],
+      "hash": "b32ca0310f01c7aca3bbf871e85eace6"
+    },
+    {
+      "group_key": [
+        887,
+        "What a Folk !!!!!! (日文版)",
+        "卢广仲",
+        4144631
+      ],
+      "songs": [
+        {
+          "id": 12094,
+          "title": "一定要相信自己",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12094.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12094.lrc",
+          "etag": "c26b398b4b079e36835873a4766df771",
+          "chunk_hash": "c81176d263dc4ae77f428175edbc3d97"
+        },
+        {
+          "id": 12095,
+          "title": "一定要相信自己 (日文版)",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12095.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk !!!!!! (日文版)/s_12095.lrc",
+          "etag": "c26b398b4b079e36835873a4766df771",
+          "chunk_hash": "c81176d263dc4ae77f428175edbc3d97"
+        }
+      ],
+      "hash": "c81176d263dc4ae77f428175edbc3d97"
+    },
+    {
+      "group_key": [
+        1051,
+        "Me, Re-Do (Deluxe Version)",
+        "容祖儿",
+        5185872
+      ],
+      "songs": [
+        {
+          "id": 14225,
+          "title": "飄紅",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14225.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14225.lrc",
+          "etag": "68ac342838e4820c43ac08f4236e6ac8",
+          "chunk_hash": "d12dd3c93cab2fa96e9c1ba70b5db7c4"
+        },
+        {
+          "id": 14229,
+          "title": "飄紅 (KTV 版)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14229.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14229.lrc",
+          "etag": "68ac342838e4820c43ac08f4236e6ac8",
+          "chunk_hash": "d12dd3c93cab2fa96e9c1ba70b5db7c4"
+        }
+      ],
+      "hash": "d12dd3c93cab2fa96e9c1ba70b5db7c4"
+    },
+    {
+      "group_key": [
+        991,
+        "U-Turn 180° 轉彎",
+        "品冠",
+        5047946
+      ],
+      "songs": [
+        {
+          "id": 13426,
+          "title": "Another World",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/U-Turn 180° 轉彎/s_13426.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/U-Turn 180° 轉彎/s_13426.lrc",
+          "etag": "49ba112e1695608433780d3ff25782ed",
+          "chunk_hash": "8681a72814a288f1d1415781012490bd"
+        },
+        {
+          "id": 13429,
+          "title": "Never Thought About It",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/U-Turn 180° 轉彎/s_13429.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/U-Turn 180° 轉彎/s_13429.lrc",
+          "etag": "49ba112e1695608433780d3ff25782ed",
+          "chunk_hash": "8681a72814a288f1d1415781012490bd"
+        }
+      ],
+      "hash": "8681a72814a288f1d1415781012490bd"
+    },
+    {
+      "group_key": [
+        1054,
+        "小日子 (特別版)",
+        "容祖儿",
+        4452354
+      ],
+      "songs": [
+        {
+          "id": 14285,
+          "title": "七不思議",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14285.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14285.lrc",
+          "etag": "deea78599ed55cc290fae4d4fc3d563a",
+          "chunk_hash": "7c20eaab11f0c7ee83a536ac80a57247"
+        },
+        {
+          "id": 14297,
+          "title": "七不思議 (iTunes Session)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14297.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14297.lrc",
+          "etag": "deea78599ed55cc290fae4d4fc3d563a",
+          "chunk_hash": "7c20eaab11f0c7ee83a536ac80a57247"
+        }
+      ],
+      "hash": "7c20eaab11f0c7ee83a536ac80a57247"
+    },
+    {
+      "group_key": [
+        1054,
+        "小日子 (特別版)",
+        "容祖儿",
+        4482133
+      ],
+      "songs": [
+        {
+          "id": 14289,
+          "title": "天窗",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14289.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14289.lrc",
+          "etag": "35192d7b8bab1e87157e9f6f38b49a21",
+          "chunk_hash": "b6c4ac741e4b76866c9b6105629d8319"
+        },
+        {
+          "id": 14300,
+          "title": "天窗 (iTunes Session)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14300.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14300.lrc",
+          "etag": "35192d7b8bab1e87157e9f6f38b49a21",
+          "chunk_hash": "b6c4ac741e4b76866c9b6105629d8319"
+        }
+      ],
+      "hash": "b6c4ac741e4b76866c9b6105629d8319"
+    },
+    {
+      "group_key": [
+        1054,
+        "小日子 (特別版)",
+        "容祖儿",
+        4177546
+      ],
+      "songs": [
+        {
+          "id": 14290,
+          "title": "另眼相看",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14290.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14290.lrc",
+          "etag": "a9109fc499a1da3af53cabac05f10c2c",
+          "chunk_hash": "82347f8a09a10a6f3f751db73bea3483"
+        },
+        {
+          "id": 14301,
+          "title": "另眼相看 (iTunes Session)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14301.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14301.lrc",
+          "etag": "a9109fc499a1da3af53cabac05f10c2c",
+          "chunk_hash": "82347f8a09a10a6f3f751db73bea3483"
+        }
+      ],
+      "hash": "82347f8a09a10a6f3f751db73bea3483"
+    },
+    {
+      "group_key": [
+        1054,
+        "小日子 (特別版)",
+        "容祖儿",
+        4466982
+      ],
+      "songs": [
+        {
+          "id": 14287,
+          "title": "臨床",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14287.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14287.lrc",
+          "etag": "40ee36872dd924338cd004b18bee13a1",
+          "chunk_hash": "95229757f4de9893b6aae11f47dcda00"
+        },
+        {
+          "id": 14299,
+          "title": "臨床 (iTunes Session)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14299.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14299.lrc",
+          "etag": "40ee36872dd924338cd004b18bee13a1",
+          "chunk_hash": "95229757f4de9893b6aae11f47dcda00"
+        }
+      ],
+      "hash": "95229757f4de9893b6aae11f47dcda00"
+    },
+    {
+      "group_key": [
+        889,
+        "What a Folk!!!!!! (第五張創作專輯)",
+        "卢广仲",
+        5125268
+      ],
+      "songs": [
+        {
+          "id": 12110,
+          "title": "手機仔（一）",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (第五張創作專輯)/s_12110.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (第五張創作專輯)/s_12110.lrc",
+          "etag": "f81808629893ae428120bcc3d7407695",
+          "chunk_hash": "c272ee592e4f379848f467abc3176b34"
+        },
+        {
+          "id": 12115,
+          "title": "手機仔（二）",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (第五張創作專輯)/s_12115.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (第五張創作專輯)/s_12115.lrc",
+          "etag": "f81808629893ae428120bcc3d7407695",
+          "chunk_hash": "c272ee592e4f379848f467abc3176b34"
+        }
+      ],
+      "hash": "c272ee592e4f379848f467abc3176b34"
+    },
+    {
+      "group_key": [
+        1051,
+        "Me, Re-Do (Deluxe Version)",
+        "容祖儿",
+        4680664
+      ],
+      "songs": [
+        {
+          "id": 14223,
+          "title": "天然呆",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14223.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14223.lrc",
+          "etag": "bad35ea17e92931258f0407237063579",
+          "chunk_hash": "2b937016e9093f25f6c2329dac59db20"
+        },
+        {
+          "id": 14227,
+          "title": "天然呆 (KTV 版)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14227.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14227.lrc",
+          "etag": "bad35ea17e92931258f0407237063579",
+          "chunk_hash": "2b937016e9093f25f6c2329dac59db20"
+        }
+      ],
+      "hash": "2b937016e9093f25f6c2329dac59db20"
+    },
+    {
+      "group_key": [
+        1173,
+        "日常",
+        "田馥甄",
+        5193709
+      ],
+      "songs": [
+        {
+          "id": 15869,
+          "title": "Day by Day",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/日常/s_15869.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/日常/s_15869.lrc",
+          "etag": "2ec1462a1c813df9481c03207dc41054",
+          "chunk_hash": "443f37b167bba8575177ba1b5052c902"
+        },
+        {
+          "id": 15876,
+          "title": "What, Where",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/日常/s_15876.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/日常/s_15876.lrc",
+          "etag": "2ec1462a1c813df9481c03207dc41054",
+          "chunk_hash": "443f37b167bba8575177ba1b5052c902"
+        }
+      ],
+      "hash": "443f37b167bba8575177ba1b5052c902"
+    },
+    {
+      "group_key": [
+        1174,
+        "渺小",
+        "田馥甄",
+        5314917
+      ],
+      "songs": [
+        {
+          "id": 15884,
+          "title": "He's Gone",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/渺小/s_15884.mp3",
+          "lrc_path": null,
+          "etag": "61e58fbd29ebb5ce53f511a90cf662ab",
+          "chunk_hash": "a0ee096ac7d0812cd1543f04c65b540b"
+        },
+        {
+          "id": 15887,
+          "title": "Forever Love",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/渺小/s_15887.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/渺小/s_15887.lrc",
+          "etag": "61e58fbd29ebb5ce53f511a90cf662ab",
+          "chunk_hash": "a0ee096ac7d0812cd1543f04c65b540b"
+        }
+      ],
+      "hash": "a0ee096ac7d0812cd1543f04c65b540b"
+    },
+    {
+      "group_key": [
+        1175,
+        "My Love",
+        "田馥甄",
+        5413137
+      ],
+      "songs": [
+        {
+          "id": 15889,
+          "title": "Utopia",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/My Love/s_15889.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/My Love/s_15889.lrc",
+          "etag": "5e50313ef7486a84fb126c6b7a07a10c",
+          "chunk_hash": "a23c7b47752c43ffdaf69ce3e46abcd3"
+        },
+        {
+          "id": 15897,
+          "title": "Shadow's Shadow",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/My Love/s_15897.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/My Love/s_15897.lrc",
+          "etag": "5e50313ef7486a84fb126c6b7a07a10c",
+          "chunk_hash": "a23c7b47752c43ffdaf69ce3e46abcd3"
+        }
+      ],
+      "hash": "a23c7b47752c43ffdaf69ce3e46abcd3"
+    },
+    {
+      "group_key": [
+        1176,
+        "To Hebe",
+        "田馥甄",
+        3922591
+      ],
+      "songs": [
+        {
+          "id": 15899,
+          "title": "Love?",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15899.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15899.lrc",
+          "etag": "dff384406598222faaf130130f563c8e",
+          "chunk_hash": "12844aac8d6629fbcb53e60564bcf46d"
+        },
+        {
+          "id": 15909,
+          "title": "Love!",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15909.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/田馥甄/To Hebe/s_15909.lrc",
+          "etag": "dff384406598222faaf130130f563c8e",
+          "chunk_hash": "12844aac8d6629fbcb53e60564bcf46d"
+        }
+      ],
+      "hash": "12844aac8d6629fbcb53e60564bcf46d"
+    },
+    {
+      "group_key": [
+        1054,
+        "小日子 (特別版)",
+        "容祖儿",
+        4624240
+      ],
+      "songs": [
+        {
+          "id": 14286,
+          "title": "我杯茶",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14286.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14286.lrc",
+          "etag": "a105b1e8993c051bc567891916fb4609",
+          "chunk_hash": "dc468cf3ae105ceb273cd531365537fd"
+        },
+        {
+          "id": 14298,
+          "title": "我杯茶 (iTunes Session)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14298.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14298.lrc",
+          "etag": "a105b1e8993c051bc567891916fb4609",
+          "chunk_hash": "dc468cf3ae105ceb273cd531365537fd"
+        }
+      ],
+      "hash": "dc468cf3ae105ceb273cd531365537fd"
+    },
+    {
+      "group_key": [
+        1081,
+        "Something About You",
+        "容祖儿",
+        3747570
+      ],
+      "songs": [
+        {
+          "id": 14720,
+          "title": "一面之緣",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Something About You/s_14720.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Something About You/s_14720.lrc",
+          "etag": "092b8e5fd9944ffe419b6f6e48d0b20d",
+          "chunk_hash": "c3ebc03ee3d9b84293b9e38e5bf889b9"
+        },
+        {
+          "id": 14730,
+          "title": "一面之緣(清仔Q版)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Something About You/s_14730.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Something About You/s_14730.lrc",
+          "etag": "092b8e5fd9944ffe419b6f6e48d0b20d",
+          "chunk_hash": "c3ebc03ee3d9b84293b9e38e5bf889b9"
+        }
+      ],
+      "hash": "c3ebc03ee3d9b84293b9e38e5bf889b9"
+    },
+    {
+      "group_key": [
+        1054,
+        "小日子 (特別版)",
+        "容祖儿",
+        5210950
+      ],
+      "songs": [
+        {
+          "id": 14283,
+          "title": "小日子",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14283.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14283.lrc",
+          "etag": "9443d51d0558848dd7210ca4f13abebf",
+          "chunk_hash": "a59e6ec6d998dfdd0bd7ab1793e21ed5"
+        },
+        {
+          "id": 14296,
+          "title": "小日子 (iTunes Session)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14296.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/小日子 (特別版)/s_14296.lrc",
+          "etag": "9443d51d0558848dd7210ca4f13abebf",
+          "chunk_hash": "a59e6ec6d998dfdd0bd7ab1793e21ed5"
+        }
+      ],
+      "hash": "a59e6ec6d998dfdd0bd7ab1793e21ed5"
+    },
+    {
+      "group_key": [
+        1051,
+        "Me, Re-Do (Deluxe Version)",
+        "容祖儿",
+        6082917
+      ],
+      "songs": [
+        {
+          "id": 14226,
+          "title": "這麼近那麼遠",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14226.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14226.lrc",
+          "etag": "bdbb42701287a9bcfce13ea93219b24b",
+          "chunk_hash": "c01bf42d40e9a25e8390c761e49f030c"
+        },
+        {
+          "id": 14230,
+          "title": "這麼近那麼遠 (KTV 版)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14230.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Me, Re-Do (Deluxe Version)/s_14230.lrc",
+          "etag": "bdbb42701287a9bcfce13ea93219b24b",
+          "chunk_hash": "c01bf42d40e9a25e8390c761e49f030c"
+        }
+      ],
+      "hash": "c01bf42d40e9a25e8390c761e49f030c"
+    },
+    {
+      "group_key": [
+        1076,
+        "Show Up",
+        "容祖儿",
+        4687456
+      ],
+      "songs": [
+        {
+          "id": 14645,
+          "title": "Show Up!",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Show Up/s_14645.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Show Up/s_14645.lrc",
+          "etag": "61356547ff18897d7c0dcd03c56c3b82",
+          "chunk_hash": "a9ce474da3cfc21cd8f5bb91e2db7958"
+        },
+        {
+          "id": 14659,
+          "title": "Show Up! (Mandarin)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Show Up/s_14659.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Show Up/s_14659.lrc",
+          "etag": "61356547ff18897d7c0dcd03c56c3b82",
+          "chunk_hash": "a9ce474da3cfc21cd8f5bb91e2db7958"
+        }
+      ],
+      "hash": "a9ce474da3cfc21cd8f5bb91e2db7958"
+    },
+    {
+      "group_key": [
+        1071,
+        "Bi-Heart",
+        "容祖儿",
+        5771537
+      ],
+      "songs": [
+        {
+          "id": 14564,
+          "title": "越唱越強",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/喜歡祖兒 4/s_14429.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/喜歡祖兒 4/s_14429.lrc",
+          "etag": "d77fcf9c66f318480ac6a31c4d8758be",
+          "chunk_hash": "71f2cae5927b8dcb8180ed80f0e3cb2a"
+        },
+        {
+          "id": 14575,
+          "title": "越唱越強 (國)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Bi-Heart/s_14575.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/容祖儿/Bi-Heart/s_14575.lrc",
+          "etag": "d77fcf9c66f318480ac6a31c4d8758be",
+          "chunk_hash": "71f2cae5927b8dcb8180ed80f0e3cb2a"
+        }
+      ],
+      "hash": "71f2cae5927b8dcb8180ed80f0e3cb2a"
+    },
+    {
+      "group_key": [
+        1202,
+        "非一般的譚詠麟",
+        "谭咏麟",
+        6327507
+      ],
+      "songs": [
+        {
+          "id": 16313,
+          "title": "飛一般的遐想",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E9%9D%9E%E4%B8%80%E8%88%AC%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F/s_16313.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E9%9D%9E%E4%B8%80%E8%88%AC%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F/s_16313.lrc",
+          "etag": "cef10eb1199519ccae891252d3e0e617",
+          "chunk_hash": "dacd57ae74058211ec8652293adfad9f"
+        },
+        {
+          "id": 16322,
+          "title": "飛一般的遐想 (Trance Global Mix)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E9%9D%9E%E4%B8%80%E8%88%AC%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F/s_16322.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E9%9D%9E%E4%B8%80%E8%88%AC%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F/s_16322.lrc",
+          "etag": "cef10eb1199519ccae891252d3e0e617",
+          "chunk_hash": "dacd57ae74058211ec8652293adfad9f"
+        }
+      ],
+      "hash": "dacd57ae74058211ec8652293adfad9f"
+    },
+    {
+      "group_key": [
+        1259,
+        "Surpass and New Heaven",
+        "腾格尔",
+        6961676
+      ],
+      "songs": [
+        {
+          "id": 17085,
+          "title": "New Heaven",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/腾格尔/Surpass and New Heaven/s_17085.mp3",
+          "lrc_path": null,
+          "etag": "d020904f17058948b30766c45aa524d8",
+          "chunk_hash": "7d657ef93ed7267216f3467cae19a4e7"
+        },
+        {
+          "id": 17097,
+          "title": "Heaven",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/腾格尔/Surpass and New Heaven/s_17097.mp3",
+          "lrc_path": null,
+          "etag": "d020904f17058948b30766c45aa524d8",
+          "chunk_hash": "7d657ef93ed7267216f3467cae19a4e7"
+        }
+      ],
+      "hash": "7d657ef93ed7267216f3467cae19a4e7"
+    },
+    {
+      "group_key": [
+        1244,
+        "復黑: Thunder Arm",
+        "谭咏麟",
+        5647195
+      ],
+      "songs": [
+        {
+          "id": 16914,
+          "title": "Friend of Mine",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Thunder%20Arm/s_16914.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Thunder%20Arm/s_16914.lrc",
+          "etag": "bb76808cee9574f072889fca282944eb",
+          "chunk_hash": "1393d8621306b9930919ab36f688e550"
+        },
+        {
+          "id": 16915,
+          "title": "Friend of Mine (合唱)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Thunder%20Arm/s_16915.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Thunder%20Arm/s_16915.lrc",
+          "etag": "bb76808cee9574f072889fca282944eb",
+          "chunk_hash": "1393d8621306b9930919ab36f688e550"
+        }
+      ],
+      "hash": "1393d8621306b9930919ab36f688e550"
+    },
+    {
+      "group_key": [
+        1268,
+        "唱片专辑《四巨星》",
+        "田震",
+        5804974
+      ],
+      "songs": [
+        {
+          "id": 17191,
+          "title": "了不起",
+          "file_path": "https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev/music/田震/唱片专辑《四巨星》/s_17191.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/田震/唱片专辑《四巨星》/s_17191.lrc",
+          "etag": "0550da6ac8b7f9f28c05666e1ec80660",
+          "chunk_hash": "f64b080e0d9d76bd7a964ef1de44dec3"
+        },
+        {
+          "id": 17194,
+          "title": "走过冬季",
+          "file_path": "https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev/music/田震/唱片专辑《四巨星》/s_17194.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/田震/唱片专辑《四巨星》/s_17194.lrc",
+          "etag": "0550da6ac8b7f9f28c05666e1ec80660",
+          "chunk_hash": "f64b080e0d9d76bd7a964ef1de44dec3"
+        }
+      ],
+      "hash": "f64b080e0d9d76bd7a964ef1de44dec3"
+    },
+    {
+      "group_key": [
+        1193,
+        "復黑王: My Love",
+        "谭咏麟",
+        5471129
+      ],
+      "songs": [
+        {
+          "id": 16189,
+          "title": "We Don't Want to Lose Her (feat. Wan Sun Kim) [Korean]",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%E7%8E%8B%3A%20My%20Love/s_16189.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%E7%8E%8B%3A%20My%20Love/s_16189.lrc",
+          "etag": "1b70fd6bf25b6e6df475dfb005347898",
+          "chunk_hash": "aeef254de2c4cfc4d580fb6f3222e000"
+        },
+        {
+          "id": 16196,
+          "title": "Dry Flower",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%E7%8E%8B%3A%20My%20Love/s_16196.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%E7%8E%8B%3A%20My%20Love/s_16196.lrc",
+          "etag": "1b70fd6bf25b6e6df475dfb005347898",
+          "chunk_hash": "aeef254de2c4cfc4d580fb6f3222e000"
+        }
+      ],
+      "hash": "aeef254de2c4cfc4d580fb6f3222e000"
+    },
+    {
+      "group_key": [
+        1203,
+        "半夢半醒之間 (國)",
+        "谭咏麟",
+        4402199
+      ],
+      "songs": [
+        {
+          "id": 16328,
+          "title": "浪漫舞曲 (第一章)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%8D%8A%E5%A4%A2%E5%8D%8A%E9%86%92%E4%B9%8B%E9%96%93%20%28%E5%9C%8B%29/s_16328.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%8D%8A%E5%A4%A2%E5%8D%8A%E9%86%92%E4%B9%8B%E9%96%93%20%28%E5%9C%8B%29/s_16328.lrc",
+          "etag": "646394b2d0e39ee93eeca54a15f34d37",
+          "chunk_hash": "f2e7b1776d88f7e36083200c9a9a60fc"
+        },
+        {
+          "id": 16332,
+          "title": "浪漫舞曲 (第二章)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%8D%8A%E5%A4%A2%E5%8D%8A%E9%86%92%E4%B9%8B%E9%96%93%20%28%E5%9C%8B%29/s_16332.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%8D%8A%E5%A4%A2%E5%8D%8A%E9%86%92%E4%B9%8B%E9%96%93%20%28%E5%9C%8B%29/s_16332.lrc",
+          "etag": "646394b2d0e39ee93eeca54a15f34d37",
+          "chunk_hash": "f2e7b1776d88f7e36083200c9a9a60fc"
+        }
+      ],
+      "hash": "f2e7b1776d88f7e36083200c9a9a60fc"
+    },
+    {
+      "group_key": [
+        1215,
+        "不一樣的譚詠麟 (完全篇)",
+        "谭咏麟",
+        5039686
+      ],
+      "songs": [
+        {
+          "id": 16532,
+          "title": "難得糊塗 (獨唱版)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F%20%28%E5%AE%8C%E5%85%A8%E7%AF%87%29/s_16532.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F%20%28%E5%AE%8C%E5%85%A8%E7%AF%87%29/s_16532.lrc",
+          "etag": "31da639dbdac15b07482bd92bf12e47a",
+          "chunk_hash": "467fd30880afc70fd6e98f4c739bbb7d"
+        },
+        {
+          "id": 16533,
+          "title": "難得糊塗 (合唱版)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F%20%28%E5%AE%8C%E5%85%A8%E7%AF%87%29/s_16533.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E8%AD%9A%E8%A9%A0%E9%BA%9F%20%28%E5%AE%8C%E5%85%A8%E7%AF%87%29/s_16533.lrc",
+          "etag": "31da639dbdac15b07482bd92bf12e47a",
+          "chunk_hash": "467fd30880afc70fd6e98f4c739bbb7d"
+        }
+      ],
+      "hash": "467fd30880afc70fd6e98f4c739bbb7d"
+    },
+    {
+      "group_key": [
+        1242,
+        "復黑: Hello! Solitude",
+        "谭咏麟",
+        6307570
+      ],
+      "songs": [
+        {
+          "id": 16887,
+          "title": "Annie (英文)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Hello%21%20Solitude/s_16887.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Hello%21%20Solitude/s_16887.lrc",
+          "etag": "9fc7e92bc127668cfd2110a13a9f0b95",
+          "chunk_hash": "a0e196fb15377e8cad07147d6ce713e8"
+        },
+        {
+          "id": 16892,
+          "title": "Annie (日文/英文)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Hello%21%20Solitude/s_16892.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E8%B0%AD%E5%92%8F%E9%BA%9F/%E5%BE%A9%E9%BB%91%3A%20Hello%21%20Solitude/s_16892.lrc",
+          "etag": "9fc7e92bc127668cfd2110a13a9f0b95",
+          "chunk_hash": "a0e196fb15377e8cad07147d6ce713e8"
+        }
+      ],
+      "hash": "a0e196fb15377e8cad07147d6ce713e8"
+    },
+    {
+      "group_key": [
+        1255,
+        "夢",
+        "腾格尔",
+        6961676
+      ],
+      "songs": [
+        {
+          "id": 17039,
+          "title": "Dream",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/腾格尔/夢/s_17039.mp3",
+          "lrc_path": null,
+          "etag": "d020904f17058948b30766c45aa524d8",
+          "chunk_hash": "7d657ef93ed7267216f3467cae19a4e7"
+        },
+        {
+          "id": 17042,
+          "title": "Orchid",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/腾格尔/夢/s_17042.mp3",
+          "lrc_path": null,
+          "etag": "d020904f17058948b30766c45aa524d8",
+          "chunk_hash": "7d657ef93ed7267216f3467cae19a4e7"
+        },
+        {
+          "id": 17046,
+          "title": "Heaven",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/腾格尔/夢/s_17046.mp3",
+          "lrc_path": null,
+          "etag": "d020904f17058948b30766c45aa524d8",
+          "chunk_hash": "7d657ef93ed7267216f3467cae19a4e7"
+        },
+        {
+          "id": 17050,
+          "title": "Many Years",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/腾格尔/夢/s_17050.mp3",
+          "lrc_path": null,
+          "etag": "d020904f17058948b30766c45aa524d8",
+          "chunk_hash": "7d657ef93ed7267216f3467cae19a4e7"
+        }
+      ],
+      "hash": "7d657ef93ed7267216f3467cae19a4e7"
+    },
+    {
+      "group_key": [
+        1387,
+        "放心",
+        "万芳",
+        4671260
+      ],
+      "songs": [
+        {
+          "id": 18866,
+          "title": "Olive's Necklace",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/万芳/放心/s_18866.mp3",
+          "lrc_path": null,
+          "etag": "6e6d7023a18b82dd98b2d9324d21f6e1",
+          "chunk_hash": "3df1f1be44037c73969450d4afd00b33"
+        },
+        {
+          "id": 18869,
+          "title": "Say Goodbye At the Beach",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/万芳/放心/s_18869.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/万芳/放心/s_18869.lrc",
+          "etag": "6e6d7023a18b82dd98b2d9324d21f6e1",
+          "chunk_hash": "3df1f1be44037c73969450d4afd00b33"
+        }
+      ],
+      "hash": "3df1f1be44037c73969450d4afd00b33"
+    },
+    {
+      "group_key": [
+        1291,
+        "十八般武藝",
+        "王力宏",
+        5483146
+      ],
+      "songs": [
+        {
+          "id": 17575,
+          "title": "你不知道的事",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/王力宏/十八般武藝/s_17575.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/王力宏/十八般武藝/s_17575.lrc",
+          "etag": "3c6c04569a4e090a77c949331305be48",
+          "chunk_hash": "c75fb81c47e4897b2e500b7acd5c2ff7"
+        },
+        {
+          "id": 17581,
+          "title": "你不知道的事 (宋晓青版)",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/王力宏/十八般武藝/s_17581.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/王力宏/十八般武藝/s_17581.lrc",
+          "etag": "3c6c04569a4e090a77c949331305be48",
+          "chunk_hash": "c75fb81c47e4897b2e500b7acd5c2ff7"
+        }
+      ],
+      "hash": "c75fb81c47e4897b2e500b7acd5c2ff7"
+    },
+    {
+      "group_key": [
+        1574,
+        "大熱",
+        "张国荣",
+        4330101
+      ],
+      "songs": [
+        {
+          "id": 21343,
+          "title": "我",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/大熱/s_21343.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/大熱/s_21343.lrc",
+          "etag": "1d900245b45ce01fdbb01e05d1aed9cd",
+          "chunk_hash": "627b5ee9777a3d6fe3262bd046cb1168"
+        },
+        {
+          "id": 21344,
+          "title": "大熱",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/大熱/s_21344.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/大熱/s_21344.lrc",
+          "etag": "1d900245b45ce01fdbb01e05d1aed9cd",
+          "chunk_hash": "627b5ee9777a3d6fe3262bd046cb1168"
+        }
+      ],
+      "hash": "627b5ee9777a3d6fe3262bd046cb1168"
+    },
+    {
+      "group_key": [
+        1568,
+        "陪你倒數",
+        "张国荣",
+        5294019
+      ],
+      "songs": [
+        {
+          "id": 21259,
+          "title": "左右手",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21259.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21259.lrc",
+          "etag": "422fdac3d60db9acbd5af6f295c59047",
+          "chunk_hash": "b1b6b8c88108b2e0e416a0d90ef1771e"
+        },
+        {
+          "id": 21260,
+          "title": "春夏秋冬",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21260.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21260.lrc",
+          "etag": "422fdac3d60db9acbd5af6f295c59047",
+          "chunk_hash": "b1b6b8c88108b2e0e416a0d90ef1771e"
+        }
+      ],
+      "hash": "b1b6b8c88108b2e0e416a0d90ef1771e"
+    },
+    {
+      "group_key": [
+        1335,
+        "愛你伍佰年: 1",
+        "伍佰",
+        6766803
+      ],
+      "songs": [
+        {
+          "id": 18225,
+          "title": "愛上別人是快樂的事",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/伍佰/愛你伍佰年: 1/s_18225.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/伍佰/愛你伍佰年: 1/s_18225.lrc",
+          "etag": "649ef0c6b5c74a38236a3bc8a333db1d",
+          "chunk_hash": "249339fd79f53b2568f46a2b302d7b79"
+        },
+        {
+          "id": 18226,
+          "title": "樓仔厝",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/伍佰/愛你伍佰年: 1/s_18226.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/伍佰/愛你伍佰年: 1/s_18226.lrc",
+          "etag": "649ef0c6b5c74a38236a3bc8a333db1d",
+          "chunk_hash": "249339fd79f53b2568f46a2b302d7b79"
+        }
+      ],
+      "hash": "249339fd79f53b2568f46a2b302d7b79"
+    },
+    {
+      "group_key": [
+        1501,
+        "熱愛",
+        "羽·泉",
+        5637268
+      ],
+      "songs": [
+        {
+          "id": 20370,
+          "title": "心似狂潮",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/熱愛/s_20370.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/熱愛/s_20370.lrc",
+          "etag": "49d28cbbad86f70b8978c67328a56976",
+          "chunk_hash": "3db6617f1b01ef4bc8b618f06053c728"
+        },
+        {
+          "id": 20372,
+          "title": "狂想曲",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/熱愛/s_20372.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/熱愛/s_20372.lrc",
+          "etag": "49d28cbbad86f70b8978c67328a56976",
+          "chunk_hash": "3db6617f1b01ef4bc8b618f06053c728"
+        }
+      ],
+      "hash": "3db6617f1b01ef4bc8b618f06053c728"
+    },
+    {
+      "group_key": [
+        1440,
+        "Naked Truth赤裸真相",
+        "萧亚轩",
+        4340550
+      ],
+      "songs": [
+        {
+          "id": 19516,
+          "title": "In a Heartbeat",
+          "file_path": "https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev/music/萧亚轩/Naked Truth赤裸真相/s_19516.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/萧亚轩/Naked Truth赤裸真相/s_19516.lrc",
+          "etag": "40f3d552feeb0ab0d5478da5b921e83e",
+          "chunk_hash": "6841f6f5b5664e37cc1e464c2b88c91f"
+        },
+        {
+          "id": 19523,
+          "title": "In a Heartbeat (Tropical Remix)",
+          "file_path": "https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev/music/萧亚轩/Naked Truth赤裸真相/s_19523.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/萧亚轩/Naked Truth赤裸真相/s_19523.lrc",
+          "etag": "40f3d552feeb0ab0d5478da5b921e83e",
+          "chunk_hash": "6841f6f5b5664e37cc1e464c2b88c91f"
+        }
+      ],
+      "hash": "6841f6f5b5664e37cc1e464c2b88c91f"
+    },
+    {
+      "group_key": [
+        1495,
+        "最美",
+        "羽·泉",
+        4883374
+      ],
+      "songs": [
+        {
+          "id": 20289,
+          "title": "怎么感觉不到你",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/最美/s_20289.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/最美/s_20289.lrc",
+          "etag": "f609d9ad13e2a2afe635c5c3da0aa491",
+          "chunk_hash": "77b91101ae6b2278afba8b8c7546e399"
+        },
+        {
+          "id": 20295,
+          "title": "蜡人",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/最美/s_20295.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/最美/s_20295.lrc",
+          "etag": "f609d9ad13e2a2afe635c5c3da0aa491",
+          "chunk_hash": "77b91101ae6b2278afba8b8c7546e399"
+        }
+      ],
+      "hash": "77b91101ae6b2278afba8b8c7546e399"
+    },
+    {
+      "group_key": [
+        1568,
+        "陪你倒數",
+        "张国荣",
+        5547407
+      ],
+      "songs": [
+        {
+          "id": 21265,
+          "title": "不要愛他",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21265.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21265.lrc",
+          "etag": "ccb8b515b1f9d6a55d45e650feda4505",
+          "chunk_hash": "0df67d91ace1b5f5befcb80e65b14be4"
+        },
+        {
+          "id": 21266,
+          "title": "陪你倒數",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21266.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/陪你倒數/s_21266.lrc",
+          "etag": "ccb8b515b1f9d6a55d45e650feda4505",
+          "chunk_hash": "0df67d91ace1b5f5befcb80e65b14be4"
+        }
+      ],
+      "hash": "0df67d91ace1b5f5befcb80e65b14be4"
+    },
+    {
+      "group_key": [
+        1583,
+        "風再起時",
+        "张国荣",
+        5404256
+      ],
+      "songs": [
+        {
+          "id": 21487,
+          "title": "風再起時",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/風再起時/s_21487.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/風再起時/s_21487.lrc",
+          "etag": "ff30f349a5b80cd78ac03774efb47ccc",
+          "chunk_hash": "7289b75cf1f5d726e5cc687a10ed1ae0"
+        },
+        {
+          "id": 21488,
+          "title": "拒絕再玩",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/風再起時/s_21488.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/風再起時/s_21488.lrc",
+          "etag": "ff30f349a5b80cd78ac03774efb47ccc",
+          "chunk_hash": "7289b75cf1f5d726e5cc687a10ed1ae0"
+        },
+        {
+          "id": 21495,
+          "title": "為你",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/風再起時/s_21495.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/张国荣/風再起時/s_21495.lrc",
+          "etag": "ff30f349a5b80cd78ac03774efb47ccc",
+          "chunk_hash": "7289b75cf1f5d726e5cc687a10ed1ae0"
+        }
+      ],
+      "hash": "7289b75cf1f5d726e5cc687a10ed1ae0"
+    },
+    {
+      "group_key": [
+        1391,
+        "時光·漫步",
+        "许巍",
+        6467440
+      ],
+      "songs": [
+        {
+          "id": 18924,
+          "title": "礼物",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/许巍/時光·漫步/s_18924.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/许巍/時光·漫步/s_18924.lrc",
+          "etag": "432446b20759084385a2f95ba8b1c90b",
+          "chunk_hash": "f0729b12b6adbf847a3a02bd0a46e187"
+        },
+        {
+          "id": 18927,
+          "title": "夏日的风",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/许巍/時光·漫步/s_18927.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/许巍/時光·漫步/s_18927.lrc",
+          "etag": "432446b20759084385a2f95ba8b1c90b",
+          "chunk_hash": "f0729b12b6adbf847a3a02bd0a46e187"
+        }
+      ],
+      "hash": "f0729b12b6adbf847a3a02bd0a46e187"
+    },
+    {
+      "group_key": [
+        1284,
+        "浮躁",
+        "王菲",
+        3640991
+      ],
+      "songs": [
+        {
+          "id": 17470,
+          "title": "浮躁",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_17470.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_17470.lrc",
+          "etag": "0ef615439ee2facd4703f7c70f5021f6",
+          "chunk_hash": "7cadbd766b874e0285b378febf932b6b"
+        },
+        {
+          "id": 17472,
+          "title": "分裂",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_17472.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_17472.lrc",
+          "etag": "0ef615439ee2facd4703f7c70f5021f6",
+          "chunk_hash": "7cadbd766b874e0285b378febf932b6b"
+        },
+        {
+          "id": 17476,
+          "title": "掃興",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_17476.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_17476.lrc",
+          "etag": "0ef615439ee2facd4703f7c70f5021f6",
+          "chunk_hash": "7cadbd766b874e0285b378febf932b6b"
+        },
+        {
+          "id": 24126,
+          "title": "想像",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_24126.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_24126.lrc",
+          "etag": "0ef615439ee2facd4703f7c70f5021f6",
+          "chunk_hash": "7cadbd766b874e0285b378febf932b6b"
+        },
+        {
+          "id": 24128,
+          "title": "哪兒",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_24128.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/浮躁/s_24128.lrc",
+          "etag": "0ef615439ee2facd4703f7c70f5021f6",
+          "chunk_hash": "7cadbd766b874e0285b378febf932b6b"
+        }
+      ],
+      "hash": "7cadbd766b874e0285b378febf932b6b"
+    },
+    {
+      "group_key": [
+        1502,
+        "冷酷到底",
+        "羽·泉",
+        4776795
+      ],
+      "songs": [
+        {
+          "id": 20379,
+          "title": "冷酷到底",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/冷酷到底/s_20379.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/冷酷到底/s_20379.lrc",
+          "etag": "6e889f1e7d944683c2e1c36b89cfb7fd",
+          "chunk_hash": "bb01542d1d3fb2fe21f26b650bdc9467"
+        },
+        {
+          "id": 20383,
+          "title": "我要",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/拾伍/s_20222.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/羽·泉/拾伍/s_20222.lrc",
+          "etag": "6e889f1e7d944683c2e1c36b89cfb7fd",
+          "chunk_hash": "bb01542d1d3fb2fe21f26b650bdc9467"
+        }
+      ],
+      "hash": "bb01542d1d3fb2fe21f26b650bdc9467"
+    },
+    {
+      "group_key": [
+        1630,
+        "跟著感覺走",
+        "张震岳",
+        5029137
+      ],
+      "songs": [
+        {
+          "id": 22041,
+          "title": "Let Me Go",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/跟著感覺走/s_22041.mp3",
+          "lrc_path": null,
+          "etag": "f87a5f0d6710d4a24fd37763dc685667",
+          "chunk_hash": "31d46f87ef17ed745366667e5f203a79"
+        },
+        {
+          "id": 22043,
+          "title": "Answer",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/跟著感覺走/s_22043.mp3",
+          "lrc_path": null,
+          "etag": "f87a5f0d6710d4a24fd37763dc685667",
+          "chunk_hash": "31d46f87ef17ed745366667e5f203a79"
+        }
+      ],
+      "hash": "31d46f87ef17ed745366667e5f203a79"
+    },
+    {
+      "group_key": [
+        1644,
+        "少年",
+        "周华健",
+        5407391
+      ],
+      "songs": [
+        {
+          "id": 22209,
+          "title": "My Story",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/少年/s_22209.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/少年/s_22209.lrc",
+          "etag": "dfb63a511fc88f0241c087a169aa1721",
+          "chunk_hash": "f5862a5ca3f6463eab0188ca254a5dff"
+        },
+        {
+          "id": 22213,
+          "title": "Your Story",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/少年/s_22213.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/少年/s_22213.lrc",
+          "etag": "dfb63a511fc88f0241c087a169aa1721",
+          "chunk_hash": "f5862a5ca3f6463eab0188ca254a5dff"
+        }
+      ],
+      "hash": "f5862a5ca3f6463eab0188ca254a5dff"
+    },
+    {
+      "group_key": [
+        1287,
+        "討好自己",
+        "王菲",
+        3923113
+      ],
+      "songs": [
+        {
+          "id": 17515,
+          "title": "討好自己",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17515.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17515.lrc",
+          "etag": "9fd7e16bb12f1fb1d973aadc7fb3870f",
+          "chunk_hash": "c6f36c6792348f3f4e11217699f50820"
+        },
+        {
+          "id": 17516,
+          "title": "蜜月期",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17516.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17516.lrc",
+          "etag": "9fd7e16bb12f1fb1d973aadc7fb3870f",
+          "chunk_hash": "c6f36c6792348f3f4e11217699f50820"
+        },
+        {
+          "id": 17517,
+          "title": "為非作歹",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17517.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17517.lrc",
+          "etag": "9fd7e16bb12f1fb1d973aadc7fb3870f",
+          "chunk_hash": "c6f36c6792348f3f4e11217699f50820"
+        },
+        {
+          "id": 17519,
+          "title": "出路",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17519.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17519.lrc",
+          "etag": "9fd7e16bb12f1fb1d973aadc7fb3870f",
+          "chunk_hash": "c6f36c6792348f3f4e11217699f50820"
+        },
+        {
+          "id": 17521,
+          "title": "飄",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17521.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/討好自己/s_17521.lrc",
+          "etag": "9fd7e16bb12f1fb1d973aadc7fb3870f",
+          "chunk_hash": "c6f36c6792348f3f4e11217699f50820"
+        }
+      ],
+      "hash": "c6f36c6792348f3f4e11217699f50820"
+    },
+    {
+      "group_key": [
+        1634,
+        "阿嶽正傳",
+        "张震岳",
+        5101235
+      ],
+      "songs": [
+        {
+          "id": 22080,
+          "title": "Don't Say You Love Me",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/%E5%BC%A0%E9%9C%87%E5%B2%B3/%E9%98%BF%E5%B6%BD%E6%AD%A3%E5%82%B3/s_22080.mp3",
+          "lrc_path": "https://pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev/lyrics/%E5%BC%A0%E9%9C%87%E5%B2%B3/%E9%98%BF%E5%B6%BD%E6%AD%A3%E5%82%B3/s_22080.lrc",
+          "etag": "bceda8038583c9e164b0034ba2117f43",
+          "chunk_hash": "a76fc37ce8ecc87d94d08e50455b919e"
+        },
+        {
+          "id": 22094,
+          "title": "Thinking Too Much",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/阿嶽正傳/s_22094.mp3",
+          "lrc_path": null,
+          "etag": "bceda8038583c9e164b0034ba2117f43",
+          "chunk_hash": "a76fc37ce8ecc87d94d08e50455b919e"
+        }
+      ],
+      "hash": "a76fc37ce8ecc87d94d08e50455b919e"
+    },
+    {
+      "group_key": [
+        1633,
+        "OK",
+        "张震岳",
+        3729807
+      ],
+      "songs": [
+        {
+          "id": 22071,
+          "title": "再見",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/OK/s_22071.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/OK/s_22071.lrc",
+          "etag": "db774ce00c83a4f5bbc97c094c1433d7",
+          "chunk_hash": "3d9eec33028d9642e2f30bcff0d22f14"
+        },
+        {
+          "id": 22075,
+          "title": "再見 (真情版)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/OK/s_22075.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/OK/s_22075.lrc",
+          "etag": "db774ce00c83a4f5bbc97c094c1433d7",
+          "chunk_hash": "3d9eec33028d9642e2f30bcff0d22f14"
+        }
+      ],
+      "hash": "3d9eec33028d9642e2f30bcff0d22f14"
+    },
+    {
+      "group_key": [
+        1634,
+        "阿嶽正傳",
+        "张震岳",
+        5110117
+      ],
+      "songs": [
+        {
+          "id": 22077,
+          "title": "Courage",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/阿嶽正傳/s_22077.mp3",
+          "lrc_path": null,
+          "etag": "07f7c417b24ef6492ad6fe88226b053b",
+          "chunk_hash": "138c807bf09c0611b9be87aacbd47162"
+        },
+        {
+          "id": 22086,
+          "title": "Useless Guy",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/阿嶽正傳/s_22086.mp3",
+          "lrc_path": null,
+          "etag": "07f7c417b24ef6492ad6fe88226b053b",
+          "chunk_hash": "138c807bf09c0611b9be87aacbd47162"
+        }
+      ],
+      "hash": "138c807bf09c0611b9be87aacbd47162"
+    },
+    {
+      "group_key": [
+        1646,
+        "悟空",
+        "周华健",
+        5276778
+      ],
+      "songs": [
+        {
+          "id": 22234,
+          "title": "江湖晚",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/悟空/s_22234.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/悟空/s_22234.lrc",
+          "etag": "250f30216ef11f344b4178ab3a393e25",
+          "chunk_hash": "d84e4b19a46cffdc4706337d7d51943d"
+        },
+        {
+          "id": 22236,
+          "title": "人嫁",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/悟空/s_22236.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/悟空/s_22236.lrc",
+          "etag": "250f30216ef11f344b4178ab3a393e25",
+          "chunk_hash": "d84e4b19a46cffdc4706337d7d51943d"
+        }
+      ],
+      "hash": "d84e4b19a46cffdc4706337d7d51943d"
+    },
+    {
+      "group_key": [
+        1648,
+        "江湖新能量",
+        "周华健",
+        5399554
+      ],
+      "songs": [
+        {
+          "id": 22268,
+          "title": "她 (年度盛典版)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/江湖新能量/s_22268.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/江湖新能量/s_22268.lrc",
+          "etag": "6a5deb161f3f2c6bf1ed15219395b75a",
+          "chunk_hash": "63ef0daef91b601d8db12dbb47f0d3c9"
+        },
+        {
+          "id": 22275,
+          "title": "她 (Live)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/江湖新能量/s_22275.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/江湖新能量/s_22275.lrc",
+          "etag": "6a5deb161f3f2c6bf1ed15219395b75a",
+          "chunk_hash": "63ef0daef91b601d8db12dbb47f0d3c9"
+        }
+      ],
+      "hash": "63ef0daef91b601d8db12dbb47f0d3c9"
+    },
+    {
+      "group_key": [
+        1669,
+        "愛的光",
+        "周华健",
+        4222476
+      ],
+      "songs": [
+        {
+          "id": 22581,
+          "title": "Chief of the Children",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/愛的光/s_22581.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/愛的光/s_22581.lrc",
+          "etag": "3663ab9cbe0bd0c72723dd499380e908",
+          "chunk_hash": "b8618a4aa4aa5961d4da42c2bdf74efe"
+        },
+        {
+          "id": 22589,
+          "title": "Chief of the Children (Demo)",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/愛的光/s_22589.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/愛的光/s_22589.lrc",
+          "etag": "3663ab9cbe0bd0c72723dd499380e908",
+          "chunk_hash": "b8618a4aa4aa5961d4da42c2bdf74efe"
+        }
+      ],
+      "hash": "b8618a4aa4aa5961d4da42c2bdf74efe"
+    },
+    {
+      "group_key": [
+        1654,
+        "周而復始",
+        "周华健",
+        3940354
+      ],
+      "songs": [
+        {
+          "id": 22377,
+          "title": "A Life of Fighting Is But a Dream",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/周而復始/s_22377.mp3",
+          "lrc_path": null,
+          "etag": "fbcd6566c5ad6da80cdf2bc85885b424",
+          "chunk_hash": "187eb931732c30c88633ba7398455b44"
+        },
+        {
+          "id": 22385,
+          "title": "Luckiest Draw",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/周而復始/s_22385.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/周而復始/s_22385.lrc",
+          "etag": "fbcd6566c5ad6da80cdf2bc85885b424",
+          "chunk_hash": "187eb931732c30c88633ba7398455b44"
+        }
+      ],
+      "hash": "187eb931732c30c88633ba7398455b44"
+    },
+    {
+      "group_key": [
+        1660,
+        "現在",
+        "周华健",
+        5271554
+      ],
+      "songs": [
+        {
+          "id": 22466,
+          "title": "To Propose",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/現在/s_22466.mp3",
+          "lrc_path": null,
+          "etag": "9c910dcbe100b69eeea6f4333fbd6a61",
+          "chunk_hash": "ba2650cd10ed5bf810fd67506387a171"
+        },
+        {
+          "id": 22475,
+          "title": "Infatuation",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/現在/s_22475.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/現在/s_22475.lrc",
+          "etag": "9c910dcbe100b69eeea6f4333fbd6a61",
+          "chunk_hash": "ba2650cd10ed5bf810fd67506387a171"
+        }
+      ],
+      "hash": "ba2650cd10ed5bf810fd67506387a171"
+    },
+    {
+      "group_key": [
+        1683,
+        "我付出我的真愛我實現我的夢",
+        "周华健",
+        5808109
+      ],
+      "songs": [
+        {
+          "id": 24697,
+          "title": "我是真的付出我的愛",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/我付出我的真愛我實現我的夢/s_24697.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/我付出我的真愛我實現我的夢/s_24697.lrc",
+          "etag": "154056bda2864eb33485910027bcc5cb",
+          "chunk_hash": "80d5a5ce9d0c0920ebf07f797576787d"
+        },
+        {
+          "id": 24702,
+          "title": "我付出我的真愛我實現我的夢",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/我付出我的真愛我實現我的夢/s_24702.mp3",
+          "lrc_path": null,
+          "etag": "154056bda2864eb33485910027bcc5cb",
+          "chunk_hash": "80d5a5ce9d0c0920ebf07f797576787d"
+        }
+      ],
+      "hash": "80d5a5ce9d0c0920ebf07f797576787d"
+    },
+    {
+      "group_key": [
+        1654,
+        "周而復始",
+        "周华健",
+        4188517
+      ],
+      "songs": [
+        {
+          "id": 22361,
+          "title": "The Song of a Ferryman",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/周而復始/s_22361.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/周而復始/s_22361.lrc",
+          "etag": "847926fb68bdf63d559a53b673336bbb",
+          "chunk_hash": "8aad07bfcf6003757676374ac4d2eef9"
+        },
+        {
+          "id": 22364,
+          "title": "The Truest Dream",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/周而復始/s_22364.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/周而復始/s_22364.lrc",
+          "etag": "847926fb68bdf63d559a53b673336bbb",
+          "chunk_hash": "8aad07bfcf6003757676374ac4d2eef9"
+        }
+      ],
+      "hash": "8aad07bfcf6003757676374ac4d2eef9"
+    },
+    {
+      "group_key": [
+        1666,
+        "小天堂",
+        "周华健",
+        4188517
+      ],
+      "songs": [
+        {
+          "id": 22548,
+          "title": "The Truest Dream",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/小天堂/s_22548.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/小天堂/s_22548.lrc",
+          "etag": "847926fb68bdf63d559a53b673336bbb",
+          "chunk_hash": "8aad07bfcf6003757676374ac4d2eef9"
+        },
+        {
+          "id": 22549,
+          "title": "The Song of a Ferryman",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/小天堂/s_22549.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/小天堂/s_22549.lrc",
+          "etag": "847926fb68bdf63d559a53b673336bbb",
+          "chunk_hash": "8aad07bfcf6003757676374ac4d2eef9"
+        }
+      ],
+      "hash": "8aad07bfcf6003757676374ac4d2eef9"
+    },
+    {
+      "group_key": [
+        1667,
+        "生‧生活",
+        "周华健",
+        5436125
+      ],
+      "songs": [
+        {
+          "id": 22565,
+          "title": "It Can't Be Helped",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/生‧生活/s_22565.mp3",
+          "lrc_path": null,
+          "etag": "ce9b0f91a18545aef6704af608751ca0",
+          "chunk_hash": "d911cfc184bb201755920731a08682c8"
+        },
+        {
+          "id": 22566,
+          "title": "When the Curtain Falls",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/生‧生活/s_22566.mp3",
+          "lrc_path": null,
+          "etag": "ce9b0f91a18545aef6704af608751ca0",
+          "chunk_hash": "d911cfc184bb201755920731a08682c8"
+        }
+      ],
+      "hash": "d911cfc184bb201755920731a08682c8"
+    },
+    {
+      "group_key": [
+        1690,
+        "赵小雷",
+        "赵雷",
+        6693660
+      ],
+      "songs": [
+        {
+          "id": 22806,
+          "title": "南方姑娘",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/赵雷/赵小雷/s_22806.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/赵雷/赵小雷/s_22806.lrc",
+          "etag": "7bcdb9eab321ab17fd33e9959199de77",
+          "chunk_hash": "2fa209d409bf983a2e6d61699564dd71"
+        },
+        {
+          "id": 22811,
+          "title": "南方姑娘(弹唱版)",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/赵雷/赵小雷/s_22811.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/赵雷/赵小雷/s_22811.lrc",
+          "etag": "7bcdb9eab321ab17fd33e9959199de77",
+          "chunk_hash": "2fa209d409bf983a2e6d61699564dd71"
+        }
+      ],
+      "hash": "2fa209d409bf983a2e6d61699564dd71"
+    },
+    {
+      "group_key": [
+        1630,
+        "跟著感覺走",
+        "张震岳",
+        5030182
+      ],
+      "songs": [
+        {
+          "id": 22035,
+          "title": "Sadly Moving On",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/跟著感覺走/s_22035.mp3",
+          "lrc_path": null,
+          "etag": "48bc44d214f28141fde8ca526ac11297",
+          "chunk_hash": "7ec1de49734811d7a807aaa979dd3474"
+        },
+        {
+          "id": 22036,
+          "title": "Rainy Season",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/跟著感覺走/s_22036.mp3",
+          "lrc_path": null,
+          "etag": "48bc44d214f28141fde8ca526ac11297",
+          "chunk_hash": "7ec1de49734811d7a807aaa979dd3474"
+        },
+        {
+          "id": 22037,
+          "title": "Emotional Blackmail",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张震岳/跟著感覺走/s_22037.mp3",
+          "lrc_path": null,
+          "etag": "48bc44d214f28141fde8ca526ac11297",
+          "chunk_hash": "7ec1de49734811d7a807aaa979dd3474"
+        }
+      ],
+      "hash": "7ec1de49734811d7a807aaa979dd3474"
+    },
+    {
+      "group_key": [
+        1791,
+        "无情的雨无情的你",
+        "齐秦",
+        6495129
+      ],
+      "songs": [
+        {
+          "id": 23750,
+          "title": "边界",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/无情的雨无情的你/s_23750.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/无情的雨无情的你/s_23750.lrc",
+          "etag": "9776bda1fdff44746748e426e3a9ac77",
+          "chunk_hash": "a84ac726fbacfa37bb06d1dc4858da60"
+        },
+        {
+          "id": 23759,
+          "title": "边界城市",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/无情的雨无情的你/s_23759.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/无情的雨无情的你/s_23759.lrc",
+          "etag": "9776bda1fdff44746748e426e3a9ac77",
+          "chunk_hash": "a84ac726fbacfa37bb06d1dc4858da60"
+        }
+      ],
+      "hash": "a84ac726fbacfa37bb06d1dc4858da60"
+    },
+    {
+      "group_key": [
+        1647,
+        "水滸三部曲 (原創音樂選輯)",
+        "周华健",
+        4165529
+      ],
+      "songs": [
+        {
+          "id": 22242,
+          "title": "吳興國談水滸源起",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/水滸三部曲 (原創音樂選輯)/s_22242.mp3",
+          "lrc_path": null,
+          "etag": "e7ad29a9de79f46e2eaee2e56758a791",
+          "chunk_hash": "de8254825ba422e19d532412f08a5070"
+        },
+        {
+          "id": 22244,
+          "title": "張大春談水滸108將",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/水滸三部曲 (原創音樂選輯)/s_22244.mp3",
+          "lrc_path": null,
+          "etag": "e7ad29a9de79f46e2eaee2e56758a791",
+          "chunk_hash": "de8254825ba422e19d532412f08a5070"
+        },
+        {
+          "id": 22248,
+          "title": "生辰綱",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/水滸三部曲 (原創音樂選輯)/s_22248.mp3",
+          "lrc_path": null,
+          "etag": "e7ad29a9de79f46e2eaee2e56758a791",
+          "chunk_hash": "de8254825ba422e19d532412f08a5070"
+        },
+        {
+          "id": 22254,
+          "title": "念奴嬌",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/周华健/水滸三部曲 (原創音樂選輯)/s_22254.mp3",
+          "lrc_path": null,
+          "etag": "e7ad29a9de79f46e2eaee2e56758a791",
+          "chunk_hash": "de8254825ba422e19d532412f08a5070"
+        }
+      ],
+      "hash": "de8254825ba422e19d532412f08a5070"
+    },
+    {
+      "group_key": [
+        1794,
+        "命运的深渊",
+        "齐秦",
+        5517105
+      ],
+      "songs": [
+        {
+          "id": 23574,
+          "title": "去年冬天 (吉他清唱)",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/命运的深渊/s_23574.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/命运的深渊/s_23574.lrc",
+          "etag": "e45db6ab2f580c29b9047b4c61b15602",
+          "chunk_hash": "df37aa67586167f734785c4355d7249f"
+        },
+        {
+          "id": 23576,
+          "title": "去年冬天",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/命运的深渊/s_23576.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/命运的深渊/s_23576.lrc",
+          "etag": "e45db6ab2f580c29b9047b4c61b15602",
+          "chunk_hash": "df37aa67586167f734785c4355d7249f"
+        }
+      ],
+      "hash": "df37aa67586167f734785c4355d7249f"
+    },
+    {
+      "group_key": [
+        1786,
+        "流浪思乡",
+        "齐秦",
+        4502509
+      ],
+      "songs": [
+        {
+          "id": 23730,
+          "title": "斗鱼",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/流浪思乡/s_23730.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/流浪思乡/s_23730.lrc",
+          "etag": "7498ec039267022e8f4d4a55467bfdc0",
+          "chunk_hash": "6c2fa98dc74fd38ee7febde7998a98f0"
+        },
+        {
+          "id": 23731,
+          "title": "流浪思乡",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/流浪思乡/s_23731.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/流浪思乡/s_23731.lrc",
+          "etag": "7498ec039267022e8f4d4a55467bfdc0",
+          "chunk_hash": "6c2fa98dc74fd38ee7febde7998a98f0"
+        },
+        {
+          "id": 23736,
+          "title": "沙滩过客",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/流浪思乡/s_23736.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/流浪思乡/s_23736.lrc",
+          "etag": "7498ec039267022e8f4d4a55467bfdc0",
+          "chunk_hash": "6c2fa98dc74fd38ee7febde7998a98f0"
+        }
+      ],
+      "hash": "6c2fa98dc74fd38ee7febde7998a98f0"
+    },
+    {
+      "group_key": [
+        1868,
+        "狂野之城",
+        "郭富城",
+        4878672
+      ],
+      "songs": [
+        {
+          "id": 26005,
+          "title": "狂野之城",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/狂野之城/s_26005.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/狂野之城/s_26005.lrc",
+          "etag": "7e06a38ab603faff16485f7089a19724",
+          "chunk_hash": "5230fee8111e58c177278ddc6624deb1"
+        },
+        {
+          "id": 26015,
+          "title": "狂野之城 (Turbo Mix)",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/狂野之城/s_26015.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/郭富城/狂野之城/s_26015.lrc",
+          "etag": "7e06a38ab603faff16485f7089a19724",
+          "chunk_hash": "5230fee8111e58c177278ddc6624deb1"
+        }
+      ],
+      "hash": "5230fee8111e58c177278ddc6624deb1"
+    },
+    {
+      "group_key": [
+        1870,
+        "备忘录",
+        "郭富城",
+        4027603
+      ],
+      "songs": [
+        {
+          "id": 26027,
+          "title": "失忆(谅解)备忘录",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E9%83%AD%E5%AF%8C%E5%9F%8E/%E5%A4%87%E5%BF%98%E5%BD%95/s_26027.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E9%83%AD%E5%AF%8C%E5%9F%8E/%E5%A4%87%E5%BF%98%E5%BD%95/s_26027.lrc",
+          "etag": "9014a6f18695e7fd6ae3a6d8c33935e1",
+          "chunk_hash": "005bab7bb5d3c8b30c23f14f28eb2a36"
+        },
+        {
+          "id": 26030,
+          "title": "失忆(谅解)备忘录 (Remix)",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E9%83%AD%E5%AF%8C%E5%9F%8E/%E5%A4%87%E5%BF%98%E5%BD%95/s_26030.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E9%83%AD%E5%AF%8C%E5%9F%8E/%E5%A4%87%E5%BF%98%E5%BD%95/s_26030.lrc",
+          "etag": "9014a6f18695e7fd6ae3a6d8c33935e1",
+          "chunk_hash": "005bab7bb5d3c8b30c23f14f28eb2a36"
+        }
+      ],
+      "hash": "005bab7bb5d3c8b30c23f14f28eb2a36"
+    },
+    {
+      "group_key": [
+        2290,
+        "寂寞不痛",
+        "A-LIN",
+        5978427
+      ],
+      "songs": [
+        {
+          "id": 31719,
+          "title": "寂寞不痛",
+          "file_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/music/A-LIN/%E5%AF%82%E5%AF%9E%E4%B8%8D%E7%97%9B/s_31719.mp3",
+          "lrc_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/lyrics/A-LIN/%E5%AF%82%E5%AF%9E%E4%B8%8D%E7%97%9B/s_31719.lrc",
+          "etag": "e8fc43a42f41b357fd954e00c6bde0a9",
+          "chunk_hash": "a914ad7d2af7a7922f418d4bb5083865"
+        },
+        {
+          "id": 31721,
+          "title": "Lin极限",
+          "file_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/music/A-LIN/%E5%AF%82%E5%AF%9E%E4%B8%8D%E7%97%9B/s_31721.mp3",
+          "lrc_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/lyrics/A-LIN/%E5%AF%82%E5%AF%9E%E4%B8%8D%E7%97%9B/s_31721.lrc",
+          "etag": "e8fc43a42f41b357fd954e00c6bde0a9",
+          "chunk_hash": "a914ad7d2af7a7922f418d4bb5083865"
+        }
+      ],
+      "hash": "a914ad7d2af7a7922f418d4bb5083865"
+    },
+    {
+      "group_key": [
+        1824,
+        "十萬個為什麼？",
+        "王菲",
+        4278378
+      ],
+      "songs": [
+        {
+          "id": 24087,
+          "title": "立體派",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/十萬個為什麼？/s_24087.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/十萬個為什麼？/s_24087.lrc",
+          "etag": "e52b5296a8c7d38a2e8ad72755c70c8b",
+          "chunk_hash": "3d1044f0818cd3fd0efd5caf84164077"
+        },
+        {
+          "id": 24090,
+          "title": "雨天沒有你",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/十萬個為什麼？/s_24090.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/十萬個為什麼？/s_24090.lrc",
+          "etag": "e52b5296a8c7d38a2e8ad72755c70c8b",
+          "chunk_hash": "3d1044f0818cd3fd0efd5caf84164077"
+        }
+      ],
+      "hash": "3d1044f0818cd3fd0efd5caf84164077"
+    },
+    {
+      "group_key": [
+        2310,
+        "幻",
+        "苏运莹",
+        9887912
+      ],
+      "songs": [
+        {
+          "id": 31920,
+          "title": "IS",
+          "file_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/music/苏运莹/幻/s_31920.mp3",
+          "lrc_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/music/苏运莹/幻/s_31920.lrc",
+          "etag": "748053dbf348f63dea74ca5070f6a675",
+          "chunk_hash": "629ab83077a79566be0fada8996649f7"
+        },
+        {
+          "id": 31929,
+          "title": "时候",
+          "file_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/music/苏运莹/幻/s_31929.mp3",
+          "lrc_path": "https://pub-fa9d420026b0462b81c9f89f981270e8.r2.dev/music/苏运莹/幻/s_31929.lrc",
+          "etag": "748053dbf348f63dea74ca5070f6a675",
+          "chunk_hash": "629ab83077a79566be0fada8996649f7"
+        }
+      ],
+      "hash": "629ab83077a79566be0fada8996649f7"
+    },
+    {
+      "group_key": [
+        1844,
+        "失语者",
+        "蔡健雅",
+        5605921
+      ],
+      "songs": [
+        {
+          "id": 24720,
+          "title": "菲林",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/失语者/s_24720.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/失语者/s_24720.lrc",
+          "etag": "118c0d4984ed54067accfa9d667b1bee",
+          "chunk_hash": "011d1259dec94d3e50fc1edd0392786e"
+        },
+        {
+          "id": 24721,
+          "title": "谜",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/失语者/s_24721.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/失语者/s_24721.lrc",
+          "etag": "118c0d4984ed54067accfa9d667b1bee",
+          "chunk_hash": "011d1259dec94d3e50fc1edd0392786e"
+        }
+      ],
+      "hash": "011d1259dec94d3e50fc1edd0392786e"
+    },
+    {
+      "group_key": [
+        1884,
+        "冷咖啡",
+        "李圣杰",
+        5399554
+      ],
+      "songs": [
+        {
+          "id": 26344,
+          "title": "我也想他",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26344.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26344.lrc",
+          "etag": "6094269337b311c3c05f4fbc69b92fae",
+          "chunk_hash": "f931edda5c0d6cdc576fbf9067b8b7c8"
+        },
+        {
+          "id": 26348,
+          "title": "如果再见",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26348.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26348.lrc",
+          "etag": "6094269337b311c3c05f4fbc69b92fae",
+          "chunk_hash": "f931edda5c0d6cdc576fbf9067b8b7c8"
+        }
+      ],
+      "hash": "f931edda5c0d6cdc576fbf9067b8b7c8"
+    },
+    {
+      "group_key": [
+        1846,
+        "说到爱",
+        "蔡健雅",
+        5474786
+      ],
+      "songs": [
+        {
+          "id": 24759,
+          "title": "说到爱",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/说到爱/s_24759.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/说到爱/s_24759.lrc",
+          "etag": "2a565581c40944cba596ce918e69774e",
+          "chunk_hash": "bbca33360cb3a194d59e4bbe5aab0fe6"
+        },
+        {
+          "id": 24767,
+          "title": "爱我很简单",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/说到爱/s_24767.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/蔡健雅/说到爱/s_24767.lrc",
+          "etag": "2a565581c40944cba596ce918e69774e",
+          "chunk_hash": "bbca33360cb3a194d59e4bbe5aab0fe6"
+        }
+      ],
+      "hash": "bbca33360cb3a194d59e4bbe5aab0fe6"
+    },
+    {
+      "group_key": [
+        1959,
+        "安和桥北",
+        "宋冬野",
+        2501529
+      ],
+      "songs": [
+        {
+          "id": 27712,
+          "title": "给抱抱 (Intro · 纯音乐)",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/宋冬野/安和桥北/s_27712.mp3",
+          "lrc_path": null,
+          "etag": "7d195ab9175090eba3ba091a33e3b1b4",
+          "chunk_hash": "ea9ce9ba81aa2b4f202cfdadb8d961e1"
+        },
+        {
+          "id": 27720,
+          "title": "给抱着盒子的姑娘",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/宋冬野/安和桥北/s_27720.mp3",
+          "lrc_path": null,
+          "etag": "7d195ab9175090eba3ba091a33e3b1b4",
+          "chunk_hash": "ea9ce9ba81aa2b4f202cfdadb8d961e1"
+        }
+      ],
+      "hash": "ea9ce9ba81aa2b4f202cfdadb8d961e1"
+    },
+    {
+      "group_key": [
+        1874,
+        "覅忒好",
+        "胡彦斌",
+        4378166
+      ],
+      "songs": [
+        {
+          "id": 26076,
+          "title": "高手",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/范晓萱/覅忒好/s_26076.mp3",
+          "lrc_path": "music/范晓萱/覅忒好/s_26076.lrc",
+          "etag": "ede2f945acb6b9e7f12f5191eb9c153b",
+          "chunk_hash": "45969682b0e76440f73c8bb90c304251"
+        },
+        {
+          "id": 26077,
+          "title": "返老还童",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/范晓萱/覅忒好/s_26077.mp3",
+          "lrc_path": "music/范晓萱/覅忒好/s_26077.lrc",
+          "etag": "ede2f945acb6b9e7f12f5191eb9c153b",
+          "chunk_hash": "45969682b0e76440f73c8bb90c304251"
+        }
+      ],
+      "hash": "45969682b0e76440f73c8bb90c304251"
+    },
+    {
+      "group_key": [
+        1884,
+        "冷咖啡",
+        "李圣杰",
+        5197888
+      ],
+      "songs": [
+        {
+          "id": 26346,
+          "title": "情路",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26346.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26346.lrc",
+          "etag": "e2d29c0250d6fc8e605be2d8ea2e8a60",
+          "chunk_hash": "f6b39bc9c0d5501c1060a127afd2a555"
+        },
+        {
+          "id": 26349,
+          "title": "为什么",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26349.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/李圣杰/冷咖啡/s_26349.lrc",
+          "etag": "e2d29c0250d6fc8e605be2d8ea2e8a60",
+          "chunk_hash": "f6b39bc9c0d5501c1060a127afd2a555"
+        }
+      ],
+      "hash": "f6b39bc9c0d5501c1060a127afd2a555"
+    },
+    {
+      "group_key": [
+        1826,
+        "Di-Dar",
+        "王菲",
+        2964942
+      ],
+      "songs": [
+        {
+          "id": 24116,
+          "title": "Di-Dar",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24116.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24116.lrc",
+          "etag": "9b4274aa2887ad075138afda7876aded",
+          "chunk_hash": "2d1b9bd17d0bd7a359b66bff0f2c1f08"
+        },
+        {
+          "id": 24117,
+          "title": "假期",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24117.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24117.lrc",
+          "etag": "9b4274aa2887ad075138afda7876aded",
+          "chunk_hash": "2d1b9bd17d0bd7a359b66bff0f2c1f08"
+        },
+        {
+          "id": 24120,
+          "title": "或者",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24120.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24120.lrc",
+          "etag": "9b4274aa2887ad075138afda7876aded",
+          "chunk_hash": "2d1b9bd17d0bd7a359b66bff0f2c1f08"
+        },
+        {
+          "id": 24121,
+          "title": "我想",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24121.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/Di-Dar/s_24121.lrc",
+          "etag": "9b4274aa2887ad075138afda7876aded",
+          "chunk_hash": "2d1b9bd17d0bd7a359b66bff0f2c1f08"
+        }
+      ],
+      "hash": "2d1b9bd17d0bd7a359b66bff0f2c1f08"
+    }
+  ],
+  "different_hash_groups": [
+    {
+      "group_key": [
+        441,
+        "15",
+        "方大同",
+        6376533
+      ],
+      "songs": [
+        {
+          "id": 6400,
+          "title": "Over",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/方大同/15/s_6400.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/lyrics/方大同/15/s_6400.lrc",
+          "etag": "5d10b13644b367772c86f28afac63d97",
+          "chunk_hash": "16f332f71cae2123d45fb08daf810de8"
+        },
+        {
+          "id": 6403,
+          "title": "Over (Reprise)",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/方大同/15/s_6403.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/lyrics/方大同/15/s_6403.lrc",
+          "etag": "f55ba3be113345da6a9241cf234cb47b",
+          "chunk_hash": "521baac140ee14b5b951f5d15d8fe43c"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        444,
+        "愛愛愛",
+        "方大同",
+        4461235
+      ],
+      "songs": [
+        {
+          "id": 6429,
+          "title": "歌手與模特兒",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/方大同/愛愛愛/s_6429.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/lyrics/方大同/愛愛愛/s_6429.lrc",
+          "etag": "80719f06e6eb2f1e3b8ea5e7524256b2",
+          "chunk_hash": "6fe18c48f6250e7320bfdb06a241be85"
+        },
+        {
+          "id": 6438,
+          "title": "If You Leave Me Now",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/方大同/愛愛愛/s_6438.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/lyrics/方大同/愛愛愛/s_6438.lrc",
+          "etag": "9d4789a4fb96fd950906d6695092080d",
+          "chunk_hash": "087046ccedbe1d6d2222e011061ade82"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        526,
+        "古巨基",
+        "古巨基",
+        5821693
+      ],
+      "songs": [
+        {
+          "id": 7413,
+          "title": "Introverted",
+          "file_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/music/古巨基/古巨基/s_7413.mp3",
+          "lrc_path": "https://pub-dd32e05660c74c3dba04d231391eb82b.r2.dev/lyrics/古巨基/古巨基/s_7413.lrc",
+          "etag": "56457c6637180c27b0e2d3d5e6fb2a83",
+          "chunk_hash": "6554e7031dd634f64efc6b0a0a9fd872"
+        },
+        {
+          "id": 7415,
+          "title": "Not Really",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/古巨基/古巨基/s_7415.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/古巨基/古巨基/s_7415.lrc",
+          "etag": "af7823879b1ea7752c10172949cbff55",
+          "chunk_hash": "ea398e635ad0916ec5d30a3e57cef47b"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        41,
+        "正東10X10我至愛唱片:- Beyond『秘密警察』",
+        "Beyond",
+        4858297
+      ],
+      "songs": [
+        {
+          "id": 626,
+          "title": "心內心外",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/Beyond/正東10X10我至愛唱片:- Beyond『秘密警察』/s_626.mp3",
+          "lrc_path": "music/Beyond/正東10X10我至愛唱片:- Beyond『秘密警察』/s_626.lrc",
+          "etag": "85d1df29500e243748ed8494b6269c77",
+          "chunk_hash": "13597bd88d35e99a810fae98630bf2b2"
+        },
+        {
+          "id": 629,
+          "title": "破壞遊戲的孩子 (國)",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/Beyond/正東10X10我至愛唱片:- Beyond『秘密警察』/s_629.mp3",
+          "lrc_path": "music/Beyond/正東10X10我至愛唱片:- Beyond『秘密警察』/s_629.lrc",
+          "etag": "307007e853ef6c97fc6f0ddca609fbc6",
+          "chunk_hash": "fa3d2fa91afd079e0cb14d18cf33614c"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        366,
+        "西域情歌(摇滚篇)",
+        "刀郎",
+        4513480
+      ],
+      "songs": [
+        {
+          "id": 5420,
+          "title": "送我一朵玫瑰花",
+          "file_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/music/刀郎/西域情歌(摇滚篇)/s_5420.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/刀郎/西域情歌(摇滚篇)/s_5420.lrc",
+          "etag": "a3e92f56b5fd0f90241ed49554bc659b",
+          "chunk_hash": "fdaca6a68218d9a9addc8570a18fae76"
+        },
+        {
+          "id": 5424,
+          "title": "康定情歌",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/刀郎/西域情歌(摇滚篇)/s_5424.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/刀郎/西域情歌(摇滚篇)/s_5424.lrc",
+          "etag": "40ffb8b79db9fb259de8314351feb7ce",
+          "chunk_hash": "238bedc6489c69b3256b505af8c4f3d6"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        571,
+        "她的歌",
+        "黄小琥",
+        5830052
+      ],
+      "songs": [
+        {
+          "id": 7945,
+          "title": "她",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/她的歌/s_7945.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/她的歌/s_7945.lrc",
+          "etag": "0bc98c9fd9e037dd5d78a0903c6082d5",
+          "chunk_hash": "03493342a8340f74f6c49bc9b5ddab90"
+        },
+        {
+          "id": 7947,
+          "title": "放棄他",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/她的歌/s_7947.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/她的歌/s_7947.lrc",
+          "etag": "a50638e76fe790cedb9bb820a3d2e43a",
+          "chunk_hash": "abe4799a189cf85a6041114166028049"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        577,
+        "Ji Mo Nu Zi",
+        "黄小琥",
+        5698395
+      ],
+      "songs": [
+        {
+          "id": 8009,
+          "title": "Ji Mo Nu Zi",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/Ji Mo Nu Zi/s_8009.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/Ji Mo Nu Zi/s_8009.lrc",
+          "etag": "bf53b03f6ea9bbddc91ff9c11e253b28",
+          "chunk_hash": "8d487a47c0d969ac72dd2924f35736e2"
+        },
+        {
+          "id": 8016,
+          "title": "Bu Gai Na Mo Xiang Ni",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/Ji Mo Nu Zi/s_8016.mp3",
+          "lrc_path": null,
+          "etag": "45d46f905a7a40cb978df6aa5335a621",
+          "chunk_hash": "9b8c66698232256da23e0be20d5c2c75"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        584,
+        "分不到你的愛",
+        "黄小琥",
+        5343129
+      ],
+      "songs": [
+        {
+          "id": 8085,
+          "title": "感情的風",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/分不到你的愛/s_8085.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄小琥/分不到你的愛/s_8085.lrc",
+          "etag": "f6b91c679f4ae134a89b022f949d1b5e",
+          "chunk_hash": "3fa954ee2d9d19f1c88bdf4ec7f3d540"
+        },
+        {
+          "id": 8087,
+          "title": "我的唇你的傷",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/分不到你的愛/s_8087.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/黄小琥/分不到你的愛/s_8087.lrc",
+          "etag": "a60a989e29e3043ca4591f9d52cfd693",
+          "chunk_hash": "8d897ee62391b0c16a7085cfded05e30"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        745,
+        "家",
+        "罗大佑",
+        5696305
+      ],
+      "songs": [
+        {
+          "id": 27033,
+          "title": "家 (I)",
+          "file_path": "https://pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev/music/罗大佑/家/s_27033.mp3",
+          "lrc_path": "https://pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev/lyrics/罗大佑/家/s_27033.lrc",
+          "etag": "ba1a42491e1c491d1c8f9b697dff54fa",
+          "chunk_hash": "95aaec1f0e0710b311880af28250b191"
+        },
+        {
+          "id": 27036,
+          "title": "家 (II)",
+          "file_path": "https://pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev/music/罗大佑/家/s_27036.mp3",
+          "lrc_path": "https://pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev/lyrics/罗大佑/家/s_27036.lrc",
+          "etag": "e77eab0bbb4218e3fdab1a117a0b76b1",
+          "chunk_hash": "062f369881e08ad44a00ae2c93312c71"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        615,
+        "新年快樂",
+        "黄品源",
+        2409578
+      ],
+      "songs": [
+        {
+          "id": 8475,
+          "title": "半瞑的路燈",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/新年快樂/s_8475.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/新年快樂/s_8475.lrc",
+          "etag": "3689db56e7df464e318dd6c0cf24f852",
+          "chunk_hash": "0990fd2ea469d551f87bf25bde03ac31"
+        },
+        {
+          "id": 8476,
+          "title": "真久沒看",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/新年快樂/s_8476.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/黄品源/新年快樂/s_8476.lrc",
+          "etag": "3e2710cc752865ef8e23a2edc5c2a27f",
+          "chunk_hash": "3b17944411c7c38793a1efe8203c6fc5"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        776,
+        "復黑王: 可不可以",
+        "刘德华",
+        5166019
+      ],
+      "songs": [
+        {
+          "id": 10601,
+          "title": "停不了的愛",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/刘德华/復黑王: 可不可以/s_10601.mp3",
+          "lrc_path": "music/刘德华/復黑王: 可不可以/s_10601.lrc",
+          "etag": "c039cbdefd90574eb5d85b31b54d619a",
+          "chunk_hash": "a8ebb781bf71c6ee3912bc39b67bb913"
+        },
+        {
+          "id": 10606,
+          "title": "遺棄",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/刘德华/復黑王: 可不可以/s_10606.mp3",
+          "lrc_path": "music/刘德华/復黑王: 可不可以/s_10606.lrc",
+          "etag": "30cacbb3480a7f80b354090c8ac5dd7f",
+          "chunk_hash": "0fb69f3df341c1d4843648e135a6b2d8"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        888,
+        "What a Folk!!!!!! (春季走跳版)",
+        "卢广仲",
+        5942901
+      ],
+      "songs": [
+        {
+          "id": 12101,
+          "title": "今天睡在這裡",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12101.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12101.lrc",
+          "etag": "8f7eedaa72cf90e690ccb9f89d9b5139",
+          "chunk_hash": "907892cb3c49fc0dca6f2c25a262d85d"
+        },
+        {
+          "id": 12107,
+          "title": "今天睡在這裡 (Acoustic Version)",
+          "file_path": "https://pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev/music/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12107.mp3",
+          "lrc_path": "https://pub-9e5d39f15e4a40dfb886ecb275551c90.r2.dev/lyrics/卢广仲/What a Folk!!!!!! (春季走跳版)/s_12107.lrc",
+          "etag": "2d67feea85b7166231c67b1bec478937",
+          "chunk_hash": "11e85b6c1dd9841a1e1d0bc247a7545f"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        874,
+        "Apples of Thy Eye",
+        "林宥嘉",
+        3927815
+      ],
+      "songs": [
+        {
+          "id": 11922,
+          "title": "Time (feat. 黃奇斌)",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/林宥嘉/Apples of Thy Eye/s_11922.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/林宥嘉/Apples of Thy Eye/s_11922.lrc",
+          "etag": "2f5fd3d259bf79b91671fbfac2c033c6",
+          "chunk_hash": "94567ffc2ac59ad008619e7d7c750dc7"
+        },
+        {
+          "id": 11937,
+          "title": "Apples1:10",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/林宥嘉/Apples of Thy Eye/s_11937.mp3",
+          "lrc_path": null,
+          "etag": "383669af70d5e6d4fdcb51da8927d56c",
+          "chunk_hash": "5554c921dfa6d1a4882b6425b7a7996c"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        993,
+        "疼妳的責任",
+        "品冠",
+        5242819
+      ],
+      "songs": [
+        {
+          "id": 13441,
+          "title": "Be With You Until Old Age",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/疼妳的責任/s_13441.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/疼妳的責任/s_13441.lrc",
+          "etag": "2f3debe1c591739c4a207f61d12a9b40",
+          "chunk_hash": "5d5e86a6343fcd9a7d9aecf16bc57c11"
+        },
+        {
+          "id": 13447,
+          "title": "Making the Same Mistake",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/疼妳的責任/s_13447.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/品冠/疼妳的責任/s_13447.lrc",
+          "etag": "24542a0fbaf2f1697cbf2b2f92abe133",
+          "chunk_hash": "84d593ce7ff9f16aa712396f00359e5d"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1643,
+        "就是喜歡你",
+        "张震岳",
+        5078248
+      ],
+      "songs": [
+        {
+          "id": 22187,
+          "title": "I JUST LIKE YOU",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/%E5%BC%A0%E9%9C%87%E5%B2%B3/%E5%B0%B1%E6%98%AF%E5%96%9C%E6%AD%A1%E4%BD%A0/s_22187.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/lyrics/%E5%BC%A0%E9%9C%87%E5%B2%B3/%E5%B0%B1%E6%98%AF%E5%96%9C%E6%AD%A1%E4%BD%A0/s_22187.lrc",
+          "etag": "2a8a1992f8ef461cc8f3ce7ee7bf8511",
+          "chunk_hash": "b1c18df05f0a616cdeb643f7ed762f14"
+        },
+        {
+          "id": 22190,
+          "title": "LOUD MUSIC",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/%E5%BC%A0%E9%9C%87%E5%B2%B3/%E5%B0%B1%E6%98%AF%E5%96%9C%E6%AD%A1%E4%BD%A0/s_22190.mp3",
+          "lrc_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/lyrics/%E5%BC%A0%E9%9C%87%E5%B2%B3/%E5%B0%B1%E6%98%AF%E5%96%9C%E6%AD%A1%E4%BD%A0/s_22190.lrc",
+          "etag": "20cbf423b94952a5dfd4591563b3079f",
+          "chunk_hash": "cf7e6ca03484d2c71381078df600925d"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1705,
+        "拾",
+        "张杰",
+        5563080
+      ],
+      "songs": [
+        {
+          "id": 23038,
+          "title": "听",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张杰/拾/s_23038.mp3",
+          "lrc_path": null,
+          "etag": "c459974c266579ae8f38213bd4cc67ff",
+          "chunk_hash": "7b9410d5144e1936998aca0c7e272e0d"
+        },
+        {
+          "id": 23043,
+          "title": "爱的光芒",
+          "file_path": "https://pub-383b876c0bb840f6b852946604275232.r2.dev/music/张杰/拾/s_23043.mp3",
+          "lrc_path": null,
+          "etag": "69c378c586d629bc788483572c1da59c",
+          "chunk_hash": "e2f5f3911ed4f7fcf900262429bfb73e"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1782,
+        "冬雨",
+        "齐秦",
+        5441872
+      ],
+      "songs": [
+        {
+          "id": 23539,
+          "title": "黑暗的沉思",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/冬雨/s_23539.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/冬雨/s_23539.lrc",
+          "etag": "063cecd65158e1865aa85e93e7660b9f",
+          "chunk_hash": "afd1af71a9c3f4a8bd61bf572d8bb6e5"
+        },
+        {
+          "id": 23542,
+          "title": "感",
+          "file_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/冬雨/s_23542.mp3",
+          "lrc_path": "https://pub-e7d069eb11954440aeb32012e8e3c670.r2.dev/music/齐秦/冬雨/s_23542.lrc",
+          "etag": "c449996d4f8235eb2d87de2b1218220a",
+          "chunk_hash": "3a5107dc193305ba5ca8d21fea2a26c8"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1892,
+        "王",
+        "林宥嘉",
+        4907929
+      ],
+      "songs": [
+        {
+          "id": 26932,
+          "title": "The Blueprint of Otomen 少女蓝图",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/林宥嘉/王/s_26932.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/林宥嘉/王/s_26932.lrc",
+          "etag": "a1368d6b828177e8a593650ae27eb811",
+          "chunk_hash": "59c66c0aef3a9231b2dba62cbd65da00"
+        },
+        {
+          "id": 26933,
+          "title": "Otomen 少女",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/林宥嘉/王/s_26933.mp3",
+          "lrc_path": null,
+          "etag": "a9c5be3205c7ad7f0c59c3d4f4b585ec",
+          "chunk_hash": "7391e1a876a5aaf62f18819e3efecff2"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1825,
+        "天空",
+        "王菲",
+        5152645
+      ],
+      "songs": [
+        {
+          "id": 24108,
+          "title": "天使",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24108.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24108.lrc",
+          "etag": "6a0698f1901b7ce20b776a91b3e16628",
+          "chunk_hash": "947cac58d33155bbed9fd6aa69855053"
+        },
+        {
+          "id": 24111,
+          "title": "眷戀",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24111.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24111.lrc",
+          "etag": "b92f49397ca7eed7f486dc62ec6627b1",
+          "chunk_hash": "cf2bb1c5f520043e2d41887186ac2d3b"
+        },
+        {
+          "id": 24112,
+          "title": "不變",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24112.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24112.lrc",
+          "etag": "c54875d35cf0751d6eaa84c8dfe1a5e3",
+          "chunk_hash": "6dda721972eecbee236049175629e591"
+        },
+        {
+          "id": 24113,
+          "title": "矜持",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24113.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24113.lrc",
+          "etag": "8e89ea6d8f089630b680514171d7766f",
+          "chunk_hash": "6f6ee21cdb512ed2e1b1446eb53f54dd"
+        },
+        {
+          "id": 24114,
+          "title": "掙脫",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24114.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24114.lrc",
+          "etag": "1cfd09d869baabd8089e4a46f6f1db8d",
+          "chunk_hash": "7b48e9fb3827050c1a849c6f43a9d00f"
+        },
+        {
+          "id": 24115,
+          "title": "誓言",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24115.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/天空/s_24115.lrc",
+          "etag": "e982bb1a263bd6b9e779f89255d28813",
+          "chunk_hash": "fd2c8f19a82e6d2190afa5c6381fb0c5"
+        }
+      ]
+    }
+  ],
+  "unreachable_groups": [
+    {
+      "group_key": [
+        33,
+        "Beyond IV (超越時代紀念版)",
+        "Beyond",
+        1768011
+      ],
+      "songs": [
+        {
+          "id": 435,
+          "title": "第三街 (快版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 444,
+          "title": "第三街 (慢版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        33,
+        "Beyond IV (超越時代紀念版)",
+        "Beyond",
+        6652386
+      ],
+      "songs": [
+        {
+          "id": 429,
+          "title": "冷雨夜續集 (原諒我今天Demo1)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 430,
+          "title": "冷雨夜續集 (原諒我今天Demo2)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        33,
+        "Beyond IV (超越時代紀念版)",
+        "Beyond",
+        5595472
+      ],
+      "songs": [
+        {
+          "id": 425,
+          "title": "午夜迷牆",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 440,
+          "title": "午夜迷牆 (電影版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        34,
+        "亞拉伯跳舞女郎(超越時代紀念版)",
+        "Beyond",
+        5312827
+      ],
+      "songs": [
+        {
+          "id": 454,
+          "title": "昔日舞曲",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 481,
+          "title": "昔日舞曲 (Live In Hong Kong)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        244,
+        "名曲珍藏1: 鄧麗君不朽巨星",
+        "邓丽君",
+        3504109
+      ],
+      "songs": [
+        {
+          "id": 3725,
+          "title": "我就是愛你",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 3752,
+          "title": "說一聲再見",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        32,
+        "Beyond Deliberate You Yu ( Chao Yue Shi Dai Ji Nian Ban )",
+        "Beyond",
+        5693170
+      ],
+      "songs": [
+        {
+          "id": 401,
+          "title": "Sui Yue Wu Sheng (Live In Taiwan)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 415,
+          "title": "Sui Yue Wu Sheng",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        155,
+        "给你一点颜色",
+        "崔健",
+        3515080
+      ],
+      "songs": [
+        {
+          "id": 2209,
+          "title": "小城故事V21(上)",
+          "file_path": "music/崔健/给你一点颜色/s_2209.mp3",
+          "lrc_path": "music/崔健/给你一点颜色/s_2209.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 2212,
+          "title": "小城故事V21(中)",
+          "file_path": "music/崔健/给你一点颜色/s_2212.mp3",
+          "lrc_path": "music/崔健/给你一点颜色/s_2212.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 2214,
+          "title": "小城故事V21(下)",
+          "file_path": "music/崔健/给你一点颜色/s_2214.mp3",
+          "lrc_path": "music/崔健/给你一点颜色/s_2214.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        31,
+        "祕密警察(超越時代紀念版)",
+        "Beyond",
+        5306035
+      ],
+      "songs": [
+        {
+          "id": 377,
+          "title": "Dream Academy (昨日的牽絆Demo 1)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 378,
+          "title": "Dream Academy (昨日的牽絆Demo 2)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        32,
+        "Beyond Deliberate You Yu ( Chao Yue Shi Dai Ji Nian Ban )",
+        "Beyond",
+        5959097
+      ],
+      "songs": [
+        {
+          "id": 407,
+          "title": "Guang Hui Sui Yue ( Guo Yu ) [Live In Taiwan]",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 411,
+          "title": "Guang Hui Sui Yue (Guo Yu)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        31,
+        "祕密警察(超越時代紀念版)",
+        "Beyond",
+        4173888
+      ],
+      "songs": [
+        {
+          "id": 380,
+          "title": "Sumba (每段路Demo 1)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 381,
+          "title": "Sumba (每段路Demo 2)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        51,
+        "請將手放開",
+        "Beyond",
+        5163929
+      ],
+      "songs": [
+        {
+          "id": 751,
+          "title": "遊戲 (Prelude)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 762,
+          "title": "遊戲",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        34,
+        "亞拉伯跳舞女郎(超越時代紀念版)",
+        "Beyond",
+        5763701
+      ],
+      "songs": [
+        {
+          "id": 473,
+          "title": "Solo (Live In Hong Kong)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 474,
+          "title": "家駒Solo (Live In Hong Kong)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        33,
+        "Beyond IV (超越時代紀念版)",
+        "Beyond",
+        5507178
+      ],
+      "songs": [
+        {
+          "id": 417,
+          "title": "真的愛妳",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 427,
+          "title": "真的愛妳 (Kenya Version)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        237,
+        "永遠的懷念",
+        "邓丽君",
+        3581431
+      ],
+      "songs": [
+        {
+          "id": 3532,
+          "title": "誰能跟你比",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 3570,
+          "title": "噢! 琳達",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E9%82%93%E4%B8%BD%E5%90%9B/%E6%B0%B8%E9%81%A0%E7%9A%84%E6%87%B7%E5%BF%B5/s_3570.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E9%82%93%E4%B8%BD%E5%90%9B/%E6%B0%B8%E9%81%A0%E7%9A%84%E6%87%B7%E5%BF%B5/s_3570.lrc",
+          "etag": "b0f7a4555eed0dbb90ddc9c57e3cabf9",
+          "chunk_hash": "a2ca6ac0d83c8609d680d5e556d3d9ae"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        417,
+        "日落北京城",
+        "费玉清",
+        3466493
+      ],
+      "songs": [
+        {
+          "id": 6089,
+          "title": "日落北京城 (男生版)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6089.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6089.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 6095,
+          "title": "日落北京城 (女生版)",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6095.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6095.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        371,
+        "唱一遍一遍",
+        "费玉清",
+        2406966
+      ],
+      "songs": [
+        {
+          "id": 5475,
+          "title": "唱一遍一遍",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/唱一遍一遍/s_5475.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/唱一遍一遍/s_5475.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 5485,
+          "title": "傳奇三部曲",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/唱一遍一遍/s_5485.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/唱一遍一遍/s_5485.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        500,
+        "末日青春：补完计划",
+        "飞儿乐团",
+        5443962
+      ],
+      "songs": [
+        {
+          "id": 25934,
+          "title": "如果你说爱我",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 25941,
+          "title": "如果你说爱我",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        418,
+        "日落北京城",
+        "费玉清",
+        3466493
+      ],
+      "songs": [
+        {
+          "id": 6107,
+          "title": "日落北京城",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6107.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6107.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 6113,
+          "title": "日落北京城",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6113.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/日落北京城/s_6113.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        245,
+        "不朽巨星名曲珍藏2: 鄧麗君",
+        "邓丽君",
+        3581431
+      ],
+      "songs": [
+        {
+          "id": 3756,
+          "title": "情人不要哭",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 3758,
+          "title": "噢琳達",
+          "file_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/music/%E9%82%93%E4%B8%BD%E5%90%9B/%E4%B8%8D%E6%9C%BD%E5%B7%A8%E6%98%9F%E5%90%8D%E6%9B%B2%E7%8F%8D%E8%97%8F2%3A%20%E9%84%A7%E9%BA%97%E5%90%9B/s_3758.mp3",
+          "lrc_path": "https://pub-3951bb1f42a440049b8d1eb0575cfdee.r2.dev/lyrics/%E9%82%93%E4%B8%BD%E5%90%9B/%E4%B8%8D%E6%9C%BD%E5%B7%A8%E6%98%9F%E5%90%8D%E6%9B%B2%E7%8F%8D%E8%97%8F2%3A%20%E9%84%A7%E9%BA%97%E5%90%9B/s_3758.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        632,
+        "好歌重现 回憶无限 VOL 1",
+        "姜育恒",
+        5916778
+      ],
+      "songs": [
+        {
+          "id": 8674,
+          "title": "悔",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 8677,
+          "title": "忘了伤心的人",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        634,
+        "我和我的朋友",
+        "姜育恒",
+        6083440
+      ],
+      "songs": [
+        {
+          "id": 8713,
+          "title": "Yu-Heng & Friends",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 8714,
+          "title": "Yu-Heng & Friends (Special Choral Version)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        639,
+        "地圖",
+        "姜育恒",
+        5589203
+      ],
+      "songs": [
+        {
+          "id": 8774,
+          "title": "走過",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 8776,
+          "title": "對愛不瞭解",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        696,
+        "靠近",
+        "庾澄庆",
+        6169644
+      ],
+      "songs": [
+        {
+          "id": 9460,
+          "title": "靠近",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 9469,
+          "title": "靠近 (Acoustic)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        698,
+        "靠近",
+        "庾澄庆",
+        6169644
+      ],
+      "songs": [
+        {
+          "id": 9483,
+          "title": "靠近",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 9493,
+          "title": "靠近 (Acoustic)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        553,
+        "量變臨界點",
+        "华晨宇",
+        6832631
+      ],
+      "songs": [
+        {
+          "id": 7775,
+          "title": "溫暖的房子",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/华晨宇/量變臨界點/s_7775.mp3",
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 7776,
+          "title": "不重逢",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/华晨宇/量變臨界點/s_7776.mp3",
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        403,
+        "甲人做伙",
+        "费玉清",
+        3781529
+      ],
+      "songs": [
+        {
+          "id": 5926,
+          "title": "秋風無了時",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/费玉清/甲人做伙/s_5926.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/费玉清/甲人做伙/s_5926.lrc",
+          "etag": "4ef34b34fc55344d783441b269f580a8",
+          "chunk_hash": "a8ed8c0b760c80767fc96cac5c45aabc"
+        },
+        {
+          "id": 5932,
+          "title": "好兒郎",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/甲人做伙/s_5932.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/费玉清/甲人做伙/s_5932.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        765,
+        "演‧唱",
+        "刘德华",
+        5250133
+      ],
+      "songs": [
+        {
+          "id": 10460,
+          "title": "原諒我 (國)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10471,
+          "title": "原諒我 (粵)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        787,
+        "傳奇 - Perhaps...",
+        "黎明",
+        4068876
+      ],
+      "songs": [
+        {
+          "id": 10806,
+          "title": "甜蜜蜜 (Live at Dragon Studio)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10812,
+          "title": "甜蜜蜜",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        787,
+        "傳奇 - Perhaps...",
+        "黎明",
+        4456011
+      ],
+      "songs": [
+        {
+          "id": 10800,
+          "title": "情深說話未曾講",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10814,
+          "title": "情深說話未曾講 (國)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        787,
+        "傳奇 - Perhaps...",
+        "黎明",
+        4637301
+      ],
+      "songs": [
+        {
+          "id": 10807,
+          "title": "非一般的晚上 (Technova Mix)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10811,
+          "title": "非一般的晚上",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        792,
+        "Homework",
+        "黎明",
+        4055815
+      ],
+      "songs": [
+        {
+          "id": 10900,
+          "title": "Ba Ba",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10909,
+          "title": "Ba Ba (國語)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        797,
+        "眼睛想旅行",
+        "黎明",
+        3619570
+      ],
+      "songs": [
+        {
+          "id": 10989,
+          "title": "You Are My Friend",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10992,
+          "title": "You Are My Friend (Piano Music)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        798,
+        "Leon Now",
+        "黎明",
+        4650362
+      ],
+      "songs": [
+        {
+          "id": 10993,
+          "title": "Sugar In the Marmalade",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 11004,
+          "title": "Sugar In the Marmalade (國語版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        802,
+        "如果可以再見你",
+        "黎明",
+        3852582
+      ],
+      "songs": [
+        {
+          "id": 11057,
+          "title": "Happy 2000",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 11065,
+          "title": "Happy 2000 (國語版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        802,
+        "如果可以再見你",
+        "黎明",
+        4203146
+      ],
+      "songs": [
+        {
+          "id": 11052,
+          "title": "心裡有數 (Interlude)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 11053,
+          "title": "心裡有數",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        908,
+        "不散,不見",
+        "莫文蔚",
+        5641448
+      ],
+      "songs": [
+        {
+          "id": 12326,
+          "title": "不散,不见",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 12328,
+          "title": "境外",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        917,
+        "如果沒有你",
+        "莫文蔚",
+        4742313
+      ],
+      "songs": [
+        {
+          "id": 12483,
+          "title": "24 Hrs",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 12491,
+          "title": "24 Hrs (Cantonese Version)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        920,
+        "[ X ] 特別版",
+        "莫文蔚",
+        4935619
+      ],
+      "songs": [
+        {
+          "id": 12518,
+          "title": "Ai Si Ni (feat. 柯有倫)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 12529,
+          "title": "Ai Si Ni (feat. LMF)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        929,
+        "你可以",
+        "莫文蔚",
+        5226101
+      ],
+      "songs": [
+        {
+          "id": 12638,
+          "title": "Love Is So Great",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 12642,
+          "title": "Any Reason For Love?",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        933,
+        "全身莫文蔚",
+        "莫文蔚",
+        2369350
+      ],
+      "songs": [
+        {
+          "id": 12691,
+          "title": "飛人生活 (一)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 12697,
+          "title": "飛人生活 (二)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1010,
+        "花兒不見了",
+        "齐豫",
+        5944991
+      ],
+      "songs": [
+        {
+          "id": 13674,
+          "title": "BORDERLINE",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 13680,
+          "title": "THE END OF THE INNOCENCE",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1018,
+        "LLL",
+        "曲婉婷",
+        4282558
+      ],
+      "songs": [
+        {
+          "id": 27399,
+          "title": "再见月球 (Moon And Back)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 27400,
+          "title": "亲吻天堂 (Kissing Paradise)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 27403,
+          "title": "让你自由 (Set You Free)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1018,
+        "LLL",
+        "曲婉婷",
+        5127358
+      ],
+      "songs": [
+        {
+          "id": 27397,
+          "title": "为此曲而歌 (Make Love To This Song)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 27406,
+          "title": "狂野的心 (Wild Heart)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 27407,
+          "title": "最好的安排",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1021,
+        "我的歌声里",
+        "曲婉婷",
+        4244942
+      ],
+      "songs": [
+        {
+          "id": 27370,
+          "title": "生活像首歌 (Life Is Like A Song)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 27378,
+          "title": "世界上的所有 (Everything In The World)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1021,
+        "我的歌声里",
+        "曲婉婷",
+        4282558
+      ],
+      "songs": [
+        {
+          "id": 27380,
+          "title": "我的歌声里",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 27384,
+          "title": "我的歌声里 (Demo Version)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1022,
+        "在路上",
+        "任贤齐",
+        4871358
+      ],
+      "songs": [
+        {
+          "id": 13808,
+          "title": "我出去一下",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 13815,
+          "title": "我出去一下 Live版 (feat.五月天)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1025,
+        "情義",
+        "任贤齐",
+        4693203
+      ],
+      "songs": [
+        {
+          "id": 13851,
+          "title": "Starting Over",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 13853,
+          "title": "Let You Be Free and Easy",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1040,
+        "心太軟",
+        "任贤齐",
+        5309170
+      ],
+      "songs": [
+        {
+          "id": 14061,
+          "title": "Crying in the Night",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 14065,
+          "title": "Baby Talk",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1041,
+        "依靠",
+        "任贤齐",
+        4736566
+      ],
+      "songs": [
+        {
+          "id": 14069,
+          "title": "Three Minutes",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 14076,
+          "title": "Three Minutes (Bonus Version)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1044,
+        "再問一次",
+        "任贤齐",
+        4574607
+      ],
+      "songs": [
+        {
+          "id": 14099,
+          "title": "走一段想你的路",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 14100,
+          "title": "就讓一切自由",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        751,
+        "羅大佑自選輯",
+        "罗大佑",
+        4401196
+      ],
+      "songs": [
+        {
+          "id": 10265,
+          "title": "現象七十二變 (Live)",
+          "file_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10265.mp3",
+          "lrc_path": "https://pub-a0a90fda9b0d45d59a52685eb2ee93d6.r2.dev/music/罗大佑/羅大佑自選輯/s_10265.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10268,
+          "title": "我所不能瞭解的事 (Live)",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10268.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10268.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10273,
+          "title": "穿過你的黑髮的我的手 (Live)",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10273.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10273.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 10292,
+          "title": "追夢人",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10292.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/罗大佑/羅大佑自選輯/s_10292.lrc",
+          "etag": "35871ad70c5eae5bd61548fbae0e916c",
+          "chunk_hash": "fe7fef705d506367a9b5d182df2073e8"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1148,
+        "傻瓜",
+        "苏慧伦",
+        4634688
+      ],
+      "songs": [
+        {
+          "id": 15597,
+          "title": "Fool",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 15604,
+          "title": "Before You Know",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1150,
+        "自然喜歡你",
+        "苏慧伦",
+        5449709
+      ],
+      "songs": [
+        {
+          "id": 15617,
+          "title": "有誰像你愛我",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 15625,
+          "title": "有誰像你愛我",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1157,
+        "六月的茉莉夢",
+        "苏慧伦",
+        5471129
+      ],
+      "songs": [
+        {
+          "id": 15694,
+          "title": "Two Lonely Hearts",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 15699,
+          "title": "You Do Understand",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1158,
+        "寂寞喧嘩",
+        "苏慧伦",
+        5368207
+      ],
+      "songs": [
+        {
+          "id": 15702,
+          "title": "Let Me Know",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 15705,
+          "title": "Wanting to Travel",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1267,
+        "This Is a Problem",
+        "痛仰乐队",
+        4910019
+      ],
+      "songs": [
+        {
+          "id": 17178,
+          "title": "Where There Is an Oppression, There Is a Revolution",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 17185,
+          "title": "The True Wicked Idea",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1267,
+        "This Is a Problem",
+        "痛仰乐队",
+        5476876
+      ],
+      "songs": [
+        {
+          "id": 17181,
+          "title": "The Duplicator",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 17184,
+          "title": "The Chinese Stuff",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 17186,
+          "title": "Move Over",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1270,
+        "38.5 Degrees",
+        "田震",
+        4687456
+      ],
+      "songs": [
+        {
+          "id": 17211,
+          "title": "38.5 Degrees",
+          "file_path": "music/田震/38.5 Degrees/s_17211.mp3",
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 17216,
+          "title": "Relies On Each Other In Dream",
+          "file_path": "music/田震/38.5 Degrees/s_17216.mp3",
+          "lrc_path": "music/田震/38.5 Degrees/s_17216.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1274,
+        "王菲 (2001)",
+        "王菲",
+        5354623
+      ],
+      "songs": [
+        {
+          "id": 17252,
+          "title": "我願意",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 24150,
+          "title": "白痴",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1275,
+        "阿菲正傳",
+        "王菲",
+        5385448
+      ],
+      "songs": [
+        {
+          "id": 17267,
+          "title": "執迷不悔 (國語版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 17281,
+          "title": "執迷不悔 (粵語版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1402,
+        "意外",
+        "薛之谦",
+        5272599
+      ],
+      "songs": [
+        {
+          "id": 19037,
+          "title": "方圆几里",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 19038,
+          "title": "方圆几里 (吉他版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1405,
+        "深深爱过你",
+        "薛之谦",
+        5567260
+      ],
+      "songs": [
+        {
+          "id": 19063,
+          "title": "深深爱过你(前世)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 19069,
+          "title": "深深爱过你(今生)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1409,
+        "The Song",
+        "萧敬腾",
+        3561578
+      ],
+      "songs": [
+        {
+          "id": 19110,
+          "title": "Zhe Shou Ge",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 19111,
+          "title": "Zhe Shou Ge (Yan Zou Ban)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1416,
+        "狂想曲",
+        "萧敬腾",
+        6201513
+      ],
+      "songs": [
+        {
+          "id": 24317,
+          "title": "好想對你說 (悲傷版)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 24318,
+          "title": "好想對你說",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1423,
+        "蘇格拉沒有底",
+        "许嵩",
+        4602819
+      ],
+      "songs": [
+        {
+          "id": 19292,
+          "title": "雙人旁",
+          "file_path": "music/许嵩/蘇格拉沒有底/s_19292.mp3",
+          "lrc_path": "music/许嵩/蘇格拉沒有底/s_19292.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 19293,
+          "title": "降溫",
+          "file_path": "music/许嵩/蘇格拉沒有底/s_19293.mp3",
+          "lrc_path": "music/许嵩/蘇格拉沒有底/s_19293.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1486,
+        "藍短褲",
+        "郁可唯",
+        6464305
+      ],
+      "songs": [
+        {
+          "id": 20172,
+          "title": "藍短褲 (童年版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 20182,
+          "title": "藍短褲 (天使版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1506,
+        "在与生俱来的不平衡里",
+        "袁娅维",
+        4730297
+      ],
+      "songs": [
+        {
+          "id": 20420,
+          "title": "ALLURE",
+          "file_path": "music/袁娅维/在与生俱来的不平衡里/s_20420.mp3",
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 20421,
+          "title": "RIVER FLOW",
+          "file_path": "music/袁娅维/在与生俱来的不平衡里/s_20421.mp3",
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1563,
+        "REVISIT",
+        "张国荣",
+        5481578
+      ],
+      "songs": [
+        {
+          "id": 21169,
+          "title": "寂寞有害 Ancient Boutique",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 21173,
+          "title": "陪你倒數 The Sambass & Bossa",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1563,
+        "REVISIT",
+        "张国荣",
+        6361382
+      ],
+      "songs": [
+        {
+          "id": 21171,
+          "title": "左右手 The Paradox of Choice",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 21177,
+          "title": "全世界只想你來愛我 The Only Thing That Matters",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1602,
+        "我可以抱你嗎?愛人",
+        "张惠妹",
+        6200991
+      ],
+      "songs": [
+        {
+          "id": 21701,
+          "title": "無悔",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 21703,
+          "title": "別在傷口灑鹽",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1302,
+        "唯一",
+        "王力宏",
+        5708267
+      ],
+      "songs": [
+        {
+          "id": 17748,
+          "title": "愛的就是你",
+          "file_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/王力宏/唯一/s_17748.mp3",
+          "lrc_path": "https://pub-3507a1a1bc4b4ac3a3340833031078c2.r2.dev/music/王力宏/唯一/s_17748.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 17757,
+          "title": "愛的就是你",
+          "file_path": "https://pub-ade3407baf1041b49b5949a2539067f7.r2.dev/music/王力宏/唯一/s_17757.mp3",
+          "lrc_path": "https://pub-147987db1e7b419cb6ea49acd48d0d25.r2.dev/lyrics/王力宏/唯一/s_17757.lrc",
+          "etag": "03a599b290280fa41cde9c037a8cc7e3",
+          "chunk_hash": "6457c1c3adc52ff62822e62359ba87d3"
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1612,
+        "初專輯",
+        "张信哲",
+        5090786
+      ],
+      "songs": [
+        {
+          "id": 21826,
+          "title": "當時",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/初專輯/s_21826.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/初專輯/s_21826.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 21834,
+          "title": "最初",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/初專輯/s_21834.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/初專輯/s_21834.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1623,
+        "到處留情",
+        "张信哲",
+        6043733
+      ],
+      "songs": [
+        {
+          "id": 21961,
+          "title": "憎你",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/到處留情/s_21961.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/到處留情/s_21961.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 21962,
+          "title": "聯想",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/到處留情/s_21962.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/到處留情/s_21962.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1627,
+        "The Color of the Night",
+        "张信哲",
+        5140419
+      ],
+      "songs": [
+        {
+          "id": 22011,
+          "title": "True",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/The Color of the Night/s_22011.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/The Color of the Night/s_22011.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 22012,
+          "title": "Stars",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/The Color of the Night/s_22012.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/The Color of the Night/s_22012.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1628,
+        "夢想",
+        "张信哲",
+        5214084
+      ],
+      "songs": [
+        {
+          "id": 22021,
+          "title": "愛我其實很容易",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/夢想/s_22021.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/夢想/s_22021.lrc",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 22023,
+          "title": "夢想成真",
+          "file_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/夢想/s_22023.mp3",
+          "lrc_path": "https://pub-086ee39e1f294c8ba0a12c7073a3c271.r2.dev/music/张信哲/夢想/s_22023.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1691,
+        "Past Progressive",
+        "张靓颖",
+        3688533
+      ],
+      "songs": [
+        {
+          "id": 22815,
+          "title": "Work for it (Remix)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 22818,
+          "title": "Work For It",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1694,
+        "第七感",
+        "张靓颖",
+        3800860
+      ],
+      "songs": [
+        {
+          "id": 22869,
+          "title": "Unwind",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 22883,
+          "title": "UNWIND (No Unison)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 22884,
+          "title": "UNWIND (With Unison)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1714,
+        "雨後星空",
+        "张雨生",
+        5742280
+      ],
+      "songs": [
+        {
+          "id": 23138,
+          "title": "黃河長江 (卓義峯獨唱版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 23142,
+          "title": "黃河長江",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 23145,
+          "title": "黃河長江 (張雨生、楊培安合唱版)",
+          "file_path": null,
+          "lrc_path": null,
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1822,
+        "迷",
+        "王菲",
+        5354623
+      ],
+      "songs": [
+        {
+          "id": 24094,
+          "title": "我願意 (管弦樂版)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 24098,
+          "title": "我願意 (弦樂版)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1822,
+        "迷",
+        "王菲",
+        5385448
+      ],
+      "songs": [
+        {
+          "id": 24065,
+          "title": "執迷不悔 (國语)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 24069,
+          "title": "執迷不悔 (粤语)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        },
+        {
+          "id": 24095,
+          "title": "執迷不悔 (94新版)",
+          "file_path": null,
+          "lrc_path": "",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    },
+    {
+      "group_key": [
+        1828,
+        "將愛",
+        "王菲",
+        4992044
+      ],
+      "songs": [
+        {
+          "id": 24158,
+          "title": "將愛",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/將愛/s_24158.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/將愛/s_24158.lrc",
+          "etag": "248dddd6936b400c8673a54166da9a33",
+          "chunk_hash": "e759fc7963f3484159d5e8c2f80733e6"
+        },
+        {
+          "id": 24163,
+          "title": "陽寶",
+          "file_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/將愛/s_24163.mp3",
+          "lrc_path": "https://pub-9ea7ff16135d47238c0229f1aa54ecc4.r2.dev/music/王菲/將愛/s_24163.lrc",
+          "etag": "248dddd6936b400c8673a54166da9a33",
+          "chunk_hash": "e759fc7963f3484159d5e8c2f80733e6"
+        },
+        {
+          "id": 24168,
+          "title": "MV",
+          "file_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/王菲/將愛/s_24168.mp3",
+          "lrc_path": "https://pub-46ab5c0015d84be1b748cffecd23fdbb.r2.dev/music/王菲/將愛/s_24168.lrc",
+          "etag": null,
+          "chunk_hash": null
+        }
+      ]
+    }
+  ]
+}
